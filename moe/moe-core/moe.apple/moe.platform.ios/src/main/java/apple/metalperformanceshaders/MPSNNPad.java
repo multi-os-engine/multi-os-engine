@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNPad
@@ -135,22 +137,25 @@ public class MPSNNPad extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -185,7 +190,7 @@ public class MPSNNPad extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNPad initWithCoder(NSCoder aDecoder);
+    public native MPSNNPad initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -198,7 +203,8 @@ public class MPSNNPad extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNPad initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNPad initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSNNPad kernel
@@ -208,7 +214,7 @@ public class MPSNNPad extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNPad initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNPad initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSNNPad kernel
@@ -221,7 +227,7 @@ public class MPSNNPad extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:paddingSizeBefore:paddingSizeAfter:")
     public native MPSNNPad initWithDevicePaddingSizeBeforePaddingSizeAfter(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
             @ByValue MPSImageCoordinate paddingSizeAfter);
 
     /**
@@ -241,8 +247,8 @@ public class MPSNNPad extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:paddingSizeBefore:paddingSizeAfter:fillValueArray:")
     public native MPSNNPad initWithDevicePaddingSizeBeforePaddingSizeAfterFillValueArray(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
-            @ByValue MPSImageCoordinate paddingSizeAfter, NSData fillValueArray);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @ByValue MPSImageCoordinate paddingSizeBefore,
+            @ByValue MPSImageCoordinate paddingSizeAfter, @Nullable NSData fillValueArray);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -261,9 +267,10 @@ public class MPSNNPad extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

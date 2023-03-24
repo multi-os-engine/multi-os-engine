@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetSeatSettingsInCarIntent. By implementing this protocol, a class can
@@ -68,8 +69,8 @@ public interface INSetSeatSettingsInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSetSeatSettingsInCar:completion:")
-    default void confirmSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_confirmSetSeatSettingsInCarCompletion") Block_confirmSetSeatSettingsInCarCompletion completion) {
+    default void confirmSetSeatSettingsInCarCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetSeatSettingsInCarCompletion") Block_confirmSetSeatSettingsInCarCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,14 +87,14 @@ public interface INSetSeatSettingsInCarIntentHandling {
      */
     @Generated
     @Selector("handleSetSeatSettingsInCar:completion:")
-    void handleSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_handleSetSeatSettingsInCarCompletion") Block_handleSetSeatSettingsInCarCompletion completion);
+    void handleSetSeatSettingsInCarCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetSeatSettingsInCarCompletion") Block_handleSetSeatSettingsInCarCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveEnableCoolingForSetSeatSettingsInCar:withCompletion:")
-    default void resolveEnableCoolingForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion") Block_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveEnableCoolingForSetSeatSettingsInCarWithCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion") Block_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -111,40 +112,41 @@ public interface INSetSeatSettingsInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveEnableHeatingForSetSeatSettingsInCar:withCompletion:")
-    default void resolveEnableHeatingForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion") Block_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveEnableHeatingForSetSeatSettingsInCarWithCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion") Block_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveEnableMassageForSetSeatSettingsInCar:withCompletion:")
-    default void resolveEnableMassageForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableMassageForSetSeatSettingsInCarWithCompletion") Block_resolveEnableMassageForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveEnableMassageForSetSeatSettingsInCarWithCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableMassageForSetSeatSettingsInCarWithCompletion") Block_resolveEnableMassageForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveLevelForSetSeatSettingsInCar:withCompletion:")
-    default void resolveLevelForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveLevelForSetSeatSettingsInCarWithCompletion") Block_resolveLevelForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveLevelForSetSeatSettingsInCarWithCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveLevelForSetSeatSettingsInCarWithCompletion") Block_resolveLevelForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveRelativeLevelSettingForSetSeatSettingsInCar:withCompletion:")
-    default void resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion") Block_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion(
+            @NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion") Block_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveSeatForSetSeatSettingsInCar:withCompletion:")
-    default void resolveSeatForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveSeatForSetSeatSettingsInCarWithCompletion") Block_resolveSeatForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveSeatForSetSeatSettingsInCarWithCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveSeatForSetSeatSettingsInCarWithCompletion") Block_resolveSeatForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,42 +154,46 @@ public interface INSetSeatSettingsInCarIntentHandling {
     @Generated
     public interface Block_confirmSetSeatSettingsInCarCompletion {
         @Generated
-        void call_confirmSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntentResponse response);
+        void call_confirmSetSeatSettingsInCarCompletion(@NotNull INSetSeatSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetSeatSettingsInCarCompletion {
         @Generated
-        void call_handleSetSeatSettingsInCarCompletion(INSetSeatSettingsInCarIntentResponse response);
+        void call_handleSetSeatSettingsInCarCompletion(@NotNull INSetSeatSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveEnableCoolingForSetSeatSettingsInCarWithCompletion(
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveEnableHeatingForSetSeatSettingsInCarWithCompletion(
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableMassageForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableMassageForSetSeatSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveEnableMassageForSetSeatSettingsInCarWithCompletion(
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveLevelForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveLevelForSetSeatSettingsInCarWithCompletion(INIntegerResolutionResult resolutionResult);
+        void call_resolveLevelForSetSeatSettingsInCarWithCompletion(
+                @NotNull INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -195,14 +201,14 @@ public interface INSetSeatSettingsInCarIntentHandling {
     public interface Block_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion {
         @Generated
         void call_resolveRelativeLevelSettingForSetSeatSettingsInCarWithCompletion(
-                INRelativeSettingResolutionResult resolutionResult);
+                @NotNull INRelativeSettingResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveSeatForSetSeatSettingsInCarWithCompletion {
         @Generated
-        void call_resolveSeatForSetSeatSettingsInCarWithCompletion(INCarSeatResolutionResult resolutionResult);
+        void call_resolveSeatForSetSeatSettingsInCarWithCompletion(@NotNull INCarSeatResolutionResult resolutionResult);
     }
 
     /**
@@ -211,8 +217,8 @@ public interface INSetSeatSettingsInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCarNameForSetSeatSettingsInCar:withCompletion:")
-    default void resolveCarNameForSetSeatSettingsInCarWithCompletion(INSetSeatSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForSetSeatSettingsInCarWithCompletion") Block_resolveCarNameForSetSeatSettingsInCarWithCompletion completion) {
+    default void resolveCarNameForSetSeatSettingsInCarWithCompletion(@NotNull INSetSeatSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForSetSeatSettingsInCarWithCompletion") Block_resolveCarNameForSetSeatSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -221,6 +227,6 @@ public interface INSetSeatSettingsInCarIntentHandling {
     public interface Block_resolveCarNameForSetSeatSettingsInCarWithCompletion {
         @Generated
         void call_resolveCarNameForSetSeatSettingsInCarWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

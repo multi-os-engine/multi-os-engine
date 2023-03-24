@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIFocusGuides are UILayoutGuide subclasses that participate in the focus system from within their owning view. A
@@ -75,22 +77,25 @@ public class UIFocusGuide extends UILayoutGuide {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class UIFocusGuide extends UILayoutGuide {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,7 +167,7 @@ public class UIFocusGuide extends UILayoutGuide {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIFocusGuide initWithCoder(NSCoder coder);
+    public native UIFocusGuide initWithCoder(@NotNull NSCoder coder);
 
     /**
      * If disabled, UIFocusGuides are ignored by the focus engine, but still participate in layout. Modifying this flag
@@ -198,6 +204,7 @@ public class UIFocusGuide extends UILayoutGuide {
      * API-Since: 9.0
      * Deprecated-Since: 10.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("preferredFocusedView")
@@ -225,7 +232,7 @@ public class UIFocusGuide extends UILayoutGuide {
     @Deprecated
     @Generated
     @Selector("setPreferredFocusedView:")
-    public native void setPreferredFocusedView_unsafe(UIView value);
+    public native void setPreferredFocusedView_unsafe(@Nullable UIView value);
 
     /**
      * Setting a preferred focused view marks this guide's layoutFrame as focusable, and if focused, redirects focus to
@@ -236,7 +243,7 @@ public class UIFocusGuide extends UILayoutGuide {
      */
     @Deprecated
     @Generated
-    public void setPreferredFocusedView(UIView value) {
+    public void setPreferredFocusedView(@Nullable UIView value) {
         Object __old = preferredFocusedView();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

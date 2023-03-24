@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -62,17 +64,19 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Authorization options.
      */
+    @NotNull
     @Generated
     @Selector("authorizationOptions")
     public native NSDictionary<?, ?> authorizationOptions();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Identification of the calling application.
      */
+    @NotNull
     @Generated
     @Selector("callerBundleIdentifier")
     public native String callerBundleIdentifier();
@@ -86,18 +90,21 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,21 +121,23 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
      */
     @Generated
     @Selector("completeWithError:")
-    public native void completeWithError(NSError error);
+    public native void completeWithError(@NotNull NSError error);
 
     /**
      * Call when authorization succeeded with an authorization tokens stored in HTTP headers.
      */
     @Generated
     @Selector("completeWithHTTPAuthorizationHeaders:")
-    public native void completeWithHTTPAuthorizationHeaders(NSDictionary<String, String> httpAuthorizationHeaders);
+    public native void completeWithHTTPAuthorizationHeaders(
+            @NotNull NSDictionary<String, String> httpAuthorizationHeaders);
 
     /**
      * Call when authorization succeeded with a HTTP response.
      */
     @Generated
     @Selector("completeWithHTTPResponse:httpBody:")
-    public native void completeWithHTTPResponseHttpBody(NSHTTPURLResponse httpResponse, NSData httpBody);
+    public native void completeWithHTTPResponseHttpBody(@NotNull NSHTTPURLResponse httpResponse,
+            @Nullable NSData httpBody);
 
     @Generated
     @Selector("debugDescription")
@@ -148,6 +157,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Extension data from extension configuration provided by MDM stored as a property-list.
      */
+    @NotNull
     @Generated
     @Selector("extensionData")
     public native NSDictionary<?, ?> extensionData();
@@ -160,6 +170,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Request body.
      */
+    @NotNull
     @Generated
     @Selector("httpBody")
     public native NSData httpBody();
@@ -167,6 +178,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Request HTTP headers.
      */
+    @NotNull
     @Generated
     @Selector("httpHeaders")
     public native NSDictionary<String, String> httpHeaders();
@@ -192,9 +204,10 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -208,18 +221,19 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Generated
     @Selector("presentAuthorizationViewControllerWithCompletion:")
     public native void presentAuthorizationViewControllerWithCompletion(
-            @ObjCBlock(name = "call_presentAuthorizationViewControllerWithCompletion") Block_presentAuthorizationViewControllerWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_presentAuthorizationViewControllerWithCompletion") Block_presentAuthorizationViewControllerWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentAuthorizationViewControllerWithCompletion {
         @Generated
-        void call_presentAuthorizationViewControllerWithCompletion(boolean success, NSError error);
+        void call_presentAuthorizationViewControllerWithCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
      * Realm.
      */
+    @NotNull
     @Generated
     @Selector("realm")
     public native String realm();
@@ -227,6 +241,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Operation to be executed by the extension.
      */
+    @NotNull
     @Generated
     @Selector("requestedOperation")
     public native String requestedOperation();
@@ -250,6 +265,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     /**
      * Request URL with all components.
      */
+    @NotNull
     @Generated
     @Selector("url")
     public native NSURL url();
@@ -264,6 +280,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("callerTeamIdentifier")
     public native String callerTeamIdentifier();
@@ -282,6 +299,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("localizedCallerDisplayName")
     public native String localizedCallerDisplayName();
@@ -294,7 +312,7 @@ public class ASAuthorizationProviderExtensionAuthorizationRequest extends NSObje
     @Generated
     @Selector("completeWithAuthorizationResult:")
     public native void completeWithAuthorizationResult(
-            ASAuthorizationProviderExtensionAuthorizationResult authorizationResult);
+            @NotNull ASAuthorizationProviderExtensionAuthorizationResult authorizationResult);
 
     /**
      * Indicates whether the authorization user interface is enabled.

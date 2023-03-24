@@ -13,6 +13,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A set of methods that are called by the @c UIApplication singleton in response to CarPlay lifecycle events.
@@ -39,16 +40,16 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
      */
     @Generated
     @Selector("application:didConnectCarInterfaceController:toWindow:")
-    void applicationDidConnectCarInterfaceControllerToWindow(UIApplication application,
-            CPInterfaceController interfaceController, CPWindow window);
+    void applicationDidConnectCarInterfaceControllerToWindow(@NotNull UIApplication application,
+            @NotNull CPInterfaceController interfaceController, @NotNull CPWindow window);
 
     /**
      * The CarPlay screen has disconnected.
      */
     @Generated
     @Selector("application:didDisconnectCarInterfaceController:fromWindow:")
-    void applicationDidDisconnectCarInterfaceControllerFromWindow(UIApplication application,
-            CPInterfaceController interfaceController, CPWindow window);
+    void applicationDidDisconnectCarInterfaceControllerFromWindow(@NotNull UIApplication application,
+            @NotNull CPInterfaceController interfaceController, @NotNull CPWindow window);
 
     /**
      * If your application posts a @c CPManeuver while backgrounded, a notification banner may be presented to the user.
@@ -58,7 +59,7 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didSelectManeuver:")
-    default void applicationDidSelectManeuver(UIApplication application, CPManeuver maneuver) {
+    default void applicationDidSelectManeuver(@NotNull UIApplication application, @NotNull CPManeuver maneuver) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,7 +72,8 @@ public interface CPApplicationDelegate extends UIApplicationDelegate {
     @Generated
     @IsOptional
     @Selector("application:didSelectNavigationAlert:")
-    default void applicationDidSelectNavigationAlert(UIApplication application, CPNavigationAlert navigationAlert) {
+    default void applicationDidSelectNavigationAlert(@NotNull UIApplication application,
+            @NotNull CPNavigationAlert navigationAlert) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

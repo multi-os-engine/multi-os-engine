@@ -28,6 +28,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -50,13 +52,14 @@ public final class AUInputSamplesInOutputCallbackStruct extends StructObject {
 
     @Generated
     public AUInputSamplesInOutputCallbackStruct(
-            @FunctionPtr(name = "call_inputToOutputCallback") Function_inputToOutputCallback inputToOutputCallback,
-            VoidPtr userData) {
+            @FunctionPtr(name = "call_inputToOutputCallback") @NotNull Function_inputToOutputCallback inputToOutputCallback,
+            @Nullable VoidPtr userData) {
         super(AUInputSamplesInOutputCallbackStruct.class);
         setInputToOutputCallback(inputToOutputCallback);
         setUserData(userData);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_inputToOutputCallback")
@@ -65,22 +68,23 @@ public final class AUInputSamplesInOutputCallbackStruct extends StructObject {
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setInputToOutputCallback(
-            @FunctionPtr(name = "call_inputToOutputCallback") Function_inputToOutputCallback value);
+            @NotNull @FunctionPtr(name = "call_inputToOutputCallback") Function_inputToOutputCallback value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr userData();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setUserData(VoidPtr value);
+    public native void setUserData(@Nullable VoidPtr value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_inputToOutputCallback {
         @Generated
-        void call_inputToOutputCallback(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1, double arg2,
-                double arg3);
+        void call_inputToOutputCallback(@NotNull VoidPtr arg0,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg1,
+                double arg2, double arg3);
     }
 }

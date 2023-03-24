@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
@@ -37,6 +38,7 @@ public final class GameKit {
     private GameKit() {
     }
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -47,6 +49,7 @@ public final class GameKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: GKGameSession is deprecated, use real-time and turn-based matchmaking APIs instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -57,6 +60,7 @@ public final class GameKit {
      * Notification will be posted whenever the player details changes. The object of the notification will be the
      * player.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -99,6 +103,7 @@ public final class GameKit {
      * 
      * API-Since: 4.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -107,6 +112,7 @@ public final class GameKit {
     /**
      * domain
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -122,6 +128,7 @@ public final class GameKit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureDeviceFormat
@@ -89,22 +91,25 @@ public class AVCaptureDeviceFormat extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,9 +144,10 @@ public class AVCaptureDeviceFormat extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,6 +197,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * A CMFormatDescription describing an AVCaptureDevice active or supported format. This is a read-only property. The
      * caller assumes no ownership of the returned value and should not CFRelease it.
      */
+    @NotNull
     @Generated
     @Selector("formatDescription")
     public native CMFormatDescriptionRef formatDescription();
@@ -334,6 +341,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * Supported mediaTypes are listed in AVMediaFormat.h. This is a read-only property. The caller assumes no ownership
      * of the returned value and should not CFRelease it.
      */
+    @NotNull
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -375,6 +383,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("supportedColorSpaces")
     public native NSArray<? extends NSNumber> supportedColorSpaces();
@@ -412,6 +421,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * videoSupportedFrameRateRanges is an array of AVFrameRateRange objects, one for each of the format's supported
      * video frame rate ranges.
      */
+    @NotNull
     @Generated
     @Selector("videoSupportedFrameRateRanges")
     public native NSArray<? extends AVFrameRateRange> videoSupportedFrameRateRanges();
@@ -445,6 +455,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("supportedDepthDataFormats")
     public native NSArray<? extends AVCaptureDeviceFormat> supportedDepthDataFormats();
@@ -466,6 +477,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("unsupportedCaptureOutputClasses")
     public native NSArray<? extends Class> unsupportedCaptureOutputClasses();
@@ -640,6 +652,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 14.5
      */
+    @Nullable
     @Generated
     @Selector("videoFrameRateRangeForCenterStage")
     public native AVFrameRateRange videoFrameRateRangeForCenterStage();
@@ -654,6 +667,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("videoFrameRateRangeForPortraitEffect")
     public native AVFrameRateRange videoFrameRateRangeForPortraitEffect();
@@ -714,6 +728,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("secondaryNativeResolutionZoomFactors")
     public native NSArray<? extends NSNumber> secondaryNativeResolutionZoomFactors();
@@ -729,6 +744,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("supportedMaxPhotoDimensions")
     public native NSArray<? extends NSValue> supportedMaxPhotoDimensions();
@@ -744,6 +760,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("supportedVideoZoomFactorsForDepthDataDelivery")
     public native NSArray<? extends NSNumber> supportedVideoZoomFactorsForDepthDataDelivery();
@@ -758,6 +775,7 @@ public class AVCaptureDeviceFormat extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("videoFrameRateRangeForStudioLight")
     public native AVFrameRateRange videoFrameRateRangeForStudioLight();

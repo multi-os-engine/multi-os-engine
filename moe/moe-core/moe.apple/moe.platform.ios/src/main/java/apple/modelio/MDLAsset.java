@@ -50,6 +50,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLAsset
@@ -112,19 +114,19 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("assetWithSCNScene:")
-    public static native MDLAsset assetWithSCNScene(SCNScene scnScene);
+    public static native MDLAsset assetWithSCNScene(@NotNull SCNScene scnScene);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("assetWithSCNScene:bufferAllocator:")
-    public static native MDLAsset assetWithSCNSceneBufferAllocator(SCNScene scnScene,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLAsset assetWithSCNSceneBufferAllocator(@NotNull SCNScene scnScene,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canImportFileExtension:
@@ -137,7 +139,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("canExportFileExtension:")
-    public static native boolean canExportFileExtension(String extension);
+    public static native boolean canExportFileExtension(@NotNull String extension);
 
     /**
      * canImportFileExtension:
@@ -150,22 +152,25 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("canImportFileExtension:")
-    public static native boolean canImportFileExtension(String extension);
+    public static native boolean canImportFileExtension(@NotNull String extension);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -200,19 +205,22 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MDLAsset new_objc();
 
+    @NotNull
     @Generated
     @Selector("placeLightProbesWithDensity:heuristic:usingIrradianceDataSource:")
     public static native NSArray<? extends MDLLightProbe> placeLightProbesWithDensityHeuristicUsingIrradianceDataSource(
-            float value, @NInt long type, @Mapped(ObjCObjectMapper.class) MDLLightProbeIrradianceDataSource dataSource);
+            float value, @NInt long type,
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLLightProbeIrradianceDataSource dataSource);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -242,6 +250,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * If the asset was not created with a URL, nil will be returned.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -255,13 +264,14 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("addObject:")
-    public native void addObject(MDLObject object);
+    public native void addObject(@NotNull MDLObject object);
 
     /**
      * [@property] bufferAllocator
      * 
      * Allocator used to create vertex and index buffers
      */
+    @NotNull
     @Generated
     @Selector("bufferAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -278,15 +288,17 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * @return returns an NSArray of all objects in the asset matching the requested class
      */
+    @NotNull
     @Generated
     @Selector("childObjectsOfClass:")
-    public native NSArray<? extends MDLObject> childObjectsOfClass(Class objectClass);
+    public native NSArray<? extends MDLObject> childObjectsOfClass(@NotNull Class objectClass);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] count
@@ -301,8 +313,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     /**
      * [@property] endTime
@@ -327,7 +339,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("exportAssetToURL:")
-    public native boolean exportAssetToURL(NSURL URL);
+    public native boolean exportAssetToURL(@NotNull NSURL URL);
 
     /**
      * exportAssetToURL:error:
@@ -338,7 +350,8 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("exportAssetToURL:error:")
-    public native boolean exportAssetToURLError(NSURL URL, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean exportAssetToURLError(@NotNull NSURL URL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] frameInterval
@@ -365,7 +378,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Generated
     @Selector("initWithBufferAllocator:")
     public native MDLAsset initWithBufferAllocator(
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     /**
      * initWithURL:
@@ -381,7 +394,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("initWithURL:")
-    public native MDLAsset initWithURL(NSURL URL);
+    public native MDLAsset initWithURL(@NotNull NSURL URL);
 
     /**
      * initWithURL:vertexDescriptor:bufferAllocator:
@@ -403,8 +416,9 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("initWithURL:vertexDescriptor:bufferAllocator:")
-    public native MDLAsset initWithURLVertexDescriptorBufferAllocator(NSURL URL, MDLVertexDescriptor vertexDescriptor,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public native MDLAsset initWithURLVertexDescriptorBufferAllocator(@Nullable NSURL URL,
+            @Nullable MDLVertexDescriptor vertexDescriptor,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     /**
      * initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:
@@ -423,15 +437,16 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("initWithURL:vertexDescriptor:bufferAllocator:preserveTopology:error:")
-    public native MDLAsset initWithURLVertexDescriptorBufferAllocatorPreserveTopologyError(NSURL URL,
-            MDLVertexDescriptor vertexDescriptor,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator, boolean preserveTopology,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MDLAsset initWithURLVertexDescriptorBufferAllocatorPreserveTopologyError(@NotNull NSURL URL,
+            @Nullable MDLVertexDescriptor vertexDescriptor,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator, boolean preserveTopology,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 10.0
      * Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("masters")
@@ -443,6 +458,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * return the indexed top level object
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndex:")
     public native MDLObject objectAtIndex(@NUInt long index);
@@ -452,6 +468,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * return the indexed top level object
      */
+    @Nullable
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native MDLObject objectAtIndexedSubscript(@NUInt long index);
@@ -465,7 +482,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("removeObject:")
-    public native void removeObject(MDLObject object);
+    public native void removeObject(@NotNull MDLObject object);
 
     /**
      * [@property] endTime
@@ -500,7 +517,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
     @Deprecated
     @Generated
     @Selector("setMasters:")
-    public native void setMasters(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+    public native void setMasters(@NotNull @Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     /**
      * [@property] startTime
@@ -537,6 +554,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * Will be nil if there was no descriptor set
      */
+    @Nullable
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();
@@ -550,6 +568,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      *      API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("animations")
     @MappedReturn(ObjCObjectMapper.class)
@@ -573,9 +592,10 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("objectAtPath:")
-    public native MDLObject objectAtPath(String path);
+    public native MDLObject objectAtPath(@NotNull String path);
 
     /**
      * [@property] AssetResolver
@@ -586,6 +606,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("resolver")
     @MappedReturn(ObjCObjectMapper.class)
@@ -602,7 +623,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("setAnimations:")
-    public native void setAnimations(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+    public native void setAnimations(@NotNull @Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 
     /**
      * [@property] AssetResolver
@@ -615,7 +636,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("setResolver:")
-    public native void setResolver(@Mapped(ObjCObjectMapper.class) MDLAssetResolver value);
+    public native void setResolver(@Nullable @Mapped(ObjCObjectMapper.class) MDLAssetResolver value);
 
     /**
      * [@property] originals
@@ -626,6 +647,7 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      * 
      *      API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("originals")
     @MappedReturn(ObjCObjectMapper.class)
@@ -642,5 +664,5 @@ public class MDLAsset extends NSObject implements NSCopying, NSFastEnumeration {
      */
     @Generated
     @Selector("setOriginals:")
-    public native void setOriginals(@Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
+    public native void setOriginals(@NotNull @Mapped(ObjCObjectMapper.class) MDLObjectContainerComponent value);
 }

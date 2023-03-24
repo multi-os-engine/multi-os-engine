@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -74,22 +76,25 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -145,10 +151,12 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      *                       An array of AVTextStyleRules.
      * @return A serializable property list.
      */
+    @NotNull
     @Generated
     @Selector("propertyListForTextStyleRules:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object propertyListForTextStyleRules(NSArray<? extends AVTextStyleRule> textStyleRules);
+    public static native Object propertyListForTextStyleRules(
+            @NotNull NSArray<? extends AVTextStyleRule> textStyleRules);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -178,10 +186,11 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      *                             text markup. Eligible keys are defined in <CoreMedia/CMTextMarkup.h>.
      * @return An instance of AVTextStyleRule
      */
+    @Nullable
     @Generated
     @Selector("textStyleRuleWithTextMarkupAttributes:")
     public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributes(
-            NSDictionary<String, ?> textMarkupAttributes);
+            @NotNull NSDictionary<String, ?> textMarkupAttributes);
 
     /**
      * textStyleRuleWithTextMarkupAttributes:textSelector:
@@ -200,10 +209,11 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      *                             text selectors.
      * @return An instance of AVTextStyleRule
      */
+    @Nullable
     @Generated
     @Selector("textStyleRuleWithTextMarkupAttributes:textSelector:")
     public static native AVTextStyleRule textStyleRuleWithTextMarkupAttributesTextSelector(
-            NSDictionary<String, ?> textMarkupAttributes, String textSelector);
+            @NotNull NSDictionary<String, ?> textMarkupAttributes, @Nullable String textSelector);
 
     /**
      * textStyleRulesFromPropertyList:
@@ -214,21 +224,23 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      *              A property list, normally obtained previously via an invocation of +propertyListForTextStyleRules:.
      * @return An NSArray of AVTextStyleRules
      */
+    @Nullable
     @Generated
     @Selector("textStyleRulesFromPropertyList:")
     public static native NSArray<? extends AVTextStyleRule> textStyleRulesFromPropertyList(
-            @Mapped(ObjCObjectMapper.class) Object plist);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object plist);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -248,7 +260,7 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithTextMarkupAttributes:")
-    public native AVTextStyleRule initWithTextMarkupAttributes(NSDictionary<String, ?> textMarkupAttributes);
+    public native AVTextStyleRule initWithTextMarkupAttributes(@NotNull NSDictionary<String, ?> textMarkupAttributes);
 
     /**
      * initWithTextMarkupAttributes:textSelector:
@@ -269,8 +281,8 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithTextMarkupAttributes:textSelector:")
-    public native AVTextStyleRule initWithTextMarkupAttributesTextSelector(NSDictionary<String, ?> textMarkupAttributes,
-            String textSelector);
+    public native AVTextStyleRule initWithTextMarkupAttributesTextSelector(
+            @NotNull NSDictionary<String, ?> textMarkupAttributes, @Nullable String textSelector);
 
     /**
      * [@property] textMarkupAttributes
@@ -278,6 +290,7 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      * An NSDictionary with keys representing text style attributes that are specifiable in text markup. Eligible keys
      * and the expected types of their corresponding values are defined in <CoreMedia/CMTextMarkup.h>.
      */
+    @NotNull
     @Generated
     @Selector("textMarkupAttributes")
     public native NSDictionary<String, ?> textMarkupAttributes();
@@ -292,6 +305,7 @@ public class AVTextStyleRule extends NSObject implements NSCopying {
      * may be determined by the content of the legible media (e.g. CSS selectors that are valid for a specific WebVTT
      * document).
      */
+    @Nullable
     @Generated
     @Selector("textSelector")
     public native String textSelector();

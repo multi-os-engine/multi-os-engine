@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INActivateCarSignalIntent. By implementing this protocol, a class can
@@ -45,8 +46,8 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmActivateCarSignal:completion:")
-    default void confirmActivateCarSignalCompletion(INActivateCarSignalIntent intent,
-            @ObjCBlock(name = "call_confirmActivateCarSignalCompletion") Block_confirmActivateCarSignalCompletion completion) {
+    default void confirmActivateCarSignalCompletion(@NotNull INActivateCarSignalIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmActivateCarSignalCompletion") Block_confirmActivateCarSignalCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,7 +55,7 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_confirmActivateCarSignalCompletion {
         @Generated
-        void call_confirmActivateCarSignalCompletion(INActivateCarSignalIntentResponse response);
+        void call_confirmActivateCarSignalCompletion(@NotNull INActivateCarSignalIntentResponse response);
     }
 
     /**
@@ -70,14 +71,14 @@ public interface INActivateCarSignalIntentHandling {
      */
     @Generated
     @Selector("handleActivateCarSignal:completion:")
-    void handleActivateCarSignalCompletion(INActivateCarSignalIntent intent,
-            @ObjCBlock(name = "call_handleActivateCarSignalCompletion") Block_handleActivateCarSignalCompletion completion);
+    void handleActivateCarSignalCompletion(@NotNull INActivateCarSignalIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleActivateCarSignalCompletion") Block_handleActivateCarSignalCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleActivateCarSignalCompletion {
         @Generated
-        void call_handleActivateCarSignalCompletion(INActivateCarSignalIntentResponse response);
+        void call_handleActivateCarSignalCompletion(@NotNull INActivateCarSignalIntentResponse response);
     }
 
     /**
@@ -94,8 +95,8 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCarNameForActivateCarSignal:withCompletion:")
-    default void resolveCarNameForActivateCarSignalWithCompletion(INActivateCarSignalIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForActivateCarSignalWithCompletion") Block_resolveCarNameForActivateCarSignalWithCompletion completion) {
+    default void resolveCarNameForActivateCarSignalWithCompletion(@NotNull INActivateCarSignalIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForActivateCarSignalWithCompletion") Block_resolveCarNameForActivateCarSignalWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,14 +104,15 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_resolveCarNameForActivateCarSignalWithCompletion {
         @Generated
-        void call_resolveCarNameForActivateCarSignalWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveCarNameForActivateCarSignalWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveSignalsForActivateCarSignal:withCompletion:")
-    default void resolveSignalsForActivateCarSignalWithCompletion(INActivateCarSignalIntent intent,
-            @ObjCBlock(name = "call_resolveSignalsForActivateCarSignalWithCompletion") Block_resolveSignalsForActivateCarSignalWithCompletion completion) {
+    default void resolveSignalsForActivateCarSignalWithCompletion(@NotNull INActivateCarSignalIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveSignalsForActivateCarSignalWithCompletion") Block_resolveSignalsForActivateCarSignalWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,6 +120,7 @@ public interface INActivateCarSignalIntentHandling {
     @Generated
     public interface Block_resolveSignalsForActivateCarSignalWithCompletion {
         @Generated
-        void call_resolveSignalsForActivateCarSignalWithCompletion(INCarSignalOptionsResolutionResult resolutionResult);
+        void call_resolveSignalsForActivateCarSignalWithCompletion(
+                @NotNull INCarSignalOptionsResolutionResult resolutionResult);
     }
 }

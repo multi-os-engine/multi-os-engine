@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A WKHTTPCookieStore object allows managing the HTTP cookies associated with a particular WKWebsiteDataStore.
@@ -58,7 +60,7 @@ public class WKHTTPCookieStore extends NSObject {
      */
     @Generated
     @Selector("addObserver:")
-    public native void addObserver(@Mapped(ObjCObjectMapper.class) WKHTTPCookieStoreObserver observer);
+    public native void addObserver(@NotNull @Mapped(ObjCObjectMapper.class) WKHTTPCookieStoreObserver observer);
 
     @Generated
     @Owned
@@ -72,22 +74,25 @@ public class WKHTTPCookieStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,8 +108,8 @@ public class WKHTTPCookieStore extends NSObject {
      */
     @Generated
     @Selector("deleteCookie:completionHandler:")
-    public native void deleteCookieCompletionHandler(NSHTTPCookie cookie,
-            @ObjCBlock(name = "call_deleteCookieCompletionHandler") Block_deleteCookieCompletionHandler completionHandler);
+    public native void deleteCookieCompletionHandler(@NotNull NSHTTPCookie cookie,
+            @Nullable @ObjCBlock(name = "call_deleteCookieCompletionHandler") Block_deleteCookieCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -124,13 +129,14 @@ public class WKHTTPCookieStore extends NSObject {
      */
     @Generated
     @Selector("getAllCookies:")
-    public native void getAllCookies(@ObjCBlock(name = "call_getAllCookies") Block_getAllCookies completionHandler);
+    public native void getAllCookies(
+            @NotNull @ObjCBlock(name = "call_getAllCookies") Block_getAllCookies completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getAllCookies {
         @Generated
-        void call_getAllCookies(NSArray<? extends NSHTTPCookie> arg0);
+        void call_getAllCookies(@NotNull NSArray<? extends NSHTTPCookie> arg0);
     }
 
     @Generated
@@ -159,9 +165,10 @@ public class WKHTTPCookieStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,7 +182,7 @@ public class WKHTTPCookieStore extends NSObject {
      */
     @Generated
     @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) WKHTTPCookieStoreObserver observer);
+    public native void removeObserver(@NotNull @Mapped(ObjCObjectMapper.class) WKHTTPCookieStoreObserver observer);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -193,8 +200,8 @@ public class WKHTTPCookieStore extends NSObject {
      */
     @Generated
     @Selector("setCookie:completionHandler:")
-    public native void setCookieCompletionHandler(NSHTTPCookie cookie,
-            @ObjCBlock(name = "call_setCookieCompletionHandler") Block_setCookieCompletionHandler completionHandler);
+    public native void setCookieCompletionHandler(@NotNull NSHTTPCookie cookie,
+            @Nullable @ObjCBlock(name = "call_setCookieCompletionHandler") Block_setCookieCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPTrip represents an origin and destination with route choices.
@@ -62,22 +64,25 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,13 +98,14 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     /**
      * [@c] MKMapItem representing the destination for the trip.
      */
+    @NotNull
     @Generated
     @Selector("destination")
     public native MKMapItem destination();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -112,15 +118,15 @@ public class CPTrip extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPTrip initWithCoder(NSCoder coder);
+    public native CPTrip initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a @c CPTrip with an origin item, destination item, and route choices.
      */
     @Generated
     @Selector("initWithOrigin:destination:routeChoices:")
-    public native CPTrip initWithOriginDestinationRouteChoices(MKMapItem origin, MKMapItem destination,
-            NSArray<? extends CPRouteChoice> routeChoices);
+    public native CPTrip initWithOriginDestinationRouteChoices(@NotNull MKMapItem origin,
+            @NotNull MKMapItem destination, @NotNull NSArray<? extends CPRouteChoice> routeChoices);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -139,9 +145,10 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,6 +158,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     /**
      * [@c] MKMapItem representing the origin for the trip.
      */
+    @NotNull
     @Generated
     @Selector("origin")
     public native MKMapItem origin();
@@ -166,6 +174,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     /**
      * Array of @c CPRouteChoices for the trip.
      */
+    @NotNull
     @Generated
     @Selector("routeChoices")
     public native NSArray<? extends CPRouteChoice> routeChoices();
@@ -175,7 +184,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -198,6 +207,7 @@ public class CPTrip extends NSObject implements NSSecureCoding {
     /**
      * Any custom user info related to this trip.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

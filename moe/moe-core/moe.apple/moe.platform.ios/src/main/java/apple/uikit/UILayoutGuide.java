@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UILayoutGuides will not show up in the view hierarchy, but may be used as items in
@@ -82,22 +84,25 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,14 +168,17 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("bottomAnchor")
     public native NSLayoutYAxisAnchor bottomAnchor();
 
+    @NotNull
     @Generated
     @Selector("centerXAnchor")
     public native NSLayoutXAxisAnchor centerXAnchor();
 
+    @NotNull
     @Generated
     @Selector("centerYAnchor")
     public native NSLayoutYAxisAnchor centerYAnchor();
@@ -183,13 +192,14 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("constraintsAffectingLayoutForAxis:")
     public native NSArray<? extends NSLayoutConstraint> constraintsAffectingLayoutForAxis(@NInt long axis);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * If there aren't enough constraints in the system to uniquely determine layout, we say the layout is ambiguous.
@@ -207,6 +217,7 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     @Selector("hasAmbiguousLayout")
     public native boolean hasAmbiguousLayout();
 
+    @NotNull
     @Generated
     @Selector("heightAnchor")
     public native NSLayoutDimension heightAnchor();
@@ -215,6 +226,7 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * For ease of debugging.
      * 'UI' prefix is reserved for UIKit-created layout guides.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -225,7 +237,7 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
 
     @Generated
     @Selector("initWithCoder:")
-    public native UILayoutGuide initWithCoder(NSCoder coder);
+    public native UILayoutGuide initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The frame of the UILayoutGuide in its owningView's coordinate system.
@@ -239,10 +251,12 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
     /**
      * Constraint creation conveniences. See NSLayoutAnchor.h for details.
      */
+    @NotNull
     @Generated
     @Selector("leadingAnchor")
     public native NSLayoutXAxisAnchor leadingAnchor();
 
+    @NotNull
     @Generated
     @Selector("leftAnchor")
     public native NSLayoutXAxisAnchor leftAnchor();
@@ -253,10 +267,12 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * -[UIView addLayoutGuide:] and -[UIView removeLayoutGuide:], which will use this property to
      * change the owningView.
      */
+    @Nullable
     @Generated
     @Selector("owningView")
     public native UIView owningView();
 
+    @NotNull
     @Generated
     @Selector("rightAnchor")
     public native NSLayoutXAxisAnchor rightAnchor();
@@ -267,7 +283,7 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@NotNull String value);
 
     /**
      * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
@@ -277,7 +293,7 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      */
     @Generated
     @Selector("setOwningView:")
-    public native void setOwningView_unsafe(UIView value);
+    public native void setOwningView_unsafe(@Nullable UIView value);
 
     /**
      * The guide must be added to a view with -[UIView addLayoutGuide:] before being used in a constraint.
@@ -286,7 +302,7 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
      * change the owningView.
      */
     @Generated
-    public void setOwningView(UIView value) {
+    public void setOwningView(@Nullable UIView value) {
         Object __old = owningView();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -297,14 +313,17 @@ public class UILayoutGuide extends NSObject implements NSCoding, UIPopoverPresen
         }
     }
 
+    @NotNull
     @Generated
     @Selector("topAnchor")
     public native NSLayoutYAxisAnchor topAnchor();
 
+    @NotNull
     @Generated
     @Selector("trailingAnchor")
     public native NSLayoutXAxisAnchor trailingAnchor();
 
+    @NotNull
     @Generated
     @Selector("widthAnchor")
     public native NSLayoutDimension widthAnchor();

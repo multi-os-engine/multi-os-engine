@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -38,6 +39,7 @@ public interface UIViewControllerPreviewing {
      * API-Since: 9.0
      * Deprecated-Since: 13.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("delegate")
@@ -51,6 +53,7 @@ public interface UIViewControllerPreviewing {
      * API-Since: 9.0
      * Deprecated-Since: 13.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("previewingGestureRecognizerForFailureRelationship")
@@ -85,6 +88,7 @@ public interface UIViewControllerPreviewing {
      * API-Since: 9.0
      * Deprecated-Since: 13.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("sourceView")

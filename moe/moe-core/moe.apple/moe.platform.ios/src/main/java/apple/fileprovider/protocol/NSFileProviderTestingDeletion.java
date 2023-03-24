@@ -9,6 +9,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This operation causes the system to propagate a deletion from a source side to a target side.
@@ -25,6 +27,7 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
     /**
      * The domain version at the time the change was discovered on the source side.
      */
+    @Nullable
     @Generated
     @Selector("domainVersion")
     NSFileProviderDomainVersion domainVersion();
@@ -32,6 +35,7 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
     /**
      * The identifier of the source item.
      */
+    @NotNull
     @Generated
     @Selector("sourceItemIdentifier")
     String sourceItemIdentifier();
@@ -39,6 +43,7 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
     /**
      * The version of the target item on top of which the deletion is applied
      */
+    @NotNull
     @Generated
     @Selector("targetItemBaseVersion")
     NSFileProviderItemVersion targetItemBaseVersion();
@@ -46,6 +51,7 @@ public interface NSFileProviderTestingDeletion extends NSFileProviderTestingOper
     /**
      * The identifier of the target item.
      */
+    @NotNull
     @Generated
     @Selector("targetItemIdentifier")
     String targetItemIdentifier();

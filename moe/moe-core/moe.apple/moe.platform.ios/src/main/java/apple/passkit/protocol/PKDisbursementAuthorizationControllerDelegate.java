@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("PassKit")
@@ -22,7 +23,8 @@ public interface PKDisbursementAuthorizationControllerDelegate {
     @Generated
     @Selector("disbursementAuthorizationController:didAuthorizeWithDisbursementVoucher:")
     void disbursementAuthorizationControllerDidAuthorizeWithDisbursementVoucher(
-            PKDisbursementAuthorizationController controller, PKDisbursementVoucher disbursementVoucher);
+            @NotNull PKDisbursementAuthorizationController controller,
+            @NotNull PKDisbursementVoucher disbursementVoucher);
 
     /**
      * Sent to the delegate when disbursement controller is finished. This may occur when
@@ -32,5 +34,5 @@ public interface PKDisbursementAuthorizationControllerDelegate {
      */
     @Generated
     @Selector("disbursementAuthorizationControllerDidFinish:")
-    void disbursementAuthorizationControllerDidFinish(PKDisbursementAuthorizationController controller);
+    void disbursementAuthorizationControllerDidFinish(@NotNull PKDisbursementAuthorizationController controller);
 }

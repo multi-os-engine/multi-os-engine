@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSItemProvider;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MFMessageComposeViewController
@@ -99,7 +101,7 @@ public class MFMessageComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * canSendAttachments
@@ -138,25 +140,28 @@ public class MFMessageComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -200,11 +205,12 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("isSupportedAttachmentUTI:")
-    public static native boolean isSupportedAttachmentUTI(String uti);
+    public static native boolean isSupportedAttachmentUTI(@NotNull String uti);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -245,7 +251,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("addAttachmentData:typeIdentifier:filename:")
-    public native boolean addAttachmentDataTypeIdentifierFilename(NSData attachmentData, String uti, String filename);
+    public native boolean addAttachmentDataTypeIdentifierFilename(@NotNull NSData attachmentData, @NotNull String uti,
+            @NotNull String filename);
 
     /**
      * addAttachmentURL:withAlternateFilename:
@@ -261,7 +268,8 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("addAttachmentURL:withAlternateFilename:")
-    public native boolean addAttachmentURLWithAlternateFilename(NSURL attachmentURL, String alternateFilename);
+    public native boolean addAttachmentURLWithAlternateFilename(@NotNull NSURL attachmentURL,
+            @Nullable String alternateFilename);
 
     /**
      * [@property] attachments
@@ -273,6 +281,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("attachments")
     public native NSArray<? extends NSDictionary<?, ?>> attachments();
@@ -286,6 +295,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      * to display.
      * <p>After the view has been presented to the user, this property will no longer change the value.</p>
      */
+    @Nullable
     @Generated
     @Selector("body")
     public native String body();
@@ -309,20 +319,22 @@ public class MFMessageComposeViewController extends UINavigationController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MFMessageComposeViewController initWithCoder(NSCoder coder);
+    public native MFMessageComposeViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native MFMessageComposeViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native MFMessageComposeViewController initWithNavigationBarClassToolbarClass(
+            @Nullable Class navigationBarClass, @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native MFMessageComposeViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native MFMessageComposeViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native MFMessageComposeViewController initWithRootViewController(UIViewController rootViewController);
+    public native MFMessageComposeViewController initWithRootViewController(
+            @NotNull UIViewController rootViewController);
 
     /**
      * [@property] message
@@ -331,6 +343,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("message")
     public native MSMessage message();
@@ -340,6 +353,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      * 
      * This property is the delegate for the MFMessageComposeViewController method callbacks.
      */
+    @Nullable
     @Generated
     @Selector("messageComposeDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -355,6 +369,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      * to display.
      * <p>After the view has been presented to the user, this property will no longer change the value.</p>
      */
+    @Nullable
     @Generated
     @Selector("recipients")
     public native NSArray<String> recipients();
@@ -370,7 +385,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("setBody:")
-    public native void setBody(String value);
+    public native void setBody(@Nullable String value);
 
     /**
      * [@property] message
@@ -381,7 +396,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("setMessage:")
-    public native void setMessage(MSMessage value);
+    public native void setMessage(@Nullable MSMessage value);
 
     /**
      * [@property] messageComposeDelegate
@@ -391,7 +406,7 @@ public class MFMessageComposeViewController extends UINavigationController {
     @Generated
     @Selector("setMessageComposeDelegate:")
     public native void setMessageComposeDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value);
 
     /**
      * [@property] messageComposeDelegate
@@ -400,7 +415,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     public void setMessageComposeDelegate(
-            @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) MFMessageComposeViewControllerDelegate value) {
         Object __old = messageComposeDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -423,7 +438,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("setRecipients:")
-    public native void setRecipients(NSArray<String> value);
+    public native void setRecipients(@Nullable NSArray<String> value);
 
     /**
      * [@property] subject
@@ -438,7 +453,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("setSubject:")
-    public native void setSubject(String value);
+    public native void setSubject(@Nullable String value);
 
     /**
      * [@property] subject
@@ -451,6 +466,7 @@ public class MFMessageComposeViewController extends UINavigationController {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("subject")
     public native String subject();
@@ -469,5 +485,5 @@ public class MFMessageComposeViewController extends UINavigationController {
      */
     @Generated
     @Selector("insertCollaborationItemProvider:")
-    public native boolean insertCollaborationItemProvider(NSItemProvider itemProvider);
+    public native boolean insertCollaborationItemProvider(@NotNull NSItemProvider itemProvider);
 }

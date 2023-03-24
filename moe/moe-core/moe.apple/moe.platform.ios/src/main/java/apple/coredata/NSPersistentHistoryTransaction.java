@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -57,49 +59,57 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("allocWithZone:")
     public static native NSPersistentHistoryTransaction allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("author")
     public native String author();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("bundleID")
     public native String bundleID();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @Nullable
     @Generated
     @Selector("changes")
     public native NSArray<? extends NSPersistentHistoryChange> changes();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("contextName")
     public native String contextName();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +145,10 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,10 +158,12 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     /**
      * Get a notification that can be consumed by a NSManagedObjectContext
      */
+    @NotNull
     @Generated
     @Selector("objectIDNotification")
     public native NSNotification objectIDNotification();
 
+    @NotNull
     @Generated
     @Selector("processID")
     public native String processID();
@@ -167,6 +180,7 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("storeID")
     public native String storeID();
@@ -175,10 +189,12 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("timestamp")
     public native NSDate timestamp();
 
+    @NotNull
     @Generated
     @Selector("token")
     public native NSPersistentHistoryToken token();
@@ -195,6 +211,7 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("entityDescription")
     public static native NSEntityDescription entityDescription();
@@ -202,13 +219,15 @@ public class NSPersistentHistoryTransaction extends NSObject implements NSCopyin
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("entityDescriptionWithContext:")
-    public static native NSEntityDescription entityDescriptionWithContext(NSManagedObjectContext context);
+    public static native NSEntityDescription entityDescriptionWithContext(@NotNull NSManagedObjectContext context);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("fetchRequest")
     public static native NSFetchRequest<?> fetchRequest();

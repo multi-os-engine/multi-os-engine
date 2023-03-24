@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetReaderAudioMixOutput
@@ -109,26 +111,29 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("assetReaderAudioMixOutputWithAudioTracks:audioSettings:")
     public static native AVAssetReaderAudioMixOutput assetReaderAudioMixOutputWithAudioTracksAudioSettings(
-            NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
+            @NotNull NSArray<? extends AVAssetTrack> audioTracks, @Nullable NSDictionary<String, ?> audioSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -163,9 +168,10 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -207,6 +213,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * - setting an audio mix containing a track that was not used to create the receiver
      * - an audio mix is set containing an invalid audio time pitch algorithm
      */
+    @Nullable
     @Generated
     @Selector("audioMix")
     public native AVAudioMix audioMix();
@@ -220,6 +227,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * only). A value of nil indicates that the receiver will return audio samples in a convenient uncompressed format,
      * with sample rate and other properties determined according to the properties of the receiver's audio tracks.
      */
+    @Nullable
     @Generated
     @Selector("audioSettings")
     public native NSDictionary<String, ?> audioSettings();
@@ -237,6 +245,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -248,6 +257,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      * 
      * The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader's asset.
      */
+    @NotNull
     @Generated
     @Selector("audioTracks")
     public native NSArray<? extends AVAssetTrack> audioTracks();
@@ -293,7 +303,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("initWithAudioTracks:audioSettings:")
     public native AVAssetReaderAudioMixOutput initWithAudioTracksAudioSettings(
-            NSArray<? extends AVAssetTrack> audioTracks, NSDictionary<String, ?> audioSettings);
+            @NotNull NSArray<? extends AVAssetTrack> audioTracks, @Nullable NSDictionary<String, ?> audioSettings);
 
     /**
      * [@property] audioMix
@@ -311,7 +321,7 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      */
     @Generated
     @Selector("setAudioMix:")
-    public native void setAudioMix(AVAudioMix value);
+    public native void setAudioMix(@Nullable AVAudioMix value);
 
     /**
      * [@property] audioTimePitchAlgorithm
@@ -328,5 +338,5 @@ public class AVAssetReaderAudioMixOutput extends AVAssetReaderOutput {
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
-    public native void setAudioTimePitchAlgorithm(String value);
+    public native void setAudioTimePitchAlgorithm(@NotNull String value);
 }

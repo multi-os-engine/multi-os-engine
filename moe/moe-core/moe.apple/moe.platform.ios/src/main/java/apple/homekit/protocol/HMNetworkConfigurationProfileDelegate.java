@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -25,7 +26,7 @@ public interface HMNetworkConfigurationProfileDelegate {
     @Generated
     @IsOptional
     @Selector("profileDidUpdateNetworkAccessMode:")
-    default void profileDidUpdateNetworkAccessMode(HMNetworkConfigurationProfile profile) {
+    default void profileDidUpdateNetworkAccessMode(@NotNull HMNetworkConfigurationProfile profile) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

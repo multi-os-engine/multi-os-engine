@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -58,6 +60,7 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("acres")
     public static native NSUnitArea acres();
@@ -72,32 +75,37 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("allocWithZone:")
     public static native NSUnitArea allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("ares")
     public static native NSUnitArea ares();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitArea baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +123,7 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("hectares")
     public static native NSUnitArea hectares();
@@ -136,9 +145,10 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,18 +167,22 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("squareCentimeters")
     public static native NSUnitArea squareCentimeters();
 
+    @NotNull
     @Generated
     @Selector("squareFeet")
     public static native NSUnitArea squareFeet();
 
+    @NotNull
     @Generated
     @Selector("squareInches")
     public static native NSUnitArea squareInches();
 
+    @NotNull
     @Generated
     @Selector("squareKilometers")
     public static native NSUnitArea squareKilometers();
@@ -176,30 +190,37 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
     /**
      * Base unit - squareMeters
      */
+    @NotNull
     @Generated
     @Selector("squareMegameters")
     public static native NSUnitArea squareMegameters();
 
+    @NotNull
     @Generated
     @Selector("squareMeters")
     public static native NSUnitArea squareMeters();
 
+    @NotNull
     @Generated
     @Selector("squareMicrometers")
     public static native NSUnitArea squareMicrometers();
 
+    @NotNull
     @Generated
     @Selector("squareMiles")
     public static native NSUnitArea squareMiles();
 
+    @NotNull
     @Generated
     @Selector("squareMillimeters")
     public static native NSUnitArea squareMillimeters();
 
+    @NotNull
     @Generated
     @Selector("squareNanometers")
     public static native NSUnitArea squareNanometers();
 
+    @NotNull
     @Generated
     @Selector("squareYards")
     public static native NSUnitArea squareYards();
@@ -219,7 +240,7 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -227,15 +248,15 @@ public class NSUnitArea extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitArea initWithCoder(NSCoder coder);
+    public native NSUnitArea initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitArea initWithSymbol(String symbol);
+    public native NSUnitArea initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitArea initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitArea initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

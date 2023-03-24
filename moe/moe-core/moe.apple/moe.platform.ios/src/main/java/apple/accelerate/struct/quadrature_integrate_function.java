@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstDoublePtr;
 import org.moe.natj.general.ptr.DoublePtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -50,12 +51,13 @@ public final class quadrature_integrate_function extends StructObject {
     }
 
     @Generated
-    public quadrature_integrate_function(@FunctionPtr(name = "call_fun") Function_fun fun, VoidPtr fun_arg) {
+    public quadrature_integrate_function(@FunctionPtr(name = "call_fun") @NotNull Function_fun fun, VoidPtr fun_arg) {
         super(quadrature_integrate_function.class);
         setFun(fun);
         setFun_arg(fun_arg);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_fun")
@@ -63,7 +65,7 @@ public final class quadrature_integrate_function extends StructObject {
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setFun(@FunctionPtr(name = "call_fun") Function_fun value);
+    public native void setFun(@NotNull @FunctionPtr(name = "call_fun") Function_fun value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -77,6 +79,6 @@ public final class quadrature_integrate_function extends StructObject {
     @Generated
     public interface Function_fun {
         @Generated
-        void call_fun(VoidPtr arg0, @NUInt long arg1, ConstDoublePtr arg2, DoublePtr arg3);
+        void call_fun(VoidPtr arg0, @NUInt long arg1, @NotNull ConstDoublePtr arg2, @NotNull DoublePtr arg3);
     }
 }

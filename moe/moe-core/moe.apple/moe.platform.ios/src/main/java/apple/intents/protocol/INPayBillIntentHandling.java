@@ -16,6 +16,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INPayBillIntent. By implementing this protocol, a class can provide logic
@@ -52,8 +53,8 @@ public interface INPayBillIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmPayBill:completion:")
-    default void confirmPayBillCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_confirmPayBillCompletion") Block_confirmPayBillCompletion completion) {
+    default void confirmPayBillCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmPayBillCompletion") Block_confirmPayBillCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +62,7 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_confirmPayBillCompletion {
         @Generated
-        void call_confirmPayBillCompletion(INPayBillIntentResponse response);
+        void call_confirmPayBillCompletion(@NotNull INPayBillIntentResponse response);
     }
 
     /**
@@ -77,14 +78,14 @@ public interface INPayBillIntentHandling {
      */
     @Generated
     @Selector("handlePayBill:completion:")
-    void handlePayBillCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_handlePayBillCompletion") Block_handlePayBillCompletion completion);
+    void handlePayBillCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_handlePayBillCompletion") Block_handlePayBillCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handlePayBillCompletion {
         @Generated
-        void call_handlePayBillCompletion(INPayBillIntentResponse response);
+        void call_handlePayBillCompletion(@NotNull INPayBillIntentResponse response);
     }
 
     /**
@@ -101,8 +102,8 @@ public interface INPayBillIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveBillPayeeForPayBill:withCompletion:")
-    default void resolveBillPayeeForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveBillPayeeForPayBillWithCompletion") Block_resolveBillPayeeForPayBillWithCompletion completion) {
+    default void resolveBillPayeeForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveBillPayeeForPayBillWithCompletion") Block_resolveBillPayeeForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,14 +111,14 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveBillPayeeForPayBillWithCompletion {
         @Generated
-        void call_resolveBillPayeeForPayBillWithCompletion(INBillPayeeResolutionResult resolutionResult);
+        void call_resolveBillPayeeForPayBillWithCompletion(@NotNull INBillPayeeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveBillTypeForPayBill:withCompletion:")
-    default void resolveBillTypeForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveBillTypeForPayBillWithCompletion") Block_resolveBillTypeForPayBillWithCompletion completion) {
+    default void resolveBillTypeForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveBillTypeForPayBillWithCompletion") Block_resolveBillTypeForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,14 +126,14 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveBillTypeForPayBillWithCompletion {
         @Generated
-        void call_resolveBillTypeForPayBillWithCompletion(INBillTypeResolutionResult resolutionResult);
+        void call_resolveBillTypeForPayBillWithCompletion(@NotNull INBillTypeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveDueDateForPayBill:withCompletion:")
-    default void resolveDueDateForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveDueDateForPayBillWithCompletion") Block_resolveDueDateForPayBillWithCompletion completion) {
+    default void resolveDueDateForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDueDateForPayBillWithCompletion") Block_resolveDueDateForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,14 +141,15 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveDueDateForPayBillWithCompletion {
         @Generated
-        void call_resolveDueDateForPayBillWithCompletion(INDateComponentsRangeResolutionResult resolutionResult);
+        void call_resolveDueDateForPayBillWithCompletion(
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveFromAccountForPayBill:withCompletion:")
-    default void resolveFromAccountForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveFromAccountForPayBillWithCompletion") Block_resolveFromAccountForPayBillWithCompletion completion) {
+    default void resolveFromAccountForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveFromAccountForPayBillWithCompletion") Block_resolveFromAccountForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,14 +157,15 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveFromAccountForPayBillWithCompletion {
         @Generated
-        void call_resolveFromAccountForPayBillWithCompletion(INPaymentAccountResolutionResult resolutionResult);
+        void call_resolveFromAccountForPayBillWithCompletion(
+                @NotNull INPaymentAccountResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTransactionAmountForPayBill:withCompletion:")
-    default void resolveTransactionAmountForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveTransactionAmountForPayBillWithCompletion") Block_resolveTransactionAmountForPayBillWithCompletion completion) {
+    default void resolveTransactionAmountForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTransactionAmountForPayBillWithCompletion") Block_resolveTransactionAmountForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,14 +173,15 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveTransactionAmountForPayBillWithCompletion {
         @Generated
-        void call_resolveTransactionAmountForPayBillWithCompletion(INPaymentAmountResolutionResult resolutionResult);
+        void call_resolveTransactionAmountForPayBillWithCompletion(
+                @NotNull INPaymentAmountResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTransactionNoteForPayBill:withCompletion:")
-    default void resolveTransactionNoteForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveTransactionNoteForPayBillWithCompletion") Block_resolveTransactionNoteForPayBillWithCompletion completion) {
+    default void resolveTransactionNoteForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTransactionNoteForPayBillWithCompletion") Block_resolveTransactionNoteForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,14 +189,14 @@ public interface INPayBillIntentHandling {
     @Generated
     public interface Block_resolveTransactionNoteForPayBillWithCompletion {
         @Generated
-        void call_resolveTransactionNoteForPayBillWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveTransactionNoteForPayBillWithCompletion(@NotNull INStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTransactionScheduledDateForPayBill:withCompletion:")
-    default void resolveTransactionScheduledDateForPayBillWithCompletion(INPayBillIntent intent,
-            @ObjCBlock(name = "call_resolveTransactionScheduledDateForPayBillWithCompletion") Block_resolveTransactionScheduledDateForPayBillWithCompletion completion) {
+    default void resolveTransactionScheduledDateForPayBillWithCompletion(@NotNull INPayBillIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTransactionScheduledDateForPayBillWithCompletion") Block_resolveTransactionScheduledDateForPayBillWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,6 +205,6 @@ public interface INPayBillIntentHandling {
     public interface Block_resolveTransactionScheduledDateForPayBillWithCompletion {
         @Generated
         void call_resolveTransactionScheduledDateForPayBillWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 }

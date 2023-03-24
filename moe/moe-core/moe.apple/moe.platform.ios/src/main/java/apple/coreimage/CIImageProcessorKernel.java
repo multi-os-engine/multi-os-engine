@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * In order to use a CIImageProcessorInput & CIImageProcessorOutput you must
@@ -93,30 +95,34 @@ public class CIImageProcessorKernel extends NSObject {
      * * calling formatForInputAtIndex: on your subclass returns an unsupported format
      * * your subclass does not implement processWithInputs:arguments:output:error:
      */
+    @Nullable
     @Generated
     @Selector("applyWithExtent:inputs:arguments:error:")
     public static native CIImage applyWithExtentInputsArgumentsError(@ByValue CGRect extent,
-            NSArray<? extends CIImage> inputs, NSDictionary<String, ?> args,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable NSArray<? extends CIImage> inputs, @Nullable NSDictionary<String, ?> args,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -167,9 +173,10 @@ public class CIImageProcessorKernel extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -198,9 +205,10 @@ public class CIImageProcessorKernel extends NSObject {
      */
     @Generated
     @Selector("processWithInputs:arguments:output:error:")
-    public static native boolean processWithInputsArgumentsOutputError(NSArray<?> inputs,
-            NSDictionary<String, ?> arguments, @Mapped(ObjCObjectMapper.class) CIImageProcessorOutput output,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native boolean processWithInputsArgumentsOutputError(@Nullable NSArray<?> inputs,
+            @Nullable NSDictionary<String, ?> arguments,
+            @NotNull @Mapped(ObjCObjectMapper.class) CIImageProcessorOutput output,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -223,7 +231,7 @@ public class CIImageProcessorKernel extends NSObject {
     @Generated
     @Selector("roiForInput:arguments:outputRect:")
     @ByValue
-    public static native CGRect roiForInputArgumentsOutputRect(int input, NSDictionary<String, ?> arguments,
+    public static native CGRect roiForInputArgumentsOutputRect(int input, @Nullable NSDictionary<String, ?> arguments,
             @ByValue CGRect outputRect);
 
     @Generated

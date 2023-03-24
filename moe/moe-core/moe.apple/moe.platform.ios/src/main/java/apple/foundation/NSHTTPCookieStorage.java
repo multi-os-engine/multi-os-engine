@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSHTTPCookieStorage
@@ -77,22 +79,25 @@ public class NSHTTPCookieStorage extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NSHTTPCookieStorage extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,9 +170,10 @@ public class NSHTTPCookieStorage extends NSObject {
      * @param identifier The application group identifier
      * @return A cookie storage with a persistent store in the application group container
      */
+    @NotNull
     @Generated
     @Selector("sharedCookieStorageForGroupContainerIdentifier:")
-    public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(String identifier);
+    public static native NSHTTPCookieStorage sharedCookieStorageForGroupContainerIdentifier(@NotNull String identifier);
 
     /**
      * [@property] sharedHTTPCookieStorage
@@ -178,6 +185,7 @@ public class NSHTTPCookieStorage extends NSObject {
      * 
      * @return The shared cookie storage
      */
+    @NotNull
     @Generated
     @Selector("sharedHTTPCookieStorage")
     public static native NSHTTPCookieStorage sharedHTTPCookieStorage();
@@ -205,6 +213,7 @@ public class NSHTTPCookieStorage extends NSObject {
      * 
      * @return An NSArray of NSHTTPCookies
      */
+    @Nullable
     @Generated
     @Selector("cookies")
     public native NSArray<? extends NSHTTPCookie> cookies();
@@ -222,9 +231,10 @@ public class NSHTTPCookieStorage extends NSObject {
      * @param URL The URL for which to get cookies.
      * @return an NSArray of NSHTTPCookie objects.
      */
+    @Nullable
     @Generated
     @Selector("cookiesForURL:")
-    public native NSArray<? extends NSHTTPCookie> cookiesForURL(NSURL URL);
+    public native NSArray<? extends NSHTTPCookie> cookiesForURL(@NotNull NSURL URL);
 
     /**
      * deleteCookie:
@@ -233,15 +243,15 @@ public class NSHTTPCookieStorage extends NSObject {
      */
     @Generated
     @Selector("deleteCookie:")
-    public native void deleteCookie(NSHTTPCookie cookie);
+    public native void deleteCookie(@NotNull NSHTTPCookie cookie);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("getCookiesForTask:completionHandler:")
-    public native void getCookiesForTaskCompletionHandler(NSURLSessionTask task,
-            @ObjCBlock(name = "call_getCookiesForTaskCompletionHandler") Block_getCookiesForTaskCompletionHandler completionHandler);
+    public native void getCookiesForTaskCompletionHandler(@NotNull NSURLSessionTask task,
+            @NotNull @ObjCBlock(name = "call_getCookiesForTaskCompletionHandler") Block_getCookiesForTaskCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -256,7 +266,7 @@ public class NSHTTPCookieStorage extends NSObject {
      */
     @Generated
     @Selector("removeCookiesSinceDate:")
-    public native void removeCookiesSinceDate(NSDate date);
+    public native void removeCookiesSinceDate(@NotNull NSDate date);
 
     /**
      * setCookie:
@@ -268,7 +278,7 @@ public class NSHTTPCookieStorage extends NSObject {
      */
     @Generated
     @Selector("setCookie:")
-    public native void setCookie(NSHTTPCookie cookie);
+    public native void setCookie(@NotNull NSHTTPCookie cookie);
 
     /**
      * The cookie accept policy preference of the
@@ -300,8 +310,8 @@ public class NSHTTPCookieStorage extends NSObject {
      */
     @Generated
     @Selector("setCookies:forURL:mainDocumentURL:")
-    public native void setCookiesForURLMainDocumentURL(NSArray<? extends NSHTTPCookie> cookies, NSURL URL,
-            NSURL mainDocumentURL);
+    public native void setCookiesForURLMainDocumentURL(@NotNull NSArray<? extends NSHTTPCookie> cookies,
+            @Nullable NSURL URL, @Nullable NSURL mainDocumentURL);
 
     /**
      * sortedCookiesUsingDescriptors:
@@ -317,22 +327,24 @@ public class NSHTTPCookieStorage extends NSObject {
      * 
      * @param sortOrder an array of NSSortDescriptors which represent the preferred sort order of the resulting array.
      */
+    @NotNull
     @Generated
     @Selector("sortedCookiesUsingDescriptors:")
     public native NSArray<? extends NSHTTPCookie> sortedCookiesUsingDescriptors(
-            NSArray<? extends NSSortDescriptor> sortOrder);
+            @NotNull NSArray<? extends NSSortDescriptor> sortOrder);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("storeCookies:forTask:")
-    public native void storeCookiesForTask(NSArray<? extends NSHTTPCookie> cookies, NSURLSessionTask task);
+    public native void storeCookiesForTask(@NotNull NSArray<? extends NSHTTPCookie> cookies,
+            @NotNull NSURLSessionTask task);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCookiesForTaskCompletionHandler {
         @Generated
-        void call_getCookiesForTaskCompletionHandler(NSArray<? extends NSHTTPCookie> cookies);
+        void call_getCookiesForTaskCompletionHandler(@Nullable NSArray<? extends NSHTTPCookie> cookies);
     }
 }

@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -79,29 +81,32 @@ public class SKLightNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -133,9 +138,10 @@ public class SKLightNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,21 +154,25 @@ public class SKLightNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKLightNode nodeWithFileNamed(String filename);
+    public static native SKLightNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -197,6 +207,7 @@ public class SKLightNode extends SKNode {
      * 
      * @see lightColor
      */
+    @NotNull
     @Generated
     @Selector("ambientColor")
     public native UIColor ambientColor();
@@ -231,7 +242,7 @@ public class SKLightNode extends SKNode {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKLightNode initWithCoder(NSCoder aDecoder);
+    public native SKLightNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Enables or disables lighting contribution from this light node.
@@ -283,6 +294,7 @@ public class SKLightNode extends SKNode {
      * @see SKUniform
      * @see falloff
      */
+    @NotNull
     @Generated
     @Selector("lightColor")
     public native UIColor lightColor();
@@ -301,7 +313,7 @@ public class SKLightNode extends SKNode {
      */
     @Generated
     @Selector("setAmbientColor:")
-    public native void setAmbientColor(UIColor value);
+    public native void setAmbientColor(@NotNull UIColor value);
 
     /**
      * The category of the light, which determines the group(s) a light belongs to.
@@ -338,7 +350,7 @@ public class SKLightNode extends SKNode {
      */
     @Generated
     @Selector("setLightColor:")
-    public native void setLightColor(UIColor value);
+    public native void setLightColor(@NotNull UIColor value);
 
     /**
      * Color of the shadow casted on occluded objects, defaults to half opacity black.
@@ -350,7 +362,7 @@ public class SKLightNode extends SKNode {
      */
     @Generated
     @Selector("setShadowColor:")
-    public native void setShadowColor(UIColor value);
+    public native void setShadowColor(@NotNull UIColor value);
 
     /**
      * Color of the shadow casted on occluded objects, defaults to half opacity black.
@@ -360,14 +372,15 @@ public class SKLightNode extends SKNode {
      * @see SKSpriteNode.shadowCastBitMask
      * @see SKSpriteNode.shadowedBitMask
      */
+    @NotNull
     @Generated
     @Selector("shadowColor")
     public native UIColor shadowColor();
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKLightNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKLightNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

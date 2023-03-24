@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -29,12 +30,14 @@ public interface UIAccessibilityContainerDataTable {
      * Return the cell element for a specific row/column, including elements that span rows/columns.
      * default == nil
      */
+    @Nullable
     @Generated
     @Selector("accessibilityDataTableCellElementForRow:column:")
     @MappedReturn(ObjCObjectMapper.class)
     UIAccessibilityContainerDataTableCell accessibilityDataTableCellElementForRowColumn(@NUInt long row,
             @NUInt long column);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("accessibilityHeaderElementsForColumn:")
@@ -46,6 +49,7 @@ public interface UIAccessibilityContainerDataTable {
      * Return header elements for a specific row or column.
      * default == nil
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("accessibilityHeaderElementsForRow:")

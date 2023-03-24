@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -26,7 +27,7 @@ public interface UINavigationItemRenameDelegate {
      */
     @Generated
     @Selector("navigationItem:didEndRenamingWithTitle:")
-    void navigationItemDidEndRenamingWithTitle(UINavigationItem navigationItem, String title);
+    void navigationItemDidEndRenamingWithTitle(@NotNull UINavigationItem navigationItem, @NotNull String title);
 
     /**
      * This method can be used to prevent renaming from happening. However there are cases (e.g. when a new navigation
@@ -39,7 +40,8 @@ public interface UINavigationItemRenameDelegate {
     @Generated
     @IsOptional
     @Selector("navigationItem:shouldEndRenamingWithTitle:")
-    default boolean navigationItemShouldEndRenamingWithTitle(UINavigationItem navigationItem, String title) {
+    default boolean navigationItemShouldEndRenamingWithTitle(@NotNull UINavigationItem navigationItem,
+            @NotNull String title) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,11 +50,13 @@ public interface UINavigationItemRenameDelegate {
      * in the text field as well as the
      * selected range of that text.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("navigationItem:willBeginRenamingWithSuggestedTitle:selectedRange:")
-    default String navigationItemWillBeginRenamingWithSuggestedTitleSelectedRange(UINavigationItem navigationItem,
-            String title, @UncertainArgument("Options: reference, array Fallback: reference") NSRange selectedRange) {
+    default String navigationItemWillBeginRenamingWithSuggestedTitleSelectedRange(
+            @NotNull UINavigationItem navigationItem, @NotNull String title,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") NSRange selectedRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +68,7 @@ public interface UINavigationItemRenameDelegate {
     @Generated
     @IsOptional
     @Selector("navigationItemShouldBeginRenaming:")
-    default boolean navigationItemShouldBeginRenaming(UINavigationItem navigationItem) {
+    default boolean navigationItemShouldBeginRenaming(@NotNull UINavigationItem navigationItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

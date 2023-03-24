@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Objects conforming to UIFocusItemContainer are responsible for providing which focus items they
@@ -33,6 +34,7 @@ public interface UIFocusItemContainer {
      * You may also choose to implement your own object that conforms to UICoordinateSpace, if that is the most natural
      * solution for your architecture.
      */
+    @NotNull
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -45,6 +47,7 @@ public interface UIFocusItemContainer {
      * in a UIView subclass, it will be your responsibility to call super and merge your array of custom focus items
      * with UIView's default focus items.
      */
+    @NotNull
     @Generated
     @Selector("focusItemsInRect:")
     NSArray<?> focusItemsInRect(@ByValue CGRect rect);

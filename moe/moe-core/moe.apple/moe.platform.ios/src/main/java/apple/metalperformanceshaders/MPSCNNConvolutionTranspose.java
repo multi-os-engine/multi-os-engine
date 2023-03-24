@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNConvolutionTranspose
@@ -177,22 +179,25 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -226,19 +231,19 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNConvolutionTranspose initWithCoder(NSCoder aDecoder);
+    public native MPSCNNConvolutionTranspose initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * <NSSecureCoding> support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNConvolutionTranspose initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNConvolutionTranspose initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNConvolutionTranspose initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNConvolutionTranspose initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a convolution transpose kernel
@@ -253,8 +258,9 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithDevice:weights:")
-    public native MPSCNNConvolutionTranspose initWithDeviceWeights(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public native MPSCNNConvolutionTranspose initWithDeviceWeights(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
      * [@property] inputFeatureChannels
@@ -303,9 +309,10 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @NInt
     public native long kernelOffsetY();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -390,6 +397,7 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -432,11 +440,12 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * 
      *         API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:")
     public native MPSImage encodeToCommandBufferSourceImageConvolutionGradientState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNConvolutionGradientState convolutionGradientState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable MPSCNNConvolutionGradientState convolutionGradientState);
 
     /**
      * API-Since: 11.3
@@ -444,8 +453,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:destinationImage:")
     public native void encodeToCommandBufferSourceImageConvolutionGradientStateDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNConvolutionGradientState convolutionGradientState, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable MPSCNNConvolutionGradientState convolutionGradientState, @NotNull MPSImage destinationImage);
 
     /**
      * These low level encode functions should be used during training. The first two encode functions, which return
@@ -457,12 +466,13 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:convolutionGradientState:destinationState:destinationStateIsTemporary:")
     public native MPSImage encodeToCommandBufferSourceImageConvolutionGradientStateDestinationStateDestinationStateIsTemporary(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            @ReferenceInfo(type = MPSCNNConvolutionTransposeGradientState.class) Ptr<MPSCNNConvolutionTransposeGradientState> outState,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull @ReferenceInfo(type = MPSCNNConvolutionTransposeGradientState.class) Ptr<MPSCNNConvolutionTransposeGradientState> outState,
             boolean isTemporary);
 
     /**
@@ -479,10 +489,11 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("exportWeightsAndBiasesWithCommandBuffer:resultStateCanBeTemporary:")
     public native MPSCNNConvolutionWeightsAndBiasesState exportWeightsAndBiasesWithCommandBufferResultStateCanBeTemporary(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, boolean resultStateCanBeTemporary);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, boolean resultStateCanBeTemporary);
 
     /**
      * CPU side reload. Reload the updated weights and biases from data provider into internal weights and bias buffers.
@@ -515,8 +526,8 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     @Generated
     @Selector("reloadWeightsAndBiasesWithCommandBuffer:state:")
     public native void reloadWeightsAndBiasesWithCommandBufferState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionWeightsAndBiasesState state);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState state);
 
     /**
      * Allocate a MPCNNConvolutionTransposeGradientState to hold the results from a -encodeBatchToCommandBuffer...
@@ -533,10 +544,12 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
      * 
      *         API-Since: 11.3
      */
+    @Nullable
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
     public native MPSCNNConvolutionTransposeGradientState resultStateForSourceImageSourceStatesDestinationImage(
-            MPSImage sourceImage, NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull MPSImage sourceImage, @Nullable NSArray<? extends MPSState> sourceStates,
+            @NotNull MPSImage destinationImage);
 
     /**
      * Precision of accumulator used in convolution.
@@ -552,9 +565,10 @@ public class MPSCNNConvolutionTranspose extends MPSCNNKernel {
     /**
      * API-Since: 11.3
      */
+    @Nullable
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
     public native MPSCNNConvolutionTransposeGradientState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
 }

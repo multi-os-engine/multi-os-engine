@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageThresholdToZero
@@ -84,22 +86,25 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +176,7 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageThresholdToZero initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageThresholdToZero initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * initialize a MPSImageThresholdToZero filter
@@ -183,7 +189,8 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
     @Generated
     @Selector("initWithDevice:thresholdValue:linearGrayColorTransform:")
     public native MPSImageThresholdToZero initWithDeviceThresholdValueLinearGrayColorTransform(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue, ConstFloatPtr transform);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float thresholdValue,
+            @Nullable ConstFloatPtr transform);
 
     /**
      * [@property] thresholdValue
@@ -199,13 +206,14 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
      * 
      * The color transform used to init the threshold filter
      */
+    @NotNull
     @Generated
     @Selector("transform")
     public native ConstFloatPtr transform();
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageThresholdToZero initWithCoder(NSCoder aDecoder);
+    public native MPSImageThresholdToZero initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -224,8 +232,8 @@ public class MPSImageThresholdToZero extends MPSUnaryImageKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageThresholdToZero initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageThresholdToZero initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("supportsSecureCoding")

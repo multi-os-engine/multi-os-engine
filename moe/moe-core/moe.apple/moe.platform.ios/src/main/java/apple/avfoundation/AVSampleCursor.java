@@ -34,6 +34,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -68,22 +70,25 @@ public class AVSampleCursor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,22 +109,24 @@ public class AVSampleCursor extends NSObject implements NSCopying {
     @Generated
     @Selector("comparePositionInDecodeOrderWithPositionOfCursor:")
     @NInt
-    public native long comparePositionInDecodeOrderWithPositionOfCursor(AVSampleCursor cursor);
+    public native long comparePositionInDecodeOrderWithPositionOfCursor(@NotNull AVSampleCursor cursor);
 
     /**
      * copyCurrentSampleFormatDescription:
      * 
      * Provides the format description of the sample at the receiver's current position.
      */
+    @NotNull
     @Generated
     @Selector("copyCurrentSampleFormatDescription")
     public native CMFormatDescriptionRef copyCurrentSampleFormatDescription();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] currentChunkInfo
@@ -156,6 +163,7 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * May be nil; if nil, the storage location of the chunk is the URL of the sample cursor's track's asset, if it has
      * one.
      */
+    @Nullable
     @Generated
     @Selector("currentChunkStorageURL")
     public native NSURL currentChunkStorageURL();
@@ -188,6 +196,7 @@ public class AVSampleCursor extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("currentSampleDependencyAttachments")
     public native NSDictionary<?, ?> currentSampleDependencyAttachments();
@@ -294,9 +303,10 @@ public class AVSampleCursor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -369,7 +379,7 @@ public class AVSampleCursor extends NSObject implements NSCopying {
     @Generated
     @Selector("samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor:")
     public native boolean samplesWithEarlierDecodeTimeStampsMayHaveLaterPresentationTimeStampsThanCursor(
-            AVSampleCursor cursor);
+            @NotNull AVSampleCursor cursor);
 
     /**
      * samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:
@@ -389,7 +399,7 @@ public class AVSampleCursor extends NSObject implements NSCopying {
     @Generated
     @Selector("samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor:")
     public native boolean samplesWithLaterDecodeTimeStampsMayHaveEarlierPresentationTimeStampsThanCursor(
-            AVSampleCursor cursor);
+            @NotNull AVSampleCursor cursor);
 
     @Generated
     @Selector("setVersion:")
@@ -413,7 +423,7 @@ public class AVSampleCursor extends NSObject implements NSCopying {
     @Generated
     @Selector("stepByDecodeTime:wasPinned:")
     @ByValue
-    public native CMTime stepByDecodeTimeWasPinned(@ByValue CMTime deltaDecodeTime, BoolPtr outWasPinned);
+    public native CMTime stepByDecodeTimeWasPinned(@ByValue CMTime deltaDecodeTime, @Nullable BoolPtr outWasPinned);
 
     /**
      * stepByPresentationTime:wasPinned:
@@ -433,7 +443,8 @@ public class AVSampleCursor extends NSObject implements NSCopying {
     @Generated
     @Selector("stepByPresentationTime:wasPinned:")
     @ByValue
-    public native CMTime stepByPresentationTimeWasPinned(@ByValue CMTime deltaPresentationTime, BoolPtr outWasPinned);
+    public native CMTime stepByPresentationTimeWasPinned(@ByValue CMTime deltaPresentationTime,
+            @Nullable BoolPtr outWasPinned);
 
     /**
      * stepInDecodeOrderByCount:

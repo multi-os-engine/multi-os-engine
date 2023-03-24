@@ -30,6 +30,8 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MetalKit")
@@ -54,9 +56,11 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native MDLVertexDescriptor MTKModelIOVertexDescriptorFromMetal(MTLVertexDescriptor metalDescriptor);
+    public static native MDLVertexDescriptor MTKModelIOVertexDescriptorFromMetal(
+            @NotNull MTLVertexDescriptor metalDescriptor);
 
     /**
      * [@function] MTKModelIOVertexDescriptorFromMetalWithError
@@ -70,10 +74,11 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native MDLVertexDescriptor MTKModelIOVertexDescriptorFromMetalWithError(
-            MTLVertexDescriptor metalDescriptor, Ptr<NSError> error);
+            @NotNull MTLVertexDescriptor metalDescriptor, @Nullable Ptr<NSError> error);
 
     /**
      * [@function] MTKMetalVertexDescriptorFromModelIO
@@ -87,9 +92,11 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native MTLVertexDescriptor MTKMetalVertexDescriptorFromModelIO(MDLVertexDescriptor modelIODescriptor);
+    public static native MTLVertexDescriptor MTKMetalVertexDescriptorFromModelIO(
+            @NotNull MDLVertexDescriptor modelIODescriptor);
 
     /**
      * [@function] MTKMetalVertexDescriptorFromModelIOWithError
@@ -104,10 +111,11 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native MTLVertexDescriptor MTKMetalVertexDescriptorFromModelIOWithError(
-            MDLVertexDescriptor modelIODescriptor, Ptr<NSError> error);
+            @NotNull MDLVertexDescriptor modelIODescriptor, @Nullable Ptr<NSError> error);
 
     /**
      * [@function] MTKModelIOVertexFormatFromMetal
@@ -144,6 +152,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -154,6 +163,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -173,6 +183,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -193,6 +204,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -214,6 +226,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -229,6 +242,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -244,6 +258,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -261,6 +276,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -278,6 +294,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -295,6 +312,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -313,6 +331,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -328,6 +347,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -343,6 +363,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -358,6 +379,7 @@ public final class MetalKit {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -368,6 +390,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -378,6 +401,7 @@ public final class MetalKit {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

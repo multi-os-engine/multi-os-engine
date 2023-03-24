@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * NSTextLocation represents an abstract location inside document contents. A concrete class conforming to the protocol
@@ -31,5 +32,5 @@ public interface NSTextLocation {
     @Generated
     @Selector("compare:")
     @NInt
-    long compare(@Mapped(ObjCObjectMapper.class) NSTextLocation location);
+    long compare(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location);
 }

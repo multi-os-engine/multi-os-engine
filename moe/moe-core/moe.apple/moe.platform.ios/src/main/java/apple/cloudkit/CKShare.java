@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKShare
@@ -88,22 +90,25 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +143,10 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,6 +185,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * rootRecord. That is, if you share a rootRecord, delete the share, and re-share the same rootRecord via a newly
      * created share, that newly created share's url will be identical to the prior share's url
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -195,8 +202,9 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("addParticipant:")
-    public native void addParticipant(CKShareParticipant participant);
+    public native void addParticipant(@NotNull CKShareParticipant participant);
 
+    @Nullable
     @Generated
     @Selector("currentUserParticipant")
     public native CKShareParticipant currentUserParticipant();
@@ -207,19 +215,19 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKShare initWithCoder(NSCoder aDecoder);
+    public native CKShare initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithRecordType:")
-    public native CKShare initWithRecordType(String recordType);
+    public native CKShare initWithRecordType(@NotNull String recordType);
 
     @Generated
     @Selector("initWithRecordType:recordID:")
-    public native CKShare initWithRecordTypeRecordID(String recordType, CKRecordID recordID);
+    public native CKShare initWithRecordTypeRecordID(@NotNull String recordType, @NotNull CKRecordID recordID);
 
     @Generated
     @Selector("initWithRecordType:zoneID:")
-    public native CKShare initWithRecordTypeZoneID(String recordType, CKRecordZoneID zoneID);
+    public native CKShare initWithRecordTypeZoneID(@NotNull String recordType, @NotNull CKRecordZoneID zoneID);
 
     /**
      * When saving a newly created CKShare, you must save the share and its rootRecord in the same
@@ -227,15 +235,16 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("initWithRootRecord:")
-    public native CKShare initWithRootRecord(CKRecord rootRecord);
+    public native CKShare initWithRootRecord(@NotNull CKRecord rootRecord);
 
     @Generated
     @Selector("initWithRootRecord:shareID:")
-    public native CKShare initWithRootRecordShareID(CKRecord rootRecord, CKRecordID shareID);
+    public native CKShare initWithRootRecordShareID(@NotNull CKRecord rootRecord, @NotNull CKRecordID shareID);
 
     /**
      * Convenience methods for fetching special users from the participant array
      */
+    @NotNull
     @Generated
     @Selector("owner")
     public native CKShareParticipant owner();
@@ -245,6 +254,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      * 
      * At the minimum that will include the owner and the current user.
      */
+    @NotNull
     @Generated
     @Selector("participants")
     public native NSArray<? extends CKShareParticipant> participants();
@@ -269,7 +279,7 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("removeParticipant:")
-    public native void removeParticipant(CKShareParticipant participant);
+    public native void removeParticipant(@NotNull CKShareParticipant participant);
 
     /**
      * Defines what permission a user has when not explicitly added to the share.
@@ -296,13 +306,14 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Creates a zone-wide @c CKShare. A zone-wide @c CKShare can only exist in a zone with sharing capability @c
@@ -323,5 +334,5 @@ public class CKShare extends CKRecord implements NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("initWithRecordZoneID:")
-    public native CKShare initWithRecordZoneID(CKRecordZoneID recordZoneID);
+    public native CKShare initWithRecordZoneID(@NotNull CKRecordZoneID recordZoneID);
 }

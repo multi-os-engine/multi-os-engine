@@ -23,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.FloatPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -44,25 +45,27 @@ public final class DSPSplitComplex extends StructObject {
     }
 
     @Generated
-    public DSPSplitComplex(FloatPtr realp, FloatPtr imagp) {
+    public DSPSplitComplex(@NotNull FloatPtr realp, @NotNull FloatPtr imagp) {
         super(DSPSplitComplex.class);
         setRealp(realp);
         setImagp(imagp);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native FloatPtr realp();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setRealp(FloatPtr value);
+    public native void setRealp(@NotNull FloatPtr value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native FloatPtr imagp();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setImagp(FloatPtr value);
+    public native void setImagp(@NotNull FloatPtr value);
 }

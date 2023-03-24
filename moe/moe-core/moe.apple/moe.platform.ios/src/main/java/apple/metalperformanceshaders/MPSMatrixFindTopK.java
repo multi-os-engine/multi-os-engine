@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixFindTopK
@@ -71,22 +73,25 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,10 +106,12 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
      *         nil if the device is not supported. Devices must be
      *         MTLFeatureSet_iOS_GPUFamily2_v1 or later.
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSMatrixFindTopK copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSMatrixFindTopK copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -145,8 +152,8 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:inputMatrix:resultIndexMatrix:resultValueMatrix:")
     public native void encodeToCommandBufferInputMatrixResultIndexMatrixResultValueMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputMatrix,
-            MPSMatrix resultIndexMatrix, MPSMatrix resultValueMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix inputMatrix,
+            @NotNull MPSMatrix resultIndexMatrix, @NotNull MPSMatrix resultValueMatrix);
 
     @Generated
     @Selector("hash")
@@ -195,27 +202,27 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixFindTopK initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixFindTopK initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * FIXME: Fix availability macros to 10.14 and 12.0 once we get there
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixFindTopK initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixFindTopK initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixFindTopK initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixFindTopK initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * FIXME: Fix availability macros to 10.14 and 12.0 once we get there
      */
     @Generated
     @Selector("initWithDevice:numberOfTopKValues:")
-    public native MPSMatrixFindTopK initWithDeviceNumberOfTopKValues(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long numberOfTopKValues);
+    public native MPSMatrixFindTopK initWithDeviceNumberOfTopKValues(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long numberOfTopKValues);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -234,9 +241,10 @@ public class MPSMatrixFindTopK extends MPSMatrixUnaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

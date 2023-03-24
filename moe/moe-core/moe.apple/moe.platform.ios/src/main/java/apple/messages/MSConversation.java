@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -75,22 +77,25 @@ public class MSConversation extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class MSConversation extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,8 +183,9 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("insertAttachment:withAlternateFilename:completionHandler:")
-    public native void insertAttachmentWithAlternateFilenameCompletionHandler(NSURL URL, String filename,
-            @ObjCBlock(name = "call_insertAttachmentWithAlternateFilenameCompletionHandler") Block_insertAttachmentWithAlternateFilenameCompletionHandler completionHandler);
+    public native void insertAttachmentWithAlternateFilenameCompletionHandler(@NotNull NSURL URL,
+            @Nullable String filename,
+            @Nullable @ObjCBlock(name = "call_insertAttachmentWithAlternateFilenameCompletionHandler") Block_insertAttachmentWithAlternateFilenameCompletionHandler completionHandler);
 
     /**
      * insertMessage:completionHandler:
@@ -199,8 +206,8 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("insertMessage:completionHandler:")
-    public native void insertMessageCompletionHandler(MSMessage message,
-            @ObjCBlock(name = "call_insertMessageCompletionHandler") Block_insertMessageCompletionHandler completionHandler);
+    public native void insertMessageCompletionHandler(@NotNull MSMessage message,
+            @Nullable @ObjCBlock(name = "call_insertMessageCompletionHandler") Block_insertMessageCompletionHandler completionHandler);
 
     /**
      * insertSticker:completionHandler:
@@ -212,8 +219,8 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("insertSticker:completionHandler:")
-    public native void insertStickerCompletionHandler(MSSticker sticker,
-            @ObjCBlock(name = "call_insertStickerCompletionHandler") Block_insertStickerCompletionHandler completionHandler);
+    public native void insertStickerCompletionHandler(@NotNull MSSticker sticker,
+            @Nullable @ObjCBlock(name = "call_insertStickerCompletionHandler") Block_insertStickerCompletionHandler completionHandler);
 
     /**
      * insertText:completionHandler:
@@ -229,8 +236,8 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("insertText:completionHandler:")
-    public native void insertTextCompletionHandler(String text,
-            @ObjCBlock(name = "call_insertTextCompletionHandler") Block_insertTextCompletionHandler completionHandler);
+    public native void insertTextCompletionHandler(@NotNull String text,
+            @Nullable @ObjCBlock(name = "call_insertTextCompletionHandler") Block_insertTextCompletionHandler completionHandler);
 
     /**
      * [@property] localParticipantIdentifier
@@ -242,6 +249,7 @@ public class MSConversation extends NSObject {
      * disabled and re-enabled or the containing App is removed and re-installed this
      * value will change.
      */
+    @NotNull
     @Generated
     @Selector("localParticipantIdentifier")
     public native NSUUID localParticipantIdentifier();
@@ -256,6 +264,7 @@ public class MSConversation extends NSObject {
      * is disabled and re-enabled or the containing App is removed and re-installed these
      * values will change.
      */
+    @NotNull
     @Generated
     @Selector("remoteParticipantIdentifiers")
     public native NSArray<? extends NSUUID> remoteParticipantIdentifiers();
@@ -270,6 +279,7 @@ public class MSConversation extends NSObject {
      * Otherwise this property will be nil. The message object provided may be saved to the
      * file system. Later, this saved object may be loaded, modified and staged for sending.
      */
+    @Nullable
     @Generated
     @Selector("selectedMessage")
     public native MSMessage selectedMessage();
@@ -278,28 +288,28 @@ public class MSConversation extends NSObject {
     @Generated
     public interface Block_insertAttachmentWithAlternateFilenameCompletionHandler {
         @Generated
-        void call_insertAttachmentWithAlternateFilenameCompletionHandler(NSError error);
+        void call_insertAttachmentWithAlternateFilenameCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertMessageCompletionHandler {
         @Generated
-        void call_insertMessageCompletionHandler(NSError error);
+        void call_insertMessageCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertStickerCompletionHandler {
         @Generated
-        void call_insertStickerCompletionHandler(NSError error);
+        void call_insertStickerCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_insertTextCompletionHandler {
         @Generated
-        void call_insertTextCompletionHandler(NSError error);
+        void call_insertTextCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -324,14 +334,15 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("sendAttachment:withAlternateFilename:completionHandler:")
-    public native void sendAttachmentWithAlternateFilenameCompletionHandler(NSURL URL, String filename,
-            @ObjCBlock(name = "call_sendAttachmentWithAlternateFilenameCompletionHandler") Block_sendAttachmentWithAlternateFilenameCompletionHandler completionHandler);
+    public native void sendAttachmentWithAlternateFilenameCompletionHandler(@NotNull NSURL URL,
+            @Nullable String filename,
+            @Nullable @ObjCBlock(name = "call_sendAttachmentWithAlternateFilenameCompletionHandler") Block_sendAttachmentWithAlternateFilenameCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendAttachmentWithAlternateFilenameCompletionHandler {
         @Generated
-        void call_sendAttachmentWithAlternateFilenameCompletionHandler(NSError error);
+        void call_sendAttachmentWithAlternateFilenameCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -354,14 +365,14 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("sendMessage:completionHandler:")
-    public native void sendMessageCompletionHandler(MSMessage message,
-            @ObjCBlock(name = "call_sendMessageCompletionHandler") Block_sendMessageCompletionHandler completionHandler);
+    public native void sendMessageCompletionHandler(@NotNull MSMessage message,
+            @Nullable @ObjCBlock(name = "call_sendMessageCompletionHandler") Block_sendMessageCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageCompletionHandler {
         @Generated
-        void call_sendMessageCompletionHandler(NSError error);
+        void call_sendMessageCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -380,14 +391,14 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("sendSticker:completionHandler:")
-    public native void sendStickerCompletionHandler(MSSticker sticker,
-            @ObjCBlock(name = "call_sendStickerCompletionHandler") Block_sendStickerCompletionHandler completionHandler);
+    public native void sendStickerCompletionHandler(@NotNull MSSticker sticker,
+            @Nullable @ObjCBlock(name = "call_sendStickerCompletionHandler") Block_sendStickerCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendStickerCompletionHandler {
         @Generated
-        void call_sendStickerCompletionHandler(NSError error);
+        void call_sendStickerCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -410,13 +421,13 @@ public class MSConversation extends NSObject {
      */
     @Generated
     @Selector("sendText:completionHandler:")
-    public native void sendTextCompletionHandler(String text,
-            @ObjCBlock(name = "call_sendTextCompletionHandler") Block_sendTextCompletionHandler completionHandler);
+    public native void sendTextCompletionHandler(@NotNull String text,
+            @Nullable @ObjCBlock(name = "call_sendTextCompletionHandler") Block_sendTextCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendTextCompletionHandler {
         @Generated
-        void call_sendTextCompletionHandler(NSError error);
+        void call_sendTextCompletionHandler(@Nullable NSError error);
     }
 }

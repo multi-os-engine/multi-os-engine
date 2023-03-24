@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNText
@@ -82,22 +84,25 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,12 +121,12 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNText geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNText geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNText geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNText geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -145,9 +150,10 @@ public class SCNText extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,7 +190,7 @@ public class SCNText extends SCNGeometry {
      */
     @Generated
     @Selector("textWithString:extrusionDepth:")
-    public static native SCNText textWithStringExtrusionDepth(@Mapped(ObjCObjectMapper.class) Object string,
+    public static native SCNText textWithStringExtrusionDepth(@Nullable @Mapped(ObjCObjectMapper.class) Object string,
             @NFloat double extrusionDepth);
 
     @Generated
@@ -200,6 +206,7 @@ public class SCNText extends SCNGeometry {
      * For the text to be aligned you first need to set its bounds, otherwise the text is not aligned. The default value
      * is kCAAlignmentNatural. See alignments in CATextLayer.h.
      */
+    @NotNull
     @Generated
     @Selector("alignmentMode")
     public native String alignmentMode();
@@ -213,6 +220,7 @@ public class SCNText extends SCNGeometry {
      * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
      * flatten this path. The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("chamferProfile")
     public native UIBezierPath chamferProfile();
@@ -286,7 +294,7 @@ public class SCNText extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNText initWithCoder(NSCoder coder);
+    public native SCNText initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] wrapped
@@ -322,7 +330,7 @@ public class SCNText extends SCNGeometry {
      */
     @Generated
     @Selector("setAlignmentMode:")
-    public native void setAlignmentMode(String value);
+    public native void setAlignmentMode(@NotNull String value);
 
     /**
      * [@property] chamferProfile
@@ -335,7 +343,7 @@ public class SCNText extends SCNGeometry {
      */
     @Generated
     @Selector("setChamferProfile:")
-    public native void setChamferProfile(UIBezierPath value);
+    public native void setChamferProfile(@Nullable UIBezierPath value);
 
     /**
      * [@property] chamferRadius
@@ -405,7 +413,7 @@ public class SCNText extends SCNGeometry {
      */
     @Generated
     @Selector("setString:")
-    public native void setString(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setString(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] truncationMode
@@ -417,7 +425,7 @@ public class SCNText extends SCNGeometry {
      */
     @Generated
     @Selector("setTruncationMode:")
-    public native void setTruncationMode(String value);
+    public native void setTruncationMode(@NotNull String value);
 
     /**
      * [@property] string
@@ -426,6 +434,7 @@ public class SCNText extends SCNGeometry {
      * 
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("string")
     @MappedReturn(ObjCObjectMapper.class)
@@ -445,6 +454,7 @@ public class SCNText extends SCNGeometry {
      * For the text to be truncated you first need to set its bounds, otherwise the text is not truncated. The default
      * value is kCATruncationNone. See truncation modes in CATextLayer.h.
      */
+    @NotNull
     @Generated
     @Selector("truncationMode")
     public native String truncationMode();

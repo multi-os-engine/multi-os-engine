@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -86,22 +88,25 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -110,6 +115,7 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultMediaLibrary")
     public static native MPMediaLibrary defaultMediaLibrary();
@@ -140,9 +146,10 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +162,7 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization completionHandler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -187,8 +194,8 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("addItemWithProductID:completionHandler:")
-    public native void addItemWithProductIDCompletionHandler(String productID,
-            @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
+    public native void addItemWithProductIDCompletionHandler(@NotNull String productID,
+            @Nullable @ObjCBlock(name = "call_addItemWithProductIDCompletionHandler") Block_addItemWithProductIDCompletionHandler completionHandler);
 
     /**
      * MPMediaLibraryDidChangeNotification will be posted when a sync happens.
@@ -199,7 +206,7 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("endGeneratingLibraryChangeNotifications")
@@ -216,9 +223,9 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("getPlaylistWithUUID:creationMetadata:completionHandler:")
-    public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(NSUUID uuid,
-            MPMediaPlaylistCreationMetadata creationMetadata,
-            @ObjCBlock(name = "call_getPlaylistWithUUIDCreationMetadataCompletionHandler") Block_getPlaylistWithUUIDCreationMetadataCompletionHandler completionHandler);
+    public native void getPlaylistWithUUIDCreationMetadataCompletionHandler(@NotNull NSUUID uuid,
+            @Nullable MPMediaPlaylistCreationMetadata creationMetadata,
+            @NotNull @ObjCBlock(name = "call_getPlaylistWithUUIDCreationMetadataCompletionHandler") Block_getPlaylistWithUUIDCreationMetadataCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -226,11 +233,12 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaLibrary initWithCoder(NSCoder coder);
+    public native MPMediaLibrary initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns the date at which the media library was last modified.
      */
+    @NotNull
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();
@@ -245,14 +253,16 @@ public class MPMediaLibrary extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_addItemWithProductIDCompletionHandler {
         @Generated
-        void call_addItemWithProductIDCompletionHandler(NSArray<? extends MPMediaEntity> entities, NSError error);
+        void call_addItemWithProductIDCompletionHandler(@NotNull NSArray<? extends MPMediaEntity> entities,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getPlaylistWithUUIDCreationMetadataCompletionHandler {
         @Generated
-        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(MPMediaPlaylist playlist, NSError error);
+        void call_getPlaylistWithUUIDCreationMetadataCompletionHandler(@Nullable MPMediaPlaylist playlist,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

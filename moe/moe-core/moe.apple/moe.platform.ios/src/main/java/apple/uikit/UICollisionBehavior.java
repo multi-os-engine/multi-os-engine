@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -77,22 +79,25 @@ public class UICollisionBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class UICollisionBehavior extends UIDynamicBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,26 +165,29 @@ public class UICollisionBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("addBoundaryWithIdentifier:forPath:")
-    public native void addBoundaryWithIdentifierForPath(@Mapped(ObjCObjectMapper.class) Object identifier,
-            UIBezierPath bezierPath);
+    public native void addBoundaryWithIdentifierForPath(@NotNull @Mapped(ObjCObjectMapper.class) Object identifier,
+            @NotNull UIBezierPath bezierPath);
 
     @Generated
     @Selector("addBoundaryWithIdentifier:fromPoint:toPoint:")
-    public native void addBoundaryWithIdentifierFromPointToPoint(@Mapped(ObjCObjectMapper.class) Object identifier,
-            @ByValue CGPoint p1, @ByValue CGPoint p2);
+    public native void addBoundaryWithIdentifierFromPointToPoint(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object identifier, @ByValue CGPoint p1, @ByValue CGPoint p2);
 
     @Generated
     @Selector("addItem:")
-    public native void addItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void addItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
+    @Nullable
     @Generated
     @Selector("boundaryIdentifiers")
     public native NSArray<?> boundaryIdentifiers();
 
+    @Nullable
     @Generated
     @Selector("boundaryWithIdentifier:")
-    public native UIBezierPath boundaryWithIdentifier(@Mapped(ObjCObjectMapper.class) Object identifier);
+    public native UIBezierPath boundaryWithIdentifier(@NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
 
+    @Nullable
     @Generated
     @Selector("collisionDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,8 +204,9 @@ public class UICollisionBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("initWithItems:")
-    public native UICollisionBehavior initWithItems(NSArray<?> items);
+    public native UICollisionBehavior initWithItems(@NotNull NSArray<?> items);
 
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
@@ -207,18 +217,19 @@ public class UICollisionBehavior extends UIDynamicBehavior {
 
     @Generated
     @Selector("removeBoundaryWithIdentifier:")
-    public native void removeBoundaryWithIdentifier(@Mapped(ObjCObjectMapper.class) Object identifier);
+    public native void removeBoundaryWithIdentifier(@NotNull @Mapped(ObjCObjectMapper.class) Object identifier);
 
     @Generated
     @Selector("removeItem:")
-    public native void removeItem(@Mapped(ObjCObjectMapper.class) UIDynamicItem item);
+    public native void removeItem(@NotNull @Mapped(ObjCObjectMapper.class) UIDynamicItem item);
 
     @Generated
     @Selector("setCollisionDelegate:")
-    public native void setCollisionDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value);
+    public native void setCollisionDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value);
 
     @Generated
-    public void setCollisionDelegate(@Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value) {
+    public void setCollisionDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UICollisionBehaviorDelegate value) {
         Object __old = collisionDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

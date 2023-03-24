@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 10.0
@@ -42,36 +43,37 @@ public interface GKGameSessionEventListener {
     @Generated
     @IsOptional
     @Selector("session:didAddPlayer:")
-    default void sessionDidAddPlayer(GKGameSession session, GKCloudPlayer player) {
+    default void sessionDidAddPlayer(@NotNull GKGameSession session, @NotNull GKCloudPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("session:didReceiveData:fromPlayer:")
-    default void sessionDidReceiveDataFromPlayer(GKGameSession session, NSData data, GKCloudPlayer player) {
+    default void sessionDidReceiveDataFromPlayer(@NotNull GKGameSession session, @NotNull NSData data,
+            @NotNull GKCloudPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:withData:fromPlayer:")
-    default void sessionDidReceiveMessageWithDataFromPlayer(GKGameSession session, String message, NSData data,
-            GKCloudPlayer player) {
+    default void sessionDidReceiveMessageWithDataFromPlayer(@NotNull GKGameSession session, @NotNull String message,
+            @NotNull NSData data, @NotNull GKCloudPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("session:didRemovePlayer:")
-    default void sessionDidRemovePlayer(GKGameSession session, GKCloudPlayer player) {
+    default void sessionDidRemovePlayer(@NotNull GKGameSession session, @NotNull GKCloudPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("session:player:didChangeConnectionState:")
-    default void sessionPlayerDidChangeConnectionState(GKGameSession session, GKCloudPlayer player,
+    default void sessionPlayerDidChangeConnectionState(@NotNull GKGameSession session, @NotNull GKCloudPlayer player,
             @NInt long newState) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,7 +81,8 @@ public interface GKGameSessionEventListener {
     @Generated
     @IsOptional
     @Selector("session:player:didSaveData:")
-    default void sessionPlayerDidSaveData(GKGameSession session, GKCloudPlayer player, NSData data) {
+    default void sessionPlayerDidSaveData(@NotNull GKGameSession session, @NotNull GKCloudPlayer player,
+            @NotNull NSData data) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNTechniqueSupport
@@ -41,13 +42,14 @@ public interface SCNTechniqueSupport {
      */
     @Generated
     @Selector("setTechnique:")
-    void setTechnique(SCNTechnique value);
+    void setTechnique(@Nullable SCNTechnique value);
 
     /**
      * [@property] technique
      * 
      * Specifies the technique of the receiver. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("technique")
     SCNTechnique technique();

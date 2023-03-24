@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corevideo.opaque.CVBufferRef;
 import org.moe.natj.general.ptr.ConstVoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Multidimensional Array
@@ -67,22 +69,25 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,6 +108,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * Deprecated-Message: Use getBytesWithHandler or getMutableBytesWithHandler instead. For Swift, use withUnsafeBytes
      * or withUnsafeMutableBytes.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("dataPointer")
@@ -138,16 +144,17 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithDataPointer:shape:dataType:strides:deallocator:error:")
-    public native MLMultiArray initWithDataPointerShapeDataTypeStridesDeallocatorError(VoidPtr dataPointer,
-            NSArray<? extends NSNumber> shape, @NInt long dataType, NSArray<? extends NSNumber> strides,
-            @ObjCBlock(name = "call_initWithDataPointerShapeDataTypeStridesDeallocatorError") Block_initWithDataPointerShapeDataTypeStridesDeallocatorError deallocator,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MLMultiArray initWithDataPointerShapeDataTypeStridesDeallocatorError(@NotNull VoidPtr dataPointer,
+            @NotNull NSArray<? extends NSNumber> shape, @NInt long dataType,
+            @NotNull NSArray<? extends NSNumber> strides,
+            @Nullable @ObjCBlock(name = "call_initWithDataPointerShapeDataTypeStridesDeallocatorError") Block_initWithDataPointerShapeDataTypeStridesDeallocatorError deallocator,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithDataPointerShapeDataTypeStridesDeallocatorError {
         @Generated
-        void call_initWithDataPointerShapeDataTypeStridesDeallocatorError(VoidPtr bytes);
+        void call_initWithDataPointerShapeDataTypeStridesDeallocatorError(@NotNull VoidPtr bytes);
     }
 
     /**
@@ -155,8 +162,8 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithShape:dataType:error:")
-    public native MLMultiArray initWithShapeDataTypeError(NSArray<? extends NSNumber> shape, @NInt long dataType,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native MLMultiArray initWithShapeDataTypeError(@NotNull NSArray<? extends NSNumber> shape,
+            @NInt long dataType, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -175,9 +182,10 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,6 +195,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     /**
      * Get a value by its linear index (assumes C-style index ordering)
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native NSNumber objectAtIndexedSubscript(@NInt long idx);
@@ -194,9 +203,10 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     /**
      * Get a value by its multidimensional index (NSArray<NSNumber *>)
      */
+    @NotNull
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native NSNumber objectForKeyedSubscript(NSArray<? extends NSNumber> key);
+    public native NSNumber objectForKeyedSubscript(@NotNull NSArray<? extends NSNumber> key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -211,14 +221,14 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setObject:atIndexedSubscript:")
-    public native void setObjectAtIndexedSubscript(NSNumber obj, @NInt long idx);
+    public native void setObjectAtIndexedSubscript(@NotNull NSNumber obj, @NInt long idx);
 
     /**
      * Set a value by subindicies (NSArray<NSNumber *>)
      */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(NSNumber obj, NSArray<? extends NSNumber> key);
+    public native void setObjectForKeyedSubscript(@NotNull NSNumber obj, @NotNull NSArray<? extends NSNumber> key);
 
     @Generated
     @Selector("setVersion:")
@@ -227,6 +237,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     /**
      * An array containing the sizes of each dimension in the multiarray
      */
+    @NotNull
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
@@ -236,6 +247,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      * The element referred to by a multidimensional index is located at an offset equal to
      * sum_d index[d]*strides[d]. This offset is in the units of the specified dataType.
      */
+    @NotNull
     @Generated
     @Selector("strides")
     public native NSArray<? extends NSNumber> strides();
@@ -251,11 +263,11 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MLMultiArray initWithCoder(NSCoder coder);
+    public native MLMultiArray initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Concatenate MLMultiArrays to form a new MLMultiArray.
@@ -300,7 +312,7 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("multiArrayByConcatenatingMultiArrays:alongAxis:dataType:")
     public static native MLMultiArray multiArrayByConcatenatingMultiArraysAlongAxisDataType(
-            NSArray<? extends MLMultiArray> multiArrays, @NInt long axis, @NInt long dataType);
+            @NotNull NSArray<? extends MLMultiArray> multiArrays, @NInt long axis, @NInt long dataType);
 
     @Generated
     @Selector("supportsSecureCoding")
@@ -335,13 +347,13 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("getBytesWithHandler:")
     public native void getBytesWithHandler(
-            @ObjCBlock(name = "call_getBytesWithHandler") Block_getBytesWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_getBytesWithHandler") Block_getBytesWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getBytesWithHandler {
         @Generated
-        void call_getBytesWithHandler(ConstVoidPtr bytes, @NInt long size);
+        void call_getBytesWithHandler(@NotNull ConstVoidPtr bytes, @NInt long size);
     }
 
     /**
@@ -369,14 +381,14 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("getMutableBytesWithHandler:")
     public native void getMutableBytesWithHandler(
-            @ObjCBlock(name = "call_getMutableBytesWithHandler") Block_getMutableBytesWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_getMutableBytesWithHandler") Block_getMutableBytesWithHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getMutableBytesWithHandler {
         @Generated
-        void call_getMutableBytesWithHandler(VoidPtr mutableBytes, @NInt long size,
-                NSArray<? extends NSNumber> strides);
+        void call_getMutableBytesWithHandler(@NotNull VoidPtr mutableBytes, @NInt long size,
+                @NotNull NSArray<? extends NSNumber> strides);
     }
 
     /**
@@ -411,13 +423,15 @@ public class MLMultiArray extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithPixelBuffer:shape:")
-    public native MLMultiArray initWithPixelBufferShape(CVBufferRef pixelBuffer, NSArray<? extends NSNumber> shape);
+    public native MLMultiArray initWithPixelBufferShape(@NotNull CVBufferRef pixelBuffer,
+            @NotNull NSArray<? extends NSNumber> shape);
 
     /**
      * Returns the backing pixel buffer if exists, otherwise nil.
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("pixelBuffer")
     public native CVBufferRef pixelBuffer();

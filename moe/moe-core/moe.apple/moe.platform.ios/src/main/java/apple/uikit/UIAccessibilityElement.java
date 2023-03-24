@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIAccessibilityElement
@@ -82,22 +84,25 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,6 +168,7 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("accessibilityContainer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,14 +190,17 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @ByValue
     public native CGRect accessibilityFrameInContainerSpace();
 
+    @Nullable
     @Generated
     @Selector("accessibilityHint")
     public native String accessibilityHint();
 
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
+    @Nullable
     @Generated
     @Selector("accessibilityLabel")
     public native String accessibilityLabel();
@@ -199,6 +209,7 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Selector("accessibilityTraits")
     public native long accessibilityTraits();
 
+    @Nullable
     @Generated
     @Selector("accessibilityValue")
     public native String accessibilityValue();
@@ -213,7 +224,7 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
     @Generated
     @Selector("initWithAccessibilityContainer:")
     public native UIAccessibilityElement initWithAccessibilityContainer(
-            @Mapped(ObjCObjectMapper.class) Object container);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object container);
 
     @Generated
     @Selector("isAccessibilityElement")
@@ -221,10 +232,10 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
 
     @Generated
     @Selector("setAccessibilityContainer:")
-    public native void setAccessibilityContainer_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setAccessibilityContainer_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setAccessibilityContainer(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setAccessibilityContainer(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = accessibilityContainer();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -251,15 +262,15 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
 
     @Generated
     @Selector("setAccessibilityHint:")
-    public native void setAccessibilityHint(String value);
+    public native void setAccessibilityHint(@Nullable String value);
 
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
+    public native void setAccessibilityIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setAccessibilityLabel:")
-    public native void setAccessibilityLabel(String value);
+    public native void setAccessibilityLabel(@Nullable String value);
 
     @Generated
     @Selector("setAccessibilityTraits:")
@@ -267,7 +278,7 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
 
     @Generated
     @Selector("setAccessibilityValue:")
-    public native void setAccessibilityValue(String value);
+    public native void setAccessibilityValue(@Nullable String value);
 
     @Generated
     @Selector("setIsAccessibilityElement:")
@@ -275,5 +286,5 @@ public class UIAccessibilityElement extends UIResponder implements UIAccessibili
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 }

@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCDevice
@@ -87,43 +89,49 @@ public class MLCDevice extends NSObject implements NSCopying {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("aneDevice")
     public static native MLCDevice aneDevice();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Creates a device which uses the CPU.
      * 
      * @return A new device.
      */
+    @NotNull
     @Generated
     @Selector("cpuDevice")
     public static native MLCDevice cpuDevice();
@@ -146,7 +154,7 @@ public class MLCDevice extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("deviceWithGPUDevices:")
-    public static native MLCDevice deviceWithGPUDevices(NSArray<?> gpus);
+    public static native MLCDevice deviceWithGPUDevices(@NotNull NSArray<?> gpus);
 
     /**
      * Create a MLCDevice object
@@ -177,10 +185,12 @@ public class MLCDevice extends NSObject implements NSCopying {
      * 
      * @return A new device, or `nil` if no GPU exists.
      */
+    @Nullable
     @Generated
     @Selector("gpuDevice")
     public static native MLCDevice gpuDevice();
 
+    @NotNull
     @Generated
     @Selector("gpuDevices")
     public native NSArray<?> gpuDevices();
@@ -211,9 +221,10 @@ public class MLCDevice extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

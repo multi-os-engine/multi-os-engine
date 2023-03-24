@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -84,22 +86,25 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,15 +174,16 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:
@@ -206,7 +213,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @Generated
     @Selector("getCropRectangleRampForTime:startCropRectangle:endCropRectangle:timeRange:")
     public native boolean getCropRectangleRampForTimeStartCropRectangleEndCropRectangleTimeRange(@ByValue CMTime time,
-            CGRect startCropRectangle, CGRect endCropRectangle, CMTimeRange timeRange);
+            @Nullable CGRect startCropRectangle, @Nullable CGRect endCropRectangle, @Nullable CMTimeRange timeRange);
 
     /**
      * getOpacityRampForTime:startOpacity:endOpacity:timeRange:
@@ -230,7 +237,7 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @Generated
     @Selector("getOpacityRampForTime:startOpacity:endOpacity:timeRange:")
     public native boolean getOpacityRampForTimeStartOpacityEndOpacityTimeRange(@ByValue CMTime time,
-            FloatPtr startOpacity, FloatPtr endOpacity, CMTimeRange timeRange);
+            @Nullable FloatPtr startOpacity, @Nullable FloatPtr endOpacity, @Nullable CMTimeRange timeRange);
 
     /**
      * getTransformRampForTime:startTransform:endTransform:timeRange:
@@ -257,7 +264,8 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
     @Generated
     @Selector("getTransformRampForTime:startTransform:endTransform:timeRange:")
     public native boolean getTransformRampForTimeStartTransformEndTransformTimeRange(@ByValue CMTime time,
-            CGAffineTransform startTransform, CGAffineTransform endTransform, CMTimeRange timeRange);
+            @Nullable CGAffineTransform startTransform, @Nullable CGAffineTransform endTransform,
+            @Nullable CMTimeRange timeRange);
 
     @Generated
     @Selector("init")
@@ -265,13 +273,14 @@ public class AVVideoCompositionLayerInstruction extends NSObject implements NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVVideoCompositionLayerInstruction initWithCoder(NSCoder coder);
+    public native AVVideoCompositionLayerInstruction initWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

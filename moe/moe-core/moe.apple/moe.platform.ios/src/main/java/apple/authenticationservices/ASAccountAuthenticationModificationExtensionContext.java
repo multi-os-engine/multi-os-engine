@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -59,29 +61,32 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Used to either ask for user interaction in a request or to fail a request.
      */
     @Generated
     @Selector("cancelRequestWithError:")
-    public native void cancelRequestWithError(NSError error);
+    public native void cancelRequestWithError(@NotNull NSError error);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +101,7 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
     @Generated
     @Selector("completeChangePasswordRequestWithUpdatedCredential:userInfo:")
     public native void completeChangePasswordRequestWithUpdatedCredentialUserInfo(
-            ASPasswordCredential updatedCredential, NSDictionary<?, ?> userInfo);
+            @NotNull ASPasswordCredential updatedCredential, @Nullable NSDictionary<?, ?> userInfo);
 
     /**
      * Confirms successful completion of a Sign in with Apple upgrade.
@@ -109,7 +114,7 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
      */
     @Generated
     @Selector("completeUpgradeToSignInWithAppleWithUserInfo:")
-    public native void completeUpgradeToSignInWithAppleWithUserInfo(NSDictionary<?, ?> userInfo);
+    public native void completeUpgradeToSignInWithAppleWithUserInfo(@Nullable NSDictionary<?, ?> userInfo);
 
     @Generated
     @Selector("debugDescription")
@@ -132,15 +137,16 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
      */
     @Generated
     @Selector("getSignInWithAppleUpgradeAuthorizationWithState:nonce:completionHandler:")
-    public native void getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler(String state, String nonce,
-            @ObjCBlock(name = "call_getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler") Block_getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler completionHandler);
+    public native void getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler(@Nullable String state,
+            @Nullable String nonce,
+            @NotNull @ObjCBlock(name = "call_getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler") Block_getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler {
         @Generated
         void call_getSignInWithAppleUpgradeAuthorizationWithStateNonceCompletionHandler(
-                ASAuthorizationAppleIDCredential authorization, NSError error);
+                @Nullable ASAuthorizationAppleIDCredential authorization, @Nullable NSError error);
     }
 
     @Generated
@@ -169,9 +175,10 @@ public class ASAccountAuthenticationModificationExtensionContext extends NSExten
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

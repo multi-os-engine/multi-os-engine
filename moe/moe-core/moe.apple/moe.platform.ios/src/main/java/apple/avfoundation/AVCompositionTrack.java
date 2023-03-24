@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -73,22 +75,25 @@ public class AVCompositionTrack extends AVAssetTrack {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class AVCompositionTrack extends AVAssetTrack {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,6 +174,7 @@ public class AVCompositionTrack extends AVAssetTrack {
      * Use -validateTrackSegments:error: to perform a test to ensure that an array of AVCompositionTrackSegments
      * conforms to this rule.
      */
+    @NotNull
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVCompositionTrackSegment> segments();
@@ -185,6 +192,7 @@ public class AVCompositionTrack extends AVAssetTrack {
      *                  The trackTime for which an AVCompositionTrackSegment is requested.
      * @return An AVCompositionTrackSegment.
      */
+    @Nullable
     @Generated
     @Selector("segmentForTrackTime:")
     public native AVCompositionTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);
@@ -203,6 +211,7 @@ public class AVCompositionTrack extends AVAssetTrack {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("formatDescriptionReplacements")
     public native NSArray<? extends AVCompositionTrackFormatDescriptionReplacement> formatDescriptionReplacements();
@@ -210,17 +219,19 @@ public class AVCompositionTrack extends AVAssetTrack {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("associatedTracksOfType:")
-    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(String trackAssociationType);
+    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
 
     @Generated
     @Selector("hasMediaCharacteristic:")
-    public native boolean hasMediaCharacteristic(String mediaCharacteristic);
+    public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    @NotNull
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     @Generated
     @Selector("samplePresentationTimeForTrackTime:")

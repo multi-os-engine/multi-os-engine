@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSearchCallHistoryIntent. By implementing this protocol, a class can
@@ -67,8 +68,8 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSearchCallHistory:completion:")
-    default void confirmSearchCallHistoryCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_confirmSearchCallHistoryCompletion") Block_confirmSearchCallHistoryCompletion completion) {
+    default void confirmSearchCallHistoryCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSearchCallHistoryCompletion") Block_confirmSearchCallHistoryCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,8 +86,8 @@ public interface INSearchCallHistoryIntentHandling {
      */
     @Generated
     @Selector("handleSearchCallHistory:completion:")
-    void handleSearchCallHistoryCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_handleSearchCallHistoryCompletion") Block_handleSearchCallHistoryCompletion completion);
+    void handleSearchCallHistoryCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSearchCallHistoryCompletion") Block_handleSearchCallHistoryCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -102,24 +103,24 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCallTypeForSearchCallHistory:withCompletion:")
-    default void resolveCallTypeForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_resolveCallTypeForSearchCallHistoryWithCompletion") Block_resolveCallTypeForSearchCallHistoryWithCompletion completion) {
+    default void resolveCallTypeForSearchCallHistoryWithCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCallTypeForSearchCallHistoryWithCompletion") Block_resolveCallTypeForSearchCallHistoryWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveDateCreatedForSearchCallHistory:withCompletion:")
-    default void resolveDateCreatedForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_resolveDateCreatedForSearchCallHistoryWithCompletion") Block_resolveDateCreatedForSearchCallHistoryWithCompletion completion) {
+    default void resolveDateCreatedForSearchCallHistoryWithCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDateCreatedForSearchCallHistoryWithCompletion") Block_resolveDateCreatedForSearchCallHistoryWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveRecipientForSearchCallHistory:withCompletion:")
-    default void resolveRecipientForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_resolveRecipientForSearchCallHistoryWithCompletion") Block_resolveRecipientForSearchCallHistoryWithCompletion completion) {
+    default void resolveRecipientForSearchCallHistoryWithCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRecipientForSearchCallHistoryWithCompletion") Block_resolveRecipientForSearchCallHistoryWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -127,21 +128,22 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     public interface Block_confirmSearchCallHistoryCompletion {
         @Generated
-        void call_confirmSearchCallHistoryCompletion(INSearchCallHistoryIntentResponse response);
+        void call_confirmSearchCallHistoryCompletion(@NotNull INSearchCallHistoryIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchCallHistoryCompletion {
         @Generated
-        void call_handleSearchCallHistoryCompletion(INSearchCallHistoryIntentResponse response);
+        void call_handleSearchCallHistoryCompletion(@NotNull INSearchCallHistoryIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveCallTypeForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveCallTypeForSearchCallHistoryWithCompletion(INCallRecordTypeResolutionResult resolutionResult);
+        void call_resolveCallTypeForSearchCallHistoryWithCompletion(
+                @NotNull INCallRecordTypeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -149,14 +151,15 @@ public interface INSearchCallHistoryIntentHandling {
     public interface Block_resolveDateCreatedForSearchCallHistoryWithCompletion {
         @Generated
         void call_resolveDateCreatedForSearchCallHistoryWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRecipientForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveRecipientForSearchCallHistoryWithCompletion(INPersonResolutionResult resolutionResult);
+        void call_resolveRecipientForSearchCallHistoryWithCompletion(
+                @NotNull INPersonResolutionResult resolutionResult);
     }
 
     /**
@@ -165,8 +168,8 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCallTypesForSearchCallHistory:withCompletion:")
-    default void resolveCallTypesForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_resolveCallTypesForSearchCallHistoryWithCompletion") Block_resolveCallTypesForSearchCallHistoryWithCompletion completion) {
+    default void resolveCallTypesForSearchCallHistoryWithCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCallTypesForSearchCallHistoryWithCompletion") Block_resolveCallTypesForSearchCallHistoryWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,7 +178,7 @@ public interface INSearchCallHistoryIntentHandling {
     public interface Block_resolveCallTypesForSearchCallHistoryWithCompletion {
         @Generated
         void call_resolveCallTypesForSearchCallHistoryWithCompletion(
-                INCallRecordTypeOptionsResolutionResult resolutionResult);
+                @NotNull INCallRecordTypeOptionsResolutionResult resolutionResult);
     }
 
     /**
@@ -184,8 +187,8 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveUnseenForSearchCallHistory:withCompletion:")
-    default void resolveUnseenForSearchCallHistoryWithCompletion(INSearchCallHistoryIntent intent,
-            @ObjCBlock(name = "call_resolveUnseenForSearchCallHistoryWithCompletion") Block_resolveUnseenForSearchCallHistoryWithCompletion completion) {
+    default void resolveUnseenForSearchCallHistoryWithCompletion(@NotNull INSearchCallHistoryIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveUnseenForSearchCallHistoryWithCompletion") Block_resolveUnseenForSearchCallHistoryWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,6 +196,6 @@ public interface INSearchCallHistoryIntentHandling {
     @Generated
     public interface Block_resolveUnseenForSearchCallHistoryWithCompletion {
         @Generated
-        void call_resolveUnseenForSearchCallHistoryWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveUnseenForSearchCallHistoryWithCompletion(@NotNull INBooleanResolutionResult resolutionResult);
     }
 }

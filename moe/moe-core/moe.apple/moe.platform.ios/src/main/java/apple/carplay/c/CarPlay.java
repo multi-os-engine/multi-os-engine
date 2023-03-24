@@ -11,6 +11,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CarPlay")
@@ -37,6 +38,7 @@ public final class CarPlay {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -47,6 +49,7 @@ public final class CarPlay {
      * 
      * API-Since: 13.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -57,6 +60,7 @@ public final class CarPlay {
     @ByValue
     public static native CGSize CPButtonMaximumImageSize();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -108,6 +112,7 @@ public final class CarPlay {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

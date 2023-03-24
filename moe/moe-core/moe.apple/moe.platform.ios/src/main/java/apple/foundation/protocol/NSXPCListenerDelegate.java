@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Foundation")
@@ -25,7 +26,8 @@ public interface NSXPCListenerDelegate {
     @Generated
     @IsOptional
     @Selector("listener:shouldAcceptNewConnection:")
-    default boolean listenerShouldAcceptNewConnection(NSXPCListener listener, NSXPCConnection newConnection) {
+    default boolean listenerShouldAcceptNewConnection(@NotNull NSXPCListener listener,
+            @NotNull NSXPCConnection newConnection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

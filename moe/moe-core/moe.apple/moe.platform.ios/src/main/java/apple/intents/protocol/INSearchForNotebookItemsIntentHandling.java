@@ -20,6 +20,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSearchForNotebookItemsIntent. By implementing this protocol, a class
@@ -54,8 +55,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSearchForNotebookItems:completion:")
-    default void confirmSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_confirmSearchForNotebookItemsCompletion") Block_confirmSearchForNotebookItemsCompletion completion) {
+    default void confirmSearchForNotebookItemsCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSearchForNotebookItemsCompletion") Block_confirmSearchForNotebookItemsCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +64,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_confirmSearchForNotebookItemsCompletion {
         @Generated
-        void call_confirmSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntentResponse response);
+        void call_confirmSearchForNotebookItemsCompletion(@NotNull INSearchForNotebookItemsIntentResponse response);
     }
 
     /**
@@ -79,21 +80,21 @@ public interface INSearchForNotebookItemsIntentHandling {
      */
     @Generated
     @Selector("handleSearchForNotebookItems:completion:")
-    void handleSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_handleSearchForNotebookItemsCompletion") Block_handleSearchForNotebookItemsCompletion completion);
+    void handleSearchForNotebookItemsCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSearchForNotebookItemsCompletion") Block_handleSearchForNotebookItemsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForNotebookItemsCompletion {
         @Generated
-        void call_handleSearchForNotebookItemsCompletion(INSearchForNotebookItemsIntentResponse response);
+        void call_handleSearchForNotebookItemsCompletion(@NotNull INSearchForNotebookItemsIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveContentForSearchForNotebookItems:withCompletion:")
-    default void resolveContentForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveContentForSearchForNotebookItemsWithCompletion") Block_resolveContentForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveContentForSearchForNotebookItemsWithCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveContentForSearchForNotebookItemsWithCompletion") Block_resolveContentForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,14 +102,16 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveContentForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveContentForSearchForNotebookItemsWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveContentForSearchForNotebookItemsWithCompletion(
+                @NotNull INStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveDateSearchTypeForSearchForNotebookItems:withCompletion:")
-    default void resolveDateSearchTypeForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion") Block_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveDateSearchTypeForSearchForNotebookItemsWithCompletion(
+            @NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion") Block_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,14 +120,14 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveDateSearchTypeForSearchForNotebookItemsWithCompletion(
-                INDateSearchTypeResolutionResult resolutionResult);
+                @NotNull INDateSearchTypeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveDateTimeForSearchForNotebookItems:withCompletion:")
-    default void resolveDateTimeForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveDateTimeForSearchForNotebookItemsWithCompletion") Block_resolveDateTimeForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveDateTimeForSearchForNotebookItemsWithCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDateTimeForSearchForNotebookItemsWithCompletion") Block_resolveDateTimeForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,14 +136,14 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveDateTimeForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveDateTimeForSearchForNotebookItemsWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveItemTypeForSearchForNotebookItems:withCompletion:")
-    default void resolveItemTypeForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveItemTypeForSearchForNotebookItemsWithCompletion") Block_resolveItemTypeForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveItemTypeForSearchForNotebookItemsWithCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveItemTypeForSearchForNotebookItemsWithCompletion") Block_resolveItemTypeForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,14 +152,14 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveItemTypeForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveItemTypeForSearchForNotebookItemsWithCompletion(
-                INNotebookItemTypeResolutionResult resolutionResult);
+                @NotNull INNotebookItemTypeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveLocationForSearchForNotebookItems:withCompletion:")
-    default void resolveLocationForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveLocationForSearchForNotebookItemsWithCompletion") Block_resolveLocationForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveLocationForSearchForNotebookItemsWithCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveLocationForSearchForNotebookItemsWithCompletion") Block_resolveLocationForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,14 +167,16 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveLocationForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveLocationForSearchForNotebookItemsWithCompletion(INPlacemarkResolutionResult resolutionResult);
+        void call_resolveLocationForSearchForNotebookItemsWithCompletion(
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveLocationSearchTypeForSearchForNotebookItems:withCompletion:")
-    default void resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion") Block_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion(
+            @NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion") Block_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -180,14 +185,14 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveLocationSearchTypeForSearchForNotebookItemsWithCompletion(
-                INLocationSearchTypeResolutionResult resolutionResult);
+                @NotNull INLocationSearchTypeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveStatusForSearchForNotebookItems:withCompletion:")
-    default void resolveStatusForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveStatusForSearchForNotebookItemsWithCompletion") Block_resolveStatusForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveStatusForSearchForNotebookItemsWithCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveStatusForSearchForNotebookItemsWithCompletion") Block_resolveStatusForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -195,7 +200,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     public interface Block_resolveStatusForSearchForNotebookItemsWithCompletion {
         @Generated
-        void call_resolveStatusForSearchForNotebookItemsWithCompletion(INTaskStatusResolutionResult resolutionResult);
+        void call_resolveStatusForSearchForNotebookItemsWithCompletion(
+                @NotNull INTaskStatusResolutionResult resolutionResult);
     }
 
     /**
@@ -212,8 +218,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveTitleForSearchForNotebookItems:withCompletion:")
-    default void resolveTitleForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveTitleForSearchForNotebookItemsWithCompletion") Block_resolveTitleForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveTitleForSearchForNotebookItemsWithCompletion(@NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTitleForSearchForNotebookItemsWithCompletion") Block_resolveTitleForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -222,7 +228,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveTitleForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveTitleForSearchForNotebookItemsWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     /**
@@ -231,8 +237,9 @@ public interface INSearchForNotebookItemsIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveTaskPriorityForSearchForNotebookItems:withCompletion:")
-    default void resolveTaskPriorityForSearchForNotebookItemsWithCompletion(INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion") Block_resolveTaskPriorityForSearchForNotebookItemsWithCompletion completion) {
+    default void resolveTaskPriorityForSearchForNotebookItemsWithCompletion(
+            @NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion") Block_resolveTaskPriorityForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -241,7 +248,7 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveTaskPriorityForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveTaskPriorityForSearchForNotebookItemsWithCompletion(
-                INTaskPriorityResolutionResult resolutionResult);
+                @NotNull INTaskPriorityResolutionResult resolutionResult);
     }
 
     /**
@@ -251,8 +258,8 @@ public interface INSearchForNotebookItemsIntentHandling {
     @IsOptional
     @Selector("resolveTemporalEventTriggerTypesForSearchForNotebookItems:withCompletion:")
     default void resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion(
-            INSearchForNotebookItemsIntent intent,
-            @ObjCBlock(name = "call_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion") Block_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion completion) {
+            @NotNull INSearchForNotebookItemsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion") Block_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -261,6 +268,6 @@ public interface INSearchForNotebookItemsIntentHandling {
     public interface Block_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion {
         @Generated
         void call_resolveTemporalEventTriggerTypesForSearchForNotebookItemsWithCompletion(
-                INTemporalEventTriggerTypeOptionsResolutionResult resolutionResult);
+                @NotNull INTemporalEventTriggerTypeOptionsResolutionResult resolutionResult);
     }
 }

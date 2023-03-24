@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVContentKeyRecipient
@@ -50,7 +51,8 @@ public interface AVContentKeyRecipient {
     @Generated
     @IsOptional
     @Selector("contentKeySession:didProvideContentKey:")
-    default void contentKeySessionDidProvideContentKey(AVContentKeySession contentKeySession, AVContentKey contentKey) {
+    default void contentKeySessionDidProvideContentKey(@NotNull AVContentKeySession contentKeySession,
+            @NotNull AVContentKey contentKey) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -55,6 +55,8 @@ import org.moe.natj.objc.Class;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -158,30 +160,35 @@ public final class Foundation {
         return bundle.localizedStringForKeyValueTable(key, val, tbl);
     }
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSStringFromSelector(SEL aSelector);
+    public static native String NSStringFromSelector(@NotNull SEL aSelector);
 
+    @NotNull
     @Generated
     @CFunction
-    public static native SEL NSSelectorFromString(@Mapped(ObjCStringMapper.class) String aSelectorName);
+    public static native SEL NSSelectorFromString(@NotNull @Mapped(ObjCStringMapper.class) String aSelectorName);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSStringFromClass(Class aClass);
+    public static native String NSStringFromClass(@NotNull Class aClass);
 
+    @Nullable
     @Generated
     @CFunction
-    public static native Class NSClassFromString(@Mapped(ObjCStringMapper.class) String aClassName);
+    public static native Class NSClassFromString(@NotNull @Mapped(ObjCStringMapper.class) String aClassName);
 
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
     public static native String NSGetSizeAndAlignment(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String typePtr,
-            NUIntPtr sizep, NUIntPtr alignp);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String typePtr,
+            @Nullable NUIntPtr sizep, @Nullable NUIntPtr alignp);
 
     @Generated
     @Variadic()
@@ -192,46 +199,54 @@ public final class Foundation {
     @CFunction
     public static native void NSLogv(@Mapped(ObjCObjectMapper.class) Object format, BytePtr args);
 
+    @NotNull
     @Generated
     @CFunction
     public static native VoidPtr NSDefaultMallocZone();
 
+    @NotNull
     @Generated
     @CFunction
     public static native VoidPtr NSCreateZone(@NUInt long startSize, @NUInt long granularity, boolean canFree);
 
     @Generated
     @CFunction
-    public static native void NSRecycleZone(VoidPtr zone);
+    public static native void NSRecycleZone(@NotNull VoidPtr zone);
 
     @Generated
     @CFunction
-    public static native void NSSetZoneName(VoidPtr zone, @Mapped(ObjCStringMapper.class) String name);
+    public static native void NSSetZoneName(@Nullable VoidPtr zone,
+            @NotNull @Mapped(ObjCStringMapper.class) String name);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSZoneName(VoidPtr zone);
+    public static native String NSZoneName(@Nullable VoidPtr zone);
+
+    @Nullable
+    @Generated
+    @CFunction
+    public static native VoidPtr NSZoneFromPointer(@NotNull VoidPtr ptr);
+
+    @NotNull
+    @Generated
+    @CFunction
+    public static native VoidPtr NSZoneMalloc(@Nullable VoidPtr zone, @NUInt long size);
+
+    @NotNull
+    @Generated
+    @CFunction
+    public static native VoidPtr NSZoneCalloc(@Nullable VoidPtr zone, @NUInt long numElems, @NUInt long byteSize);
+
+    @NotNull
+    @Generated
+    @CFunction
+    public static native VoidPtr NSZoneRealloc(@Nullable VoidPtr zone, @Nullable VoidPtr ptr, @NUInt long size);
 
     @Generated
     @CFunction
-    public static native VoidPtr NSZoneFromPointer(VoidPtr ptr);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr NSZoneMalloc(VoidPtr zone, @NUInt long size);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr NSZoneCalloc(VoidPtr zone, @NUInt long numElems, @NUInt long byteSize);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr NSZoneRealloc(VoidPtr zone, VoidPtr ptr, @NUInt long size);
-
-    @Generated
-    @CFunction
-    public static native void NSZoneFree(VoidPtr zone, VoidPtr ptr);
+    public static native void NSZoneFree(@Nullable VoidPtr zone, @NotNull VoidPtr ptr);
 
     @Generated
     @CFunction
@@ -253,17 +268,18 @@ public final class Foundation {
     @NUInt
     public static native long NSRoundDownToMultipleOfPageSize(@NUInt long bytes);
 
+    @NotNull
     @Generated
     @CFunction
     public static native VoidPtr NSAllocateMemoryPages(@NUInt long bytes);
 
     @Generated
     @CFunction
-    public static native void NSDeallocateMemoryPages(VoidPtr ptr, @NUInt long bytes);
+    public static native void NSDeallocateMemoryPages(@NotNull VoidPtr ptr, @NUInt long bytes);
 
     @Generated
     @CFunction
-    public static native void NSCopyMemoryPages(ConstVoidPtr source, VoidPtr dest, @NUInt long bytes);
+    public static native void NSCopyMemoryPages(@NotNull ConstVoidPtr source, @NotNull VoidPtr dest, @NUInt long bytes);
 
     /**
      * API-Since: 2.0
@@ -280,16 +296,18 @@ public final class Foundation {
      * After using a CFBridgingRetain on an NSObject, the caller must take responsibility for calling CFRelease at an
      * appropriate time.
      */
+    @Nullable
     @Generated
     @Inline
     @CFunction
-    public static native ConstVoidPtr CFBridgingRetain(@Mapped(ObjCObjectMapper.class) Object X);
+    public static native ConstVoidPtr CFBridgingRetain(@Nullable @Mapped(ObjCObjectMapper.class) Object X);
 
+    @Nullable
     @Generated
     @Inline
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object CFBridgingRelease(ConstVoidPtr X);
+    public static native Object CFBridgingRelease(@Nullable ConstVoidPtr X);
 
     @Generated
     @Inline
@@ -323,6 +341,7 @@ public final class Foundation {
     @ByValue
     public static native NSRange NSIntersectionRange(@ByValue NSRange range1, @ByValue NSRange range2);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -331,7 +350,7 @@ public final class Foundation {
     @Generated
     @CFunction
     @ByValue
-    public static native NSRange NSRangeFromString(@Mapped(ObjCStringMapper.class) String aString);
+    public static native NSRange NSRangeFromString(@NotNull @Mapped(ObjCStringMapper.class) String aString);
 
     @Generated
     @Inline
@@ -525,30 +544,30 @@ public final class Foundation {
     @Generated
     @Inline
     @CFunction
-    public static native boolean NSDecimalIsNotANumber(VoidPtr dcm);
+    public static native boolean NSDecimalIsNotANumber(@NotNull VoidPtr dcm);
 
     /**
      * Operations **********
      */
     @Generated
     @CFunction
-    public static native void NSDecimalCopy(VoidPtr destination, VoidPtr source);
+    public static native void NSDecimalCopy(@NotNull VoidPtr destination, @NotNull VoidPtr source);
 
     @Generated
     @CFunction
-    public static native void NSDecimalCompact(VoidPtr number);
+    public static native void NSDecimalCompact(@NotNull VoidPtr number);
 
     @Generated
     @CFunction
     @NInt
-    public static native long NSDecimalCompare(VoidPtr leftOperand, VoidPtr rightOperand);
+    public static native long NSDecimalCompare(@NotNull VoidPtr leftOperand, @NotNull VoidPtr rightOperand);
 
     /**
      * NSDecimalCompare:Compares leftOperand and rightOperand.
      */
     @Generated
     @CFunction
-    public static native void NSDecimalRound(VoidPtr result, VoidPtr number, @NInt long scale,
+    public static native void NSDecimalRound(@NotNull VoidPtr result, @NotNull VoidPtr number, @NInt long scale,
             @NUInt long roundingMode);
 
     /**
@@ -559,22 +578,14 @@ public final class Foundation {
     @Generated
     @CFunction
     @NUInt
-    public static native long NSDecimalNormalize(VoidPtr number1, VoidPtr number2, @NUInt long roundingMode);
+    public static native long NSDecimalNormalize(@NotNull VoidPtr number1, @NotNull VoidPtr number2,
+            @NUInt long roundingMode);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long NSDecimalAdd(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
-            @NUInt long roundingMode);
-
-    /**
-     * Exact operations. result may be a pointer to same space as leftOperand or rightOperand
-     */
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long NSDecimalSubtract(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
-            @NUInt long roundingMode);
+    public static native long NSDecimalAdd(@NotNull VoidPtr result, @NotNull VoidPtr leftOperand,
+            @NotNull VoidPtr rightOperand, @NUInt long roundingMode);
 
     /**
      * Exact operations. result may be a pointer to same space as leftOperand or rightOperand
@@ -582,8 +593,8 @@ public final class Foundation {
     @Generated
     @CFunction
     @NUInt
-    public static native long NSDecimalMultiply(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
-            @NUInt long roundingMode);
+    public static native long NSDecimalSubtract(@NotNull VoidPtr result, @NotNull VoidPtr leftOperand,
+            @NotNull VoidPtr rightOperand, @NUInt long roundingMode);
 
     /**
      * Exact operations. result may be a pointer to same space as leftOperand or rightOperand
@@ -591,8 +602,17 @@ public final class Foundation {
     @Generated
     @CFunction
     @NUInt
-    public static native long NSDecimalDivide(VoidPtr result, VoidPtr leftOperand, VoidPtr rightOperand,
-            @NUInt long roundingMode);
+    public static native long NSDecimalMultiply(@NotNull VoidPtr result, @NotNull VoidPtr leftOperand,
+            @NotNull VoidPtr rightOperand, @NUInt long roundingMode);
+
+    /**
+     * Exact operations. result may be a pointer to same space as leftOperand or rightOperand
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long NSDecimalDivide(@NotNull VoidPtr result, @NotNull VoidPtr leftOperand,
+            @NotNull VoidPtr rightOperand, @NUInt long roundingMode);
 
     /**
      * Division could be silently inexact;
@@ -601,20 +621,23 @@ public final class Foundation {
     @Generated
     @CFunction
     @NUInt
-    public static native long NSDecimalPower(VoidPtr result, VoidPtr number, @NUInt long power,
+    public static native long NSDecimalPower(@NotNull VoidPtr result, @NotNull VoidPtr number, @NUInt long power,
             @NUInt long roundingMode);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long NSDecimalMultiplyByPowerOf10(VoidPtr result, VoidPtr number, short power,
-            @NUInt long roundingMode);
+    public static native long NSDecimalMultiplyByPowerOf10(@NotNull VoidPtr result, @NotNull VoidPtr number,
+            short power, @NUInt long roundingMode);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSDecimalString(VoidPtr dcm, @Mapped(ObjCObjectMapper.class) Object locale);
+    public static native String NSDecimalString(@NotNull VoidPtr dcm,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
+    @Nullable
     @Generated
     @CFunction
     @FunctionPtr(name = "call_NSGetUncaughtExceptionHandler_ret")
@@ -623,38 +646,45 @@ public final class Foundation {
     @Generated
     @CFunction
     public static native void NSSetUncaughtExceptionHandler(
-            @FunctionPtr(name = "call_NSSetUncaughtExceptionHandler") Function_NSSetUncaughtExceptionHandler arg1);
+            @Nullable @FunctionPtr(name = "call_NSSetUncaughtExceptionHandler") Function_NSSetUncaughtExceptionHandler arg1);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUserName();
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFullUserName();
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSHomeDirectory();
 
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSHomeDirectoryForUser(@Mapped(ObjCStringMapper.class) String userName);
+    public static native String NSHomeDirectoryForUser(@Nullable @Mapped(ObjCStringMapper.class) String userName);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSTemporaryDirectory();
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSOpenStepRootDirectory();
 
+    @NotNull
     @Generated
     @CFunction
     public static native NSArray<String> NSSearchPathForDirectoriesInDomains(@NUInt long directory,
@@ -667,6 +697,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -675,6 +706,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -683,6 +715,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -691,6 +724,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -699,6 +733,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -707,6 +742,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -715,6 +751,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -723,6 +760,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -731,6 +769,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -739,6 +778,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -747,6 +787,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -755,6 +796,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -763,6 +805,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -771,6 +814,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -779,6 +823,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -787,6 +832,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -798,6 +844,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -809,6 +856,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -819,6 +867,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -829,6 +878,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -839,6 +889,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -849,6 +900,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -860,11 +912,13 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringEncodingDetectionLikelyLanguageKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -873,6 +927,7 @@ public final class Foundation {
     /**
      * raised by -propertyList
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -883,6 +938,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -893,6 +949,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -907,6 +964,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -919,6 +977,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -929,6 +988,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -937,6 +997,7 @@ public final class Foundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -945,6 +1006,7 @@ public final class Foundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -953,6 +1015,7 @@ public final class Foundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -965,6 +1028,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -977,6 +1041,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -985,11 +1050,13 @@ public final class Foundation {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSProgressFileCompletedCountKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -998,6 +1065,7 @@ public final class Foundation {
     /**
      * notification key
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1017,6 +1085,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1036,6 +1105,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1046,6 +1116,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1054,6 +1125,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1062,6 +1134,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1070,6 +1143,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1078,6 +1152,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1086,6 +1161,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1094,6 +1170,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1102,6 +1179,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1110,6 +1188,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1118,6 +1197,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1126,6 +1206,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1134,6 +1215,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1142,6 +1224,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1150,6 +1233,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1160,6 +1244,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1171,6 +1256,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1189,6 +1275,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1197,6 +1284,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1205,6 +1293,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1213,6 +1302,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1221,6 +1311,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1229,6 +1320,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1237,6 +1329,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1245,6 +1338,7 @@ public final class Foundation {
     /**
      * NSCharacterSet
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1253,6 +1347,7 @@ public final class Foundation {
     /**
      * NSCalendar
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1261,6 +1356,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1269,6 +1365,7 @@ public final class Foundation {
     /**
      * NSNumber boolean
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1277,6 +1374,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1285,6 +1383,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1293,6 +1392,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1301,6 +1401,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1309,6 +1410,7 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1319,6 +1421,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1329,6 +1432,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1339,6 +1443,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1349,6 +1454,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1359,6 +1465,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1370,6 +1477,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1380,6 +1488,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1390,6 +1499,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1400,6 +1510,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1410,6 +1521,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1420,6 +1532,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1430,6 +1543,7 @@ public final class Foundation {
      * API-Since: 2.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1440,6 +1554,7 @@ public final class Foundation {
      * API-Since: 4.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1450,6 +1565,7 @@ public final class Foundation {
      * API-Since: 4.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1460,6 +1576,7 @@ public final class Foundation {
      * API-Since: 4.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1470,6 +1587,7 @@ public final class Foundation {
      * API-Since: 4.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1481,6 +1599,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1491,6 +1610,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1499,6 +1619,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1507,6 +1628,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1515,6 +1637,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1523,6 +1646,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1531,6 +1655,7 @@ public final class Foundation {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1542,6 +1667,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1550,71 +1676,85 @@ public final class Foundation {
     /**
      * Generic Exception names **************
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSGenericException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRangeException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidArgumentException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInternalInconsistencyException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMallocException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSObjectInaccessibleException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSObjectNotAvailableException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDestinationInvalidException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPortTimeoutException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidSendPortException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidReceivePortException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPortSendException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPortReceiveException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1623,6 +1763,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1631,21 +1772,25 @@ public final class Foundation {
     /**
      * Exceptions **********
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDecimalNumberExactnessException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDecimalNumberOverflowException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDecimalNumberUnderflowException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1654,6 +1799,7 @@ public final class Foundation {
     /**
      * Predefined domain for errors from most AppKit and Foundation APIs.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1662,16 +1808,19 @@ public final class Foundation {
     /**
      * Other predefined domains; value of "code" will correspond to preexisting values in these domains.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSPOSIXErrorDomain();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSOSStatusErrorDomain();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1681,6 +1830,7 @@ public final class Foundation {
      * Key in userInfo. A recommended standard way to embed NSErrors from underlying calls. The value of this key should
      * be an NSError.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1689,6 +1839,7 @@ public final class Foundation {
     /**
      * NSString, a complete sentence (or more) describing ideally both what failed and why it failed.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1697,6 +1848,7 @@ public final class Foundation {
     /**
      * NSString, a complete sentence (or more) describing why the operation failed.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1705,6 +1857,7 @@ public final class Foundation {
     /**
      * NSString, a complete sentence (or more) describing what the user can do to fix the problem.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1713,6 +1866,7 @@ public final class Foundation {
     /**
      * NSArray of NSStrings corresponding to button titles.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1721,6 +1875,7 @@ public final class Foundation {
     /**
      * Instance of a subclass of NSObject that conforms to the NSErrorRecoveryAttempting informal protocol
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1729,6 +1884,7 @@ public final class Foundation {
     /**
      * NSString containing a help anchor
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1737,6 +1893,7 @@ public final class Foundation {
     /**
      * NSNumber containing NSStringEncoding
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1745,6 +1902,7 @@ public final class Foundation {
     /**
      * NSURL
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1753,11 +1911,13 @@ public final class Foundation {
     /**
      * NSString
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFilePathErrorKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1766,41 +1926,49 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSRunLoopCommonModes();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleOperationException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleReadCompletionNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleReadToEndOfFileCompletionNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleConnectionAcceptedNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleDataAvailableNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHandleNotificationDataItem();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1811,6 +1979,7 @@ public final class Foundation {
      * Deprecated-Since: 5.0
      * Deprecated-Message: Not supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1821,6 +1990,7 @@ public final class Foundation {
      * A string constant for the "file" URL scheme. If you are using this to compare to a URL's scheme to see if it is a
      * file URL, you should instead use the NSURL fileURL property -- the fileURL property is much faster.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1832,6 +2002,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1842,6 +2013,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1852,6 +2024,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1862,6 +2035,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1872,6 +2046,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1882,6 +2057,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1892,6 +2068,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1905,6 +2082,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1915,6 +2093,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1925,6 +2104,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1935,6 +2115,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1947,6 +2128,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1958,6 +2140,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1968,6 +2151,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1978,6 +2162,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1988,6 +2173,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1998,6 +2184,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2008,6 +2195,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2018,6 +2206,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2028,6 +2217,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2040,6 +2230,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use NSURLContentTypeKey instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2051,6 +2242,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2061,6 +2253,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2071,6 +2264,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2081,6 +2275,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2091,6 +2286,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2101,6 +2297,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2114,6 +2311,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2127,6 +2325,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2138,6 +2337,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2148,6 +2348,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2158,6 +2359,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2169,6 +2371,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2180,6 +2383,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2193,6 +2397,7 @@ public final class Foundation {
      * 
      * API-Since: 5.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2203,6 +2408,7 @@ public final class Foundation {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2213,6 +2419,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2224,6 +2431,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2242,6 +2450,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2258,6 +2467,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2271,6 +2481,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2281,6 +2492,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2291,6 +2503,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2299,6 +2512,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2307,6 +2521,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2315,6 +2530,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2323,6 +2539,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2331,6 +2548,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2339,6 +2557,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2347,6 +2566,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2359,6 +2579,7 @@ public final class Foundation {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the QuickLookThumbnailing framework and extension point instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2372,6 +2593,7 @@ public final class Foundation {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use the QuickLookThumbnailing framework and extension point instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2383,6 +2605,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2394,6 +2617,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2405,6 +2629,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2417,6 +2642,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2428,6 +2654,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2438,6 +2665,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2448,6 +2676,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2460,6 +2689,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2475,6 +2705,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2487,6 +2718,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2497,6 +2729,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2507,6 +2740,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2517,6 +2751,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2527,6 +2762,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2538,6 +2774,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2548,6 +2785,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2558,6 +2796,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2570,6 +2809,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2581,6 +2821,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2593,6 +2834,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2605,6 +2847,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2617,6 +2860,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2629,6 +2873,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2640,6 +2885,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2651,6 +2897,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2661,6 +2908,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2672,6 +2920,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2682,6 +2931,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2693,6 +2943,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2704,6 +2955,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2715,6 +2967,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2725,6 +2978,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2736,6 +2990,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2747,6 +3002,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2757,6 +3013,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2767,6 +3024,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2777,6 +3035,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2787,6 +3046,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2798,6 +3058,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2809,6 +3070,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2819,6 +3081,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2829,6 +3092,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2839,6 +3103,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2850,6 +3115,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2860,6 +3126,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2870,6 +3137,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2880,6 +3148,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2891,6 +3160,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2901,6 +3171,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2914,6 +3185,7 @@ public final class Foundation {
      * Deprecated-Since: 7.0
      * Deprecated-Message: Use NSURLUbiquitousItemDownloadingStatusKey instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2925,6 +3197,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2935,6 +3208,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2945,6 +3219,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2957,6 +3232,7 @@ public final class Foundation {
      * Deprecated-Since: 6.0
      * Deprecated-Message: Use NSMetadataUbiquitousItemPercentDownloadedKey instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2970,6 +3246,7 @@ public final class Foundation {
      * Deprecated-Since: 6.0
      * Deprecated-Message: Use NSMetadataUbiquitousItemPercentUploadedKey instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2981,6 +3258,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2992,6 +3270,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3003,6 +3282,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3014,6 +3294,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3024,6 +3305,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3034,6 +3316,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3045,6 +3328,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3055,6 +3339,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3065,136 +3350,163 @@ public final class Foundation {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUbiquityIdentityDidChangeNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileType();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeDirectory();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeRegular();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeSymbolicLink();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeSocket();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeCharacterSpecial();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeBlockSpecial();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileTypeUnknown();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileSize();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileModificationDate();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileReferenceCount();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileDeviceIdentifier();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileOwnerAccountName();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileGroupOwnerAccountName();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFilePosixPermissions();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileSystemNumber();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileSystemFileNumber();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileExtensionHidden();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHFSCreatorCode();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileHFSTypeCode();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileImmutable();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileAppendOnly();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileCreationDate();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileOwnerAccountID();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileGroupOwnerAccountID();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3203,6 +3515,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3211,6 +3524,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3219,6 +3533,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3227,6 +3542,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3235,26 +3551,31 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileProtectionCompleteUntilFirstUserAuthentication();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileSystemSize();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileSystemFreeSize();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSFileSystemNodes();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3267,6 +3588,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3279,6 +3601,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3291,6 +3614,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3303,6 +3627,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3315,6 +3640,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3327,6 +3653,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3339,6 +3666,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3351,6 +3679,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3363,6 +3692,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3375,6 +3705,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3387,6 +3718,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3399,6 +3731,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3411,6 +3744,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3425,6 +3759,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3437,6 +3772,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3451,6 +3787,7 @@ public final class Foundation {
      * The actual value of this constant string is "NSUnknownKeyException," to match the exceptions that are thrown by
      * KVC methods that were deprecated in Mac OS 10.3.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3461,56 +3798,67 @@ public final class Foundation {
      * Mac OS 10.4. The actual support for array operators appeared in Mac OS 10.3. The values of these do not include
      * "@" prefixes.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSAverageKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSCountKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDistinctUnionOfArraysKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDistinctUnionOfObjectsKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDistinctUnionOfSetsKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMaximumKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSMinimumKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSSumKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUnionOfArraysKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSUnionOfObjectsKeyValueOperator();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3520,21 +3868,25 @@ public final class Foundation {
      * Keys for entries in change dictionaries. See the comments for -observeValueForKeyPath:ofObject:change:context:
      * for more information.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSKeyValueChangeKindKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSKeyValueChangeNewKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSKeyValueChangeOldKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3543,16 +3895,19 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSKeyValueChangeNotificationIsPriorKey();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvalidArchiveOperationException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3565,6 +3920,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3573,6 +3929,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3581,11 +3938,13 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSInvocationOperationCancelledException();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3605,6 +3964,7 @@ public final class Foundation {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3615,6 +3975,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3623,6 +3984,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3631,6 +3993,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3639,6 +4002,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3647,6 +4011,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3655,6 +4020,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3663,6 +4029,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3671,6 +4038,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3679,6 +4047,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3687,6 +4056,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3695,6 +4065,7 @@ public final class Foundation {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3705,6 +4076,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3713,6 +4085,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3721,6 +4094,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3729,6 +4103,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3737,6 +4112,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3745,6 +4121,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3756,6 +4133,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3764,6 +4142,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3774,6 +4153,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3784,6 +4164,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3794,6 +4175,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3804,6 +4186,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3812,6 +4195,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3822,6 +4206,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3832,6 +4217,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3842,6 +4228,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3852,6 +4239,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3862,6 +4250,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3876,6 +4265,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3886,6 +4276,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3894,6 +4285,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3902,6 +4294,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3910,6 +4303,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3918,21 +4312,25 @@ public final class Foundation {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStreamNetworkServiceTypeCallSignaling();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSWillBecomeMultiThreadedNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSDidBecomeSingleThreadedNotification();
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3941,6 +4339,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3953,6 +4352,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3965,6 +4365,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3977,6 +4378,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -3989,6 +4391,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4001,6 +4404,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4013,6 +4417,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4025,6 +4430,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4037,6 +4443,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4050,6 +4457,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4062,6 +4470,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4074,6 +4483,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4086,6 +4496,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4098,6 +4509,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4110,6 +4522,7 @@ public final class Foundation {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4122,6 +4535,7 @@ public final class Foundation {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4135,6 +4549,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4149,6 +4564,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4159,6 +4575,7 @@ public final class Foundation {
      * codes that originate from different subsystems or sources.
      * [@constant] NSURLErrorDomain Indicates an NSURL error.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4171,6 +4588,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4187,6 +4605,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4205,6 +4624,7 @@ public final class Foundation {
      * Deprecated-Since: 4.0
      * Deprecated-Message: Use NSURLErrorFailingURLStringErrorKey instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4219,6 +4639,7 @@ public final class Foundation {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4233,6 +4654,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4242,6 +4664,7 @@ public final class Foundation {
      * NSGlobalDomain identifies a domain shared between all applications for a given user. NSGlobalDomain is
      * automatically included in all search lists, after the entries for the search list's domain.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4252,6 +4675,7 @@ public final class Foundation {
      * with, if any. Arguments must be formatted as '-key plistvalue'. NSArgumentDomain is automatically included in all
      * search lists, after forced defaults, but before all other entries. This can be useful for testing purposes.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4261,6 +4685,7 @@ public final class Foundation {
      * NSRegistrationDomain identifies a search list entry containing all defaults set with -registerDefaults:, if any.
      * NSRegistrationDomain is automatically included as the final entry of all search lists.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4274,6 +4699,7 @@ public final class Foundation {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4288,6 +4714,7 @@ public final class Foundation {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4300,6 +4727,7 @@ public final class Foundation {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4312,6 +4740,7 @@ public final class Foundation {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4323,6 +4752,7 @@ public final class Foundation {
      * observing to register observers for the specific keys of interest will inform you of all updates, regardless of
      * where they're from.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4331,6 +4761,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4339,6 +4770,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4347,6 +4779,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4356,6 +4789,7 @@ public final class Foundation {
      * API-Since: 3.0
      * Deprecated-Since: 12.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4366,6 +4800,7 @@ public final class Foundation {
      * API-Since: 3.0
      * Deprecated-Since: 12.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4377,6 +4812,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4437,6 +4873,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4469,6 +4906,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4507,6 +4945,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4521,6 +4960,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4534,6 +4974,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4548,6 +4989,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4561,6 +5003,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4574,6 +5017,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4587,6 +5031,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4600,6 +5045,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4613,6 +5059,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4626,6 +5073,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4639,6 +5087,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4652,6 +5101,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4663,6 +5113,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4674,6 +5125,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4685,6 +5137,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4696,6 +5149,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4707,6 +5161,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4718,6 +5173,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4729,6 +5185,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4740,6 +5197,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4751,6 +5209,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4762,6 +5221,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4773,6 +5233,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4784,6 +5245,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4795,6 +5257,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4806,6 +5269,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4817,6 +5281,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4828,6 +5293,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4839,6 +5305,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4850,6 +5317,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4861,6 +5329,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4872,6 +5341,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4883,6 +5353,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4894,6 +5365,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4905,6 +5377,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4918,6 +5391,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4929,6 +5403,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4940,6 +5415,7 @@ public final class Foundation {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: All NSLinguisticTagger API should be replaced with NaturalLanguage.framework API
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4951,6 +5427,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4961,6 +5438,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4971,6 +5449,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4981,6 +5460,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -4991,6 +5471,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5001,6 +5482,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5011,6 +5493,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5021,6 +5504,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5031,6 +5515,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5041,6 +5526,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5051,6 +5537,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5063,6 +5550,7 @@ public final class Foundation {
      * Deprecated-Since: 7.0
      * Deprecated-Message: Use NSMetadataUbiquitousItemDownloadingStatusKey instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5074,6 +5562,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5084,6 +5573,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5095,6 +5585,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5105,6 +5596,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5115,6 +5607,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5125,6 +5618,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5135,6 +5629,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5145,6 +5640,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5155,6 +5651,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5166,6 +5663,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5177,6 +5675,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5187,6 +5686,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5197,6 +5697,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5207,6 +5708,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5217,6 +5719,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5227,6 +5730,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5235,6 +5739,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5243,6 +5748,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5251,6 +5757,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5261,6 +5768,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5269,6 +5777,7 @@ public final class Foundation {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5277,6 +5786,7 @@ public final class Foundation {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5285,6 +5795,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5295,6 +5806,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5305,6 +5817,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5316,6 +5829,7 @@ public final class Foundation {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5324,6 +5838,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5332,6 +5847,7 @@ public final class Foundation {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5340,6 +5856,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5348,6 +5865,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5356,6 +5874,7 @@ public final class Foundation {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5367,6 +5886,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5375,6 +5895,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5387,6 +5908,7 @@ public final class Foundation {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5395,6 +5917,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5403,6 +5926,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5411,6 +5935,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5419,6 +5944,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5427,6 +5953,7 @@ public final class Foundation {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5437,6 +5964,7 @@ public final class Foundation {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5477,6 +6005,7 @@ public final class Foundation {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5486,6 +6015,7 @@ public final class Foundation {
      * The activity type used when continuing from a web browsing session to either a web browser or a native app. Only
      * activities of this type can be continued from a web browser to a native app.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5495,14 +6025,14 @@ public final class Foundation {
     @Generated
     public interface Function_NSGetUncaughtExceptionHandler_ret {
         @Generated
-        void call_NSGetUncaughtExceptionHandler_ret(NSException exception);
+        void call_NSGetUncaughtExceptionHandler_ret(@NotNull NSException exception);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_NSSetUncaughtExceptionHandler {
         @Generated
-        void call_NSSetUncaughtExceptionHandler(NSException exception);
+        void call_NSSetUncaughtExceptionHandler(@NotNull NSException exception);
     }
 
     /**
@@ -5512,6 +6042,7 @@ public final class Foundation {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5527,6 +6058,7 @@ public final class Foundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5538,6 +6070,7 @@ public final class Foundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5549,6 +6082,7 @@ public final class Foundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5559,6 +6093,7 @@ public final class Foundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5569,6 +6104,7 @@ public final class Foundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5579,6 +6115,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5590,6 +6127,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5601,6 +6139,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5611,6 +6150,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5622,6 +6162,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5632,6 +6173,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5642,6 +6184,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5652,6 +6195,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5662,6 +6206,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5680,6 +6225,7 @@ public final class Foundation {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5690,6 +6236,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5701,6 +6248,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5711,6 +6259,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5721,6 +6270,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5732,6 +6282,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5742,6 +6293,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5752,6 +6304,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5762,6 +6315,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5772,6 +6326,7 @@ public final class Foundation {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5779,74 +6334,82 @@ public final class Foundation {
 
     @Generated
     @CFunction
-    public static native void NSFreeHashTable(NSHashTable<?> table);
+    public static native void NSFreeHashTable(@NotNull NSHashTable<?> table);
 
     @Generated
     @CFunction
-    public static native void NSResetHashTable(NSHashTable<?> table);
+    public static native void NSResetHashTable(@NotNull NSHashTable<?> table);
 
     @Generated
     @CFunction
-    public static native boolean NSCompareHashTables(NSHashTable<?> table1, NSHashTable<?> table2);
+    public static native boolean NSCompareHashTables(@NotNull NSHashTable<?> table1, @NotNull NSHashTable<?> table2);
+
+    @NotNull
+    @Generated
+    @CFunction
+    public static native NSHashTable<?> NSCopyHashTableWithZone(@NotNull NSHashTable<?> table, @Nullable VoidPtr zone);
+
+    @NotNull
+    @Generated
+    @CFunction
+    public static native VoidPtr NSHashGet(@NotNull NSHashTable<?> table, @Nullable ConstVoidPtr pointer);
 
     @Generated
     @CFunction
-    public static native NSHashTable<?> NSCopyHashTableWithZone(NSHashTable<?> table, VoidPtr zone);
+    public static native void NSHashInsert(@NotNull NSHashTable<?> table, @Nullable ConstVoidPtr pointer);
 
     @Generated
     @CFunction
-    public static native VoidPtr NSHashGet(NSHashTable<?> table, ConstVoidPtr pointer);
+    public static native void NSHashInsertKnownAbsent(@NotNull NSHashTable<?> table, @Nullable ConstVoidPtr pointer);
+
+    @Nullable
+    @Generated
+    @CFunction
+    public static native VoidPtr NSHashInsertIfAbsent(@NotNull NSHashTable<?> table, @Nullable ConstVoidPtr pointer);
 
     @Generated
     @CFunction
-    public static native void NSHashInsert(NSHashTable<?> table, ConstVoidPtr pointer);
-
-    @Generated
-    @CFunction
-    public static native void NSHashInsertKnownAbsent(NSHashTable<?> table, ConstVoidPtr pointer);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr NSHashInsertIfAbsent(NSHashTable<?> table, ConstVoidPtr pointer);
-
-    @Generated
-    @CFunction
-    public static native void NSHashRemove(NSHashTable<?> table, ConstVoidPtr pointer);
+    public static native void NSHashRemove(@NotNull NSHashTable<?> table, @Nullable ConstVoidPtr pointer);
 
     @Generated
     @CFunction
     @ByValue
-    public static native NSHashEnumerator NSEnumerateHashTable(NSHashTable<?> table);
+    public static native NSHashEnumerator NSEnumerateHashTable(@NotNull NSHashTable<?> table);
 
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr NSNextHashEnumeratorItem(
-            @UncertainArgument("Options: reference, array Fallback: reference") NSHashEnumerator enumerator);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") NSHashEnumerator enumerator);
 
     @Generated
     @CFunction
     public static native void NSEndHashTableEnumeration(
-            @UncertainArgument("Options: reference, array Fallback: reference") NSHashEnumerator enumerator);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") NSHashEnumerator enumerator);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long NSCountHashTable(NSHashTable<?> table);
+    public static native long NSCountHashTable(@NotNull NSHashTable<?> table);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSStringFromHashTable(NSHashTable<?> table);
+    public static native String NSStringFromHashTable(@NotNull NSHashTable<?> table);
 
+    @NotNull
     @Generated
     @CFunction
-    public static native NSArray<?> NSAllHashTableObjects(NSHashTable<?> table);
+    public static native NSArray<?> NSAllHashTableObjects(@NotNull NSHashTable<?> table);
 
+    @NotNull
     @Generated
     @CFunction
     public static native NSHashTable<?> NSCreateHashTableWithZone(@ByValue NSHashTableCallBacks callBacks,
-            @NUInt long capacity, VoidPtr zone);
+            @NUInt long capacity, @Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @CFunction
     public static native NSHashTable<?> NSCreateHashTable(@ByValue NSHashTableCallBacks callBacks,
@@ -5854,89 +6417,102 @@ public final class Foundation {
 
     @Generated
     @CFunction
-    public static native void NSFreeMapTable(NSMapTable<?, ?> table);
+    public static native void NSFreeMapTable(@NotNull NSMapTable<?, ?> table);
 
     @Generated
     @CFunction
-    public static native void NSResetMapTable(NSMapTable<?, ?> table);
+    public static native void NSResetMapTable(@NotNull NSMapTable<?, ?> table);
 
     @Generated
     @CFunction
-    public static native boolean NSCompareMapTables(NSMapTable<?, ?> table1, NSMapTable<?, ?> table2);
+    public static native boolean NSCompareMapTables(@NotNull NSMapTable<?, ?> table1, @NotNull NSMapTable<?, ?> table2);
+
+    @NotNull
+    @Generated
+    @CFunction
+    public static native NSMapTable<?, ?> NSCopyMapTableWithZone(@NotNull NSMapTable<?, ?> table,
+            @Nullable VoidPtr zone);
 
     @Generated
     @CFunction
-    public static native NSMapTable<?, ?> NSCopyMapTableWithZone(NSMapTable<?, ?> table, VoidPtr zone);
+    public static native boolean NSMapMember(@NotNull NSMapTable<?, ?> table, @NotNull ConstVoidPtr key,
+            @Nullable Ptr<VoidPtr> originalKey, @Nullable Ptr<VoidPtr> value);
+
+    @Nullable
+    @Generated
+    @CFunction
+    public static native VoidPtr NSMapGet(@NotNull NSMapTable<?, ?> table, @Nullable ConstVoidPtr key);
 
     @Generated
     @CFunction
-    public static native boolean NSMapMember(NSMapTable<?, ?> table, ConstVoidPtr key, Ptr<VoidPtr> originalKey,
-            Ptr<VoidPtr> value);
+    public static native void NSMapInsert(@NotNull NSMapTable<?, ?> table, @Nullable ConstVoidPtr key,
+            @Nullable ConstVoidPtr value);
 
     @Generated
     @CFunction
-    public static native VoidPtr NSMapGet(NSMapTable<?, ?> table, ConstVoidPtr key);
+    public static native void NSMapInsertKnownAbsent(@NotNull NSMapTable<?, ?> table, @Nullable ConstVoidPtr key,
+            @Nullable ConstVoidPtr value);
+
+    @Nullable
+    @Generated
+    @CFunction
+    public static native VoidPtr NSMapInsertIfAbsent(@NotNull NSMapTable<?, ?> table, @Nullable ConstVoidPtr key,
+            @Nullable ConstVoidPtr value);
 
     @Generated
     @CFunction
-    public static native void NSMapInsert(NSMapTable<?, ?> table, ConstVoidPtr key, ConstVoidPtr value);
-
-    @Generated
-    @CFunction
-    public static native void NSMapInsertKnownAbsent(NSMapTable<?, ?> table, ConstVoidPtr key, ConstVoidPtr value);
-
-    @Generated
-    @CFunction
-    public static native VoidPtr NSMapInsertIfAbsent(NSMapTable<?, ?> table, ConstVoidPtr key, ConstVoidPtr value);
-
-    @Generated
-    @CFunction
-    public static native void NSMapRemove(NSMapTable<?, ?> table, ConstVoidPtr key);
+    public static native void NSMapRemove(@NotNull NSMapTable<?, ?> table, @Nullable ConstVoidPtr key);
 
     @Generated
     @CFunction
     @ByValue
-    public static native NSMapEnumerator NSEnumerateMapTable(NSMapTable<?, ?> table);
+    public static native NSMapEnumerator NSEnumerateMapTable(@NotNull NSMapTable<?, ?> table);
 
     @Generated
     @CFunction
     public static native boolean NSNextMapEnumeratorPair(
-            @UncertainArgument("Options: reference, array Fallback: reference") NSMapEnumerator enumerator,
-            Ptr<VoidPtr> key, Ptr<VoidPtr> value);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") NSMapEnumerator enumerator,
+            @Nullable Ptr<VoidPtr> key, @Nullable Ptr<VoidPtr> value);
 
     @Generated
     @CFunction
     public static native void NSEndMapTableEnumeration(
-            @UncertainArgument("Options: reference, array Fallback: reference") NSMapEnumerator enumerator);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") NSMapEnumerator enumerator);
 
     @Generated
     @CFunction
     @NUInt
-    public static native long NSCountMapTable(NSMapTable<?, ?> table);
+    public static native long NSCountMapTable(@NotNull NSMapTable<?, ?> table);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String NSStringFromMapTable(NSMapTable<?, ?> table);
+    public static native String NSStringFromMapTable(@NotNull NSMapTable<?, ?> table);
 
+    @NotNull
     @Generated
     @CFunction
-    public static native NSArray<?> NSAllMapTableKeys(NSMapTable<?, ?> table);
+    public static native NSArray<?> NSAllMapTableKeys(@NotNull NSMapTable<?, ?> table);
 
+    @NotNull
     @Generated
     @CFunction
-    public static native NSArray<?> NSAllMapTableValues(NSMapTable<?, ?> table);
+    public static native NSArray<?> NSAllMapTableValues(@NotNull NSMapTable<?, ?> table);
 
+    @NotNull
     @Generated
     @CFunction
     public static native NSMapTable<?, ?> NSCreateMapTableWithZone(@ByValue NSMapTableKeyCallBacks keyCallBacks,
-            @ByValue NSMapTableValueCallBacks valueCallBacks, @NUInt long capacity, VoidPtr zone);
+            @ByValue NSMapTableValueCallBacks valueCallBacks, @NUInt long capacity, @Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @CFunction
     public static native NSMapTable<?, ?> NSCreateMapTable(@ByValue NSMapTableKeyCallBacks keyCallBacks,
             @ByValue NSMapTableValueCallBacks valueCallBacks, @NUInt long capacity);
 
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5979,6 +6555,7 @@ public final class Foundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -5991,6 +6568,7 @@ public final class Foundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6003,6 +6581,7 @@ public final class Foundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6084,6 +6663,7 @@ public final class Foundation {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6092,6 +6672,7 @@ public final class Foundation {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6102,6 +6683,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6113,6 +6695,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6124,6 +6707,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6134,6 +6718,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6144,6 +6729,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6154,6 +6740,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6165,6 +6752,7 @@ public final class Foundation {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6173,6 +6761,7 @@ public final class Foundation {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6181,6 +6770,7 @@ public final class Foundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6191,6 +6781,7 @@ public final class Foundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6201,6 +6792,7 @@ public final class Foundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6211,6 +6803,7 @@ public final class Foundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6221,6 +6814,7 @@ public final class Foundation {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6229,6 +6823,7 @@ public final class Foundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6237,6 +6832,7 @@ public final class Foundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6245,6 +6841,7 @@ public final class Foundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6253,6 +6850,7 @@ public final class Foundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6261,6 +6859,7 @@ public final class Foundation {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6273,6 +6872,7 @@ public final class Foundation {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6284,6 +6884,7 @@ public final class Foundation {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -6294,6 +6895,7 @@ public final class Foundation {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

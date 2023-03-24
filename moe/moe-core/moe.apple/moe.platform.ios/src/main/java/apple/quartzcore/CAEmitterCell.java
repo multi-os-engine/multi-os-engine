@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -81,22 +83,25 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,10 +114,11 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * Emitter cells implement the same property model as defined by CALayer.
      * See CALayer.h for more details.
      */
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -144,9 +150,10 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -211,6 +218,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * color. `color' defaults to opaque white, `colorRange' to (0, 0, 0,
      * 0). Animatable.
      */
+    @Nullable
     @Generated
     @Selector("color")
     public native CGColorRef color();
@@ -219,6 +227,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The cell contents, typically a CGImageRef. Defaults to nil.
      * Animatable.
      */
+    @Nullable
     @Generated
     @Selector("contents")
     @MappedReturn(ObjCObjectMapper.class)
@@ -284,14 +293,16 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * the current particle position and the emission angle is relative to
      * the current direction of the particle. Animatable.
      */
+    @Nullable
     @Generated
     @Selector("emitterCells")
     public native NSArray<? extends CAEmitterCell> emitterCells();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("fillMode")
     public native String fillMode();
@@ -310,7 +321,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAEmitterCell initWithCoder(NSCoder coder);
+    public native CAEmitterCell initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Controls whether or not cells from this emitter are rendered.
@@ -339,6 +350,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     @Selector("lifetimeRange")
     public native float lifetimeRange();
 
+    @NotNull
     @Generated
     @Selector("magnificationFilter")
     public native String magnificationFilter();
@@ -347,6 +359,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      * The filter parameters used when rendering the `contents' image. See
      * CALayer.h for more details.
      */
+    @NotNull
     @Generated
     @Selector("minificationFilter")
     public native String minificationFilter();
@@ -358,6 +371,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * The name of the cell. Used to construct key paths. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -442,7 +456,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(CGColorRef value);
+    public native void setColor(@Nullable CGColorRef value);
 
     /**
      * The cell contents, typically a CGImageRef. Defaults to nil.
@@ -450,7 +464,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      */
     @Generated
     @Selector("setContents:")
-    public native void setContents(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setContents(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The sub-rectangle of the contents image that will be drawn. See
@@ -509,11 +523,11 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      */
     @Generated
     @Selector("setEmitterCells:")
-    public native void setEmitterCells(NSArray<? extends CAEmitterCell> value);
+    public native void setEmitterCells(@Nullable NSArray<? extends CAEmitterCell> value);
 
     @Generated
     @Selector("setFillMode:")
-    public native void setFillMode(String value);
+    public native void setFillMode(@NotNull String value);
 
     @Generated
     @Selector("setGreenRange:")
@@ -538,7 +552,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("setMagnificationFilter:")
-    public native void setMagnificationFilter(String value);
+    public native void setMagnificationFilter(@NotNull String value);
 
     /**
      * The filter parameters used when rendering the `contents' image. See
@@ -546,7 +560,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      */
     @Generated
     @Selector("setMinificationFilter:")
-    public native void setMinificationFilter(String value);
+    public native void setMinificationFilter(@NotNull String value);
 
     @Generated
     @Selector("setMinificationFilterBias:")
@@ -557,7 +571,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setRedRange:")
@@ -618,7 +632,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
      */
     @Generated
     @Selector("setStyle:")
-    public native void setStyle(NSDictionary<?, ?> value);
+    public native void setStyle(@Nullable NSDictionary<?, ?> value);
 
     @Generated
     @Selector("setTimeOffset:")
@@ -654,7 +668,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
 
     @Generated
     @Selector("shouldArchiveValueForKey:")
-    public native boolean shouldArchiveValueForKey(String key);
+    public native boolean shouldArchiveValueForKey(@NotNull String key);
 
     @Generated
     @Selector("speed")
@@ -677,6 +691,7 @@ public class CAEmitterCell extends NSObject implements NSSecureCoding, CAMediaTi
     /**
      * Inherited attributes similar to in layers.
      */
+    @Nullable
     @Generated
     @Selector("style")
     public native NSDictionary<?, ?> style();

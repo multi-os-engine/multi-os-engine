@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Foundation")
@@ -43,7 +44,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldCopyItemAtPath:toPath:")
-    default boolean fileManagerShouldCopyItemAtPathToPath(NSFileManager fileManager, String srcPath, String dstPath) {
+    default boolean fileManagerShouldCopyItemAtPathToPath(@NotNull NSFileManager fileManager, @NotNull String srcPath,
+            @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +55,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldCopyItemAtURL:toURL:")
-    default boolean fileManagerShouldCopyItemAtURLToURL(NSFileManager fileManager, NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldCopyItemAtURLToURL(@NotNull NSFileManager fileManager, @NotNull NSURL srcURL,
+            @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,7 +69,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldLinkItemAtPath:toPath:")
-    default boolean fileManagerShouldLinkItemAtPathToPath(NSFileManager fileManager, String srcPath, String dstPath) {
+    default boolean fileManagerShouldLinkItemAtPathToPath(@NotNull NSFileManager fileManager, @NotNull String srcPath,
+            @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,7 +80,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldLinkItemAtURL:toURL:")
-    default boolean fileManagerShouldLinkItemAtURLToURL(NSFileManager fileManager, NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldLinkItemAtURLToURL(@NotNull NSFileManager fileManager, @NotNull NSURL srcURL,
+            @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,7 +96,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldMoveItemAtPath:toPath:")
-    default boolean fileManagerShouldMoveItemAtPathToPath(NSFileManager fileManager, String srcPath, String dstPath) {
+    default boolean fileManagerShouldMoveItemAtPathToPath(@NotNull NSFileManager fileManager, @NotNull String srcPath,
+            @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,7 +107,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldMoveItemAtURL:toURL:")
-    default boolean fileManagerShouldMoveItemAtURLToURL(NSFileManager fileManager, NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldMoveItemAtURLToURL(@NotNull NSFileManager fileManager, @NotNull NSURL srcURL,
+            @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,8 +124,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:copyingItemAtPath:toPath:")
-    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtPathToPath(NSFileManager fileManager, NSError error,
-            String srcPath, String dstPath) {
+    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtPathToPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String srcPath, @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,8 +135,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:copyingItemAtURL:toURL:")
-    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtURLToURL(NSFileManager fileManager, NSError error,
-            NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldProceedAfterErrorCopyingItemAtURLToURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL srcURL, @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,8 +151,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:linkingItemAtPath:toPath:")
-    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtPathToPath(NSFileManager fileManager, NSError error,
-            String srcPath, String dstPath) {
+    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtPathToPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String srcPath, @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,8 +162,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:linkingItemAtURL:toURL:")
-    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtURLToURL(NSFileManager fileManager, NSError error,
-            NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldProceedAfterErrorLinkingItemAtURLToURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL srcURL, @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,8 +177,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:movingItemAtPath:toPath:")
-    default boolean fileManagerShouldProceedAfterErrorMovingItemAtPathToPath(NSFileManager fileManager, NSError error,
-            String srcPath, String dstPath) {
+    default boolean fileManagerShouldProceedAfterErrorMovingItemAtPathToPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String srcPath, @NotNull String dstPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -181,8 +188,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:movingItemAtURL:toURL:")
-    default boolean fileManagerShouldProceedAfterErrorMovingItemAtURLToURL(NSFileManager fileManager, NSError error,
-            NSURL srcURL, NSURL dstURL) {
+    default boolean fileManagerShouldProceedAfterErrorMovingItemAtURLToURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL srcURL, @NotNull NSURL dstURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -197,8 +204,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:removingItemAtPath:")
-    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtPath(NSFileManager fileManager, NSError error,
-            String path) {
+    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtPath(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull String path) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,8 +215,8 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldProceedAfterError:removingItemAtURL:")
-    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtURL(NSFileManager fileManager, NSError error,
-            NSURL URL) {
+    default boolean fileManagerShouldProceedAfterErrorRemovingItemAtURL(@NotNull NSFileManager fileManager,
+            @NotNull NSError error, @NotNull NSURL URL) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -224,7 +231,7 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldRemoveItemAtPath:")
-    default boolean fileManagerShouldRemoveItemAtPath(NSFileManager fileManager, String path) {
+    default boolean fileManagerShouldRemoveItemAtPath(@NotNull NSFileManager fileManager, @NotNull String path) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -234,7 +241,7 @@ public interface NSFileManagerDelegate {
     @Generated
     @IsOptional
     @Selector("fileManager:shouldRemoveItemAtURL:")
-    default boolean fileManagerShouldRemoveItemAtURL(NSFileManager fileManager, NSURL URL) {
+    default boolean fileManagerShouldRemoveItemAtURL(@NotNull NSFileManager fileManager, @NotNull NSURL URL) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -14,6 +14,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This is the object that gets created from the descriptor
@@ -35,6 +37,7 @@ public interface MTLFXSpatialScaler {
      * frame basis. We don't care about the textures assigned except that they must
      * match the required MTLTextureUsage flags.
      */
+    @Nullable
     @Generated
     @Selector("colorTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -61,11 +64,12 @@ public interface MTLFXSpatialScaler {
      */
     @Generated
     @Selector("encodeToCommandBuffer:")
-    void encodeToCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    void encodeToCommandBuffer(@NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Property for synchronization when using untracked resources
      */
+    @Nullable
     @Generated
     @Selector("fence")
     @MappedReturn(ObjCObjectMapper.class)
@@ -102,6 +106,7 @@ public interface MTLFXSpatialScaler {
     /**
      * outputTexture is required to have MTLStorageModePrivate for storageMode
      */
+    @Nullable
     @Generated
     @Selector("outputTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -129,14 +134,14 @@ public interface MTLFXSpatialScaler {
      */
     @Generated
     @Selector("setColorTexture:")
-    void setColorTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setColorTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 
     /**
      * Property for synchronization when using untracked resources
      */
     @Generated
     @Selector("setFence:")
-    void setFence(@Mapped(ObjCObjectMapper.class) MTLFence value);
+    void setFence(@Nullable @Mapped(ObjCObjectMapper.class) MTLFence value);
 
     @Generated
     @Selector("setInputContentHeight:")
@@ -154,5 +159,5 @@ public interface MTLFXSpatialScaler {
      */
     @Generated
     @Selector("setOutputTexture:")
-    void setOutputTexture(@Mapped(ObjCObjectMapper.class) MTLTexture value);
+    void setOutputTexture(@Nullable @Mapped(ObjCObjectMapper.class) MTLTexture value);
 }

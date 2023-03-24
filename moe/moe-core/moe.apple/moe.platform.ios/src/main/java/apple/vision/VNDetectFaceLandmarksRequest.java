@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that will produce face landmark information.
@@ -66,22 +68,25 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,8 +111,9 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNDetectFaceLandmarksRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("inputFaceObservations")
     public native NSArray<? extends VNFaceObservation> inputFaceObservations();
@@ -129,9 +135,10 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,7 +155,7 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
 
     @Generated
     @Selector("setInputFaceObservations:")
-    public native void setInputFaceObservations(NSArray<? extends VNFaceObservation> value);
+    public native void setInputFaceObservations(@Nullable NSArray<? extends VNFaceObservation> value);
 
     @Generated
     @Selector("setVersion:")
@@ -202,6 +209,7 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     @Selector("setConstellation:")
     public native void setConstellation(@NUInt long value);
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -209,6 +217,7 @@ public class VNDetectFaceLandmarksRequest extends VNImageBasedRequest implements
     /**
      * VNFaceObservation with populated landmarks-related properties results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNFaceObservation> results();

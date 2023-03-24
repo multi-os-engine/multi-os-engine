@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -61,22 +63,25 @@ public class AVSampleBufferGenerator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,10 +111,12 @@ public class AVSampleBufferGenerator extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("createSampleBufferForRequest:addingToBatch:error:")
-    public native CMSampleBufferRef createSampleBufferForRequestAddingToBatchError(AVSampleBufferRequest request,
-            AVSampleBufferGeneratorBatch batch, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CMSampleBufferRef createSampleBufferForRequestAddingToBatchError(
+            @NotNull AVSampleBufferRequest request, @NotNull AVSampleBufferGeneratorBatch batch,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * createSampleBufferForRequest: error:
@@ -131,10 +138,11 @@ public class AVSampleBufferGenerator extends NSObject {
      *                 creation fails.
      * @return A CMSampleBuffer object referencing the output sample buffer.
      */
+    @Nullable
     @Generated
     @Selector("createSampleBufferForRequest:error:")
-    public native CMSampleBufferRef createSampleBufferForRequestError(AVSampleBufferRequest request,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CMSampleBufferRef createSampleBufferForRequestError(@NotNull AVSampleBufferRequest request,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("debugDescription")
@@ -169,7 +177,8 @@ public class AVSampleBufferGenerator extends NSObject {
      */
     @Generated
     @Selector("initWithAsset:timebase:")
-    public native AVSampleBufferGenerator initWithAssetTimebase(AVAsset asset, CMTimebaseRef timebase);
+    public native AVSampleBufferGenerator initWithAssetTimebase(@NotNull AVAsset asset,
+            @Nullable CMTimebaseRef timebase);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -188,9 +197,10 @@ public class AVSampleBufferGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * makeBatch
@@ -203,6 +213,7 @@ public class AVSampleBufferGenerator extends NSObject {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("makeBatch")
     public native AVSampleBufferGeneratorBatch makeBatch();
@@ -223,14 +234,14 @@ public class AVSampleBufferGenerator extends NSObject {
      */
     @Generated
     @Selector("notifyOfDataReadyForSampleBuffer:completionHandler:")
-    public static native void notifyOfDataReadyForSampleBufferCompletionHandler(CMSampleBufferRef sbuf,
-            @ObjCBlock(name = "call_notifyOfDataReadyForSampleBufferCompletionHandler") Block_notifyOfDataReadyForSampleBufferCompletionHandler completionHandler);
+    public static native void notifyOfDataReadyForSampleBufferCompletionHandler(@NotNull CMSampleBufferRef sbuf,
+            @NotNull @ObjCBlock(name = "call_notifyOfDataReadyForSampleBufferCompletionHandler") Block_notifyOfDataReadyForSampleBufferCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_notifyOfDataReadyForSampleBufferCompletionHandler {
         @Generated
-        void call_notifyOfDataReadyForSampleBufferCompletionHandler(boolean dataReady, NSError error);
+        void call_notifyOfDataReadyForSampleBufferCompletionHandler(boolean dataReady, @NotNull NSError error);
     }
 
     @Generated

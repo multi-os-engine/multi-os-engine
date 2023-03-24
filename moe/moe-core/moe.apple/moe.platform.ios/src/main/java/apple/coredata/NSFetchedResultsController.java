@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -78,22 +80,25 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,7 +113,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      */
     @Generated
     @Selector("deleteCacheWithName:")
-    public static native <_ResultType> void deleteCacheWithName(String name);
+    public static native <_ResultType> void deleteCacheWithName(@Nullable String name);
 
     @Generated
     @Selector("description")
@@ -136,9 +141,10 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +176,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      * Name of the persistent cached section information. Use nil to disable persistent caching, or +deleteCacheWithName
      * to clear a cache.
      */
+    @Nullable
     @Generated
     @Selector("cacheName")
     public native String cacheName();
@@ -177,6 +184,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     /**
      * Delegate that is notified when the result set changes.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -187,6 +195,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      * after initialization without disabling caching or calling +deleteCacheWithName. The sort descriptor used in the
      * request groups objects into sections.
      */
+    @NotNull
     @Generated
     @Selector("fetchRequest")
     public native NSFetchRequest<?> fetchRequest();
@@ -195,6 +204,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      * Returns the results of the fetch.
      * Returns nil if the performFetch: hasn't been called.
      */
+    @Nullable
     @Generated
     @Selector("fetchedObjects")
     public native NSArray<?> fetchedObjects();
@@ -202,9 +212,10 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     /**
      * Returns the indexPath of a given object.
      */
+    @Nullable
     @Generated
     @Selector("indexPathForObject:")
-    public native NSIndexPath indexPathForObject(@Mapped(ObjCObjectMapper.class) NSFetchRequestResult object);
+    public native NSIndexPath indexPathForObject(@NotNull @Mapped(ObjCObjectMapper.class) NSFetchRequestResult object);
 
     @Generated
     @Selector("init")
@@ -224,12 +235,14 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @Generated
     @Selector("initWithFetchRequest:managedObjectContext:sectionNameKeyPath:cacheName:")
     public native NSFetchedResultsController<?> initWithFetchRequestManagedObjectContextSectionNameKeyPathCacheName(
-            NSFetchRequest<?> fetchRequest, NSManagedObjectContext context, String sectionNameKeyPath, String name);
+            @NotNull NSFetchRequest<?> fetchRequest, @NotNull NSManagedObjectContext context,
+            @Nullable String sectionNameKeyPath, @Nullable String name);
 
     /**
      * Managed Object Context used to fetch objects. The controller registers to listen to change notifications on this
      * context and properly update its result set and section information.
      */
+    @NotNull
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
@@ -237,10 +250,11 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     /**
      * Returns the fetched object at a given indexPath.
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native NSFetchRequestResult objectAtIndexPath(NSIndexPath indexPath);
+    public native NSFetchRequestResult objectAtIndexPath(@NotNull NSIndexPath indexPath);
 
     /**
      * Executes the fetch request on the store to get objects.
@@ -251,7 +265,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      */
     @Generated
     @Selector("performFetch:")
-    public native boolean performFetch(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean performFetch(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the section number for a given section title and index in the section index.
@@ -259,7 +273,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     @Generated
     @Selector("sectionForSectionIndexTitle:atIndex:")
     @NInt
-    public native long sectionForSectionIndexTitleAtIndex(String title, @NInt long sectionIndex);
+    public native long sectionForSectionIndexTitleAtIndex(@NotNull String title, @NInt long sectionIndex);
 
     /**
      * Returns the corresponding section index entry for a given section name.
@@ -268,9 +282,10 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      * -(NSString*)controller:(NSFetchedResultsController *)controller sectionIndexTitleForSectionName
      * Only needed if a section index is used.
      */
+    @Nullable
     @Generated
     @Selector("sectionIndexTitleForSectionName:")
-    public native String sectionIndexTitleForSectionName(String sectionName);
+    public native String sectionIndexTitleForSectionName(@NotNull String sectionName);
 
     /**
      * Returns the array of section index titles.
@@ -279,6 +294,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      * Developers should override this method if they wish to return a different array for the section index.
      * Only needed if a section index is used.
      */
+    @NotNull
     @Generated
     @Selector("sectionIndexTitles")
     public native NSArray<String> sectionIndexTitles();
@@ -286,6 +302,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
     /**
      * The keyPath on the fetched objects used to determine the section they belong to.
      */
+    @Nullable
     @Generated
     @Selector("sectionNameKeyPath")
     public native String sectionNameKeyPath();
@@ -295,6 +312,7 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      * This provide a convenience interface for determining the number of sections, the names and titles of the
      * sections, and access to the model objects that belong to each section.
      */
+    @Nullable
     @Generated
     @Selector("sections")
     public native NSArray<?> sections();
@@ -304,13 +322,14 @@ public class NSFetchedResultsController<_ResultType> extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value);
 
     /**
      * Delegate that is notified when the result set changes.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSFetchedResultsControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

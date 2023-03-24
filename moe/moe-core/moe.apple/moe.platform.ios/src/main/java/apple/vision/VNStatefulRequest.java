@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A request that builds evidence over time by being reused on multiple images.
@@ -66,22 +68,25 @@ public class VNStatefulRequest extends VNImageBasedRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,7 +133,7 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNStatefulRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
      * Create a new video-based stateful request.
@@ -144,13 +149,13 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithFrameAnalysisSpacing:completionHandler:")
     public native VNStatefulRequest initWithFrameAnalysisSpacingCompletionHandler(@ByValue CMTime frameAnalysisSpacing,
-            @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithFrameAnalysisSpacingCompletionHandler") Block_initWithFrameAnalysisSpacingCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithFrameAnalysisSpacingCompletionHandler {
         @Generated
-        void call_initWithFrameAnalysisSpacingCompletionHandler(VNRequest request, NSError error);
+        void call_initWithFrameAnalysisSpacingCompletionHandler(@NotNull VNRequest request, @Nullable NSError error);
     }
 
     @Generated
@@ -170,9 +175,10 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The minimum number of frames that the request has to process on before reporting back any observation. This
@@ -219,6 +225,7 @@ public class VNStatefulRequest extends VNImageBasedRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

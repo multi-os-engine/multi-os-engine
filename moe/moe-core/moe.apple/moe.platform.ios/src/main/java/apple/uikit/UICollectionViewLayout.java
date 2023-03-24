@@ -44,6 +44,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -78,22 +80,25 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,6 +134,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("invalidationContextClass")
     public static native Class invalidationContextClass();
@@ -137,14 +143,16 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * override this method to provide a custom class to be used when instantiating instances of
      * UICollectionViewLayoutAttributes
      */
+    @NotNull
     @Generated
     @Selector("layoutAttributesClass")
     public static native Class layoutAttributesClass();
@@ -180,6 +188,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * information.
      * To get the truth on the current state of the collection view, call methods on UICollectionView rather than these.
      */
+    @Nullable
     @Generated
     @Selector("collectionView")
     public native UICollectionView collectionView();
@@ -196,22 +205,25 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("finalLayoutAttributesForDisappearingDecorationElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes finalLayoutAttributesForDisappearingDecorationElementOfKindAtIndexPath(
-            String elementKind, NSIndexPath decorationIndexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath decorationIndexPath);
 
+    @Nullable
     @Generated
     @Selector("finalLayoutAttributesForDisappearingItemAtIndexPath:")
     public native UICollectionViewLayoutAttributes finalLayoutAttributesForDisappearingItemAtIndexPath(
-            NSIndexPath itemIndexPath);
+            @NotNull NSIndexPath itemIndexPath);
 
+    @Nullable
     @Generated
     @Selector("finalLayoutAttributesForDisappearingSupplementaryElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes finalLayoutAttributesForDisappearingSupplementaryElementOfKindAtIndexPath(
-            String elementKind, NSIndexPath elementIndexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath elementIndexPath);
 
     /**
      * also called inside the animation block
@@ -239,9 +251,10 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("indexPathsToDeleteForDecorationViewOfKind:")
-    public native NSArray<? extends NSIndexPath> indexPathsToDeleteForDecorationViewOfKind(String elementKind);
+    public native NSArray<? extends NSIndexPath> indexPathsToDeleteForDecorationViewOfKind(@NotNull String elementKind);
 
     /**
      * These methods are called by collection view during an update block.
@@ -250,23 +263,28 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("indexPathsToDeleteForSupplementaryViewOfKind:")
-    public native NSArray<? extends NSIndexPath> indexPathsToDeleteForSupplementaryViewOfKind(String elementKind);
+    public native NSArray<? extends NSIndexPath> indexPathsToDeleteForSupplementaryViewOfKind(
+            @NotNull String elementKind);
 
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("indexPathsToInsertForDecorationViewOfKind:")
-    public native NSArray<? extends NSIndexPath> indexPathsToInsertForDecorationViewOfKind(String elementKind);
+    public native NSArray<? extends NSIndexPath> indexPathsToInsertForDecorationViewOfKind(@NotNull String elementKind);
 
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("indexPathsToInsertForSupplementaryViewOfKind:")
-    public native NSArray<? extends NSIndexPath> indexPathsToInsertForSupplementaryViewOfKind(String elementKind);
+    public native NSArray<? extends NSIndexPath> indexPathsToInsertForSupplementaryViewOfKind(
+            @NotNull String elementKind);
 
     @Generated
     @Selector("init")
@@ -274,12 +292,13 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewLayout initWithCoder(NSCoder coder);
+    public native UICollectionViewLayout initWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("initialLayoutAttributesForAppearingDecorationElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes initialLayoutAttributesForAppearingDecorationElementOfKindAtIndexPath(
-            String elementKind, NSIndexPath decorationIndexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath decorationIndexPath);
 
     /**
      * This set of methods is called when the collection view undergoes an animated transition such as a batch update
@@ -289,15 +308,17 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      * For each element on screen after the invalidation, initialLayoutAttributesForAppearingXXX will be called and an
      * animation setup from those initial attributes to what ends up on screen.
      */
+    @Nullable
     @Generated
     @Selector("initialLayoutAttributesForAppearingItemAtIndexPath:")
     public native UICollectionViewLayoutAttributes initialLayoutAttributesForAppearingItemAtIndexPath(
-            NSIndexPath itemIndexPath);
+            @NotNull NSIndexPath itemIndexPath);
 
+    @Nullable
     @Generated
     @Selector("initialLayoutAttributesForAppearingSupplementaryElementOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes initialLayoutAttributesForAppearingSupplementaryElementOfKindAtIndexPath(
-            String elementKind, NSIndexPath elementIndexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath elementIndexPath);
 
     /**
      * Call -invalidateLayout to indicate that the collection view needs to requery the layout information.
@@ -312,11 +333,12 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("invalidateLayoutWithContext:")
-    public native void invalidateLayoutWithContext(UICollectionViewLayoutInvalidationContext context);
+    public native void invalidateLayoutWithContext(@NotNull UICollectionViewLayoutInvalidationContext context);
 
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("invalidationContextForBoundsChange:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForBoundsChange(
@@ -325,37 +347,43 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:previousIndexPaths:movementCancelled:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPathsPreviousIndexPathsMovementCancelled(
-            NSArray<? extends NSIndexPath> indexPaths, NSArray<? extends NSIndexPath> previousIndexPaths,
-            boolean movementCancelled);
+            @NotNull NSArray<? extends NSIndexPath> indexPaths,
+            @NotNull NSArray<? extends NSIndexPath> previousIndexPaths, boolean movementCancelled);
 
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("invalidationContextForInteractivelyMovingItems:withTargetPosition:previousIndexPaths:previousPosition:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForInteractivelyMovingItemsWithTargetPositionPreviousIndexPathsPreviousPosition(
-            NSArray<? extends NSIndexPath> targetIndexPaths, @ByValue CGPoint targetPosition,
-            NSArray<? extends NSIndexPath> previousIndexPaths, @ByValue CGPoint previousPosition);
+            @NotNull NSArray<? extends NSIndexPath> targetIndexPaths, @ByValue CGPoint targetPosition,
+            @NotNull NSArray<? extends NSIndexPath> previousIndexPaths, @ByValue CGPoint previousPosition);
 
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("invalidationContextForPreferredLayoutAttributes:withOriginalAttributes:")
     public native UICollectionViewLayoutInvalidationContext invalidationContextForPreferredLayoutAttributesWithOriginalAttributes(
-            UICollectionViewLayoutAttributes preferredAttributes, UICollectionViewLayoutAttributes originalAttributes);
+            @NotNull UICollectionViewLayoutAttributes preferredAttributes,
+            @NotNull UICollectionViewLayoutAttributes originalAttributes);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForDecorationViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForDecorationViewOfKindAtIndexPath(
-            String elementKind, NSIndexPath indexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath);
 
     /**
      * return an array layout attributes instances for all the views in the given rect
      */
+    @Nullable
     @Generated
     @Selector("layoutAttributesForElementsInRect:")
     public native NSArray<? extends UICollectionViewLayoutAttributes> layoutAttributesForElementsInRect(
@@ -364,19 +392,22 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("layoutAttributesForInteractivelyMovingItemAtIndexPath:withTargetPosition:")
     public native UICollectionViewLayoutAttributes layoutAttributesForInteractivelyMovingItemAtIndexPathWithTargetPosition(
-            NSIndexPath indexPath, @ByValue CGPoint position);
+            @NotNull NSIndexPath indexPath, @ByValue CGPoint position);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForItemAtIndexPath:")
-    public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(NSIndexPath indexPath);
+    public native UICollectionViewLayoutAttributes layoutAttributesForItemAtIndexPath(@NotNull NSIndexPath indexPath);
 
+    @Nullable
     @Generated
     @Selector("layoutAttributesForSupplementaryViewOfKind:atIndexPath:")
     public native UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKindAtIndexPath(
-            String elementKind, NSIndexPath indexPath);
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath);
 
     /**
      * UICollectionView calls this when its bounds have changed inside an animation block before displaying cells in its
@@ -395,14 +426,15 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("prepareForCollectionViewUpdates:")
-    public native void prepareForCollectionViewUpdates(NSArray<? extends UICollectionViewUpdateItem> updateItems);
+    public native void prepareForCollectionViewUpdates(
+            @NotNull NSArray<? extends UICollectionViewUpdateItem> updateItems);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("prepareForTransitionFromLayout:")
-    public native void prepareForTransitionFromLayout(UICollectionViewLayout oldLayout);
+    public native void prepareForTransitionFromLayout(@NotNull UICollectionViewLayout oldLayout);
 
     /**
      * UICollectionView calls this when prior the layout transition animation on the incoming and outgoing layout
@@ -411,7 +443,7 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
      */
     @Generated
     @Selector("prepareForTransitionToLayout:")
-    public native void prepareForTransitionToLayout(UICollectionViewLayout newLayout);
+    public native void prepareForTransitionToLayout(@NotNull UICollectionViewLayout newLayout);
 
     /**
      * The collection view calls -prepareLayout once at its first layout as the first message to the layout instance.
@@ -425,11 +457,11 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
 
     @Generated
     @Selector("registerClass:forDecorationViewOfKind:")
-    public native void registerClassForDecorationViewOfKind(Class viewClass, String elementKind);
+    public native void registerClassForDecorationViewOfKind(@Nullable Class viewClass, @NotNull String elementKind);
 
     @Generated
     @Selector("registerNib:forDecorationViewOfKind:")
-    public native void registerNibForDecorationViewOfKind(UINib nib, String elementKind);
+    public native void registerNibForDecorationViewOfKind(@Nullable UINib nib, @NotNull String elementKind);
 
     /**
      * return YES to cause the collection view to requery the layout for geometry information
@@ -444,7 +476,8 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     @Generated
     @Selector("shouldInvalidateLayoutForPreferredLayoutAttributes:withOriginalAttributes:")
     public native boolean shouldInvalidateLayoutForPreferredLayoutAttributesWithOriginalAttributes(
-            UICollectionViewLayoutAttributes preferredAttributes, UICollectionViewLayoutAttributes originalAttributes);
+            @NotNull UICollectionViewLayoutAttributes preferredAttributes,
+            @NotNull UICollectionViewLayoutAttributes originalAttributes);
 
     /**
      * a layout can return the content offset to be applied during transition or update animations
@@ -468,10 +501,11 @@ public class UICollectionViewLayout extends NSObject implements NSCoding {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("targetIndexPathForInteractivelyMovingItem:withPosition:")
-    public native NSIndexPath targetIndexPathForInteractivelyMovingItemWithPosition(NSIndexPath previousIndexPath,
-            @ByValue CGPoint position);
+    public native NSIndexPath targetIndexPathForInteractivelyMovingItemWithPosition(
+            @NotNull NSIndexPath previousIndexPath, @ByValue CGPoint position);
 
     /**
      * Default implementation returns the layout direction of the main bundle's development region; FlowLayout returns

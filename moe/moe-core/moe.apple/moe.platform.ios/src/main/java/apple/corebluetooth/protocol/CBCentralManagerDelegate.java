@@ -29,6 +29,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CBCentralManagerDelegate
@@ -54,7 +56,8 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:didConnectPeripheral:")
-    default void centralManagerDidConnectPeripheral(CBCentralManager central, CBPeripheral peripheral) {
+    default void centralManagerDidConnectPeripheral(@NotNull CBCentralManager central,
+            @NotNull CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,8 +77,8 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:didDisconnectPeripheral:error:")
-    default void centralManagerDidDisconnectPeripheralError(CBCentralManager central, CBPeripheral peripheral,
-            NSError error) {
+    default void centralManagerDidDisconnectPeripheralError(@NotNull CBCentralManager central,
+            @NotNull CBPeripheral peripheral, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -100,8 +103,9 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:didDiscoverPeripheral:advertisementData:RSSI:")
-    default void centralManagerDidDiscoverPeripheralAdvertisementDataRSSI(CBCentralManager central,
-            CBPeripheral peripheral, NSDictionary<String, ?> advertisementData, NSNumber RSSI) {
+    default void centralManagerDidDiscoverPeripheralAdvertisementDataRSSI(@NotNull CBCentralManager central,
+            @NotNull CBPeripheral peripheral, @NotNull NSDictionary<String, ?> advertisementData,
+            @NotNull NSNumber RSSI) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,8 +123,8 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:didFailToConnectPeripheral:error:")
-    default void centralManagerDidFailToConnectPeripheralError(CBCentralManager central, CBPeripheral peripheral,
-            NSError error) {
+    default void centralManagerDidFailToConnectPeripheralError(@NotNull CBCentralManager central,
+            @NotNull CBPeripheral peripheral, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,7 +148,8 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:willRestoreState:")
-    default void centralManagerWillRestoreState(CBCentralManager central, NSDictionary<String, ?> dict) {
+    default void centralManagerWillRestoreState(@NotNull CBCentralManager central,
+            @NotNull NSDictionary<String, ?> dict) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -163,7 +168,7 @@ public interface CBCentralManagerDelegate {
      */
     @Generated
     @Selector("centralManagerDidUpdateState:")
-    void centralManagerDidUpdateState(CBCentralManager central);
+    void centralManagerDidUpdateState(@NotNull CBCentralManager central);
 
     /**
      * centralManager:connectionEventDidOccur:forPeripheral:
@@ -181,8 +186,8 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:connectionEventDidOccur:forPeripheral:")
-    default void centralManagerConnectionEventDidOccurForPeripheral(CBCentralManager central, @NInt long event,
-            CBPeripheral peripheral) {
+    default void centralManagerConnectionEventDidOccurForPeripheral(@NotNull CBCentralManager central, @NInt long event,
+            @NotNull CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,8 +206,8 @@ public interface CBCentralManagerDelegate {
     @Generated
     @IsOptional
     @Selector("centralManager:didUpdateANCSAuthorizationForPeripheral:")
-    default void centralManagerDidUpdateANCSAuthorizationForPeripheral(CBCentralManager central,
-            CBPeripheral peripheral) {
+    default void centralManagerDidUpdateANCSAuthorizationForPeripheral(@NotNull CBCentralManager central,
+            @NotNull CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

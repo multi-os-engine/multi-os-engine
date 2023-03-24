@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetWriterInputPixelBufferAdaptor
@@ -118,26 +120,29 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Generated
     @Selector("assetWriterInputPixelBufferAdaptorWithAssetWriterInput:sourcePixelBufferAttributes:")
     public static native AVAssetWriterInputPixelBufferAdaptor assetWriterInputPixelBufferAdaptorWithAssetWriterInputSourcePixelBufferAttributes(
-            AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
+            @NotNull AVAssetWriterInput input, @Nullable NSDictionary<String, ?> sourcePixelBufferAttributes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -172,9 +177,10 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -259,7 +265,7 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      */
     @Generated
     @Selector("appendPixelBuffer:withPresentationTime:")
-    public native boolean appendPixelBufferWithPresentationTime(CVBufferRef pixelBuffer,
+    public native boolean appendPixelBufferWithPresentationTime(@NotNull CVBufferRef pixelBuffer,
             @ByValue CMTime presentationTime);
 
     /**
@@ -267,6 +273,7 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * 
      * The asset writer input to which the receiver should append pixel buffers.
      */
+    @NotNull
     @Generated
     @Selector("assetWriterInput")
     public native AVAssetWriterInput assetWriterInput();
@@ -310,7 +317,7 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
     @Generated
     @Selector("initWithAssetWriterInput:sourcePixelBufferAttributes:")
     public native AVAssetWriterInputPixelBufferAdaptor initWithAssetWriterInputSourcePixelBufferAttributes(
-            AVAssetWriterInput input, NSDictionary<String, ?> sourcePixelBufferAttributes);
+            @NotNull AVAssetWriterInput input, @Nullable NSDictionary<String, ?> sourcePixelBufferAttributes);
 
     /**
      * [@property] pixelBufferPool
@@ -330,6 +337,7 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * buffer adaptor's source pixel buffer attributes (must specify width, height, and either pixel format or pixel
      * format description).
      */
+    @Nullable
     @Generated
     @Selector("pixelBufferPool")
     public native CVPixelBufferPoolRef pixelBufferPool();
@@ -342,6 +350,7 @@ public class AVAssetWriterInputPixelBufferAdaptor extends NSObject {
      * The value of this property is a dictionary containing pixel buffer attributes keys defined in
      * <CoreVideo/CVPixelBuffer.h>.
      */
+    @Nullable
     @Generated
     @Selector("sourcePixelBufferAttributes")
     public native NSDictionary<String, ?> sourcePixelBufferAttributes();

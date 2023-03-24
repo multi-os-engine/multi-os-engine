@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The basic NSExtensionRequestHandling protocol defines a lifecycle hook into the extension. Non view-controller-based
@@ -43,5 +44,5 @@ public interface NSExtensionRequestHandling {
      */
     @Generated
     @Selector("beginRequestWithExtensionContext:")
-    void beginRequestWithExtensionContext(NSExtensionContext context);
+    void beginRequestWithExtensionContext(@NotNull NSExtensionContext context);
 }

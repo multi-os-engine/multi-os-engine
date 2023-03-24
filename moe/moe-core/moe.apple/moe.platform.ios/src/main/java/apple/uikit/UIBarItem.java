@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -79,55 +81,64 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("allocWithZone:")
     public static native UIBarItem allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UIBarItem appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UIBarItem appearanceForTraitCollection(UITraitCollection trait);
+    public static native UIBarItem appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UIBarItem appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIBarItem appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIBarItem appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UIBarItem appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIBarItem appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UIBarItem appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -162,9 +173,10 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,58 +204,66 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UIBarItem _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UIBarItem _appearanceForTraitCollection(UITraitCollection trait) {
+    public UIBarItem _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UIBarItem _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIBarItem _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UIBarItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UIBarItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIBarItem _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UIBarItem _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIBarItem _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UIBarItem _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -262,7 +282,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarItem initWithCoder(NSCoder coder);
+    public native UIBarItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * default is YES
@@ -283,6 +303,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("landscapeImagePhone")
     public native UIImage landscapeImagePhone();
@@ -299,14 +320,14 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
 
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
+    public native void setAccessibilityIdentifier(@Nullable String value);
 
     /**
      * default is nil
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * default is UIEdgeInsetsZero
@@ -322,7 +343,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      */
     @Generated
     @Selector("setLandscapeImagePhone:")
-    public native void setLandscapeImagePhone(UIImage value);
+    public native void setLandscapeImagePhone(@Nullable UIImage value);
 
     /**
      * default is UIEdgeInsetsZero. These insets apply only when the landscapeImagePhone property is set.
@@ -345,7 +366,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * You may specify the font, text color, and shadow properties for the title in the text attributes dictionary,
@@ -355,7 +376,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      */
     @Generated
     @Selector("setTitleTextAttributes:forState:")
-    public native void setTitleTextAttributesForState(NSDictionary<String, ?> attributes, @NUInt long state);
+    public native void setTitleTextAttributesForState(@Nullable NSDictionary<String, ?> attributes, @NUInt long state);
 
     /**
      * default is 0
@@ -368,6 +389,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -375,6 +397,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("titleTextAttributesForState:")
     public native NSDictionary<String, ?> titleTextAttributesForState(@NUInt long state);
@@ -386,6 +409,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("largeContentSizeImage")
     public native UIImage largeContentSizeImage();
@@ -409,7 +433,7 @@ public class UIBarItem extends NSObject implements NSCoding, UIAppearance, UIAcc
      */
     @Generated
     @Selector("setLargeContentSizeImage:")
-    public native void setLargeContentSizeImage(UIImage value);
+    public native void setLargeContentSizeImage(@Nullable UIImage value);
 
     /**
      * default is UIEdgeInsetsZero. These insets apply only when the largeContentSizeImage property is set.

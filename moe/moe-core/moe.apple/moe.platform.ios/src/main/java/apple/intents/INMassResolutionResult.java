@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -57,38 +59,43 @@ public class INMassResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INMassResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
      * This resolution result is to ask Siri to confirm if this is the mass with which the user wants to continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithMassToConfirm:")
     public static native INMassResolutionResult confirmationRequiredWithMassToConfirm(
-            NSMeasurement<NSUnitMass> massToConfirm);
+            @Nullable NSMeasurement<NSUnitMass> massToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -101,10 +108,11 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to disambiguate between the provided mass.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithMassToDisambiguate:")
     public static native INMassResolutionResult disambiguationWithMassToDisambiguate(
-            NSArray<? extends NSMeasurement<NSUnitMass>> massToDisambiguate);
+            @NotNull NSArray<? extends NSMeasurement<NSUnitMass>> massToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -132,10 +140,12 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INMassResolutionResult needsValue();
@@ -145,6 +155,7 @@ public class INMassResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INMassResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INMassResolutionResult notRequired();
@@ -167,18 +178,22 @@ public class INMassResolutionResult extends INIntentResolutionResult {
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedMass:")
-    public static native INMassResolutionResult successWithResolvedMass(NSMeasurement<NSUnitMass> resolvedMass);
+    public static native INMassResolutionResult successWithResolvedMass(
+            @NotNull NSMeasurement<NSUnitMass> resolvedMass);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INMassResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INMassResolutionResult unsupportedWithReason(@NInt long reason);

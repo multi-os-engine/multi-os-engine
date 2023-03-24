@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNAvoidOccluderConstraint
@@ -67,7 +69,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * avoidOccluderConstraintWithTarget
@@ -76,7 +78,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("avoidOccluderConstraintWithTarget:")
-    public static native SCNAvoidOccluderConstraint avoidOccluderConstraintWithTarget(SCNNode target);
+    public static native SCNAvoidOccluderConstraint avoidOccluderConstraintWithTarget(@Nullable SCNNode target);
 
     /**
      * [@property] bias
@@ -92,18 +94,21 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,6 +122,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * 
      * The receiver's delegate
      */
+    @NotNull
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -137,7 +143,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAvoidOccluderConstraint initWithCoder(NSCoder coder);
+    public native SCNAvoidOccluderConstraint initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -156,9 +162,10 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -201,7 +208,8 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value);
+    public native void setDelegate_unsafe(
+            @NotNull @Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value);
 
     /**
      * [@property] delegate
@@ -209,7 +217,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * The receiver's delegate
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value) {
+    public void setDelegate(@NotNull @Mapped(ObjCObjectMapper.class) SCNAvoidOccluderConstraintDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -236,7 +244,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("setTarget:")
-    public native void setTarget(SCNNode value);
+    public native void setTarget(@Nullable SCNNode value);
 
     @Generated
     @Selector("setVersion:")
@@ -261,6 +269,7 @@ public class SCNAvoidOccluderConstraint extends SCNConstraint {
      * 
      * Defines the target node
      */
+    @Nullable
     @Generated
     @Selector("target")
     public native SCNNode target();

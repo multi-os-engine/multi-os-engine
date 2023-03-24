@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UniformTypeIdentifiers")
@@ -30,6 +31,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -40,6 +42,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -52,6 +55,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeItem();
@@ -67,6 +71,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeContent();
@@ -81,6 +86,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCompositeContent();
@@ -92,6 +98,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeDiskImage();
@@ -106,6 +113,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeData();
@@ -119,6 +127,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeDirectory();
@@ -130,6 +139,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeResolvable();
@@ -143,6 +153,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSymbolicLink();
@@ -156,6 +167,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeExecutable();
@@ -170,6 +182,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMountPoint();
@@ -183,6 +196,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAliasFile();
@@ -196,6 +210,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeURLBookmarkData();
@@ -209,6 +224,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeURL();
@@ -222,6 +238,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeFileURL();
@@ -236,6 +253,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeText();
@@ -249,6 +267,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePlainText();
@@ -262,6 +281,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUTF8PlainText();
@@ -276,6 +296,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUTF16ExternalPlainText();
@@ -290,6 +311,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUTF16PlainText();
@@ -303,6 +325,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeDelimitedText();
@@ -316,6 +339,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCommaSeparatedText();
@@ -329,6 +353,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeTabSeparatedText();
@@ -342,6 +367,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUTF8TabSeparatedText();
@@ -355,6 +381,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeRTF();
@@ -368,6 +395,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeHTML();
@@ -381,6 +409,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeXML();
@@ -394,6 +423,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeYAML();
@@ -407,6 +437,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSourceCode();
@@ -420,6 +451,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAssemblyLanguageSource();
@@ -433,6 +465,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCSource();
@@ -446,6 +479,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeObjectiveCSource();
@@ -459,6 +493,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSwiftSource();
@@ -472,6 +507,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCPlusPlusSource();
@@ -485,6 +521,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeObjectiveCPlusPlusSource();
@@ -498,6 +535,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCHeader();
@@ -511,6 +549,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCPlusPlusHeader();
@@ -524,6 +563,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeScript();
@@ -537,6 +577,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAppleScript();
@@ -550,6 +591,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeOSAScript();
@@ -563,6 +605,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeOSAScriptBundle();
@@ -576,6 +619,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeJavaScript();
@@ -589,6 +633,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeShellScript();
@@ -602,6 +647,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePerlScript();
@@ -615,6 +661,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePythonScript();
@@ -628,6 +675,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeRubyScript();
@@ -641,6 +689,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePHPScript();
@@ -657,6 +706,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeJSON();
@@ -670,6 +720,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePropertyList();
@@ -683,6 +734,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeXMLPropertyList();
@@ -696,6 +748,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeBinaryPropertyList();
@@ -709,6 +762,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePDF();
@@ -723,6 +777,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeRTFD();
@@ -736,6 +791,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeFlatRTFD();
@@ -749,6 +805,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeWebArchive();
@@ -762,6 +819,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeImage();
@@ -775,6 +833,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeJPEG();
@@ -788,6 +847,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeTIFF();
@@ -801,6 +861,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeGIF();
@@ -814,6 +875,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePNG();
@@ -827,6 +889,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeICNS();
@@ -840,6 +903,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeBMP();
@@ -853,6 +917,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeICO();
@@ -866,6 +931,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeRAWImage();
@@ -879,6 +945,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSVG();
@@ -890,6 +957,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeLivePhoto();
@@ -903,6 +971,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeHEIF();
@@ -916,6 +985,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeHEIC();
@@ -929,6 +999,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeWebP();
@@ -942,6 +1013,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTType3DContent();
@@ -955,6 +1027,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUSD();
@@ -968,6 +1041,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUSDZ();
@@ -981,6 +1055,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeRealityFile();
@@ -994,6 +1069,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSceneKitScene();
@@ -1007,6 +1083,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeARReferenceObject();
@@ -1020,6 +1097,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAudiovisualContent();
@@ -1035,6 +1113,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMovie();
@@ -1048,6 +1127,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeVideo();
@@ -1061,6 +1141,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAudio();
@@ -1074,6 +1155,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeQuickTimeMovie();
@@ -1087,6 +1169,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMPEG();
@@ -1100,6 +1183,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMPEG2Video();
@@ -1113,6 +1197,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMPEG2TransportStream();
@@ -1126,6 +1211,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMP3();
@@ -1139,6 +1225,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMPEG4Movie();
@@ -1152,6 +1239,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMPEG4Audio();
@@ -1165,6 +1253,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAppleProtectedMPEG4Audio();
@@ -1178,6 +1267,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAppleProtectedMPEG4Video();
@@ -1191,6 +1281,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAVI();
@@ -1204,6 +1295,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAIFF();
@@ -1217,6 +1309,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeWAV();
@@ -1230,6 +1323,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMIDI();
@@ -1241,6 +1335,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePlaylist();
@@ -1254,6 +1349,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeM3UPlaylist();
@@ -1267,6 +1363,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeFolder();
@@ -1280,6 +1377,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeVolume();
@@ -1298,6 +1396,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePackage();
@@ -1316,6 +1415,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeBundle();
@@ -1329,6 +1429,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePluginBundle();
@@ -1342,6 +1443,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSpotlightImporter();
@@ -1355,6 +1457,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeQuickLookGenerator();
@@ -1368,6 +1471,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeXPCService();
@@ -1381,6 +1485,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeFramework();
@@ -1394,6 +1499,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeApplication();
@@ -1407,6 +1513,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeApplicationBundle();
@@ -1420,6 +1527,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeApplicationExtension();
@@ -1433,6 +1541,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeUnixExecutable();
@@ -1446,6 +1555,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeEXE();
@@ -1459,6 +1569,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSystemPreferencesPane();
@@ -1470,6 +1581,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeArchive();
@@ -1483,6 +1595,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeGZIP();
@@ -1496,6 +1609,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeBZ2();
@@ -1509,6 +1623,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeZIP();
@@ -1522,6 +1637,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeAppleArchive();
@@ -1535,6 +1651,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeSpreadsheet();
@@ -1548,6 +1665,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePresentation();
@@ -1559,6 +1677,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeDatabase();
@@ -1570,6 +1689,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMessage();
@@ -1581,6 +1701,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeContact();
@@ -1594,6 +1715,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeVCard();
@@ -1605,6 +1727,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeToDoItem();
@@ -1616,6 +1739,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeCalendarEvent();
@@ -1629,6 +1753,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeEmailMessage();
@@ -1642,6 +1767,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeInternetLocation();
@@ -1655,6 +1781,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeInternetShortcut();
@@ -1666,6 +1793,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeFont();
@@ -1679,6 +1807,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeBookmark();
@@ -1692,6 +1821,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypePKCS12();
@@ -1705,6 +1835,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeX509Certificate();
@@ -1718,6 +1849,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeEPUB();
@@ -1729,6 +1861,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeLog();
@@ -1742,6 +1875,7 @@ public final class UniformTypeIdentifiers {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native UTType UTTypeMakefile();

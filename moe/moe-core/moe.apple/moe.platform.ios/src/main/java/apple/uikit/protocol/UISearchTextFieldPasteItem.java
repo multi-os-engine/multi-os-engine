@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A protocol that refines UITextPasteItem to support pasting of tokens.
@@ -23,5 +24,5 @@ public interface UISearchTextFieldPasteItem extends UITextPasteItem {
      */
     @Generated
     @Selector("setSearchTokenResult:")
-    void setSearchTokenResult(UISearchToken token);
+    void setSearchTokenResult(@NotNull UISearchToken token);
 }

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSNNScale object that uses the Lanczos resampling filter
@@ -66,22 +68,25 @@ public class MPSNNLanczosScaleNode extends MPSNNScaleNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,12 +110,14 @@ public class MPSNNLanczosScaleNode extends MPSNNScaleNode {
 
     @Generated
     @Selector("initWithSource:outputSize:")
-    public native MPSNNLanczosScaleNode initWithSourceOutputSize(MPSNNImageNode sourceNode, @ByValue MTLSize size);
+    public native MPSNNLanczosScaleNode initWithSourceOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("initWithSource:transformProvider:outputSize:")
-    public native MPSNNLanczosScaleNode initWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider, @ByValue MTLSize size);
+    public native MPSNNLanczosScaleNode initWithSourceTransformProviderOutputSize(@NotNull MPSNNImageNode sourceNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,9 +136,10 @@ public class MPSNNLanczosScaleNode extends MPSNNScaleNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -140,13 +148,15 @@ public class MPSNNLanczosScaleNode extends MPSNNScaleNode {
 
     @Generated
     @Selector("nodeWithSource:outputSize:")
-    public static native MPSNNLanczosScaleNode nodeWithSourceOutputSize(MPSNNImageNode sourceNode,
+    public static native MPSNNLanczosScaleNode nodeWithSourceOutputSize(@NotNull MPSNNImageNode sourceNode,
             @ByValue MTLSize size);
 
     @Generated
     @Selector("nodeWithSource:transformProvider:outputSize:")
-    public static native MPSNNLanczosScaleNode nodeWithSourceTransformProviderOutputSize(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider, @ByValue MTLSize size);
+    public static native MPSNNLanczosScaleNode nodeWithSourceTransformProviderOutputSize(
+            @NotNull MPSNNImageNode sourceNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MPSImageTransformProvider transformProvider,
+            @ByValue MTLSize size);
 
     @Generated
     @Selector("resolveClassMethod:")

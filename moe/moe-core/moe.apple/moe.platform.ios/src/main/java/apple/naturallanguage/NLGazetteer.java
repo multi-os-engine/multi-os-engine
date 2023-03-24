@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NLGazetteer is a class representing an efficient probabilistic representation for assigning labels to a set of
@@ -64,22 +66,25 @@ public class NLGazetteer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,6 +92,7 @@ public class NLGazetteer extends NSObject {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
@@ -104,8 +110,8 @@ public class NLGazetteer extends NSObject {
      */
     @Generated
     @Selector("gazetteerWithContentsOfURL:error:")
-    public static native NLGazetteer gazetteerWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NLGazetteer gazetteerWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hash")
@@ -121,15 +127,16 @@ public class NLGazetteer extends NSObject {
      */
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native NLGazetteer initWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NLGazetteer initWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("initWithData:error:")
-    public native NLGazetteer initWithDataError(NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NLGazetteer initWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 13.0
@@ -137,8 +144,8 @@ public class NLGazetteer extends NSObject {
     @Generated
     @Selector("initWithDictionary:language:error:")
     public native NLGazetteer initWithDictionaryLanguageError(
-            NSDictionary<String, ? extends NSArray<String>> dictionary, String language,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSDictionary<String, ? extends NSArray<String>> dictionary, @Nullable String language,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,20 +164,23 @@ public class NLGazetteer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("labelForString:")
-    public native String labelForString(String string);
+    public native String labelForString(@NotNull String string);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("language")
     public native String language();
@@ -207,6 +217,6 @@ public class NLGazetteer extends NSObject {
     @Generated
     @Selector("writeGazetteerForDictionary:language:toURL:error:")
     public static native boolean writeGazetteerForDictionaryLanguageToURLError(
-            NSDictionary<String, ? extends NSArray<String>> dictionary, String language, NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSDictionary<String, ? extends NSArray<String>> dictionary, @Nullable String language,
+            @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

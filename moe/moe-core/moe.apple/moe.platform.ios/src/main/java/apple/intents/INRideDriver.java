@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -77,22 +79,25 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,15 +167,16 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,13 +184,13 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideDriver initWithCoder(NSCoder coder);
+    public native INRideDriver initWithCoder(@NotNull NSCoder coder);
 
     @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
-    public native INRideDriver initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
-            String contactIdentifier);
+    public native INRideDriver initWithHandleDisplayNameContactIdentifier(@NotNull String handle,
+            @Nullable String displayName, @Nullable String contactIdentifier);
 
     /**
      * API-Since: 10.0
@@ -193,20 +200,22 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:image:rating:phoneNumber:")
-    public native INRideDriver initWithHandleDisplayNameImageRatingPhoneNumber(String handle, String displayName,
-            INImage image, String rating, String phoneNumber);
+    public native INRideDriver initWithHandleDisplayNameImageRatingPhoneNumber(@NotNull String handle,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String rating,
+            @Nullable String phoneNumber);
 
     @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
-    public native INRideDriver initWithHandleNameComponentsContactIdentifier(String handle,
-            NSPersonNameComponents nameComponents, String contactIdentifier);
+    public native INRideDriver initWithHandleNameComponentsContactIdentifier(@NotNull String handle,
+            @NotNull NSPersonNameComponents nameComponents, @Nullable String contactIdentifier);
 
     @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:displayName:image:contactIdentifier:")
-    public native INRideDriver initWithHandleNameComponentsDisplayNameImageContactIdentifier(String handle,
-            NSPersonNameComponents nameComponents, String displayName, INImage image, String contactIdentifier);
+    public native INRideDriver initWithHandleNameComponentsDisplayNameImageContactIdentifier(@NotNull String handle,
+            @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName, @Nullable INImage image,
+            @Nullable String contactIdentifier);
 
     /**
      * API-Since: 10.0
@@ -216,20 +225,23 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:image:rating:phoneNumber:")
-    public native INRideDriver initWithHandleNameComponentsImageRatingPhoneNumber(String handle,
-            NSPersonNameComponents nameComponents, INImage image, String rating, String phoneNumber);
+    public native INRideDriver initWithHandleNameComponentsImageRatingPhoneNumber(@NotNull String handle,
+            @NotNull NSPersonNameComponents nameComponents, @Nullable INImage image, @Nullable String rating,
+            @Nullable String phoneNumber);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifier(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:aliases:suggestionType:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierAliasesSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, NSArray<? extends INPersonHandle> aliases,
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, @Nullable NSArray<? extends INPersonHandle> aliases,
             @NInt long suggestionType);
 
     /**
@@ -241,21 +253,25 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:rating:phoneNumber:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageRatingPhoneNumber(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String rating, String phoneNumber);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String rating,
+            @Nullable String phoneNumber);
 
     /**
      * API-Since: 10.2
      */
     @Generated
     @Selector("initWithPhoneNumber:nameComponents:displayName:image:rating:")
-    public native INRideDriver initWithPhoneNumberNameComponentsDisplayNameImageRating(String phoneNumber,
-            NSPersonNameComponents nameComponents, String displayName, INImage image, String rating);
+    public native INRideDriver initWithPhoneNumberNameComponentsDisplayNameImageRating(@NotNull String phoneNumber,
+            @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName, @Nullable INImage image,
+            @Nullable String rating);
 
+    @Nullable
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
 
+    @Nullable
     @Generated
     @Selector("rating")
     public native String rating();
@@ -269,24 +285,28 @@ public class INRideDriver extends INPerson implements NSCopying, NSSecureCoding 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isMe);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isMe);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, String relationship);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, @Nullable String relationship);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isContactSuggestion:suggestionType:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsContactSuggestionSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:suggestionType:")
     public native INRideDriver initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMeSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isMe, @NInt long suggestionType);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isMe, @NInt long suggestionType);
 }

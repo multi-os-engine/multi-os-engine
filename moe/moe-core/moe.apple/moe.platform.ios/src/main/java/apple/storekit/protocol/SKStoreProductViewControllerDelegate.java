@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -38,7 +39,7 @@ public interface SKStoreProductViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("productViewControllerDidFinish:")
-    default void productViewControllerDidFinish(SKStoreProductViewController viewController) {
+    default void productViewControllerDidFinish(@NotNull SKStoreProductViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -30,6 +30,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLProtocolClient
@@ -58,7 +59,7 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:cachedResponseIsValid:")
-    void URLProtocolCachedResponseIsValid(NSURLProtocol protocol, NSCachedURLResponse cachedResponse);
+    void URLProtocolCachedResponseIsValid(@NotNull NSURLProtocol protocol, @NotNull NSCachedURLResponse cachedResponse);
 
     /**
      * URLProtocol:didCancelAuthenticationChallenge:
@@ -70,7 +71,8 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:didCancelAuthenticationChallenge:")
-    void URLProtocolDidCancelAuthenticationChallenge(NSURLProtocol protocol, NSURLAuthenticationChallenge challenge);
+    void URLProtocolDidCancelAuthenticationChallenge(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLAuthenticationChallenge challenge);
 
     /**
      * URLProtocol:didFailWithError:
@@ -83,7 +85,7 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:didFailWithError:")
-    void URLProtocolDidFailWithError(NSURLProtocol protocol, NSError error);
+    void URLProtocolDidFailWithError(@NotNull NSURLProtocol protocol, @NotNull NSError error);
 
     /**
      * URLProtocol:didLoadData:
@@ -100,7 +102,7 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:didLoadData:")
-    void URLProtocolDidLoadData(NSURLProtocol protocol, NSData data);
+    void URLProtocolDidLoadData(@NotNull NSURLProtocol protocol, @NotNull NSData data);
 
     /**
      * URLProtocol:didReceiveAuthenticationChallenge:
@@ -117,7 +119,8 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:didReceiveAuthenticationChallenge:")
-    void URLProtocolDidReceiveAuthenticationChallenge(NSURLProtocol protocol, NSURLAuthenticationChallenge challenge);
+    void URLProtocolDidReceiveAuthenticationChallenge(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLAuthenticationChallenge challenge);
 
     /**
      * URLProtocol:didReceiveResponse:
@@ -134,8 +137,8 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:didReceiveResponse:cacheStoragePolicy:")
-    void URLProtocolDidReceiveResponseCacheStoragePolicy(NSURLProtocol protocol, NSURLResponse response,
-            @NUInt long policy);
+    void URLProtocolDidReceiveResponseCacheStoragePolicy(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLResponse response, @NUInt long policy);
 
     /**
      * URLProtocol:wasRedirectedToRequest:
@@ -149,8 +152,8 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocol:wasRedirectedToRequest:redirectResponse:")
-    void URLProtocolWasRedirectedToRequestRedirectResponse(NSURLProtocol protocol, NSURLRequest request,
-            NSURLResponse redirectResponse);
+    void URLProtocolWasRedirectedToRequestRedirectResponse(@NotNull NSURLProtocol protocol,
+            @NotNull NSURLRequest request, @NotNull NSURLResponse redirectResponse);
 
     /**
      * URLProtocolDidFinishLoading:
@@ -162,5 +165,5 @@ public interface NSURLProtocolClient {
      */
     @Generated
     @Selector("URLProtocolDidFinishLoading:")
-    void URLProtocolDidFinishLoading(NSURLProtocol protocol);
+    void URLProtocolDidFinishLoading(@NotNull NSURLProtocol protocol);
 }

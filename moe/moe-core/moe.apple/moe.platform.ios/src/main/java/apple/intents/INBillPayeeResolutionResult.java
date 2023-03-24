@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -57,22 +59,25 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -80,10 +85,11 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the billPayee with which the user wants to continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithBillPayeeToConfirm:")
     public static native INBillPayeeResolutionResult confirmationRequiredWithBillPayeeToConfirm(
-            INBillPayee billPayeeToConfirm);
+            @Nullable INBillPayee billPayeeToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -96,10 +102,11 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INBillPayee.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithBillPayeesToDisambiguate:")
     public static native INBillPayeeResolutionResult disambiguationWithBillPayeesToDisambiguate(
-            NSArray<? extends INBillPayee> billPayeesToDisambiguate);
+            @NotNull NSArray<? extends INBillPayee> billPayeesToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -127,10 +134,12 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INBillPayeeResolutionResult needsValue();
@@ -140,6 +149,7 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INBillPayeeResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INBillPayeeResolutionResult notRequired();
@@ -162,14 +172,17 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
      * logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedBillPayee:")
-    public static native INBillPayeeResolutionResult successWithResolvedBillPayee(INBillPayee resolvedBillPayee);
+    public static native INBillPayeeResolutionResult successWithResolvedBillPayee(
+            @NotNull INBillPayee resolvedBillPayee);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INBillPayeeResolutionResult unsupported();
@@ -179,11 +192,13 @@ public class INBillPayeeResolutionResult extends INIntentResolutionResult {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INBillPayeeResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INBillPayeeResolutionResult unsupportedWithReason(@NInt long reason);

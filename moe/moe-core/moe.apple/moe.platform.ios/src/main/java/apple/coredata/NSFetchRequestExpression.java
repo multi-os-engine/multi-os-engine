@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -78,22 +80,25 @@ public class NSFetchRequestExpression extends NSExpression {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,29 +111,36 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("expressionForAggregate:")
-    public static native NSExpression expressionForAggregate(NSArray<? extends NSExpression> subexpressions);
+    public static native NSExpression expressionForAggregate(@NotNull NSArray<? extends NSExpression> subexpressions);
 
+    @NotNull
     @Generated
     @Selector("expressionForAnyKey")
     public static native NSExpression expressionForAnyKey();
 
+    @NotNull
     @Generated
     @Selector("expressionForBlock:arguments:")
     public static native NSExpression expressionForBlockArguments(
-            @ObjCBlock(name = "call_expressionForBlockArguments") NSExpression.Block_expressionForBlockArguments block,
-            NSArray<? extends NSExpression> arguments);
+            @NotNull @ObjCBlock(name = "call_expressionForBlockArguments") NSExpression.Block_expressionForBlockArguments block,
+            @Nullable NSArray<? extends NSExpression> arguments);
 
+    @NotNull
     @Generated
     @Selector("expressionForConditional:trueExpression:falseExpression:")
-    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(NSPredicate predicate,
-            NSExpression trueExpression, NSExpression falseExpression);
+    public static native NSExpression expressionForConditionalTrueExpressionFalseExpression(
+            @NotNull NSPredicate predicate, @NotNull NSExpression trueExpression,
+            @NotNull NSExpression falseExpression);
 
+    @NotNull
     @Generated
     @Selector("expressionForConstantValue:")
-    public static native NSExpression expressionForConstantValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public static native NSExpression expressionForConstantValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
+    @NotNull
     @Generated
     @Selector("expressionForEvaluatedObject")
     public static native NSExpression expressionForEvaluatedObject();
@@ -139,57 +151,74 @@ public class NSFetchRequestExpression extends NSExpression {
      * evaluates to an NSManagedObjectContext *. If the desired result is simply the count for the request, the
      * "countOnly" argument should be YES.
      */
+    @NotNull
     @Generated
     @Selector("expressionForFetch:context:countOnly:")
-    public static native NSExpression expressionForFetchContextCountOnly(NSExpression fetch, NSExpression context,
-            boolean countFlag);
+    public static native NSExpression expressionForFetchContextCountOnly(@NotNull NSExpression fetch,
+            @NotNull NSExpression context, boolean countFlag);
 
+    @NotNull
     @Generated
     @Selector("expressionForFunction:arguments:")
-    public static native NSExpression expressionForFunctionArguments(String name, NSArray<?> parameters);
+    public static native NSExpression expressionForFunctionArguments(@NotNull String name,
+            @NotNull NSArray<?> parameters);
 
+    @NotNull
     @Generated
     @Selector("expressionForFunction:selectorName:arguments:")
-    public static native NSExpression expressionForFunctionSelectorNameArguments(NSExpression target, String name,
-            NSArray<?> parameters);
+    public static native NSExpression expressionForFunctionSelectorNameArguments(@NotNull NSExpression target,
+            @NotNull String name, @Nullable NSArray<?> parameters);
 
+    @NotNull
     @Generated
     @Selector("expressionForIntersectSet:with:")
-    public static native NSExpression expressionForIntersectSetWith(NSExpression left, NSExpression right);
+    public static native NSExpression expressionForIntersectSetWith(@NotNull NSExpression left,
+            @NotNull NSExpression right);
 
+    @NotNull
     @Generated
     @Selector("expressionForKeyPath:")
-    public static native NSExpression expressionForKeyPath(String keyPath);
+    public static native NSExpression expressionForKeyPath(@NotNull String keyPath);
 
+    @NotNull
     @Generated
     @Selector("expressionForMinusSet:with:")
-    public static native NSExpression expressionForMinusSetWith(NSExpression left, NSExpression right);
+    public static native NSExpression expressionForMinusSetWith(@NotNull NSExpression left,
+            @NotNull NSExpression right);
 
+    @NotNull
     @Generated
     @Selector("expressionForSubquery:usingIteratorVariable:predicate:")
-    public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(NSExpression expression,
-            String variable, NSPredicate predicate);
+    public static native NSExpression expressionForSubqueryUsingIteratorVariablePredicate(
+            @NotNull NSExpression expression, @NotNull String variable, @NotNull NSPredicate predicate);
 
+    @NotNull
     @Generated
     @Selector("expressionForUnionSet:with:")
-    public static native NSExpression expressionForUnionSetWith(NSExpression left, NSExpression right);
+    public static native NSExpression expressionForUnionSetWith(@NotNull NSExpression left,
+            @NotNull NSExpression right);
 
+    @NotNull
     @Generated
     @Selector("expressionForVariable:")
-    public static native NSExpression expressionForVariable(String string);
+    public static native NSExpression expressionForVariable(@NotNull String string);
 
+    @NotNull
     @Generated
     @Variadic()
     @Selector("expressionWithFormat:")
-    public static native NSExpression expressionWithFormat(String expressionFormat, Object... varargs);
+    public static native NSExpression expressionWithFormat(@NotNull String expressionFormat, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("expressionWithFormat:argumentArray:")
-    public static native NSExpression expressionWithFormatArgumentArray(String expressionFormat, NSArray<?> arguments);
+    public static native NSExpression expressionWithFormatArgumentArray(@NotNull String expressionFormat,
+            @NotNull NSArray<?> arguments);
 
+    @NotNull
     @Generated
     @Selector("expressionWithFormat:arguments:")
-    public static native NSExpression expressionWithFormatArguments(String expressionFormat, BytePtr argList);
+    public static native NSExpression expressionWithFormatArguments(@NotNull String expressionFormat, BytePtr argList);
 
     @Generated
     @Selector("hash")
@@ -213,9 +242,10 @@ public class NSFetchRequestExpression extends NSExpression {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -250,6 +280,7 @@ public class NSFetchRequestExpression extends NSExpression {
     /**
      * Returns the expression for the managed object context: evaluating it must return an NSManagedObjectContext *.
      */
+    @NotNull
     @Generated
     @Selector("contextExpression")
     public native NSExpression contextExpression();
@@ -260,7 +291,7 @@ public class NSFetchRequestExpression extends NSExpression {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchRequestExpression initWithCoder(NSCoder coder);
+    public native NSFetchRequestExpression initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithExpressionType:")
@@ -279,6 +310,7 @@ public class NSFetchRequestExpression extends NSExpression {
     /**
      * Returns the expression for the fetch request: evaluating it must return an NSFetchRequest *.
      */
+    @NotNull
     @Generated
     @Selector("requestExpression")
     public native NSExpression requestExpression();

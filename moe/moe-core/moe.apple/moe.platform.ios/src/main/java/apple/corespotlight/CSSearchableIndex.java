@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uniformtypeidentifiers.UTType;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -77,22 +79,25 @@ public class CSSearchableIndex extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,6 +106,7 @@ public class CSSearchableIndex extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultSearchableIndex")
     public static native CSSearchableIndex defaultSearchableIndex();
@@ -138,9 +144,10 @@ public class CSSearchableIndex extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,7 +188,7 @@ public class CSSearchableIndex extends NSObject {
     @Generated
     @Selector("deleteAllSearchableItemsWithCompletionHandler:")
     public native void deleteAllSearchableItemsWithCompletionHandler(
-            @ObjCBlock(name = "call_deleteAllSearchableItemsWithCompletionHandler") Block_deleteAllSearchableItemsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_deleteAllSearchableItemsWithCompletionHandler") Block_deleteAllSearchableItemsWithCompletionHandler completionHandler);
 
     /**
      * Call this method on the index to remove any items from the index with the given domain identifiers.
@@ -190,8 +197,9 @@ public class CSSearchableIndex extends NSObject {
      */
     @Generated
     @Selector("deleteSearchableItemsWithDomainIdentifiers:completionHandler:")
-    public native void deleteSearchableItemsWithDomainIdentifiersCompletionHandler(NSArray<String> domainIdentifiers,
-            @ObjCBlock(name = "call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler") Block_deleteSearchableItemsWithDomainIdentifiersCompletionHandler completionHandler);
+    public native void deleteSearchableItemsWithDomainIdentifiersCompletionHandler(
+            @NotNull NSArray<String> domainIdentifiers,
+            @Nullable @ObjCBlock(name = "call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler") Block_deleteSearchableItemsWithDomainIdentifiersCompletionHandler completionHandler);
 
     /**
      * Call this method to remove items with the given identifiers from the index.
@@ -202,8 +210,8 @@ public class CSSearchableIndex extends NSObject {
      */
     @Generated
     @Selector("deleteSearchableItemsWithIdentifiers:completionHandler:")
-    public native void deleteSearchableItemsWithIdentifiersCompletionHandler(NSArray<String> identifiers,
-            @ObjCBlock(name = "call_deleteSearchableItemsWithIdentifiersCompletionHandler") Block_deleteSearchableItemsWithIdentifiersCompletionHandler completionHandler);
+    public native void deleteSearchableItemsWithIdentifiersCompletionHandler(@NotNull NSArray<String> identifiers,
+            @Nullable @ObjCBlock(name = "call_deleteSearchableItemsWithIdentifiersCompletionHandler") Block_deleteSearchableItemsWithIdentifiersCompletionHandler completionHandler);
 
     /**
      * End a batch passing in client state information to be persisted in the index. The completion handler will be
@@ -211,8 +219,8 @@ public class CSSearchableIndex extends NSObject {
      */
     @Generated
     @Selector("endIndexBatchWithClientState:completionHandler:")
-    public native void endIndexBatchWithClientStateCompletionHandler(NSData clientState,
-            @ObjCBlock(name = "call_endIndexBatchWithClientStateCompletionHandler") Block_endIndexBatchWithClientStateCompletionHandler completionHandler);
+    public native void endIndexBatchWithClientStateCompletionHandler(@NotNull NSData clientState,
+            @Nullable @ObjCBlock(name = "call_endIndexBatchWithClientStateCompletionHandler") Block_endIndexBatchWithClientStateCompletionHandler completionHandler);
 
     /**
      * Async fetches the app's last stored client state information.
@@ -220,8 +228,9 @@ public class CSSearchableIndex extends NSObject {
     @Generated
     @Selector("fetchLastClientStateWithCompletionHandler:")
     public native void fetchLastClientStateWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchLastClientStateWithCompletionHandler") Block_fetchLastClientStateWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchLastClientStateWithCompletionHandler") Block_fetchLastClientStateWithCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("indexDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -236,8 +245,8 @@ public class CSSearchableIndex extends NSObject {
      */
     @Generated
     @Selector("indexSearchableItems:completionHandler:")
-    public native void indexSearchableItemsCompletionHandler(NSArray<? extends CSSearchableItem> items,
-            @ObjCBlock(name = "call_indexSearchableItemsCompletionHandler") Block_indexSearchableItemsCompletionHandler completionHandler);
+    public native void indexSearchableItemsCompletionHandler(@NotNull NSArray<? extends CSSearchableItem> items,
+            @Nullable @ObjCBlock(name = "call_indexSearchableItemsCompletionHandler") Block_indexSearchableItemsCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -250,7 +259,7 @@ public class CSSearchableIndex extends NSObject {
      */
     @Generated
     @Selector("initWithName:")
-    public native CSSearchableIndex initWithName(String name);
+    public native CSSearchableIndex initWithName(@NotNull String name);
 
     /**
      * Apps can set a default protection class for items in their entitlements. You can alternately create an instance
@@ -259,14 +268,15 @@ public class CSSearchableIndex extends NSObject {
      */
     @Generated
     @Selector("initWithName:protectionClass:")
-    public native CSSearchableIndex initWithNameProtectionClass(String name, String protectionClass);
+    public native CSSearchableIndex initWithNameProtectionClass(@NotNull String name, @Nullable String protectionClass);
 
     @Generated
     @Selector("setIndexDelegate:")
-    public native void setIndexDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CSSearchableIndexDelegate value);
+    public native void setIndexDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) CSSearchableIndexDelegate value);
 
     @Generated
-    public void setIndexDelegate(@Mapped(ObjCObjectMapper.class) CSSearchableIndexDelegate value) {
+    public void setIndexDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CSSearchableIndexDelegate value) {
         Object __old = indexDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -281,54 +291,55 @@ public class CSSearchableIndex extends NSObject {
     @Generated
     public interface Block_deleteAllSearchableItemsWithCompletionHandler {
         @Generated
-        void call_deleteAllSearchableItemsWithCompletionHandler(NSError error);
+        void call_deleteAllSearchableItemsWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSearchableItemsWithDomainIdentifiersCompletionHandler {
         @Generated
-        void call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler(NSError error);
+        void call_deleteSearchableItemsWithDomainIdentifiersCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSearchableItemsWithIdentifiersCompletionHandler {
         @Generated
-        void call_deleteSearchableItemsWithIdentifiersCompletionHandler(NSError error);
+        void call_deleteSearchableItemsWithIdentifiersCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endIndexBatchWithClientStateCompletionHandler {
         @Generated
-        void call_endIndexBatchWithClientStateCompletionHandler(NSError error);
+        void call_endIndexBatchWithClientStateCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchLastClientStateWithCompletionHandler {
         @Generated
-        void call_fetchLastClientStateWithCompletionHandler(NSData clientState, NSError error);
+        void call_fetchLastClientStateWithCompletionHandler(@Nullable NSData clientState, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_indexSearchableItemsCompletionHandler {
         @Generated
-        void call_indexSearchableItemsCompletionHandler(NSError error);
+        void call_indexSearchableItemsCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
     @Selector("fetchDataForBundleIdentifier:itemIdentifier:contentType:completionHandler:")
-    public native void fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(String bundleIdentifier,
-            String itemIdentifier, UTType contentType,
-            @ObjCBlock(name = "call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler") Block_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler completionHandler);
+    public native void fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(
+            @NotNull String bundleIdentifier, @NotNull String itemIdentifier, @NotNull UTType contentType,
+            @NotNull @ObjCBlock(name = "call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler") Block_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler {
         @Generated
-        void call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(NSData arg0, NSError arg1);
+        void call_fetchDataForBundleIdentifierItemIdentifierContentTypeCompletionHandler(@Nullable NSData arg0,
+                @Nullable NSError arg1);
     }
 }

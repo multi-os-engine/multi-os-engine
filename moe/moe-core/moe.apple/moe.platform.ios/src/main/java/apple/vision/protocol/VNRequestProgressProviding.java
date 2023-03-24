@@ -9,6 +9,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -37,6 +39,7 @@ public interface VNRequestProgressProviding {
      * process partial results when they become available. Note that the progressHandler can be called on a different
      * dispatch queue than what the request was initiated from.
      */
+    @NotNull
     @Generated
     @Selector("progressHandler")
     @ObjCBlock(name = "call_progressHandler_ret")
@@ -46,7 +49,7 @@ public interface VNRequestProgressProviding {
     @Generated
     public interface Block_progressHandler_ret {
         @Generated
-        void call_progressHandler_ret(VNRequest request, double fractionCompleted, NSError error);
+        void call_progressHandler_ret(@NotNull VNRequest request, double fractionCompleted, @Nullable NSError error);
     }
 
     /**
@@ -59,12 +62,12 @@ public interface VNRequestProgressProviding {
      */
     @Generated
     @Selector("setProgressHandler:")
-    void setProgressHandler(@ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
+    void setProgressHandler(@NotNull @ObjCBlock(name = "call_setProgressHandler") Block_setProgressHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setProgressHandler {
         @Generated
-        void call_setProgressHandler(VNRequest request, double fractionCompleted, NSError error);
+        void call_setProgressHandler(@NotNull VNRequest request, double fractionCompleted, @Nullable NSError error);
     }
 }

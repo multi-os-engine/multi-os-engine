@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A relevance provider to indicate relevance at a date or date interval.
@@ -60,22 +62,25 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,6 +98,7 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
      * [@note] If @c endDate is @c nil, the relevant time interval will be assumed to represent a single point in time
      * instead of a time interval.
      */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -108,14 +114,14 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INDateRelevanceProvider initWithCoder(NSCoder coder);
+    public native INDateRelevanceProvider initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a date relevance provider with the specified relevant date interval.
      */
     @Generated
     @Selector("initWithStartDate:endDate:")
-    public native INDateRelevanceProvider initWithStartDateEndDate(NSDate startDate, NSDate endDate);
+    public native INDateRelevanceProvider initWithStartDateEndDate(@NotNull NSDate startDate, @Nullable NSDate endDate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,9 +140,10 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +165,7 @@ public class INDateRelevanceProvider extends INRelevanceProvider {
     /**
      * The start date of the relevant time interval.
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

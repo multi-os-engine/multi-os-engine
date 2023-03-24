@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKGlassesLensSpecification
@@ -64,31 +66,35 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -100,7 +106,7 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] farPupillaryDistance
@@ -109,6 +115,7 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * Can be described as combined or individual value. For distance prescriptions, the pupillary distance will be a
      * far value.
      */
+    @Nullable
     @Generated
     @Selector("farPupillaryDistance")
     public native HKQuantity farPupillaryDistance();
@@ -124,7 +131,7 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKGlassesLensSpecification initWithCoder(NSCoder coder);
+    public native HKGlassesLensSpecification initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithSphere:cylinder:axis:addPower:vertexDistance:prism:farPupillaryDistance:nearPupillaryDistance
@@ -147,8 +154,9 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
     @Generated
     @Selector("initWithSphere:cylinder:axis:addPower:vertexDistance:prism:farPupillaryDistance:nearPupillaryDistance:")
     public native HKGlassesLensSpecification initWithSphereCylinderAxisAddPowerVertexDistancePrismFarPupillaryDistanceNearPupillaryDistance(
-            HKQuantity sphere, HKQuantity cylinder, HKQuantity axis, HKQuantity addPower, HKQuantity vertexDistance,
-            HKVisionPrism prism, HKQuantity farPupillaryDistance, HKQuantity nearPupillaryDistance);
+            @NotNull HKQuantity sphere, @Nullable HKQuantity cylinder, @Nullable HKQuantity axis,
+            @Nullable HKQuantity addPower, @Nullable HKQuantity vertexDistance, @Nullable HKVisionPrism prism,
+            @Nullable HKQuantity farPupillaryDistance, @Nullable HKQuantity nearPupillaryDistance);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -167,9 +175,10 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] nearPupillaryDistance
@@ -178,6 +187,7 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * Can be described as combined or individual value. For near prescriptions, the pupillary distance will be a near
      * value.
      */
+    @Nullable
     @Generated
     @Selector("nearPupillaryDistance")
     public native HKQuantity nearPupillaryDistance();
@@ -192,6 +202,7 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * 
      * The object encapsulating the prism fields
      */
+    @Nullable
     @Generated
     @Selector("prism")
     public native HKVisionPrism prism();
@@ -232,6 +243,7 @@ public class HKGlassesLensSpecification extends HKLensSpecification implements N
      * 
      * The distance between the back of the eyeglass lens and the eye (measured in mm)
      */
+    @Nullable
     @Generated
     @Selector("vertexDistance")
     public native HKQuantity vertexDistance();

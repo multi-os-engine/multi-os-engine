@@ -9,6 +9,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to \c GCPressedStateInput represents the pressed state of
@@ -65,6 +67,7 @@ public interface GCPressedStateInput {
     /**
      * Set this block if you want to be notified when the pressed state changes.
      */
+    @Nullable
     @Generated
     @Selector("pressedDidChangeHandler")
     @ObjCBlock(name = "call_pressedDidChangeHandler_ret")
@@ -74,8 +77,8 @@ public interface GCPressedStateInput {
     @Generated
     public interface Block_pressedDidChangeHandler_ret {
         @Generated
-        void call_pressedDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_pressedDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
     }
 
     /**
@@ -84,13 +87,13 @@ public interface GCPressedStateInput {
     @Generated
     @Selector("setPressedDidChangeHandler:")
     void setPressedDidChangeHandler(
-            @ObjCBlock(name = "call_setPressedDidChangeHandler") Block_setPressedDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setPressedDidChangeHandler") Block_setPressedDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPressedDidChangeHandler {
         @Generated
-        void call_setPressedDidChangeHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_setPressedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
     }
 }

@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 8.0
@@ -18,5 +19,5 @@ import org.moe.natj.objc.ann.Selector;
 public interface UIUserActivityRestoring {
     @Generated
     @Selector("restoreUserActivityState:")
-    void restoreUserActivityState(NSUserActivity userActivity);
+    void restoreUserActivityState(@NotNull NSUserActivity userActivity);
 }

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This protocol defines the interface to attachment objects from NSLayoutManager
@@ -49,7 +50,8 @@ public interface NSTextAttachmentContainer {
     @Selector("attachmentBoundsForTextContainer:proposedLineFragment:glyphPosition:characterIndex:")
     @ByValue
     CGRect attachmentBoundsForTextContainerProposedLineFragmentGlyphPositionCharacterIndex(
-            NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position, @NUInt long charIndex);
+            @Nullable NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position,
+            @NUInt long charIndex);
 
     /**
      * Returns the image object rendered by NSLayoutManager at imageBounds inside textContainer. It should return an
@@ -59,8 +61,9 @@ public interface NSTextAttachmentContainer {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("imageForBounds:textContainer:characterIndex:")
-    UIImage imageForBoundsTextContainerCharacterIndex(@ByValue CGRect imageBounds, NSTextContainer textContainer,
-            @NUInt long charIndex);
+    UIImage imageForBoundsTextContainerCharacterIndex(@ByValue CGRect imageBounds,
+            @Nullable NSTextContainer textContainer, @NUInt long charIndex);
 }

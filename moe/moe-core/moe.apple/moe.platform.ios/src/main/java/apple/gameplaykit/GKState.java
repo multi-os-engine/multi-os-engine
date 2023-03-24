@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a single state in a state machine.
@@ -80,22 +82,25 @@ public class GKState extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class GKState extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,7 +184,7 @@ public class GKState extends NSObject {
      */
     @Generated
     @Selector("didEnterWithPreviousState:")
-    public native void didEnterWithPreviousState(GKState previousState);
+    public native void didEnterWithPreviousState(@Nullable GKState previousState);
 
     @Generated
     @Selector("init")
@@ -198,12 +204,13 @@ public class GKState extends NSObject {
      */
     @Generated
     @Selector("isValidNextState:")
-    public native boolean isValidNextState(Class stateClass);
+    public native boolean isValidNextState(@NotNull Class stateClass);
 
     /**
      * The state machine that this state is associated with.
      * This is nil if this state hasn't been added to a state machine yet.
      */
+    @Nullable
     @Generated
     @Selector("stateMachine")
     public native GKStateMachine stateMachine();
@@ -224,5 +231,5 @@ public class GKState extends NSObject {
      */
     @Generated
     @Selector("willExitWithNextState:")
-    public native void willExitWithNextState(GKState nextState);
+    public native void willExitWithNextState(@NotNull GKState nextState);
 }

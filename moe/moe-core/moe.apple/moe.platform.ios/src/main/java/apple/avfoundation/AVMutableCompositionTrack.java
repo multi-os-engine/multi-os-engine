@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -80,22 +82,25 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +173,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * 
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -220,8 +227,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("insertTimeRange:ofTrack:atTime:error:")
-    public native boolean insertTimeRangeOfTrackAtTimeError(@ByValue CMTimeRange timeRange, AVAssetTrack track,
-            @ByValue CMTime startTime, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean insertTimeRangeOfTrackAtTimeError(@ByValue CMTimeRange timeRange, @NotNull AVAssetTrack track,
+            @ByValue CMTime startTime, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * insertTimeRanges:ofTracks:atTime:error:
@@ -253,9 +260,9 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("insertTimeRanges:ofTracks:atTime:error:")
-    public native boolean insertTimeRangesOfTracksAtTimeError(NSArray<? extends NSValue> timeRanges,
-            NSArray<? extends AVAssetTrack> tracks, @ByValue CMTime startTime,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean insertTimeRangesOfTracksAtTimeError(@NotNull NSArray<? extends NSValue> timeRanges,
+            @NotNull NSArray<? extends AVAssetTrack> tracks, @ByValue CMTime startTime,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] languageCode
@@ -264,6 +271,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      * 
      * The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("languageCode")
     public native String languageCode();
@@ -361,7 +369,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
-    public native void setExtendedLanguageTag(String value);
+    public native void setExtendedLanguageTag(@Nullable String value);
 
     /**
      * [@property] languageCode
@@ -372,7 +380,7 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("setLanguageCode:")
-    public native void setLanguageCode(String value);
+    public native void setLanguageCode(@Nullable String value);
 
     /**
      * [@property] naturalTimeScale
@@ -443,8 +451,9 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("validateTrackSegments:error:")
-    public native boolean validateTrackSegmentsError(NSArray<? extends AVCompositionTrackSegment> trackSegments,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean validateTrackSegmentsError(
+            @NotNull NSArray<? extends AVCompositionTrackSegment> trackSegments,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * addTrackAssociationToTrack:type:
@@ -461,7 +470,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("addTrackAssociationToTrack:type:")
-    public native void addTrackAssociationToTrackType(AVCompositionTrack compositionTrack, String trackAssociationType);
+    public native void addTrackAssociationToTrackType(@NotNull AVCompositionTrack compositionTrack,
+            @NotNull String trackAssociationType);
 
     /**
      * [@property] enabled
@@ -489,8 +499,8 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("removeTrackAssociationToTrack:type:")
-    public native void removeTrackAssociationToTrackType(AVCompositionTrack compositionTrack,
-            String trackAssociationType);
+    public native void removeTrackAssociationToTrackType(@NotNull AVCompositionTrack compositionTrack,
+            @NotNull String trackAssociationType);
 
     /**
      * replaceFormatDescription:withFormatDescription:
@@ -520,8 +530,9 @@ public class AVMutableCompositionTrack extends AVCompositionTrack {
      */
     @Generated
     @Selector("replaceFormatDescription:withFormatDescription:")
-    public native void replaceFormatDescriptionWithFormatDescription(CMFormatDescriptionRef originalFormatDescription,
-            CMFormatDescriptionRef replacementFormatDescription);
+    public native void replaceFormatDescriptionWithFormatDescription(
+            @NotNull CMFormatDescriptionRef originalFormatDescription,
+            @Nullable CMFormatDescriptionRef replacementFormatDescription);
 
     /**
      * [@property] enabled

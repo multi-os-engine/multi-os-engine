@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.4
@@ -65,39 +67,43 @@ public class PKAddSecureElementPassViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canAddSecureElementPassWithConfiguration:")
     public static native boolean canAddSecureElementPassWithConfiguration(
-            PKAddSecureElementPassConfiguration configuration);
+            @NotNull PKAddSecureElementPassConfiguration configuration);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -118,18 +124,18 @@ public class PKAddSecureElementPassViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native PKAddSecureElementPassViewController initWithCoder(NSCoder coder);
+    public native PKAddSecureElementPassViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithConfiguration:delegate:")
     public native PKAddSecureElementPassViewController initWithConfigurationDelegate(
-            PKAddSecureElementPassConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate delegate);
+            @NotNull PKAddSecureElementPassConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate delegate);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native PKAddSecureElementPassViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native PKAddSecureElementPassViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,9 +154,10 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,10 +175,11 @@ public class PKAddSecureElementPassViewController extends UIViewController {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate value) {
+    public void setDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) PKAddSecureElementPassViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

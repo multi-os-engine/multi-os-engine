@@ -7,6 +7,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * CTTelephonyNetworkInfoDelegate
@@ -33,7 +34,7 @@ public interface CTTelephonyNetworkInfoDelegate {
     @Generated
     @IsOptional
     @Selector("dataServiceIdentifierDidChange:")
-    default void dataServiceIdentifierDidChange(String identifier) {
+    default void dataServiceIdentifierDidChange(@NotNull String identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

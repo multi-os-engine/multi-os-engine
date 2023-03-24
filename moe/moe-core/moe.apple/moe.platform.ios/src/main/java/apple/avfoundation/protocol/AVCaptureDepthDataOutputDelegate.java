@@ -13,6 +13,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVCaptureDepthDataOutputDelegate
@@ -55,8 +56,9 @@ public interface AVCaptureDepthDataOutputDelegate {
     @Generated
     @IsOptional
     @Selector("depthDataOutput:didDropDepthData:timestamp:connection:reason:")
-    default void depthDataOutputDidDropDepthDataTimestampConnectionReason(AVCaptureDepthDataOutput output,
-            AVDepthData depthData, @ByValue CMTime timestamp, AVCaptureConnection connection, @NInt long reason) {
+    default void depthDataOutputDidDropDepthDataTimestampConnectionReason(@NotNull AVCaptureDepthDataOutput output,
+            @NotNull AVDepthData depthData, @ByValue CMTime timestamp, @NotNull AVCaptureConnection connection,
+            @NInt long reason) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,8 +93,8 @@ public interface AVCaptureDepthDataOutputDelegate {
     @Generated
     @IsOptional
     @Selector("depthDataOutput:didOutputDepthData:timestamp:connection:")
-    default void depthDataOutputDidOutputDepthDataTimestampConnection(AVCaptureDepthDataOutput output,
-            AVDepthData depthData, @ByValue CMTime timestamp, AVCaptureConnection connection) {
+    default void depthDataOutputDidOutputDepthDataTimestampConnection(@NotNull AVCaptureDepthDataOutput output,
+            @NotNull AVDepthData depthData, @ByValue CMTime timestamp, @NotNull AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

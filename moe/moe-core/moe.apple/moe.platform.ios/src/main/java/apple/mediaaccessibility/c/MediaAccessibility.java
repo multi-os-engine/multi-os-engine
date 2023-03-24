@@ -33,6 +33,8 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MediaAccessibility")
@@ -78,7 +80,8 @@ public final class MediaAccessibility {
      */
     @Generated
     @CFunction
-    public static native boolean MACaptionAppearanceAddSelectedLanguage(@NInt long domain, CFStringRef language);
+    public static native boolean MACaptionAppearanceAddSelectedLanguage(@NInt long domain,
+            @NotNull CFStringRef language);
 
     /**
      * [@function] MACaptionAppearanceCopySelectedLanguages
@@ -94,6 +97,7 @@ public final class MediaAccessibility {
      * 
      * @return Ordered array of preferred canonical language identifiers.
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef MACaptionAppearanceCopySelectedLanguages(@NInt long domain);
@@ -141,6 +145,7 @@ public final class MediaAccessibility {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef MACaptionAppearanceCopyPreferredCaptioningMediaCharacteristics(@NInt long domain);
@@ -159,9 +164,11 @@ public final class MediaAccessibility {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGColorRef MACaptionAppearanceCopyForegroundColor(@NInt long domain, NIntPtr behavior);
+    public static native CGColorRef MACaptionAppearanceCopyForegroundColor(@NInt long domain,
+            @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceCopyBackgroundColor
@@ -176,9 +183,11 @@ public final class MediaAccessibility {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGColorRef MACaptionAppearanceCopyBackgroundColor(@NInt long domain, NIntPtr behavior);
+    public static native CGColorRef MACaptionAppearanceCopyBackgroundColor(@NInt long domain,
+            @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceCopyWindowColor
@@ -193,9 +202,10 @@ public final class MediaAccessibility {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGColorRef MACaptionAppearanceCopyWindowColor(@NInt long domain, NIntPtr behavior);
+    public static native CGColorRef MACaptionAppearanceCopyWindowColor(@NInt long domain, @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceGetForegroundOpacity
@@ -211,7 +221,7 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     @NFloat
-    public static native double MACaptionAppearanceGetForegroundOpacity(@NInt long domain, NIntPtr behavior);
+    public static native double MACaptionAppearanceGetForegroundOpacity(@NInt long domain, @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceGetBackgroundOpacity
@@ -227,7 +237,7 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     @NFloat
-    public static native double MACaptionAppearanceGetBackgroundOpacity(@NInt long domain, NIntPtr behavior);
+    public static native double MACaptionAppearanceGetBackgroundOpacity(@NInt long domain, @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceGetWindowOpacity
@@ -243,7 +253,7 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     @NFloat
-    public static native double MACaptionAppearanceGetWindowOpacity(@NInt long domain, NIntPtr behavior);
+    public static native double MACaptionAppearanceGetWindowOpacity(@NInt long domain, @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceGetWindowRoundedCornerRadius
@@ -259,7 +269,8 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     @NFloat
-    public static native double MACaptionAppearanceGetWindowRoundedCornerRadius(@NInt long domain, NIntPtr behavior);
+    public static native double MACaptionAppearanceGetWindowRoundedCornerRadius(@NInt long domain,
+            @Nullable NIntPtr behavior);
 
     /**
      * ——————————————————————————————————————————————————————————————————————————————————————
@@ -276,10 +287,11 @@ public final class MediaAccessibility {
      * 
      *         API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CTFontDescriptorRef MACaptionAppearanceCopyFontDescriptorForStyle(@NInt long domain,
-            NIntPtr behavior, @NInt long fontStyle);
+            @Nullable NIntPtr behavior, @NInt long fontStyle);
 
     /**
      * [@function] MACaptionAppearanceGetRelativeCharacterSize
@@ -295,7 +307,8 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     @NFloat
-    public static native double MACaptionAppearanceGetRelativeCharacterSize(@NInt long domain, NIntPtr behavior);
+    public static native double MACaptionAppearanceGetRelativeCharacterSize(@NInt long domain,
+            @Nullable NIntPtr behavior);
 
     /**
      * [@function] MACaptionAppearanceGetTextEdgeStyle
@@ -311,7 +324,7 @@ public final class MediaAccessibility {
     @Generated
     @CFunction
     @NInt
-    public static native long MACaptionAppearanceGetTextEdgeStyle(@NInt long domain, NIntPtr behavior);
+    public static native long MACaptionAppearanceGetTextEdgeStyle(@NInt long domain, @Nullable NIntPtr behavior);
 
     /**
      * [@function] MAAudibleMediaCopyPreferredCharacteristics
@@ -322,6 +335,7 @@ public final class MediaAccessibility {
      * 
      *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef MAAudibleMediaCopyPreferredCharacteristics();
@@ -331,6 +345,7 @@ public final class MediaAccessibility {
      * 
      * CFNotification sent when any user-defined captioning settings are changed.
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMACaptionAppearanceSettingsChangedNotification();
@@ -352,6 +367,7 @@ public final class MediaAccessibility {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef MAMediaCharacteristicDescribesMusicAndSoundForAccessibility();
@@ -371,6 +387,7 @@ public final class MediaAccessibility {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef MAMediaCharacteristicTranscribesSpokenDialogForAccessibility();
@@ -380,6 +397,7 @@ public final class MediaAccessibility {
      * 
      * CFNotification sent when any user-defined audible media settings are changed.
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMAAudibleMediaSettingsChangedNotification();
@@ -392,6 +410,7 @@ public final class MediaAccessibility {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef MAMediaCharacteristicDescribesVideoForAccessibility();
@@ -406,7 +425,7 @@ public final class MediaAccessibility {
      */
     @Generated
     @CFunction
-    public static native void MACaptionAppearanceDidDisplayCaptions(CFArrayRef strings);
+    public static native void MACaptionAppearanceDidDisplayCaptions(@NotNull CFArrayRef strings);
 
     /**
      * [@function] MAImageCaptioningCopyCaption
@@ -422,9 +441,11 @@ public final class MediaAccessibility {
      * @param error If an error occurs, a description will be provided.
      * @return A string with the image caption. Nil if there's no caption.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef MAImageCaptioningCopyCaption(CFURLRef url, Ptr<CFErrorRef> error);
+    public static native CFStringRef MAImageCaptioningCopyCaption(@NotNull CFURLRef url,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] MAImageCaptioningSetCaption
@@ -443,7 +464,8 @@ public final class MediaAccessibility {
      */
     @Generated
     @CFunction
-    public static native boolean MAImageCaptioningSetCaption(CFURLRef url, CFStringRef string, Ptr<CFErrorRef> error);
+    public static native boolean MAImageCaptioningSetCaption(@NotNull CFURLRef url, @Nullable CFStringRef string,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] MAImageCaptioningCopyMetadataTagPath
@@ -458,6 +480,7 @@ public final class MediaAccessibility {
      * 
      * @return A string representing the tag path.
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFStringRef MAImageCaptioningCopyMetadataTagPath();

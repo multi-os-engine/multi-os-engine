@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -18,6 +19,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UITextPasteConfigurationSupporting")
 public interface UITextPasteConfigurationSupporting extends UIPasteConfigurationSupporting {
+    @Nullable
     @Generated
     @Selector("pasteDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -25,5 +27,5 @@ public interface UITextPasteConfigurationSupporting extends UIPasteConfiguration
 
     @Generated
     @Selector("setPasteDelegate:")
-    void setPasteDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
+    void setPasteDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UITextPasteDelegate value);
 }

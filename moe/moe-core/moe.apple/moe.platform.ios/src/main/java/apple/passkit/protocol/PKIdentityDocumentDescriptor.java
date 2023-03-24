@@ -9,6 +9,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * "Descriptor" objects describe types of documents that can be requested. Different document
@@ -29,12 +31,13 @@ public interface PKIdentityDocumentDescriptor {
      */
     @Generated
     @Selector("addElements:withIntentToStore:")
-    void addElementsWithIntentToStore(NSArray<? extends PKIdentityElement> elements,
-            PKIdentityIntentToStore intentToStore);
+    void addElementsWithIntentToStore(@NotNull NSArray<? extends PKIdentityElement> elements,
+            @NotNull PKIdentityIntentToStore intentToStore);
 
     /**
      * Set of elements that will be requested from the document.
      */
+    @NotNull
     @Generated
     @Selector("elements")
     NSArray<? extends PKIdentityElement> elements();
@@ -42,7 +45,8 @@ public interface PKIdentityDocumentDescriptor {
     /**
      * Intent to store for the given element, or nil if the element has not been added to this descriptor.
      */
+    @Nullable
     @Generated
     @Selector("intentToStoreForElement:")
-    PKIdentityIntentToStore intentToStoreForElement(PKIdentityElement element);
+    PKIdentityIntentToStore intentToStoreForElement(@NotNull PKIdentityElement element);
 }

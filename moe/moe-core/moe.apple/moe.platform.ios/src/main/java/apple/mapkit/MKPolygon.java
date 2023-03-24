@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -80,22 +82,25 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,25 +148,25 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
     @Generated
     @Selector("polygonWithCoordinates:count:")
     public static native MKPolygon polygonWithCoordinatesCount(
-            @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
+            @NotNull @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
             @NUInt long count);
 
     @Generated
     @Selector("polygonWithCoordinates:count:interiorPolygons:")
     public static native MKPolygon polygonWithCoordinatesCountInteriorPolygons(
-            @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
-            @NUInt long count, NSArray<? extends MKPolygon> interiorPolygons);
+            @NotNull @ReferenceInfo(type = CLLocationCoordinate2D.class) ConstPtr<CLLocationCoordinate2D> coords,
+            @NUInt long count, @Nullable NSArray<? extends MKPolygon> interiorPolygons);
 
     @Generated
     @Selector("polygonWithPoints:count:")
     public static native MKPolygon polygonWithPointsCount(
-            @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count);
+            @NotNull @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count);
 
     @Generated
     @Selector("polygonWithPoints:count:interiorPolygons:")
     public static native MKPolygon polygonWithPointsCountInteriorPolygons(
-            @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count,
-            NSArray<? extends MKPolygon> interiorPolygons);
+            @NotNull @ReferenceInfo(type = MKMapPoint.class) ConstPtr<MKMapPoint> points, @NUInt long count,
+            @Nullable NSArray<? extends MKPolygon> interiorPolygons);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -202,6 +208,7 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
     @Selector("init")
     public native MKPolygon init();
 
+    @Nullable
     @Generated
     @Selector("interiorPolygons")
     public native NSArray<? extends MKPolygon> interiorPolygons();
@@ -216,11 +223,13 @@ public class MKPolygon extends MKMultiPoint implements MKOverlay, MKGeoJSONObjec
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("subtitle")
     public native String subtitle();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("title")

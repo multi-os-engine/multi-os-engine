@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -19,21 +20,21 @@ public interface UITextInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("interactionDidEnd:")
-    default void interactionDidEnd(UITextInteraction interaction) {
+    default void interactionDidEnd(@NotNull UITextInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("interactionShouldBegin:atPoint:")
-    default boolean interactionShouldBeginAtPoint(UITextInteraction interaction, @ByValue CGPoint point) {
+    default boolean interactionShouldBeginAtPoint(@NotNull UITextInteraction interaction, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("interactionWillBegin:")
-    default void interactionWillBegin(UITextInteraction interaction) {
+    default void interactionWillBegin(@NotNull UITextInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

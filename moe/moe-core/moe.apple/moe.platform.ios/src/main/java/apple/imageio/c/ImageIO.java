@@ -43,6 +43,8 @@ import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("ImageIO")
@@ -76,6 +78,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CGMutableImageMetadataRef CGImageMetadataCreateMutable();
@@ -91,9 +94,11 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGMutableImageMetadataRef CGImageMetadataCreateMutableCopy(CGImageMetadataRef metadata);
+    public static native CGMutableImageMetadataRef CGImageMetadataCreateMutableCopy(
+            @NotNull CGImageMetadataRef metadata);
 
     /**
      * *! @functiongroup Creating and identifying CGImageMetadataTags
@@ -146,10 +151,11 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageMetadataTagRef CGImageMetadataTagCreate(CFStringRef xmlns, CFStringRef prefix,
-            CFStringRef name, int type, ConstVoidPtr value);
+    public static native CGImageMetadataTagRef CGImageMetadataTagCreate(@NotNull CFStringRef xmlns,
+            @Nullable CFStringRef prefix, @NotNull CFStringRef name, int type, @NotNull ConstVoidPtr value);
 
     /**
      * ****************************************************************************
@@ -162,9 +168,10 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGImageMetadataTagCopyNamespace(CGImageMetadataTagRef tag);
+    public static native CFStringRef CGImageMetadataTagCopyNamespace(@NotNull CGImageMetadataTagRef tag);
 
     /**
      * [@function] CGImageMetadataTagCopyPrefix
@@ -173,9 +180,10 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGImageMetadataTagCopyPrefix(CGImageMetadataTagRef tag);
+    public static native CFStringRef CGImageMetadataTagCopyPrefix(@NotNull CGImageMetadataTagRef tag);
 
     /**
      * [@function] CGImageMetadataTagCopyName
@@ -184,9 +192,10 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGImageMetadataTagCopyName(CGImageMetadataTagRef tag);
+    public static native CFStringRef CGImageMetadataTagCopyName(@NotNull CGImageMetadataTagRef tag);
 
     /**
      * [@function] CGImageMetadataTagCopyValue
@@ -202,9 +211,10 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CGImageMetadataTagCopyValue(CGImageMetadataTagRef tag);
+    public static native ConstVoidPtr CGImageMetadataTagCopyValue(@NotNull CGImageMetadataTagRef tag);
 
     /**
      * [@function] CGImageMetadataTagGetType
@@ -218,7 +228,7 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native int CGImageMetadataTagGetType(CGImageMetadataTagRef tag);
+    public static native int CGImageMetadataTagGetType(@NotNull CGImageMetadataTagRef tag);
 
     /**
      * [@function] CGImageMetadataTagCopyQualifiers
@@ -236,9 +246,10 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CGImageMetadataTagCopyQualifiers(CGImageMetadataTagRef tag);
+    public static native CFArrayRef CGImageMetadataTagCopyQualifiers(@NotNull CGImageMetadataTagRef tag);
 
     /**
      * ****************************************************************************
@@ -256,9 +267,10 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CGImageMetadataCopyTags(CGImageMetadataRef metadata);
+    public static native CFArrayRef CGImageMetadataCopyTags(@NotNull CGImageMetadataRef metadata);
 
     /**
      * [@function] CGImageMetadataCopyTagWithPath
@@ -320,10 +332,11 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageMetadataTagRef CGImageMetadataCopyTagWithPath(CGImageMetadataRef metadata,
-            CGImageMetadataTagRef parent, CFStringRef path);
+    public static native CGImageMetadataTagRef CGImageMetadataCopyTagWithPath(@NotNull CGImageMetadataRef metadata,
+            @Nullable CGImageMetadataTagRef parent, @NotNull CFStringRef path);
 
     /**
      * [@function] CGImageMetadataCopyStringValueWithPath
@@ -347,10 +360,11 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGImageMetadataCopyStringValueWithPath(CGImageMetadataRef metadata,
-            CGImageMetadataTagRef parent, CFStringRef path);
+    public static native CFStringRef CGImageMetadataCopyStringValueWithPath(@NotNull CGImageMetadataRef metadata,
+            @Nullable CGImageMetadataTagRef parent, @NotNull CFStringRef path);
 
     /**
      * ****************************************************************************
@@ -375,8 +389,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageMetadataRegisterNamespaceForPrefix(CGMutableImageMetadataRef metadata,
-            CFStringRef xmlns, CFStringRef prefix, Ptr<CFErrorRef> err);
+    public static native boolean CGImageMetadataRegisterNamespaceForPrefix(@NotNull CGMutableImageMetadataRef metadata,
+            @NotNull CFStringRef xmlns, @NotNull CFStringRef prefix, @Nullable Ptr<CFErrorRef> err);
 
     /**
      * [@function] CGImageMetadataSetTagWithPath
@@ -419,8 +433,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageMetadataSetTagWithPath(CGMutableImageMetadataRef metadata,
-            CGImageMetadataTagRef parent, CFStringRef path, CGImageMetadataTagRef tag);
+    public static native boolean CGImageMetadataSetTagWithPath(@NotNull CGMutableImageMetadataRef metadata,
+            @Nullable CGImageMetadataTagRef parent, @NotNull CFStringRef path, @NotNull CGImageMetadataTagRef tag);
 
     /**
      * [@function] CGImageMetadataSetValueWithPath
@@ -467,8 +481,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageMetadataSetValueWithPath(CGMutableImageMetadataRef metadata,
-            CGImageMetadataTagRef parent, CFStringRef path, ConstVoidPtr value);
+    public static native boolean CGImageMetadataSetValueWithPath(@NotNull CGMutableImageMetadataRef metadata,
+            @Nullable CGImageMetadataTagRef parent, @NotNull CFStringRef path, @NotNull ConstVoidPtr value);
 
     /**
      * [@function] CGImageMetadataRemoveTagWithPath
@@ -493,8 +507,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageMetadataRemoveTagWithPath(CGMutableImageMetadataRef metadata,
-            CGImageMetadataTagRef parent, CFStringRef path);
+    public static native boolean CGImageMetadataRemoveTagWithPath(@NotNull CGMutableImageMetadataRef metadata,
+            @Nullable CGImageMetadataTagRef parent, @NotNull CFStringRef path);
 
     /**
      * [@function] CGImageMetadataEnumerateTagsUsingBlock
@@ -521,9 +535,9 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageMetadataEnumerateTagsUsingBlock(CGImageMetadataRef metadata, CFStringRef rootPath,
-            CFDictionaryRef options,
-            @ObjCBlock(name = "call_CGImageMetadataEnumerateTagsUsingBlock") Block_CGImageMetadataEnumerateTagsUsingBlock block);
+    public static native void CGImageMetadataEnumerateTagsUsingBlock(@NotNull CGImageMetadataRef metadata,
+            @Nullable CFStringRef rootPath, @Nullable CFDictionaryRef options,
+            @NotNull @ObjCBlock(name = "call_CGImageMetadataEnumerateTagsUsingBlock") Block_CGImageMetadataEnumerateTagsUsingBlock block);
 
     /**
      * *! @functiongroup Working with CGImageProperties
@@ -555,10 +569,12 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageMetadataTagRef CGImageMetadataCopyTagMatchingImageProperty(CGImageMetadataRef metadata,
-            CFStringRef dictionaryName, CFStringRef propertyName);
+    public static native CGImageMetadataTagRef CGImageMetadataCopyTagMatchingImageProperty(
+            @NotNull CGImageMetadataRef metadata, @NotNull CFStringRef dictionaryName,
+            @NotNull CFStringRef propertyName);
 
     /**
      * [@function] CGImageMetadataSetValueMatchingImageProperty
@@ -593,8 +609,9 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageMetadataSetValueMatchingImageProperty(CGMutableImageMetadataRef metadata,
-            CFStringRef dictionaryName, CFStringRef propertyName, ConstVoidPtr value);
+    public static native boolean CGImageMetadataSetValueMatchingImageProperty(
+            @NotNull CGMutableImageMetadataRef metadata, @NotNull CFStringRef dictionaryName,
+            @NotNull CFStringRef propertyName, @NotNull ConstVoidPtr value);
 
     /**
      * [@function] CGImageMetadataCreateXMPData
@@ -614,9 +631,11 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CGImageMetadataCreateXMPData(CGImageMetadataRef metadata, CFDictionaryRef options);
+    public static native CFDataRef CGImageMetadataCreateXMPData(@NotNull CGImageMetadataRef metadata,
+            @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CGImageMetadataCreateFromXMPData
@@ -632,9 +651,10 @@ public final class ImageIO {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageMetadataRef CGImageMetadataCreateFromXMPData(CFDataRef data);
+    public static native CGImageMetadataRef CGImageMetadataCreateFromXMPData(@NotNull CFDataRef data);
 
     /**
      * Return the CFTypeID for CGImageSources.
@@ -651,6 +671,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef CGImageSourceCopyTypeIdentifiers();
@@ -662,10 +683,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageSourceRef CGImageSourceCreateWithDataProvider(CGDataProviderRef provider,
-            CFDictionaryRef options);
+    public static native CGImageSourceRef CGImageSourceCreateWithDataProvider(@NotNull CGDataProviderRef provider,
+            @Nullable CFDictionaryRef options);
 
     /**
      * Create an image source reading from `data'. The `options' dictionary
@@ -674,9 +696,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageSourceRef CGImageSourceCreateWithData(CFDataRef data, CFDictionaryRef options);
+    public static native CGImageSourceRef CGImageSourceCreateWithData(@NotNull CFDataRef data,
+            @Nullable CFDictionaryRef options);
 
     /**
      * Create an image source reading from `url'. The `options' dictionary may
@@ -685,9 +709,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageSourceRef CGImageSourceCreateWithURL(CFURLRef url, CFDictionaryRef options);
+    public static native CGImageSourceRef CGImageSourceCreateWithURL(@NotNull CFURLRef url,
+            @Nullable CFDictionaryRef options);
 
     /**
      * Return the type identifier of the image source `isrc'. This type is the
@@ -697,9 +723,10 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CGImageSourceGetType(CGImageSourceRef isrc);
+    public static native CFStringRef CGImageSourceGetType(@NotNull CGImageSourceRef isrc);
 
     /**
      * Return the number of images (not including thumbnails) in the image
@@ -710,7 +737,7 @@ public final class ImageIO {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageSourceGetCount(CGImageSourceRef isrc);
+    public static native long CGImageSourceGetCount(@NotNull CGImageSourceRef isrc);
 
     /**
      * Return the properties of the image source `isrc'. These properties
@@ -719,9 +746,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CGImageSourceCopyProperties(CGImageSourceRef isrc, CFDictionaryRef options);
+    public static native CFDictionaryRef CGImageSourceCopyProperties(@NotNull CGImageSourceRef isrc,
+            @Nullable CFDictionaryRef options);
 
     /**
      * Return the properties of the image at `index' in the image source
@@ -731,10 +760,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CGImageSourceCopyPropertiesAtIndex(CGImageSourceRef isrc, @NUInt long index,
-            CFDictionaryRef options);
+    public static native CFDictionaryRef CGImageSourceCopyPropertiesAtIndex(@NotNull CGImageSourceRef isrc,
+            @NUInt long index, @Nullable CFDictionaryRef options);
 
     /**
      * Return the metadata of the image at `index' in the image source
@@ -744,10 +774,11 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageMetadataRef CGImageSourceCopyMetadataAtIndex(CGImageSourceRef isrc, @NUInt long index,
-            CFDictionaryRef options);
+    public static native CGImageMetadataRef CGImageSourceCopyMetadataAtIndex(@NotNull CGImageSourceRef isrc,
+            @NUInt long index, @Nullable CFDictionaryRef options);
 
     /**
      * Return the image at `index' in the image source `isrc'. The index is
@@ -756,10 +787,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageSourceCreateImageAtIndex(CGImageSourceRef isrc, @NUInt long index,
-            CFDictionaryRef options);
+    public static native CGImageRef CGImageSourceCreateImageAtIndex(@NotNull CGImageSourceRef isrc, @NUInt long index,
+            @Nullable CFDictionaryRef options);
 
     /**
      * Remove the cached decoded image data for the image at `index' in the image source `isrc'.
@@ -769,7 +801,7 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageSourceRemoveCacheAtIndex(CGImageSourceRef isrc, @NUInt long index);
+    public static native void CGImageSourceRemoveCacheAtIndex(@NotNull CGImageSourceRef isrc, @NUInt long index);
 
     /**
      * Return the thumbnail of the image at `index' in the image source `isrc'.
@@ -779,10 +811,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageRef CGImageSourceCreateThumbnailAtIndex(CGImageSourceRef isrc, @NUInt long index,
-            CFDictionaryRef options);
+    public static native CGImageRef CGImageSourceCreateThumbnailAtIndex(@NotNull CGImageSourceRef isrc,
+            @NUInt long index, @Nullable CFDictionaryRef options);
 
     /**
      * Create an incremental image source. No data is provided at creation
@@ -793,9 +826,10 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGImageSourceRef CGImageSourceCreateIncremental(CFDictionaryRef options);
+    public static native CGImageSourceRef CGImageSourceCreateIncremental(@Nullable CFDictionaryRef options);
 
     /**
      * Update the incremental image source `isrc' with new data. The new data
@@ -807,7 +841,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageSourceUpdateData(CGImageSourceRef isrc, CFDataRef data, boolean final_);
+    public static native void CGImageSourceUpdateData(@NotNull CGImageSourceRef isrc, @NotNull CFDataRef data,
+            boolean final_);
 
     /**
      * Update the incremental image source `isrc' with a new data provider.
@@ -819,8 +854,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageSourceUpdateDataProvider(CGImageSourceRef isrc, CGDataProviderRef provider,
-            boolean final_);
+    public static native void CGImageSourceUpdateDataProvider(@NotNull CGImageSourceRef isrc,
+            @NotNull CGDataProviderRef provider, boolean final_);
 
     /**
      * Return the overall status of the image source `isrc'. The status is
@@ -831,7 +866,7 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native int CGImageSourceGetStatus(CGImageSourceRef isrc);
+    public static native int CGImageSourceGetStatus(@NotNull CGImageSourceRef isrc);
 
     /**
      * Return the current status of the image at `index' in the image source
@@ -843,7 +878,7 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native int CGImageSourceGetStatusAtIndex(CGImageSourceRef isrc, @NUInt long index);
+    public static native int CGImageSourceGetStatusAtIndex(@NotNull CGImageSourceRef isrc, @NUInt long index);
 
     /**
      * Return the CFTypeID for CGImageDestinations.
@@ -860,6 +895,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef CGImageDestinationCopyTypeIdentifiers();
@@ -875,10 +911,12 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageDestinationRef CGImageDestinationCreateWithDataConsumer(CGDataConsumerRef consumer,
-            CFStringRef type, @NUInt long count, CFDictionaryRef options);
+    public static native CGImageDestinationRef CGImageDestinationCreateWithDataConsumer(
+            @NotNull CGDataConsumerRef consumer, @NotNull CFStringRef type, @NUInt long count,
+            @Nullable CFDictionaryRef options);
 
     /**
      * Create an image destination writing to `data'. The parameter `type'
@@ -890,10 +928,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageDestinationRef CGImageDestinationCreateWithData(CFMutableDataRef data, CFStringRef type,
-            @NUInt long count, CFDictionaryRef options);
+    public static native CGImageDestinationRef CGImageDestinationCreateWithData(@NotNull CFMutableDataRef data,
+            @NotNull CFStringRef type, @NUInt long count, @Nullable CFDictionaryRef options);
 
     /**
      * Create an image destination writing to `url'. The parameter `type'
@@ -906,10 +945,11 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGImageDestinationRef CGImageDestinationCreateWithURL(CFURLRef url, CFStringRef type,
-            @NUInt long count, CFDictionaryRef options);
+    public static native CGImageDestinationRef CGImageDestinationCreateWithURL(@NotNull CFURLRef url,
+            @NotNull CFStringRef type, @NUInt long count, @Nullable CFDictionaryRef options);
 
     /**
      * Specify the dictionary `properties' of properties which apply to all
@@ -919,7 +959,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageDestinationSetProperties(CGImageDestinationRef idst, CFDictionaryRef properties);
+    public static native void CGImageDestinationSetProperties(@NotNull CGImageDestinationRef idst,
+            @Nullable CFDictionaryRef properties);
 
     /**
      * Set the next image in the image destination `idst' to be `image' with
@@ -931,8 +972,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageDestinationAddImage(CGImageDestinationRef idst, CGImageRef image,
-            CFDictionaryRef properties);
+    public static native void CGImageDestinationAddImage(@NotNull CGImageDestinationRef idst, @NotNull CGImageRef image,
+            @Nullable CFDictionaryRef properties);
 
     /**
      * Set the next image in the image destination `idst' to be the image at
@@ -946,8 +987,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageDestinationAddImageFromSource(CGImageDestinationRef idst, CGImageSourceRef isrc,
-            @NUInt long index, CFDictionaryRef properties);
+    public static native void CGImageDestinationAddImageFromSource(@NotNull CGImageDestinationRef idst,
+            @NotNull CGImageSourceRef isrc, @NUInt long index, @Nullable CFDictionaryRef properties);
 
     /**
      * Write everything to the destination data, url or consumer of the image
@@ -960,7 +1001,7 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageDestinationFinalize(CGImageDestinationRef idst);
+    public static native boolean CGImageDestinationFinalize(@NotNull CGImageDestinationRef idst);
 
     /**
      * Set the next image in the image destination `idst' to be `image' with
@@ -972,8 +1013,8 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageDestinationAddImageAndMetadata(CGImageDestinationRef idst, CGImageRef image,
-            CGImageMetadataRef metadata, CFDictionaryRef options);
+    public static native void CGImageDestinationAddImageAndMetadata(@NotNull CGImageDestinationRef idst,
+            @NotNull CGImageRef image, @Nullable CGImageMetadataRef metadata, @Nullable CFDictionaryRef options);
 
     /**
      * Losslessly copies the contents of the image source, 'isrc', to the
@@ -991,14 +1032,15 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native boolean CGImageDestinationCopyImageSource(CGImageDestinationRef idst, CGImageSourceRef isrc,
-            CFDictionaryRef options, Ptr<CFErrorRef> err);
+    public static native boolean CGImageDestinationCopyImageSource(@NotNull CGImageDestinationRef idst,
+            @NotNull CGImageSourceRef isrc, @Nullable CFDictionaryRef options, @Nullable Ptr<CFErrorRef> err);
 
     /**
      * Public, common namespaces.
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceExif();
@@ -1006,6 +1048,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceExifAux();
@@ -1013,6 +1056,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceExifEX();
@@ -1020,6 +1064,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceDublinCore();
@@ -1027,6 +1072,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceIPTCCore();
@@ -1034,6 +1080,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespacePhotoshop();
@@ -1041,6 +1088,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceTIFF();
@@ -1048,6 +1096,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceXMPBasic();
@@ -1055,6 +1104,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceXMPRights();
@@ -1064,6 +1114,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixExif();
@@ -1071,6 +1122,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixExifAux();
@@ -1078,6 +1130,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixExifEX();
@@ -1085,6 +1138,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixDublinCore();
@@ -1092,6 +1146,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixIPTCCore();
@@ -1099,6 +1154,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixPhotoshop();
@@ -1106,6 +1162,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixTIFF();
@@ -1113,6 +1170,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixXMPBasic();
@@ -1120,6 +1178,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixXMPRights();
@@ -1132,6 +1191,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataEnumerateRecursively();
@@ -1142,6 +1202,7 @@ public final class ImageIO {
      * Error domain for all errors originating in ImageIO for CGImageMetadata APIs.
      * Error codes may be interpreted using the list below.
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorDomainCGImageMetadata();
@@ -1154,6 +1215,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceTypeIdentifierHint();
@@ -1166,6 +1228,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceShouldCache();
@@ -1177,6 +1240,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceShouldCacheImmediately();
@@ -1190,6 +1254,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceShouldAllowFloat();
@@ -1205,6 +1270,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceCreateThumbnailFromImageIfAbsent();
@@ -1220,6 +1286,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceCreateThumbnailFromImageAlways();
@@ -1232,6 +1299,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceThumbnailMaxPixelSize();
@@ -1244,6 +1312,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceCreateThumbnailWithTransform();
@@ -1260,6 +1329,7 @@ public final class ImageIO {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageSourceSubsampleFactor();
@@ -1274,6 +1344,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationLossyCompressionQuality();
@@ -1287,6 +1358,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationBackgroundColor();
@@ -1297,6 +1369,7 @@ public final class ImageIO {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationImageMaxPixelSize();
@@ -1307,6 +1380,7 @@ public final class ImageIO {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationEmbedThumbnail();
@@ -1318,6 +1392,7 @@ public final class ImageIO {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationOptimizeColorForSharing();
@@ -1330,6 +1405,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationMetadata();
@@ -1344,6 +1420,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationMergeMetadata();
@@ -1356,6 +1433,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataShouldExcludeXMP();
@@ -1369,6 +1447,7 @@ public final class ImageIO {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataShouldExcludeGPS();
@@ -1382,6 +1461,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationDateTime();
@@ -1393,6 +1473,7 @@ public final class ImageIO {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationOrientation();
@@ -1404,6 +1485,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFDictionary();
@@ -1411,6 +1493,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFDictionary();
@@ -1418,6 +1501,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFDictionary();
@@ -1425,6 +1509,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifDictionary();
@@ -1432,6 +1517,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGDictionary();
@@ -1439,6 +1525,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCDictionary();
@@ -1446,6 +1533,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDictionary();
@@ -1453,6 +1541,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyRawDictionary();
@@ -1460,6 +1549,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFDictionary();
@@ -1467,6 +1557,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonDictionary();
@@ -1474,6 +1565,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonDictionary();
@@ -1481,6 +1573,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerMinoltaDictionary();
@@ -1488,6 +1581,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerFujiDictionary();
@@ -1495,6 +1589,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerOlympusDictionary();
@@ -1502,6 +1597,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerPentaxDictionary();
@@ -1509,6 +1605,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageProperty8BIMDictionary();
@@ -1516,6 +1613,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGDictionary();
@@ -1523,6 +1621,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxDictionary();
@@ -1530,6 +1629,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerAppleDictionary();
@@ -1540,6 +1640,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyFileSize();
@@ -1550,6 +1651,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPixelHeight();
@@ -1557,6 +1659,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPixelWidth();
@@ -1567,6 +1670,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDPIHeight();
@@ -1574,6 +1678,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDPIWidth();
@@ -1584,6 +1689,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDepth();
@@ -1604,6 +1710,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyOrientation();
@@ -1614,6 +1721,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIsFloat();
@@ -1624,6 +1732,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIsIndexed();
@@ -1634,6 +1743,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHasAlpha();
@@ -1644,6 +1754,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyColorModel();
@@ -1654,6 +1765,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyProfileName();
@@ -1663,6 +1775,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyColorModelRGB();
@@ -1670,6 +1783,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyColorModelGray();
@@ -1677,6 +1791,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyColorModelCMYK();
@@ -1684,6 +1799,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyColorModelLab();
@@ -1693,6 +1809,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFCompression();
@@ -1700,6 +1817,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFPhotometricInterpretation();
@@ -1707,6 +1825,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFDocumentName();
@@ -1714,6 +1833,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFImageDescription();
@@ -1721,6 +1841,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFMake();
@@ -1728,6 +1849,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFModel();
@@ -1735,6 +1857,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFOrientation();
@@ -1742,6 +1865,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFXResolution();
@@ -1749,6 +1873,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFYResolution();
@@ -1756,6 +1881,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFResolutionUnit();
@@ -1763,6 +1889,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFSoftware();
@@ -1770,6 +1897,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFTransferFunction();
@@ -1777,6 +1905,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFDateTime();
@@ -1784,6 +1913,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFArtist();
@@ -1791,6 +1921,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFHostComputer();
@@ -1798,6 +1929,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFCopyright();
@@ -1805,6 +1937,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFWhitePoint();
@@ -1812,6 +1945,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFPrimaryChromaticities();
@@ -1819,6 +1953,7 @@ public final class ImageIO {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFTileWidth();
@@ -1826,6 +1961,7 @@ public final class ImageIO {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTIFFTileLength();
@@ -1835,6 +1971,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFVersion();
@@ -1842,6 +1979,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFXDensity();
@@ -1849,6 +1987,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFYDensity();
@@ -1856,6 +1995,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFDensityUnit();
@@ -1863,6 +2003,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyJFIFIsProgressive();
@@ -1872,6 +2013,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifExposureTime();
@@ -1879,6 +2021,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFNumber();
@@ -1886,6 +2029,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifExposureProgram();
@@ -1893,6 +2037,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSpectralSensitivity();
@@ -1900,6 +2045,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifISOSpeedRatings();
@@ -1907,6 +2053,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifOECF();
@@ -1914,6 +2061,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSensitivityType();
@@ -1921,6 +2069,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifStandardOutputSensitivity();
@@ -1928,6 +2077,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifRecommendedExposureIndex();
@@ -1935,6 +2085,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifISOSpeed();
@@ -1942,6 +2093,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifISOSpeedLatitudeyyy();
@@ -1949,6 +2101,7 @@ public final class ImageIO {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifISOSpeedLatitudezzz();
@@ -1956,6 +2109,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifVersion();
@@ -1963,6 +2117,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifDateTimeOriginal();
@@ -1970,6 +2125,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifDateTimeDigitized();
@@ -1977,6 +2133,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifComponentsConfiguration();
@@ -1984,6 +2141,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifCompressedBitsPerPixel();
@@ -1991,6 +2149,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifShutterSpeedValue();
@@ -1998,6 +2157,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifApertureValue();
@@ -2005,6 +2165,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifBrightnessValue();
@@ -2012,6 +2173,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifExposureBiasValue();
@@ -2019,6 +2181,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifMaxApertureValue();
@@ -2026,6 +2189,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubjectDistance();
@@ -2033,6 +2197,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifMeteringMode();
@@ -2040,6 +2205,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifLightSource();
@@ -2047,6 +2213,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFlash();
@@ -2054,6 +2221,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFocalLength();
@@ -2061,6 +2229,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubjectArea();
@@ -2068,6 +2237,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifMakerNote();
@@ -2075,6 +2245,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifUserComment();
@@ -2082,6 +2253,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubsecTime();
@@ -2089,6 +2261,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubsecTimeOriginal();
@@ -2096,6 +2269,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubsecTimeDigitized();
@@ -2103,6 +2277,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFlashPixVersion();
@@ -2110,6 +2285,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifColorSpace();
@@ -2117,6 +2293,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifPixelXDimension();
@@ -2124,6 +2301,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifPixelYDimension();
@@ -2131,6 +2309,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifRelatedSoundFile();
@@ -2138,6 +2317,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFlashEnergy();
@@ -2145,6 +2325,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSpatialFrequencyResponse();
@@ -2152,6 +2333,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFocalPlaneXResolution();
@@ -2159,6 +2341,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFocalPlaneYResolution();
@@ -2166,6 +2349,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFocalPlaneResolutionUnit();
@@ -2173,6 +2357,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubjectLocation();
@@ -2180,6 +2365,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifExposureIndex();
@@ -2187,6 +2373,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSensingMethod();
@@ -2194,6 +2381,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFileSource();
@@ -2201,6 +2389,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSceneType();
@@ -2208,6 +2397,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifCFAPattern();
@@ -2215,6 +2405,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifCustomRendered();
@@ -2222,6 +2413,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifExposureMode();
@@ -2229,6 +2421,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifWhiteBalance();
@@ -2236,6 +2429,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifDigitalZoomRatio();
@@ -2243,6 +2437,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifFocalLenIn35mmFilm();
@@ -2250,6 +2445,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSceneCaptureType();
@@ -2257,6 +2453,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifGainControl();
@@ -2264,6 +2461,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifContrast();
@@ -2271,6 +2469,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSaturation();
@@ -2278,6 +2477,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSharpness();
@@ -2285,6 +2485,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifDeviceSettingDescription();
@@ -2292,6 +2493,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSubjectDistRange();
@@ -2299,6 +2501,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifImageUniqueID();
@@ -2306,6 +2509,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifCameraOwnerName();
@@ -2313,6 +2517,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifBodySerialNumber();
@@ -2320,6 +2525,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifLensSpecification();
@@ -2327,6 +2533,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifLensMake();
@@ -2334,6 +2541,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifLensModel();
@@ -2341,6 +2549,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifLensSerialNumber();
@@ -2348,6 +2557,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifGamma();
@@ -2359,6 +2569,7 @@ public final class ImageIO {
      * Deprecated-Since: 10.0
      * Deprecated-Message: No longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2369,6 +2580,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxLensInfo();
@@ -2376,6 +2588,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxLensModel();
@@ -2383,6 +2596,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxSerialNumber();
@@ -2390,6 +2604,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxLensID();
@@ -2397,6 +2612,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxLensSerialNumber();
@@ -2404,6 +2620,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxImageNumber();
@@ -2411,6 +2628,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxFlashCompensation();
@@ -2418,6 +2636,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxOwnerName();
@@ -2425,6 +2644,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifAuxFirmware();
@@ -2434,6 +2654,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFLoopCount();
@@ -2441,6 +2662,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFDelayTime();
@@ -2448,6 +2670,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFImageColorMap();
@@ -2455,6 +2678,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFHasGlobalColorMap();
@@ -2462,6 +2686,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFUnclampedDelayTime();
@@ -2469,6 +2694,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGGamma();
@@ -2476,6 +2702,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGInterlaceType();
@@ -2483,6 +2710,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGXPixelsPerMeter();
@@ -2490,6 +2718,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGYPixelsPerMeter();
@@ -2497,6 +2726,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGsRGBIntent();
@@ -2504,6 +2734,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGChromaticities();
@@ -2513,6 +2744,7 @@ public final class ImageIO {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGAuthor();
@@ -2520,6 +2752,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGCopyright();
@@ -2527,6 +2760,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGCreationTime();
@@ -2534,6 +2768,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGDescription();
@@ -2541,6 +2776,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGModificationTime();
@@ -2548,6 +2784,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGSoftware();
@@ -2555,6 +2792,7 @@ public final class ImageIO {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGTitle();
@@ -2562,6 +2800,7 @@ public final class ImageIO {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAPNGLoopCount();
@@ -2569,6 +2808,7 @@ public final class ImageIO {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAPNGDelayTime();
@@ -2576,6 +2816,7 @@ public final class ImageIO {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAPNGUnclampedDelayTime();
@@ -2585,6 +2826,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSVersion();
@@ -2592,6 +2834,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSLatitudeRef();
@@ -2599,6 +2842,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSLatitude();
@@ -2606,6 +2850,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSLongitudeRef();
@@ -2613,6 +2858,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSLongitude();
@@ -2620,6 +2866,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSAltitudeRef();
@@ -2627,6 +2874,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSAltitude();
@@ -2634,6 +2882,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSTimeStamp();
@@ -2641,6 +2890,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSSatellites();
@@ -2648,6 +2898,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSStatus();
@@ -2655,6 +2906,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSMeasureMode();
@@ -2662,6 +2914,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDOP();
@@ -2669,6 +2922,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSSpeedRef();
@@ -2676,6 +2930,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSSpeed();
@@ -2683,6 +2938,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSTrackRef();
@@ -2690,6 +2946,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSTrack();
@@ -2697,6 +2954,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSImgDirectionRef();
@@ -2704,6 +2962,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSImgDirection();
@@ -2711,6 +2970,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSMapDatum();
@@ -2718,6 +2978,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestLatitudeRef();
@@ -2725,6 +2986,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestLatitude();
@@ -2732,6 +2994,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestLongitudeRef();
@@ -2739,6 +3002,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestLongitude();
@@ -2746,6 +3010,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestBearingRef();
@@ -2753,6 +3018,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestBearing();
@@ -2760,6 +3026,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestDistanceRef();
@@ -2767,6 +3034,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDestDistance();
@@ -2774,6 +3042,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSProcessingMethod();
@@ -2781,6 +3050,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSAreaInformation();
@@ -2788,6 +3058,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDateStamp();
@@ -2795,6 +3066,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSDifferental();
@@ -2802,6 +3074,7 @@ public final class ImageIO {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGPSHPositioningError();
@@ -2811,6 +3084,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCObjectTypeReference();
@@ -2818,6 +3092,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCObjectAttributeReference();
@@ -2825,6 +3100,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCObjectName();
@@ -2832,6 +3108,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCEditStatus();
@@ -2839,6 +3116,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCEditorialUpdate();
@@ -2846,6 +3124,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCUrgency();
@@ -2853,6 +3132,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCSubjectReference();
@@ -2860,6 +3140,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCategory();
@@ -2867,6 +3148,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCSupplementalCategory();
@@ -2874,6 +3156,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCFixtureIdentifier();
@@ -2881,6 +3164,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCKeywords();
@@ -2888,6 +3172,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContentLocationCode();
@@ -2895,6 +3180,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContentLocationName();
@@ -2902,6 +3188,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCReleaseDate();
@@ -2909,6 +3196,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCReleaseTime();
@@ -2916,6 +3204,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExpirationDate();
@@ -2923,6 +3212,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExpirationTime();
@@ -2930,6 +3220,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCSpecialInstructions();
@@ -2937,6 +3228,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCActionAdvised();
@@ -2944,6 +3236,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCReferenceService();
@@ -2951,6 +3244,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCReferenceDate();
@@ -2958,6 +3252,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCReferenceNumber();
@@ -2965,6 +3260,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCDateCreated();
@@ -2972,6 +3268,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCTimeCreated();
@@ -2979,6 +3276,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCDigitalCreationDate();
@@ -2986,6 +3284,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCDigitalCreationTime();
@@ -2993,6 +3292,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCOriginatingProgram();
@@ -3000,6 +3300,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCProgramVersion();
@@ -3007,6 +3308,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCObjectCycle();
@@ -3014,6 +3316,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCByline();
@@ -3021,6 +3324,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCBylineTitle();
@@ -3028,6 +3332,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCity();
@@ -3035,6 +3340,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCSubLocation();
@@ -3042,6 +3348,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCProvinceState();
@@ -3049,6 +3356,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCountryPrimaryLocationCode();
@@ -3056,6 +3364,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCountryPrimaryLocationName();
@@ -3063,6 +3372,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCOriginalTransmissionReference();
@@ -3070,6 +3380,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCHeadline();
@@ -3077,6 +3388,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCredit();
@@ -3084,6 +3396,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCSource();
@@ -3091,6 +3404,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCopyrightNotice();
@@ -3098,6 +3412,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContact();
@@ -3105,6 +3420,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCaptionAbstract();
@@ -3112,6 +3428,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCWriterEditor();
@@ -3119,6 +3436,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCImageType();
@@ -3126,6 +3444,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCImageOrientation();
@@ -3133,6 +3452,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCLanguageIdentifier();
@@ -3140,6 +3460,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCStarRating();
@@ -3149,6 +3470,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCCreatorContactInfo();
@@ -3158,6 +3480,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCRightsUsageTerms();
@@ -3167,6 +3490,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCScene();
@@ -3176,6 +3500,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoCity();
@@ -3183,6 +3508,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoCountry();
@@ -3190,6 +3516,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoAddress();
@@ -3197,6 +3524,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoPostalCode();
@@ -3204,6 +3532,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoStateProvince();
@@ -3211,6 +3540,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoEmails();
@@ -3218,6 +3548,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoPhones();
@@ -3225,6 +3556,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCContactInfoWebURLs();
@@ -3234,6 +3566,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageProperty8BIMLayerNames();
@@ -3241,6 +3574,7 @@ public final class ImageIO {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageProperty8BIMVersion();
@@ -3250,6 +3584,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGVersion();
@@ -3257,6 +3592,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBackwardVersion();
@@ -3264,6 +3600,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGUniqueCameraModel();
@@ -3271,6 +3608,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGLocalizedCameraModel();
@@ -3278,6 +3616,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCameraSerialNumber();
@@ -3285,6 +3624,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGLensInfo();
@@ -3292,6 +3632,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBlackLevel();
@@ -3299,6 +3640,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGWhiteLevel();
@@ -3306,6 +3648,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCalibrationIlluminant1();
@@ -3313,6 +3656,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCalibrationIlluminant2();
@@ -3320,6 +3664,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGColorMatrix1();
@@ -3327,6 +3672,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGColorMatrix2();
@@ -3334,6 +3680,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCameraCalibration1();
@@ -3341,6 +3688,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCameraCalibration2();
@@ -3348,6 +3696,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAsShotNeutral();
@@ -3355,6 +3704,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAsShotWhiteXY();
@@ -3362,6 +3712,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBaselineExposure();
@@ -3369,6 +3720,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBaselineNoise();
@@ -3376,6 +3728,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBaselineSharpness();
@@ -3383,6 +3736,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPrivateData();
@@ -3390,6 +3744,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCameraCalibrationSignature();
@@ -3397,6 +3752,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileCalibrationSignature();
@@ -3404,6 +3760,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGNoiseProfile();
@@ -3411,6 +3768,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGWarpRectilinear();
@@ -3418,6 +3776,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGWarpFisheye();
@@ -3425,6 +3784,7 @@ public final class ImageIO {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGFixVignetteRadial();
@@ -3434,6 +3794,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFDescription();
@@ -3441,6 +3802,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFFirmware();
@@ -3448,6 +3810,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFOwnerName();
@@ -3455,6 +3818,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFImageName();
@@ -3462,6 +3826,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFImageFileName();
@@ -3469,6 +3834,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFReleaseMethod();
@@ -3476,6 +3842,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFReleaseTiming();
@@ -3483,6 +3850,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFRecordID();
@@ -3490,6 +3858,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFSelfTimingTime();
@@ -3497,6 +3866,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFCameraSerialNumber();
@@ -3504,6 +3874,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFImageSerialNumber();
@@ -3511,6 +3882,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFContinuousDrive();
@@ -3518,6 +3890,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFFocusMode();
@@ -3525,6 +3898,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFMeteringMode();
@@ -3532,6 +3906,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFShootingMode();
@@ -3539,6 +3914,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFLensModel();
@@ -3546,6 +3922,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFLensMaxMM();
@@ -3553,6 +3930,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFLensMinMM();
@@ -3560,6 +3938,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFWhiteBalanceIndex();
@@ -3567,6 +3946,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFFlashExposureComp();
@@ -3574,6 +3954,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyCIFFMeasuredEV();
@@ -3583,6 +3964,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonISOSetting();
@@ -3590,6 +3972,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonColorMode();
@@ -3597,6 +3980,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonQuality();
@@ -3604,6 +3988,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonWhiteBalanceMode();
@@ -3611,6 +3996,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonSharpenMode();
@@ -3618,6 +4004,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonFocusMode();
@@ -3625,6 +4012,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonFlashSetting();
@@ -3632,6 +4020,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonISOSelection();
@@ -3639,6 +4028,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonFlashExposureComp();
@@ -3646,6 +4036,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonImageAdjustment();
@@ -3653,6 +4044,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonLensAdapter();
@@ -3660,6 +4052,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonLensType();
@@ -3667,6 +4060,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonLensInfo();
@@ -3674,6 +4068,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonFocusDistance();
@@ -3681,6 +4076,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonDigitalZoom();
@@ -3688,6 +4084,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonShootingMode();
@@ -3695,6 +4092,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonCameraSerialNumber();
@@ -3702,6 +4100,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerNikonShutterCount();
@@ -3711,6 +4110,7 @@ public final class ImageIO {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonOwnerName();
@@ -3718,6 +4118,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonCameraSerialNumber();
@@ -3725,6 +4126,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonImageSerialNumber();
@@ -3732,6 +4134,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonFlashExposureComp();
@@ -3739,6 +4142,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonContinuousDrive();
@@ -3746,6 +4150,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonLensModel();
@@ -3753,6 +4158,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonFirmware();
@@ -3760,6 +4166,7 @@ public final class ImageIO {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyMakerCanonAspectRatioInfo();
@@ -3773,6 +4180,7 @@ public final class ImageIO {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGCompressionFilter();
@@ -3781,7 +4189,8 @@ public final class ImageIO {
     @Generated
     public interface Block_CGImageMetadataEnumerateTagsUsingBlock {
         @Generated
-        boolean call_CGImageMetadataEnumerateTagsUsingBlock(CFStringRef path, CGImageMetadataTagRef tag);
+        boolean call_CGImageMetadataEnumerateTagsUsingBlock(@NotNull CFStringRef path,
+                @NotNull CGImageMetadataTagRef tag);
     }
 
     /**
@@ -3794,10 +4203,11 @@ public final class ImageIO {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CGImageSourceCopyAuxiliaryDataInfoAtIndex(CGImageSourceRef isrc,
-            @NUInt long index, CFStringRef auxiliaryImageDataType);
+    public static native CFDictionaryRef CGImageSourceCopyAuxiliaryDataInfoAtIndex(@NotNull CGImageSourceRef isrc,
+            @NUInt long index, @NotNull CFStringRef auxiliaryImageDataType);
 
     /**
      * Auxiliary data support for JPEG, HEIF, and DNG images.
@@ -3812,12 +4222,13 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native void CGImageDestinationAddAuxiliaryDataInfo(CGImageDestinationRef idst,
-            CFStringRef auxiliaryImageDataType, CFDictionaryRef auxiliaryDataInfoDictionary);
+    public static native void CGImageDestinationAddAuxiliaryDataInfo(@NotNull CGImageDestinationRef idst,
+            @NotNull CFStringRef auxiliaryImageDataType, @NotNull CFDictionaryRef auxiliaryDataInfoDictionary);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyFileContentsDictionary();
@@ -3828,6 +4239,7 @@ public final class ImageIO {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeDepth();
@@ -3835,6 +4247,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeDisparity();
@@ -3849,6 +4262,7 @@ public final class ImageIO {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataInfoData();
@@ -3856,6 +4270,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataInfoDataDescription();
@@ -3863,6 +4278,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataInfoMetadata();
@@ -3870,6 +4286,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyImageCount();
@@ -3877,6 +4294,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWidth();
@@ -3884,6 +4302,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHeight();
@@ -3891,6 +4310,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyBytesPerRow();
@@ -3898,6 +4318,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyNamedColorSpace();
@@ -3905,6 +4326,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPixelFormat();
@@ -3912,6 +4334,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyImages();
@@ -3919,6 +4342,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyThumbnailImages();
@@ -3926,6 +4350,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAuxiliaryData();
@@ -3933,6 +4358,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAuxiliaryDataType();
@@ -3946,7 +4372,7 @@ public final class ImageIO {
     @Generated
     @CFunction
     @NUInt
-    public static native long CGImageSourceGetPrimaryImageIndex(CGImageSourceRef isrc);
+    public static native long CGImageSourceGetPrimaryImageIndex(@NotNull CGImageSourceRef isrc);
 
     /**
      * Animate the sequence of images contained in the file at `url'. Currently supported image
@@ -3959,14 +4385,14 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native int CGAnimateImageAtURLWithBlock(CFURLRef url, CFDictionaryRef options,
-            @ObjCBlock(name = "call_CGAnimateImageAtURLWithBlock") Block_CGAnimateImageAtURLWithBlock block);
+    public static native int CGAnimateImageAtURLWithBlock(@NotNull CFURLRef url, @Nullable CFDictionaryRef options,
+            @NotNull @ObjCBlock(name = "call_CGAnimateImageAtURLWithBlock") Block_CGAnimateImageAtURLWithBlock block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CGAnimateImageAtURLWithBlock {
         @Generated
-        void call_CGAnimateImageAtURLWithBlock(@NUInt long index, CGImageRef image, BoolPtr stop);
+        void call_CGAnimateImageAtURLWithBlock(@NUInt long index, @NotNull CGImageRef image, @NotNull BoolPtr stop);
     }
 
     /**
@@ -3980,19 +4406,20 @@ public final class ImageIO {
      */
     @Generated
     @CFunction
-    public static native int CGAnimateImageDataWithBlock(CFDataRef data, CFDictionaryRef options,
-            @ObjCBlock(name = "call_CGAnimateImageDataWithBlock") Block_CGAnimateImageDataWithBlock block);
+    public static native int CGAnimateImageDataWithBlock(@NotNull CFDataRef data, @Nullable CFDictionaryRef options,
+            @NotNull @ObjCBlock(name = "call_CGAnimateImageDataWithBlock") Block_CGAnimateImageDataWithBlock block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CGAnimateImageDataWithBlock {
         @Generated
-        void call_CGAnimateImageDataWithBlock(@NUInt long index, CGImageRef image, BoolPtr stop);
+        void call_CGAnimateImageDataWithBlock(@NUInt long index, @NotNull CGImageRef image, @NotNull BoolPtr stop);
     }
 
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataNamespaceIPTCExtension();
@@ -4000,6 +4427,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageMetadataPrefixIPTCExtension();
@@ -4007,6 +4435,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSDictionary();
@@ -4014,6 +4443,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyOpenEXRDictionary();
@@ -4023,6 +4453,7 @@ public final class ImageIO {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPrimaryImage();
@@ -4032,6 +4463,7 @@ public final class ImageIO {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSLoopCount();
@@ -4039,6 +4471,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSDelayTime();
@@ -4046,6 +4479,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSUnclampedDelayTime();
@@ -4053,6 +4487,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSCanvasPixelWidth();
@@ -4060,6 +4495,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSCanvasPixelHeight();
@@ -4067,6 +4503,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEICSFrameInfoArray();
@@ -4074,6 +4511,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifOffsetTime();
@@ -4081,6 +4519,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifOffsetTimeOriginal();
@@ -4088,6 +4527,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifOffsetTimeDigitized();
@@ -4095,6 +4535,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifCompositeImage();
@@ -4102,6 +4543,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSourceImageNumberOfCompositeImage();
@@ -4109,6 +4551,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyExifSourceExposureTimesOfCompositeImage();
@@ -4116,6 +4559,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFCanvasPixelWidth();
@@ -4123,6 +4567,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFCanvasPixelHeight();
@@ -4130,6 +4575,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGIFFrameInfoArray();
@@ -4137,6 +4583,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGComment();
@@ -4144,6 +4591,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGDisclaimer();
@@ -4151,6 +4599,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGSource();
@@ -4158,6 +4607,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGWarning();
@@ -4165,6 +4615,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAPNGFrameInfoArray();
@@ -4172,6 +4623,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAPNGCanvasPixelWidth();
@@ -4179,6 +4631,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyAPNGCanvasPixelHeight();
@@ -4186,6 +4639,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTerm();
@@ -4193,6 +4647,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermCvId();
@@ -4200,6 +4655,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermId();
@@ -4207,6 +4663,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermName();
@@ -4214,6 +4671,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAboutCvTermRefinedAbout();
@@ -4221,6 +4679,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAddlModelInfo();
@@ -4228,6 +4687,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkOrObject();
@@ -4235,6 +4695,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkCircaDateCreated();
@@ -4242,6 +4703,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkContentDescription();
@@ -4249,6 +4711,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkContributionDescription();
@@ -4256,6 +4719,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkCopyrightNotice();
@@ -4263,6 +4727,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkCreator();
@@ -4270,6 +4735,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkCreatorID();
@@ -4277,6 +4743,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkCopyrightOwnerID();
@@ -4284,6 +4751,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkCopyrightOwnerName();
@@ -4291,6 +4759,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkLicensorID();
@@ -4298,6 +4767,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkLicensorName();
@@ -4305,6 +4775,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkDateCreated();
@@ -4312,6 +4783,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkPhysicalDescription();
@@ -4319,6 +4791,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkSource();
@@ -4326,6 +4799,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkSourceInventoryNo();
@@ -4333,6 +4807,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkSourceInvURL();
@@ -4340,6 +4815,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkStylePeriod();
@@ -4347,6 +4823,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtArtworkTitle();
@@ -4354,6 +4831,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAudioBitrate();
@@ -4361,6 +4839,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAudioBitrateMode();
@@ -4368,6 +4847,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtAudioChannelCount();
@@ -4375,6 +4855,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtCircaDateCreated();
@@ -4382,6 +4863,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContainerFormat();
@@ -4389,6 +4871,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContainerFormatIdentifier();
@@ -4396,6 +4879,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContainerFormatName();
@@ -4403,6 +4887,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContributor();
@@ -4410,6 +4895,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContributorIdentifier();
@@ -4417,6 +4903,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContributorName();
@@ -4424,6 +4911,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtContributorRole();
@@ -4431,6 +4919,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtCopyrightYear();
@@ -4438,6 +4927,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtCreator();
@@ -4445,6 +4935,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtCreatorIdentifier();
@@ -4452,6 +4943,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtCreatorName();
@@ -4459,6 +4951,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtCreatorRole();
@@ -4466,6 +4959,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtControlledVocabularyTerm();
@@ -4473,6 +4967,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreen();
@@ -4480,6 +4975,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegion();
@@ -4487,6 +4983,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionD();
@@ -4494,6 +4991,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionH();
@@ -4501,6 +4999,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionText();
@@ -4508,6 +5007,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionUnit();
@@ -4515,6 +5015,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionW();
@@ -4522,6 +5023,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionX();
@@ -4529,6 +5031,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDataOnScreenRegionY();
@@ -4536,6 +5039,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDigitalImageGUID();
@@ -4543,6 +5047,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDigitalSourceFileType();
@@ -4550,6 +5055,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDigitalSourceType();
@@ -4557,6 +5063,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDopesheet();
@@ -4564,6 +5071,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDopesheetLink();
@@ -4571,6 +5079,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDopesheetLinkLink();
@@ -4578,6 +5087,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtDopesheetLinkLinkQualifier();
@@ -4585,6 +5095,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEmbdEncRightsExpr();
@@ -4592,6 +5103,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEmbeddedEncodedRightsExpr();
@@ -4599,6 +5111,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEmbeddedEncodedRightsExprType();
@@ -4606,6 +5119,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEmbeddedEncodedRightsExprLangID();
@@ -4613,6 +5127,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEpisode();
@@ -4620,6 +5135,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEpisodeIdentifier();
@@ -4627,6 +5143,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEpisodeName();
@@ -4634,6 +5151,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEpisodeNumber();
@@ -4641,6 +5159,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtEvent();
@@ -4648,6 +5167,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtShownEvent();
@@ -4655,6 +5175,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtShownEventIdentifier();
@@ -4662,6 +5183,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtShownEventName();
@@ -4669,6 +5191,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtExternalMetadataLink();
@@ -4676,6 +5199,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtFeedIdentifier();
@@ -4683,6 +5207,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtGenre();
@@ -4690,6 +5215,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtGenreCvId();
@@ -4697,6 +5223,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtGenreCvTermId();
@@ -4704,6 +5231,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtGenreCvTermName();
@@ -4711,6 +5239,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtGenreCvTermRefinedAbout();
@@ -4718,6 +5247,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtHeadline();
@@ -4725,6 +5255,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtIPTCLastEdited();
@@ -4732,6 +5263,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncRightsExpr();
@@ -4739,6 +5271,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncodedRightsExpr();
@@ -4746,6 +5279,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncodedRightsExprType();
@@ -4753,6 +5287,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLinkedEncodedRightsExprLangID();
@@ -4760,6 +5295,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationCreated();
@@ -4767,6 +5303,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationCity();
@@ -4774,6 +5311,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationCountryCode();
@@ -4781,6 +5319,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationCountryName();
@@ -4788,6 +5327,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationGPSAltitude();
@@ -4795,6 +5335,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationGPSLatitude();
@@ -4802,6 +5343,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationGPSLongitude();
@@ -4809,6 +5351,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationIdentifier();
@@ -4816,6 +5359,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationLocationId();
@@ -4823,6 +5367,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationLocationName();
@@ -4830,6 +5375,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationProvinceState();
@@ -4837,6 +5383,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationSublocation();
@@ -4844,6 +5391,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationWorldRegion();
@@ -4851,6 +5399,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtLocationShown();
@@ -4858,6 +5407,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtMaxAvailHeight();
@@ -4865,6 +5415,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtMaxAvailWidth();
@@ -4872,6 +5423,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtModelAge();
@@ -4879,6 +5431,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtOrganisationInImageCode();
@@ -4886,6 +5439,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtOrganisationInImageName();
@@ -4893,6 +5447,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonHeard();
@@ -4900,6 +5455,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonHeardIdentifier();
@@ -4907,6 +5463,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonHeardName();
@@ -4914,6 +5471,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImage();
@@ -4921,6 +5479,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageWDetails();
@@ -4928,6 +5487,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCharacteristic();
@@ -4935,6 +5495,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermCvId();
@@ -4942,6 +5503,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermId();
@@ -4949,6 +5511,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermName();
@@ -4956,6 +5519,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageCvTermRefinedAbout();
@@ -4963,6 +5527,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageDescription();
@@ -4970,6 +5535,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageId();
@@ -4977,6 +5543,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPersonInImageName();
@@ -4984,6 +5551,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtProductInImage();
@@ -4991,6 +5559,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtProductInImageDescription();
@@ -4998,6 +5567,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtProductInImageGTIN();
@@ -5005,6 +5575,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtProductInImageName();
@@ -5012,6 +5583,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPublicationEvent();
@@ -5019,6 +5591,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPublicationEventDate();
@@ -5026,6 +5599,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPublicationEventIdentifier();
@@ -5033,6 +5607,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtPublicationEventName();
@@ -5040,6 +5615,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRating();
@@ -5047,6 +5623,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRatingRegion();
@@ -5054,6 +5631,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionCity();
@@ -5061,6 +5639,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionCountryCode();
@@ -5068,6 +5647,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionCountryName();
@@ -5075,6 +5655,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionGPSAltitude();
@@ -5082,6 +5663,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionGPSLatitude();
@@ -5089,6 +5671,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionGPSLongitude();
@@ -5096,6 +5679,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionIdentifier();
@@ -5103,6 +5687,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionLocationId();
@@ -5110,6 +5695,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionLocationName();
@@ -5117,6 +5703,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionProvinceState();
@@ -5124,6 +5711,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionSublocation();
@@ -5131,6 +5719,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingRegionWorldRegion();
@@ -5138,6 +5727,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingScaleMaxValue();
@@ -5145,6 +5735,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingScaleMinValue();
@@ -5152,6 +5743,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingSourceLink();
@@ -5159,6 +5751,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingValue();
@@ -5166,6 +5759,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRatingValueLogoLink();
@@ -5173,6 +5767,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRegistryID();
@@ -5180,6 +5775,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRegistryEntryRole();
@@ -5187,6 +5783,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRegistryItemID();
@@ -5194,6 +5791,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtRegistryOrganisationID();
@@ -5201,6 +5799,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtReleaseReady();
@@ -5208,6 +5807,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeason();
@@ -5215,6 +5815,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeasonIdentifier();
@@ -5222,6 +5823,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeasonName();
@@ -5229,6 +5831,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeasonNumber();
@@ -5236,6 +5839,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeries();
@@ -5243,6 +5847,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeriesIdentifier();
@@ -5250,6 +5855,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSeriesName();
@@ -5257,6 +5863,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtStorylineIdentifier();
@@ -5264,6 +5871,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtStreamReady();
@@ -5271,6 +5879,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtStylePeriod();
@@ -5278,6 +5887,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSupplyChainSource();
@@ -5285,6 +5895,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSupplyChainSourceIdentifier();
@@ -5292,6 +5903,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtSupplyChainSourceName();
@@ -5299,6 +5911,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTemporalCoverage();
@@ -5306,6 +5919,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTemporalCoverageFrom();
@@ -5313,6 +5927,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTemporalCoverageTo();
@@ -5320,6 +5935,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTranscript();
@@ -5327,6 +5943,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTranscriptLink();
@@ -5334,6 +5951,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTranscriptLinkLink();
@@ -5341,6 +5959,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtTranscriptLinkLinkQualifier();
@@ -5348,6 +5967,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoBitrate();
@@ -5355,6 +5975,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoBitrateMode();
@@ -5362,6 +5983,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoDisplayAspectRatio();
@@ -5369,6 +5991,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoEncodingProfile();
@@ -5376,6 +5999,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoShotType();
@@ -5383,6 +6007,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoShotTypeIdentifier();
@@ -5390,6 +6015,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoShotTypeName();
@@ -5397,6 +6023,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVideoStreamsCount();
@@ -5404,6 +6031,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtVisualColor();
@@ -5411,6 +6039,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTag();
@@ -5418,6 +6047,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvId();
@@ -5425,6 +6055,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvTermId();
@@ -5432,6 +6063,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvTermName();
@@ -5439,6 +6071,7 @@ public final class ImageIO {
     /**
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyIPTCExtWorkflowTagCvTermRefinedAbout();
@@ -5446,6 +6079,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGActiveArea();
@@ -5453,6 +6087,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAnalogBalance();
@@ -5460,6 +6095,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAntiAliasStrength();
@@ -5467,6 +6103,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAsShotICCProfile();
@@ -5474,6 +6111,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAsShotPreProfileMatrix();
@@ -5481,6 +6119,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGAsShotProfileName();
@@ -5488,6 +6127,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBaselineExposureOffset();
@@ -5495,6 +6135,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBayerGreenSplit();
@@ -5502,6 +6143,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBestQualityScale();
@@ -5509,6 +6151,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBlackLevelDeltaH();
@@ -5516,6 +6159,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBlackLevelDeltaV();
@@ -5523,6 +6167,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGBlackLevelRepeatDim();
@@ -5530,6 +6175,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCFALayout();
@@ -5537,6 +6183,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCFAPlaneColor();
@@ -5544,6 +6191,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGChromaBlurRadius();
@@ -5551,6 +6199,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGColorimetricReference();
@@ -5558,6 +6207,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCurrentICCProfile();
@@ -5565,6 +6215,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGCurrentPreProfileMatrix();
@@ -5572,6 +6223,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGDefaultBlackRender();
@@ -5579,6 +6231,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGDefaultCropOrigin();
@@ -5586,6 +6239,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGDefaultCropSize();
@@ -5593,6 +6247,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGDefaultScale();
@@ -5600,6 +6255,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGDefaultUserCrop();
@@ -5607,6 +6263,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGExtraCameraProfiles();
@@ -5614,6 +6271,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGForwardMatrix1();
@@ -5621,6 +6279,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGForwardMatrix2();
@@ -5628,6 +6287,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGLinearizationTable();
@@ -5635,6 +6295,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGLinearResponseLimit();
@@ -5642,6 +6303,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGMakerNoteSafety();
@@ -5649,6 +6311,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGMaskedAreas();
@@ -5656,6 +6319,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGNewRawImageDigest();
@@ -5663,6 +6327,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGNoiseReductionApplied();
@@ -5670,6 +6335,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOpcodeList1();
@@ -5677,6 +6343,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOpcodeList2();
@@ -5684,6 +6351,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOpcodeList3();
@@ -5691,6 +6359,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOriginalBestQualityFinalSize();
@@ -5698,6 +6367,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOriginalDefaultCropSize();
@@ -5705,6 +6375,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOriginalDefaultFinalSize();
@@ -5712,6 +6383,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOriginalRawFileData();
@@ -5719,6 +6391,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOriginalRawFileDigest();
@@ -5726,6 +6399,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGOriginalRawFileName();
@@ -5733,6 +6407,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPreviewApplicationName();
@@ -5740,6 +6415,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPreviewApplicationVersion();
@@ -5747,6 +6423,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPreviewColorSpace();
@@ -5754,6 +6431,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPreviewDateTime();
@@ -5761,6 +6439,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPreviewSettingsDigest();
@@ -5768,6 +6447,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGPreviewSettingsName();
@@ -5775,6 +6455,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileCopyright();
@@ -5782,6 +6463,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileEmbedPolicy();
@@ -5789,6 +6471,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapData1();
@@ -5796,6 +6479,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapData2();
@@ -5803,6 +6487,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapDims();
@@ -5810,6 +6495,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileHueSatMapEncoding();
@@ -5817,6 +6503,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileLookTableData();
@@ -5824,6 +6511,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileLookTableDims();
@@ -5831,6 +6519,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileLookTableEncoding();
@@ -5838,6 +6527,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileName();
@@ -5845,6 +6535,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGProfileToneCurve();
@@ -5852,6 +6543,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGRawDataUniqueID();
@@ -5859,6 +6551,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGRawImageDigest();
@@ -5866,6 +6559,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGRawToPreviewGain();
@@ -5873,6 +6567,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGReductionMatrix1();
@@ -5880,6 +6575,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGReductionMatrix2();
@@ -5887,6 +6583,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGRowInterleaveFactor();
@@ -5894,6 +6591,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGShadowScale();
@@ -5901,6 +6599,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyDNGSubTileBlockSize();
@@ -5910,6 +6609,7 @@ public final class ImageIO {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyOpenEXRAspectRatio();
@@ -5917,6 +6617,7 @@ public final class ImageIO {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypePortraitEffectsMatte();
@@ -5924,6 +6625,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationSkinMatte();
@@ -5931,6 +6633,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationHairMatte();
@@ -5938,6 +6641,7 @@ public final class ImageIO {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationTeethMatte();
@@ -5948,6 +6652,7 @@ public final class ImageIO {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAnimationStartIndex();
@@ -5958,6 +6663,7 @@ public final class ImageIO {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAnimationDelayTime();
@@ -5968,6 +6674,7 @@ public final class ImageIO {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAnimationLoopCount();
@@ -5975,6 +6682,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPDictionary();
@@ -5984,6 +6692,7 @@ public final class ImageIO {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPLoopCount();
@@ -5991,6 +6700,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPDelayTime();
@@ -5998,6 +6708,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPUnclampedDelayTime();
@@ -6005,6 +6716,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPFrameInfoArray();
@@ -6012,6 +6724,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPCanvasPixelWidth();
@@ -6019,6 +6732,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyWebPCanvasPixelHeight();
@@ -6032,6 +6746,7 @@ public final class ImageIO {
      * 
      * API-Since: 14.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageDestinationPreserveGainMap();
@@ -6039,6 +6754,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTGADictionary();
@@ -6048,6 +6764,7 @@ public final class ImageIO {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyTGACompression();
@@ -6055,6 +6772,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationGlassesMatte();
@@ -6062,6 +6780,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeHDRGainMap();
@@ -6069,6 +6788,7 @@ public final class ImageIO {
     /**
      * API-Since: 19.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGPixelsAspectRatio();
@@ -6080,6 +6800,7 @@ public final class ImageIO {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyPNGTransparency();
@@ -6087,6 +6808,7 @@ public final class ImageIO {
     /**
      * API-Since: 14.1
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImageAuxiliaryDataTypeSemanticSegmentationSkyMatte();
@@ -6094,6 +6816,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyImageIndex();
@@ -6101,6 +6824,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroups();
@@ -6108,6 +6832,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupIndex();
@@ -6115,6 +6840,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupType();
@@ -6122,6 +6848,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupTypeStereoPair();
@@ -6129,6 +6856,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupTypeAlternate();
@@ -6136,6 +6864,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImagesAlternate();
@@ -6143,6 +6872,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageIndexLeft();
@@ -6150,6 +6880,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageIndexRight();
@@ -6157,6 +6888,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageIsLeftImage();
@@ -6164,6 +6896,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageIsRightImage();
@@ -6171,6 +6904,7 @@ public final class ImageIO {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageIsAlternateImage();
@@ -6178,6 +6912,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyHEIFDictionary();
@@ -6185,6 +6920,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageBaseline();
@@ -6192,6 +6928,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCGImagePropertyGroupImageDisparityAdjustment();
@@ -6199,6 +6936,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOMetadata_CameraExtrinsicsKey();
@@ -6206,6 +6944,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraExtrinsics_CoordinateSystemID();
@@ -6213,6 +6952,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraExtrinsics_Position();
@@ -6220,6 +6960,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraExtrinsics_Rotation();
@@ -6227,6 +6968,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOMetadata_CameraModelKey();
@@ -6234,6 +6976,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraModel_ModelType();
@@ -6241,6 +6984,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraModelType_SimplifiedPinhole();
@@ -6248,6 +6992,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraModelType_GenericPinhole();
@@ -6255,6 +7000,7 @@ public final class ImageIO {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIIOCameraModel_Intrinsics();

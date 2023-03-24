@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -80,22 +82,25 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,10 +166,11 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("PDFDataWithActions:")
     public native NSData PDFDataWithActions(
-            @ObjCBlock(name = "call_PDFDataWithActions") Block_PDFDataWithActions actions);
+            @NotNull @ObjCBlock(name = "call_PDFDataWithActions") Block_PDFDataWithActions actions);
 
     @Generated
     @Selector("init")
@@ -176,37 +183,39 @@ public class UIGraphicsPDFRenderer extends UIGraphicsRenderer {
     @Generated
     @Selector("initWithBounds:format:")
     public native UIGraphicsPDFRenderer initWithBoundsFormat(@ByValue CGRect bounds,
-            UIGraphicsPDFRendererFormat format);
+            @NotNull UIGraphicsPDFRendererFormat format);
 
     @Generated
     @Selector("writePDFToURL:withActions:error:")
-    public native boolean writePDFToURLWithActionsError(NSURL url,
-            @ObjCBlock(name = "call_writePDFToURLWithActionsError") Block_writePDFToURLWithActionsError actions,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean writePDFToURLWithActionsError(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_writePDFToURLWithActionsError") Block_writePDFToURLWithActionsError actions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_PDFDataWithActions {
         @Generated
-        void call_PDFDataWithActions(UIGraphicsPDFRendererContext rendererContext);
+        void call_PDFDataWithActions(@NotNull UIGraphicsPDFRendererContext rendererContext);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writePDFToURLWithActionsError {
         @Generated
-        void call_writePDFToURLWithActionsError(UIGraphicsPDFRendererContext rendererContext);
+        void call_writePDFToURLWithActionsError(@NotNull UIGraphicsPDFRendererContext rendererContext);
     }
 
+    @Nullable
     @Generated
     @Selector("contextWithFormat:")
-    public static native CGContextRef contextWithFormat(UIGraphicsRendererFormat format);
+    public static native CGContextRef contextWithFormat(@NotNull UIGraphicsRendererFormat format);
 
     @Generated
     @Selector("prepareCGContext:withRendererContext:")
-    public static native void prepareCGContextWithRendererContext(CGContextRef context,
-            UIGraphicsRendererContext rendererContext);
+    public static native void prepareCGContextWithRendererContext(@NotNull CGContextRef context,
+            @NotNull UIGraphicsRendererContext rendererContext);
 
+    @NotNull
     @Generated
     @Selector("rendererContextClass")
     public static native Class rendererContextClass();

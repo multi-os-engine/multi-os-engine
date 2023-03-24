@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ptr.FloatPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -183,11 +184,12 @@ public final class BNNSLayerParametersLossYolo extends StructObject {
     @StructureField(order = 16, isGetter = false)
     public native void setNo_object_maximum_iou(float value);
 
+    @NotNull
     @Generated
     @StructureField(order = 17, isGetter = true)
     public native FloatPtr anchors_data();
 
     @Generated
     @StructureField(order = 17, isGetter = false)
-    public native void setAnchors_data(FloatPtr value);
+    public native void setAnchors_data(@NotNull FloatPtr value);
 }

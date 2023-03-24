@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKEvent
@@ -76,22 +78,25 @@ public class EKEvent extends EKCalendarItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,9 +114,10 @@ public class EKEvent extends EKCalendarItem {
      * 
      * Creates a new autoreleased event object.
      */
+    @NotNull
     @Generated
     @Selector("eventWithEventStore:")
-    public static native EKEvent eventWithEventStore(EKEventStore eventStore);
+    public static native EKEvent eventWithEventStore(@NotNull EKEventStore eventStore);
 
     @Generated
     @Selector("hash")
@@ -135,9 +141,10 @@ public class EKEvent extends EKCalendarItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,6 +198,7 @@ public class EKEvent extends EKCalendarItem {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("birthdayContactIdentifier")
     public native String birthdayContactIdentifier();
@@ -222,7 +230,7 @@ public class EKEvent extends EKCalendarItem {
     @Generated
     @Selector("compareStartDateWithEvent:")
     @NInt
-    public native long compareStartDateWithEvent(EKEvent other);
+    public native long compareStartDateWithEvent(@NotNull EKEvent other);
 
     /**
      * [@property] endDate
@@ -318,6 +326,7 @@ public class EKEvent extends EKCalendarItem {
      * 
      * The organizer of this event, or nil.
      */
+    @Nullable
     @Generated
     @Selector("organizer")
     public native EKParticipant organizer();
@@ -396,7 +405,7 @@ public class EKEvent extends EKCalendarItem {
      */
     @Generated
     @Selector("setStructuredLocation:")
-    public native void setStructuredLocation(EKStructuredLocation value);
+    public native void setStructuredLocation(@Nullable EKStructuredLocation value);
 
     /**
      * [@property] startDate
@@ -438,6 +447,7 @@ public class EKEvent extends EKCalendarItem {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("structuredLocation")
     public native EKStructuredLocation structuredLocation();

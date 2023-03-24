@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.2
@@ -79,30 +81,33 @@ public class UIPrintInteractionController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canPrintData:")
-    public static native boolean canPrintData(NSData data);
+    public static native boolean canPrintData(@NotNull NSData data);
 
     @Generated
     @Selector("canPrintURL:")
-    public static native boolean canPrintURL(NSURL url);
+    public static native boolean canPrintURL(@NotNull NSURL url);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -144,9 +149,10 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +162,7 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * return set of all document UTI types we can print
      */
+    @NotNull
     @Generated
     @Selector("printableUTIs")
     public static native NSSet<String> printableUTIs();
@@ -172,6 +179,7 @@ public class UIPrintInteractionController extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedPrintController")
     public static native UIPrintInteractionController sharedPrintController();
@@ -188,6 +196,7 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * not retained. default is nil
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -207,28 +216,30 @@ public class UIPrintInteractionController extends NSObject {
     @Generated
     @Selector("presentAnimated:completionHandler:")
     public native boolean presentAnimatedCompletionHandler(boolean animated,
-            @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
+            @Nullable @ObjCBlock(name = "call_presentAnimatedCompletionHandler") Block_presentAnimatedCompletionHandler completion);
 
     /**
      * iPad
      */
     @Generated
     @Selector("presentFromBarButtonItem:animated:completionHandler:")
-    public native boolean presentFromBarButtonItemAnimatedCompletionHandler(UIBarButtonItem item, boolean animated,
-            @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
+    public native boolean presentFromBarButtonItemAnimatedCompletionHandler(@NotNull UIBarButtonItem item,
+            boolean animated,
+            @Nullable @ObjCBlock(name = "call_presentFromBarButtonItemAnimatedCompletionHandler") Block_presentFromBarButtonItemAnimatedCompletionHandler completion);
 
     /**
      * iPad
      */
     @Generated
     @Selector("presentFromRect:inView:animated:completionHandler:")
-    public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, UIView view,
+    public native boolean presentFromRectInViewAnimatedCompletionHandler(@ByValue CGRect rect, @NotNull UIView view,
             boolean animated,
-            @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
+            @Nullable @ObjCBlock(name = "call_presentFromRectInViewAnimatedCompletionHandler") Block_presentFromRectInViewAnimatedCompletionHandler completion);
 
     /**
      * uses a single formatter to fill the pages
      */
+    @Nullable
     @Generated
     @Selector("printFormatter")
     public native UIPrintFormatter printFormatter();
@@ -236,6 +247,7 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * changes to printInfo ignored while printing. default is nil
      */
+    @Nullable
     @Generated
     @Selector("printInfo")
     public native UIPrintInfo printInfo();
@@ -243,6 +255,7 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * calls class to render each page
      */
+    @Nullable
     @Generated
     @Selector("printPageRenderer")
     public native UIPrintPageRenderer printPageRenderer();
@@ -250,6 +263,7 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * set after printer selection
      */
+    @Nullable
     @Generated
     @Selector("printPaper")
     public native UIPrintPaper printPaper();
@@ -261,12 +275,13 @@ public class UIPrintInteractionController extends NSObject {
      */
     @Generated
     @Selector("printToPrinter:completionHandler:")
-    public native boolean printToPrinterCompletionHandler(UIPrinter printer,
-            @ObjCBlock(name = "call_printToPrinterCompletionHandler") Block_printToPrinterCompletionHandler completion);
+    public native boolean printToPrinterCompletionHandler(@NotNull UIPrinter printer,
+            @Nullable @ObjCBlock(name = "call_printToPrinterCompletionHandler") Block_printToPrinterCompletionHandler completion);
 
     /**
      * single NSData, NSURL, UIImage
      */
+    @Nullable
     @Generated
     @Selector("printingItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -275,6 +290,7 @@ public class UIPrintInteractionController extends NSObject {
     /**
      * array of NSData, NSURL, UIImage. does not support page range
      */
+    @Nullable
     @Generated
     @Selector("printingItems")
     public native NSArray<?> printingItems();
@@ -284,13 +300,14 @@ public class UIPrintInteractionController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value);
 
     /**
      * not retained. default is nil
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIPrintInteractionControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -306,35 +323,35 @@ public class UIPrintInteractionController extends NSObject {
      */
     @Generated
     @Selector("setPrintFormatter:")
-    public native void setPrintFormatter(UIPrintFormatter value);
+    public native void setPrintFormatter(@Nullable UIPrintFormatter value);
 
     /**
      * changes to printInfo ignored while printing. default is nil
      */
     @Generated
     @Selector("setPrintInfo:")
-    public native void setPrintInfo(UIPrintInfo value);
+    public native void setPrintInfo(@Nullable UIPrintInfo value);
 
     /**
      * calls class to render each page
      */
     @Generated
     @Selector("setPrintPageRenderer:")
-    public native void setPrintPageRenderer(UIPrintPageRenderer value);
+    public native void setPrintPageRenderer(@Nullable UIPrintPageRenderer value);
 
     /**
      * single NSData, NSURL, UIImage
      */
     @Generated
     @Selector("setPrintingItem:")
-    public native void setPrintingItem(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setPrintingItem(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * array of NSData, NSURL, UIImage. does not support page range
      */
     @Generated
     @Selector("setPrintingItems:")
-    public native void setPrintingItems(NSArray<?> value);
+    public native void setPrintingItems(@Nullable NSArray<?> value);
 
     /**
      * default is YES.
@@ -398,8 +415,8 @@ public class UIPrintInteractionController extends NSObject {
     @Generated
     public interface Block_presentAnimatedCompletionHandler {
         @Generated
-        void call_presentAnimatedCompletionHandler(UIPrintInteractionController printInteractionController,
-                boolean completed, NSError error);
+        void call_presentAnimatedCompletionHandler(@NotNull UIPrintInteractionController printInteractionController,
+                boolean completed, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -407,7 +424,8 @@ public class UIPrintInteractionController extends NSObject {
     public interface Block_presentFromBarButtonItemAnimatedCompletionHandler {
         @Generated
         void call_presentFromBarButtonItemAnimatedCompletionHandler(
-                UIPrintInteractionController printInteractionController, boolean completed, NSError error);
+                @NotNull UIPrintInteractionController printInteractionController, boolean completed,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -415,15 +433,16 @@ public class UIPrintInteractionController extends NSObject {
     public interface Block_presentFromRectInViewAnimatedCompletionHandler {
         @Generated
         void call_presentFromRectInViewAnimatedCompletionHandler(
-                UIPrintInteractionController printInteractionController, boolean completed, NSError error);
+                @NotNull UIPrintInteractionController printInteractionController, boolean completed,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_printToPrinterCompletionHandler {
         @Generated
-        void call_printToPrinterCompletionHandler(UIPrintInteractionController printInteractionController,
-                boolean completed, NSError error);
+        void call_printToPrinterCompletionHandler(@NotNull UIPrintInteractionController printInteractionController,
+                boolean completed, @Nullable NSError error);
     }
 
     /**

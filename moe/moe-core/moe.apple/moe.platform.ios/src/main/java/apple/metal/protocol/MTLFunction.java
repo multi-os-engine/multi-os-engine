@@ -34,6 +34,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLFunction
@@ -55,6 +57,7 @@ public interface MTLFunction {
      * 
      * The device this resource was created against. This resource can only be used with this device.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -67,6 +70,7 @@ public interface MTLFunction {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("functionConstantsDictionary")
     NSDictionary<String, ? extends MTLFunctionConstant> functionConstantsDictionary();
@@ -88,6 +92,7 @@ public interface MTLFunction {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -97,6 +102,7 @@ public interface MTLFunction {
      * 
      * The name of the function in the shading language.
      */
+    @NotNull
     @Generated
     @Selector("name")
     String name();
@@ -135,7 +141,7 @@ public interface MTLFunction {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * [@property] stageInputAttributes
@@ -144,10 +150,12 @@ public interface MTLFunction {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("stageInputAttributes")
     NSArray<? extends MTLAttribute> stageInputAttributes();
 
+    @Nullable
     @Generated
     @Selector("vertexAttributes")
     NSArray<? extends MTLVertexAttribute> vertexAttributes();
@@ -160,6 +168,7 @@ public interface MTLFunction {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -173,11 +182,12 @@ public interface MTLFunction {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("newArgumentEncoderWithBufferIndex:reflection:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLArgumentEncoder newArgumentEncoderWithBufferIndexReflection(@NUInt long bufferIndex,
-            @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
+            @Nullable @ReferenceInfo(type = MTLArgument.class) Ptr<MTLArgument> reflection);
 
     /**
      * [@property] options

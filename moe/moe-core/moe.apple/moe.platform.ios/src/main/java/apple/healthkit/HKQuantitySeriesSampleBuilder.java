@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKQuantitySeriesSampleBuilder
@@ -74,22 +76,25 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,6 +110,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     /**
      * [@property] device
      */
+    @Nullable
     @Generated
     @Selector("device")
     public native HKDevice device();
@@ -155,14 +161,15 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      */
     @Generated
     @Selector("finishSeriesWithMetadata:completion:")
-    public native void finishSeriesWithMetadataCompletion(NSDictionary<String, ?> metadata,
-            @ObjCBlock(name = "call_finishSeriesWithMetadataCompletion") Block_finishSeriesWithMetadataCompletion completion);
+    public native void finishSeriesWithMetadataCompletion(@Nullable NSDictionary<String, ?> metadata,
+            @NotNull @ObjCBlock(name = "call_finishSeriesWithMetadataCompletion") Block_finishSeriesWithMetadataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishSeriesWithMetadataCompletion {
         @Generated
-        void call_finishSeriesWithMetadataCompletion(NSArray<? extends HKQuantitySample> samples, NSError error);
+        void call_finishSeriesWithMetadataCompletion(@Nullable NSArray<? extends HKQuantitySample> samples,
+                @Nullable NSError error);
     }
 
     /**
@@ -200,14 +207,16 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      */
     @Generated
     @Selector("finishSeriesWithMetadata:endDate:completion:")
-    public native void finishSeriesWithMetadataEndDateCompletion(NSDictionary<String, ?> metadata, NSDate endDate,
-            @ObjCBlock(name = "call_finishSeriesWithMetadataEndDateCompletion") Block_finishSeriesWithMetadataEndDateCompletion completion);
+    public native void finishSeriesWithMetadataEndDateCompletion(@Nullable NSDictionary<String, ?> metadata,
+            @Nullable NSDate endDate,
+            @NotNull @ObjCBlock(name = "call_finishSeriesWithMetadataEndDateCompletion") Block_finishSeriesWithMetadataEndDateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishSeriesWithMetadataEndDateCompletion {
         @Generated
-        void call_finishSeriesWithMetadataEndDateCompletion(NSArray<? extends HKQuantitySample> samples, NSError error);
+        void call_finishSeriesWithMetadataEndDateCompletion(@Nullable NSArray<? extends HKQuantitySample> samples,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -236,7 +245,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     @Generated
     @Selector("initWithHealthStore:quantityType:startDate:device:")
     public native HKQuantitySeriesSampleBuilder initWithHealthStoreQuantityTypeStartDateDevice(
-            HKHealthStore healthStore, HKQuantityType quantityType, NSDate startDate, HKDevice device);
+            @NotNull HKHealthStore healthStore, @NotNull HKQuantityType quantityType, @NotNull NSDate startDate,
+            @Nullable HKDevice device);
 
     /**
      * insertQuantity:date:completion:
@@ -255,8 +265,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      */
     @Generated
     @Selector("insertQuantity:date:error:")
-    public native boolean insertQuantityDateError(HKQuantity quantity, NSDate date,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean insertQuantityDateError(@NotNull HKQuantity quantity, @NotNull NSDate date,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * insertQuantity:dateInterval:completion:
@@ -280,8 +290,8 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
      */
     @Generated
     @Selector("insertQuantity:dateInterval:error:")
-    public native boolean insertQuantityDateIntervalError(HKQuantity quantity, NSDateInterval dateInterval,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean insertQuantityDateIntervalError(@NotNull HKQuantity quantity,
+            @NotNull NSDateInterval dateInterval, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -300,9 +310,10 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -312,6 +323,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     /**
      * [@property] quantityType
      */
+    @NotNull
     @Generated
     @Selector("quantityType")
     public native HKQuantityType quantityType();
@@ -331,6 +343,7 @@ public class HKQuantitySeriesSampleBuilder extends NSObject {
     /**
      * [@property] startDate
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

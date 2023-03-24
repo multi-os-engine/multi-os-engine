@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsVehicle
@@ -76,22 +78,25 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,8 +169,8 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
      */
     @Generated
     @Selector("vehicleWithChassisBody:wheels:")
-    public static native SCNPhysicsVehicle vehicleWithChassisBodyWheels(SCNPhysicsBody chassisBody,
-            NSArray<? extends SCNPhysicsVehicleWheel> wheels);
+    public static native SCNPhysicsVehicle vehicleWithChassisBodyWheels(@NotNull SCNPhysicsBody chassisBody,
+            @NotNull NSArray<? extends SCNPhysicsVehicleWheel> wheels);
 
     @Generated
     @Selector("version")
@@ -188,6 +194,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     /**
      * The chassis of the vehicle
      */
+    @NotNull
     @Generated
     @Selector("chassisBody")
     public native SCNPhysicsBody chassisBody();
@@ -198,7 +205,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsVehicle initWithCoder(NSCoder coder);
+    public native SCNPhysicsVehicle initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Allows to control the direction of the wheel at the specified index. The steering value is expressed in radian, 0
@@ -225,6 +232,7 @@ public class SCNPhysicsVehicle extends SCNPhysicsBehavior {
     /**
      * The wheels of the vehicle
      */
+    @NotNull
     @Generated
     @Selector("wheels")
     public native NSArray<? extends SCNPhysicsVehicleWheel> wheels();

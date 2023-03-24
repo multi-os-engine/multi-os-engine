@@ -28,6 +28,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -43,8 +44,8 @@ public interface UIPageViewControllerDelegate {
     @IsOptional
     @Selector("pageViewController:didFinishAnimating:previousViewControllers:transitionCompleted:")
     default void pageViewControllerDidFinishAnimatingPreviousViewControllersTransitionCompleted(
-            UIPageViewController pageViewController, boolean finished,
-            NSArray<? extends UIViewController> previousViewControllers, boolean completed) {
+            @NotNull UIPageViewController pageViewController, boolean finished,
+            @NotNull NSArray<? extends UIViewController> previousViewControllers, boolean completed) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,8 +58,8 @@ public interface UIPageViewControllerDelegate {
     @IsOptional
     @Selector("pageViewController:spineLocationForInterfaceOrientation:")
     @NInt
-    default long pageViewControllerSpineLocationForInterfaceOrientation(UIPageViewController pageViewController,
-            @NInt long orientation) {
+    default long pageViewControllerSpineLocationForInterfaceOrientation(
+            @NotNull UIPageViewController pageViewController, @NInt long orientation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,8 +71,8 @@ public interface UIPageViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("pageViewController:willTransitionToViewControllers:")
-    default void pageViewControllerWillTransitionToViewControllers(UIPageViewController pageViewController,
-            NSArray<? extends UIViewController> pendingViewControllers) {
+    default void pageViewControllerWillTransitionToViewControllers(@NotNull UIPageViewController pageViewController,
+            @NotNull NSArray<? extends UIViewController> pendingViewControllers) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,7 +84,7 @@ public interface UIPageViewControllerDelegate {
     @Selector("pageViewControllerPreferredInterfaceOrientationForPresentation:")
     @NInt
     default long pageViewControllerPreferredInterfaceOrientationForPresentation(
-            UIPageViewController pageViewController) {
+            @NotNull UIPageViewController pageViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +95,7 @@ public interface UIPageViewControllerDelegate {
     @IsOptional
     @Selector("pageViewControllerSupportedInterfaceOrientations:")
     @NUInt
-    default long pageViewControllerSupportedInterfaceOrientations(UIPageViewController pageViewController) {
+    default long pageViewControllerSupportedInterfaceOrientations(@NotNull UIPageViewController pageViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

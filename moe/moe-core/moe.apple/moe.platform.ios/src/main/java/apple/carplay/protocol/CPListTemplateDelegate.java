@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 12.0
@@ -38,8 +39,8 @@ public interface CPListTemplateDelegate {
     @Deprecated
     @Generated
     @Selector("listTemplate:didSelectListItem:completionHandler:")
-    void listTemplateDidSelectListItemCompletionHandler(CPListTemplate listTemplate, CPListItem item,
-            @ObjCBlock(name = "call_listTemplateDidSelectListItemCompletionHandler") Block_listTemplateDidSelectListItemCompletionHandler completionHandler);
+    void listTemplateDidSelectListItemCompletionHandler(@NotNull CPListTemplate listTemplate, @NotNull CPListItem item,
+            @NotNull @ObjCBlock(name = "call_listTemplateDidSelectListItemCompletionHandler") Block_listTemplateDidSelectListItemCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

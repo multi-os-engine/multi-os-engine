@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNVector
@@ -65,31 +67,35 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,11 +111,11 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("dotProductOfVector:vector:")
-    public static native double dotProductOfVectorVector(VNVector v1, VNVector v2);
+    public static native double dotProductOfVectorVector(@NotNull VNVector v1, @NotNull VNVector v2);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -122,7 +128,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNVector initWithCoder(NSCoder coder);
+    public native VNVector initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a vector in polar coordinate space, using R and Theta (radians), where R is the length of the vector
@@ -138,7 +144,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithVectorHead:tail:")
-    public native VNVector initWithVectorHeadTail(VNPoint head, VNPoint tail);
+    public native VNVector initWithVectorHeadTail(@NotNull VNPoint head, @NotNull VNPoint tail);
 
     /**
      * Initializes a vector in Cartesian Coordinate space, using its X and Y axis projections.
@@ -164,9 +170,10 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns a length, or absolute value, of the vector.
@@ -230,30 +237,34 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns a vector that is normalized by preserving direction, such as |v|, or vector length = 1.0.
      */
+    @NotNull
     @Generated
     @Selector("unitVectorForVector:")
-    public static native VNVector unitVectorForVector(VNVector vector);
+    public static native VNVector unitVectorForVector(@NotNull VNVector vector);
 
     /**
      * Adds two vectors v1 and v2 and returns a resulting vector v, such as v = v1 + v2.
      */
+    @NotNull
     @Generated
     @Selector("vectorByAddingVector:toVector:")
-    public static native VNVector vectorByAddingVectorToVector(VNVector v1, VNVector v2);
+    public static native VNVector vectorByAddingVectorToVector(@NotNull VNVector v1, @NotNull VNVector v2);
 
     /**
      * Returns a vector that whose X and Y projections multiplied by a scalar value.
      */
+    @NotNull
     @Generated
     @Selector("vectorByMultiplyingVector:byScalar:")
-    public static native VNVector vectorByMultiplyingVectorByScalar(VNVector vector, double scalar);
+    public static native VNVector vectorByMultiplyingVectorByScalar(@NotNull VNVector vector, double scalar);
 
     /**
      * Substructs vector v1 from v2 and returns a resulting vector v, such as v = v2 - v1.
      */
+    @NotNull
     @Generated
     @Selector("vectorBySubtractingVector:fromVector:")
-    public static native VNVector vectorBySubtractingVectorFromVector(VNVector v1, VNVector v2);
+    public static native VNVector vectorBySubtractingVectorFromVector(@NotNull VNVector v1, @NotNull VNVector v2);
 
     @Generated
     @Selector("version")
@@ -279,6 +290,7 @@ public class VNVector extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Returns a VNVector object with zero length. The theta for zeroVector is not defined (NaN).
      */
+    @NotNull
     @Generated
     @Selector("zeroVector")
     public static native VNVector zeroVector();

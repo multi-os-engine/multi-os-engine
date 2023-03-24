@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The representation of a provided voice that is available for speech synthesis.
@@ -79,31 +81,35 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -115,7 +121,7 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The gender of the voice (optional)
@@ -136,6 +142,7 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * The recommended format is reverse domain notation.
      * Behavior is undefined if identifiers are not unique for all voices within a given extension.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -146,12 +153,13 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVSpeechSynthesisProviderVoice initWithCoder(NSCoder coder);
+    public native AVSpeechSynthesisProviderVoice initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithName:identifier:primaryLanguages:supportedLanguages:")
-    public native AVSpeechSynthesisProviderVoice initWithNameIdentifierPrimaryLanguagesSupportedLanguages(String name,
-            String identifier, NSArray<String> primaryLanguages, NSArray<String> supportedLanguages);
+    public native AVSpeechSynthesisProviderVoice initWithNameIdentifierPrimaryLanguagesSupportedLanguages(
+            @NotNull String name, @NotNull String identifier, @NotNull NSArray<String> primaryLanguages,
+            @NotNull NSArray<String> supportedLanguages);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -170,13 +178,15 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The localized name of the voice
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -191,6 +201,7 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * 
      * These languages are what a user would expect a synthesizer to fully support and be primarily used for.
      */
+    @NotNull
     @Generated
     @Selector("primaryLanguages")
     public native NSArray<String> primaryLanguages();
@@ -227,7 +238,7 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      */
     @Generated
     @Selector("setVersion:")
-    public native void setVersion(String value);
+    public native void setVersion(@NotNull String value);
 
     /**
      * The size of the voice (optional)
@@ -250,6 +261,7 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * example, a zh-CN voice could have @c ["zh-CN"] as its @c primaryLanguages, but in @c supportedLanguages have @c
      * ["zh-CN","en-US"] indicating if it received "你好 means Hello", it would be able to speak the entire phrase.
      */
+    @NotNull
     @Generated
     @Selector("supportedLanguages")
     public native NSArray<String> supportedLanguages();
@@ -279,6 +291,7 @@ public class AVSpeechSynthesisProviderVoice extends NSObject implements NSSecure
      * 
      * This is an optional property for bookkeeping. This value does not affect system behavior.
      */
+    @NotNull
     @Generated
     @Selector("version")
     public native String version();

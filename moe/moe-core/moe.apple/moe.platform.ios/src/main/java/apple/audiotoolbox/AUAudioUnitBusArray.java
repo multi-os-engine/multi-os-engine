@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUAudioUnitBusArray
@@ -95,22 +97,25 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -145,9 +150,10 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,8 +188,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      */
     @Generated
     @Selector("addObserverToAllBusses:forKeyPath:options:context:")
-    public native void addObserverToAllBussesForKeyPathOptionsContext(NSObject observer, String keyPath,
-            @NUInt long options, VoidPtr context);
+    public native void addObserverToAllBussesForKeyPathOptionsContext(@NotNull NSObject observer,
+            @NotNull String keyPath, @NUInt long options, @Nullable VoidPtr context);
 
     /**
      * Which bus array this is (input or output).
@@ -204,8 +210,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("init")
@@ -218,7 +224,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      */
     @Generated
     @Selector("initWithAudioUnit:busType:")
-    public native AUAudioUnitBusArray initWithAudioUnitBusType(AUAudioUnit owner, @NInt long busType);
+    public native AUAudioUnitBusArray initWithAudioUnitBusType(@NotNull AUAudioUnit owner, @NInt long busType);
 
     /**
      * initWithAudioUnit:busType:busses:
@@ -227,8 +233,8 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      */
     @Generated
     @Selector("initWithAudioUnit:busType:busses:")
-    public native AUAudioUnitBusArray initWithAudioUnitBusTypeBusses(AUAudioUnit owner, @NInt long busType,
-            NSArray<? extends AUAudioUnitBus> busArray);
+    public native AUAudioUnitBusArray initWithAudioUnitBusTypeBusses(@NotNull AUAudioUnit owner, @NInt long busType,
+            @NotNull NSArray<? extends AUAudioUnitBus> busArray);
 
     /**
      * [@property] countChangeable
@@ -244,6 +250,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     /**
      * objectAtIndexedSubscript:
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native AUAudioUnitBus objectAtIndexedSubscript(@NUInt long index);
@@ -251,6 +258,7 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     /**
      * The audio unit that owns the bus.
      */
+    @NotNull
     @Generated
     @Selector("ownerAudioUnit")
     public native AUAudioUnit ownerAudioUnit();
@@ -262,14 +270,15 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
      */
     @Generated
     @Selector("removeObserverFromAllBusses:forKeyPath:context:")
-    public native void removeObserverFromAllBussesForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
+    public native void removeObserverFromAllBussesForKeyPathContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @Nullable VoidPtr context);
 
     /**
      * Sets the bus array to be a copy of the supplied array. The base class issues KVO notifications.
      */
     @Generated
     @Selector("replaceBusses:")
-    public native void replaceBusses(NSArray<? extends AUAudioUnitBus> busArray);
+    public native void replaceBusses(@NotNull NSArray<? extends AUAudioUnitBus> busArray);
 
     /**
      * [@property] setBusCount:error:
@@ -279,5 +288,5 @@ public class AUAudioUnitBusArray extends NSObject implements NSFastEnumeration {
     @Generated
     @Selector("setBusCount:error:")
     public native boolean setBusCountError(@NUInt long count,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

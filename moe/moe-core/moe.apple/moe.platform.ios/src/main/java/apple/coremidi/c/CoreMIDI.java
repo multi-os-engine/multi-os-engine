@@ -51,6 +51,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreMIDI")
@@ -90,9 +92,9 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIClientCreate(CFStringRef name,
-            @FunctionPtr(name = "call_MIDIClientCreate") Function_MIDIClientCreate notifyProc, VoidPtr notifyRefCon,
-            IntPtr outClient);
+    public static native int MIDIClientCreate(@NotNull CFStringRef name,
+            @Nullable @FunctionPtr(name = "call_MIDIClientCreate") Function_MIDIClientCreate notifyProc,
+            @Nullable VoidPtr notifyRefCon, @NotNull IntPtr outClient);
 
     /**
      * [@function] MIDIClientCreateWithBlock
@@ -115,8 +117,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIClientCreateWithBlock(CFStringRef name, IntPtr outClient,
-            @ObjCBlock(name = "call_MIDIClientCreateWithBlock") Block_MIDIClientCreateWithBlock notifyBlock);
+    public static native int MIDIClientCreateWithBlock(@NotNull CFStringRef name, @NotNull IntPtr outClient,
+            @Nullable @ObjCBlock(name = "call_MIDIClientCreateWithBlock") Block_MIDIClientCreateWithBlock notifyBlock);
 
     /**
      * [@function] MIDIClientDispose
@@ -171,9 +173,9 @@ public final class CoreMIDI {
     @Deprecated
     @Generated
     @CFunction
-    public static native int MIDIInputPortCreate(int client, CFStringRef portName,
-            @FunctionPtr(name = "call_MIDIInputPortCreate") Function_MIDIInputPortCreate readProc, VoidPtr refCon,
-            IntPtr outPort);
+    public static native int MIDIInputPortCreate(int client, @NotNull CFStringRef portName,
+            @NotNull @FunctionPtr(name = "call_MIDIInputPortCreate") Function_MIDIInputPortCreate readProc,
+            @Nullable VoidPtr refCon, @NotNull IntPtr outPort);
 
     /**
      * [@function] MIDIInputPortCreateWithBlock
@@ -204,8 +206,9 @@ public final class CoreMIDI {
     @Deprecated
     @Generated
     @CFunction
-    public static native int MIDIInputPortCreateWithBlock(int client, CFStringRef portName, IntPtr outPort,
-            @ObjCBlock(name = "call_MIDIInputPortCreateWithBlock") Block_MIDIInputPortCreateWithBlock readBlock);
+    public static native int MIDIInputPortCreateWithBlock(int client, @NotNull CFStringRef portName,
+            @NotNull IntPtr outPort,
+            @NotNull @ObjCBlock(name = "call_MIDIInputPortCreateWithBlock") Block_MIDIInputPortCreateWithBlock readBlock);
 
     /**
      * [@function] MIDIOutputPortCreate
@@ -233,7 +236,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIOutputPortCreate(int client, CFStringRef portName, IntPtr outPort);
+    public static native int MIDIOutputPortCreate(int client, @NotNull CFStringRef portName, @NotNull IntPtr outPort);
 
     /**
      * [@function] MIDIPortDispose
@@ -273,7 +276,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIPortConnectSource(int port, int source, VoidPtr connRefCon);
+    public static native int MIDIPortConnectSource(int port, int source, @Nullable VoidPtr connRefCon);
 
     /**
      * [@function] MIDIPortDisconnectSource
@@ -465,7 +468,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIEntityGetDevice(int inEntity, IntPtr outDevice);
+    public static native int MIDIEntityGetDevice(int inEntity, @Nullable IntPtr outDevice);
 
     /**
      * [@function] MIDIGetNumberOfSources
@@ -545,7 +548,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIEndpointGetEntity(int inEndpoint, IntPtr outEntity);
+    public static native int MIDIEndpointGetEntity(int inEndpoint, @Nullable IntPtr outEntity);
 
     /**
      * [@function] MIDIDestinationCreate
@@ -586,9 +589,9 @@ public final class CoreMIDI {
     @Deprecated
     @Generated
     @CFunction
-    public static native int MIDIDestinationCreate(int client, CFStringRef name,
-            @FunctionPtr(name = "call_MIDIDestinationCreate") Function_MIDIDestinationCreate readProc, VoidPtr refCon,
-            IntPtr outDest);
+    public static native int MIDIDestinationCreate(int client, @NotNull CFStringRef name,
+            @NotNull @FunctionPtr(name = "call_MIDIDestinationCreate") Function_MIDIDestinationCreate readProc,
+            @Nullable VoidPtr refCon, @NotNull IntPtr outDest);
 
     /**
      * [@function] MIDIDestinationCreateWithBlock
@@ -627,8 +630,9 @@ public final class CoreMIDI {
     @Deprecated
     @Generated
     @CFunction
-    public static native int MIDIDestinationCreateWithBlock(int client, CFStringRef name, IntPtr outDest,
-            @ObjCBlock(name = "call_MIDIDestinationCreateWithBlock") Block_MIDIDestinationCreateWithBlock readBlock);
+    public static native int MIDIDestinationCreateWithBlock(int client, @NotNull CFStringRef name,
+            @NotNull IntPtr outDest,
+            @NotNull @ObjCBlock(name = "call_MIDIDestinationCreateWithBlock") Block_MIDIDestinationCreateWithBlock readBlock);
 
     /**
      * [@function] MIDISourceCreate
@@ -661,7 +665,7 @@ public final class CoreMIDI {
     @Deprecated
     @Generated
     @CFunction
-    public static native int MIDISourceCreate(int client, CFStringRef name, IntPtr outSrc);
+    public static native int MIDISourceCreate(int client, @NotNull CFStringRef name, @NotNull IntPtr outSrc);
 
     /**
      * [@function] MIDIEndpointDispose
@@ -735,7 +739,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectGetIntegerProperty(int obj, CFStringRef propertyID, IntPtr outValue);
+    public static native int MIDIObjectGetIntegerProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull IntPtr outValue);
 
     /**
      * [@function] MIDIObjectSetIntegerProperty
@@ -756,7 +761,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectSetIntegerProperty(int obj, CFStringRef propertyID, int value);
+    public static native int MIDIObjectSetIntegerProperty(int obj, @NotNull CFStringRef propertyID, int value);
 
     /**
      * [@function] MIDIObjectGetStringProperty
@@ -777,7 +782,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectGetStringProperty(int obj, CFStringRef propertyID, Ptr<CFStringRef> str);
+    public static native int MIDIObjectGetStringProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull Ptr<CFStringRef> str);
 
     /**
      * [@function] MIDIObjectSetStringProperty
@@ -798,7 +804,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectSetStringProperty(int obj, CFStringRef propertyID, CFStringRef str);
+    public static native int MIDIObjectSetStringProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull CFStringRef str);
 
     /**
      * [@function] MIDIObjectGetDataProperty
@@ -820,7 +827,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectGetDataProperty(int obj, CFStringRef propertyID, Ptr<CFDataRef> outData);
+    public static native int MIDIObjectGetDataProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull Ptr<CFDataRef> outData);
 
     /**
      * [@function] MIDIObjectSetDataProperty
@@ -841,7 +849,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectSetDataProperty(int obj, CFStringRef propertyID, CFDataRef data);
+    public static native int MIDIObjectSetDataProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull CFDataRef data);
 
     /**
      * [@function] MIDIObjectGetDictionaryProperty
@@ -862,8 +871,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectGetDictionaryProperty(int obj, CFStringRef propertyID,
-            Ptr<CFDictionaryRef> outDict);
+    public static native int MIDIObjectGetDictionaryProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull Ptr<CFDictionaryRef> outDict);
 
     /**
      * [@function] MIDIObjectSetDictionaryProperty
@@ -884,7 +893,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectSetDictionaryProperty(int obj, CFStringRef propertyID, CFDictionaryRef dict);
+    public static native int MIDIObjectSetDictionaryProperty(int obj, @NotNull CFStringRef propertyID,
+            @NotNull CFDictionaryRef dict);
 
     /**
      * [@function] MIDIObjectGetProperties
@@ -910,7 +920,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectGetProperties(int obj, Ptr<ConstVoidPtr> outProperties, byte deep);
+    public static native int MIDIObjectGetProperties(int obj, @NotNull Ptr<ConstVoidPtr> outProperties, byte deep);
 
     /**
      * [@function] MIDIObjectRemoveProperty
@@ -927,7 +937,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectRemoveProperty(int obj, CFStringRef propertyID);
+    public static native int MIDIObjectRemoveProperty(int obj, @NotNull CFStringRef propertyID);
 
     /**
      * [@function] MIDIObjectFindByUniqueID
@@ -954,7 +964,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIObjectFindByUniqueID(int inUniqueID, IntPtr outObject, IntPtr outObjectType);
+    public static native int MIDIObjectFindByUniqueID(int inUniqueID, @Nullable IntPtr outObject,
+            @Nullable IntPtr outObjectType);
 
     /**
      * [@function] MIDISend
@@ -979,7 +990,7 @@ public final class CoreMIDI {
     @Generated
     @CFunction
     public static native int MIDISend(int port, int dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
     /**
      * [@function] MIDISendSysex
@@ -997,7 +1008,7 @@ public final class CoreMIDI {
     @Generated
     @CFunction
     public static native int MIDISendSysex(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest request);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest request);
 
     /**
      * [@function] MIDIReceived
@@ -1026,7 +1037,7 @@ public final class CoreMIDI {
     @Generated
     @CFunction
     public static native int MIDIReceived(int src,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
     /**
      * [@function] MIDIFlushOutput
@@ -1073,12 +1084,13 @@ public final class CoreMIDI {
      * 
      * @return The subsequent packet in the MIDIPacketList.
      */
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIPacket MIDIPacketNext(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacket pkt);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacket pkt);
 
     /**
      * [@function] MIDIPacketListInit
@@ -1093,12 +1105,13 @@ public final class CoreMIDI {
      *         API-Since: 4.2
      *         Deprecated-Since: 100000.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIPacket MIDIPacketListInit(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist);
 
     /**
      * [@function] MIDIPacketListAdd
@@ -1130,16 +1143,17 @@ public final class CoreMIDI {
      *         event; otherwise returns a packet pointer which should be
      *         passed as curPacket in a subsequent call to this function.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIPacket MIDIPacketListAdd(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList pktlist,
             @NUInt long listSize,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacket curPacket, long time,
-            @NUInt long nData,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacket curPacket,
+            long time, @NUInt long nData,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String data);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1173,8 +1187,8 @@ public final class CoreMIDI {
     @Deprecated
     @Generated
     @CFunction
-    public static native int MIDIDeviceAddEntity(int device, CFStringRef name, byte embedded,
-            @NUInt long numSourceEndpoints, @NUInt long numDestinationEndpoints, IntPtr newEntity);
+    public static native int MIDIDeviceAddEntity(int device, @NotNull CFStringRef name, byte embedded,
+            @NUInt long numSourceEndpoints, @NUInt long numDestinationEndpoints, @NotNull IntPtr newEntity);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1329,8 +1343,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIExternalDeviceCreate(CFStringRef name, CFStringRef manufacturer, CFStringRef model,
-            IntPtr outDevice);
+    public static native int MIDIExternalDeviceCreate(@NotNull CFStringRef name, @NotNull CFStringRef manufacturer,
+            @NotNull CFStringRef model, @NotNull IntPtr outDevice);
 
     /**
      * [@defined] MIDIThruConnectionParamsSize
@@ -1345,7 +1359,7 @@ public final class CoreMIDI {
     @CFunction
     @NUInt
     public static native long MIDIThruConnectionParamsSize(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams ptr);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams ptr);
 
     /**
      * [@function] MIDIThruConnectionParamsInitialize
@@ -1365,7 +1379,7 @@ public final class CoreMIDI {
     @Generated
     @CFunction
     public static native void MIDIThruConnectionParamsInitialize(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams inConnectionParams);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIThruConnectionParams inConnectionParams);
 
     /**
      * [@function] MIDIThruConnectionCreate
@@ -1386,8 +1400,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIThruConnectionCreate(CFStringRef inPersistentOwnerID, CFDataRef inConnectionParams,
-            IntPtr outConnection);
+    public static native int MIDIThruConnectionCreate(@Nullable CFStringRef inPersistentOwnerID,
+            @NotNull CFDataRef inConnectionParams, @NotNull IntPtr outConnection);
 
     /**
      * [@function] MIDIThruConnectionDispose
@@ -1422,7 +1436,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIThruConnectionGetParams(int connection, Ptr<CFDataRef> outConnectionParams);
+    public static native int MIDIThruConnectionGetParams(int connection, @NotNull Ptr<CFDataRef> outConnectionParams);
 
     /**
      * [@function] MIDIThruConnectionSetParams
@@ -1439,7 +1453,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIThruConnectionSetParams(int connection, CFDataRef inConnectionParams);
+    public static native int MIDIThruConnectionSetParams(int connection, @NotNull CFDataRef inConnectionParams);
 
     /**
      * [@function] MIDIThruConnectionFind
@@ -1456,7 +1470,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIThruConnectionFind(CFStringRef inPersistentOwnerID, Ptr<CFDataRef> outConnectionList);
+    public static native int MIDIThruConnectionFind(@NotNull CFStringRef inPersistentOwnerID,
+            @NotNull Ptr<CFDataRef> outConnectionList);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1484,8 +1499,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIDeviceCreate(Ptr<Ptr<MIDIDriverInterface>> owner, CFStringRef name,
-            CFStringRef manufacturer, CFStringRef model, IntPtr outDevice);
+    public static native int MIDIDeviceCreate(@Nullable Ptr<Ptr<MIDIDriverInterface>> owner, @NotNull CFStringRef name,
+            @NotNull CFStringRef manufacturer, @NotNull CFStringRef model, @NotNull IntPtr outDevice);
 
     /**
      * [@function] MIDIDeviceDispose
@@ -1609,7 +1624,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIEndpointSetRefCons(int endpt, VoidPtr ref1, VoidPtr ref2);
+    public static native int MIDIEndpointSetRefCons(int endpt, @Nullable VoidPtr ref1, @Nullable VoidPtr ref2);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1629,7 +1644,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIEndpointGetRefCons(int endpt, Ptr<VoidPtr> ref1, Ptr<VoidPtr> ref2);
+    public static native int MIDIEndpointGetRefCons(int endpt, @Nullable Ptr<VoidPtr> ref1,
+            @Nullable Ptr<VoidPtr> ref2);
 
     /**
      * -----------------------------------------------------------------------------
@@ -1653,6 +1669,7 @@ public final class CoreMIDI {
      * 
      *         API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFRunLoopRef MIDIGetDriverIORunLoop();
@@ -1676,7 +1693,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIGetDriverDeviceList(Ptr<Ptr<MIDIDriverInterface>> driver);
+    public static native int MIDIGetDriverDeviceList(@NotNull Ptr<Ptr<MIDIDriverInterface>> driver);
 
     /**
      * [@constant] kMIDIPropertyName
@@ -1692,6 +1709,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyName();
@@ -1709,6 +1727,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyManufacturer();
@@ -1726,6 +1745,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyModel();
@@ -1741,6 +1761,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyUniqueID();
@@ -1758,6 +1779,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyDeviceID();
@@ -1778,6 +1800,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceiveChannels();
@@ -1792,6 +1815,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitChannels();
@@ -1807,6 +1831,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyMaxSysExSpeed();
@@ -1832,6 +1857,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyAdvanceScheduleTimeMuSec();
@@ -1845,6 +1871,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyIsEmbeddedEntity();
@@ -1859,6 +1886,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyIsBroadcast();
@@ -1878,6 +1906,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertySingleRealtimeEntity();
@@ -1903,6 +1932,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyConnectionUniqueID();
@@ -1918,6 +1948,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyOffline();
@@ -1933,6 +1964,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyPrivate();
@@ -1948,6 +1980,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyDriverOwner();
@@ -1990,6 +2023,7 @@ public final class CoreMIDI {
      * API-Since: 4.2
      * Deprecated-Since: 13.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -2009,6 +2043,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyImage();
@@ -2022,6 +2057,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyDriverVersion();
@@ -2034,6 +2070,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertySupportsGeneralMIDI();
@@ -2046,6 +2083,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertySupportsMMC();
@@ -2059,6 +2097,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyCanRoute();
@@ -2071,6 +2110,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceivesClock();
@@ -2083,6 +2123,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceivesMTC();
@@ -2095,6 +2136,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceivesNotes();
@@ -2107,6 +2149,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceivesProgramChanges();
@@ -2119,6 +2162,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceivesBankSelectMSB();
@@ -2131,6 +2175,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyReceivesBankSelectLSB();
@@ -2143,6 +2188,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitsClock();
@@ -2155,6 +2201,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitsMTC();
@@ -2167,6 +2214,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitsNotes();
@@ -2179,6 +2227,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitsProgramChanges();
@@ -2191,6 +2240,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitsBankSelectMSB();
@@ -2203,6 +2253,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyTransmitsBankSelectLSB();
@@ -2216,6 +2267,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyPanDisruptsStereo();
@@ -2228,6 +2280,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyIsSampler();
@@ -2240,6 +2293,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyIsDrumMachine();
@@ -2252,6 +2306,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyIsMixer();
@@ -2264,6 +2319,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyIsEffectUnit();
@@ -2279,6 +2335,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyMaxReceiveChannels();
@@ -2292,6 +2349,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyMaxTransmitChannels();
@@ -2305,6 +2363,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyDriverDeviceEditorApp();
@@ -2317,6 +2376,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertySupportsShowControl();
@@ -2333,6 +2393,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyDisplayName();
@@ -2342,6 +2403,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2356,6 +2418,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2364,6 +2427,7 @@ public final class CoreMIDI {
     /**
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -2374,15 +2438,15 @@ public final class CoreMIDI {
     public interface Function_MIDIClientCreate {
         @Generated
         void call_MIDIClientCreate(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDINotification arg0,
-                VoidPtr arg1);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDINotification arg0,
+                @Nullable VoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_MIDIClientCreateWithBlock {
         @Generated
-        void call_MIDIClientCreateWithBlock(MIDINotification message);
+        void call_MIDIClientCreateWithBlock(@NotNull MIDINotification message);
     }
 
     @Runtime(CRuntime.class)
@@ -2390,15 +2454,15 @@ public final class CoreMIDI {
     public interface Function_MIDIInputPortCreate {
         @Generated
         void call_MIDIInputPortCreate(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0, VoidPtr arg1,
-                VoidPtr arg2);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0,
+                @Nullable VoidPtr arg1, @Nullable VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_MIDIInputPortCreateWithBlock {
         @Generated
-        void call_MIDIInputPortCreateWithBlock(MIDIPacketList pktlist, VoidPtr srcConnRefCon);
+        void call_MIDIInputPortCreateWithBlock(@NotNull MIDIPacketList pktlist, @Nullable VoidPtr srcConnRefCon);
     }
 
     @Runtime(CRuntime.class)
@@ -2406,15 +2470,15 @@ public final class CoreMIDI {
     public interface Function_MIDIDestinationCreate {
         @Generated
         void call_MIDIDestinationCreate(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0, VoidPtr arg1,
-                VoidPtr arg2);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIPacketList arg0,
+                @Nullable VoidPtr arg1, @Nullable VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_MIDIDestinationCreateWithBlock {
         @Generated
-        void call_MIDIDestinationCreateWithBlock(MIDIPacketList pktlist, VoidPtr srcConnRefCon);
+        void call_MIDIDestinationCreateWithBlock(@NotNull MIDIPacketList pktlist, @Nullable VoidPtr srcConnRefCon);
     }
 
     /**
@@ -2449,6 +2513,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyNameConfigurationDictionary();
@@ -2489,17 +2554,17 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIInputPortCreateWithProtocol(int client, CFStringRef portName, int protocol,
-            IntPtr outPort,
-            @ObjCBlock(name = "call_MIDIInputPortCreateWithProtocol") Block_MIDIInputPortCreateWithProtocol receiveBlock);
+    public static native int MIDIInputPortCreateWithProtocol(int client, @NotNull CFStringRef portName, int protocol,
+            @NotNull IntPtr outPort,
+            @NotNull @ObjCBlock(name = "call_MIDIInputPortCreateWithProtocol") Block_MIDIInputPortCreateWithProtocol receiveBlock);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_MIDIInputPortCreateWithProtocol {
         @Generated
         void call_MIDIInputPortCreateWithProtocol(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
-                VoidPtr srcConnRefCon);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+                @Nullable VoidPtr srcConnRefCon);
     }
 
     /**
@@ -2540,17 +2605,17 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIDestinationCreateWithProtocol(int client, CFStringRef name, int protocol,
-            IntPtr outDest,
-            @ObjCBlock(name = "call_MIDIDestinationCreateWithProtocol") Block_MIDIDestinationCreateWithProtocol readBlock);
+    public static native int MIDIDestinationCreateWithProtocol(int client, @NotNull CFStringRef name, int protocol,
+            @NotNull IntPtr outDest,
+            @NotNull @ObjCBlock(name = "call_MIDIDestinationCreateWithProtocol") Block_MIDIDestinationCreateWithProtocol readBlock);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_MIDIDestinationCreateWithProtocol {
         @Generated
         void call_MIDIDestinationCreateWithProtocol(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
-                VoidPtr srcConnRefCon);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+                @Nullable VoidPtr srcConnRefCon);
     }
 
     /**
@@ -2586,7 +2651,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDISourceCreateWithProtocol(int client, CFStringRef name, int protocol, IntPtr outSrc);
+    public static native int MIDISourceCreateWithProtocol(int client, @NotNull CFStringRef name, int protocol,
+            @NotNull IntPtr outSrc);
 
     /**
      * [@function] MIDISendEventList
@@ -2609,7 +2675,7 @@ public final class CoreMIDI {
     @Generated
     @CFunction
     public static native int MIDISendEventList(int port, int dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
 
     /**
      * [@function] MIDIReceivedEventList
@@ -2636,7 +2702,7 @@ public final class CoreMIDI {
     @Generated
     @CFunction
     public static native int MIDIReceivedEventList(int src,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist);
 
     /**
      * [@function] MIDIEventPacketNext
@@ -2648,12 +2714,13 @@ public final class CoreMIDI {
      *            A pointer to a MIDIEventPacket in a MIDIEventList.
      * @return The subsequent packet in the MIDIEventList.
      */
+    @NotNull
     @Generated
     @Inline
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIEventPacket MIDIEventPacketNext(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket pkt);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket pkt);
 
     /**
      * [@function] MIDIEventListInit
@@ -2667,11 +2734,13 @@ public final class CoreMIDI {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIEventPacket MIDIEventListInit(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist, int protocol);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+            int protocol);
 
     /**
      * [@function] MIDIEventListAdd
@@ -2704,14 +2773,15 @@ public final class CoreMIDI {
      *         event; otherwise returns a packet pointer which should be
      *         passed as curPacket in a subsequent call to this function.
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
     public static native MIDIEventPacket MIDIEventListAdd(
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventList evtlist,
             @NUInt long listSize,
-            @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket curPacket, long time,
-            @NUInt long wordCount, ConstIntPtr words);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDIEventPacket curPacket,
+            long time, @NUInt long wordCount, @NotNull ConstIntPtr words);
 
     /**
      * -----------------------------------------------------------------------------
@@ -2746,8 +2816,8 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIDeviceNewEntity(int device, CFStringRef name, int protocol, byte embedded,
-            @NUInt long numSourceEndpoints, @NUInt long numDestinationEndpoints, IntPtr newEntity);
+    public static native int MIDIDeviceNewEntity(int device, @NotNull CFStringRef name, int protocol, byte embedded,
+            @NUInt long numSourceEndpoints, @NUInt long numDestinationEndpoints, @NotNull IntPtr newEntity);
 
     @Generated
     @Inline
@@ -2931,6 +3001,7 @@ public final class CoreMIDI {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kMIDIPropertyProtocolID();
@@ -3025,7 +3096,7 @@ public final class CoreMIDI {
      */
     @Generated
     @CFunction
-    public static native int MIDIBluetoothDriverDisconnect(CFStringRef uuid);
+    public static native int MIDIBluetoothDriverDisconnect(@NotNull CFStringRef uuid);
 
     @Generated public static final byte kMIDI1UPMaxSysexSize = 6;
 }

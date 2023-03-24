@@ -22,6 +22,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 9.0
@@ -31,11 +32,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MDLNamed")
 public interface MDLNamed {
+    @NotNull
     @Generated
     @Selector("name")
     String name();
 
     @Generated
     @Selector("setName:")
-    void setName(String value);
+    void setName(@NotNull String value);
 }

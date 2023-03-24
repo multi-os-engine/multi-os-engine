@@ -21,6 +21,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MPSCNNBatchNormalizationDataSource
@@ -40,6 +42,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * Returns a pointer to the bias terms for the batch normalization.
      * If NULL then no bias is to be applied.
      */
+    @Nullable
     @Generated
     @Selector("beta")
     FloatPtr beta();
@@ -54,12 +57,13 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Owned
     @IsOptional
     @Selector("copyWithZone:device:")
-    default MPSCNNBatchNormalizationDataSource copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device) {
+    default MPSCNNBatchNormalizationDataSource copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,7 +73,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     @Generated
     @IsOptional
     @Selector("encodeWithCoder:")
-    default void encodeWithCoder(NSCoder aCoder) {
+    default void encodeWithCoder(@NotNull NSCoder aCoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,6 +93,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
      * Returns a pointer to the scale factors for the batch normalization.
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     FloatPtr gamma();
@@ -96,10 +101,11 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     /**
      * NSSecureCoding compatibility.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("initWithCoder:")
-    default MPSCNNBatchNormalizationDataSource initWithCoder(NSCoder aDecoder) {
+    default MPSCNNBatchNormalizationDataSource initWithCoder(@NotNull NSCoder aDecoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +114,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * 
      * Overridden by a MPSCNNBatchNormalizationNode.label if it is non-nil.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -131,6 +138,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * Returns a pointer to batch mean values with which to initialize
      * the state for a subsequent batch normalization.
      */
+    @Nullable
     @Generated
     @Selector("mean")
     FloatPtr mean();
@@ -178,7 +186,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     @IsOptional
     @Selector("updateGammaAndBetaWithBatchNormalizationState:")
     default boolean updateGammaAndBetaWithBatchNormalizationState(
-            MPSCNNBatchNormalizationState batchNormalizationState) {
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -197,12 +205,13 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      *         the MPSNNGraph
      *         batch normalization filter gamma and beta values will remain unmodified.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("updateGammaAndBetaWithCommandBuffer:batchNormalizationState:")
     default MPSCNNNormalizationGammaAndBetaState updateGammaAndBetaWithCommandBufferBatchNormalizationState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState) {
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -220,7 +229,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
     @IsOptional
     @Selector("updateMeanAndVarianceWithBatchNormalizationState:")
     default boolean updateMeanAndVarianceWithBatchNormalizationState(
-            MPSCNNBatchNormalizationState batchNormalizationState) {
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -240,12 +249,13 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("updateMeanAndVarianceWithCommandBuffer:batchNormalizationState:")
     default MPSCNNNormalizationMeanAndVarianceState updateMeanAndVarianceWithCommandBufferBatchNormalizationState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState) {
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -253,6 +263,7 @@ public interface MPSCNNBatchNormalizationDataSource extends NSCopying {
      * Returns a pointer to batch variance values with which to initialize
      * the state for a subsequent batch normalization.
      */
+    @Nullable
     @Generated
     @Selector("variance")
     FloatPtr variance();

@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -78,22 +80,25 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,16 +168,18 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("endDateComponents")
     public native NSDateComponents endDateComponents();
@@ -182,13 +190,14 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native INDateComponentsRange initWithCoder(NSCoder coder);
+    public native INDateComponentsRange initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithStartDateComponents:endDateComponents:")
     public native INDateComponentsRange initWithStartDateComponentsEndDateComponents(
-            NSDateComponents startDateComponents, NSDateComponents endDateComponents);
+            @Nullable NSDateComponents startDateComponents, @Nullable NSDateComponents endDateComponents);
 
+    @Nullable
     @Generated
     @Selector("startDateComponents")
     public native NSDateComponents startDateComponents();
@@ -202,6 +211,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("EKRecurrenceRule")
     public native EKRecurrenceRule EKRecurrenceRule();
@@ -211,7 +221,7 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("initWithEKRecurrenceRule:")
-    public native INDateComponentsRange initWithEKRecurrenceRule(EKRecurrenceRule recurrenceRule);
+    public native INDateComponentsRange initWithEKRecurrenceRule(@NotNull EKRecurrenceRule recurrenceRule);
 
     /**
      * API-Since: 11.0
@@ -219,11 +229,13 @@ public class INDateComponentsRange extends NSObject implements NSCopying, NSSecu
     @Generated
     @Selector("initWithStartDateComponents:endDateComponents:recurrenceRule:")
     public native INDateComponentsRange initWithStartDateComponentsEndDateComponentsRecurrenceRule(
-            NSDateComponents startDateComponents, NSDateComponents endDateComponents, INRecurrenceRule recurrenceRule);
+            @Nullable NSDateComponents startDateComponents, @Nullable NSDateComponents endDateComponents,
+            @Nullable INRecurrenceRule recurrenceRule);
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("recurrenceRule")
     public native INRecurrenceRule recurrenceRule();

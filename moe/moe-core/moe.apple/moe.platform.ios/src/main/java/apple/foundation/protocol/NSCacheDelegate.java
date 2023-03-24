@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Foundation")
@@ -35,7 +36,8 @@ public interface NSCacheDelegate {
     @Generated
     @IsOptional
     @Selector("cache:willEvictObject:")
-    default void cacheWillEvictObject(NSCache<?, ?> cache, @Mapped(ObjCObjectMapper.class) Object obj) {
+    default void cacheWillEvictObject(@NotNull NSCache<?, ?> cache,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object obj) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

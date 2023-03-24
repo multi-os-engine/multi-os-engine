@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This subclass of UIPanGestureRecognizer only recognizes if the user slides their finger
@@ -75,22 +77,25 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,8 +175,8 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
 
     @Generated
     @Selector("initWithTarget:action:")
-    public native UIScreenEdgePanGestureRecognizer initWithTargetAction(@Mapped(ObjCObjectMapper.class) Object target,
-            SEL action);
+    public native UIScreenEdgePanGestureRecognizer initWithTargetAction(
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     /**
      * The edges on which this gesture recognizes, relative to the current interface orientation
@@ -181,5 +187,5 @@ public class UIScreenEdgePanGestureRecognizer extends UIPanGestureRecognizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIScreenEdgePanGestureRecognizer initWithCoder(NSCoder coder);
+    public native UIScreenEdgePanGestureRecognizer initWithCoder(@NotNull NSCoder coder);
 }

@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NETunnelProvider
@@ -80,22 +82,25 @@ public class NETunnelProvider extends NEProvider {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class NETunnelProvider extends NEProvider {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +175,7 @@ public class NETunnelProvider extends NEProvider {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("appRules")
     public native NSArray<? extends NEAppRule> appRules();
@@ -189,8 +196,8 @@ public class NETunnelProvider extends NEProvider {
      */
     @Generated
     @Selector("handleAppMessage:completionHandler:")
-    public native void handleAppMessageCompletionHandler(NSData messageData,
-            @ObjCBlock(name = "call_handleAppMessageCompletionHandler") Block_handleAppMessageCompletionHandler completionHandler);
+    public native void handleAppMessageCompletionHandler(@NotNull NSData messageData,
+            @Nullable @ObjCBlock(name = "call_handleAppMessageCompletionHandler") Block_handleAppMessageCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -207,6 +214,7 @@ public class NETunnelProvider extends NEProvider {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("protocolConfiguration")
     public native NEVPNProtocol protocolConfiguration();
@@ -272,20 +280,21 @@ public class NETunnelProvider extends NEProvider {
      */
     @Generated
     @Selector("setTunnelNetworkSettings:completionHandler:")
-    public native void setTunnelNetworkSettingsCompletionHandler(NETunnelNetworkSettings tunnelNetworkSettings,
-            @ObjCBlock(name = "call_setTunnelNetworkSettingsCompletionHandler") Block_setTunnelNetworkSettingsCompletionHandler completionHandler);
+    public native void setTunnelNetworkSettingsCompletionHandler(
+            @Nullable NETunnelNetworkSettings tunnelNetworkSettings,
+            @Nullable @ObjCBlock(name = "call_setTunnelNetworkSettingsCompletionHandler") Block_setTunnelNetworkSettingsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAppMessageCompletionHandler {
         @Generated
-        void call_handleAppMessageCompletionHandler(NSData responseData);
+        void call_handleAppMessageCompletionHandler(@Nullable NSData responseData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTunnelNetworkSettingsCompletionHandler {
         @Generated
-        void call_setTunnelNetworkSettingsCompletionHandler(NSError error);
+        void call_setTunnelNetworkSettingsCompletionHandler(@Nullable NSError error);
     }
 }

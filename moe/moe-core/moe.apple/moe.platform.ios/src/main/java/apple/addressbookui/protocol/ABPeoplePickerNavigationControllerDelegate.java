@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AddressBookUI")
@@ -39,8 +40,8 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationController:didSelectPerson:")
-    default void peoplePickerNavigationControllerDidSelectPerson(ABPeoplePickerNavigationController peoplePicker,
-            ConstVoidPtr person) {
+    default void peoplePickerNavigationControllerDidSelectPerson(
+            @NotNull ABPeoplePickerNavigationController peoplePicker, @NotNull ConstVoidPtr person) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +54,8 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     @IsOptional
     @Selector("peoplePickerNavigationController:didSelectPerson:property:identifier:")
     default void peoplePickerNavigationControllerDidSelectPersonPropertyIdentifier(
-            ABPeoplePickerNavigationController peoplePicker, ConstVoidPtr person, int property, int identifier) {
+            @NotNull ABPeoplePickerNavigationController peoplePicker, @NotNull ConstVoidPtr person, int property,
+            int identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +70,7 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     @Deprecated
     @Selector("peoplePickerNavigationController:shouldContinueAfterSelectingPerson:")
     default boolean peoplePickerNavigationControllerShouldContinueAfterSelectingPerson(
-            ABPeoplePickerNavigationController peoplePicker, ConstVoidPtr person) {
+            @NotNull ABPeoplePickerNavigationController peoplePicker, @NotNull ConstVoidPtr person) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,7 +86,8 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     @Deprecated
     @Selector("peoplePickerNavigationController:shouldContinueAfterSelectingPerson:property:identifier:")
     default boolean peoplePickerNavigationControllerShouldContinueAfterSelectingPersonPropertyIdentifier(
-            ABPeoplePickerNavigationController peoplePicker, ConstVoidPtr person, int property, int identifier) {
+            @NotNull ABPeoplePickerNavigationController peoplePicker, @NotNull ConstVoidPtr person, int property,
+            int identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +97,7 @@ public interface ABPeoplePickerNavigationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("peoplePickerNavigationControllerDidCancel:")
-    default void peoplePickerNavigationControllerDidCancel(ABPeoplePickerNavigationController peoplePicker) {
+    default void peoplePickerNavigationControllerDidCancel(@NotNull ABPeoplePickerNavigationController peoplePicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

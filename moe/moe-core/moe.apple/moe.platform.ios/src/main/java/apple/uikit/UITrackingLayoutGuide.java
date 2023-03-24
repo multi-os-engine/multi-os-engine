@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -56,30 +58,35 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("constraintsActiveWhenAwayFromEdge:")
     public native NSArray<? extends NSLayoutConstraint> constraintsActiveWhenAwayFromEdge(@NUInt long edge);
 
+    @NotNull
     @Generated
     @Selector("constraintsActiveWhenNearEdge:")
     public native NSArray<? extends NSLayoutConstraint> constraintsActiveWhenNearEdge(@NUInt long edge);
@@ -103,7 +110,7 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITrackingLayoutGuide initWithCoder(NSCoder coder);
+    public native UITrackingLayoutGuide initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -122,9 +129,10 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,8 +163,8 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
      */
     @Generated
     @Selector("setConstraints:activeWhenAwayFromEdge:")
-    public native void setConstraintsActiveWhenAwayFromEdge(NSArray<? extends NSLayoutConstraint> trackingConstraints,
-            @NUInt long edge);
+    public native void setConstraintsActiveWhenAwayFromEdge(
+            @NotNull NSArray<? extends NSLayoutConstraint> trackingConstraints, @NUInt long edge);
 
     /**
      * @param trackingConstraints Constraints to activate when the guide is close to the specified edge, and deactivate
@@ -167,8 +175,8 @@ public class UITrackingLayoutGuide extends UILayoutGuide {
      */
     @Generated
     @Selector("setConstraints:activeWhenNearEdge:")
-    public native void setConstraintsActiveWhenNearEdge(NSArray<? extends NSLayoutConstraint> trackingConstraints,
-            @NUInt long edge);
+    public native void setConstraintsActiveWhenNearEdge(
+            @NotNull NSArray<? extends NSLayoutConstraint> trackingConstraints, @NUInt long edge);
 
     @Generated
     @Selector("setVersion:")

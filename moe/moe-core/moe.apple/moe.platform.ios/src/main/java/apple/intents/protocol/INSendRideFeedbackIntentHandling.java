@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSendRideFeedbackIntent. By implementing this protocol, a class can
@@ -42,8 +43,8 @@ public interface INSendRideFeedbackIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSendRideFeedback:completion:")
-    default void confirmSendRideFeedbackCompletion(INSendRideFeedbackIntent sendRideFeedbackIntent,
-            @ObjCBlock(name = "call_confirmSendRideFeedbackCompletion") Block_confirmSendRideFeedbackCompletion completion) {
+    default void confirmSendRideFeedbackCompletion(@NotNull INSendRideFeedbackIntent sendRideFeedbackIntent,
+            @NotNull @ObjCBlock(name = "call_confirmSendRideFeedbackCompletion") Block_confirmSendRideFeedbackCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,7 +52,7 @@ public interface INSendRideFeedbackIntentHandling {
     @Generated
     public interface Block_confirmSendRideFeedbackCompletion {
         @Generated
-        void call_confirmSendRideFeedbackCompletion(INSendRideFeedbackIntentResponse response);
+        void call_confirmSendRideFeedbackCompletion(@NotNull INSendRideFeedbackIntentResponse response);
     }
 
     /**
@@ -67,13 +68,13 @@ public interface INSendRideFeedbackIntentHandling {
      */
     @Generated
     @Selector("handleSendRideFeedback:completion:")
-    void handleSendRideFeedbackCompletion(INSendRideFeedbackIntent sendRideFeedbackintent,
-            @ObjCBlock(name = "call_handleSendRideFeedbackCompletion") Block_handleSendRideFeedbackCompletion completion);
+    void handleSendRideFeedbackCompletion(@NotNull INSendRideFeedbackIntent sendRideFeedbackintent,
+            @NotNull @ObjCBlock(name = "call_handleSendRideFeedbackCompletion") Block_handleSendRideFeedbackCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSendRideFeedbackCompletion {
         @Generated
-        void call_handleSendRideFeedbackCompletion(INSendRideFeedbackIntentResponse response);
+        void call_handleSendRideFeedbackCompletion(@NotNull INSendRideFeedbackIntentResponse response);
     }
 }

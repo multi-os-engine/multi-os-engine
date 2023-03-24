@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -58,35 +60,40 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("colorAttachments")
     public native MTLTileRenderPipelineColorAttachmentDescriptorArray colorAttachments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -122,15 +129,17 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label:
      * 
      * The descriptor label.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -167,7 +176,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@Nullable String value);
 
     /**
      * Rasterization and visibility state
@@ -198,7 +207,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setTileFunction:")
-    public native void setTileFunction(@Mapped(ObjCObjectMapper.class) MTLFunction value);
+    public native void setTileFunction(@NotNull @Mapped(ObjCObjectMapper.class) MTLFunction value);
 
     @Generated
     @Selector("setVersion:")
@@ -222,6 +231,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("tileBuffers")
     public native MTLPipelineBufferDescriptorArray tileBuffers();
@@ -235,6 +245,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * draws and other dispatches. Kernel-based pipelines will wait until all prior access to the tile completes.
      * Fragment-based pipelines will only wait until all prior access to the fragment's location completes.
      */
+    @NotNull
     @Generated
     @Selector("tileFunction")
     @MappedReturn(ObjCObjectMapper.class)
@@ -280,6 +291,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      *      API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("binaryArchives")
     public native NSArray<?> binaryArchives();
@@ -298,7 +310,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setBinaryArchives:")
-    public native void setBinaryArchives(NSArray<?> value);
+    public native void setBinaryArchives(@Nullable NSArray<?> value);
 
     /**
      * [@property] linkedFunctions
@@ -342,6 +354,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      * 
      *      API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("preloadedLibraries")
     public native NSArray<?> preloadedLibraries();
@@ -389,7 +402,7 @@ public class MTLTileRenderPipelineDescriptor extends NSObject implements NSCopyi
      */
     @Generated
     @Selector("setPreloadedLibraries:")
-    public native void setPreloadedLibraries(NSArray<?> value);
+    public native void setPreloadedLibraries(@NotNull NSArray<?> value);
 
     /**
      * [@property] supportAddingBinaryFunctions

@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An MPMediaItem represents a single piece of media in an MPMediaLibrary.
@@ -78,26 +80,29 @@ public class MPMediaItem extends MPMediaEntity {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("canFilterByProperty:")
-    public static native boolean canFilterByProperty(String property);
+    public static native boolean canFilterByProperty(@NotNull String property);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class MPMediaItem extends MPMediaEntity {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +154,7 @@ public class MPMediaItem extends MPMediaEntity {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @Selector("persistentIDPropertyForGroupingType:")
     public static native String persistentIDPropertyForGroupingType(@NInt long groupingType);
@@ -181,6 +188,7 @@ public class MPMediaItem extends MPMediaEntity {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @Selector("titlePropertyForGroupingType:")
     public static native String titlePropertyForGroupingType(@NInt long groupingType);
@@ -193,6 +201,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("albumArtist")
     public native String albumArtist();
@@ -214,6 +223,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("albumTitle")
     public native String albumTitle();
@@ -237,6 +247,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("artist")
     public native String artist();
@@ -251,6 +262,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("artwork")
     public native MPMediaItemArtwork artwork();
@@ -258,6 +270,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("assetURL")
     public native NSURL assetURL();
@@ -280,6 +293,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("comments")
     public native String comments();
@@ -287,6 +301,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("composer")
     public native String composer();
@@ -301,6 +316,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("dateAdded")
     public native NSDate dateAdded();
@@ -324,6 +340,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("genre")
     public native String genre();
@@ -348,7 +365,7 @@ public class MPMediaItem extends MPMediaEntity {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaItem initWithCoder(NSCoder coder);
+    public native MPMediaItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 8.0
@@ -374,6 +391,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("lastPlayedDate")
     public native NSDate lastPlayedDate();
@@ -381,6 +399,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("lyrics")
     public native String lyrics();
@@ -425,6 +444,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("podcastTitle")
     public native String podcastTitle();
@@ -440,6 +460,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("releaseDate")
     public native NSDate releaseDate();
@@ -461,6 +482,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -468,6 +490,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("userGrouping")
     public native String userGrouping();
@@ -475,6 +498,7 @@ public class MPMediaItem extends MPMediaEntity {
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @Selector("playbackStoreID")
     public native String playbackStoreID();

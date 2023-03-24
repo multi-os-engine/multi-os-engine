@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MediaPlayer")
@@ -20,5 +21,5 @@ public interface MPSystemMusicPlayerController {
      */
     @Generated
     @Selector("openToPlayQueueDescriptor:")
-    void openToPlayQueueDescriptor(MPMusicPlayerQueueDescriptor queueDescriptor);
+    void openToPlayQueueDescriptor(@NotNull MPMusicPlayerQueueDescriptor queueDescriptor);
 }

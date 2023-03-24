@@ -53,6 +53,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNLight
@@ -89,22 +91,25 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,9 +144,10 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * light
@@ -157,7 +163,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("lightWithMDLLight:")
-    public static native SCNLight lightWithMDLLight(MDLLight mdlLight);
+    public static native SCNLight lightWithMDLLight(@NotNull MDLLight mdlLight);
 
     @Generated
     @Owned
@@ -197,19 +203,23 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("IESProfileURL")
     public native NSURL IESProfileURL();
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
+    @Nullable
     @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
@@ -275,20 +285,22 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * The initial value is a NSColor. The renderer multiplies the light's color is by the color derived from the
      * light's temperature.
      */
+    @NotNull
     @Generated
     @Selector("color")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object color();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] gobo
@@ -297,6 +309,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * 
      * Gobos are only supported by spot lights.
      */
+    @Nullable
     @Generated
     @Selector("gobo")
     public native SCNMaterialProperty gobo();
@@ -307,7 +320,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNLight initWithCoder(NSCoder coder);
+    public native SCNLight initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] intensity
@@ -327,13 +340,14 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     /**
      * [@property] name
      * 
      * Determines the name of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -353,7 +367,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllAnimations")
@@ -361,17 +375,17 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] attenuationEndDistance
@@ -432,7 +446,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setColor(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] IESProfileURL
@@ -444,7 +458,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("setIESProfileURL:")
-    public native void setIESProfileURL(NSURL value);
+    public native void setIESProfileURL(@Nullable NSURL value);
 
     /**
      * [@property] intensity
@@ -467,7 +481,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * [@property] orthographicScale
@@ -499,7 +513,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("setShadowColor:")
-    public native void setShadowColor(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setShadowColor(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] shadowMapSize
@@ -548,7 +562,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
     @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * [@property] spotInnerAngle
@@ -572,7 +586,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("setTechnique:")
-    public native void setTechnique(SCNTechnique value);
+    public native void setTechnique(@Nullable SCNTechnique value);
 
     /**
      * [@property] temperature
@@ -598,7 +612,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("setType:")
-    public native void setType(String value);
+    public native void setType(@NotNull String value);
 
     /**
      * [@property] zFar
@@ -639,6 +653,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * 
      * On iOS 9 or earlier and macOS 10.11 or earlier, this defaults to black 50% transparent.
      */
+    @NotNull
     @Generated
     @Selector("shadowColor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -720,6 +735,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("technique")
     public native SCNTechnique technique();
@@ -747,6 +763,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * Defaults to SCNLightTypeOmni on iOS 8 and later, and on macOS 10.10 and later (otherwise defaults to
      * SCNLightTypeAmbient).
      */
+    @NotNull
     @Generated
     @Selector("type")
     public native String type();
@@ -776,11 +793,12 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     /**
      * [@property] automaticallyAdjustsShadowProjection
@@ -820,7 +838,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * [@property] sampleDistributedShadowMaps
@@ -938,6 +956,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();
@@ -951,6 +970,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("areaPolygonVertices")
     public native NSArray<? extends NSValue> areaPolygonVertices();
@@ -1006,6 +1026,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("probeEnvironment")
     public native SCNMaterialProperty probeEnvironment();
@@ -1041,7 +1062,7 @@ public class SCNLight extends NSObject implements SCNAnimatable, NSCopying, NSSe
      */
     @Generated
     @Selector("setAreaPolygonVertices:")
-    public native void setAreaPolygonVertices(NSArray<? extends NSValue> value);
+    public native void setAreaPolygonVertices(@Nullable NSArray<? extends NSValue> value);
 
     /**
      * [@property] areaType

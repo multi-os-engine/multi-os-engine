@@ -23,6 +23,8 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.general.ptr.NUIntPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Network")
@@ -58,10 +60,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_txt_record_create_with_bytes(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String txt_bytes,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String txt_bytes,
             @NUInt long txt_len);
 
     /**
@@ -76,6 +79,7 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_txt_record_create_dictionary();
@@ -95,9 +99,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_txt_record_copy(NSObject txt_record);
+    public static native NSObject nw_txt_record_copy(@Nullable NSObject txt_record);
 
     /**
      * [@function] nw_txt_record_find_key
@@ -119,8 +124,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_txt_record_find_key(NSObject txt_record,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+    public static native int nw_txt_record_find_key(@NotNull NSObject txt_record,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
      * [@function] nw_txt_record_access_key
@@ -142,18 +147,18 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_access_key(NSObject txt_record,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            @ObjCBlock(name = "call_nw_txt_record_access_key") Block_nw_txt_record_access_key access_value);
+    public static native boolean nw_txt_record_access_key(@NotNull NSObject txt_record,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @NotNull @ObjCBlock(name = "call_nw_txt_record_access_key") Block_nw_txt_record_access_key access_value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_txt_record_access_key {
         @Generated
         boolean call_nw_txt_record_access_key(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
                 int found,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value,
+                @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value,
                 @NUInt long value_len);
     }
 
@@ -189,9 +194,9 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_set_key(NSObject txt_record,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value,
+    public static native boolean nw_txt_record_set_key(@NotNull NSObject txt_record,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value,
             @NUInt long value_len);
 
     /**
@@ -215,8 +220,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_remove_key(NSObject txt_record,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+    public static native boolean nw_txt_record_remove_key(@NotNull NSObject txt_record,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
      * [@function] nw_txt_record_get_key_count
@@ -234,7 +239,7 @@ public final class Network {
     @Generated
     @CFunction
     @NUInt
-    public static native long nw_txt_record_get_key_count(NSObject txt_record);
+    public static native long nw_txt_record_get_key_count(@Nullable NSObject txt_record);
 
     /**
      * [@function] nw_txt_record_access_bytes
@@ -257,15 +262,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_access_bytes(NSObject txt_record,
-            @ObjCBlock(name = "call_nw_txt_record_access_bytes") Block_nw_txt_record_access_bytes access_bytes);
+    public static native boolean nw_txt_record_access_bytes(@NotNull NSObject txt_record,
+            @NotNull @ObjCBlock(name = "call_nw_txt_record_access_bytes") Block_nw_txt_record_access_bytes access_bytes);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_txt_record_access_bytes {
         @Generated
         boolean call_nw_txt_record_access_bytes(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String raw_txt_record,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String raw_txt_record,
                 @NUInt long len);
     }
 
@@ -289,17 +294,17 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_apply(NSObject txt_record,
-            @ObjCBlock(name = "call_nw_txt_record_apply") Block_nw_txt_record_apply applier);
+    public static native boolean nw_txt_record_apply(@NotNull NSObject txt_record,
+            @NotNull @ObjCBlock(name = "call_nw_txt_record_apply") Block_nw_txt_record_apply applier);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_txt_record_apply {
         @Generated
         boolean call_nw_txt_record_apply(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String key,
                 int found,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value,
                 @NUInt long value_len);
     }
 
@@ -325,7 +330,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_is_equal(NSObject left, NSObject right);
+    public static native boolean nw_txt_record_is_equal(@Nullable NSObject left, @Nullable NSObject right);
 
     /**
      * [@function] nw_txt_record_is_dictionary
@@ -344,7 +349,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_txt_record_is_dictionary(NSObject txt_record);
+    public static native boolean nw_txt_record_is_dictionary(@NotNull NSObject txt_record);
 
     /**
      * [@function] nw_advertise_descriptor_create_bonjour_service
@@ -372,12 +377,13 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native NSObject nw_advertise_descriptor_create_bonjour_service(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String type,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
 
     /**
      * [@function] nw_advertise_descriptor_set_txt_record
@@ -401,8 +407,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_advertise_descriptor_set_txt_record(NSObject advertise_descriptor,
-            ConstVoidPtr txt_record, @NUInt long txt_length);
+    public static native void nw_advertise_descriptor_set_txt_record(@NotNull NSObject advertise_descriptor,
+            @Nullable ConstVoidPtr txt_record, @NUInt long txt_length);
 
     /**
      * [@function] nw_advertise_descriptor_set_no_auto_rename
@@ -420,7 +426,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_advertise_descriptor_set_no_auto_rename(NSObject advertise_descriptor,
+    public static native void nw_advertise_descriptor_set_no_auto_rename(@NotNull NSObject advertise_descriptor,
             boolean no_auto_rename);
 
     /**
@@ -438,7 +444,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_advertise_descriptor_get_no_auto_rename(NSObject advertise_descriptor);
+    public static native boolean nw_advertise_descriptor_get_no_auto_rename(@NotNull NSObject advertise_descriptor);
 
     /**
      * [@function] nw_advertise_descriptor_set_txt_record_object
@@ -456,8 +462,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_advertise_descriptor_set_txt_record_object(NSObject advertise_descriptor,
-            NSObject txt_record);
+    public static native void nw_advertise_descriptor_set_txt_record_object(@NotNull NSObject advertise_descriptor,
+            @Nullable NSObject txt_record);
 
     /**
      * [@function] nw_advertise_descriptor_copy_txt_record_object
@@ -473,9 +479,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_advertise_descriptor_copy_txt_record_object(NSObject advertise_descriptor);
+    public static native NSObject nw_advertise_descriptor_copy_txt_record_object(
+            @NotNull NSObject advertise_descriptor);
 
     /**
      * [@function] nw_protocol_definition_is_equal
@@ -495,7 +503,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_definition_is_equal(NSObject definition1, NSObject definition2);
+    public static native boolean nw_protocol_definition_is_equal(@NotNull NSObject definition1,
+            @NotNull NSObject definition2);
 
     /**
      * [@function] nw_protocol_options_copy_definition
@@ -510,9 +519,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_protocol_options_copy_definition(NSObject options);
+    public static native NSObject nw_protocol_options_copy_definition(@NotNull NSObject options);
 
     /**
      * [@function] nw_protocol_metadata_copy_definition
@@ -527,9 +537,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_protocol_metadata_copy_definition(NSObject metadata);
+    public static native NSObject nw_protocol_metadata_copy_definition(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_interface_get_type
@@ -550,7 +561,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_interface_get_type(NSObject interface_);
+    public static native int nw_interface_get_type(@NotNull NSObject interface_);
 
     /**
      * [@function] nw_interface_get_name
@@ -567,10 +578,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_interface_get_name(NSObject interface_);
+    public static native String nw_interface_get_name(@NotNull NSObject interface_);
 
     /**
      * [@function] nw_interface_get_index
@@ -588,7 +600,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_interface_get_index(NSObject interface_);
+    public static native int nw_interface_get_index(@NotNull NSObject interface_);
 
     /**
      * [@function] nw_endpoint_get_type
@@ -605,7 +617,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_endpoint_get_type(NSObject endpoint);
+    public static native int nw_endpoint_get_type(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_create_host
@@ -631,11 +643,12 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_endpoint_create_host(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String hostname,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String port);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String hostname,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String port);
 
     /**
      * [@function] nw_endpoint_get_hostname
@@ -652,10 +665,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_endpoint_get_hostname(NSObject endpoint);
+    public static native String nw_endpoint_get_hostname(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_copy_port_string
@@ -673,9 +687,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native BytePtr nw_endpoint_copy_port_string(NSObject endpoint);
+    public static native BytePtr nw_endpoint_copy_port_string(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_get_port
@@ -696,7 +711,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native char nw_endpoint_get_port(NSObject endpoint);
+    public static native char nw_endpoint_get_port(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_create_address
@@ -715,10 +730,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_endpoint_create_address(
-            @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") sockaddr address);
 
     /**
      * [@function] nw_endpoint_copy_address_string
@@ -736,9 +752,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native BytePtr nw_endpoint_copy_address_string(NSObject endpoint);
+    public static native BytePtr nw_endpoint_copy_address_string(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_get_address
@@ -755,10 +772,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
-    public static native sockaddr nw_endpoint_get_address(NSObject endpoint);
+    public static native sockaddr nw_endpoint_get_address(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_create_bonjour_service
@@ -783,12 +801,13 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_endpoint_create_bonjour_service(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String type,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
 
     /**
      * [@function] nw_endpoint_get_bonjour_service_name
@@ -805,10 +824,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_endpoint_get_bonjour_service_name(NSObject endpoint);
+    public static native String nw_endpoint_get_bonjour_service_name(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_get_bonjour_service_type
@@ -825,10 +845,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_endpoint_get_bonjour_service_type(NSObject endpoint);
+    public static native String nw_endpoint_get_bonjour_service_type(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_get_bonjour_service_domain
@@ -845,10 +866,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_endpoint_get_bonjour_service_domain(NSObject endpoint);
+    public static native String nw_endpoint_get_bonjour_service_domain(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_create_url
@@ -867,10 +889,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_endpoint_create_url(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String url);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String url);
 
     /**
      * [@function] nw_endpoint_get_url
@@ -887,10 +910,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_endpoint_get_url(NSObject endpoint);
+    public static native String nw_endpoint_get_url(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_parameters_create_secure_tcp
@@ -919,24 +943,25 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_parameters_create_secure_tcp(
-            @ObjCBlock(name = "call_nw_parameters_create_secure_tcp_0") Block_nw_parameters_create_secure_tcp_0 configure_tls,
-            @ObjCBlock(name = "call_nw_parameters_create_secure_tcp_1") Block_nw_parameters_create_secure_tcp_1 configure_tcp);
+            @NotNull @ObjCBlock(name = "call_nw_parameters_create_secure_tcp_0") Block_nw_parameters_create_secure_tcp_0 configure_tls,
+            @NotNull @ObjCBlock(name = "call_nw_parameters_create_secure_tcp_1") Block_nw_parameters_create_secure_tcp_1 configure_tcp);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_secure_tcp_0 {
         @Generated
-        void call_nw_parameters_create_secure_tcp_0(NSObject options);
+        void call_nw_parameters_create_secure_tcp_0(@NotNull NSObject options);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_secure_tcp_1 {
         @Generated
-        void call_nw_parameters_create_secure_tcp_1(NSObject options);
+        void call_nw_parameters_create_secure_tcp_1(@NotNull NSObject options);
     }
 
     /**
@@ -966,24 +991,25 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_parameters_create_secure_udp(
-            @ObjCBlock(name = "call_nw_parameters_create_secure_udp_0") Block_nw_parameters_create_secure_udp_0 configure_dtls,
-            @ObjCBlock(name = "call_nw_parameters_create_secure_udp_1") Block_nw_parameters_create_secure_udp_1 configure_udp);
+            @NotNull @ObjCBlock(name = "call_nw_parameters_create_secure_udp_0") Block_nw_parameters_create_secure_udp_0 configure_dtls,
+            @NotNull @ObjCBlock(name = "call_nw_parameters_create_secure_udp_1") Block_nw_parameters_create_secure_udp_1 configure_udp);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_secure_udp_0 {
         @Generated
-        void call_nw_parameters_create_secure_udp_0(NSObject options);
+        void call_nw_parameters_create_secure_udp_0(@NotNull NSObject options);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_secure_udp_1 {
         @Generated
-        void call_nw_parameters_create_secure_udp_1(NSObject options);
+        void call_nw_parameters_create_secure_udp_1(@NotNull NSObject options);
     }
 
     /**
@@ -1002,6 +1028,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_parameters_create();
@@ -1022,9 +1049,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_parameters_copy(NSObject parameters);
+    public static native NSObject nw_parameters_copy(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_require_interface
@@ -1043,7 +1071,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_require_interface(NSObject parameters, NSObject interface_);
+    public static native void nw_parameters_require_interface(@NotNull NSObject parameters,
+            @Nullable NSObject interface_);
 
     /**
      * [@function] nw_parameters_copy_required_interface
@@ -1059,9 +1088,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_parameters_copy_required_interface(NSObject parameters);
+    public static native NSObject nw_parameters_copy_required_interface(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_prohibit_interface
@@ -1079,7 +1109,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_prohibit_interface(NSObject parameters, NSObject interface_);
+    public static native void nw_parameters_prohibit_interface(@NotNull NSObject parameters,
+            @NotNull NSObject interface_);
 
     /**
      * [@function] nw_parameters_clear_prohibited_interfaces
@@ -1093,7 +1124,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_clear_prohibited_interfaces(NSObject parameters);
+    public static native void nw_parameters_clear_prohibited_interfaces(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_iterate_prohibited_interfaces
@@ -1112,14 +1143,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_iterate_prohibited_interfaces(NSObject parameters,
-            @ObjCBlock(name = "call_nw_parameters_iterate_prohibited_interfaces") Block_nw_parameters_iterate_prohibited_interfaces iterate_block);
+    public static native void nw_parameters_iterate_prohibited_interfaces(@NotNull NSObject parameters,
+            @NotNull @ObjCBlock(name = "call_nw_parameters_iterate_prohibited_interfaces") Block_nw_parameters_iterate_prohibited_interfaces iterate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_iterate_prohibited_interfaces {
         @Generated
-        boolean call_nw_parameters_iterate_prohibited_interfaces(NSObject interface_);
+        boolean call_nw_parameters_iterate_prohibited_interfaces(@NotNull NSObject interface_);
     }
 
     /**
@@ -1138,7 +1169,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_required_interface_type(NSObject parameters, int interface_type);
+    public static native void nw_parameters_set_required_interface_type(@NotNull NSObject parameters,
+            int interface_type);
 
     /**
      * [@function] nw_parameters_get_required_interface_type
@@ -1156,7 +1188,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_parameters_get_required_interface_type(NSObject parameters);
+    public static native int nw_parameters_get_required_interface_type(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_prohibit_interface_type
@@ -1174,7 +1206,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_prohibit_interface_type(NSObject parameters, int interface_type);
+    public static native void nw_parameters_prohibit_interface_type(@NotNull NSObject parameters, int interface_type);
 
     /**
      * [@function] nw_parameters_clear_prohibited_interface_types
@@ -1188,7 +1220,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_clear_prohibited_interface_types(NSObject parameters);
+    public static native void nw_parameters_clear_prohibited_interface_types(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_iterate_prohibited_interface_types
@@ -1207,8 +1239,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_iterate_prohibited_interface_types(NSObject parameters,
-            @ObjCBlock(name = "call_nw_parameters_iterate_prohibited_interface_types") Block_nw_parameters_iterate_prohibited_interface_types iterate_block);
+    public static native void nw_parameters_iterate_prohibited_interface_types(@NotNull NSObject parameters,
+            @NotNull @ObjCBlock(name = "call_nw_parameters_iterate_prohibited_interface_types") Block_nw_parameters_iterate_prohibited_interface_types iterate_block);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -1234,7 +1266,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_prohibit_expensive(NSObject parameters, boolean prohibit_expensive);
+    public static native void nw_parameters_set_prohibit_expensive(@NotNull NSObject parameters,
+            boolean prohibit_expensive);
 
     /**
      * [@function] nw_parameters_get_prohibit_expensive
@@ -1252,7 +1285,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_prohibit_expensive(NSObject parameters);
+    public static native boolean nw_parameters_get_prohibit_expensive(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_prohibit_constrained
@@ -1271,7 +1304,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_prohibit_constrained(NSObject parameters, boolean prohibit_constrained);
+    public static native void nw_parameters_set_prohibit_constrained(@NotNull NSObject parameters,
+            boolean prohibit_constrained);
 
     /**
      * [@function] nw_parameters_get_prohibit_constrained
@@ -1289,7 +1323,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_prohibit_constrained(NSObject parameters);
+    public static native boolean nw_parameters_get_prohibit_constrained(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_reuse_local_address
@@ -1308,7 +1342,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_reuse_local_address(NSObject parameters, boolean reuse_local_address);
+    public static native void nw_parameters_set_reuse_local_address(@NotNull NSObject parameters,
+            boolean reuse_local_address);
 
     /**
      * [@function] nw_parameters_get_reuse_local_address
@@ -1326,7 +1361,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_reuse_local_address(NSObject parameters);
+    public static native boolean nw_parameters_get_reuse_local_address(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_local_endpoint
@@ -1347,7 +1382,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_local_endpoint(NSObject parameters, NSObject local_endpoint);
+    public static native void nw_parameters_set_local_endpoint(@NotNull NSObject parameters,
+            @Nullable NSObject local_endpoint);
 
     /**
      * [@function] nw_parameters_copy_local_endpoint
@@ -1363,9 +1399,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_parameters_copy_local_endpoint(NSObject parameters);
+    public static native NSObject nw_parameters_copy_local_endpoint(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_include_peer_to_peer
@@ -1387,7 +1424,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_include_peer_to_peer(NSObject parameters, boolean include_peer_to_peer);
+    public static native void nw_parameters_set_include_peer_to_peer(@NotNull NSObject parameters,
+            boolean include_peer_to_peer);
 
     /**
      * [@function] nw_parameters_get_include_peer_to_peer
@@ -1406,7 +1444,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_include_peer_to_peer(NSObject parameters);
+    public static native boolean nw_parameters_get_include_peer_to_peer(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_fast_open_enabled
@@ -1437,7 +1475,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_fast_open_enabled(NSObject parameters, boolean fast_open_enabled);
+    public static native void nw_parameters_set_fast_open_enabled(@NotNull NSObject parameters,
+            boolean fast_open_enabled);
 
     /**
      * [@function] nw_parameters_get_fast_open_enabled
@@ -1456,7 +1495,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_fast_open_enabled(NSObject parameters);
+    public static native boolean nw_parameters_get_fast_open_enabled(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_service_class
@@ -1473,7 +1512,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_service_class(NSObject parameters, int service_class);
+    public static native void nw_parameters_set_service_class(@NotNull NSObject parameters, int service_class);
 
     /**
      * [@function] nw_parameters_get_service_class
@@ -1490,7 +1529,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_parameters_get_service_class(NSObject parameters);
+    public static native int nw_parameters_get_service_class(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_multipath_service
@@ -1508,7 +1547,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_multipath_service(NSObject parameters, int multipath_service);
+    public static native void nw_parameters_set_multipath_service(@NotNull NSObject parameters, int multipath_service);
 
     /**
      * [@function] nw_parameters_get_multipath_service
@@ -1525,7 +1564,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_parameters_get_multipath_service(NSObject parameters);
+    public static native int nw_parameters_get_multipath_service(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_copy_default_protocol_stack
@@ -1544,9 +1583,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_parameters_copy_default_protocol_stack(NSObject parameters);
+    public static native NSObject nw_parameters_copy_default_protocol_stack(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_protocol_stack_prepend_application_protocol
@@ -1564,7 +1604,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_protocol_stack_prepend_application_protocol(NSObject stack, NSObject protocol);
+    public static native void nw_protocol_stack_prepend_application_protocol(@NotNull NSObject stack,
+            @NotNull NSObject protocol);
 
     /**
      * [@function] nw_protocol_stack_clear_application_protocols
@@ -1578,7 +1619,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_protocol_stack_clear_application_protocols(NSObject stack);
+    public static native void nw_protocol_stack_clear_application_protocols(@NotNull NSObject stack);
 
     /**
      * [@function] nw_protocol_stack_iterate_application_protocols
@@ -1595,14 +1636,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_protocol_stack_iterate_application_protocols(NSObject stack,
-            @ObjCBlock(name = "call_nw_protocol_stack_iterate_application_protocols") Block_nw_protocol_stack_iterate_application_protocols iterate_block);
+    public static native void nw_protocol_stack_iterate_application_protocols(@NotNull NSObject stack,
+            @NotNull @ObjCBlock(name = "call_nw_protocol_stack_iterate_application_protocols") Block_nw_protocol_stack_iterate_application_protocols iterate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_protocol_stack_iterate_application_protocols {
         @Generated
-        void call_nw_protocol_stack_iterate_application_protocols(NSObject protocol);
+        void call_nw_protocol_stack_iterate_application_protocols(@NotNull NSObject protocol);
     }
 
     /**
@@ -1619,9 +1660,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_protocol_stack_copy_transport_protocol(NSObject stack);
+    public static native NSObject nw_protocol_stack_copy_transport_protocol(@NotNull NSObject stack);
 
     /**
      * [@function] nw_protocol_stack_set_transport_protocol
@@ -1639,7 +1681,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_protocol_stack_set_transport_protocol(NSObject stack, NSObject protocol);
+    public static native void nw_protocol_stack_set_transport_protocol(@NotNull NSObject stack,
+            @NotNull NSObject protocol);
 
     /**
      * [@function] nw_protocol_stack_copy_internet_protocol
@@ -1656,9 +1699,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_protocol_stack_copy_internet_protocol(NSObject stack);
+    public static native NSObject nw_protocol_stack_copy_internet_protocol(@NotNull NSObject stack);
 
     /**
      * [@function] nw_parameters_set_local_only
@@ -1676,7 +1720,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_local_only(NSObject parameters, boolean local_only);
+    public static native void nw_parameters_set_local_only(@NotNull NSObject parameters, boolean local_only);
 
     /**
      * [@function] nw_parameters_get_local_only
@@ -1694,7 +1738,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_local_only(NSObject parameters);
+    public static native boolean nw_parameters_get_local_only(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_prefer_no_proxy
@@ -1712,7 +1756,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_prefer_no_proxy(NSObject parameters, boolean prefer_no_proxy);
+    public static native void nw_parameters_set_prefer_no_proxy(@NotNull NSObject parameters, boolean prefer_no_proxy);
 
     /**
      * [@function] nw_parameters_get_prefer_no_proxy
@@ -1731,7 +1775,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_get_prefer_no_proxy(NSObject parameters);
+    public static native boolean nw_parameters_get_prefer_no_proxy(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_parameters_set_expired_dns_behavior
@@ -1755,7 +1799,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_expired_dns_behavior(NSObject parameters, int expired_dns_behavior);
+    public static native void nw_parameters_set_expired_dns_behavior(@NotNull NSObject parameters,
+            int expired_dns_behavior);
 
     /**
      * [@function] nw_parameters_get_expired_dns_behavior
@@ -1774,7 +1819,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_parameters_get_expired_dns_behavior(NSObject parameters);
+    public static native int nw_parameters_get_expired_dns_behavior(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_browse_descriptor_create_bonjour_service
@@ -1794,11 +1839,12 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_browse_descriptor_create_bonjour_service(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String type,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String type,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String domain);
 
     /**
      * [@function] nw_browse_descriptor_get_bonjour_service_type
@@ -1813,10 +1859,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_browse_descriptor_get_bonjour_service_type(NSObject descriptor);
+    public static native String nw_browse_descriptor_get_bonjour_service_type(@NotNull NSObject descriptor);
 
     /**
      * [@function] nw_browse_descriptor_get_bonjour_service_domain
@@ -1832,10 +1879,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_browse_descriptor_get_bonjour_service_domain(NSObject descriptor);
+    public static native String nw_browse_descriptor_get_bonjour_service_domain(@NotNull NSObject descriptor);
 
     /**
      * [@function] nw_browse_descriptor_set_include_txt_record
@@ -1857,7 +1905,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browse_descriptor_set_include_txt_record(NSObject descriptor,
+    public static native void nw_browse_descriptor_set_include_txt_record(@NotNull NSObject descriptor,
             boolean include_txt_record);
 
     /**
@@ -1875,7 +1923,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_browse_descriptor_get_include_txt_record(NSObject descriptor);
+    public static native boolean nw_browse_descriptor_get_include_txt_record(@NotNull NSObject descriptor);
 
     /**
      * [@function] nw_browse_result_copy_endpoint
@@ -1890,9 +1938,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_browse_result_copy_endpoint(NSObject result);
+    public static native NSObject nw_browse_result_copy_endpoint(@NotNull NSObject result);
 
     /**
      * [@function] nw_browse_result_get_changes
@@ -1916,7 +1965,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_browse_result_get_changes(NSObject old_result, NSObject new_result);
+    public static native long nw_browse_result_get_changes(@Nullable NSObject old_result,
+            @Nullable NSObject new_result);
 
     /**
      * [@function] nw_browse_result_get_interfaces_count
@@ -1934,7 +1984,7 @@ public final class Network {
     @Generated
     @CFunction
     @NUInt
-    public static native long nw_browse_result_get_interfaces_count(NSObject result);
+    public static native long nw_browse_result_get_interfaces_count(@NotNull NSObject result);
 
     /**
      * [@function] nw_browse_result_copy_txt_record_object
@@ -1950,9 +2000,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_browse_result_copy_txt_record_object(NSObject result);
+    public static native NSObject nw_browse_result_copy_txt_record_object(@NotNull NSObject result);
 
     /**
      * [@function] nw_browse_result_enumerate_interfaces
@@ -1969,14 +2020,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browse_result_enumerate_interfaces(NSObject result,
-            @ObjCBlock(name = "call_nw_browse_result_enumerate_interfaces") Block_nw_browse_result_enumerate_interfaces enumerator);
+    public static native void nw_browse_result_enumerate_interfaces(@NotNull NSObject result,
+            @NotNull @ObjCBlock(name = "call_nw_browse_result_enumerate_interfaces") Block_nw_browse_result_enumerate_interfaces enumerator);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_browse_result_enumerate_interfaces {
         @Generated
-        boolean call_nw_browse_result_enumerate_interfaces(NSObject interface_);
+        boolean call_nw_browse_result_enumerate_interfaces(@NotNull NSObject interface_);
     }
 
     /**
@@ -1994,7 +2045,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_error_get_error_domain(NSObject error);
+    public static native int nw_error_get_error_domain(@NotNull NSObject error);
 
     /**
      * [@function] nw_error_get_error_code
@@ -2011,7 +2062,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_error_get_error_code(NSObject error);
+    public static native int nw_error_get_error_code(@NotNull NSObject error);
 
     /**
      * [@function] nw_error_copy_cf_error
@@ -2026,9 +2077,10 @@ public final class Network {
      * @param error
      *              A reference to the nw_error.
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFErrorRef nw_error_copy_cf_error(NSObject error);
+    public static native CFErrorRef nw_error_copy_cf_error(@NotNull NSObject error);
 
     /**
      * [@function] nw_browser_create
@@ -2049,9 +2101,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_browser_create(NSObject descriptor, NSObject parameters);
+    public static native NSObject nw_browser_create(@NotNull NSObject descriptor, @Nullable NSObject parameters);
 
     /**
      * [@function] nw_browser_set_queue
@@ -2069,7 +2122,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browser_set_queue(NSObject browser, NSObject queue);
+    public static native void nw_browser_set_queue(@NotNull NSObject browser, @NotNull NSObject queue);
 
     /**
      * [@function] nw_browser_set_browse_results_changed_handler
@@ -2089,15 +2142,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browser_set_browse_results_changed_handler(NSObject browser,
-            @ObjCBlock(name = "call_nw_browser_set_browse_results_changed_handler") Block_nw_browser_set_browse_results_changed_handler handler);
+    public static native void nw_browser_set_browse_results_changed_handler(@NotNull NSObject browser,
+            @Nullable @ObjCBlock(name = "call_nw_browser_set_browse_results_changed_handler") Block_nw_browser_set_browse_results_changed_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_browser_set_browse_results_changed_handler {
         @Generated
-        void call_nw_browser_set_browse_results_changed_handler(NSObject old_result, NSObject new_result,
-                boolean batch_complete);
+        void call_nw_browser_set_browse_results_changed_handler(@NotNull NSObject old_result,
+                @NotNull NSObject new_result, boolean batch_complete);
     }
 
     /**
@@ -2119,14 +2172,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browser_set_state_changed_handler(NSObject browser,
-            @ObjCBlock(name = "call_nw_browser_set_state_changed_handler") Block_nw_browser_set_state_changed_handler state_changed_handler);
+    public static native void nw_browser_set_state_changed_handler(@NotNull NSObject browser,
+            @Nullable @ObjCBlock(name = "call_nw_browser_set_state_changed_handler") Block_nw_browser_set_state_changed_handler state_changed_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_browser_set_state_changed_handler {
         @Generated
-        void call_nw_browser_set_state_changed_handler(int state, NSObject error);
+        void call_nw_browser_set_state_changed_handler(int state, @Nullable NSObject error);
     }
 
     /**
@@ -2142,7 +2195,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browser_start(NSObject browser);
+    public static native void nw_browser_start(@NotNull NSObject browser);
 
     /**
      * [@function] nw_browser_cancel
@@ -2160,7 +2213,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_browser_cancel(NSObject browser);
+    public static native void nw_browser_cancel(@NotNull NSObject browser);
 
     /**
      * [@function] nw_browser_copy_parameters
@@ -2175,9 +2228,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_browser_copy_parameters(NSObject browser);
+    public static native NSObject nw_browser_copy_parameters(@NotNull NSObject browser);
 
     /**
      * [@function] nw_browser_copy_browse_descriptor
@@ -2192,9 +2246,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_browser_copy_browse_descriptor(NSObject browser);
+    public static native NSObject nw_browser_copy_browse_descriptor(@NotNull NSObject browser);
 
     /**
      * [@function] nw_path_get_status
@@ -2213,7 +2268,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_path_get_status(NSObject path);
+    public static native int nw_path_get_status(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_enumerate_interfaces
@@ -2232,14 +2287,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_enumerate_interfaces(NSObject path,
-            @ObjCBlock(name = "call_nw_path_enumerate_interfaces") Block_nw_path_enumerate_interfaces enumerate_block);
+    public static native void nw_path_enumerate_interfaces(@NotNull NSObject path,
+            @NotNull @ObjCBlock(name = "call_nw_path_enumerate_interfaces") Block_nw_path_enumerate_interfaces enumerate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_path_enumerate_interfaces {
         @Generated
-        boolean call_nw_path_enumerate_interfaces(NSObject interface_);
+        boolean call_nw_path_enumerate_interfaces(@NotNull NSObject interface_);
     }
 
     /**
@@ -2262,7 +2317,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_is_equal(NSObject path, NSObject other_path);
+    public static native boolean nw_path_is_equal(@NotNull NSObject path, @NotNull NSObject other_path);
 
     /**
      * [@function] nw_path_is_expensive
@@ -2281,7 +2336,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_is_expensive(NSObject path);
+    public static native boolean nw_path_is_expensive(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_is_constrained
@@ -2300,7 +2355,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_is_constrained(NSObject path);
+    public static native boolean nw_path_is_constrained(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_has_ipv4
@@ -2318,7 +2373,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_has_ipv4(NSObject path);
+    public static native boolean nw_path_has_ipv4(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_has_ipv6
@@ -2336,7 +2391,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_has_ipv6(NSObject path);
+    public static native boolean nw_path_has_ipv6(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_has_dns
@@ -2354,7 +2409,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_has_dns(NSObject path);
+    public static native boolean nw_path_has_dns(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_uses_interface_type
@@ -2372,7 +2427,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_path_uses_interface_type(NSObject path, int interface_type);
+    public static native boolean nw_path_uses_interface_type(@NotNull NSObject path, int interface_type);
 
     /**
      * [@function] nw_path_copy_effective_local_endpoint
@@ -2390,9 +2445,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_path_copy_effective_local_endpoint(NSObject path);
+    public static native NSObject nw_path_copy_effective_local_endpoint(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_copy_effective_remote_endpoint
@@ -2410,9 +2466,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_path_copy_effective_remote_endpoint(NSObject path);
+    public static native NSObject nw_path_copy_effective_remote_endpoint(@NotNull NSObject path);
 
     /**
      * [@function] nw_path_enumerate_gateways
@@ -2431,14 +2488,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_enumerate_gateways(NSObject path,
-            @ObjCBlock(name = "call_nw_path_enumerate_gateways") Block_nw_path_enumerate_gateways enumerate_block);
+    public static native void nw_path_enumerate_gateways(@NotNull NSObject path,
+            @NotNull @ObjCBlock(name = "call_nw_path_enumerate_gateways") Block_nw_path_enumerate_gateways enumerate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_path_enumerate_gateways {
         @Generated
-        boolean call_nw_path_enumerate_gateways(NSObject gateway);
+        boolean call_nw_path_enumerate_gateways(@NotNull NSObject gateway);
     }
 
     /**
@@ -2454,10 +2511,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_content_context_create(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context_identifier);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context_identifier);
 
     /**
      * [@function] nw_content_context_get_identifier
@@ -2468,10 +2526,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_content_context_get_identifier(NSObject context);
+    public static native String nw_content_context_get_identifier(@NotNull NSObject context);
 
     /**
      * [@function] nw_content_context_get_is_final
@@ -2488,7 +2547,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_content_context_get_is_final(NSObject context);
+    public static native boolean nw_content_context_get_is_final(@NotNull NSObject context);
 
     /**
      * [@function] nw_content_context_set_is_final
@@ -2506,7 +2565,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_set_is_final(NSObject context, boolean is_final);
+    public static native void nw_content_context_set_is_final(@NotNull NSObject context, boolean is_final);
 
     /**
      * [@function] nw_content_context_get_expiration_milliseconds
@@ -2521,7 +2580,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_content_context_get_expiration_milliseconds(NSObject context);
+    public static native long nw_content_context_get_expiration_milliseconds(@NotNull NSObject context);
 
     /**
      * [@function] nw_content_context_set_expiration_milliseconds
@@ -2538,7 +2597,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_set_expiration_milliseconds(NSObject context,
+    public static native void nw_content_context_set_expiration_milliseconds(@NotNull NSObject context,
             long expiration_milliseconds);
 
     /**
@@ -2555,7 +2614,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native double nw_content_context_get_relative_priority(NSObject context);
+    public static native double nw_content_context_get_relative_priority(@NotNull NSObject context);
 
     /**
      * [@function] nw_content_context_set_relative_priority
@@ -2574,7 +2633,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_set_relative_priority(NSObject context, double relative_priority);
+    public static native void nw_content_context_set_relative_priority(@NotNull NSObject context,
+            double relative_priority);
 
     /**
      * [@function] nw_content_context_set_antecedent
@@ -2592,7 +2652,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_set_antecedent(NSObject context, NSObject antecedent_context);
+    public static native void nw_content_context_set_antecedent(@NotNull NSObject context,
+            @Nullable NSObject antecedent_context);
 
     /**
      * [@function] nw_content_context_copy_antecedent
@@ -2605,9 +2666,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_content_context_copy_antecedent(NSObject context);
+    public static native NSObject nw_content_context_copy_antecedent(@NotNull NSObject context);
 
     /**
      * [@function] nw_content_context_set_metadata_for_protocol
@@ -2623,8 +2685,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_set_metadata_for_protocol(NSObject context,
-            NSObject protocol_metadata);
+    public static native void nw_content_context_set_metadata_for_protocol(@NotNull NSObject context,
+            @NotNull NSObject protocol_metadata);
 
     /**
      * [@function] nw_content_context_copy_protocol_metadata
@@ -2637,9 +2699,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_content_context_copy_protocol_metadata(NSObject context, NSObject protocol);
+    public static native NSObject nw_content_context_copy_protocol_metadata(@NotNull NSObject context,
+            @NotNull NSObject protocol);
 
     /**
      * [@function] nw_content_context_foreach_protocol_metadata
@@ -2653,14 +2717,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_content_context_foreach_protocol_metadata(NSObject context,
-            @ObjCBlock(name = "call_nw_content_context_foreach_protocol_metadata") Block_nw_content_context_foreach_protocol_metadata foreach_block);
+    public static native void nw_content_context_foreach_protocol_metadata(@NotNull NSObject context,
+            @NotNull @ObjCBlock(name = "call_nw_content_context_foreach_protocol_metadata") Block_nw_content_context_foreach_protocol_metadata foreach_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_content_context_foreach_protocol_metadata {
         @Generated
-        void call_nw_content_context_foreach_protocol_metadata(NSObject arg0, NSObject arg1);
+        void call_nw_content_context_foreach_protocol_metadata(@NotNull NSObject arg0, @NotNull NSObject arg1);
     }
 
     /**
@@ -2683,9 +2747,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_create(NSObject endpoint, NSObject parameters);
+    public static native NSObject nw_connection_create(@NotNull NSObject endpoint, @NotNull NSObject parameters);
 
     /**
      * [@function] nw_connection_copy_endpoint
@@ -2701,9 +2766,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_copy_endpoint(NSObject connection);
+    public static native NSObject nw_connection_copy_endpoint(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_copy_parameters
@@ -2719,9 +2785,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_copy_parameters(NSObject connection);
+    public static native NSObject nw_connection_copy_parameters(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_set_state_changed_handler
@@ -2741,14 +2808,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_set_state_changed_handler(NSObject connection,
-            @ObjCBlock(name = "call_nw_connection_set_state_changed_handler") Block_nw_connection_set_state_changed_handler handler);
+    public static native void nw_connection_set_state_changed_handler(@NotNull NSObject connection,
+            @Nullable @ObjCBlock(name = "call_nw_connection_set_state_changed_handler") Block_nw_connection_set_state_changed_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_set_state_changed_handler {
         @Generated
-        void call_nw_connection_set_state_changed_handler(int state, NSObject error);
+        void call_nw_connection_set_state_changed_handler(int state, @Nullable NSObject error);
     }
 
     /**
@@ -2770,8 +2837,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_set_viability_changed_handler(NSObject connection,
-            @ObjCBlock(name = "call_nw_connection_set_viability_changed_handler") Block_nw_connection_set_viability_changed_handler handler);
+    public static native void nw_connection_set_viability_changed_handler(@NotNull NSObject connection,
+            @Nullable @ObjCBlock(name = "call_nw_connection_set_viability_changed_handler") Block_nw_connection_set_viability_changed_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -2799,8 +2866,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_set_better_path_available_handler(NSObject connection,
-            @ObjCBlock(name = "call_nw_connection_set_better_path_available_handler") Block_nw_connection_set_better_path_available_handler handler);
+    public static native void nw_connection_set_better_path_available_handler(@NotNull NSObject connection,
+            @Nullable @ObjCBlock(name = "call_nw_connection_set_better_path_available_handler") Block_nw_connection_set_better_path_available_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -2825,14 +2892,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_set_path_changed_handler(NSObject connection,
-            @ObjCBlock(name = "call_nw_connection_set_path_changed_handler") Block_nw_connection_set_path_changed_handler handler);
+    public static native void nw_connection_set_path_changed_handler(@NotNull NSObject connection,
+            @Nullable @ObjCBlock(name = "call_nw_connection_set_path_changed_handler") Block_nw_connection_set_path_changed_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_set_path_changed_handler {
         @Generated
-        void call_nw_connection_set_path_changed_handler(NSObject path);
+        void call_nw_connection_set_path_changed_handler(@NotNull NSObject path);
     }
 
     /**
@@ -2851,7 +2918,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_set_queue(NSObject connection, NSObject queue);
+    public static native void nw_connection_set_queue(@NotNull NSObject connection, @NotNull NSObject queue);
 
     /**
      * [@function] nw_connection_start
@@ -2869,7 +2936,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_start(NSObject connection);
+    public static native void nw_connection_start(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_restart
@@ -2888,7 +2955,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_restart(NSObject connection);
+    public static native void nw_connection_restart(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_cancel
@@ -2910,7 +2977,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_cancel(NSObject connection);
+    public static native void nw_connection_cancel(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_force_cancel
@@ -2927,7 +2994,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_force_cancel(NSObject connection);
+    public static native void nw_connection_force_cancel(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_cancel_current_endpoint
@@ -2946,7 +3013,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_cancel_current_endpoint(NSObject connection);
+    public static native void nw_connection_cancel_current_endpoint(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_receive
@@ -2979,14 +3046,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_receive(NSObject connection, int minimum_incomplete_length,
-            int maximum_length, @ObjCBlock(name = "call_nw_connection_receive") Block_nw_connection_receive completion);
+    public static native void nw_connection_receive(@NotNull NSObject connection, int minimum_incomplete_length,
+            int maximum_length,
+            @NotNull @ObjCBlock(name = "call_nw_connection_receive") Block_nw_connection_receive completion);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_receive {
         @Generated
-        void call_nw_connection_receive(NSObject content, NSObject context, boolean is_complete, NSObject error);
+        void call_nw_connection_receive(@Nullable NSObject content, @Nullable NSObject context, boolean is_complete,
+                @Nullable NSObject error);
     }
 
     /**
@@ -3008,15 +3077,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_receive_message(NSObject connection,
-            @ObjCBlock(name = "call_nw_connection_receive_message") Block_nw_connection_receive_message completion);
+    public static native void nw_connection_receive_message(@NotNull NSObject connection,
+            @NotNull @ObjCBlock(name = "call_nw_connection_receive_message") Block_nw_connection_receive_message completion);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_receive_message {
         @Generated
-        void call_nw_connection_receive_message(NSObject content, NSObject context, boolean is_complete,
-                NSObject error);
+        void call_nw_connection_receive_message(@Nullable NSObject content, @Nullable NSObject context,
+                boolean is_complete, @Nullable NSObject error);
     }
 
     /**
@@ -3099,14 +3168,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_send(NSObject connection, NSObject content, NSObject context,
-            boolean is_complete, @ObjCBlock(name = "call_nw_connection_send") Block_nw_connection_send completion);
+    public static native void nw_connection_send(@NotNull NSObject connection, @Nullable NSObject content,
+            @NotNull NSObject context, boolean is_complete,
+            @NotNull @ObjCBlock(name = "call_nw_connection_send") Block_nw_connection_send completion);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_send {
         @Generated
-        void call_nw_connection_send(NSObject error);
+        void call_nw_connection_send(@Nullable NSObject error);
     }
 
     /**
@@ -3129,8 +3199,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_batch(NSObject connection,
-            @ObjCBlock(name = "call_nw_connection_batch") Block_nw_connection_batch batch_block);
+    public static native void nw_connection_batch(@NotNull NSObject connection,
+            @NotNull @ObjCBlock(name = "call_nw_connection_batch") Block_nw_connection_batch batch_block);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -3153,9 +3223,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native BytePtr nw_connection_copy_description(NSObject connection);
+    public static native BytePtr nw_connection_copy_description(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_copy_current_path
@@ -3172,9 +3243,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_copy_current_path(NSObject connection);
+    public static native NSObject nw_connection_copy_current_path(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_copy_protocol_metadata
@@ -3197,9 +3269,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_copy_protocol_metadata(NSObject connection, NSObject definition);
+    public static native NSObject nw_connection_copy_protocol_metadata(@NotNull NSObject connection,
+            @NotNull NSObject definition);
 
     /**
      * [@function] nw_connection_get_maximum_datagram_size
@@ -3219,7 +3293,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_connection_get_maximum_datagram_size(NSObject connection);
+    public static native int nw_connection_get_maximum_datagram_size(@NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_access_establishment_report
@@ -3243,14 +3317,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_access_establishment_report(NSObject connection, NSObject queue,
-            @ObjCBlock(name = "call_nw_connection_access_establishment_report") Block_nw_connection_access_establishment_report access_block);
+    public static native void nw_connection_access_establishment_report(@NotNull NSObject connection,
+            @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_nw_connection_access_establishment_report") Block_nw_connection_access_establishment_report access_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_access_establishment_report {
         @Generated
-        void call_nw_connection_access_establishment_report(NSObject report);
+        void call_nw_connection_access_establishment_report(@Nullable NSObject report);
     }
 
     /**
@@ -3271,7 +3346,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_establishment_report_get_duration_milliseconds(NSObject report);
+    public static native long nw_establishment_report_get_duration_milliseconds(@NotNull NSObject report);
 
     /**
      * [@function] nw_establishment_report_get_attempt_started_after_milliseconds
@@ -3292,7 +3367,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_establishment_report_get_attempt_started_after_milliseconds(NSObject report);
+    public static native long nw_establishment_report_get_attempt_started_after_milliseconds(@NotNull NSObject report);
 
     /**
      * [@function] nw_establishment_report_get_previous_attempt_count
@@ -3312,7 +3387,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_establishment_report_get_previous_attempt_count(NSObject report);
+    public static native int nw_establishment_report_get_previous_attempt_count(@NotNull NSObject report);
 
     /**
      * [@function] nw_establishment_report_get_used_proxy
@@ -3329,7 +3404,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_establishment_report_get_used_proxy(NSObject report);
+    public static native boolean nw_establishment_report_get_used_proxy(@NotNull NSObject report);
 
     /**
      * [@function] nw_establishment_report_get_proxy_configured
@@ -3349,7 +3424,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_establishment_report_get_proxy_configured(NSObject report);
+    public static native boolean nw_establishment_report_get_proxy_configured(@NotNull NSObject report);
 
     /**
      * [@function] nw_establishment_report_copy_proxy_endpoint
@@ -3367,9 +3442,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_establishment_report_copy_proxy_endpoint(NSObject report);
+    public static native NSObject nw_establishment_report_copy_proxy_endpoint(@NotNull NSObject report);
 
     /**
      * [@function] nw_establishment_report_enumerate_resolutions
@@ -3400,15 +3476,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_establishment_report_enumerate_resolutions(NSObject report,
-            @ObjCBlock(name = "call_nw_establishment_report_enumerate_resolutions") Block_nw_establishment_report_enumerate_resolutions enumerate_block);
+    public static native void nw_establishment_report_enumerate_resolutions(@NotNull NSObject report,
+            @NotNull @ObjCBlock(name = "call_nw_establishment_report_enumerate_resolutions") Block_nw_establishment_report_enumerate_resolutions enumerate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_establishment_report_enumerate_resolutions {
         @Generated
         boolean call_nw_establishment_report_enumerate_resolutions(int source, long milliseconds, int endpoint_count,
-                NSObject successful_endpoint, NSObject preferred_endpoint);
+                @NotNull NSObject successful_endpoint, @NotNull NSObject preferred_endpoint);
     }
 
     /**
@@ -3437,15 +3513,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_establishment_report_enumerate_protocols(NSObject report,
-            @ObjCBlock(name = "call_nw_establishment_report_enumerate_protocols") Block_nw_establishment_report_enumerate_protocols enumerate_block);
+    public static native void nw_establishment_report_enumerate_protocols(@NotNull NSObject report,
+            @NotNull @ObjCBlock(name = "call_nw_establishment_report_enumerate_protocols") Block_nw_establishment_report_enumerate_protocols enumerate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_establishment_report_enumerate_protocols {
         @Generated
-        boolean call_nw_establishment_report_enumerate_protocols(NSObject protocol, long handshake_milliseconds,
-                long handshake_rtt_milliseconds);
+        boolean call_nw_establishment_report_enumerate_protocols(@NotNull NSObject protocol,
+                long handshake_milliseconds, long handshake_rtt_milliseconds);
     }
 
     /**
@@ -3470,9 +3546,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_create_new_data_transfer_report(NSObject connection);
+    public static native NSObject nw_connection_create_new_data_transfer_report(@NotNull NSObject connection);
 
     /**
      * [@function] nw_data_transfer_report_get_state
@@ -3490,7 +3567,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_data_transfer_report_get_state(NSObject report);
+    public static native int nw_data_transfer_report_get_state(@NotNull NSObject report);
 
     /**
      * [@function] nw_data_transfer_report_collect
@@ -3516,14 +3593,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_data_transfer_report_collect(NSObject report, NSObject queue,
-            @ObjCBlock(name = "call_nw_data_transfer_report_collect") Block_nw_data_transfer_report_collect collect_block);
+    public static native void nw_data_transfer_report_collect(@NotNull NSObject report, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_nw_data_transfer_report_collect") Block_nw_data_transfer_report_collect collect_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_data_transfer_report_collect {
         @Generated
-        void call_nw_data_transfer_report_collect(NSObject report);
+        void call_nw_data_transfer_report_collect(@NotNull NSObject report);
     }
 
     /**
@@ -3549,7 +3626,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_duration_milliseconds(NSObject report);
+    public static native long nw_data_transfer_report_get_duration_milliseconds(@NotNull NSObject report);
 
     /**
      * [@function] nw_data_transfer_report_get_path_count
@@ -3571,7 +3648,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_data_transfer_report_get_path_count(NSObject report);
+    public static native int nw_data_transfer_report_get_path_count(@NotNull NSObject report);
 
     /**
      * [@function] nw_data_transfer_report_get_received_ip_packet_count
@@ -3595,7 +3672,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_received_ip_packet_count(NSObject report, int path_index);
+    public static native long nw_data_transfer_report_get_received_ip_packet_count(@NotNull NSObject report,
+            int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_sent_ip_packet_count
@@ -3619,7 +3697,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_sent_ip_packet_count(NSObject report, int path_index);
+    public static native long nw_data_transfer_report_get_sent_ip_packet_count(@NotNull NSObject report,
+            int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_received_transport_byte_count
@@ -3643,7 +3722,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_received_transport_byte_count(NSObject report,
+    public static native long nw_data_transfer_report_get_received_transport_byte_count(@NotNull NSObject report,
             int path_index);
 
     /**
@@ -3668,8 +3747,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_received_transport_duplicate_byte_count(NSObject report,
-            int path_index);
+    public static native long nw_data_transfer_report_get_received_transport_duplicate_byte_count(
+            @NotNull NSObject report, int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_received_transport_out_of_order_byte_count
@@ -3693,8 +3772,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_received_transport_out_of_order_byte_count(NSObject report,
-            int path_index);
+    public static native long nw_data_transfer_report_get_received_transport_out_of_order_byte_count(
+            @NotNull NSObject report, int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_sent_transport_byte_count
@@ -3718,7 +3797,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_sent_transport_byte_count(NSObject report, int path_index);
+    public static native long nw_data_transfer_report_get_sent_transport_byte_count(@NotNull NSObject report,
+            int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_sent_transport_retransmitted_byte_count
@@ -3742,8 +3822,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_sent_transport_retransmitted_byte_count(NSObject report,
-            int path_index);
+    public static native long nw_data_transfer_report_get_sent_transport_retransmitted_byte_count(
+            @NotNull NSObject report, int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_transport_smoothed_rtt_milliseconds
@@ -3768,7 +3848,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_transport_smoothed_rtt_milliseconds(NSObject report,
+    public static native long nw_data_transfer_report_get_transport_smoothed_rtt_milliseconds(@NotNull NSObject report,
             int path_index);
 
     /**
@@ -3794,7 +3874,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_transport_minimum_rtt_milliseconds(NSObject report,
+    public static native long nw_data_transfer_report_get_transport_minimum_rtt_milliseconds(@NotNull NSObject report,
             int path_index);
 
     /**
@@ -3820,7 +3900,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_transport_rtt_variance(NSObject report, int path_index);
+    public static native long nw_data_transfer_report_get_transport_rtt_variance(@NotNull NSObject report,
+            int path_index);
 
     /**
      * [@function] nw_data_transfer_report_get_received_application_byte_count
@@ -3844,7 +3925,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_received_application_byte_count(NSObject report,
+    public static native long nw_data_transfer_report_get_received_application_byte_count(@NotNull NSObject report,
             int path_index);
 
     /**
@@ -3869,7 +3950,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_data_transfer_report_get_sent_application_byte_count(NSObject report, int path_index);
+    public static native long nw_data_transfer_report_get_sent_application_byte_count(@NotNull NSObject report,
+            int path_index);
 
     /**
      * [@function] nw_data_transfer_report_copy_path_interface
@@ -3893,9 +3975,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_data_transfer_report_copy_path_interface(NSObject report, int path_index);
+    public static native NSObject nw_data_transfer_report_copy_path_interface(@NotNull NSObject report, int path_index);
 
     /**
      * [@function] nw_framer_protocol_create_message
@@ -3915,9 +3998,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_protocol_create_message(NSObject definition);
+    public static native NSObject nw_framer_protocol_create_message(@NotNull NSObject definition);
 
     /**
      * [@function] nw_protocol_metadata_is_framer_message
@@ -3937,7 +4021,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_framer_message(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_framer_message(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_framer_message_create
@@ -3955,9 +4039,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_message_create(NSObject framer);
+    public static native NSObject nw_framer_message_create(@NotNull NSObject framer);
 
     /**
      * [@function] nw_framer_message_set_value
@@ -3981,16 +4066,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_message_set_value(NSObject message,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            VoidPtr value,
-            @ObjCBlock(name = "call_nw_framer_message_set_value") Block_nw_framer_message_set_value dispose_value);
+    public static native void nw_framer_message_set_value(@NotNull NSObject message,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable VoidPtr value,
+            @Nullable @ObjCBlock(name = "call_nw_framer_message_set_value") Block_nw_framer_message_set_value dispose_value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_message_set_value {
         @Generated
-        void call_nw_framer_message_set_value(VoidPtr value);
+        void call_nw_framer_message_set_value(@NotNull VoidPtr value);
     }
 
     /**
@@ -4016,15 +4101,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_framer_message_access_value(NSObject message,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            @ObjCBlock(name = "call_nw_framer_message_access_value") Block_nw_framer_message_access_value access_value);
+    public static native boolean nw_framer_message_access_value(@NotNull NSObject message,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @NotNull @ObjCBlock(name = "call_nw_framer_message_access_value") Block_nw_framer_message_access_value access_value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_message_access_value {
         @Generated
-        boolean call_nw_framer_message_access_value(ConstVoidPtr arg0);
+        boolean call_nw_framer_message_access_value(@Nullable ConstVoidPtr arg0);
     }
 
     /**
@@ -4046,9 +4131,9 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_message_set_object_value(NSObject message,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            @Mapped(ObjCObjectMapper.class) Object value);
+    public static native void nw_framer_message_set_object_value(@NotNull NSObject message,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@function] nw_framer_message_copy_object_value
@@ -4067,11 +4152,12 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object nw_framer_message_copy_object_value(NSObject message,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+    public static native Object nw_framer_message_copy_object_value(@NotNull NSObject message,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
      * [@function] nw_framer_create_definition
@@ -4096,18 +4182,19 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_framer_create_definition(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identifier,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String identifier,
             int flags,
-            @ObjCBlock(name = "call_nw_framer_create_definition") Block_nw_framer_create_definition start_handler);
+            @NotNull @ObjCBlock(name = "call_nw_framer_create_definition") Block_nw_framer_create_definition start_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_create_definition {
         @Generated
-        int call_nw_framer_create_definition(NSObject framer);
+        int call_nw_framer_create_definition(@NotNull NSObject framer);
     }
 
     /**
@@ -4126,9 +4213,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_create_options(NSObject framer_definition);
+    public static native NSObject nw_framer_create_options(@NotNull NSObject framer_definition);
 
     /**
      * [@function] nw_framer_set_input_handler
@@ -4159,15 +4247,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_set_input_handler(NSObject framer,
-            @ObjCBlock(name = "call_nw_framer_set_input_handler") Block_nw_framer_set_input_handler input_handler);
+    public static native void nw_framer_set_input_handler(@NotNull NSObject framer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_set_input_handler") Block_nw_framer_set_input_handler input_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_set_input_handler {
         @Generated
         @NUInt
-        long call_nw_framer_set_input_handler(NSObject framer);
+        long call_nw_framer_set_input_handler(@NotNull NSObject framer);
     }
 
     /**
@@ -4193,15 +4281,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_set_output_handler(NSObject framer,
-            @ObjCBlock(name = "call_nw_framer_set_output_handler") Block_nw_framer_set_output_handler output_handler);
+    public static native void nw_framer_set_output_handler(@NotNull NSObject framer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_set_output_handler") Block_nw_framer_set_output_handler output_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_set_output_handler {
         @Generated
-        void call_nw_framer_set_output_handler(NSObject framer, NSObject message, @NUInt long message_length,
-                boolean is_complete);
+        void call_nw_framer_set_output_handler(@NotNull NSObject framer, @NotNull NSObject message,
+                @NUInt long message_length, boolean is_complete);
     }
 
     /**
@@ -4226,14 +4314,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_set_wakeup_handler(NSObject framer,
-            @ObjCBlock(name = "call_nw_framer_set_wakeup_handler") Block_nw_framer_set_wakeup_handler wakeup_handler);
+    public static native void nw_framer_set_wakeup_handler(@NotNull NSObject framer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_set_wakeup_handler") Block_nw_framer_set_wakeup_handler wakeup_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_set_wakeup_handler {
         @Generated
-        void call_nw_framer_set_wakeup_handler(NSObject framer);
+        void call_nw_framer_set_wakeup_handler(@NotNull NSObject framer);
     }
 
     /**
@@ -4257,14 +4345,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_set_stop_handler(NSObject framer,
-            @ObjCBlock(name = "call_nw_framer_set_stop_handler") Block_nw_framer_set_stop_handler stop_handler);
+    public static native void nw_framer_set_stop_handler(@NotNull NSObject framer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_set_stop_handler") Block_nw_framer_set_stop_handler stop_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_set_stop_handler {
         @Generated
-        boolean call_nw_framer_set_stop_handler(NSObject framer);
+        boolean call_nw_framer_set_stop_handler(@NotNull NSObject framer);
     }
 
     /**
@@ -4289,14 +4377,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_set_cleanup_handler(NSObject framer,
-            @ObjCBlock(name = "call_nw_framer_set_cleanup_handler") Block_nw_framer_set_cleanup_handler cleanup_handler);
+    public static native void nw_framer_set_cleanup_handler(@NotNull NSObject framer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_set_cleanup_handler") Block_nw_framer_set_cleanup_handler cleanup_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_set_cleanup_handler {
         @Generated
-        void call_nw_framer_set_cleanup_handler(NSObject framer);
+        void call_nw_framer_set_cleanup_handler(@NotNull NSObject framer);
     }
 
     /**
@@ -4320,7 +4408,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_mark_ready(NSObject framer);
+    public static native void nw_framer_mark_ready(@NotNull NSObject framer);
 
     /**
      * [@function] nw_framer_prepend_application_protocol
@@ -4354,7 +4442,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_framer_prepend_application_protocol(NSObject framer, NSObject protocol_options);
+    public static native boolean nw_framer_prepend_application_protocol(@NotNull NSObject framer,
+            @NotNull NSObject protocol_options);
 
     /**
      * [@function] nw_framer_mark_failed_with_error
@@ -4376,7 +4465,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_mark_failed_with_error(NSObject framer, int error_code);
+    public static native void nw_framer_mark_failed_with_error(@NotNull NSObject framer, int error_code);
 
     /**
      * [@function] nw_framer_parse_input
@@ -4425,16 +4514,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_framer_parse_input(NSObject framer, @NUInt long minimum_incomplete_length,
-            @NUInt long maximum_length, BytePtr temp_buffer,
-            @ObjCBlock(name = "call_nw_framer_parse_input") Block_nw_framer_parse_input parse);
+    public static native boolean nw_framer_parse_input(@NotNull NSObject framer, @NUInt long minimum_incomplete_length,
+            @NUInt long maximum_length, @Nullable BytePtr temp_buffer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_parse_input") Block_nw_framer_parse_input parse);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_parse_input {
         @Generated
         @NUInt
-        long call_nw_framer_parse_input(BytePtr buffer, @NUInt long buffer_length, boolean is_complete);
+        long call_nw_framer_parse_input(@Nullable BytePtr buffer, @NUInt long buffer_length, boolean is_complete);
     }
 
     /**
@@ -4470,9 +4559,9 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_deliver_input(NSObject framer,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String input_buffer,
-            @NUInt long input_length, NSObject message, boolean is_complete);
+    public static native void nw_framer_deliver_input(@NotNull NSObject framer,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String input_buffer,
+            @NUInt long input_length, @NotNull NSObject message, boolean is_complete);
 
     /**
      * [@function] nw_framer_deliver_input_no_copy
@@ -4511,8 +4600,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_framer_deliver_input_no_copy(NSObject framer, @NUInt long input_length,
-            NSObject message, boolean is_complete);
+    public static native boolean nw_framer_deliver_input_no_copy(@NotNull NSObject framer, @NUInt long input_length,
+            @NotNull NSObject message, boolean is_complete);
 
     /**
      * [@function] nw_framer_pass_through_input
@@ -4532,7 +4621,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_pass_through_input(NSObject framer);
+    public static native void nw_framer_pass_through_input(@NotNull NSObject framer);
 
     /**
      * [@function] nw_framer_parse_output
@@ -4580,16 +4669,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_framer_parse_output(NSObject framer, @NUInt long minimum_incomplete_length,
-            @NUInt long maximum_length, BytePtr temp_buffer,
-            @ObjCBlock(name = "call_nw_framer_parse_output") Block_nw_framer_parse_output parse);
+    public static native boolean nw_framer_parse_output(@NotNull NSObject framer, @NUInt long minimum_incomplete_length,
+            @NUInt long maximum_length, @Nullable BytePtr temp_buffer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_parse_output") Block_nw_framer_parse_output parse);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_framer_parse_output {
         @Generated
         @NUInt
-        long call_nw_framer_parse_output(BytePtr buffer, @NUInt long buffer_length, boolean is_complete);
+        long call_nw_framer_parse_output(@Nullable BytePtr buffer, @NUInt long buffer_length, boolean is_complete);
     }
 
     /**
@@ -4623,8 +4712,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_write_output(NSObject framer,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String output_buffer,
+    public static native void nw_framer_write_output(@NotNull NSObject framer,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String output_buffer,
             @NUInt long output_length);
 
     /**
@@ -4657,7 +4746,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_write_output_data(NSObject framer, NSObject output_data);
+    public static native void nw_framer_write_output_data(@NotNull NSObject framer, @NotNull NSObject output_data);
 
     /**
      * [@function] nw_framer_write_output_no_copy
@@ -4690,7 +4779,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_framer_write_output_no_copy(NSObject framer, @NUInt long output_length);
+    public static native boolean nw_framer_write_output_no_copy(@NotNull NSObject framer, @NUInt long output_length);
 
     /**
      * [@function] nw_framer_pass_through_output
@@ -4710,7 +4799,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_pass_through_output(NSObject framer);
+    public static native void nw_framer_pass_through_output(@NotNull NSObject framer);
 
     /**
      * [@function] nw_framer_schedule_wakeup
@@ -4737,7 +4826,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_schedule_wakeup(NSObject framer, long milliseconds);
+    public static native void nw_framer_schedule_wakeup(@NotNull NSObject framer, long milliseconds);
 
     /**
      * [@function] nw_framer_async
@@ -4758,8 +4847,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_async(NSObject framer,
-            @ObjCBlock(name = "call_nw_framer_async") Block_nw_framer_async async_block);
+    public static native void nw_framer_async(@NotNull NSObject framer,
+            @NotNull @ObjCBlock(name = "call_nw_framer_async") Block_nw_framer_async async_block);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -4787,9 +4876,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_copy_remote_endpoint(NSObject framer);
+    public static native NSObject nw_framer_copy_remote_endpoint(@NotNull NSObject framer);
 
     /**
      * [@function] nw_framer_copy_local_endpoint
@@ -4810,9 +4900,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_copy_local_endpoint(NSObject framer);
+    public static native NSObject nw_framer_copy_local_endpoint(@NotNull NSObject framer);
 
     /**
      * [@function] nw_framer_copy_parameters
@@ -4832,9 +4923,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_copy_parameters(NSObject framer);
+    public static native NSObject nw_framer_copy_parameters(@NotNull NSObject framer);
 
     /**
      * [@function] nw_protocol_copy_ip_definition
@@ -4848,6 +4940,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_protocol_copy_ip_definition();
@@ -4869,7 +4962,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_version(NSObject options, int version);
+    public static native void nw_ip_options_set_version(@NotNull NSObject options, int version);
 
     /**
      * [@function] nw_ip_options_set_hop_limit
@@ -4886,7 +4979,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_hop_limit(NSObject options, byte hop_limit);
+    public static native void nw_ip_options_set_hop_limit(@NotNull NSObject options, byte hop_limit);
 
     /**
      * [@function] nw_ip_options_set_use_minimum_mtu
@@ -4906,7 +4999,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_use_minimum_mtu(NSObject options, boolean use_minimum_mtu);
+    public static native void nw_ip_options_set_use_minimum_mtu(@NotNull NSObject options, boolean use_minimum_mtu);
 
     /**
      * [@function] nw_ip_options_set_disable_fragmentation
@@ -4925,7 +5018,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_disable_fragmentation(NSObject options, boolean disable_fragmentation);
+    public static native void nw_ip_options_set_disable_fragmentation(@NotNull NSObject options,
+            boolean disable_fragmentation);
 
     /**
      * [@function] nw_ip_options_set_calculate_receive_time
@@ -4944,7 +5038,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_calculate_receive_time(NSObject options,
+    public static native void nw_ip_options_set_calculate_receive_time(@NotNull NSObject options,
             boolean calculate_receive_time);
 
     /**
@@ -4963,7 +5057,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_local_address_preference(NSObject options, int preference);
+    public static native void nw_ip_options_set_local_address_preference(@NotNull NSObject options, int preference);
 
     /**
      * [@function] nw_ip_create_metadata
@@ -4977,6 +5071,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_ip_create_metadata();
@@ -4996,7 +5091,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_ip(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_ip(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ip_metadata_set_ecn_flag
@@ -5014,7 +5109,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_metadata_set_ecn_flag(NSObject metadata, int ecn_flag);
+    public static native void nw_ip_metadata_set_ecn_flag(@NotNull NSObject metadata, int ecn_flag);
 
     /**
      * [@function] nw_ip_metadata_get_ecn_flag
@@ -5032,7 +5127,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_ip_metadata_get_ecn_flag(NSObject metadata);
+    public static native int nw_ip_metadata_get_ecn_flag(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ip_metadata_set_service_class
@@ -5052,7 +5147,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_metadata_set_service_class(NSObject metadata, int service_class);
+    public static native void nw_ip_metadata_set_service_class(@NotNull NSObject metadata, int service_class);
 
     /**
      * [@function] nw_ip_metadata_get_service_class
@@ -5071,7 +5166,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_ip_metadata_get_service_class(NSObject metadata);
+    public static native int nw_ip_metadata_get_service_class(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ip_metadata_get_receive_time
@@ -5093,7 +5188,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_ip_metadata_get_receive_time(NSObject metadata);
+    public static native long nw_ip_metadata_get_receive_time(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_listener_create_with_port
@@ -5116,11 +5211,12 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native NSObject nw_listener_create_with_port(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String port,
-            NSObject parameters);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String port,
+            @NotNull NSObject parameters);
 
     /**
      * [@function] nw_listener_create
@@ -5140,9 +5236,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_listener_create(NSObject parameters);
+    public static native NSObject nw_listener_create(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_listener_create_with_connection
@@ -5168,9 +5265,11 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_listener_create_with_connection(NSObject connection, NSObject parameters);
+    public static native NSObject nw_listener_create_with_connection(@NotNull NSObject connection,
+            @NotNull NSObject parameters);
 
     /**
      * [@function] nw_listener_set_queue
@@ -5188,7 +5287,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_queue(NSObject listener, NSObject queue);
+    public static native void nw_listener_set_queue(@NotNull NSObject listener, @NotNull NSObject queue);
 
     /**
      * [@function] nw_listener_set_state_changed_handler
@@ -5208,14 +5307,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_state_changed_handler(NSObject listener,
-            @ObjCBlock(name = "call_nw_listener_set_state_changed_handler") Block_nw_listener_set_state_changed_handler handler);
+    public static native void nw_listener_set_state_changed_handler(@NotNull NSObject listener,
+            @Nullable @ObjCBlock(name = "call_nw_listener_set_state_changed_handler") Block_nw_listener_set_state_changed_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_listener_set_state_changed_handler {
         @Generated
-        void call_nw_listener_set_state_changed_handler(int state, NSObject error);
+        void call_nw_listener_set_state_changed_handler(int state, @Nullable NSObject error);
     }
 
     /**
@@ -5235,14 +5334,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_new_connection_handler(NSObject listener,
-            @ObjCBlock(name = "call_nw_listener_set_new_connection_handler") Block_nw_listener_set_new_connection_handler handler);
+    public static native void nw_listener_set_new_connection_handler(@NotNull NSObject listener,
+            @Nullable @ObjCBlock(name = "call_nw_listener_set_new_connection_handler") Block_nw_listener_set_new_connection_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_listener_set_new_connection_handler {
         @Generated
-        void call_nw_listener_set_new_connection_handler(NSObject connection);
+        void call_nw_listener_set_new_connection_handler(@NotNull NSObject connection);
     }
 
     /**
@@ -5269,7 +5368,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_listener_get_new_connection_limit(NSObject listener);
+    public static native int nw_listener_get_new_connection_limit(@NotNull NSObject listener);
 
     /**
      * [@function] nw_listener_set_new_connection_limit
@@ -5294,7 +5393,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_new_connection_limit(NSObject listener, int new_connection_limit);
+    public static native void nw_listener_set_new_connection_limit(@NotNull NSObject listener,
+            int new_connection_limit);
 
     /**
      * [@function] nw_listener_set_advertise_descriptor
@@ -5312,7 +5412,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_advertise_descriptor(NSObject listener, NSObject advertise_descriptor);
+    public static native void nw_listener_set_advertise_descriptor(@NotNull NSObject listener,
+            @Nullable NSObject advertise_descriptor);
 
     /**
      * [@function] nw_listener_set_advertised_endpoint_changed_handler
@@ -5331,14 +5432,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_advertised_endpoint_changed_handler(NSObject listener,
-            @ObjCBlock(name = "call_nw_listener_set_advertised_endpoint_changed_handler") Block_nw_listener_set_advertised_endpoint_changed_handler handler);
+    public static native void nw_listener_set_advertised_endpoint_changed_handler(@NotNull NSObject listener,
+            @Nullable @ObjCBlock(name = "call_nw_listener_set_advertised_endpoint_changed_handler") Block_nw_listener_set_advertised_endpoint_changed_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_listener_set_advertised_endpoint_changed_handler {
         @Generated
-        void call_nw_listener_set_advertised_endpoint_changed_handler(NSObject advertised_endpoint, boolean added);
+        void call_nw_listener_set_advertised_endpoint_changed_handler(@NotNull NSObject advertised_endpoint,
+                boolean added);
     }
 
     /**
@@ -5358,7 +5460,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native char nw_listener_get_port(NSObject listener);
+    public static native char nw_listener_get_port(@NotNull NSObject listener);
 
     /**
      * [@function] nw_listener_start
@@ -5373,7 +5475,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_start(NSObject listener);
+    public static native void nw_listener_start(@NotNull NSObject listener);
 
     /**
      * [@function] nw_listener_cancel
@@ -5390,7 +5492,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_cancel(NSObject listener);
+    public static native void nw_listener_cancel(@NotNull NSObject listener);
 
     /**
      * [@function] nw_path_monitor_create
@@ -5406,6 +5508,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_path_monitor_create();
@@ -5427,6 +5530,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_path_monitor_create_with_type(int required_interface_type);
@@ -5448,8 +5552,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_monitor_set_cancel_handler(NSObject monitor,
-            @ObjCBlock(name = "call_nw_path_monitor_set_cancel_handler") Block_nw_path_monitor_set_cancel_handler cancel_handler);
+    public static native void nw_path_monitor_set_cancel_handler(@NotNull NSObject monitor,
+            @NotNull @ObjCBlock(name = "call_nw_path_monitor_set_cancel_handler") Block_nw_path_monitor_set_cancel_handler cancel_handler);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -5474,14 +5578,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_monitor_set_update_handler(NSObject monitor,
-            @ObjCBlock(name = "call_nw_path_monitor_set_update_handler") Block_nw_path_monitor_set_update_handler update_handler);
+    public static native void nw_path_monitor_set_update_handler(@NotNull NSObject monitor,
+            @NotNull @ObjCBlock(name = "call_nw_path_monitor_set_update_handler") Block_nw_path_monitor_set_update_handler update_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_path_monitor_set_update_handler {
         @Generated
-        void call_nw_path_monitor_set_update_handler(NSObject path);
+        void call_nw_path_monitor_set_update_handler(@NotNull NSObject path);
     }
 
     /**
@@ -5500,7 +5604,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_monitor_set_queue(NSObject monitor, NSObject queue);
+    public static native void nw_path_monitor_set_queue(@NotNull NSObject monitor, @NotNull NSObject queue);
 
     /**
      * [@function] nw_path_monitor_start
@@ -5514,7 +5618,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_monitor_start(NSObject monitor);
+    public static native void nw_path_monitor_start(@NotNull NSObject monitor);
 
     /**
      * [@function] nw_path_monitor_cancel
@@ -5528,7 +5632,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_monitor_cancel(NSObject monitor);
+    public static native void nw_path_monitor_cancel(@NotNull NSObject monitor);
 
     /**
      * [@function] nw_protocol_copy_tcp_definition
@@ -5542,6 +5646,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_protocol_copy_tcp_definition();
@@ -5558,6 +5663,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_tcp_create_options();
@@ -5579,7 +5685,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_no_delay(NSObject options, boolean no_delay);
+    public static native void nw_tcp_options_set_no_delay(@NotNull NSObject options, boolean no_delay);
 
     /**
      * [@function] nw_tcp_options_set_no_push
@@ -5598,7 +5704,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_no_push(NSObject options, boolean no_push);
+    public static native void nw_tcp_options_set_no_push(@NotNull NSObject options, boolean no_push);
 
     /**
      * [@function] nw_tcp_options_set_no_options
@@ -5616,7 +5722,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_no_options(NSObject options, boolean no_options);
+    public static native void nw_tcp_options_set_no_options(@NotNull NSObject options, boolean no_options);
 
     /**
      * [@function] nw_tcp_options_set_enable_keepalive
@@ -5633,7 +5739,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_enable_keepalive(NSObject options, boolean enable_keepalive);
+    public static native void nw_tcp_options_set_enable_keepalive(@NotNull NSObject options, boolean enable_keepalive);
 
     /**
      * [@function] nw_tcp_options_set_keepalive_count
@@ -5653,7 +5759,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_keepalive_count(NSObject options, int keepalive_count);
+    public static native void nw_tcp_options_set_keepalive_count(@NotNull NSObject options, int keepalive_count);
 
     /**
      * [@function] nw_tcp_options_set_keepalive_idle_time
@@ -5672,7 +5778,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_keepalive_idle_time(NSObject options, int keepalive_idle_time);
+    public static native void nw_tcp_options_set_keepalive_idle_time(@NotNull NSObject options,
+            int keepalive_idle_time);
 
     /**
      * [@function] nw_tcp_options_set_keepalive_interval
@@ -5691,7 +5798,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_keepalive_interval(NSObject options, int keepalive_interval);
+    public static native void nw_tcp_options_set_keepalive_interval(@NotNull NSObject options, int keepalive_interval);
 
     /**
      * [@function] nw_tcp_options_set_maximum_segment_size
@@ -5709,7 +5816,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_maximum_segment_size(NSObject options, int maximum_segment_size);
+    public static native void nw_tcp_options_set_maximum_segment_size(@NotNull NSObject options,
+            int maximum_segment_size);
 
     /**
      * [@function] nw_tcp_options_set_connection_timeout
@@ -5727,7 +5835,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_connection_timeout(NSObject options, int connection_timeout);
+    public static native void nw_tcp_options_set_connection_timeout(@NotNull NSObject options, int connection_timeout);
 
     /**
      * [@function] nw_tcp_options_set_persist_timeout
@@ -5745,7 +5853,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_persist_timeout(NSObject options, int persist_timeout);
+    public static native void nw_tcp_options_set_persist_timeout(@NotNull NSObject options, int persist_timeout);
 
     /**
      * [@function] nw_tcp_options_set_retransmit_connection_drop_time
@@ -5763,7 +5871,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_retransmit_connection_drop_time(NSObject options,
+    public static native void nw_tcp_options_set_retransmit_connection_drop_time(@NotNull NSObject options,
             int retransmit_connection_drop_time);
 
     /**
@@ -5783,7 +5891,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_retransmit_fin_drop(NSObject options, boolean retransmit_fin_drop);
+    public static native void nw_tcp_options_set_retransmit_fin_drop(@NotNull NSObject options,
+            boolean retransmit_fin_drop);
 
     /**
      * [@function] nw_tcp_options_set_disable_ack_stretching
@@ -5801,7 +5910,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_disable_ack_stretching(NSObject options,
+    public static native void nw_tcp_options_set_disable_ack_stretching(@NotNull NSObject options,
             boolean disable_ack_stretching);
 
     /**
@@ -5827,7 +5936,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_enable_fast_open(NSObject options, boolean enable_fast_open);
+    public static native void nw_tcp_options_set_enable_fast_open(@NotNull NSObject options, boolean enable_fast_open);
 
     /**
      * [@function] nw_tcp_options_set_disable_ecn
@@ -5845,7 +5954,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_disable_ecn(NSObject options, boolean disable_ecn);
+    public static native void nw_tcp_options_set_disable_ecn(@NotNull NSObject options, boolean disable_ecn);
 
     /**
      * [@function] nw_protocol_metadata_is_tcp
@@ -5862,7 +5971,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_tcp(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_tcp(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_tcp_get_available_receive_buffer
@@ -5876,7 +5985,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_tcp_get_available_receive_buffer(NSObject metadata);
+    public static native int nw_tcp_get_available_receive_buffer(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_tcp_get_available_send_buffer
@@ -5890,7 +5999,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_tcp_get_available_send_buffer(NSObject metadata);
+    public static native int nw_tcp_get_available_send_buffer(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_protocol_copy_tls_definition
@@ -5904,6 +6013,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_protocol_copy_tls_definition();
@@ -5920,6 +6030,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_tls_create_options();
@@ -5939,9 +6050,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_tls_copy_sec_protocol_options(NSObject options);
+    public static native NSObject nw_tls_copy_sec_protocol_options(@NotNull NSObject options);
 
     /**
      * [@function] nw_protocol_metadata_is_tls
@@ -5958,7 +6070,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_tls(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_tls(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_tls_copy_sec_protocol_metadata
@@ -5975,9 +6087,10 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_tls_copy_sec_protocol_metadata(NSObject metadata);
+    public static native NSObject nw_tls_copy_sec_protocol_metadata(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_protocol_copy_udp_definition
@@ -5991,6 +6104,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_protocol_copy_udp_definition();
@@ -6007,6 +6121,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_udp_create_options();
@@ -6028,7 +6143,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_udp_options_set_prefer_no_checksum(NSObject options, boolean prefer_no_checksum);
+    public static native void nw_udp_options_set_prefer_no_checksum(@NotNull NSObject options,
+            boolean prefer_no_checksum);
 
     /**
      * [@function] nw_udp_create_metadata
@@ -6042,6 +6158,7 @@ public final class Network {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_udp_create_metadata();
@@ -6061,7 +6178,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_udp(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_udp(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_protocol_copy_ws_definition
@@ -6075,6 +6192,7 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_protocol_copy_ws_definition();
@@ -6091,6 +6209,7 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_ws_create_options(int version);
@@ -6114,9 +6233,9 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_options_add_additional_header(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
+    public static native void nw_ws_options_add_additional_header(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
     /**
      * [@function] nw_ws_options_add_subprotocol
@@ -6134,8 +6253,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_options_add_subprotocol(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subprotocol);
+    public static native void nw_ws_options_add_subprotocol(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String subprotocol);
 
     /**
      * [@function] nw_ws_options_set_auto_reply_ping
@@ -6156,7 +6275,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_options_set_auto_reply_ping(NSObject options, boolean auto_reply_ping);
+    public static native void nw_ws_options_set_auto_reply_ping(@NotNull NSObject options, boolean auto_reply_ping);
 
     /**
      * [@function] nw_ws_options_set_skip_handshake
@@ -6174,7 +6293,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_options_set_skip_handshake(NSObject options, boolean skip_handshake);
+    public static native void nw_ws_options_set_skip_handshake(@NotNull NSObject options, boolean skip_handshake);
 
     /**
      * [@function] nw_ws_options_set_maximum_message_size
@@ -6193,7 +6312,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_options_set_maximum_message_size(NSObject options,
+    public static native void nw_ws_options_set_maximum_message_size(@NotNull NSObject options,
             @NUInt long maximum_message_size);
 
     /**
@@ -6211,7 +6330,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_ws(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_ws(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ws_create_metadata
@@ -6227,6 +6346,7 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_ws_create_metadata(int opcode);
@@ -6246,7 +6366,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_ws_metadata_get_opcode(NSObject metadata);
+    public static native int nw_ws_metadata_get_opcode(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ws_metadata_set_close_code
@@ -6264,7 +6384,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_metadata_set_close_code(NSObject metadata, int close_code);
+    public static native void nw_ws_metadata_set_close_code(@NotNull NSObject metadata, int close_code);
 
     /**
      * [@function] nw_ws_metadata_get_close_code
@@ -6283,7 +6403,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_ws_metadata_get_close_code(NSObject metadata);
+    public static native int nw_ws_metadata_get_close_code(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ws_metadata_set_pong_handler
@@ -6305,14 +6425,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_metadata_set_pong_handler(NSObject metadata, NSObject client_queue,
-            @ObjCBlock(name = "call_nw_ws_metadata_set_pong_handler") Block_nw_ws_metadata_set_pong_handler pong_handler);
+    public static native void nw_ws_metadata_set_pong_handler(@NotNull NSObject metadata,
+            @NotNull NSObject client_queue,
+            @NotNull @ObjCBlock(name = "call_nw_ws_metadata_set_pong_handler") Block_nw_ws_metadata_set_pong_handler pong_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_ws_metadata_set_pong_handler {
         @Generated
-        void call_nw_ws_metadata_set_pong_handler(NSObject error);
+        void call_nw_ws_metadata_set_pong_handler(@Nullable NSObject error);
     }
 
     /**
@@ -6333,15 +6454,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_ws_request_enumerate_subprotocols(NSObject request,
-            @ObjCBlock(name = "call_nw_ws_request_enumerate_subprotocols") Block_nw_ws_request_enumerate_subprotocols enumerator);
+    public static native boolean nw_ws_request_enumerate_subprotocols(@NotNull NSObject request,
+            @NotNull @ObjCBlock(name = "call_nw_ws_request_enumerate_subprotocols") Block_nw_ws_request_enumerate_subprotocols enumerator);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_ws_request_enumerate_subprotocols {
         @Generated
         boolean call_nw_ws_request_enumerate_subprotocols(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String subprotocol);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String subprotocol);
     }
 
     /**
@@ -6362,16 +6483,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_ws_request_enumerate_additional_headers(NSObject request,
-            @ObjCBlock(name = "call_nw_ws_request_enumerate_additional_headers") Block_nw_ws_request_enumerate_additional_headers enumerator);
+    public static native boolean nw_ws_request_enumerate_additional_headers(@NotNull NSObject request,
+            @NotNull @ObjCBlock(name = "call_nw_ws_request_enumerate_additional_headers") Block_nw_ws_request_enumerate_additional_headers enumerator);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_ws_request_enumerate_additional_headers {
         @Generated
         boolean call_nw_ws_request_enumerate_additional_headers(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String name,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String name,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value);
     }
 
     /**
@@ -6397,10 +6518,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_ws_response_create(int status,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String selected_subprotocol);
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String selected_subprotocol);
 
     /**
      * [@function] nw_ws_response_get_status
@@ -6418,7 +6540,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_ws_response_get_status(NSObject response);
+    public static native int nw_ws_response_get_status(@Nullable NSObject response);
 
     /**
      * [@function] nw_ws_response_get_selected_subprotocol
@@ -6433,10 +6555,11 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_ws_response_get_selected_subprotocol(NSObject response);
+    public static native String nw_ws_response_get_selected_subprotocol(@NotNull NSObject response);
 
     /**
      * [@function] nw_ws_response_add_additional_header
@@ -6457,9 +6580,9 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_response_add_additional_header(NSObject response,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
+    public static native void nw_ws_response_add_additional_header(@NotNull NSObject response,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String name,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
     /**
      * [@function] nw_ws_metadata_copy_server_response
@@ -6476,9 +6599,10 @@ public final class Network {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_ws_metadata_copy_server_response(NSObject metadata);
+    public static native NSObject nw_ws_metadata_copy_server_response(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_ws_response_enumerate_additional_headers
@@ -6498,16 +6622,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_ws_response_enumerate_additional_headers(NSObject response,
-            @ObjCBlock(name = "call_nw_ws_response_enumerate_additional_headers") Block_nw_ws_response_enumerate_additional_headers enumerator);
+    public static native boolean nw_ws_response_enumerate_additional_headers(@NotNull NSObject response,
+            @NotNull @ObjCBlock(name = "call_nw_ws_response_enumerate_additional_headers") Block_nw_ws_response_enumerate_additional_headers enumerator);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_ws_response_enumerate_additional_headers {
         @Generated
         boolean call_nw_ws_response_enumerate_additional_headers(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String name,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String name,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") @Mapped(CStringMapper.class) String value);
     }
 
     /**
@@ -6529,14 +6653,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ws_options_set_client_request_handler(NSObject options, NSObject client_queue,
-            @ObjCBlock(name = "call_nw_ws_options_set_client_request_handler") Block_nw_ws_options_set_client_request_handler handler);
+    public static native void nw_ws_options_set_client_request_handler(@NotNull NSObject options,
+            @NotNull NSObject client_queue,
+            @NotNull @ObjCBlock(name = "call_nw_ws_options_set_client_request_handler") Block_nw_ws_options_set_client_request_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_ws_options_set_client_request_handler {
+        @NotNull
         @Generated
-        NSObject call_nw_ws_options_set_client_request_handler(NSObject request);
+        NSObject call_nw_ws_options_set_client_request_handler(@NotNull NSObject request);
     }
 
     /**
@@ -6544,6 +6670,7 @@ public final class Network {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kNWErrorDomainPOSIX();
@@ -6553,6 +6680,7 @@ public final class Network {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kNWErrorDomainDNS();
@@ -6562,6 +6690,7 @@ public final class Network {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kNWErrorDomainTLS();
@@ -6569,6 +6698,7 @@ public final class Network {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSObject _nw_content_context_default_message();
@@ -6576,6 +6706,7 @@ public final class Network {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSObject _nw_content_context_final_send();
@@ -6583,6 +6714,7 @@ public final class Network {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSObject _nw_content_context_default_stream();
@@ -6615,9 +6747,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_resolver_config_create_https(NSObject url_endpoint);
+    public static native NSObject nw_resolver_config_create_https(@NotNull NSObject url_endpoint);
 
     /**
      * [@function] nw_resolver_config_create_tls
@@ -6634,9 +6767,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_resolver_config_create_tls(NSObject server_endpoint);
+    public static native NSObject nw_resolver_config_create_tls(@NotNull NSObject server_endpoint);
 
     /**
      * [@function] nw_resolver_config_add_name_server
@@ -6653,7 +6787,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_resolver_config_add_server_address(NSObject config, NSObject server_address);
+    public static native void nw_resolver_config_add_server_address(@NotNull NSObject config,
+            @NotNull NSObject server_address);
 
     /**
      * [@function] nw_privacy_context_create
@@ -6671,10 +6806,11 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_privacy_context_create(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String description);
 
     /**
      * [@function] nw_privacy_context_flush_cache
@@ -6690,7 +6826,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_privacy_context_flush_cache(NSObject privacy_context);
+    public static native void nw_privacy_context_flush_cache(@NotNull NSObject privacy_context);
 
     /**
      * [@function] nw_privacy_context_disable_logging
@@ -6705,7 +6841,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_privacy_context_disable_logging(NSObject privacy_context);
+    public static native void nw_privacy_context_disable_logging(@NotNull NSObject privacy_context);
 
     /**
      * [@function] nw_privacy_context_require_encrypted_name_resolution
@@ -6739,8 +6875,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_privacy_context_require_encrypted_name_resolution(NSObject privacy_context,
-            boolean require_encrypted_name_resolution, NSObject fallback_resolver_config);
+    public static native void nw_privacy_context_require_encrypted_name_resolution(@NotNull NSObject privacy_context,
+            boolean require_encrypted_name_resolution, @Nullable NSObject fallback_resolver_config);
 
     /**
      * [@function] nw_parameters_set_privacy_context
@@ -6762,7 +6898,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_privacy_context(NSObject parameters, NSObject privacy_context);
+    public static native void nw_parameters_set_privacy_context(@NotNull NSObject parameters,
+            @NotNull NSObject privacy_context);
 
     /**
      * [@function] nw_group_descriptor_create_multicast
@@ -6780,9 +6917,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_group_descriptor_create_multicast(NSObject multicast_group);
+    public static native NSObject nw_group_descriptor_create_multicast(@NotNull NSObject multicast_group);
 
     /**
      * [@function] nw_group_descriptor_add_endpoint
@@ -6802,7 +6940,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_group_descriptor_add_endpoint(NSObject descriptor, NSObject endpoint);
+    public static native boolean nw_group_descriptor_add_endpoint(@NotNull NSObject descriptor,
+            @NotNull NSObject endpoint);
 
     /**
      * [@function] nw_group_descriptor_enumerate_endpoints
@@ -6821,14 +6960,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_group_descriptor_enumerate_endpoints(NSObject descriptor,
-            @ObjCBlock(name = "call_nw_group_descriptor_enumerate_endpoints") Block_nw_group_descriptor_enumerate_endpoints enumerate_block);
+    public static native void nw_group_descriptor_enumerate_endpoints(@NotNull NSObject descriptor,
+            @NotNull @ObjCBlock(name = "call_nw_group_descriptor_enumerate_endpoints") Block_nw_group_descriptor_enumerate_endpoints enumerate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_group_descriptor_enumerate_endpoints {
         @Generated
-        boolean call_nw_group_descriptor_enumerate_endpoints(NSObject endpoint);
+        boolean call_nw_group_descriptor_enumerate_endpoints(@NotNull NSObject endpoint);
     }
 
     /**
@@ -6846,8 +6985,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_multicast_group_descriptor_set_specific_source(NSObject multicast_descriptor,
-            NSObject source);
+    public static native void nw_multicast_group_descriptor_set_specific_source(@NotNull NSObject multicast_descriptor,
+            @NotNull NSObject source);
 
     /**
      * [@function] nw_multicast_group_descriptor_set_disable_unicast_traffic
@@ -6864,8 +7003,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_multicast_group_descriptor_set_disable_unicast_traffic(NSObject multicast_descriptor,
-            boolean disable_unicast_traffic);
+    public static native void nw_multicast_group_descriptor_set_disable_unicast_traffic(
+            @NotNull NSObject multicast_descriptor, boolean disable_unicast_traffic);
 
     /**
      * [@function] nw_multicast_group_descriptor_get_disable_unicast_traffic
@@ -6882,7 +7021,7 @@ public final class Network {
     @Generated
     @CFunction
     public static native boolean nw_multicast_group_descriptor_get_disable_unicast_traffic(
-            NSObject multicast_descriptor);
+            @NotNull NSObject multicast_descriptor);
 
     /**
      * [@function] nw_connection_group_create
@@ -6907,9 +7046,11 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_create(NSObject group_descriptor, NSObject parameters);
+    public static native NSObject nw_connection_group_create(@NotNull NSObject group_descriptor,
+            @NotNull NSObject parameters);
 
     /**
      * [@function] nw_connection_group_copy_descriptor
@@ -6924,9 +7065,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_descriptor(NSObject group);
+    public static native NSObject nw_connection_group_copy_descriptor(@NotNull NSObject group);
 
     /**
      * [@function] nw_connection_group_copy_parameters
@@ -6941,9 +7083,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_parameters(NSObject group);
+    public static native NSObject nw_connection_group_copy_parameters(@NotNull NSObject group);
 
     /**
      * [@function] nw_connection_group_set_queue
@@ -6961,7 +7104,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_set_queue(NSObject group, NSObject queue);
+    public static native void nw_connection_group_set_queue(@NotNull NSObject group, @NotNull NSObject queue);
 
     /**
      * [@function] nw_connection_group_set_state_changed_handler
@@ -6981,14 +7124,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_set_state_changed_handler(NSObject group,
-            @ObjCBlock(name = "call_nw_connection_group_set_state_changed_handler") Block_nw_connection_group_set_state_changed_handler state_changed_handler);
+    public static native void nw_connection_group_set_state_changed_handler(@NotNull NSObject group,
+            @Nullable @ObjCBlock(name = "call_nw_connection_group_set_state_changed_handler") Block_nw_connection_group_set_state_changed_handler state_changed_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_group_set_state_changed_handler {
         @Generated
-        void call_nw_connection_group_set_state_changed_handler(int state, NSObject error);
+        void call_nw_connection_group_set_state_changed_handler(int state, @Nullable NSObject error);
     }
 
     /**
@@ -7023,15 +7166,16 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_set_receive_handler(NSObject group, int maximum_message_size,
+    public static native void nw_connection_group_set_receive_handler(@NotNull NSObject group, int maximum_message_size,
             boolean reject_oversized_messages,
-            @ObjCBlock(name = "call_nw_connection_group_set_receive_handler") Block_nw_connection_group_set_receive_handler receive_handler);
+            @Nullable @ObjCBlock(name = "call_nw_connection_group_set_receive_handler") Block_nw_connection_group_set_receive_handler receive_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_group_set_receive_handler {
         @Generated
-        void call_nw_connection_group_set_receive_handler(NSObject content, NSObject context, boolean is_complete);
+        void call_nw_connection_group_set_receive_handler(@Nullable NSObject content, @NotNull NSObject context,
+                boolean is_complete);
     }
 
     /**
@@ -7048,7 +7192,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_start(NSObject group);
+    public static native void nw_connection_group_start(@NotNull NSObject group);
 
     /**
      * [@function] nw_connection_group_cancel
@@ -7066,7 +7210,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_cancel(NSObject group);
+    public static native void nw_connection_group_cancel(@NotNull NSObject group);
 
     /**
      * [@function] nw_connection_group_copy_remote_endpoint_for_message
@@ -7085,10 +7229,11 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_remote_endpoint_for_message(NSObject group,
-            NSObject context);
+    public static native NSObject nw_connection_group_copy_remote_endpoint_for_message(@NotNull NSObject group,
+            @NotNull NSObject context);
 
     /**
      * [@function] nw_connection_group_copy_local_endpoint_for_message
@@ -7107,9 +7252,11 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_local_endpoint_for_message(NSObject group, NSObject context);
+    public static native NSObject nw_connection_group_copy_local_endpoint_for_message(@NotNull NSObject group,
+            @NotNull NSObject context);
 
     /**
      * [@function] nw_connection_group_copy_path_for_message
@@ -7128,9 +7275,11 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_path_for_message(NSObject group, NSObject context);
+    public static native NSObject nw_connection_group_copy_path_for_message(@NotNull NSObject group,
+            @NotNull NSObject context);
 
     /**
      * [@function] nw_connection_group_reply
@@ -7165,8 +7314,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_reply(NSObject group, NSObject inbound_message,
-            NSObject outbound_message, NSObject content);
+    public static native void nw_connection_group_reply(@NotNull NSObject group, @NotNull NSObject inbound_message,
+            @NotNull NSObject outbound_message, @Nullable NSObject content);
 
     /**
      * [@function] nw_connection_group_extract_connection_for_message
@@ -7195,9 +7344,11 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_extract_connection_for_message(NSObject group, NSObject context);
+    public static native NSObject nw_connection_group_extract_connection_for_message(@NotNull NSObject group,
+            @NotNull NSObject context);
 
     /**
      * [@function] nw_connection_group_send_message
@@ -7245,15 +7396,15 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_send_message(NSObject group, NSObject content, NSObject endpoint,
-            NSObject context,
-            @ObjCBlock(name = "call_nw_connection_group_send_message") Block_nw_connection_group_send_message completion);
+    public static native void nw_connection_group_send_message(@NotNull NSObject group, @Nullable NSObject content,
+            @Nullable NSObject endpoint, @NotNull NSObject context,
+            @NotNull @ObjCBlock(name = "call_nw_connection_group_send_message") Block_nw_connection_group_send_message completion);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_group_send_message {
         @Generated
-        void call_nw_connection_group_send_message(NSObject error);
+        void call_nw_connection_group_send_message(@Nullable NSObject error);
     }
 
     /**
@@ -7271,7 +7422,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_resolution_report_get_source(NSObject resolution_report);
+    public static native int nw_resolution_report_get_source(@NotNull NSObject resolution_report);
 
     /**
      * [@function] nw_resolution_report_get_milliseconds
@@ -7288,7 +7439,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_resolution_report_get_milliseconds(NSObject resolution_report);
+    public static native long nw_resolution_report_get_milliseconds(@NotNull NSObject resolution_report);
 
     /**
      * [@function] nw_resolution_report_get_endpoint_count
@@ -7305,7 +7456,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_resolution_report_get_endpoint_count(NSObject resolution_report);
+    public static native int nw_resolution_report_get_endpoint_count(@NotNull NSObject resolution_report);
 
     /**
      * [@function] nw_resolution_report_copy_successful_endpoint
@@ -7320,9 +7471,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_resolution_report_copy_successful_endpoint(NSObject resolution_report);
+    public static native NSObject nw_resolution_report_copy_successful_endpoint(@NotNull NSObject resolution_report);
 
     /**
      * [@function] nw_resolution_report_copy_preferred_endpoint
@@ -7337,9 +7489,10 @@ public final class Network {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_resolution_report_copy_preferred_endpoint(NSObject resolution_report);
+    public static native NSObject nw_resolution_report_copy_preferred_endpoint(@NotNull NSObject resolution_report);
 
     /**
      * [@function] nw_resolution_report_get_protocol
@@ -7356,7 +7509,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_resolution_report_get_protocol(NSObject resolution_report);
+    public static native int nw_resolution_report_get_protocol(@NotNull NSObject resolution_report);
 
     /**
      * [@function] nw_establishment_report_enumerate_resolution_reports
@@ -7382,14 +7535,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_establishment_report_enumerate_resolution_reports(NSObject report,
-            @ObjCBlock(name = "call_nw_establishment_report_enumerate_resolution_reports") Block_nw_establishment_report_enumerate_resolution_reports enumerate_block);
+    public static native void nw_establishment_report_enumerate_resolution_reports(@NotNull NSObject report,
+            @NotNull @ObjCBlock(name = "call_nw_establishment_report_enumerate_resolution_reports") Block_nw_establishment_report_enumerate_resolution_reports enumerate_block);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_establishment_report_enumerate_resolution_reports {
         @Generated
-        boolean call_nw_establishment_report_enumerate_resolution_reports(NSObject resolution_report);
+        boolean call_nw_establishment_report_enumerate_resolution_reports(@NotNull NSObject resolution_report);
     }
 
     /**
@@ -7412,7 +7565,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_ip_options_set_disable_multicast_loopback(NSObject options,
+    public static native void nw_ip_options_set_disable_multicast_loopback(@NotNull NSObject options,
             boolean disable_multicast_loopback);
 
     /**
@@ -7431,11 +7584,12 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_path_monitor_prohibit_interface_type(NSObject monitor, int interface_type);
+    public static native void nw_path_monitor_prohibit_interface_type(@NotNull NSObject monitor, int interface_type);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSObject _nw_privacy_context_default_context();
@@ -7459,7 +7613,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_path_get_unsatisfied_reason(NSObject path);
+    public static native int nw_path_get_unsatisfied_reason(@NotNull NSObject path);
 
     /**
      * [@function] nw_parameters_create_quic
@@ -7479,16 +7633,17 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_parameters_create_quic(
-            @ObjCBlock(name = "call_nw_parameters_create_quic") Block_nw_parameters_create_quic configure_quic);
+            @NotNull @ObjCBlock(name = "call_nw_parameters_create_quic") Block_nw_parameters_create_quic configure_quic);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_parameters_create_quic {
         @Generated
-        void call_nw_parameters_create_quic(NSObject options);
+        void call_nw_parameters_create_quic(@NotNull NSObject options);
     }
 
     /**
@@ -7509,7 +7664,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_attribution(NSObject parameters, byte attribution);
+    public static native void nw_parameters_set_attribution(@NotNull NSObject parameters, byte attribution);
 
     /**
      * [@function] nw_parameters_get_attribution
@@ -7526,7 +7681,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native byte nw_parameters_get_attribution(NSObject parameters);
+    public static native byte nw_parameters_get_attribution(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_group_descriptor_create_multiplex
@@ -7545,9 +7700,10 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_group_descriptor_create_multiplex(NSObject remote_endpoint);
+    public static native NSObject nw_group_descriptor_create_multiplex(@NotNull NSObject remote_endpoint);
 
     /**
      * [@function] nw_connection_group_copy_protocol_metadata_for_message
@@ -7565,10 +7721,11 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_protocol_metadata_for_message(NSObject group,
-            NSObject context, NSObject definition);
+    public static native NSObject nw_connection_group_copy_protocol_metadata_for_message(@NotNull NSObject group,
+            @NotNull NSObject context, @NotNull NSObject definition);
 
     /**
      * [@function] nw_connection_group_extract_connection
@@ -7596,10 +7753,11 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_extract_connection(NSObject group, NSObject endpoint,
-            NSObject protocol_options);
+    public static native NSObject nw_connection_group_extract_connection(@NotNull NSObject group,
+            @Nullable NSObject endpoint, @Nullable NSObject protocol_options);
 
     /**
      * [@function] nw_connection_group_reinsert_extracted_connection
@@ -7623,7 +7781,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_connection_group_reinsert_extracted_connection(NSObject group, NSObject connection);
+    public static native boolean nw_connection_group_reinsert_extracted_connection(@NotNull NSObject group,
+            @NotNull NSObject connection);
 
     /**
      * [@function] nw_connection_group_set_new_connection_handler
@@ -7643,14 +7802,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_connection_group_set_new_connection_handler(NSObject group,
-            @ObjCBlock(name = "call_nw_connection_group_set_new_connection_handler") Block_nw_connection_group_set_new_connection_handler new_connection_handler);
+    public static native void nw_connection_group_set_new_connection_handler(@NotNull NSObject group,
+            @Nullable @ObjCBlock(name = "call_nw_connection_group_set_new_connection_handler") Block_nw_connection_group_set_new_connection_handler new_connection_handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_connection_group_set_new_connection_handler {
         @Generated
-        void call_nw_connection_group_set_new_connection_handler(NSObject connection);
+        void call_nw_connection_group_set_new_connection_handler(@NotNull NSObject connection);
     }
 
     /**
@@ -7670,9 +7829,11 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_connection_group_copy_protocol_metadata(NSObject group, NSObject definition);
+    public static native NSObject nw_connection_group_copy_protocol_metadata(@NotNull NSObject group,
+            @NotNull NSObject definition);
 
     /**
      * [@function] nw_data_transfer_report_get_path_radio_type
@@ -7697,7 +7858,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_data_transfer_report_get_path_radio_type(NSObject report, int path_index);
+    public static native int nw_data_transfer_report_get_path_radio_type(@NotNull NSObject report, int path_index);
 
     /**
      * [@function] nw_listener_set_new_connection_group_handler
@@ -7720,14 +7881,14 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_listener_set_new_connection_group_handler(NSObject listener,
-            @ObjCBlock(name = "call_nw_listener_set_new_connection_group_handler") Block_nw_listener_set_new_connection_group_handler handler);
+    public static native void nw_listener_set_new_connection_group_handler(@NotNull NSObject listener,
+            @Nullable @ObjCBlock(name = "call_nw_listener_set_new_connection_group_handler") Block_nw_listener_set_new_connection_group_handler handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_nw_listener_set_new_connection_group_handler {
         @Generated
-        void call_nw_listener_set_new_connection_group_handler(NSObject connection_group);
+        void call_nw_listener_set_new_connection_group_handler(@NotNull NSObject connection_group);
     }
 
     /**
@@ -7742,6 +7903,7 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_protocol_copy_quic_definition();
@@ -7758,6 +7920,7 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_quic_create_options();
@@ -7774,7 +7937,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_options_is_quic(NSObject options);
+    public static native boolean nw_protocol_options_is_quic(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_add_tls_application_protocol
@@ -7788,8 +7951,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_add_tls_application_protocol(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_protocol);
+    public static native void nw_quic_add_tls_application_protocol(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_protocol);
 
     /**
      * [@function] nw_quic_copy_sec_protocol_options
@@ -7806,9 +7969,10 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_quic_copy_sec_protocol_options(NSObject options);
+    public static native NSObject nw_quic_copy_sec_protocol_options(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_get_stream_is_unidirectional
@@ -7825,7 +7989,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_quic_get_stream_is_unidirectional(NSObject options);
+    public static native boolean nw_quic_get_stream_is_unidirectional(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_stream_is_unidirectional
@@ -7842,7 +8006,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_stream_is_unidirectional(NSObject options, boolean is_unidirectional);
+    public static native void nw_quic_set_stream_is_unidirectional(@NotNull NSObject options,
+            boolean is_unidirectional);
 
     /**
      * [@function] nw_quic_get_initial_max_data
@@ -7861,7 +8026,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_initial_max_data(NSObject options);
+    public static native long nw_quic_get_initial_max_data(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_initial_max_data
@@ -7883,7 +8048,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_initial_max_data(NSObject options, long initial_max_data);
+    public static native void nw_quic_set_initial_max_data(@NotNull NSObject options, long initial_max_data);
 
     /**
      * [@function] nw_quic_get_max_udp_payload_size
@@ -7901,7 +8066,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native char nw_quic_get_max_udp_payload_size(NSObject options);
+    public static native char nw_quic_get_max_udp_payload_size(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_max_udp_payload_size
@@ -7919,7 +8084,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_max_udp_payload_size(NSObject options, char max_udp_payload_size);
+    public static native void nw_quic_set_max_udp_payload_size(@NotNull NSObject options, char max_udp_payload_size);
 
     /**
      * [@function] nw_quic_get_idle_timeout
@@ -7937,7 +8102,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native int nw_quic_get_idle_timeout(NSObject options);
+    public static native int nw_quic_get_idle_timeout(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_idle_timeout
@@ -7955,7 +8120,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_idle_timeout(NSObject options, int idle_timeout);
+    public static native void nw_quic_set_idle_timeout(@NotNull NSObject options, int idle_timeout);
 
     /**
      * [@function] nw_quic_get_initial_max_streams_bidirectional
@@ -7973,7 +8138,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_initial_max_streams_bidirectional(NSObject options);
+    public static native long nw_quic_get_initial_max_streams_bidirectional(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_initial_max_streams_bidirectional
@@ -7991,7 +8156,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_initial_max_streams_bidirectional(NSObject options,
+    public static native void nw_quic_set_initial_max_streams_bidirectional(@NotNull NSObject options,
             long initial_max_streams_bidirectional);
 
     /**
@@ -8010,7 +8175,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_initial_max_streams_unidirectional(NSObject options);
+    public static native long nw_quic_get_initial_max_streams_unidirectional(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_initial_max_streams_unidirectional
@@ -8028,7 +8193,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_initial_max_streams_unidirectional(NSObject options,
+    public static native void nw_quic_set_initial_max_streams_unidirectional(@NotNull NSObject options,
             long initial_max_streams_unidirectional);
 
     /**
@@ -8047,7 +8212,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_initial_max_stream_data_bidirectional_local(NSObject options);
+    public static native long nw_quic_get_initial_max_stream_data_bidirectional_local(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_initial_max_stream_data_bidirectional_local
@@ -8067,7 +8232,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_initial_max_stream_data_bidirectional_local(NSObject options,
+    public static native void nw_quic_set_initial_max_stream_data_bidirectional_local(@NotNull NSObject options,
             long initial_max_stream_data_bidirectional_local);
 
     /**
@@ -8086,7 +8251,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_initial_max_stream_data_bidirectional_remote(NSObject options);
+    public static native long nw_quic_get_initial_max_stream_data_bidirectional_remote(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_initial_max_stream_data_bidirectional_remote
@@ -8107,7 +8272,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_initial_max_stream_data_bidirectional_remote(NSObject options,
+    public static native void nw_quic_set_initial_max_stream_data_bidirectional_remote(@NotNull NSObject options,
             long initial_max_stream_data_bidirectional_remote);
 
     /**
@@ -8126,7 +8291,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_initial_max_stream_data_unidirectional(NSObject options);
+    public static native long nw_quic_get_initial_max_stream_data_unidirectional(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_initial_max_stream_data_unidirectional
@@ -8145,7 +8310,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_initial_max_stream_data_unidirectional(NSObject options,
+    public static native void nw_quic_set_initial_max_stream_data_unidirectional(@NotNull NSObject options,
             long initial_max_stream_data_unidirectional);
 
     /**
@@ -8163,7 +8328,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_protocol_metadata_is_quic(NSObject metadata);
+    public static native boolean nw_protocol_metadata_is_quic(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_copy_sec_protocol_metadata
@@ -8183,9 +8348,10 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_quic_copy_sec_protocol_metadata(NSObject metadata);
+    public static native NSObject nw_quic_copy_sec_protocol_metadata(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_get_stream_id
@@ -8202,7 +8368,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_stream_id(NSObject metadata);
+    public static native long nw_quic_get_stream_id(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_get_stream_application_error
@@ -8221,7 +8387,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_stream_application_error(NSObject metadata);
+    public static native long nw_quic_get_stream_application_error(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_set_stream_application_error
@@ -8239,7 +8405,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_stream_application_error(NSObject metadata, long application_error);
+    public static native void nw_quic_set_stream_application_error(@NotNull NSObject metadata, long application_error);
 
     /**
      * [@function] nw_quic_get_local_max_streams_bidirectional
@@ -8256,7 +8422,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_local_max_streams_bidirectional(NSObject metadata);
+    public static native long nw_quic_get_local_max_streams_bidirectional(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_set_local_max_streams_bidirectional
@@ -8273,7 +8439,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_local_max_streams_bidirectional(NSObject metadata,
+    public static native void nw_quic_set_local_max_streams_bidirectional(@NotNull NSObject metadata,
             long max_streams_bidirectional);
 
     /**
@@ -8291,7 +8457,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_local_max_streams_unidirectional(NSObject metadata);
+    public static native long nw_quic_get_local_max_streams_unidirectional(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_set_local_max_streams_unidirectional
@@ -8308,7 +8474,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_local_max_streams_unidirectional(NSObject metadata,
+    public static native void nw_quic_set_local_max_streams_unidirectional(@NotNull NSObject metadata,
             long max_streams_unidirectional);
 
     /**
@@ -8334,7 +8500,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_remote_max_streams_bidirectional(NSObject metadata);
+    public static native long nw_quic_get_remote_max_streams_bidirectional(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_get_remote_max_streams_unidirectional
@@ -8359,7 +8525,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_remote_max_streams_unidirectional(NSObject metadata);
+    public static native long nw_quic_get_remote_max_streams_unidirectional(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_get_application_error
@@ -8378,7 +8544,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_application_error(NSObject metadata);
+    public static native long nw_quic_get_application_error(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_get_application_error_reason
@@ -8395,10 +8561,11 @@ public final class Network {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_quic_get_application_error_reason(NSObject metadata);
+    public static native String nw_quic_get_application_error_reason(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_set_application_error
@@ -8419,8 +8586,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_application_error(NSObject metadata, long application_error,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String reason);
+    public static native void nw_quic_set_application_error(@NotNull NSObject metadata, long application_error,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String reason);
 
     /**
      * [@function] nw_quic_get_keepalive_interval
@@ -8438,7 +8605,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native char nw_quic_get_keepalive_interval(NSObject metadata);
+    public static native char nw_quic_get_keepalive_interval(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_quic_set_keepalive_interval
@@ -8470,7 +8637,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_keepalive_interval(NSObject metadata, char keepalive_interval);
+    public static native void nw_quic_set_keepalive_interval(@NotNull NSObject metadata, char keepalive_interval);
 
     /**
      * [@function] nw_quic_get_remote_idle_timeout
@@ -8488,7 +8655,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native long nw_quic_get_remote_idle_timeout(NSObject metadata);
+    public static native long nw_quic_get_remote_idle_timeout(@NotNull NSObject metadata);
 
     /**
      * [@function] nw_tcp_options_set_multipath_force_version
@@ -8506,7 +8673,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_tcp_options_set_multipath_force_version(NSObject options, int multipath_force_version);
+    public static native void nw_tcp_options_set_multipath_force_version(@NotNull NSObject options,
+            int multipath_force_version);
 
     /**
      * [@function] nw_advertise_descriptor_create_application_service
@@ -8521,10 +8689,11 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_advertise_descriptor_create_application_service(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_service_name);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_service_name);
 
     /**
      * [@function] nw_advertise_descriptor_get_application_service_name
@@ -8539,10 +8708,12 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_advertise_descriptor_get_application_service_name(NSObject advertise_descriptor);
+    public static native String nw_advertise_descriptor_get_application_service_name(
+            @NotNull NSObject advertise_descriptor);
 
     /**
      * [@function] nw_endpoint_copy_txt_record
@@ -8560,9 +8731,10 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject nw_endpoint_copy_txt_record(NSObject endpoint);
+    public static native NSObject nw_endpoint_copy_txt_record(@NotNull NSObject endpoint);
 
     /**
      * [@function] nw_endpoint_get_signature
@@ -8581,10 +8753,12 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_endpoint_get_signature(NSObject endpoint, NUIntPtr out_signature_length);
+    public static native String nw_endpoint_get_signature(@NotNull NSObject endpoint,
+            @NotNull NUIntPtr out_signature_length);
 
     /**
      * [@function] nw_parameters_create_application_service
@@ -8598,6 +8772,7 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_parameters_create_application_service();
@@ -8636,7 +8811,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_parameters_set_requires_dnssec_validation(NSObject parameters,
+    public static native void nw_parameters_set_requires_dnssec_validation(@NotNull NSObject parameters,
             boolean requires_dnssec_validation);
 
     /**
@@ -8654,7 +8829,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_parameters_requires_dnssec_validation(NSObject parameters);
+    public static native boolean nw_parameters_requires_dnssec_validation(@NotNull NSObject parameters);
 
     /**
      * [@function] nw_browse_descriptor_create_application_service
@@ -8669,10 +8844,11 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSObject nw_browse_descriptor_create_application_service(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_service_name);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_service_name);
 
     /**
      * [@function] nw_browse_descriptor_get_application_service_name
@@ -8687,10 +8863,11 @@ public final class Network {
      * 
      *         API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String nw_browse_descriptor_get_application_service_name(NSObject descriptor);
+    public static native String nw_browse_descriptor_get_application_service_name(@NotNull NSObject descriptor);
 
     /**
      * [@function] nw_framer_options_set_object_value
@@ -8711,9 +8888,9 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_framer_options_set_object_value(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
-            @Mapped(ObjCObjectMapper.class) Object value);
+    public static native void nw_framer_options_set_object_value(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@function] nw_framer_options_copy_object_value
@@ -8732,11 +8909,12 @@ public final class Network {
      * 
      *         API-Since: 15.4
      */
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object nw_framer_options_copy_object_value(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
+    public static native Object nw_framer_options_copy_object_value(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String key);
 
     /**
      * [@function] nw_framer_copy_options
@@ -8752,9 +8930,10 @@ public final class Network {
      * 
      *         API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native NSObject nw_framer_copy_options(NSObject framer);
+    public static native NSObject nw_framer_copy_options(@NotNull NSObject framer);
 
     /**
      * [@function] nw_quic_get_stream_is_datagram
@@ -8771,7 +8950,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native boolean nw_quic_get_stream_is_datagram(NSObject options);
+    public static native boolean nw_quic_get_stream_is_datagram(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_stream_is_datagram
@@ -8789,7 +8968,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_stream_is_datagram(NSObject options, boolean is_datagram);
+    public static native void nw_quic_set_stream_is_datagram(@NotNull NSObject options, boolean is_datagram);
 
     /**
      * [@function] nw_quic_get_max_datagram_frame_size
@@ -8809,7 +8988,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native char nw_quic_get_max_datagram_frame_size(NSObject options);
+    public static native char nw_quic_get_max_datagram_frame_size(@NotNull NSObject options);
 
     /**
      * [@function] nw_quic_set_max_datagram_frame_size
@@ -8829,7 +9008,8 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native void nw_quic_set_max_datagram_frame_size(NSObject options, char max_datagram_frame_size);
+    public static native void nw_quic_set_max_datagram_frame_size(@NotNull NSObject options,
+            char max_datagram_frame_size);
 
     /**
      * [@function] nw_quic_stream_get_type
@@ -8847,7 +9027,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native byte nw_quic_get_stream_type(NSObject stream_metadata);
+    public static native byte nw_quic_get_stream_type(@NotNull NSObject stream_metadata);
 
     /**
      * [@function] nw_quic_get_stream_usable_datagram_frame_size
@@ -8864,7 +9044,7 @@ public final class Network {
      */
     @Generated
     @CFunction
-    public static native char nw_quic_get_stream_usable_datagram_frame_size(NSObject metadata);
+    public static native char nw_quic_get_stream_usable_datagram_frame_size(@NotNull NSObject metadata);
 
     @Generated public static final double NW_NOT_i386_MAC = 1.0;
     @Generated public static final double NW_FRAMER_CREATE_FLAGS_DEFAULT = 0.0;

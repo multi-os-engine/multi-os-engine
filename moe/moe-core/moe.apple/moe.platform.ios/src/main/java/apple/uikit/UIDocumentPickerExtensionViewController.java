@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -82,29 +84,32 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +141,10 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,7 +182,7 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
      */
     @Generated
     @Selector("dismissGrantingAccessToURL:")
-    public native void dismissGrantingAccessToURL(NSURL url);
+    public native void dismissGrantingAccessToURL(@Nullable NSURL url);
 
     /**
      * only valid after prepareForDocumentSelectionInMode: has been called
@@ -186,6 +192,7 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
     @NUInt
     public native long documentPickerMode();
 
+    @Nullable
     @Generated
     @Selector("documentStorageURL")
     public native NSURL documentStorageURL();
@@ -196,16 +203,17 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentPickerExtensionViewController initWithCoder(NSCoder coder);
+    public native UIDocumentPickerExtensionViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIDocumentPickerExtensionViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native UIDocumentPickerExtensionViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Contains the URL to duplicate if in mode UIDocumentPickerModeExportToService. nil otherwise.
      */
+    @Nullable
     @Generated
     @Selector("originalURL")
     public native NSURL originalURL();
@@ -220,6 +228,7 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
      * in the non-UI component. Otherwise, they will return the values corresponding to the default implementation of a
      * non-UI picker.
      */
+    @NotNull
     @Generated
     @Selector("providerIdentifier")
     public native String providerIdentifier();
@@ -228,6 +237,7 @@ public class UIDocumentPickerExtensionViewController extends UIViewController {
      * Contains the list of valid types if in mode UIDocumentPickerModeImport or UIDocumentPickerModeOpen. nil
      * otherwise.
      */
+    @Nullable
     @Generated
     @Selector("validTypes")
     public native NSArray<String> validTypes();

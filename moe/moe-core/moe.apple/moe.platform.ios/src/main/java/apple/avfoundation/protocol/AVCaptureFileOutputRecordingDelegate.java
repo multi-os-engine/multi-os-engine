@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVCaptureFileOutputRecordingDelegate
@@ -68,8 +70,9 @@ public interface AVCaptureFileOutputRecordingDelegate {
      */
     @Generated
     @Selector("captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:")
-    void captureOutputDidFinishRecordingToOutputFileAtURLFromConnectionsError(AVCaptureFileOutput output,
-            NSURL outputFileURL, NSArray<? extends AVCaptureConnection> connections, NSError error);
+    void captureOutputDidFinishRecordingToOutputFileAtURLFromConnectionsError(@NotNull AVCaptureFileOutput output,
+            @NotNull NSURL outputFileURL, @NotNull NSArray<? extends AVCaptureConnection> connections,
+            @Nullable NSError error);
 
     /**
      * captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:
@@ -96,8 +99,8 @@ public interface AVCaptureFileOutputRecordingDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:")
-    default void captureOutputDidStartRecordingToOutputFileAtURLFromConnections(AVCaptureFileOutput output,
-            NSURL fileURL, NSArray<? extends AVCaptureConnection> connections) {
+    default void captureOutputDidStartRecordingToOutputFileAtURLFromConnections(@NotNull AVCaptureFileOutput output,
+            @NotNull NSURL fileURL, @NotNull NSArray<? extends AVCaptureConnection> connections) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

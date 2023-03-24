@@ -9,6 +9,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVAudioMixing
@@ -74,9 +76,10 @@ public interface AVAudioMixing extends AVAudioStereoMixing, AVAudio3DMixing {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("destinationForMixer:bus:")
-    AVAudioMixingDestination destinationForMixerBus(AVAudioNode mixer, @NUInt long bus);
+    AVAudioMixingDestination destinationForMixerBus(@NotNull AVAudioNode mixer, @NUInt long bus);
 
     /**
      * [@property] volume

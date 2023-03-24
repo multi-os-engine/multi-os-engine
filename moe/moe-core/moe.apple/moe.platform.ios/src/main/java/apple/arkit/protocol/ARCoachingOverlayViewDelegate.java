@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -25,7 +26,7 @@ public interface ARCoachingOverlayViewDelegate {
     @Generated
     @IsOptional
     @Selector("coachingOverlayViewDidDeactivate:")
-    default void coachingOverlayViewDidDeactivate(ARCoachingOverlayView coachingOverlayView) {
+    default void coachingOverlayViewDidDeactivate(@NotNull ARCoachingOverlayView coachingOverlayView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +44,7 @@ public interface ARCoachingOverlayViewDelegate {
     @Generated
     @IsOptional
     @Selector("coachingOverlayViewDidRequestSessionReset:")
-    default void coachingOverlayViewDidRequestSessionReset(ARCoachingOverlayView coachingOverlayView) {
+    default void coachingOverlayViewDidRequestSessionReset(@NotNull ARCoachingOverlayView coachingOverlayView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +59,7 @@ public interface ARCoachingOverlayViewDelegate {
     @Generated
     @IsOptional
     @Selector("coachingOverlayViewWillActivate:")
-    default void coachingOverlayViewWillActivate(ARCoachingOverlayView coachingOverlayView) {
+    default void coachingOverlayViewWillActivate(@NotNull ARCoachingOverlayView coachingOverlayView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to the \c GCDevicePhysicalInputStateDiff protocol
@@ -35,7 +37,7 @@ public interface GCDevicePhysicalInputStateDiff {
     @Generated
     @Selector("changeForElement:")
     @NInt
-    long changeForElement(@Mapped(ObjCObjectMapper.class) GCPhysicalInputElement element);
+    long changeForElement(@NotNull @Mapped(ObjCObjectMapper.class) GCPhysicalInputElement element);
 
     /**
      * Gets an enumerator that iterates over the elements that have changed, compared
@@ -45,6 +47,7 @@ public interface GCDevicePhysicalInputStateDiff {
      * typically because the input state queue filled up and older input state
      * snapshots were dropped.
      */
+    @Nullable
     @Generated
     @Selector("changedElements")
     NSEnumerator<Object> changedElements();

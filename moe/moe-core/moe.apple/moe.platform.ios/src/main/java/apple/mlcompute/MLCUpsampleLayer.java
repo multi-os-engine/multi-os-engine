@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCUpsampleLayer
@@ -73,22 +75,25 @@ public class MLCUpsampleLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class MLCUpsampleLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create an upsample layer
@@ -139,7 +145,7 @@ public class MLCUpsampleLayer extends MLCLayer {
      */
     @Generated
     @Selector("layerWithShape:")
-    public static native MLCUpsampleLayer layerWithShape(NSArray<? extends NSNumber> shape);
+    public static native MLCUpsampleLayer layerWithShape(@NotNull NSArray<? extends NSNumber> shape);
 
     /**
      * Create an upsample layer
@@ -151,8 +157,8 @@ public class MLCUpsampleLayer extends MLCLayer {
      */
     @Generated
     @Selector("layerWithShape:sampleMode:alignsCorners:")
-    public static native MLCUpsampleLayer layerWithShapeSampleModeAlignsCorners(NSArray<? extends NSNumber> shape,
-            int sampleMode, boolean alignsCorners);
+    public static native MLCUpsampleLayer layerWithShapeSampleModeAlignsCorners(
+            @NotNull NSArray<? extends NSNumber> shape, int sampleMode, boolean alignsCorners);
 
     @Generated
     @Owned
@@ -186,6 +192,7 @@ public class MLCUpsampleLayer extends MLCLayer {
      * A NSArray<NSNumber *> representing just the width if number of entries in shape array is 1 or
      * the height followed by width of result tensor if the number of entries in shape array is 2.
      */
+    @NotNull
     @Generated
     @Selector("shape")
     public native NSArray<? extends NSNumber> shape();
@@ -196,7 +203,7 @@ public class MLCUpsampleLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

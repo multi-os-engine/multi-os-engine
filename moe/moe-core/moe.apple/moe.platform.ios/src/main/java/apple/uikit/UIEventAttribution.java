@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.5
@@ -58,31 +60,35 @@ public class UIEventAttribution extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -97,6 +103,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * 
      * This field corresponds to `attributed_on_site` in the subsequent attribution report.
      */
+    @NotNull
     @Generated
     @Selector("destinationURL")
     public native NSURL destinationURL();
@@ -127,7 +134,8 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     @Generated
     @Selector("initWithSourceIdentifier:destinationURL:sourceDescription:purchaser:")
     public native UIEventAttribution initWithSourceIdentifierDestinationURLSourceDescriptionPurchaser(
-            byte sourceIdentifier, NSURL destinationURL, String sourceDescription, String purchaser);
+            byte sourceIdentifier, @NotNull NSURL destinationURL, @NotNull String sourceDescription,
+            @NotNull String purchaser);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +154,10 @@ public class UIEventAttribution extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +170,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * 
      * The system may truncate this field if it is too long.
      */
+    @NotNull
     @Generated
     @Selector("purchaser")
     public native String purchaser();
@@ -172,6 +182,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * 
      * This field corresponds to `source_site` in the subsequent attribution report.
      */
+    @Nullable
     @Generated
     @Selector("reportEndpoint")
     public native NSURL reportEndpoint();
@@ -194,6 +205,7 @@ public class UIEventAttribution extends NSObject implements NSCopying {
      * 
      * The system may truncate this field if it is too long.
      */
+    @NotNull
     @Generated
     @Selector("sourceDescription")
     public native String sourceDescription();

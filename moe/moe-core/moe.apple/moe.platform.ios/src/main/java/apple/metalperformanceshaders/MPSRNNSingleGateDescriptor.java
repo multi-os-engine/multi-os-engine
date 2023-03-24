@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSRNNSingleGateDescriptor
@@ -91,22 +93,25 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,6 +125,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("createRNNSingleGateDescriptorWithInputFeatureChannels:outputFeatureChannels:")
     public static native MPSRNNSingleGateDescriptor createRNNSingleGateDescriptorWithInputFeatureChannelsOutputFeatureChannels(
@@ -148,6 +154,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * Contains weights 'W_ij', bias 'b_i' and neuron 'gi' from the simple RNN layer formula.
      * If nil then assumed zero weights, bias and no neuron (identity mapping). Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("inputWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -170,9 +177,10 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,6 +193,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      * Contains weights 'U_ij' from the simple RNN layer formula.
      * If nil then assumed zero weights. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("recurrentWeights")
     @MappedReturn(ObjCObjectMapper.class)
@@ -206,7 +215,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setInputWeights:")
-    public native void setInputWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setInputWeights(@Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     /**
      * [@property] recurrentWeights
@@ -216,7 +225,7 @@ public class MPSRNNSingleGateDescriptor extends MPSRNNDescriptor {
      */
     @Generated
     @Selector("setRecurrentWeights:")
-    public native void setRecurrentWeights(@Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
+    public native void setRecurrentWeights(@Nullable @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource value);
 
     @Generated
     @Selector("setVersion:")

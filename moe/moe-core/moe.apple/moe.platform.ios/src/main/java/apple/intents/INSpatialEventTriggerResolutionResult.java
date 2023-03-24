@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -55,22 +57,25 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -79,10 +84,11 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
      * This resolution result is to ask Siri to confirm if this is the spatialEventTrigger with which the user wants to
      * continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithSpatialEventTriggerToConfirm:")
     public static native INSpatialEventTriggerResolutionResult confirmationRequiredWithSpatialEventTriggerToConfirm(
-            INSpatialEventTrigger spatialEventTriggerToConfirm);
+            @Nullable INSpatialEventTrigger spatialEventTriggerToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -95,10 +101,11 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INSpatialEventTrigger.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithSpatialEventTriggersToDisambiguate:")
     public static native INSpatialEventTriggerResolutionResult disambiguationWithSpatialEventTriggersToDisambiguate(
-            NSArray<? extends INSpatialEventTrigger> spatialEventTriggersToDisambiguate);
+            @NotNull NSArray<? extends INSpatialEventTrigger> spatialEventTriggersToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -126,10 +133,12 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INSpatialEventTriggerResolutionResult needsValue();
@@ -139,6 +148,7 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @Selector("new")
     public static native INSpatialEventTriggerResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INSpatialEventTriggerResolutionResult notRequired();
@@ -161,15 +171,17 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
      * This allows app extensions to apply business logic constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedSpatialEventTrigger:")
     public static native INSpatialEventTriggerResolutionResult successWithResolvedSpatialEventTrigger(
-            INSpatialEventTrigger resolvedSpatialEventTrigger);
+            @NotNull INSpatialEventTrigger resolvedSpatialEventTrigger);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INSpatialEventTriggerResolutionResult unsupported();
@@ -179,11 +191,13 @@ public class INSpatialEventTriggerResolutionResult extends INIntentResolutionRes
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INSpatialEventTriggerResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INSpatialEventTriggerResolutionResult unsupportedWithReason(@NInt long reason);

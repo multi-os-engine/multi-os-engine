@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEBlendNodeDefinition
@@ -68,7 +70,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Generated
     @Selector("addRangeForInputValuesAbove:fullGainAtValue:fadeCurveType:subtree:")
     public native void addRangeForInputValuesAboveFullGainAtValueFadeCurveTypeSubtree(double value,
-            double fullGainAtValue, @NInt long fadeCurveType, PHASESoundEventNodeDefinition subtree);
+            double fullGainAtValue, @NInt long fadeCurveType, @NotNull PHASESoundEventNodeDefinition subtree);
 
     /**
      * addRangeForInputValuesBelow:fullGainAtValue:fadeCurveType:subtree
@@ -89,7 +91,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Generated
     @Selector("addRangeForInputValuesBelow:fullGainAtValue:fadeCurveType:subtree:")
     public native void addRangeForInputValuesBelowFullGainAtValueFadeCurveTypeSubtree(double value,
-            double fullGainAtValue, @NInt long fadeCurveType, PHASESoundEventNodeDefinition subtree);
+            double fullGainAtValue, @NInt long fadeCurveType, @NotNull PHASESoundEventNodeDefinition subtree);
 
     /**
      * addRangeForInputValuesBetween:highValue:fullGainAtLowValue:fullGainAtHighValue:lowFadeCurveType:highFadeCurveType:subtree
@@ -117,7 +119,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Selector("addRangeForInputValuesBetween:highValue:fullGainAtLowValue:fullGainAtHighValue:lowFadeCurveType:highFadeCurveType:subtree:")
     public native void addRangeForInputValuesBetweenHighValueFullGainAtLowValueFullGainAtHighValueLowFadeCurveTypeHighFadeCurveTypeSubtree(
             double lowValue, double highValue, double fullGainAtLowValue, double fullGainAtHighValue,
-            @NInt long lowFadeCurveType, @NInt long highFadeCurveType, PHASESoundEventNodeDefinition subtree);
+            @NInt long lowFadeCurveType, @NInt long highFadeCurveType, @NotNull PHASESoundEventNodeDefinition subtree);
 
     /**
      * addRangeWithEnvelope:subtree
@@ -131,7 +133,8 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      */
     @Generated
     @Selector("addRangeWithEnvelope:subtree:")
-    public native void addRangeWithEnvelopeSubtree(PHASEEnvelope envelope, PHASESoundEventNodeDefinition subtree);
+    public native void addRangeWithEnvelopeSubtree(@NotNull PHASEEnvelope envelope,
+            @NotNull PHASESoundEventNodeDefinition subtree);
 
     @Generated
     @Owned
@@ -145,7 +148,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] blendParameterDefinition
@@ -153,24 +156,28 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * The readonly property that returns the PHASENumberMetaParameterDefinition this blend node was created with and
      * assigned to.
      */
+    @Nullable
     @Generated
     @Selector("blendParameterDefinition")
     public native PHASENumberMetaParameterDefinition blendParameterDefinition();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -206,7 +213,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Generated
     @Selector("initDistanceBlendWithSpatialMixerDefinition:")
     public native PHASEBlendNodeDefinition initDistanceBlendWithSpatialMixerDefinition(
-            PHASESpatialMixerDefinition spatialMixerDefinition);
+            @NotNull PHASESpatialMixerDefinition spatialMixerDefinition);
 
     /**
      * initDistanceBlendWithSpatialMixerDefinition:identifier
@@ -224,7 +231,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Generated
     @Selector("initDistanceBlendWithSpatialMixerDefinition:identifier:")
     public native PHASEBlendNodeDefinition initDistanceBlendWithSpatialMixerDefinitionIdentifier(
-            PHASESpatialMixerDefinition spatialMixerDefinition, String identifier);
+            @NotNull PHASESpatialMixerDefinition spatialMixerDefinition, @NotNull String identifier);
 
     /**
      * initWithBlendMetaParameterDefinition
@@ -240,7 +247,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Generated
     @Selector("initWithBlendMetaParameterDefinition:")
     public native PHASEBlendNodeDefinition initWithBlendMetaParameterDefinition(
-            PHASENumberMetaParameterDefinition blendMetaParameterDefinition);
+            @NotNull PHASENumberMetaParameterDefinition blendMetaParameterDefinition);
 
     /**
      * initWithBlendMetaParameterDefinition:identifier
@@ -258,7 +265,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Generated
     @Selector("initWithBlendMetaParameterDefinition:identifier:")
     public native PHASEBlendNodeDefinition initWithBlendMetaParameterDefinitionIdentifier(
-            PHASENumberMetaParameterDefinition blendMetaParameterDefinition, String identifier);
+            @NotNull PHASENumberMetaParameterDefinition blendMetaParameterDefinition, @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -277,9 +284,10 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -304,6 +312,7 @@ public class PHASEBlendNodeDefinition extends PHASESoundEventNodeDefinition {
      * The readonly property that returns the PHASESpatialMixerDefinition this blend node was created with and assigned
      * to.
      */
+    @Nullable
     @Generated
     @Selector("spatialMixerDefinitionForDistance")
     public native PHASESpatialMixerDefinition spatialMixerDefinitionForDistance();

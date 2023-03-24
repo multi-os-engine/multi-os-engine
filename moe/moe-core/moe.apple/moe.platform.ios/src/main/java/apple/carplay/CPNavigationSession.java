@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.UIColor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPNavigationSession represents the active navigation session. A @c CPNavigationSession will be created for you
@@ -59,17 +61,18 @@ public class CPNavigationSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Cancel the trip.
@@ -78,10 +81,12 @@ public class CPNavigationSession extends NSObject {
     @Selector("cancelTrip")
     public native void cancelTrip();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class CPNavigationSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -144,7 +150,7 @@ public class CPNavigationSession extends NSObject {
      */
     @Generated
     @Selector("pauseTripForReason:description:")
-    public native void pauseTripForReasonDescription(@NUInt long reason, String description);
+    public native void pauseTripForReasonDescription(@NUInt long reason, @Nullable String description);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,7 +167,7 @@ public class CPNavigationSession extends NSObject {
      */
     @Generated
     @Selector("setUpcomingManeuvers:")
-    public native void setUpcomingManeuvers(NSArray<? extends CPManeuver> value);
+    public native void setUpcomingManeuvers(@NotNull NSArray<? extends CPManeuver> value);
 
     @Generated
     @Selector("setVersion:")
@@ -174,6 +180,7 @@ public class CPNavigationSession extends NSObject {
     /**
      * The trip associated with this navigation session.
      */
+    @NotNull
     @Generated
     @Selector("trip")
     public native CPTrip trip();
@@ -183,6 +190,7 @@ public class CPNavigationSession extends NSObject {
      * Multiple maneuvers are displayed simultaneously, however the system may limit the number of maneuvers shown at
      * the same time.
      */
+    @NotNull
     @Generated
     @Selector("upcomingManeuvers")
     public native NSArray<? extends CPManeuver> upcomingManeuvers();
@@ -195,7 +203,8 @@ public class CPNavigationSession extends NSObject {
      */
     @Generated
     @Selector("updateTravelEstimates:forManeuver:")
-    public native void updateTravelEstimatesForManeuver(CPTravelEstimates estimates, CPManeuver maneuver);
+    public native void updateTravelEstimatesForManeuver(@NotNull CPTravelEstimates estimates,
+            @NotNull CPManeuver maneuver);
 
     @Generated
     @Selector("version")
@@ -216,6 +225,6 @@ public class CPNavigationSession extends NSObject {
      */
     @Generated
     @Selector("pauseTripForReason:description:turnCardColor:")
-    public native void pauseTripForReasonDescriptionTurnCardColor(@NUInt long reason, String description,
-            UIColor turnCardColor);
+    public native void pauseTripForReasonDescriptionTurnCardColor(@NUInt long reason, @Nullable String description,
+            @Nullable UIColor turnCardColor);
 }

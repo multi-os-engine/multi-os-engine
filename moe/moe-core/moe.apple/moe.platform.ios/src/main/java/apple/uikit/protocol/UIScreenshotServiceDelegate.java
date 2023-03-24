@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -34,8 +36,9 @@ public interface UIScreenshotServiceDelegate {
     @Generated
     @IsOptional
     @Selector("screenshotService:generatePDFRepresentationWithCompletion:")
-    default void screenshotServiceGeneratePDFRepresentationWithCompletion(UIScreenshotService screenshotService,
-            @ObjCBlock(name = "call_screenshotServiceGeneratePDFRepresentationWithCompletion") Block_screenshotServiceGeneratePDFRepresentationWithCompletion completionHandler) {
+    default void screenshotServiceGeneratePDFRepresentationWithCompletion(
+            @NotNull UIScreenshotService screenshotService,
+            @NotNull @ObjCBlock(name = "call_screenshotServiceGeneratePDFRepresentationWithCompletion") Block_screenshotServiceGeneratePDFRepresentationWithCompletion completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +46,7 @@ public interface UIScreenshotServiceDelegate {
     @Generated
     public interface Block_screenshotServiceGeneratePDFRepresentationWithCompletion {
         @Generated
-        void call_screenshotServiceGeneratePDFRepresentationWithCompletion(NSData PDFData,
+        void call_screenshotServiceGeneratePDFRepresentationWithCompletion(@Nullable NSData PDFData,
                 @NInt long indexOfCurrentPage, @ByValue CGRect rectInCurrentPage);
     }
 }

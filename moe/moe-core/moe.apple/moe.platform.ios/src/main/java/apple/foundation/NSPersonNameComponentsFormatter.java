@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -71,22 +73,25 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,18 +126,20 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Shortcut for converting an NSPersonNameComponents object into a string without explicitly creating an instance.
      * Create an instance for greater customizability.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringFromPersonNameComponents:style:options:")
-    public static native String localizedStringFromPersonNameComponentsStyleOptions(NSPersonNameComponents components,
-            @NInt long nameFormatStyle, @NUInt long nameOptions);
+    public static native String localizedStringFromPersonNameComponentsStyleOptions(
+            @NotNull NSPersonNameComponents components, @NInt long nameFormatStyle, @NUInt long nameOptions);
 
     @Generated
     @Owned
@@ -165,15 +172,17 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
      * querying
      * dictionary key NSPersonNameComponentKey , using NSPersonNameComponent constant values.
      */
+    @NotNull
     @Generated
     @Selector("annotatedStringFromPersonNameComponents:")
-    public native NSAttributedString annotatedStringFromPersonNameComponents(NSPersonNameComponents components);
+    public native NSAttributedString annotatedStringFromPersonNameComponents(
+            @NotNull NSPersonNameComponents components);
 
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, String string,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, @NotNull String string,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("init")
@@ -181,7 +190,7 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPersonNameComponentsFormatter initWithCoder(NSCoder coder);
+    public native NSPersonNameComponentsFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Specify that the formatter should only format the components object's phoneticRepresentation
@@ -203,9 +212,10 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("personNameComponentsFromString:")
-    public native NSPersonNameComponents personNameComponentsFromString(String string);
+    public native NSPersonNameComponents personNameComponentsFromString(@NotNull String string);
 
     /**
      * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user
@@ -219,9 +229,10 @@ public class NSPersonNameComponentsFormatter extends NSFormatter {
      * Convenience method on stringForObjectValue:. Returns a string containing the formatted value of the provided
      * components object.
      */
+    @NotNull
     @Generated
     @Selector("stringFromPersonNameComponents:")
-    public native String stringFromPersonNameComponents(NSPersonNameComponents components);
+    public native String stringFromPersonNameComponents(@NotNull NSPersonNameComponents components);
 
     /**
      * Specify the formatting style for the formatted string on an instance. ShortStyle will fall back to user

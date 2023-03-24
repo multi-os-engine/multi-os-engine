@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNAnimatable
@@ -55,7 +57,7 @@ public interface SCNAnimatable {
      */
     @Generated
     @Selector("addAnimation:forKey:")
-    void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation, @Nullable String key);
 
     /**
      * animationForKey:
@@ -70,16 +72,18 @@ public interface SCNAnimatable {
      * 
      * @param key The identifier for the animation to retrieve.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("animationForKey:")
-    CAAnimation animationForKey(String key);
+    CAAnimation animationForKey(@NotNull String key);
 
     /**
      * [@property] animationKeys
      * 
      * Returns an array containing the keys of all animations currently attached to the receiver.
      */
+    @NotNull
     @Generated
     @Selector("animationKeys")
     NSArray<String> animationKeys();
@@ -98,7 +102,7 @@ public interface SCNAnimatable {
     @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    boolean isAnimationForKeyPaused(String key);
+    boolean isAnimationForKeyPaused(@NotNull String key);
 
     /**
      * pauseAnimationForKey:
@@ -114,7 +118,7 @@ public interface SCNAnimatable {
     @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    void pauseAnimationForKey(String key);
+    void pauseAnimationForKey(@NotNull String key);
 
     /**
      * removeAllAnimations
@@ -134,7 +138,7 @@ public interface SCNAnimatable {
      */
     @Generated
     @Selector("removeAnimationForKey:")
-    void removeAnimationForKey(String key);
+    void removeAnimationForKey(@NotNull String key);
 
     /**
      * removeAnimationForKey:fadeOutDuration:
@@ -150,7 +154,7 @@ public interface SCNAnimatable {
     @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * resumeAnimationForKey:
@@ -166,7 +170,7 @@ public interface SCNAnimatable {
     @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    void resumeAnimationForKey(String key);
+    void resumeAnimationForKey(@NotNull String key);
 
     /**
      * setSpeed:forAnimationKey:
@@ -183,7 +187,7 @@ public interface SCNAnimatable {
     @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    void setSpeedForAnimationKey(@NFloat double speed, String key);
+    void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * addAnimationPlayer:forKey:
@@ -201,7 +205,7 @@ public interface SCNAnimatable {
      */
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
     /**
      * animationPlayerForKey:
@@ -214,9 +218,10 @@ public interface SCNAnimatable {
      * 
      * @param key The identifier for the animation player to retrieve.
      */
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    SCNAnimationPlayer animationPlayerForKey(String key);
+    SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     /**
      * removeAnimationForKey:blendOutDuration:
@@ -230,7 +235,7 @@ public interface SCNAnimatable {
      */
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * removeAllAnimationsWithBlendOutDuration

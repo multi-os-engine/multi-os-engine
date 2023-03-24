@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -20,6 +21,7 @@ public interface MTLFunctionLogDebugLocation {
     /**
      * source location
      */
+    @Nullable
     @Generated
     @Selector("URL")
     NSURL URL();
@@ -35,6 +37,7 @@ public interface MTLFunctionLogDebugLocation {
     /**
      * faulting function
      */
+    @Nullable
     @Generated
     @Selector("functionName")
     String functionName();

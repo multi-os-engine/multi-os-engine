@@ -30,6 +30,7 @@ import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import apple.corefoundation.struct.CGAffineTransform;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("QuartzCore")
@@ -211,6 +212,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -219,6 +221,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -227,6 +230,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -235,6 +239,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -245,6 +250,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -253,6 +259,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -261,6 +268,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -269,6 +277,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -277,6 +286,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -285,6 +295,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -293,6 +304,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -301,6 +313,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -309,6 +322,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,6 +331,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -325,6 +340,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -333,6 +349,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -343,6 +360,7 @@ public final class QuartzCore {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -353,6 +371,7 @@ public final class QuartzCore {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -363,6 +382,7 @@ public final class QuartzCore {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -373,6 +393,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -381,6 +402,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -393,6 +415,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -403,6 +426,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -411,6 +435,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -421,6 +446,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -431,6 +457,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -439,6 +466,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -447,6 +475,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -455,6 +484,7 @@ public final class QuartzCore {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -463,6 +493,7 @@ public final class QuartzCore {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -473,6 +504,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -481,6 +513,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -491,6 +524,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -499,6 +533,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -507,6 +542,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -515,6 +551,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -525,6 +562,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -533,6 +571,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -541,6 +580,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -549,6 +589,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -559,6 +600,7 @@ public final class QuartzCore {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -567,6 +609,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -575,6 +618,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -583,6 +627,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -591,6 +636,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -599,6 +645,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -609,6 +656,7 @@ public final class QuartzCore {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -617,6 +665,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -625,6 +674,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -633,6 +683,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -643,6 +694,7 @@ public final class QuartzCore {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -651,6 +703,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -659,6 +712,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -667,6 +721,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -675,6 +730,7 @@ public final class QuartzCore {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -685,6 +741,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -695,6 +752,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -703,6 +761,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -711,6 +770,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -719,6 +779,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -727,6 +788,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -737,6 +799,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -745,6 +808,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -753,6 +817,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -761,6 +826,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -771,6 +837,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -779,6 +846,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -789,6 +857,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -797,6 +866,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -805,6 +875,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -815,6 +886,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -823,6 +895,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -831,6 +904,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -841,6 +915,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -849,6 +924,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -857,6 +933,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -865,6 +942,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -875,6 +953,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -883,6 +962,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -891,6 +971,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -899,6 +980,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -907,6 +989,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -917,6 +1000,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -925,6 +1009,7 @@ public final class QuartzCore {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -933,6 +1018,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -941,6 +1027,7 @@ public final class QuartzCore {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -953,6 +1040,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -961,6 +1049,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -969,6 +1058,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -980,6 +1070,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -992,6 +1083,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1000,6 +1092,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1008,6 +1101,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1019,6 +1113,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1031,6 +1126,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1039,6 +1135,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1047,6 +1144,7 @@ public final class QuartzCore {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1057,6 +1155,7 @@ public final class QuartzCore {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1065,6 +1164,7 @@ public final class QuartzCore {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1078,6 +1178,7 @@ public final class QuartzCore {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1092,6 +1193,7 @@ public final class QuartzCore {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1126,6 +1228,7 @@ public final class QuartzCore {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1143,6 +1246,7 @@ public final class QuartzCore {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

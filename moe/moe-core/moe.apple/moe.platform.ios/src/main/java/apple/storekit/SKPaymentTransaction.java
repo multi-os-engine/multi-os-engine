@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -74,22 +76,25 @@ public class SKPaymentTransaction extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class SKPaymentTransaction extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +167,7 @@ public class SKPaymentTransaction extends NSObject {
      * Deprecated-Since: 16.0
      * Deprecated-Message: Hosted content is no longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("downloads")
@@ -171,6 +178,7 @@ public class SKPaymentTransaction extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -184,6 +192,7 @@ public class SKPaymentTransaction extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("originalTransaction")
     public native SKPaymentTransaction originalTransaction();
@@ -191,6 +200,7 @@ public class SKPaymentTransaction extends NSObject {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("payment")
     public native SKPayment payment();
@@ -201,6 +211,7 @@ public class SKPaymentTransaction extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("transactionDate")
     public native NSDate transactionDate();
@@ -211,6 +222,7 @@ public class SKPaymentTransaction extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();
@@ -221,6 +233,7 @@ public class SKPaymentTransaction extends NSObject {
      * API-Since: 3.0
      * Deprecated-Since: 7.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("transactionReceipt")

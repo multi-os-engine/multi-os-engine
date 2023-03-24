@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.avfoundation.AVCaptureDevice;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object to describe and configure the Augmented Reality techniques to be used in an ARSession.
@@ -60,31 +62,35 @@ public class ARConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +142,10 @@ public class ARConfiguration extends NSObject implements NSCopying {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -258,7 +265,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVideoFormat:")
-    public native void setVideoFormat(ARVideoFormat value);
+    public native void setVideoFormat(@NotNull ARVideoFormat value);
 
     /**
      * A list of supported video formats for this configuration and device.
@@ -267,6 +274,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("supportedVideoFormats")
     public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
@@ -293,6 +301,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("videoFormat")
     public native ARVideoFormat videoFormat();
@@ -306,6 +315,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("configurableCaptureDeviceForPrimaryCamera")
     public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
@@ -317,6 +327,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("recommendedVideoFormatFor4KResolution")
     public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
@@ -332,6 +343,7 @@ public class ARConfiguration extends NSObject implements NSCopying {
      * 
      *      API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
     public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();

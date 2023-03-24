@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -56,7 +58,7 @@ public class NSFileProviderItemVersion extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Version component exposed by the system to denote a state that predates a version returned by the provider.
@@ -73,24 +75,28 @@ public class NSFileProviderItemVersion extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("beforeFirstSyncComponent")
     public static native NSData beforeFirstSyncComponent();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,6 +114,7 @@ public class NSFileProviderItemVersion extends NSObject {
      * Note that the resource fork of the file is considered content, so this version
      * data should change when either the data fork or the resource fork changes.
      */
+    @NotNull
     @Generated
     @Selector("contentVersion")
     public native NSData contentVersion();
@@ -137,8 +144,8 @@ public class NSFileProviderItemVersion extends NSObject {
      */
     @Generated
     @Selector("initWithContentVersion:metadataVersion:")
-    public native NSFileProviderItemVersion initWithContentVersionMetadataVersion(NSData contentVersion,
-            NSData metadataVersion);
+    public native NSFileProviderItemVersion initWithContentVersionMetadataVersion(@NotNull NSData contentVersion,
+            @NotNull NSData metadataVersion);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,9 +164,10 @@ public class NSFileProviderItemVersion extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Version data for the metadata of the item, i.e everything but the data fork and
@@ -171,6 +179,7 @@ public class NSFileProviderItemVersion extends NSObject {
      * to the system, the system will simply store the updated metadata version (to return it as the base version
      * of a possible future change request).
      */
+    @NotNull
     @Generated
     @Selector("metadataVersion")
     public native NSData metadataVersion();

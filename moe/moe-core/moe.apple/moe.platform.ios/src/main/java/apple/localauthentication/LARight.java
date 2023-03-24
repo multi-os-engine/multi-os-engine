@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Groups a set of requirements that need to be satisfied in order to grant access to certain resource or operation
@@ -66,29 +68,30 @@ public class LARight extends NSObject {
      */
     @Generated
     @Selector("authorizeWithLocalizedReason:completion:")
-    public native void authorizeWithLocalizedReasonCompletion(String localizedReason,
-            @ObjCBlock(name = "call_authorizeWithLocalizedReasonCompletion") Block_authorizeWithLocalizedReasonCompletion handler);
+    public native void authorizeWithLocalizedReasonCompletion(@NotNull String localizedReason,
+            @NotNull @ObjCBlock(name = "call_authorizeWithLocalizedReasonCompletion") Block_authorizeWithLocalizedReasonCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_authorizeWithLocalizedReasonCompletion {
         @Generated
-        void call_authorizeWithLocalizedReasonCompletion(NSError error);
+        void call_authorizeWithLocalizedReasonCompletion(@Nullable NSError error);
     }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Checks whether the client can eventually be granted the right.
@@ -98,19 +101,21 @@ public class LARight extends NSObject {
     @Generated
     @Selector("checkCanAuthorizeWithCompletion:")
     public native void checkCanAuthorizeWithCompletion(
-            @ObjCBlock(name = "call_checkCanAuthorizeWithCompletion") Block_checkCanAuthorizeWithCompletion handler);
+            @NotNull @ObjCBlock(name = "call_checkCanAuthorizeWithCompletion") Block_checkCanAuthorizeWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_checkCanAuthorizeWithCompletion {
         @Generated
-        void call_checkCanAuthorizeWithCompletion(NSError error);
+        void call_checkCanAuthorizeWithCompletion(@Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,7 +128,7 @@ public class LARight extends NSObject {
     @Generated
     @Selector("deauthorizeWithCompletion:")
     public native void deauthorizeWithCompletion(
-            @ObjCBlock(name = "call_deauthorizeWithCompletion") Block_deauthorizeWithCompletion handler);
+            @NotNull @ObjCBlock(name = "call_deauthorizeWithCompletion") Block_deauthorizeWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -165,7 +170,7 @@ public class LARight extends NSObject {
      */
     @Generated
     @Selector("initWithRequirement:")
-    public native LARight initWithRequirement(LAAuthenticationRequirement requirement);
+    public native LARight initWithRequirement(@NotNull LAAuthenticationRequirement requirement);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -184,9 +189,10 @@ public class LARight extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

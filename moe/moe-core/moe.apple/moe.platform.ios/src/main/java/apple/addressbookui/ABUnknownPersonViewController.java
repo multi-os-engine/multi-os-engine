@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -85,29 +87,32 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -139,9 +144,10 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,6 +179,7 @@ public class ABUnknownPersonViewController extends UIViewController {
      * The Address Book to use. Any contact returned will be from this ABAddressBook instance.
      * If not set, a new ABAddressBook will be created the first time the property is accessed.
      */
+    @Nullable
     @Generated
     @Selector("addressBook")
     public native ConstVoidPtr addressBook();
@@ -197,6 +204,7 @@ public class ABUnknownPersonViewController extends UIViewController {
      * An alternateName can be provided to replace the First and Last name
      * in case they are not available.
      */
+    @Nullable
     @Generated
     @Selector("alternateName")
     public native String alternateName();
@@ -208,6 +216,7 @@ public class ABUnknownPersonViewController extends UIViewController {
      * If displayedPerson has been added to an ABAddressBook, then the addressBook
      * property will be updated to use the displayedPerson's ABAddressBook.
      */
+    @NotNull
     @Generated
     @Selector("displayedPerson")
     public native ConstVoidPtr displayedPerson();
@@ -218,15 +227,17 @@ public class ABUnknownPersonViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ABUnknownPersonViewController initWithCoder(NSCoder coder);
+    public native ABUnknownPersonViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ABUnknownPersonViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native ABUnknownPersonViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * The message will be displayed below the alternateName.
      */
+    @Nullable
     @Generated
     @Selector("message")
     public native String message();
@@ -237,7 +248,7 @@ public class ABUnknownPersonViewController extends UIViewController {
      */
     @Generated
     @Selector("setAddressBook:")
-    public native void setAddressBook(ConstVoidPtr value);
+    public native void setAddressBook(@Nullable ConstVoidPtr value);
 
     /**
      * Specifies whether buttons appear to let the user perform actions such as sharing the contact,
@@ -261,7 +272,7 @@ public class ABUnknownPersonViewController extends UIViewController {
      */
     @Generated
     @Selector("setAlternateName:")
-    public native void setAlternateName(String value);
+    public native void setAlternateName(@Nullable String value);
 
     /**
      * All the fields specified in displayedPerson will be displayed in the view
@@ -272,14 +283,14 @@ public class ABUnknownPersonViewController extends UIViewController {
      */
     @Generated
     @Selector("setDisplayedPerson:")
-    public native void setDisplayedPerson(ConstVoidPtr value);
+    public native void setDisplayedPerson(@NotNull ConstVoidPtr value);
 
     /**
      * The message will be displayed below the alternateName.
      */
     @Generated
     @Selector("setMessage:")
-    public native void setMessage(String value);
+    public native void setMessage(@Nullable String value);
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
@@ -287,14 +298,14 @@ public class ABUnknownPersonViewController extends UIViewController {
     @Generated
     @Selector("setUnknownPersonViewDelegate:")
     public native void setUnknownPersonViewDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value);
 
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
      */
     @Generated
     public void setUnknownPersonViewDelegate(
-            @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) ABUnknownPersonViewControllerDelegate value) {
         Object __old = unknownPersonViewDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -308,6 +319,7 @@ public class ABUnknownPersonViewController extends UIViewController {
     /**
      * ABPersonViewController does not support subclassing in iOS 7.0 and later. A nil instance will be returned.
      */
+    @Nullable
     @Generated
     @Selector("unknownPersonViewDelegate")
     @MappedReturn(ObjCObjectMapper.class)

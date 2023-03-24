@@ -13,6 +13,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Delegate for customizing token driver operations. SmartCard tokens should implement TKSmartCardTokenDriverDelegate
@@ -31,7 +33,7 @@ public interface TKTokenDriverDelegate {
     @Generated
     @IsOptional
     @Selector("tokenDriver:terminateToken:")
-    default void tokenDriverTerminateToken(TKTokenDriver driver, TKToken token) {
+    default void tokenDriverTerminateToken(@NotNull TKTokenDriver driver, @NotNull TKToken token) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -40,11 +42,13 @@ public interface TKTokenDriverDelegate {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tokenDriver:tokenForConfiguration:error:")
-    default TKToken tokenDriverTokenForConfigurationError(TKTokenDriver driver, TKTokenConfiguration configuration,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default TKToken tokenDriverTokenForConfigurationError(@NotNull TKTokenDriver driver,
+            @NotNull TKTokenConfiguration configuration,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

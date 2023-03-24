@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A configuration that allows a responder to export data through a variety of interactions.
@@ -52,28 +54,31 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("activityItemsConfigurationMetadataForItemAtIndex:key:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object activityItemsConfigurationMetadataForItemAtIndexKey(@NInt long index, String key);
+    public native Object activityItemsConfigurationMetadataForItemAtIndexKey(@NInt long index, @NotNull String key);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("activityItemsConfigurationMetadataForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object activityItemsConfigurationMetadataForKey(String key);
+    public native Object activityItemsConfigurationMetadataForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("activityItemsConfigurationPreviewForItemAtIndex:intent:suggestedSize:")
     public native NSItemProvider activityItemsConfigurationPreviewForItemAtIndexIntentSuggestedSize(@NInt long index,
-            String intent, @ByValue CGSize suggestedSize);
+            @NotNull String intent, @ByValue CGSize suggestedSize);
 
     @Generated
     @IsOptional
     @Selector("activityItemsConfigurationSupportsInteraction:")
-    public native boolean activityItemsConfigurationSupportsInteraction(String interaction);
+    public native boolean activityItemsConfigurationSupportsInteraction(@NotNull String interaction);
 
     /**
      * Provide promised items
@@ -81,14 +86,15 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Generated
     @Selector("activityItemsConfigurationWithItemProviders:")
     public static native UIActivityItemsConfiguration activityItemsConfigurationWithItemProviders(
-            NSArray<? extends NSItemProvider> itemProviders);
+            @NotNull NSArray<? extends NSItemProvider> itemProviders);
 
     /**
      * Provide data up front
      */
     @Generated
     @Selector("activityItemsConfigurationWithObjects:")
-    public static native UIActivityItemsConfiguration activityItemsConfigurationWithObjects(NSArray<?> objects);
+    public static native UIActivityItemsConfiguration activityItemsConfigurationWithObjects(
+            @NotNull NSArray<?> objects);
 
     @Generated
     @Owned
@@ -100,11 +106,13 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("allocWithZone:")
     public static native UIActivityItemsConfiguration allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("applicationActivitiesForActivityItemsConfiguration")
     public native NSArray<? extends UIActivity> applicationActivitiesForActivityItemsConfiguration();
 
+    @Nullable
     @Generated
     @Selector("applicationActivitiesProvider")
     @ObjCBlock(name = "call_applicationActivitiesProvider_ret")
@@ -113,28 +121,32 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_applicationActivitiesProvider_ret {
+        @NotNull
         @Generated
         NSArray<? extends UIActivity> call_applicationActivitiesProvider_ret();
     }
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -161,14 +173,15 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
      */
     @Generated
     @Selector("initWithItemProviders:")
-    public native UIActivityItemsConfiguration initWithItemProviders(NSArray<? extends NSItemProvider> itemProviders);
+    public native UIActivityItemsConfiguration initWithItemProviders(
+            @NotNull NSArray<? extends NSItemProvider> itemProviders);
 
     /**
      * Provide data up front
      */
     @Generated
     @Selector("initWithObjects:")
-    public native UIActivityItemsConfiguration initWithObjects(NSArray<?> objects);
+    public native UIActivityItemsConfiguration initWithObjects(@NotNull NSArray<?> objects);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -187,22 +200,26 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("itemProvidersForActivityItemsConfiguration")
     public native NSArray<? extends NSItemProvider> itemProvidersForActivityItemsConfiguration();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A local object retained for the convenience of the app developer
      */
+    @Nullable
     @Generated
     @Selector("localObject")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object localObject();
 
+    @Nullable
     @Generated
     @Selector("metadataProvider")
     @ObjCBlock(name = "call_metadataProvider_ret")
@@ -211,9 +228,10 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_metadataProvider_ret {
+        @Nullable
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_metadataProvider_ret(String arg0);
+        Object call_metadataProvider_ret(@NotNull String arg0);
     }
 
     @Generated
@@ -221,6 +239,7 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Selector("new")
     public static native UIActivityItemsConfiguration new_objc();
 
+    @Nullable
     @Generated
     @Selector("perItemMetadataProvider")
     @ObjCBlock(name = "call_perItemMetadataProvider_ret")
@@ -229,11 +248,13 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_perItemMetadataProvider_ret {
+        @Nullable
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_perItemMetadataProvider_ret(@NInt long arg0, String arg1);
+        Object call_perItemMetadataProvider_ret(@NInt long arg0, @NotNull String arg1);
     }
 
+    @Nullable
     @Generated
     @Selector("previewProvider")
     @ObjCBlock(name = "call_previewProvider_ret")
@@ -242,8 +263,9 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_previewProvider_ret {
+        @Nullable
         @Generated
-        NSItemProvider call_previewProvider_ret(@NInt long arg0, String arg1, @ByValue CGSize arg2);
+        NSItemProvider call_previewProvider_ret(@NInt long arg0, @NotNull String arg1, @ByValue CGSize arg2);
     }
 
     @Generated
@@ -257,11 +279,12 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     @Generated
     @Selector("setApplicationActivitiesProvider:")
     public native void setApplicationActivitiesProvider(
-            @ObjCBlock(name = "call_setApplicationActivitiesProvider") Block_setApplicationActivitiesProvider value);
+            @Nullable @ObjCBlock(name = "call_setApplicationActivitiesProvider") Block_setApplicationActivitiesProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setApplicationActivitiesProvider {
+        @NotNull
         @Generated
         NSArray<? extends UIActivity> call_setApplicationActivitiesProvider();
     }
@@ -271,43 +294,47 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
      */
     @Generated
     @Selector("setLocalObject:")
-    public native void setLocalObject(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setLocalObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setMetadataProvider:")
     public native void setMetadataProvider(
-            @ObjCBlock(name = "call_setMetadataProvider") Block_setMetadataProvider value);
+            @Nullable @ObjCBlock(name = "call_setMetadataProvider") Block_setMetadataProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setMetadataProvider {
+        @Nullable
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_setMetadataProvider(String arg0);
+        Object call_setMetadataProvider(@NotNull String arg0);
     }
 
     @Generated
     @Selector("setPerItemMetadataProvider:")
     public native void setPerItemMetadataProvider(
-            @ObjCBlock(name = "call_setPerItemMetadataProvider") Block_setPerItemMetadataProvider value);
+            @Nullable @ObjCBlock(name = "call_setPerItemMetadataProvider") Block_setPerItemMetadataProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerItemMetadataProvider {
+        @Nullable
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
-        Object call_setPerItemMetadataProvider(@NInt long arg0, String arg1);
+        Object call_setPerItemMetadataProvider(@NInt long arg0, @NotNull String arg1);
     }
 
     @Generated
     @Selector("setPreviewProvider:")
-    public native void setPreviewProvider(@ObjCBlock(name = "call_setPreviewProvider") Block_setPreviewProvider value);
+    public native void setPreviewProvider(
+            @Nullable @ObjCBlock(name = "call_setPreviewProvider") Block_setPreviewProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPreviewProvider {
+        @Nullable
         @Generated
-        NSItemProvider call_setPreviewProvider(@NInt long arg0, String arg1, @ByValue CGSize arg2);
+        NSItemProvider call_setPreviewProvider(@NInt long arg0, @NotNull String arg1, @ByValue CGSize arg2);
     }
 
     /**
@@ -315,7 +342,7 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
      */
     @Generated
     @Selector("setSupportedInteractions:")
-    public native void setSupportedInteractions(NSArray<String> value);
+    public native void setSupportedInteractions(@NotNull NSArray<String> value);
 
     @Generated
     @Selector("setVersion:")
@@ -328,6 +355,7 @@ public class UIActivityItemsConfiguration extends NSObject implements UIActivity
     /**
      * Defaults to all known interactions
      */
+    @NotNull
     @Generated
     @Selector("supportedInteractions")
     public native NSArray<String> supportedInteractions();

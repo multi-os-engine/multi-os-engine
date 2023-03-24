@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEOccluder
@@ -60,22 +62,25 @@ public class PHASEOccluder extends PHASEObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,7 +104,7 @@ public class PHASEOccluder extends PHASEObject {
 
     @Generated
     @Selector("initWithEngine:")
-    public native PHASEOccluder initWithEngine(PHASEEngine engine);
+    public native PHASEOccluder initWithEngine(@NotNull PHASEEngine engine);
 
     /**
      * initWithEngine:shapes:
@@ -113,7 +118,8 @@ public class PHASEOccluder extends PHASEObject {
      */
     @Generated
     @Selector("initWithEngine:shapes:")
-    public native PHASEOccluder initWithEngineShapes(PHASEEngine engine, NSArray<? extends PHASEShape> shapes);
+    public native PHASEOccluder initWithEngineShapes(@NotNull PHASEEngine engine,
+            @NotNull NSArray<? extends PHASEShape> shapes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,9 +138,10 @@ public class PHASEOccluder extends PHASEObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +165,7 @@ public class PHASEOccluder extends PHASEObject {
      * 
      * Array of shapes associated with this occluder.
      */
+    @NotNull
     @Generated
     @Selector("shapes")
     public native NSArray<? extends PHASEShape> shapes();

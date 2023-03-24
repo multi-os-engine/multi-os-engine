@@ -24,17 +24,21 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIDataSourceModelAssociation")
 public interface UIDataSourceModelAssociation {
+    @Nullable
     @Generated
     @Selector("indexPathForElementWithModelIdentifier:inView:")
-    NSIndexPath indexPathForElementWithModelIdentifierInView(String identifier, UIView view);
+    NSIndexPath indexPathForElementWithModelIdentifierInView(@NotNull String identifier, @NotNull UIView view);
 
+    @Nullable
     @Generated
     @Selector("modelIdentifierForElementAtIndexPath:inView:")
-    String modelIdentifierForElementAtIndexPathInView(NSIndexPath idx, UIView view);
+    String modelIdentifierForElementAtIndexPathInView(@NotNull NSIndexPath idx, @NotNull UIView view);
 }

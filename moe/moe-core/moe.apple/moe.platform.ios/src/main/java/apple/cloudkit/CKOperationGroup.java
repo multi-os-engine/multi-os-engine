@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CKOperationGroup
@@ -70,22 +72,25 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,7 +116,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Estimated size of traffic being downloaded from the CloudKit Server
@@ -164,7 +169,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CKOperationGroup initWithCoder(NSCoder aDecoder);
+    public native CKOperationGroup initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -183,9 +188,10 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Describes the user action attributed to the operation group.
@@ -197,6 +203,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * This string will be sent to Apple servers to provide aggregate reporting for @c CKOperationGroup s and therefore
      * must not include personally identifying data.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -213,6 +220,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      * will be sent to Apple's servers, and can be used to identify any server-side logging associated with this
      * operation group.
      */
+    @NotNull
     @Generated
     @Selector("operationGroupID")
     public native String operationGroupID();
@@ -300,7 +308,7 @@ public class CKOperationGroup extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * Describes an application-specific "number of elements" associated with the operation group.

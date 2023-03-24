@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKHeartbeatSeriesBuilder
@@ -74,14 +76,14 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Selector("addHeartbeatWithTimeIntervalSinceSeriesStartDate:precededByGap:completion:")
     public native void addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion(
             double timeIntervalSinceStart, boolean precededByGap,
-            @ObjCBlock(name = "call_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion") Block_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion completion);
+            @NotNull @ObjCBlock(name = "call_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion") Block_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion {
         @Generated
         void call_addHeartbeatWithTimeIntervalSinceSeriesStartDatePrecededByGapCompletion(boolean success,
-                NSError error);
+                @Nullable NSError error);
     }
 
     /**
@@ -101,14 +103,14 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      */
     @Generated
     @Selector("addMetadata:completion:")
-    public native void addMetadataCompletion(NSDictionary<String, ?> metadata,
-            @ObjCBlock(name = "call_addMetadataCompletion") Block_addMetadataCompletion completion);
+    public native void addMetadataCompletion(@NotNull NSDictionary<String, ?> metadata,
+            @NotNull @ObjCBlock(name = "call_addMetadataCompletion") Block_addMetadataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addMetadataCompletion {
         @Generated
-        void call_addMetadataCompletion(boolean success, NSError error);
+        void call_addMetadataCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
@@ -123,22 +125,25 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,13 +175,14 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Generated
     @Selector("finishSeriesWithCompletion:")
     public native void finishSeriesWithCompletion(
-            @ObjCBlock(name = "call_finishSeriesWithCompletion") Block_finishSeriesWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_finishSeriesWithCompletion") Block_finishSeriesWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishSeriesWithCompletion {
         @Generated
-        void call_finishSeriesWithCompletion(HKHeartbeatSeriesSample heartbeatSeries, NSError error);
+        void call_finishSeriesWithCompletion(@Nullable HKHeartbeatSeriesSample heartbeatSeries,
+                @Nullable NSError error);
     }
 
     @Generated
@@ -202,8 +208,8 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
      */
     @Generated
     @Selector("initWithHealthStore:device:startDate:")
-    public native HKHeartbeatSeriesBuilder initWithHealthStoreDeviceStartDate(HKHealthStore healthStore,
-            HKDevice device, NSDate startDate);
+    public native HKHeartbeatSeriesBuilder initWithHealthStoreDeviceStartDate(@NotNull HKHealthStore healthStore,
+            @Nullable HKDevice device, @NotNull NSDate startDate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -222,9 +228,10 @@ public class HKHeartbeatSeriesBuilder extends HKSeriesBuilder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumCount

@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -70,8 +72,8 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("actionWithIdentifier:title:options:")
-    public static native UNNotificationAction actionWithIdentifierTitleOptions(String identifier, String title,
-            @NUInt long options);
+    public static native UNNotificationAction actionWithIdentifierTitleOptions(@NotNull String identifier,
+            @NotNull String title, @NUInt long options);
 
     @Generated
     @Owned
@@ -85,22 +87,25 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,19 +175,21 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The unique identifier for this action.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -192,7 +200,7 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native UNNotificationAction initWithCoder(NSCoder coder);
+    public native UNNotificationAction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The options configured for this action.
@@ -211,6 +219,7 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
     /**
      * The title to display for this action.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -220,14 +229,15 @@ public class UNNotificationAction extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("actionWithIdentifier:title:options:icon:")
-    public static native UNNotificationAction actionWithIdentifierTitleOptionsIcon(String identifier, String title,
-            @NUInt long options, UNNotificationActionIcon icon);
+    public static native UNNotificationAction actionWithIdentifierTitleOptionsIcon(@NotNull String identifier,
+            @NotNull String title, @NUInt long options, @Nullable UNNotificationActionIcon icon);
 
     /**
      * The icon configured for this action.
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("icon")
     public native UNNotificationActionIcon icon();

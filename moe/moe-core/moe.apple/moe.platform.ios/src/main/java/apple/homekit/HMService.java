@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a service provided by an accessory.
@@ -80,22 +82,25 @@ public class HMService extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class HMService extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +169,7 @@ public class HMService extends NSObject {
     /**
      * Accessory that provides this service.
      */
+    @Nullable
     @Generated
     @Selector("accessory")
     public native HMAccessory accessory();
@@ -173,6 +180,7 @@ public class HMService extends NSObject {
      * This could be any of the HomeKit Accessory Profile defined services (except HMServiceTypeOutlet
      * or HMServiceTypeSwitch) that supports HMCharacteristicTypePowerState characteristic.
      */
+    @Nullable
     @Generated
     @Selector("associatedServiceType")
     public native String associatedServiceType();
@@ -181,6 +189,7 @@ public class HMService extends NSObject {
      * Array of HMCharacteristic objects that represents all the characteristics
      * provided by the service.
      */
+    @NotNull
     @Generated
     @Selector("characteristics")
     public native NSArray<? extends HMCharacteristic> characteristics();
@@ -220,6 +229,7 @@ public class HMService extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("linkedServices")
     public native NSArray<? extends HMService> linkedServices();
@@ -229,6 +239,7 @@ public class HMService extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -239,6 +250,7 @@ public class HMService extends NSObject {
      * Returns the service's name that is associated with HomeKit. The initial value is the value of
      * the name characteristic of the service, if it has one.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -246,6 +258,7 @@ public class HMService extends NSObject {
     /**
      * The type of the service, e.g. HMServiceTypeLightbulb.
      */
+    @NotNull
     @Generated
     @Selector("serviceType")
     public native String serviceType();
@@ -255,6 +268,7 @@ public class HMService extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
@@ -280,8 +294,8 @@ public class HMService extends NSObject {
      */
     @Generated
     @Selector("updateAssociatedServiceType:completionHandler:")
-    public native void updateAssociatedServiceTypeCompletionHandler(String serviceType,
-            @ObjCBlock(name = "call_updateAssociatedServiceTypeCompletionHandler") Block_updateAssociatedServiceTypeCompletionHandler completion);
+    public native void updateAssociatedServiceTypeCompletionHandler(@Nullable String serviceType,
+            @NotNull @ObjCBlock(name = "call_updateAssociatedServiceTypeCompletionHandler") Block_updateAssociatedServiceTypeCompletionHandler completion);
 
     /**
      * This method is used to change the name of the service.
@@ -296,20 +310,20 @@ public class HMService extends NSObject {
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateAssociatedServiceTypeCompletionHandler {
         @Generated
-        void call_updateAssociatedServiceTypeCompletionHandler(NSError error);
+        void call_updateAssociatedServiceTypeCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 }

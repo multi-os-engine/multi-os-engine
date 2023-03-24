@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNGradientKernel
@@ -105,22 +107,25 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -157,11 +162,12 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      *                       inference pass
      * @return The result gradient from the gradient filter
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:gradientState:")
     public native MPSImage encodeToCommandBufferSourceGradientSourceImageGradientState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceGradient,
-            MPSImage sourceImage, MPSState gradientState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceGradient,
+            @NotNull MPSImage sourceImage, @NotNull MPSState gradientState);
 
     /**
      * Encode a gradient filter and return a gradient
@@ -193,8 +199,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:gradientState:destinationGradient:")
     public native void encodeToCommandBufferSourceGradientSourceImageGradientStateDestinationGradient(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceGradient,
-            MPSImage sourceImage, MPSState gradientState, MPSImage destinationGradient);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceGradient,
+            @NotNull MPSImage sourceImage, @NotNull MPSState gradientState, @NotNull MPSImage destinationGradient);
 
     @Generated
     @Selector("hash")
@@ -207,7 +213,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNGradientKernel initWithCoder(NSCoder aDecoder);
+    public native MPSCNNGradientKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -224,8 +230,8 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNGradientKernel initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNGradientKernel initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Standard init with default properties per filter type
@@ -237,7 +243,7 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNGradientKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNGradientKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -292,9 +298,10 @@ public class MPSCNNGradientKernel extends MPSCNNBinaryKernel {
     @NInt
     public native long kernelOffsetY();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

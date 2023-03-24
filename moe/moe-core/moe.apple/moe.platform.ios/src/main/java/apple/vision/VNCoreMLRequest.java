@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The VNCoreMLRequest uses a VNCoreMLModel, that is based on a CoreML MLModel object, to run predictions with that
@@ -64,22 +66,25 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,7 +114,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNCoreMLRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     /**
      * Create a new request with a model.
@@ -118,7 +123,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
      */
     @Generated
     @Selector("initWithModel:")
-    public native VNCoreMLRequest initWithModel(VNCoreMLModel model);
+    public native VNCoreMLRequest initWithModel(@NotNull VNCoreMLModel model);
 
     /**
      * Create a new request with a model.
@@ -129,14 +134,14 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
      */
     @Generated
     @Selector("initWithModel:completionHandler:")
-    public native VNCoreMLRequest initWithModelCompletionHandler(VNCoreMLModel model,
-            @ObjCBlock(name = "call_initWithModelCompletionHandler") Block_initWithModelCompletionHandler completionHandler);
+    public native VNCoreMLRequest initWithModelCompletionHandler(@NotNull VNCoreMLModel model,
+            @Nullable @ObjCBlock(name = "call_initWithModelCompletionHandler") Block_initWithModelCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithModelCompletionHandler {
         @Generated
-        void call_initWithModelCompletionHandler(VNRequest request, NSError error);
+        void call_initWithModelCompletionHandler(@NotNull VNRequest request, @Nullable NSError error);
     }
 
     @Generated
@@ -156,13 +161,15 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The model from CoreML wrapped in a VNCoreMLModel.
      */
+    @NotNull
     @Generated
     @Selector("model")
     public native VNCoreMLModel model();
@@ -207,6 +214,7 @@ public class VNCoreMLRequest extends VNImageBasedRequest {
     @NUInt
     public static native long defaultRevision();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();

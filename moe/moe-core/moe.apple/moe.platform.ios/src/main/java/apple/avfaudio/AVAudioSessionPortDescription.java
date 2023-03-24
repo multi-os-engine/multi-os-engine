@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Information about a port, a physical connector or audio device.
@@ -49,6 +51,7 @@ public class AVAudioSessionPortDescription extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("UID")
     public native String UID();
@@ -69,29 +72,33 @@ public class AVAudioSessionPortDescription extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("channels")
     public native NSArray<? extends AVAudioSessionChannelDescription> channels();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,6 +108,7 @@ public class AVAudioSessionPortDescription extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("dataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> dataSources();
@@ -178,9 +186,10 @@ public class AVAudioSessionPortDescription extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,6 +201,7 @@ public class AVAudioSessionPortDescription extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("portName")
     public native String portName();
@@ -199,6 +209,7 @@ public class AVAudioSessionPortDescription extends NSObject {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("portType")
     public native String portType();
@@ -209,6 +220,7 @@ public class AVAudioSessionPortDescription extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("preferredDataSource")
     public native AVAudioSessionDataSourceDescription preferredDataSource();
@@ -227,6 +239,7 @@ public class AVAudioSessionPortDescription extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("selectedDataSource")
     public native AVAudioSessionDataSourceDescription selectedDataSource();
@@ -243,8 +256,8 @@ public class AVAudioSessionPortDescription extends NSObject {
      */
     @Generated
     @Selector("setPreferredDataSource:error:")
-    public native boolean setPreferredDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setPreferredDataSourceError(@Nullable AVAudioSessionDataSourceDescription dataSource,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setVersion:")

@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] NFCMiFareTag
@@ -38,6 +40,7 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("historicalBytes")
     NSData historicalBytes();
@@ -47,6 +50,7 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     NSData identifier();
@@ -80,14 +84,14 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("sendMiFareCommand:completionHandler:")
-    void sendMiFareCommandCompletionHandler(NSData command,
-            @ObjCBlock(name = "call_sendMiFareCommandCompletionHandler") Block_sendMiFareCommandCompletionHandler completionHandler);
+    void sendMiFareCommandCompletionHandler(@NotNull NSData command,
+            @NotNull @ObjCBlock(name = "call_sendMiFareCommandCompletionHandler") Block_sendMiFareCommandCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMiFareCommandCompletionHandler {
         @Generated
-        void call_sendMiFareCommandCompletionHandler(NSData response, NSError error);
+        void call_sendMiFareCommandCompletionHandler(@NotNull NSData response, @Nullable NSError error);
     }
 
     /**
@@ -107,13 +111,14 @@ public interface NFCMiFareTag extends NFCTag, NFCNDEFTag {
      */
     @Generated
     @Selector("sendMiFareISO7816Command:completionHandler:")
-    void sendMiFareISO7816CommandCompletionHandler(NFCISO7816APDU apdu,
-            @ObjCBlock(name = "call_sendMiFareISO7816CommandCompletionHandler") Block_sendMiFareISO7816CommandCompletionHandler completionHandler);
+    void sendMiFareISO7816CommandCompletionHandler(@NotNull NFCISO7816APDU apdu,
+            @NotNull @ObjCBlock(name = "call_sendMiFareISO7816CommandCompletionHandler") Block_sendMiFareISO7816CommandCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMiFareISO7816CommandCompletionHandler {
         @Generated
-        void call_sendMiFareISO7816CommandCompletionHandler(NSData responseData, byte sw1, byte sw2, NSError error);
+        void call_sendMiFareISO7816CommandCompletionHandler(@NotNull NSData responseData, byte sw1, byte sw2,
+                @Nullable NSError error);
     }
 }

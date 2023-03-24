@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -76,22 +78,25 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,6 +117,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     /**
      * conveniences
      */
+    @NotNull
     @Generated
     @Selector("hashTableWithOptions:")
     public static native <_ObjectType> NSHashTable<_ObjectType> hashTableWithOptions(@NUInt long options);
@@ -133,9 +139,10 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,21 +175,24 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("weakObjectsHashTable")
     public static native <_ObjectType> NSHashTable<_ObjectType> weakObjectsHashTable();
 
     @Generated
     @Selector("addObject:")
-    public native void addObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native void addObject(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     /**
      * convenience
      */
+    @NotNull
     @Generated
     @Selector("allObjects")
     public native NSArray<_ObjectType> allObjects();
 
+    @Nullable
     @Generated
     @Selector("anyObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -190,13 +200,14 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("containsObject:")
-    public native boolean containsObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native boolean containsObject(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -206,12 +217,12 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -219,7 +230,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSHashTable<?> initWithCoder(NSCoder coder);
+    public native NSHashTable<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithOptions:capacity:")
@@ -227,34 +238,36 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("initWithPointerFunctions:capacity:")
-    public native NSHashTable<?> initWithPointerFunctionsCapacity(NSPointerFunctions functions,
+    public native NSHashTable<?> initWithPointerFunctionsCapacity(@NotNull NSPointerFunctions functions,
             @NUInt long initialCapacity);
 
     @Generated
     @Selector("intersectHashTable:")
-    public native void intersectHashTable(NSHashTable<_ObjectType> other);
+    public native void intersectHashTable(@NotNull NSHashTable<_ObjectType> other);
 
     @Generated
     @Selector("intersectsHashTable:")
-    public native boolean intersectsHashTable(NSHashTable<_ObjectType> other);
+    public native boolean intersectsHashTable(@NotNull NSHashTable<_ObjectType> other);
 
     @Generated
     @Selector("isEqualToHashTable:")
-    public native boolean isEqualToHashTable(NSHashTable<_ObjectType> other);
+    public native boolean isEqualToHashTable(@NotNull NSHashTable<_ObjectType> other);
 
     @Generated
     @Selector("isSubsetOfHashTable:")
-    public native boolean isSubsetOfHashTable(NSHashTable<_ObjectType> other);
+    public native boolean isSubsetOfHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    @Nullable
     @Generated
     @Selector("member:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType member(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native _ObjectType member(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     @Generated
     @Selector("minusHashTable:")
-    public native void minusHashTable(NSHashTable<_ObjectType> other);
+    public native void minusHashTable(@NotNull NSHashTable<_ObjectType> other);
 
+    @NotNull
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
@@ -263,6 +276,7 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
      * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
      * be subsequently modified and/or used directly in the creation of other pointer "collections".
      */
+    @NotNull
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
@@ -273,18 +287,19 @@ public class NSHashTable<_ObjectType> extends NSObject implements NSCopying, NSS
 
     @Generated
     @Selector("removeObject:")
-    public native void removeObject(@Mapped(ObjCObjectMapper.class) _ObjectType object);
+    public native void removeObject(@Nullable @Mapped(ObjCObjectMapper.class) _ObjectType object);
 
     /**
      * create a set of the contents
      */
+    @NotNull
     @Generated
     @Selector("setRepresentation")
     public native NSSet<_ObjectType> setRepresentation();
 
     @Generated
     @Selector("unionHashTable:")
-    public native void unionHashTable(NSHashTable<_ObjectType> other);
+    public native void unionHashTable(@NotNull NSHashTable<_ObjectType> other);
 
     @Generated
     @Selector("supportsSecureCoding")

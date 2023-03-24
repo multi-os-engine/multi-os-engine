@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -80,22 +82,25 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * the device's internal screen
@@ -141,6 +147,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use a UIScreen instance found through context instead: i.e, view.window.windowScene.screen
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("mainScreen")
@@ -166,6 +173,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * Deprecated-Since: 16.0
      * Deprecated-Message: Use UIApplication.shared.openSessions to find open sessions with scenes from other screens
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("screens")
@@ -199,6 +207,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @Selector("availableModes")
     public native NSArray<? extends UIScreenMode> availableModes();
@@ -224,6 +233,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -234,6 +244,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * 
      * API-Since: 3.2
      */
+    @Nullable
     @Generated
     @Selector("currentMode")
     public native UIScreenMode currentMode();
@@ -241,13 +252,16 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("displayLinkWithTarget:selector:")
-    public native CADisplayLink displayLinkWithTargetSelector(@Mapped(ObjCObjectMapper.class) Object target, SEL sel);
+    public native CADisplayLink displayLinkWithTargetSelector(@NotNull @Mapped(ObjCObjectMapper.class) Object target,
+            @NotNull SEL sel);
 
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("fixedCoordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -258,6 +272,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use -[UIWindowScene focusSystem].focusedItem instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("focusedItem")
@@ -269,6 +284,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use -[UIWindowScene focusSystem].focusedItem instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("focusedView")
@@ -284,6 +300,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * 
      * API-Since: 4.3
      */
+    @Nullable
     @Generated
     @Selector("mirroredScreen")
     public native UIScreen mirroredScreen();
@@ -334,6 +351,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * 
      * API-Since: 4.3
      */
+    @Nullable
     @Generated
     @Selector("preferredMode")
     public native UIScreenMode preferredMode();
@@ -362,7 +380,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      */
     @Generated
     @Selector("setCurrentMode:")
-    public native void setCurrentMode(UIScreenMode value);
+    public native void setCurrentMode(@Nullable UIScreenMode value);
 
     /**
      * Default is UIScreenOverscanCompensationScale. Determines how the screen behaves if the connected display is
@@ -390,6 +408,7 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
     public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
@@ -404,13 +423,14 @@ public class UIScreen extends NSObject implements UITraitEnvironment {
     @Selector("supportsFocus")
     public native boolean supportsFocus();
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
     @Generated
     @Selector("traitCollectionDidChange:")
-    public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
+    public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
 
     /**
      * Default is NO. If YES, brightness levels lower than that of which the hardware is capable are emulated in

@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -22,15 +23,16 @@ public interface ASAuthorizationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("authorizationController:didCompleteWithAuthorization:")
-    default void authorizationControllerDidCompleteWithAuthorization(ASAuthorizationController controller,
-            ASAuthorization authorization) {
+    default void authorizationControllerDidCompleteWithAuthorization(@NotNull ASAuthorizationController controller,
+            @NotNull ASAuthorization authorization) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("authorizationController:didCompleteWithError:")
-    default void authorizationControllerDidCompleteWithError(ASAuthorizationController controller, NSError error) {
+    default void authorizationControllerDidCompleteWithError(@NotNull ASAuthorizationController controller,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NKIssue
@@ -93,22 +95,25 @@ public class NKIssue extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -143,9 +148,10 @@ public class NKIssue extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,9 +185,10 @@ public class NKIssue extends NSObject {
      * Add a downloading asset to this issue. Initiate the download for this
      * asset with the downloadWithDelegate: method on the NKAssetDownload.
      */
+    @NotNull
     @Generated
     @Selector("addAssetWithRequest:")
-    public native NKAssetDownload addAssetWithRequest(NSURLRequest request);
+    public native NKAssetDownload addAssetWithRequest(@NotNull NSURLRequest request);
 
     /**
      * [@property] contentURL
@@ -189,6 +196,7 @@ public class NKIssue extends NSObject {
      * All content that represents this issue should be placed in the
      * URL provided.
      */
+    @NotNull
     @Generated
     @Selector("contentURL")
     public native NSURL contentURL();
@@ -198,6 +206,7 @@ public class NKIssue extends NSObject {
      * 
      * The date of this issue
      */
+    @NotNull
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -207,6 +216,7 @@ public class NKIssue extends NSObject {
      * 
      * An array of NKAssetDownload associated with this issue.
      */
+    @NotNull
     @Generated
     @Selector("downloadingAssets")
     public native NSArray<? extends NKAssetDownload> downloadingAssets();
@@ -220,6 +230,7 @@ public class NKIssue extends NSObject {
      * 
      * The unique name given to this issue
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();

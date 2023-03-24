@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetDownloadContentConfiguration
@@ -61,31 +63,35 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -121,9 +127,10 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mediaSelections
@@ -132,6 +139,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      * 
      * If a media selection is not provided, automatic media selection associated with the asset will be used.
      */
+    @NotNull
     @Generated
     @Selector("mediaSelections")
     public native NSArray<? extends AVMediaSelection> mediaSelections();
@@ -158,7 +166,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      */
     @Generated
     @Selector("setMediaSelections:")
-    public native void setMediaSelections(NSArray<? extends AVMediaSelection> value);
+    public native void setMediaSelections(@NotNull NSArray<? extends AVMediaSelection> value);
 
     /**
      * [@property] variantQualifiers
@@ -177,7 +185,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      */
     @Generated
     @Selector("setVariantQualifiers:")
-    public native void setVariantQualifiers(NSArray<? extends AVAssetVariantQualifier> value);
+    public native void setVariantQualifiers(@NotNull NSArray<? extends AVAssetVariantQualifier> value);
 
     @Generated
     @Selector("setVersion:")
@@ -202,6 +210,7 @@ public class AVAssetDownloadContentConfiguration extends NSObject implements NSC
      * the variants which can be played according to the current device configuration, automatic variant selection will
      * be used.
      */
+    @NotNull
     @Generated
     @Selector("variantQualifiers")
     public native NSArray<? extends AVAssetVariantQualifier> variantQualifiers();

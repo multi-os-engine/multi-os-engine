@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The interface through which clients receive the results of an analysis request
@@ -30,7 +31,8 @@ public interface SNResultsObserving {
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
-    default void requestDidFailWithError(@Mapped(ObjCObjectMapper.class) SNRequest request, NSError error) {
+    default void requestDidFailWithError(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -42,8 +44,8 @@ public interface SNResultsObserving {
      */
     @Generated
     @Selector("request:didProduceResult:")
-    void requestDidProduceResult(@Mapped(ObjCObjectMapper.class) SNRequest request,
-            @Mapped(ObjCObjectMapper.class) SNResult result);
+    void requestDidProduceResult(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request,
+            @NotNull @Mapped(ObjCObjectMapper.class) SNResult result);
 
     /**
      * Informs the client that the analysis request was completed normally
@@ -54,7 +56,7 @@ public interface SNResultsObserving {
     @Generated
     @IsOptional
     @Selector("requestDidComplete:")
-    default void requestDidComplete(@Mapped(ObjCObjectMapper.class) SNRequest request) {
+    default void requestDidComplete(@NotNull @Mapped(ObjCObjectMapper.class) SNRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

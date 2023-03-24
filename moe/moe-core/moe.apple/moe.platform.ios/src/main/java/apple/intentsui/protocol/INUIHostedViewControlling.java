@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 10.0
@@ -57,8 +58,8 @@ public interface INUIHostedViewControlling {
     @IsOptional
     @Generated
     @Selector("configureWithInteraction:context:completion:")
-    default void configureWithInteractionContextCompletion(INInteraction interaction, @NUInt long context,
-            @ObjCBlock(name = "call_configureWithInteractionContextCompletion") Block_configureWithInteractionContextCompletion completion) {
+    default void configureWithInteractionContextCompletion(@NotNull INInteraction interaction, @NUInt long context,
+            @NotNull @ObjCBlock(name = "call_configureWithInteractionContextCompletion") Block_configureWithInteractionContextCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -97,9 +98,9 @@ public interface INUIHostedViewControlling {
     @IsOptional
     @Selector("configureViewForParameters:ofInteraction:interactiveBehavior:context:completion:")
     default void configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion(
-            NSSet<? extends INParameter> parameters, INInteraction interaction, @NUInt long interactiveBehavior,
-            @NUInt long context,
-            @ObjCBlock(name = "call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion") Block_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion completion) {
+            @NotNull NSSet<? extends INParameter> parameters, @NotNull INInteraction interaction,
+            @NUInt long interactiveBehavior, @NUInt long context,
+            @NotNull @ObjCBlock(name = "call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion") Block_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +109,6 @@ public interface INUIHostedViewControlling {
     public interface Block_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion {
         @Generated
         void call_configureViewForParametersOfInteractionInteractiveBehaviorContextCompletion(boolean success,
-                NSSet<? extends INParameter> configuredParameters, @ByValue CGSize desiredSize);
+                @NotNull NSSet<? extends INParameter> configuredParameters, @ByValue CGSize desiredSize);
     }
 }

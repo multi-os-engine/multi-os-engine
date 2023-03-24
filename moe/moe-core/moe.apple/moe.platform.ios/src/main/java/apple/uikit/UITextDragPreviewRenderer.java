@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -51,9 +53,9 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Generated
     @Selector("adjustFirstLineRect:bodyRect:lastLineRect:textOrigin:")
     public native void adjustFirstLineRectBodyRectLastLineRectTextOrigin(
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect firstLineRect,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect bodyRect,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect lastLineRect,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect firstLineRect,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect bodyRect,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGRect lastLineRect,
             @ByValue CGPoint origin);
 
     @Generated
@@ -68,7 +70,7 @@ public class UITextDragPreviewRenderer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("bodyRect")
@@ -77,18 +79,21 @@ public class UITextDragPreviewRenderer extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,6 +116,7 @@ public class UITextDragPreviewRenderer extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -121,12 +127,12 @@ public class UITextDragPreviewRenderer extends NSObject {
 
     @Generated
     @Selector("initWithLayoutManager:range:")
-    public native UITextDragPreviewRenderer initWithLayoutManagerRange(NSLayoutManager layoutManager,
+    public native UITextDragPreviewRenderer initWithLayoutManagerRange(@NotNull NSLayoutManager layoutManager,
             @ByValue NSRange range);
 
     @Generated
     @Selector("initWithLayoutManager:range:unifyRects:")
-    public native UITextDragPreviewRenderer initWithLayoutManagerRangeUnifyRects(NSLayoutManager layoutManager,
+    public native UITextDragPreviewRenderer initWithLayoutManagerRangeUnifyRects(@NotNull NSLayoutManager layoutManager,
             @ByValue NSRange range, boolean unifyRects);
 
     @Generated
@@ -146,15 +152,17 @@ public class UITextDragPreviewRenderer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("lastLineRect")
     @ByValue
     public native CGRect lastLineRect();
 
+    @NotNull
     @Generated
     @Selector("layoutManager")
     public native NSLayoutManager layoutManager();

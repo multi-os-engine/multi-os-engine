@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -81,22 +83,25 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,8 +148,8 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
 
     @Generated
     @Selector("placemarkWithLocation:name:postalAddress:")
-    public static native MKPlacemark placemarkWithLocationNamePostalAddress(CLLocation location, String name,
-            CNPostalAddress postalAddress);
+    public static native MKPlacemark placemarkWithLocationNamePostalAddress(@NotNull CLLocation location,
+            @Nullable String name, @Nullable CNPostalAddress postalAddress);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,6 +186,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
      * instance that is returned by CLGeocoder.
      * See CLGeocoder.h and CLPlacemark.h in CoreLocation for more information.
      */
+    @Nullable
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -190,7 +197,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKPlacemark initWithCoder(NSCoder coder);
+    public native MKPlacemark initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 10.0
@@ -206,7 +213,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Generated
     @Selector("initWithCoordinate:addressDictionary:")
     public native MKPlacemark initWithCoordinateAddressDictionary(@ByValue CLLocationCoordinate2D coordinate,
-            NSDictionary<String, ?> addressDictionary);
+            @Nullable NSDictionary<String, ?> addressDictionary);
 
     /**
      * API-Since: 10.0
@@ -214,17 +221,18 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
     @Generated
     @Selector("initWithCoordinate:postalAddress:")
     public native MKPlacemark initWithCoordinatePostalAddress(@ByValue CLLocationCoordinate2D coordinate,
-            CNPostalAddress postalAddress);
+            @NotNull CNPostalAddress postalAddress);
 
     @Generated
     @Selector("initWithPlacemark:")
-    public native MKPlacemark initWithPlacemark(CLPlacemark placemark);
+    public native MKPlacemark initWithPlacemark(@NotNull CLPlacemark placemark);
 
     @Generated
     @IsOptional
     @Selector("setCoordinate:")
     public native void setCoordinate(@ByValue CLLocationCoordinate2D newCoordinate);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("subtitle")
@@ -236,6 +244,7 @@ public class MKPlacemark extends CLPlacemark implements MKAnnotation {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("title")

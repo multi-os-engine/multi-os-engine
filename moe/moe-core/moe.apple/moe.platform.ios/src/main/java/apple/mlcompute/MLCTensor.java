@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCTensor
@@ -63,7 +65,7 @@ public class MLCTensor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Associates the given data to the tensor. If the device is GPU, also copies the data to the device memory.
@@ -82,7 +84,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("bindAndWriteData:toDevice:")
-    public native boolean bindAndWriteDataToDevice(MLCTensorData data, MLCDevice device);
+    public native boolean bindAndWriteDataToDevice(@NotNull MLCTensorData data, @NotNull MLCDevice device);
 
     /**
      * Associates the given optimizer data and device data buffers to the tensor.
@@ -98,23 +100,26 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("bindOptimizerData:deviceData:")
-    public native boolean bindOptimizerDataDeviceData(NSArray<? extends MLCTensorData> data,
-            NSArray<? extends MLCTensorOptimizerDeviceData> deviceData);
+    public native boolean bindOptimizerDataDeviceData(@NotNull NSArray<? extends MLCTensorData> data,
+            @Nullable NSArray<? extends MLCTensorOptimizerDeviceData> deviceData);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,20 +142,22 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("copyDataFromDeviceMemoryToBytes:length:synchronizeWithDevice:")
-    public native boolean copyDataFromDeviceMemoryToBytesLengthSynchronizeWithDevice(VoidPtr bytes, @NUInt long length,
-            boolean synchronizeWithDevice);
+    public native boolean copyDataFromDeviceMemoryToBytesLengthSynchronizeWithDevice(@NotNull VoidPtr bytes,
+            @NUInt long length, boolean synchronizeWithDevice);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] data
      * 
      * The tensor data
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -168,6 +175,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      * The tensor descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCTensorDescriptor descriptor();
@@ -177,6 +185,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      * The device associated with this tensor.
      */
+    @Nullable
     @Generated
     @Selector("device")
     public native MLCDevice device();
@@ -215,15 +224,17 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] label
      * 
      * A string to help identify this object.
      */
+    @NotNull
     @Generated
     @Selector("label")
     public native String label();
@@ -241,6 +252,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      * When customizing optimizer data, the contents of these buffers must be initialized before executing optimizer
      * update for a graph.
      */
+    @NotNull
     @Generated
     @Selector("optimizerData")
     public native NSArray<? extends MLCTensorData> optimizerData();
@@ -250,6 +262,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      * These are the device side optimizer (momentum and velocity) buffers which developers can query
      */
+    @NotNull
     @Generated
     @Selector("optimizerDeviceData")
     public native NSArray<? extends MLCTensorOptimizerDeviceData> optimizerDeviceData();
@@ -269,7 +282,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setLabel:")
-    public native void setLabel(String value);
+    public native void setLabel(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -318,9 +331,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("tensorByDequantizingToType:scale:bias:")
-    public native MLCTensor tensorByDequantizingToTypeScaleBias(int type, MLCTensor scale, MLCTensor bias);
+    public native MLCTensor tensorByDequantizingToTypeScaleBias(int type, @NotNull MLCTensor scale,
+            @NotNull MLCTensor bias);
 
     /**
      * Converts a quantized tensor to a 32-bit floating-point tensor
@@ -334,10 +349,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("tensorByDequantizingToType:scale:bias:axis:")
-    public native MLCTensor tensorByDequantizingToTypeScaleBiasAxis(int type, MLCTensor scale, MLCTensor bias,
-            @NInt long axis);
+    public native MLCTensor tensorByDequantizingToTypeScaleBiasAxis(int type, @NotNull MLCTensor scale,
+            @NotNull MLCTensor bias, @NInt long axis);
 
     /**
      * Converts a 32-bit floating-point tensor with given scale and a zero point
@@ -350,6 +366,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("tensorByQuantizingToType:scale:bias:")
     public native MLCTensor tensorByQuantizingToTypeScaleBias(int type, float scale, @NInt long bias);
@@ -366,10 +383,11 @@ public class MLCTensor extends NSObject implements NSCopying {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("tensorByQuantizingToType:scale:bias:axis:")
-    public native MLCTensor tensorByQuantizingToTypeScaleBiasAxis(int type, MLCTensor scale, MLCTensor bias,
-            @NInt long axis);
+    public native MLCTensor tensorByQuantizingToTypeScaleBiasAxis(int type, @NotNull MLCTensor scale,
+            @NotNull MLCTensor bias, @NInt long axis);
 
     /**
      * [@property] tensorID
@@ -392,7 +410,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithDescriptor:")
-    public static native MLCTensor tensorWithDescriptor(MLCTensorDescriptor tensorDescriptor);
+    public static native MLCTensor tensorWithDescriptor(@NotNull MLCTensorDescriptor tensorDescriptor);
 
     /**
      * Create a MLCTensor object
@@ -405,7 +423,8 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithDescriptor:data:")
-    public static native MLCTensor tensorWithDescriptorData(MLCTensorDescriptor tensorDescriptor, MLCTensorData data);
+    public static native MLCTensor tensorWithDescriptorData(@NotNull MLCTensorDescriptor tensorDescriptor,
+            @NotNull MLCTensorData data);
 
     /**
      * Create a MLCTensor object
@@ -418,8 +437,8 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithDescriptor:fillWithData:")
-    public static native MLCTensor tensorWithDescriptorFillWithData(MLCTensorDescriptor tensorDescriptor,
-            NSNumber fillData);
+    public static native MLCTensor tensorWithDescriptorFillWithData(@NotNull MLCTensorDescriptor tensorDescriptor,
+            @NotNull NSNumber fillData);
 
     /**
      * Create a MLCTensor object
@@ -432,8 +451,8 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithDescriptor:randomInitializerType:")
-    public static native MLCTensor tensorWithDescriptorRandomInitializerType(MLCTensorDescriptor tensorDescriptor,
-            int randomInitializerType);
+    public static native MLCTensor tensorWithDescriptorRandomInitializerType(
+            @NotNull MLCTensorDescriptor tensorDescriptor, int randomInitializerType);
 
     /**
      * Create a MLCTensor object
@@ -466,7 +485,7 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Generated
     @Selector("tensorWithSequenceLength:featureChannelCount:batchSize:data:")
     public static native MLCTensor tensorWithSequenceLengthFeatureChannelCountBatchSizeData(@NUInt long sequenceLength,
-            @NUInt long featureChannelCount, @NUInt long batchSize, MLCTensorData data);
+            @NUInt long featureChannelCount, @NUInt long batchSize, @Nullable MLCTensorData data);
 
     /**
      * Create a MLCTensor object
@@ -503,8 +522,8 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Generated
     @Selector("tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:data:")
     public static native MLCTensor tensorWithSequenceLengthsSortedSequencesFeatureChannelCountBatchSizeData(
-            NSArray<? extends NSNumber> sequenceLengths, boolean sortedSequences, @NUInt long featureChannelCount,
-            @NUInt long batchSize, MLCTensorData data);
+            @NotNull NSArray<? extends NSNumber> sequenceLengths, boolean sortedSequences,
+            @NUInt long featureChannelCount, @NUInt long batchSize, @Nullable MLCTensorData data);
 
     /**
      * Create a MLCTensor object
@@ -523,8 +542,8 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Generated
     @Selector("tensorWithSequenceLengths:sortedSequences:featureChannelCount:batchSize:randomInitializerType:")
     public static native MLCTensor tensorWithSequenceLengthsSortedSequencesFeatureChannelCountBatchSizeRandomInitializerType(
-            NSArray<? extends NSNumber> sequenceLengths, boolean sortedSequences, @NUInt long featureChannelCount,
-            @NUInt long batchSize, int randomInitializerType);
+            @NotNull NSArray<? extends NSNumber> sequenceLengths, boolean sortedSequences,
+            @NUInt long featureChannelCount, @NUInt long batchSize, int randomInitializerType);
 
     /**
      * Create a MLCTensor object
@@ -536,7 +555,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithShape:")
-    public static native MLCTensor tensorWithShape(NSArray<? extends NSNumber> shape);
+    public static native MLCTensor tensorWithShape(@NotNull NSArray<? extends NSNumber> shape);
 
     /**
      * Create a MLCTensor object
@@ -550,8 +569,8 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithShape:data:dataType:")
-    public static native MLCTensor tensorWithShapeDataDataType(NSArray<? extends NSNumber> shape, MLCTensorData data,
-            int dataType);
+    public static native MLCTensor tensorWithShapeDataDataType(@NotNull NSArray<? extends NSNumber> shape,
+            @NotNull MLCTensorData data, int dataType);
 
     /**
      * Create a MLCTensor object
@@ -564,7 +583,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithShape:dataType:")
-    public static native MLCTensor tensorWithShapeDataType(NSArray<? extends NSNumber> shape, int dataType);
+    public static native MLCTensor tensorWithShapeDataType(@NotNull NSArray<? extends NSNumber> shape, int dataType);
 
     /**
      * Create a MLCTensor object
@@ -578,8 +597,8 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithShape:fillWithData:dataType:")
-    public static native MLCTensor tensorWithShapeFillWithDataDataType(NSArray<? extends NSNumber> shape,
-            NSNumber fillData, int dataType);
+    public static native MLCTensor tensorWithShapeFillWithDataDataType(@NotNull NSArray<? extends NSNumber> shape,
+            @NotNull NSNumber fillData, int dataType);
 
     /**
      * Create a MLCTensor object
@@ -593,7 +612,7 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithShape:randomInitializerType:")
-    public static native MLCTensor tensorWithShapeRandomInitializerType(NSArray<? extends NSNumber> shape,
+    public static native MLCTensor tensorWithShapeRandomInitializerType(@NotNull NSArray<? extends NSNumber> shape,
             int randomInitializerType);
 
     /**
@@ -609,8 +628,8 @@ public class MLCTensor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("tensorWithShape:randomInitializerType:dataType:")
-    public static native MLCTensor tensorWithShapeRandomInitializerTypeDataType(NSArray<? extends NSNumber> shape,
-            int randomInitializerType, int dataType);
+    public static native MLCTensor tensorWithShapeRandomInitializerTypeDataType(
+            @NotNull NSArray<? extends NSNumber> shape, int randomInitializerType, int dataType);
 
     /**
      * Create a MLCTensor object
@@ -644,7 +663,7 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:data:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSizeData(@NUInt long width,
-            @NUInt long height, @NUInt long featureChannelCount, @NUInt long batchSize, MLCTensorData data);
+            @NUInt long height, @NUInt long featureChannelCount, @NUInt long batchSize, @NotNull MLCTensorData data);
 
     /**
      * Create a MLCTensor object
@@ -663,7 +682,7 @@ public class MLCTensor extends NSObject implements NSCopying {
     @Generated
     @Selector("tensorWithWidth:height:featureChannelCount:batchSize:data:dataType:")
     public static native MLCTensor tensorWithWidthHeightFeatureChannelCountBatchSizeDataDataType(@NUInt long width,
-            @NUInt long height, @NUInt long featureChannelCount, @NUInt long batchSize, MLCTensorData data,
+            @NUInt long height, @NUInt long featureChannelCount, @NUInt long batchSize, @NotNull MLCTensorData data,
             int dataType);
 
     /**

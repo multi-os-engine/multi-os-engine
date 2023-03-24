@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A class conforming to the WKScriptMessageHandler protocol provides a
@@ -43,6 +44,6 @@ public interface WKScriptMessageHandler {
      */
     @Generated
     @Selector("userContentController:didReceiveScriptMessage:")
-    void userContentControllerDidReceiveScriptMessage(WKUserContentController userContentController,
-            WKScriptMessage message);
+    void userContentControllerDidReceiveScriptMessage(@NotNull WKUserContentController userContentController,
+            @NotNull WKScriptMessage message);
 }

@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -62,10 +64,11 @@ public class CAEDRMetadata extends NSObject {
      * If the content, y, is in a normalized pixel format then `scale' is
      * assumed to be 10,000.
      */
+    @NotNull
     @Generated
     @Selector("HDR10MetadataWithDisplayInfo:contentInfo:opticalOutputScale:")
-    public static native CAEDRMetadata HDR10MetadataWithDisplayInfoContentInfoOpticalOutputScale(NSData displayData,
-            NSData contentData, float scale);
+    public static native CAEDRMetadata HDR10MetadataWithDisplayInfoContentInfoOpticalOutputScale(
+            @Nullable NSData displayData, @Nullable NSData contentData, float scale);
 
     /**
      * Simplified HDR10 initializer based on the minimum and maximum candelas per
@@ -89,6 +92,7 @@ public class CAEDRMetadata extends NSObject {
      * If the content, y, is in a normalized pixel format then `scale' is
      * assumed to be 10,000.
      */
+    @NotNull
     @Generated
     @Selector("HDR10MetadataWithMinLuminance:maxLuminance:opticalOutputScale:")
     public static native CAEDRMetadata HDR10MetadataWithMinLuminanceMaxLuminanceOpticalOutputScale(float minNits,
@@ -102,6 +106,7 @@ public class CAEDRMetadata extends NSObject {
      * colorspace (for floating point extended dynamic range layers), the content
      * provider must have already applied the HLG inverse OETF.
      */
+    @NotNull
     @Generated
     @Selector("HLGMetadata")
     public static native CAEDRMetadata HLGMetadata();
@@ -122,22 +127,25 @@ public class CAEDRMetadata extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -183,9 +191,10 @@ public class CAEDRMetadata extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

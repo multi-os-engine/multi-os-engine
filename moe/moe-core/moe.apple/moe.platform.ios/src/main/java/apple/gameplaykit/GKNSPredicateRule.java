@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A convenient subclass of GKRule that leverages existing NSPRedicate functionality for evaluating the predicate
@@ -76,22 +78,25 @@ public class GKNSPredicateRule extends GKRule {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class GKNSPredicateRule extends GKRule {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -146,18 +152,18 @@ public class GKNSPredicateRule extends GKRule {
     @Generated
     @Selector("ruleWithBlockPredicate:action:")
     public static native GKNSPredicateRule ruleWithBlockPredicateAction(
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") GKRule.Block_ruleWithBlockPredicateAction_0 predicate,
-            @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") GKRule.Block_ruleWithBlockPredicateAction_1 action);
+            @NotNull @ObjCBlock(name = "call_ruleWithBlockPredicateAction_0") GKRule.Block_ruleWithBlockPredicateAction_0 predicate,
+            @NotNull @ObjCBlock(name = "call_ruleWithBlockPredicateAction_1") GKRule.Block_ruleWithBlockPredicateAction_1 action);
 
     @Generated
     @Selector("ruleWithPredicate:assertingFact:grade:")
-    public static native GKNSPredicateRule ruleWithPredicateAssertingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public static native GKNSPredicateRule ruleWithPredicateAssertingFactGrade(@NotNull NSPredicate predicate,
+            @NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
     @Generated
     @Selector("ruleWithPredicate:retractingFact:grade:")
-    public static native GKNSPredicateRule ruleWithPredicateRetractingFactGrade(NSPredicate predicate,
-            @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public static native GKNSPredicateRule ruleWithPredicateRetractingFactGrade(@NotNull NSPredicate predicate,
+            @NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
 
     @Generated
     @Selector("setVersion:")
@@ -180,7 +186,7 @@ public class GKNSPredicateRule extends GKRule {
      */
     @Generated
     @Selector("evaluatePredicateWithSystem:")
-    public native boolean evaluatePredicateWithSystem(GKRuleSystem system);
+    public native boolean evaluatePredicateWithSystem(@NotNull GKRuleSystem system);
 
     @Generated
     @Selector("init")
@@ -191,7 +197,7 @@ public class GKNSPredicateRule extends GKRule {
      */
     @Generated
     @Selector("initWithPredicate:")
-    public native GKNSPredicateRule initWithPredicate(NSPredicate predicate);
+    public native GKNSPredicateRule initWithPredicate(@NotNull NSPredicate predicate);
 
     /**
      * The NSPredicate that is used inside this subclass's implementation of evaluatePredicateWithSystem:
@@ -199,6 +205,7 @@ public class GKNSPredicateRule extends GKRule {
      * 
      * @see GKRule.evaluatePredicateWithSystem:
      */
+    @NotNull
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();

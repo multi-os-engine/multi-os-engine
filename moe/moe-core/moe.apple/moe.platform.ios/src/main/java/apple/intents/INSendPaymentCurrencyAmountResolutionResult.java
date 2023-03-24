@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -55,30 +57,34 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithCurrencyAmountToConfirm:")
     public static native INSendPaymentCurrencyAmountResolutionResult confirmationRequiredWithCurrencyAmountToConfirm(
-            INCurrencyAmount currencyAmountToConfirm);
+            @Nullable INCurrencyAmount currencyAmountToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -88,10 +94,11 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("disambiguationWithCurrencyAmountsToDisambiguate:")
     public static native INSendPaymentCurrencyAmountResolutionResult disambiguationWithCurrencyAmountsToDisambiguate(
-            NSArray<? extends INCurrencyAmount> currencyAmountsToDisambiguate);
+            @NotNull NSArray<? extends INCurrencyAmount> currencyAmountsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -105,7 +112,7 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Generated
     @Selector("initWithCurrencyAmountResolutionResult:")
     public native INSendPaymentCurrencyAmountResolutionResult initWithCurrencyAmountResolutionResult(
-            INCurrencyAmountResolutionResult currencyAmountResolutionResult);
+            @NotNull INCurrencyAmountResolutionResult currencyAmountResolutionResult);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,10 +131,12 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INSendPaymentCurrencyAmountResolutionResult needsValue();
@@ -137,6 +146,7 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("new")
     public static native INSendPaymentCurrencyAmountResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INSendPaymentCurrencyAmountResolutionResult notRequired();
@@ -153,19 +163,22 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("successWithResolvedCurrencyAmount:")
     public static native INSendPaymentCurrencyAmountResolutionResult successWithResolvedCurrencyAmount(
-            INCurrencyAmount resolvedCurrencyAmount);
+            @NotNull INCurrencyAmount resolvedCurrencyAmount);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INSendPaymentCurrencyAmountResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedForReason:")
     public static native INSendPaymentCurrencyAmountResolutionResult unsupportedForReason(@NInt long reason);
@@ -175,11 +188,13 @@ public class INSendPaymentCurrencyAmountResolutionResult extends INCurrencyAmoun
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INSendPaymentCurrencyAmountResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INSendPaymentCurrencyAmountResolutionResult unsupportedWithReason(@NInt long reason);

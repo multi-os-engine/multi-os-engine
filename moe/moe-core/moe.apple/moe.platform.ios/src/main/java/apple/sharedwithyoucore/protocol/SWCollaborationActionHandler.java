@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -20,11 +21,11 @@ import org.moe.natj.objc.ann.Selector;
 public interface SWCollaborationActionHandler {
     @Generated
     @Selector("collaborationCoordinator:handleStartCollaborationAction:")
-    void collaborationCoordinatorHandleStartCollaborationAction(SWCollaborationCoordinator coordinator,
-            SWStartCollaborationAction action);
+    void collaborationCoordinatorHandleStartCollaborationAction(@NotNull SWCollaborationCoordinator coordinator,
+            @NotNull SWStartCollaborationAction action);
 
     @Generated
     @Selector("collaborationCoordinator:handleUpdateCollaborationParticipantsAction:")
-    void collaborationCoordinatorHandleUpdateCollaborationParticipantsAction(SWCollaborationCoordinator coordinator,
-            SWUpdateCollaborationParticipantsAction action);
+    void collaborationCoordinatorHandleUpdateCollaborationParticipantsAction(
+            @NotNull SWCollaborationCoordinator coordinator, @NotNull SWUpdateCollaborationParticipantsAction action);
 }

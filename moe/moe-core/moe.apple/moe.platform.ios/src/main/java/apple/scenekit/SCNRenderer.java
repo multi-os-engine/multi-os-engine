@@ -58,6 +58,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNRenderer
@@ -94,22 +96,25 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -144,9 +149,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,7 +169,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      */
     @Generated
     @Selector("rendererWithContext:options:")
-    public static native SCNRenderer rendererWithContextOptions(EAGLContext context, NSDictionary<?, ?> options);
+    public static native SCNRenderer rendererWithContextOptions(@Nullable EAGLContext context,
+            @Nullable NSDictionary<?, ?> options);
 
     /**
      * rendererWithDevice:options:
@@ -177,8 +184,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      */
     @Generated
     @Selector("rendererWithDevice:options:")
-    public static native SCNRenderer rendererWithDeviceOptions(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            NSDictionary<?, ?> options);
+    public static native SCNRenderer rendererWithDeviceOptions(
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device, @Nullable NSDictionary<?, ?> options);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -201,14 +208,17 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("audioEngine")
     public native AVAudioEngine audioEngine();
 
+    @NotNull
     @Generated
     @Selector("audioEnvironmentNode")
     public native AVAudioEnvironmentNode audioEnvironmentNode();
 
+    @Nullable
     @Generated
     @Selector("audioListener")
     public native SCNNode audioListener();
@@ -222,15 +232,18 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @NUInt
     public native long colorPixelFormat();
 
+    @Nullable
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLCommandQueue commandQueue();
 
+    @Nullable
     @Generated
     @Selector("context")
     public native VoidPtr context();
 
+    @Nullable
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -241,6 +254,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @NUInt
     public native long debugOptions();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -251,15 +265,17 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @NUInt
     public native long depthPixelFormat();
 
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     public native MTLDevice device();
 
+    @NotNull
     @Generated
     @Selector("hitTest:options:")
     public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
-            NSDictionary<String, ?> options);
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("init")
@@ -275,7 +291,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("isNodeInsideFrustum:withPointOfView:")
-    public native boolean isNodeInsideFrustumWithPointOfView(SCNNode node, SCNNode pointOfView);
+    public native boolean isNodeInsideFrustumWithPointOfView(@NotNull SCNNode node, @NotNull SCNNode pointOfView);
 
     @Generated
     @Selector("isPlaying")
@@ -299,33 +315,36 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("nextFrameTime")
     public native double nextFrameTime();
 
+    @NotNull
     @Generated
     @Selector("nodesInsideFrustumWithPointOfView:")
-    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+    public native NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(@NotNull SCNNode pointOfView);
 
+    @Nullable
     @Generated
     @Selector("overlaySKScene")
     public native SKScene overlaySKScene();
 
+    @Nullable
     @Generated
     @Selector("pointOfView")
     public native SCNNode pointOfView();
 
     @Generated
     @Selector("prepareObject:shouldAbortBlock:")
-    public native boolean prepareObjectShouldAbortBlock(@Mapped(ObjCObjectMapper.class) Object object,
-            @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") SCNSceneRenderer.Block_prepareObjectShouldAbortBlock block);
+    public native boolean prepareObjectShouldAbortBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object object,
+            @Nullable @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") SCNSceneRenderer.Block_prepareObjectShouldAbortBlock block);
 
     @Generated
     @Selector("prepareObjects:withCompletionHandler:")
-    public native void prepareObjectsWithCompletionHandler(NSArray<?> objects,
-            @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
+    public native void prepareObjectsWithCompletionHandler(@NotNull NSArray<?> objects,
+            @Nullable @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") SCNSceneRenderer.Block_prepareObjectsWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene,
-            SKTransition transition, SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+    public native void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(@NotNull SCNScene scene,
+            @NotNull SKTransition transition, @Nullable SCNNode pointOfView,
+            @Nullable @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") SCNSceneRenderer.Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
 
     @Generated
     @Selector("projectPoint:")
@@ -375,14 +394,15 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("renderAtTime:viewport:commandBuffer:passDescriptor:")
     public native void renderAtTimeViewportCommandBufferPassDescriptor(double time, @ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MTLRenderPassDescriptor renderPassDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor);
 
     @Generated
     @Selector("renderingAPI")
     @NUInt
     public native long renderingAPI();
 
+    @Nullable
     @Generated
     @Selector("scene")
     public native SCNScene scene();
@@ -393,7 +413,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("setAudioListener:")
-    public native void setAudioListener(SCNNode value);
+    public native void setAudioListener(@Nullable SCNNode value);
 
     @Generated
     @Selector("setAutoenablesDefaultLighting:")
@@ -405,10 +425,10 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -425,15 +445,15 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("setOverlaySKScene:")
-    public native void setOverlaySKScene(SKScene value);
+    public native void setOverlaySKScene(@Nullable SKScene value);
 
     @Generated
     @Selector("setPointOfView:")
-    public native void setPointOfView(SCNNode value);
+    public native void setPointOfView(@Nullable SCNNode value);
 
     @Generated
     @Selector("setScene:")
-    public native void setScene(SCNScene value);
+    public native void setScene(@Nullable SCNScene value);
 
     @Generated
     @Selector("setSceneTime:")
@@ -445,7 +465,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
 
     @Generated
     @Selector("setTechnique:")
-    public native void setTechnique(SCNTechnique value);
+    public native void setTechnique(@Nullable SCNTechnique value);
 
     @Generated
     @Selector("showsStatistics")
@@ -458,6 +478,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("snapshotAtTime:withSize:antialiasingMode:")
     public native UIImage snapshotAtTimeWithSizeAntialiasingMode(double time, @ByValue CGSize size,
@@ -468,6 +489,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @NUInt
     public native long stencilPixelFormat();
 
+    @Nullable
     @Generated
     @Selector("technique")
     public native SCNTechnique technique();
@@ -491,7 +513,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
      */
     @Generated
     @Selector("updateProbes:atTime:")
-    public native void updateProbesAtTime(NSArray<? extends SCNNode> lightProbes, double time);
+    public native void updateProbesAtTime(@NotNull NSArray<? extends SCNNode> lightProbes, double time);
 
     /**
      * renderWithViewport:viewport:commandBuffer:passDescriptor:
@@ -506,8 +528,8 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Generated
     @Selector("renderWithViewport:commandBuffer:passDescriptor:")
     public native void renderWithViewportCommandBufferPassDescriptor(@ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MTLRenderPassDescriptor renderPassDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
      * updateAtTime:
@@ -541,6 +563,7 @@ public class SCNRenderer extends NSObject implements SCNSceneRenderer, SCNTechni
     @Selector("usesReverseZ")
     public native boolean usesReverseZ();
 
+    @NotNull
     @Generated
     @Selector("currentRenderPassDescriptor")
     public native MTLRenderPassDescriptor currentRenderPassDescriptor();

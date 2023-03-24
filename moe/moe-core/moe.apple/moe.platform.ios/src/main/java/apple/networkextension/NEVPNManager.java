@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNManager
@@ -82,22 +84,25 @@ public class NEVPNManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class NEVPNManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,6 +166,7 @@ public class NEVPNManager extends NSObject {
      * 
      *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("sharedManager")
     public static native NEVPNManager sharedManager();
@@ -180,6 +187,7 @@ public class NEVPNManager extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("connection")
     public native NEVPNConnection connection();
@@ -248,7 +256,7 @@ public class NEVPNManager extends NSObject {
     @Generated
     @Selector("loadFromPreferencesWithCompletionHandler:")
     public native void loadFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadFromPreferencesWithCompletionHandler") Block_loadFromPreferencesWithCompletionHandler completionHandler);
 
     /**
      * [@property] localizedDescription
@@ -257,6 +265,7 @@ public class NEVPNManager extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -268,6 +277,7 @@ public class NEVPNManager extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("onDemandRules")
     public native NSArray<? extends NEOnDemandRule> onDemandRules();
@@ -280,6 +290,7 @@ public class NEVPNManager extends NSObject {
      * API-Since: 8.0
      * Deprecated-Since: 9.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("protocol")
@@ -292,6 +303,7 @@ public class NEVPNManager extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("protocolConfiguration")
     public native NEVPNProtocol protocolConfiguration();
@@ -311,7 +323,7 @@ public class NEVPNManager extends NSObject {
     @Generated
     @Selector("removeFromPreferencesWithCompletionHandler:")
     public native void removeFromPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_removeFromPreferencesWithCompletionHandler") Block_removeFromPreferencesWithCompletionHandler completionHandler);
 
     /**
      * saveToPreferencesWithCompletionHandler:
@@ -328,7 +340,7 @@ public class NEVPNManager extends NSObject {
     @Generated
     @Selector("saveToPreferencesWithCompletionHandler:")
     public native void saveToPreferencesWithCompletionHandler(
-            @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_saveToPreferencesWithCompletionHandler") Block_saveToPreferencesWithCompletionHandler completionHandler);
 
     /**
      * [@property] localizedDescription
@@ -339,7 +351,7 @@ public class NEVPNManager extends NSObject {
      */
     @Generated
     @Selector("setLocalizedDescription:")
-    public native void setLocalizedDescription(String value);
+    public native void setLocalizedDescription(@Nullable String value);
 
     /**
      * [@property] onDemandRules
@@ -350,7 +362,7 @@ public class NEVPNManager extends NSObject {
      */
     @Generated
     @Selector("setOnDemandRules:")
-    public native void setOnDemandRules(NSArray<? extends NEOnDemandRule> value);
+    public native void setOnDemandRules(@Nullable NSArray<? extends NEOnDemandRule> value);
 
     /**
      * [@property] protocol
@@ -363,7 +375,7 @@ public class NEVPNManager extends NSObject {
     @Generated
     @Deprecated
     @Selector("setProtocol:")
-    public native void setProtocol(NEVPNProtocol value);
+    public native void setProtocol(@Nullable NEVPNProtocol value);
 
     /**
      * [@property] protocolConfiguration
@@ -374,26 +386,26 @@ public class NEVPNManager extends NSObject {
      */
     @Generated
     @Selector("setProtocolConfiguration:")
-    public native void setProtocolConfiguration(NEVPNProtocol value);
+    public native void setProtocolConfiguration(@Nullable NEVPNProtocol value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadFromPreferencesWithCompletionHandler {
         @Generated
-        void call_loadFromPreferencesWithCompletionHandler(NSError error);
+        void call_loadFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeFromPreferencesWithCompletionHandler {
         @Generated
-        void call_removeFromPreferencesWithCompletionHandler(NSError error);
+        void call_removeFromPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveToPreferencesWithCompletionHandler {
         @Generated
-        void call_saveToPreferencesWithCompletionHandler(NSError error);
+        void call_saveToPreferencesWithCompletionHandler(@Nullable NSError error);
     }
 }

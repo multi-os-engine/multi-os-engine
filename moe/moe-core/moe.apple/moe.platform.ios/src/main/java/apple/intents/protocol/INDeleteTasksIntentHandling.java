@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INDeleteTasksIntent. By implementing this protocol, a class can provide
@@ -49,8 +50,8 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmDeleteTasks:completion:")
-    default void confirmDeleteTasksCompletion(INDeleteTasksIntent intent,
-            @ObjCBlock(name = "call_confirmDeleteTasksCompletion") Block_confirmDeleteTasksCompletion completion) {
+    default void confirmDeleteTasksCompletion(@NotNull INDeleteTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmDeleteTasksCompletion") Block_confirmDeleteTasksCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +59,7 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     public interface Block_confirmDeleteTasksCompletion {
         @Generated
-        void call_confirmDeleteTasksCompletion(INDeleteTasksIntentResponse response);
+        void call_confirmDeleteTasksCompletion(@NotNull INDeleteTasksIntentResponse response);
     }
 
     /**
@@ -74,14 +75,14 @@ public interface INDeleteTasksIntentHandling {
      */
     @Generated
     @Selector("handleDeleteTasks:completion:")
-    void handleDeleteTasksCompletion(INDeleteTasksIntent intent,
-            @ObjCBlock(name = "call_handleDeleteTasksCompletion") Block_handleDeleteTasksCompletion completion);
+    void handleDeleteTasksCompletion(@NotNull INDeleteTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleDeleteTasksCompletion") Block_handleDeleteTasksCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleDeleteTasksCompletion {
         @Generated
-        void call_handleDeleteTasksCompletion(INDeleteTasksIntentResponse response);
+        void call_handleDeleteTasksCompletion(@NotNull INDeleteTasksIntentResponse response);
     }
 
     /**
@@ -98,8 +99,8 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveTaskListForDeleteTasks:withCompletion:")
-    default void resolveTaskListForDeleteTasksWithCompletion(INDeleteTasksIntent intent,
-            @ObjCBlock(name = "call_resolveTaskListForDeleteTasksWithCompletion") Block_resolveTaskListForDeleteTasksWithCompletion completion) {
+    default void resolveTaskListForDeleteTasksWithCompletion(@NotNull INDeleteTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTaskListForDeleteTasksWithCompletion") Block_resolveTaskListForDeleteTasksWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,14 +108,15 @@ public interface INDeleteTasksIntentHandling {
     @Generated
     public interface Block_resolveTaskListForDeleteTasksWithCompletion {
         @Generated
-        void call_resolveTaskListForDeleteTasksWithCompletion(INDeleteTasksTaskListResolutionResult resolutionResult);
+        void call_resolveTaskListForDeleteTasksWithCompletion(
+                @NotNull INDeleteTasksTaskListResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTasksForDeleteTasks:withCompletion:")
-    default void resolveTasksForDeleteTasksWithCompletion(INDeleteTasksIntent intent,
-            @ObjCBlock(name = "call_resolveTasksForDeleteTasksWithCompletion") Block_resolveTasksForDeleteTasksWithCompletion completion) {
+    default void resolveTasksForDeleteTasksWithCompletion(@NotNull INDeleteTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTasksForDeleteTasksWithCompletion") Block_resolveTasksForDeleteTasksWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,6 +125,6 @@ public interface INDeleteTasksIntentHandling {
     public interface Block_resolveTasksForDeleteTasksWithCompletion {
         @Generated
         void call_resolveTasksForDeleteTasksWithCompletion(
-                NSArray<? extends INDeleteTasksTaskResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INDeleteTasksTaskResolutionResult> resolutionResults);
     }
 }

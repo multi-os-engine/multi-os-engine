@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -68,22 +70,25 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +123,10 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -134,6 +140,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
      * subclass which can be used for messaging between threads
      * or processes on the local machine.
      */
+    @NotNull
     @Generated
     @Selector("port")
     public static native NSPort port();
@@ -159,12 +166,14 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -172,7 +181,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -180,7 +189,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPort initWithCoder(NSCoder coder);
+    public native NSPort initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("invalidate")
@@ -192,7 +201,7 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("removeFromRunLoop:forMode:")
-    public native void removeFromRunLoopForMode(NSRunLoop runLoop, String mode);
+    public native void removeFromRunLoopForMode(@NotNull NSRunLoop runLoop, @NotNull String mode);
 
     /**
      * DO Transport API; subclassers should implement these methods
@@ -211,19 +220,19 @@ public class NSPort extends NSObject implements NSCopying, NSCoding {
      */
     @Generated
     @Selector("scheduleInRunLoop:forMode:")
-    public native void scheduleInRunLoopForMode(NSRunLoop runLoop, String mode);
+    public native void scheduleInRunLoopForMode(@NotNull NSRunLoop runLoop, @NotNull String mode);
 
     @Generated
     @Selector("sendBeforeDate:components:from:reserved:")
-    public native boolean sendBeforeDateComponentsFromReserved(NSDate limitDate, NSMutableArray<?> components,
-            NSPort receivePort, @NUInt long headerSpaceReserved);
+    public native boolean sendBeforeDateComponentsFromReserved(@NotNull NSDate limitDate,
+            @Nullable NSMutableArray<?> components, @Nullable NSPort receivePort, @NUInt long headerSpaceReserved);
 
     @Generated
     @Selector("sendBeforeDate:msgid:components:from:reserved:")
-    public native boolean sendBeforeDateMsgidComponentsFromReserved(NSDate limitDate, @NUInt long msgID,
-            NSMutableArray<?> components, NSPort receivePort, @NUInt long headerSpaceReserved);
+    public native boolean sendBeforeDateMsgidComponentsFromReserved(@NotNull NSDate limitDate, @NUInt long msgID,
+            @Nullable NSMutableArray<?> components, @Nullable NSPort receivePort, @NUInt long headerSpaceReserved);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate(@Mapped(ObjCObjectMapper.class) Object anObject);
+    public native void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object anObject);
 }

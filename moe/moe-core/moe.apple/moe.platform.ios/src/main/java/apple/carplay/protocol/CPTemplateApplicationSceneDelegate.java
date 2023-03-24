@@ -14,6 +14,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.NInt;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -39,8 +40,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     @IsOptional
     @Selector("templateApplicationScene:didConnectInterfaceController:toWindow:")
     default void templateApplicationSceneDidConnectInterfaceControllerToWindow(
-            CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController,
-            CPWindow window) {
+            @NotNull CPTemplateApplicationScene templateApplicationScene,
+            @NotNull CPInterfaceController interfaceController, @NotNull CPWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,8 +55,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     @IsOptional
     @Selector("templateApplicationScene:didDisconnectInterfaceController:fromWindow:")
     default void templateApplicationSceneDidDisconnectInterfaceControllerFromWindow(
-            CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController,
-            CPWindow window) {
+            @NotNull CPTemplateApplicationScene templateApplicationScene,
+            @NotNull CPInterfaceController interfaceController, @NotNull CPWindow window) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,8 +68,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("templateApplicationScene:didSelectManeuver:")
-    default void templateApplicationSceneDidSelectManeuver(CPTemplateApplicationScene templateApplicationScene,
-            CPManeuver maneuver) {
+    default void templateApplicationSceneDidSelectManeuver(@NotNull CPTemplateApplicationScene templateApplicationScene,
+            @NotNull CPManeuver maneuver) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,8 +82,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("templateApplicationScene:didSelectNavigationAlert:")
-    default void templateApplicationSceneDidSelectNavigationAlert(CPTemplateApplicationScene templateApplicationScene,
-            CPNavigationAlert navigationAlert) {
+    default void templateApplicationSceneDidSelectNavigationAlert(
+            @NotNull CPTemplateApplicationScene templateApplicationScene, @NotNull CPNavigationAlert navigationAlert) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,7 +102,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     @IsOptional
     @Selector("templateApplicationScene:didConnectInterfaceController:")
     default void templateApplicationSceneDidConnectInterfaceController(
-            CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController) {
+            @NotNull CPTemplateApplicationScene templateApplicationScene,
+            @NotNull CPInterfaceController interfaceController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,7 +116,8 @@ public interface CPTemplateApplicationSceneDelegate extends UISceneDelegate {
     @IsOptional
     @Selector("templateApplicationScene:didDisconnectInterfaceController:")
     default void templateApplicationSceneDidDisconnectInterfaceController(
-            CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController) {
+            @NotNull CPTemplateApplicationScene templateApplicationScene,
+            @NotNull CPInterfaceController interfaceController) {
         throw new java.lang.UnsupportedOperationException();
     }
 

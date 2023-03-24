@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -48,11 +50,12 @@ public interface SCNSceneExportDelegate {
      * 
      *         API-Since: 10.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("writeImage:withSceneDocumentURL:originalImageURL:")
-    default NSURL writeImageWithSceneDocumentURLOriginalImageURL(UIImage image, NSURL documentURL,
-            NSURL originalImageURL) {
+    default NSURL writeImageWithSceneDocumentURLOriginalImageURL(@NotNull UIImage image, @NotNull NSURL documentURL,
+            @Nullable NSURL originalImageURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

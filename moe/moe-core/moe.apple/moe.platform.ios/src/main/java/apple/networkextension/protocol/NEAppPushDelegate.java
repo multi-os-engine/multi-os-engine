@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NEAppPushDelegate
@@ -34,5 +35,6 @@ public interface NEAppPushDelegate {
      */
     @Generated
     @Selector("appPushManager:didReceiveIncomingCallWithUserInfo:")
-    void appPushManagerDidReceiveIncomingCallWithUserInfo(NEAppPushManager manager, NSDictionary<?, ?> userInfo);
+    void appPushManagerDidReceiveIncomingCallWithUserInfo(@NotNull NEAppPushManager manager,
+            @NotNull NSDictionary<?, ?> userInfo);
 }

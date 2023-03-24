@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -76,22 +78,25 @@ public class UIMenuController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class UIMenuController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,6 +153,7 @@ public class UIMenuController extends NSObject {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedMenuController")
     public static native UIMenuController sharedMenuController();
@@ -201,6 +208,7 @@ public class UIMenuController extends NSObject {
      * 
      * API-Since: 3.2
      */
+    @Nullable
     @Generated
     @Selector("menuItems")
     public native NSArray<? extends UIMenuItem> menuItems();
@@ -221,7 +229,7 @@ public class UIMenuController extends NSObject {
      */
     @Generated
     @Selector("setMenuItems:")
-    public native void setMenuItems(NSArray<? extends UIMenuItem> value);
+    public native void setMenuItems(@Nullable NSArray<? extends UIMenuItem> value);
 
     /**
      * API-Since: 3.0
@@ -241,7 +249,7 @@ public class UIMenuController extends NSObject {
     @Deprecated
     @Generated
     @Selector("setTargetRect:inView:")
-    public native void setTargetRectInView(@ByValue CGRect targetRect, UIView targetView);
+    public native void setTargetRectInView(@ByValue CGRect targetRect, @NotNull UIView targetView);
 
     @Generated
     @Selector("update")
@@ -259,12 +267,12 @@ public class UIMenuController extends NSObject {
      */
     @Generated
     @Selector("hideMenuFromView:")
-    public native void hideMenuFromView(UIView targetView);
+    public native void hideMenuFromView(@NotNull UIView targetView);
 
     /**
      * API-Since: 13.0
      */
     @Generated
     @Selector("showMenuFromView:rect:")
-    public native void showMenuFromViewRect(UIView targetView, @ByValue CGRect targetRect);
+    public native void showMenuFromViewRect(@NotNull UIView targetView, @ByValue CGRect targetRect);
 }

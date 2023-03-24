@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -103,26 +105,29 @@ public class AVAssetImageGenerator extends NSObject {
      */
     @Generated
     @Selector("assetImageGeneratorWithAsset:")
-    public static native AVAssetImageGenerator assetImageGeneratorWithAsset(AVAsset asset);
+    public static native AVAssetImageGenerator assetImageGeneratorWithAsset(@NotNull AVAsset asset);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -157,9 +162,10 @@ public class AVAssetImageGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -190,6 +196,7 @@ public class AVAssetImageGenerator extends NSObject {
     /**
      * Specifies the aperture mode for the generated image. Default is AVAssetImageGeneratorApertureModeCleanAperture.
      */
+    @Nullable
     @Generated
     @Selector("apertureMode")
     public native String apertureMode();
@@ -208,6 +215,7 @@ public class AVAssetImageGenerator extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("asset")
     public native AVAsset asset();
@@ -255,17 +263,19 @@ public class AVAssetImageGenerator extends NSObject {
      *                      NULL.
      * @return A CGImageRef.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("copyCGImageAtTime:actualTime:error:")
-    public native CGImageRef copyCGImageAtTimeActualTimeError(@ByValue CMTime requestedTime, CMTime actualTime,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native CGImageRef copyCGImageAtTimeActualTimeError(@ByValue CMTime requestedTime,
+            @Nullable CMTime actualTime, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Indicates the custom video compositor instance used, if any
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -292,8 +302,8 @@ public class AVAssetImageGenerator extends NSObject {
     @Generated
     @Selector("generateCGImagesAsynchronouslyForTimes:completionHandler:")
     public native void generateCGImagesAsynchronouslyForTimesCompletionHandler(
-            NSArray<? extends NSValue> requestedTimes,
-            @ObjCBlock(name = "call_generateCGImagesAsynchronouslyForTimesCompletionHandler") Block_generateCGImagesAsynchronouslyForTimesCompletionHandler handler);
+            @NotNull NSArray<? extends NSValue> requestedTimes,
+            @NotNull @ObjCBlock(name = "call_generateCGImagesAsynchronouslyForTimesCompletionHandler") Block_generateCGImagesAsynchronouslyForTimesCompletionHandler handler);
 
     @Generated
     @Selector("init")
@@ -322,7 +332,7 @@ public class AVAssetImageGenerator extends NSObject {
      */
     @Generated
     @Selector("initWithAsset:")
-    public native AVAssetImageGenerator initWithAsset(AVAsset asset);
+    public native AVAssetImageGenerator initWithAsset(@NotNull AVAsset asset);
 
     /**
      * Specifies the maximum dimensions for generated image. Default (CGSizeZero) is the asset's unscaled dimensions.
@@ -362,7 +372,7 @@ public class AVAssetImageGenerator extends NSObject {
      */
     @Generated
     @Selector("setApertureMode:")
-    public native void setApertureMode(String value);
+    public native void setApertureMode(@Nullable String value);
 
     /**
      * Specifies whether or not to apply the track's preferredTransform (see -[AVAssetTrack preferredTransform]) when
@@ -418,7 +428,7 @@ public class AVAssetImageGenerator extends NSObject {
      */
     @Generated
     @Selector("setVideoComposition:")
-    public native void setVideoComposition(AVVideoComposition value);
+    public native void setVideoComposition(@Nullable AVVideoComposition value);
 
     /**
      * [@property] videoComposition
@@ -433,6 +443,7 @@ public class AVAssetImageGenerator extends NSObject {
      * - "frameDuration" is invalid or less than or equal to zero
      * - "sourceTrackIDForFrameTiming" is less than zero
      */
+    @Nullable
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
@@ -442,7 +453,7 @@ public class AVAssetImageGenerator extends NSObject {
     public interface Block_generateCGImagesAsynchronouslyForTimesCompletionHandler {
         @Generated
         void call_generateCGImagesAsynchronouslyForTimesCompletionHandler(@ByValue CMTime requestedTime,
-                CGImageRef image, @ByValue CMTime actualTime, @NInt long result, NSError error);
+                @Nullable CGImageRef image, @ByValue CMTime actualTime, @NInt long result, @Nullable NSError error);
     }
 
     /**
@@ -470,13 +481,13 @@ public class AVAssetImageGenerator extends NSObject {
     @Generated
     @Selector("generateCGImageAsynchronouslyForTime:completionHandler:")
     public native void generateCGImageAsynchronouslyForTimeCompletionHandler(@ByValue CMTime requestedTime,
-            @ObjCBlock(name = "call_generateCGImageAsynchronouslyForTimeCompletionHandler") Block_generateCGImageAsynchronouslyForTimeCompletionHandler handler);
+            @NotNull @ObjCBlock(name = "call_generateCGImageAsynchronouslyForTimeCompletionHandler") Block_generateCGImageAsynchronouslyForTimeCompletionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateCGImageAsynchronouslyForTimeCompletionHandler {
         @Generated
-        void call_generateCGImageAsynchronouslyForTimeCompletionHandler(CGImageRef image, @ByValue CMTime actualTime,
-                NSError error);
+        void call_generateCGImageAsynchronouslyForTimeCompletionHandler(@Nullable CGImageRef image,
+                @ByValue CMTime actualTime, @Nullable NSError error);
     }
 }

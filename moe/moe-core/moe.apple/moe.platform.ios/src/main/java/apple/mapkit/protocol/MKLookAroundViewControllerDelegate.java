@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -20,42 +21,42 @@ public interface MKLookAroundViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerDidDismissFullScreen:")
-    default void lookAroundViewControllerDidDismissFullScreen(MKLookAroundViewController viewController) {
+    default void lookAroundViewControllerDidDismissFullScreen(@NotNull MKLookAroundViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerDidPresentFullScreen:")
-    default void lookAroundViewControllerDidPresentFullScreen(MKLookAroundViewController viewController) {
+    default void lookAroundViewControllerDidPresentFullScreen(@NotNull MKLookAroundViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerDidUpdateScene:")
-    default void lookAroundViewControllerDidUpdateScene(MKLookAroundViewController viewController) {
+    default void lookAroundViewControllerDidUpdateScene(@NotNull MKLookAroundViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerWillDismissFullScreen:")
-    default void lookAroundViewControllerWillDismissFullScreen(MKLookAroundViewController viewController) {
+    default void lookAroundViewControllerWillDismissFullScreen(@NotNull MKLookAroundViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerWillPresentFullScreen:")
-    default void lookAroundViewControllerWillPresentFullScreen(MKLookAroundViewController viewController) {
+    default void lookAroundViewControllerWillPresentFullScreen(@NotNull MKLookAroundViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("lookAroundViewControllerWillUpdateScene:")
-    default void lookAroundViewControllerWillUpdateScene(MKLookAroundViewController viewController) {
+    default void lookAroundViewControllerWillUpdateScene(@NotNull MKLookAroundViewController viewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] MTLFunctionStitchingGraph
@@ -61,37 +63,42 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("allocWithZone:")
     public static native MTLFunctionStitchingGraph allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("attributes")
     public native NSArray<?> attributes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -101,6 +108,7 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("functionName")
     public native String functionName();
@@ -116,9 +124,9 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
 
     @Generated
     @Selector("initWithFunctionName:nodes:outputNode:attributes:")
-    public native MTLFunctionStitchingGraph initWithFunctionNameNodesOutputNodeAttributes(String functionName,
-            NSArray<? extends MTLFunctionStitchingFunctionNode> nodes, MTLFunctionStitchingFunctionNode outputNode,
-            NSArray<?> attributes);
+    public native MTLFunctionStitchingGraph initWithFunctionNameNodesOutputNodeAttributes(@NotNull String functionName,
+            @NotNull NSArray<? extends MTLFunctionStitchingFunctionNode> nodes,
+            @Nullable MTLFunctionStitchingFunctionNode outputNode, @NotNull NSArray<?> attributes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,19 +145,22 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MTLFunctionStitchingGraph new_objc();
 
+    @NotNull
     @Generated
     @Selector("nodes")
     public native NSArray<? extends MTLFunctionStitchingFunctionNode> nodes();
 
+    @Nullable
     @Generated
     @Selector("outputNode")
     public native MTLFunctionStitchingFunctionNode outputNode();
@@ -164,19 +175,19 @@ public class MTLFunctionStitchingGraph extends NSObject implements NSCopying {
 
     @Generated
     @Selector("setAttributes:")
-    public native void setAttributes(NSArray<?> value);
+    public native void setAttributes(@NotNull NSArray<?> value);
 
     @Generated
     @Selector("setFunctionName:")
-    public native void setFunctionName(String value);
+    public native void setFunctionName(@NotNull String value);
 
     @Generated
     @Selector("setNodes:")
-    public native void setNodes(NSArray<? extends MTLFunctionStitchingFunctionNode> value);
+    public native void setNodes(@NotNull NSArray<? extends MTLFunctionStitchingFunctionNode> value);
 
     @Generated
     @Selector("setOutputNode:")
-    public native void setOutputNode(MTLFunctionStitchingFunctionNode value);
+    public native void setOutputNode(@Nullable MTLFunctionStitchingFunctionNode value);
 
     @Generated
     @Selector("setVersion:")

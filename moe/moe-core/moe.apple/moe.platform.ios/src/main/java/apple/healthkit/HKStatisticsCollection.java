@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -74,22 +76,25 @@ public class HKStatisticsCollection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class HKStatisticsCollection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,8 +170,8 @@ public class HKStatisticsCollection extends NSObject {
      */
     @Generated
     @Selector("enumerateStatisticsFromDate:toDate:withBlock:")
-    public native void enumerateStatisticsFromDateToDateWithBlock(NSDate startDate, NSDate endDate,
-            @ObjCBlock(name = "call_enumerateStatisticsFromDateToDateWithBlock") Block_enumerateStatisticsFromDateToDateWithBlock block);
+    public native void enumerateStatisticsFromDateToDateWithBlock(@NotNull NSDate startDate, @NotNull NSDate endDate,
+            @NotNull @ObjCBlock(name = "call_enumerateStatisticsFromDateToDateWithBlock") Block_enumerateStatisticsFromDateToDateWithBlock block);
 
     @Generated
     @Selector("init")
@@ -179,6 +185,7 @@ public class HKStatisticsCollection extends NSObject {
      * Sources will be empty unless HKStatisticsOptionSeparateBySource is specified in the
      * HKStatisticsCollectionQuery options.
      */
+    @NotNull
     @Generated
     @Selector("sources")
     public native NSSet<? extends HKSource> sources();
@@ -190,6 +197,7 @@ public class HKStatisticsCollection extends NSObject {
      * 
      * The statistics objects are ordered chronologically.
      */
+    @NotNull
     @Generated
     @Selector("statistics")
     public native NSArray<? extends HKStatistics> statistics();
@@ -201,14 +209,15 @@ public class HKStatisticsCollection extends NSObject {
      * 
      * If there are no samples for the given date, an HKStatistics instance with nil quantities will be returned.
      */
+    @Nullable
     @Generated
     @Selector("statisticsForDate:")
-    public native HKStatistics statisticsForDate(NSDate date);
+    public native HKStatistics statisticsForDate(@NotNull NSDate date);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateStatisticsFromDateToDateWithBlock {
         @Generated
-        void call_enumerateStatisticsFromDateToDateWithBlock(HKStatistics result, BoolPtr stop);
+        void call_enumerateStatisticsFromDateToDateWithBlock(@NotNull HKStatistics result, @NotNull BoolPtr stop);
     }
 }

@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -56,7 +58,7 @@ public class UIContextualAction extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * a default background color is set from the action style
@@ -67,18 +69,21 @@ public class UIContextualAction extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +101,7 @@ public class UIContextualAction extends NSObject {
     @NUInt
     public static native long hash_static();
 
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -121,9 +127,10 @@ public class UIContextualAction extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,11 +154,11 @@ public class UIContextualAction extends NSObject {
 
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -166,6 +173,7 @@ public class UIContextualAction extends NSObject {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -177,8 +185,9 @@ public class UIContextualAction extends NSObject {
 
     @Generated
     @Selector("contextualActionWithStyle:title:handler:")
-    public static native UIContextualAction contextualActionWithStyleTitleHandler(@NInt long style, String title,
-            @ObjCBlock(name = "call_contextualActionWithStyleTitleHandler") Block_contextualActionWithStyleTitleHandler handler);
+    public static native UIContextualAction contextualActionWithStyleTitleHandler(@NInt long style,
+            @Nullable String title,
+            @NotNull @ObjCBlock(name = "call_contextualActionWithStyleTitleHandler") Block_contextualActionWithStyleTitleHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -191,10 +200,11 @@ public class UIContextualAction extends NSObject {
         }
 
         @Generated
-        void call_contextualActionWithStyleTitleHandler(UIContextualAction action, UIView sourceView,
-                @ObjCBlock(name = "call_Block_contextualActionWithStyleTitleHandler") Block_Block_contextualActionWithStyleTitleHandler completionHandler);
+        void call_contextualActionWithStyleTitleHandler(@NotNull UIContextualAction action, @NotNull UIView sourceView,
+                @NotNull @ObjCBlock(name = "call_Block_contextualActionWithStyleTitleHandler") Block_Block_contextualActionWithStyleTitleHandler completionHandler);
     }
 
+    @NotNull
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -211,8 +221,8 @@ public class UIContextualAction extends NSObject {
         }
 
         @Generated
-        void call_handler_ret(UIContextualAction action, UIView sourceView,
-                @ObjCBlock(name = "call_Block_handler_ret") Block_Block_handler_ret completionHandler);
+        void call_handler_ret(@NotNull UIContextualAction action, @NotNull UIView sourceView,
+                @NotNull @ObjCBlock(name = "call_Block_handler_ret") Block_Block_handler_ret completionHandler);
     }
 
 }

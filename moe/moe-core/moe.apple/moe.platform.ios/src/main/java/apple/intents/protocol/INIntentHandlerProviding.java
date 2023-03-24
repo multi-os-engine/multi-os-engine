@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -37,8 +39,9 @@ public interface INIntentHandlerProviding {
     /**
      * Override this function to provide classes other than the extension's principal class to handle a given intent
      */
+    @Nullable
     @Generated
     @Selector("handlerForIntent:")
     @MappedReturn(ObjCObjectMapper.class)
-    Object handlerForIntent(INIntent intent);
+    Object handlerForIntent(@NotNull INIntent intent);
 }

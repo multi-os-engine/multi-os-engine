@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -79,22 +81,25 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +173,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
      * If your application has other representations for the person's handle, you can supply it for INInteraction
      * donation
      */
+    @Nullable
     @Generated
     @Selector("aliases")
     public native NSArray<? extends INPersonHandle> aliases();
@@ -174,20 +181,23 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * Reference to this person, if present in the system's Contacts store
      */
+    @Nullable
     @Generated
     @Selector("contactIdentifier")
     public native String contactIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * This property can be set to the app's identifier for this person
      * It is also used as the vocabulary identifier for this person
      */
+    @Nullable
     @Generated
     @Selector("customIdentifier")
     public native String customIdentifier();
@@ -196,13 +206,14 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
      * This will return either the displayName if non-nil, else the formatted nameComponents, else the handle, else an
      * empty string
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The identity of the person in the application (e.g. email address, phone number, user handle, etc.)
@@ -211,11 +222,13 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
      * Deprecated-Since: 10.0
      * Deprecated-Message: Use personHandle instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("handle")
     public native String handle();
 
+    @Nullable
     @Deprecated
     @IsOptional
     @Generated
@@ -225,6 +238,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * Returns an image for the person.
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native INImage image();
@@ -235,7 +249,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPerson initWithCoder(NSCoder coder);
+    public native INPerson initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Use this convenience initializer if the person's name is unknown
@@ -247,8 +261,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Deprecated
     @Generated
     @Selector("initWithHandle:displayName:contactIdentifier:")
-    public native INPerson initWithHandleDisplayNameContactIdentifier(String handle, String displayName,
-            String contactIdentifier);
+    public native INPerson initWithHandleDisplayNameContactIdentifier(@NotNull String handle,
+            @Nullable String displayName, @Nullable String contactIdentifier);
 
     /**
      * This is the preferred convenience initializer if the app knows the name components of the person (e.g. given
@@ -261,8 +275,8 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:contactIdentifier:")
-    public native INPerson initWithHandleNameComponentsContactIdentifier(String handle,
-            NSPersonNameComponents nameComponents, String contactIdentifier);
+    public native INPerson initWithHandleNameComponentsContactIdentifier(@NotNull String handle,
+            @NotNull NSPersonNameComponents nameComponents, @Nullable String contactIdentifier);
 
     /**
      * API-Since: 10.0
@@ -272,25 +286,29 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Deprecated
     @Generated
     @Selector("initWithHandle:nameComponents:displayName:image:contactIdentifier:")
-    public native INPerson initWithHandleNameComponentsDisplayNameImageContactIdentifier(String handle,
-            NSPersonNameComponents nameComponents, String displayName, INImage image, String contactIdentifier);
+    public native INPerson initWithHandleNameComponentsDisplayNameImageContactIdentifier(@NotNull String handle,
+            @Nullable NSPersonNameComponents nameComponents, @Nullable String displayName, @Nullable INImage image,
+            @Nullable String contactIdentifier);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifier(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier);
 
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:aliases:suggestionType:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierAliasesSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, NSArray<? extends INPersonHandle> aliases,
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, @Nullable NSArray<? extends INPersonHandle> aliases,
             @NInt long suggestionType);
 
     /**
      * Returns the person's name components if this was initialized with them
      */
+    @Nullable
     @Generated
     @Selector("nameComponents")
     public native NSPersonNameComponents nameComponents();
@@ -298,10 +316,12 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     /**
      * The identity of the person in the application
      */
+    @Nullable
     @Generated
     @Selector("personHandle")
     public native INPersonHandle personHandle();
 
+    @Nullable
     @Generated
     @Selector("pronunciationHint")
     public native String pronunciationHint();
@@ -311,10 +331,12 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
      * 
      * API-Since: 10.2
      */
+    @Nullable
     @Generated
     @Selector("relationship")
     public native String relationship();
 
+    @NotNull
     @Generated
     @Selector("spokenPhrase")
     public native String spokenPhrase();
@@ -334,6 +356,7 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("alternativeSpeakableMatches")
     public native NSArray<?> alternativeSpeakableMatches();
@@ -352,10 +375,12 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
      * 
      * API-Since: 10.3
      */
+    @Nullable
     @Generated
     @Selector("siriMatches")
     public native NSArray<? extends INPerson> siriMatches();
 
+    @Nullable
     @Generated
     @Selector("vocabularyIdentifier")
     public native String vocabularyIdentifier();
@@ -366,8 +391,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMe(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isMe);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isMe);
 
     /**
      * API-Since: 14.0
@@ -375,8 +401,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:relationship:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierRelationship(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, String relationship);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, @Nullable String relationship);
 
     /**
      * API-Since: 15.0
@@ -384,8 +411,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isContactSuggestion:suggestionType:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsContactSuggestionSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isContactSuggestion, @NInt long suggestionType);
 
     /**
      * API-Since: 15.0
@@ -393,8 +421,9 @@ public class INPerson extends NSObject implements NSCopying, NSSecureCoding, INS
     @Generated
     @Selector("initWithPersonHandle:nameComponents:displayName:image:contactIdentifier:customIdentifier:isMe:suggestionType:")
     public native INPerson initWithPersonHandleNameComponentsDisplayNameImageContactIdentifierCustomIdentifierIsMeSuggestionType(
-            INPersonHandle personHandle, NSPersonNameComponents nameComponents, String displayName, INImage image,
-            String contactIdentifier, String customIdentifier, boolean isMe, @NInt long suggestionType);
+            @NotNull INPersonHandle personHandle, @Nullable NSPersonNameComponents nameComponents,
+            @Nullable String displayName, @Nullable INImage image, @Nullable String contactIdentifier,
+            @Nullable String customIdentifier, boolean isMe, @NInt long suggestionType);
 
     /**
      * Indicates that the person is confirmed

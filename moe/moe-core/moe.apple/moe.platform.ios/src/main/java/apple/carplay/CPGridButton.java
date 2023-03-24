@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -60,22 +62,25 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,7 +95,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -104,6 +109,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
+    @NotNull
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -114,7 +120,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPGridButton initWithCoder(NSCoder coder);
+    public native CPGridButton initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a button with a title and image.
@@ -133,14 +139,15 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithTitleVariants:image:handler:")
-    public native CPGridButton initWithTitleVariantsImageHandler(NSArray<String> titleVariants, UIImage image,
-            @ObjCBlock(name = "call_initWithTitleVariantsImageHandler") Block_initWithTitleVariantsImageHandler handler);
+    public native CPGridButton initWithTitleVariantsImageHandler(@NotNull NSArray<String> titleVariants,
+            @NotNull UIImage image,
+            @Nullable @ObjCBlock(name = "call_initWithTitleVariantsImageHandler") Block_initWithTitleVariantsImageHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTitleVariantsImageHandler {
         @Generated
-        void call_initWithTitleVariantsImageHandler(CPGridButton barButton);
+        void call_initWithTitleVariantsImageHandler(@NotNull CPGridButton barButton);
     }
 
     @Generated
@@ -170,9 +177,10 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -220,6 +228,7 @@ public class CPGridButton extends NSObject implements NSSecureCoding {
      * The system will select a title from your list of provided variants that fits the available space.
      * The variant strings should be provided as localized, displayable content.
      */
+    @NotNull
     @Generated
     @Selector("titleVariants")
     public native NSArray<String> titleVariants();

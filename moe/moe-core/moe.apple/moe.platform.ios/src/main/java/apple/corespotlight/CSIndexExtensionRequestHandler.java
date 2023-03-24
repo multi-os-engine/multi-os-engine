@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -82,22 +84,25 @@ public class CSIndexExtensionRequestHandler extends NSObject implements NSExtens
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class CSIndexExtensionRequestHandler extends NSObject implements NSExtens
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,7 +170,7 @@ public class CSIndexExtensionRequestHandler extends NSObject implements NSExtens
 
     @Generated
     @Selector("beginRequestWithExtensionContext:")
-    public native void beginRequestWithExtensionContext(NSExtensionContext context);
+    public native void beginRequestWithExtensionContext(@NotNull NSExtensionContext context);
 
     @Generated
     @Selector("init")
@@ -173,35 +179,38 @@ public class CSIndexExtensionRequestHandler extends NSObject implements NSExtens
     @Generated
     @Selector("searchableIndex:reindexAllSearchableItemsWithAcknowledgementHandler:")
     public native void searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler(
-            CSSearchableIndex searchableIndex,
-            @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
+            @NotNull CSSearchableIndex searchableIndex,
+            @NotNull @ObjCBlock(name = "call_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexAllSearchableItemsWithAcknowledgementHandler acknowledgementHandler);
 
     @Generated
     @Selector("searchableIndex:reindexSearchableItemsWithIdentifiers:acknowledgementHandler:")
     public native void searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler(
-            CSSearchableIndex searchableIndex, NSArray<String> identifiers,
-            @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
+            @NotNull CSSearchableIndex searchableIndex, @NotNull NSArray<String> identifiers,
+            @NotNull @ObjCBlock(name = "call_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler") CSSearchableIndexDelegate.Block_searchableIndexReindexSearchableItemsWithIdentifiersAcknowledgementHandler acknowledgementHandler);
 
     @Generated
     @IsOptional
     @Selector("searchableIndexDidFinishThrottle:")
-    public native void searchableIndexDidFinishThrottle(CSSearchableIndex searchableIndex);
+    public native void searchableIndexDidFinishThrottle(@NotNull CSSearchableIndex searchableIndex);
 
     @Generated
     @IsOptional
     @Selector("searchableIndexDidThrottle:")
-    public native void searchableIndexDidThrottle(CSSearchableIndex searchableIndex);
+    public native void searchableIndexDidThrottle(@NotNull CSSearchableIndex searchableIndex);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("dataForSearchableIndex:itemIdentifier:typeIdentifier:error:")
-    public native NSData dataForSearchableIndexItemIdentifierTypeIdentifierError(CSSearchableIndex searchableIndex,
-            String itemIdentifier, String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native NSData dataForSearchableIndexItemIdentifierTypeIdentifierError(
+            @NotNull CSSearchableIndex searchableIndex, @NotNull String itemIdentifier, @NotNull String typeIdentifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("fileURLForSearchableIndex:itemIdentifier:typeIdentifier:inPlace:error:")
     public native NSURL fileURLForSearchableIndexItemIdentifierTypeIdentifierInPlaceError(
-            CSSearchableIndex searchableIndex, String itemIdentifier, String typeIdentifier, boolean inPlace,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull CSSearchableIndex searchableIndex, @NotNull String itemIdentifier, @NotNull String typeIdentifier,
+            boolean inPlace, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A data structure built over geometry used to accelerate ray tracing
@@ -300,31 +302,35 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Create a a copy of this acceleration structure
@@ -338,11 +344,12 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * @param zone   This parameter is ignored. Memory zones are no longer used by Objective-C.
      * @param device New Metal device
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSAccelerationStructure copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSAccelerationStructure copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     /**
      * Create a a copy of this acceleration structure
@@ -356,10 +363,12 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      * @param zone  This parameter is ignored. Memory zones are no longer used by Objective-C.
      * @param group New acceleration structure group
      */
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:group:")
-    public native MPSAccelerationStructure copyWithZoneGroup(VoidPtr zone, MPSAccelerationStructureGroup group);
+    public native MPSAccelerationStructure copyWithZoneGroup(@Nullable VoidPtr zone,
+            @NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("debugDescription")
@@ -385,15 +394,17 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      */
     @Generated
     @Selector("encodeRefitToCommandBuffer:")
-    public native void encodeRefitToCommandBuffer(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native void encodeRefitToCommandBuffer(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The group this acceleration structure was created with
      */
+    @NotNull
     @Generated
     @Selector("group")
     public native MPSAccelerationStructureGroup group();
@@ -409,7 +420,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSAccelerationStructure initWithCoder(NSCoder coder);
+    public native MPSAccelerationStructure initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize the acceleration structure with an NSCoder and a Metal device. Buffer
@@ -418,8 +429,8 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSAccelerationStructure initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSAccelerationStructure initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the acceleration structure with an NSCoder and an acceleration structure
@@ -430,14 +441,15 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      */
     @Generated
     @Selector("initWithCoder:group:")
-    public native MPSAccelerationStructure initWithCoderGroup(NSCoder aDecoder, MPSAccelerationStructureGroup group);
+    public native MPSAccelerationStructure initWithCoderGroup(@NotNull NSCoder aDecoder,
+            @NotNull MPSAccelerationStructureGroup group);
 
     /**
      * Initialize the acceleration structure with a Metal device
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSAccelerationStructure initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSAccelerationStructure initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the acceleration structure with an acceleration structure group, if the
@@ -448,7 +460,7 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
      */
     @Generated
     @Selector("initWithGroup:")
-    public native MPSAccelerationStructure initWithGroup(MPSAccelerationStructureGroup group);
+    public native MPSAccelerationStructure initWithGroup(@NotNull MPSAccelerationStructureGroup group);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -467,9 +479,10 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -517,13 +530,13 @@ public class MPSAccelerationStructure extends MPSKernel implements NSSecureCodin
     @Generated
     @Selector("rebuildWithCompletionHandler:")
     public native void rebuildWithCompletionHandler(
-            @ObjCBlock(name = "call_rebuildWithCompletionHandler") Block_rebuildWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_rebuildWithCompletionHandler") Block_rebuildWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_rebuildWithCompletionHandler {
         @Generated
-        void call_rebuildWithCompletionHandler(MPSAccelerationStructure arg0);
+        void call_rebuildWithCompletionHandler(@Nullable MPSAccelerationStructure arg0);
     }
 
     @Generated

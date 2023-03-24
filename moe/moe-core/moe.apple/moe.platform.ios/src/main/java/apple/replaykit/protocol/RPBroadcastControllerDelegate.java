@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -46,7 +48,8 @@ public interface RPBroadcastControllerDelegate {
     @Generated
     @IsOptional
     @Selector("broadcastController:didFinishWithError:")
-    default void broadcastControllerDidFinishWithError(RPBroadcastController broadcastController, NSError error) {
+    default void broadcastControllerDidFinishWithError(@NotNull RPBroadcastController broadcastController,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,8 +62,8 @@ public interface RPBroadcastControllerDelegate {
     @Generated
     @IsOptional
     @Selector("broadcastController:didUpdateServiceInfo:")
-    default void broadcastControllerDidUpdateServiceInfo(RPBroadcastController broadcastController,
-            NSDictionary<String, ? extends NSObject> serviceInfo) {
+    default void broadcastControllerDidUpdateServiceInfo(@NotNull RPBroadcastController broadcastController,
+            @NotNull NSDictionary<String, ? extends NSObject> serviceInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,8 +79,8 @@ public interface RPBroadcastControllerDelegate {
     @Generated
     @IsOptional
     @Selector("broadcastController:didUpdateBroadcastURL:")
-    default void broadcastControllerDidUpdateBroadcastURL(RPBroadcastController broadcastController,
-            NSURL broadcastURL) {
+    default void broadcastControllerDidUpdateBroadcastURL(@NotNull RPBroadcastController broadcastController,
+            @NotNull NSURL broadcastURL) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

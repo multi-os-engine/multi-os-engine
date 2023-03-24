@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.audiotoolbox.opaque.AudioComponentInstance;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Wraps a v2 audio unit in an AUAudioUnit subclass.
@@ -90,22 +92,25 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,15 +145,16 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription componentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AUAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AUAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,8 +163,8 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
 
     @Generated
     @Selector("registerSubclass:asComponentDescription:name:version:")
-    public static native void registerSubclassAsComponentDescriptionNameVersion(Class cls,
-            @ByValue AudioComponentDescription componentDescription, String name, int version);
+    public static native void registerSubclassAsComponentDescriptionNameVersion(@NotNull Class cls,
+            @ByValue AudioComponentDescription componentDescription, @NotNull String name, int version);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -189,13 +195,13 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
     @Selector("initWithComponentDescription:error:")
     public native AUAudioUnitV2Bridge initWithComponentDescriptionError(
             @ByValue AudioComponentDescription componentDescription,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("initWithComponentDescription:options:error:")
     public native AUAudioUnitV2Bridge initWithComponentDescriptionOptionsError(
             @ByValue AudioComponentDescription componentDescription, int options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] audioUnit
@@ -212,6 +218,7 @@ public class AUAudioUnitV2Bridge extends AUAudioUnit {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("audioUnit")
     public native AudioComponentInstance audioUnit();

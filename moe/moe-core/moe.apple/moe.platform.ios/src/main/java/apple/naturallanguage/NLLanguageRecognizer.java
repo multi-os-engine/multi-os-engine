@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NLLanguageRecognizer is a class used to automatically identify the language of text. An instance of this class is
@@ -63,22 +65,25 @@ public class NLLanguageRecognizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,6 +104,7 @@ public class NLLanguageRecognizer extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("dominantLanguage")
     public native String dominantLanguage();
@@ -109,9 +115,10 @@ public class NLLanguageRecognizer extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("dominantLanguageForString:")
-    public static native String dominantLanguageForString(String string);
+    public static native String dominantLanguageForString(@NotNull String string);
 
     @Generated
     @Selector("hash")
@@ -147,9 +154,10 @@ public class NLLanguageRecognizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Allows clients to constrain the space of identified languages. For example, setting Spanish, French and English
@@ -157,6 +165,7 @@ public class NLLanguageRecognizer extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("languageConstraints")
     public native NSArray<String> languageConstraints();
@@ -167,6 +176,7 @@ public class NLLanguageRecognizer extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("languageHints")
     public native NSDictionary<String, ? extends NSNumber> languageHints();
@@ -174,6 +184,7 @@ public class NLLanguageRecognizer extends NSObject {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("languageHypothesesWithMaximum:")
     public native NSDictionary<String, ? extends NSNumber> languageHypothesesWithMaximum(@NUInt long maxHypotheses);
@@ -188,7 +199,7 @@ public class NLLanguageRecognizer extends NSObject {
      */
     @Generated
     @Selector("processString:")
-    public native void processString(String string);
+    public native void processString(@NotNull String string);
 
     /**
      * API-Since: 12.0
@@ -213,7 +224,7 @@ public class NLLanguageRecognizer extends NSObject {
      */
     @Generated
     @Selector("setLanguageConstraints:")
-    public native void setLanguageConstraints(NSArray<String> value);
+    public native void setLanguageConstraints(@NotNull NSArray<String> value);
 
     /**
      * Allows clients to specify known prior probabilities for languages as hints for the language identification
@@ -223,7 +234,7 @@ public class NLLanguageRecognizer extends NSObject {
      */
     @Generated
     @Selector("setLanguageHints:")
-    public native void setLanguageHints(NSDictionary<String, ? extends NSNumber> value);
+    public native void setLanguageHints(@NotNull NSDictionary<String, ? extends NSNumber> value);
 
     @Generated
     @Selector("setVersion:")

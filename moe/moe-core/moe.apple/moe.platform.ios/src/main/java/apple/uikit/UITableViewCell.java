@@ -52,6 +52,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -78,7 +80,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -94,64 +96,71 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UITableViewCell appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UITableViewCell appearanceForTraitCollection(UITraitCollection trait);
+    public static native UITableViewCell appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UITableViewCell appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UITableViewCell appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UITableViewCell appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UITableViewCell appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UITableViewCell appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UITableViewCell appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -159,34 +168,37 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -227,10 +239,12 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -243,14 +257,14 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -282,12 +296,12 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -307,17 +321,18 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -333,16 +348,16 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -366,6 +381,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("accessoryAction")
@@ -382,48 +398,55 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * if set, use custom view. ignore accessoryType. tracks if enabled can calls accessory action
      */
+    @Nullable
     @Generated
     @Selector("accessoryView")
     public native UIView accessoryView();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UITableViewCell _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UITableViewCell _appearanceForTraitCollection(UITraitCollection trait) {
+    public UITableViewCell _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UITableViewCell _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UITableViewCell _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UITableViewCell _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UITableViewCell _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public UITableViewCell _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UITableViewCell _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UITableViewCell _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -431,6 +454,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Always nil when a non-nil `backgroundConfiguration` is set. The 'backgroundView' will be added as a subview
      * behind all other views.
      */
+    @Nullable
     @Generated
     @Selector("backgroundView")
     public native UIView backgroundView();
@@ -438,6 +462,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * Custom subviews should be added to the content view.
      */
+    @NotNull
     @Generated
     @Selector("contentView")
     public native UIView contentView();
@@ -449,6 +474,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("detailTextLabel")
@@ -467,6 +493,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("editAction")
@@ -483,6 +510,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     /**
      * if set, use custom view. ignore editingAccessoryType. tracks if enabled can calls accessory action
      */
+    @Nullable
     @Generated
     @Selector("editingAccessoryView")
     public native UIView editingAccessoryView();
@@ -498,7 +526,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 9.0
@@ -514,6 +542,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("font")
@@ -523,34 +552,36 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @IsOptional
     @Selector("gestureRecognizer:shouldBeRequiredToFailByGestureRecognizer:")
     public native boolean gestureRecognizerShouldBeRequiredToFailByGestureRecognizer(
-            UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer);
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer);
 
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceivePress:")
-    public native boolean gestureRecognizerShouldReceivePress(UIGestureRecognizer gestureRecognizer, UIPress press);
+    public native boolean gestureRecognizerShouldReceivePress(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UIPress press);
 
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveTouch:")
-    public native boolean gestureRecognizerShouldReceiveTouch(UIGestureRecognizer gestureRecognizer, UITouch touch);
+    public native boolean gestureRecognizerShouldReceiveTouch(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UITouch touch);
 
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:")
     public native boolean gestureRecognizerShouldRecognizeSimultaneouslyWithGestureRecognizer(
-            UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer);
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer);
 
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldRequireFailureOfGestureRecognizer:")
     public native boolean gestureRecognizerShouldRequireFailureOfGestureRecognizer(
-            UIGestureRecognizer gestureRecognizer, UIGestureRecognizer otherGestureRecognizer);
+            @NotNull UIGestureRecognizer gestureRecognizer, @NotNull UIGestureRecognizer otherGestureRecognizer);
 
     @Generated
     @IsOptional
     @Selector("gestureRecognizerShouldBegin:")
-    public native boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer);
+    public native boolean gestureRecognizerShouldBegin(@NotNull UIGestureRecognizer gestureRecognizer);
 
     /**
      * default is YES
@@ -569,6 +600,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("image")
@@ -581,6 +613,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("imageView")
@@ -608,7 +641,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
 
     @Generated
     @Selector("initWithCoder:")
-    public native UITableViewCell initWithCoder(NSCoder coder);
+    public native UITableViewCell initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -623,7 +656,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("initWithFrame:reuseIdentifier:")
-    public native UITableViewCell initWithFrameReuseIdentifier(@ByValue CGRect frame, String reuseIdentifier);
+    public native UITableViewCell initWithFrameReuseIdentifier(@ByValue CGRect frame, @Nullable String reuseIdentifier);
 
     /**
      * Designated initializer. If the cell can be reused, you must pass in a reuse identifier. You should use the same
@@ -633,7 +666,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("initWithStyle:reuseIdentifier:")
-    public native UITableViewCell initWithStyleReuseIdentifier(@NInt long style, String reuseIdentifier);
+    public native UITableViewCell initWithStyleReuseIdentifier(@NInt long style, @Nullable String reuseIdentifier);
 
     /**
      * show appropriate edit controls (+/- & reorder). By default -setEditing: calls setEditing:animated: with NO for
@@ -697,6 +730,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("multipleSelectionBackgroundView")
     public native UIView multipleSelectionBackgroundView();
@@ -709,6 +743,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("prepareForReuse")
     public native void prepareForReuse();
 
+    @Nullable
     @Generated
     @Selector("reuseIdentifier")
     public native String reuseIdentifier();
@@ -719,6 +754,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * when the cell is selected. Calling -setSelected:animated: will cause the 'selectedBackgroundView' to animate in
      * and out with an alpha fade.
      */
+    @Nullable
     @Generated
     @Selector("selectedBackgroundView")
     public native UIView selectedBackgroundView();
@@ -729,6 +765,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("selectedImage")
@@ -740,6 +777,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("selectedTextColor")
@@ -772,7 +810,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setAccessoryAction:")
-    public native void setAccessoryAction(SEL value);
+    public native void setAccessoryAction(@Nullable SEL value);
 
     /**
      * default is UITableViewCellAccessoryNone. use to set standard type
@@ -786,7 +824,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setAccessoryView:")
-    public native void setAccessoryView(UIView value);
+    public native void setAccessoryView(@Nullable UIView value);
 
     /**
      * Always nil when a non-nil `backgroundConfiguration` is set. The 'backgroundView' will be added as a subview
@@ -794,7 +832,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setBackgroundView:")
-    public native void setBackgroundView(UIView value);
+    public native void setBackgroundView(@Nullable UIView value);
 
     /**
      * action to call on insert/delete call. set by UITableView
@@ -805,7 +843,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setEditAction:")
-    public native void setEditAction(SEL value);
+    public native void setEditAction(@Nullable SEL value);
 
     @Generated
     @Selector("setEditing:animated:")
@@ -823,7 +861,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setEditingAccessoryView:")
-    public native void setEditingAccessoryView(UIView value);
+    public native void setEditingAccessoryView(@Nullable UIView value);
 
     /**
      * API-Since: 9.0
@@ -841,7 +879,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setFont:")
-    public native void setFont(UIFont value);
+    public native void setFont(@Nullable UIFont value);
 
     /**
      * default is YES
@@ -870,7 +908,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * adjust content indent. default is 0
@@ -905,7 +943,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setMultipleSelectionBackgroundView:")
-    public native void setMultipleSelectionBackgroundView(UIView value);
+    public native void setMultipleSelectionBackgroundView(@Nullable UIView value);
 
     /**
      * animate between regular and selected state
@@ -922,7 +960,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setSelectedBackgroundView:")
-    public native void setSelectedBackgroundView(UIView value);
+    public native void setSelectedBackgroundView(@Nullable UIView value);
 
     /**
      * default is nil
@@ -933,7 +971,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setSelectedImage:")
-    public native void setSelectedImage(UIImage value);
+    public native void setSelectedImage(@Nullable UIImage value);
 
     /**
      * default is nil (text draws white)
@@ -944,7 +982,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setSelectedTextColor:")
-    public native void setSelectedTextColor(UIColor value);
+    public native void setSelectedTextColor(@Nullable UIColor value);
 
     /**
      * default is UITableViewCellSelectionStyleDefault.
@@ -985,7 +1023,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setTarget:")
-    public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTarget_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * target for insert/delete/accessory clicks. default is nil (i.e. go up responder chain). weak reference
@@ -995,7 +1033,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Deprecated
-    public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = target();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1015,7 +1053,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     /**
      * default is UITextAlignmentLeft
@@ -1037,7 +1075,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Deprecated
     @Selector("setTextColor:")
-    public native void setTextColor(UIColor value);
+    public native void setTextColor(@Nullable UIColor value);
 
     /**
      * default is YES. This is unrelated to the indentation level below.
@@ -1066,6 +1104,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("target")
@@ -1078,6 +1117,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("text")
@@ -1101,6 +1141,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * API-Since: 2.0
      * Deprecated-Since: 3.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("textColor")
@@ -1113,6 +1154,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use UIListContentConfiguration instead, this property will be deprecated in a future release.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("textLabel")
@@ -1166,12 +1208,13 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     @Generated
     @IsOptional
     @Selector("gestureRecognizer:shouldReceiveEvent:")
-    public native boolean gestureRecognizerShouldReceiveEvent(UIGestureRecognizer gestureRecognizer, UIEvent event);
+    public native boolean gestureRecognizerShouldReceiveEvent(@NotNull UIGestureRecognizer gestureRecognizer,
+            @NotNull UIEvent event);
 
     /**
      * When YES, the cell will automatically call -updatedConfigurationForState: on its `backgroundConfiguration` when
@@ -1201,6 +1244,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundConfiguration")
     public native UIBackgroundConfiguration backgroundConfiguration();
@@ -1212,6 +1256,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("configurationState")
     public native UICellConfigurationState configurationState();
@@ -1226,6 +1271,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("contentConfiguration")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1236,6 +1282,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("defaultContentConfiguration")
     public native UIListContentConfiguration defaultContentConfiguration();
@@ -1270,7 +1317,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setBackgroundConfiguration:")
-    public native void setBackgroundConfiguration(UIBackgroundConfiguration value);
+    public native void setBackgroundConfiguration(@Nullable UIBackgroundConfiguration value);
 
     /**
      * Setting a content configuration replaces the existing contentView of the cell with a new content view instance
@@ -1284,7 +1331,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("setContentConfiguration:")
-    public native void setContentConfiguration(@Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
+    public native void setContentConfiguration(@Nullable @Mapped(ObjCObjectMapper.class) UIContentConfiguration value);
 
     /**
      * Requests the cell update its configuration for its current state. This method is called automatically
@@ -1305,7 +1352,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      */
     @Generated
     @Selector("updateConfigurationUsingState:")
-    public native void updateConfigurationUsingState(UICellConfigurationState state);
+    public native void updateConfigurationUsingState(@NotNull UICellConfigurationState state);
 
     /**
      * Optional block-based alternative to overriding `-updateConfigurationUsingState:` in a subclass. This handler
@@ -1313,6 +1360,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("configurationUpdateHandler")
     @ObjCBlock(name = "call_configurationUpdateHandler_ret")
@@ -1322,7 +1370,8 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     public interface Block_configurationUpdateHandler_ret {
         @Generated
-        void call_configurationUpdateHandler_ret(UITableViewCell cell, UICellConfigurationState state);
+        void call_configurationUpdateHandler_ret(@NotNull UITableViewCell cell,
+                @NotNull UICellConfigurationState state);
     }
 
     /**
@@ -1334,13 +1383,13 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
     @Generated
     @Selector("setConfigurationUpdateHandler:")
     public native void setConfigurationUpdateHandler(
-            @ObjCBlock(name = "call_setConfigurationUpdateHandler") Block_setConfigurationUpdateHandler value);
+            @Nullable @ObjCBlock(name = "call_setConfigurationUpdateHandler") Block_setConfigurationUpdateHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setConfigurationUpdateHandler {
         @Generated
-        void call_setConfigurationUpdateHandler(UITableViewCell cell, UICellConfigurationState state);
+        void call_setConfigurationUpdateHandler(@NotNull UITableViewCell cell, @NotNull UICellConfigurationState state);
     }
 
     /**
@@ -1349,6 +1398,7 @@ public class UITableViewCell extends UIView implements NSCoding, UIGestureRecogn
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("defaultBackgroundConfiguration")
     public native UIBackgroundConfiguration defaultBackgroundConfiguration();

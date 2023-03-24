@@ -36,6 +36,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Configuration options for an NSURLSession. When a session is
@@ -83,38 +85,44 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * API-Since: 7.0
      * Deprecated-Since: 8.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("backgroundSessionConfiguration:")
-    public static native NSURLSessionConfiguration backgroundSessionConfiguration(String identifier);
+    public static native NSURLSessionConfiguration backgroundSessionConfiguration(@NotNull String identifier);
 
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("backgroundSessionConfigurationWithIdentifier:")
-    public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(String identifier);
+    public static native NSURLSessionConfiguration backgroundSessionConfigurationWithIdentifier(
+            @NotNull String identifier);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,6 +131,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultSessionConfiguration")
     public static native NSURLSessionConfiguration defaultSessionConfiguration();
@@ -131,6 +140,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("ephemeralSessionConfiguration")
     public static native NSURLSessionConfiguration ephemeralSessionConfiguration();
@@ -157,9 +167,10 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 7.0
@@ -198,6 +209,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * Specifies additional headers which will be set on outgoing requests.
      * Note that these headers are added to the request only if not already present.
      */
+    @Nullable
     @Generated
     @Selector("HTTPAdditionalHeaders")
     public native NSDictionary<?, ?> HTTPAdditionalHeaders();
@@ -213,6 +225,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * The cookie storage object to use, or nil to indicate that no cookies should be handled
      */
+    @Nullable
     @Generated
     @Selector("HTTPCookieStorage")
     public native NSHTTPCookieStorage HTTPCookieStorage();
@@ -264,6 +277,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * The URL resource cache, or nil to indicate that no caching is to be performed
      */
+    @Nullable
     @Generated
     @Selector("URLCache")
     public native NSURLCache URLCache();
@@ -271,6 +285,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * The credential storage object, or nil to indicate that no credential storage is to be used
      */
+    @Nullable
     @Generated
     @Selector("URLCredentialStorage")
     public native NSURLCredentialStorage URLCredentialStorage();
@@ -285,19 +300,22 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
     /**
      * The proxy dictionary, as described by <CFNetwork/CFHTTPStream.h>
      */
+    @Nullable
     @Generated
     @Selector("connectionProxyDictionary")
     public native NSDictionary<?, ?> connectionProxyDictionary();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * identifier for the background session configuration
      */
+    @Nullable
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -349,6 +367,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * Custom NSURLProtocol subclasses are not available to background
      * sessions.
      */
+    @Nullable
     @Generated
     @Selector("protocolClasses")
     public native NSArray<? extends Class> protocolClasses();
@@ -387,7 +406,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setConnectionProxyDictionary:")
-    public native void setConnectionProxyDictionary(NSDictionary<?, ?> value);
+    public native void setConnectionProxyDictionary(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Specifies additional headers which will be set on outgoing requests.
@@ -395,7 +414,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setHTTPAdditionalHeaders:")
-    public native void setHTTPAdditionalHeaders(NSDictionary<?, ?> value);
+    public native void setHTTPAdditionalHeaders(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Policy for accepting cookies. This overrides the policy otherwise specified by the cookie storage.
@@ -409,7 +428,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setHTTPCookieStorage:")
-    public native void setHTTPCookieStorage(NSHTTPCookieStorage value);
+    public native void setHTTPCookieStorage(@Nullable NSHTTPCookieStorage value);
 
     /**
      * The maximum number of simultaneous persistent connections per host
@@ -451,7 +470,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setProtocolClasses:")
-    public native void setProtocolClasses(NSArray<? extends Class> value);
+    public native void setProtocolClasses(@Nullable NSArray<? extends Class> value);
 
     /**
      * default cache policy for requests
@@ -483,7 +502,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setSharedContainerIdentifier:")
-    public native void setSharedContainerIdentifier(String value);
+    public native void setSharedContainerIdentifier(@Nullable String value);
 
     /**
      * Enable extended background idle mode for any tcp sockets created. Enabling this mode asks the system to keep the
@@ -540,14 +559,14 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setURLCache:")
-    public native void setURLCache(NSURLCache value);
+    public native void setURLCache(@Nullable NSURLCache value);
 
     /**
      * The credential storage object, or nil to indicate that no credential storage is to be used
      */
     @Generated
     @Selector("setURLCredentialStorage:")
-    public native void setURLCredentialStorage(NSURLCredentialStorage value);
+    public native void setURLCredentialStorage(@Nullable NSURLCredentialStorage value);
 
     /**
      * The identifier of the shared data container into which files in background sessions should be downloaded.
@@ -556,6 +575,7 @@ public class NSURLSessionConfiguration extends NSObject implements NSCopying {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("sharedContainerIdentifier")
     public native String sharedContainerIdentifier();

@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.protocol.NSCopying;
 import org.moe.natj.general.ann.MappedReturn;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVPlayerInterstitialEvent
@@ -84,22 +86,25 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,6 +117,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * 
      * Will have a value of nil if the event was initialized with a time instead of a date.
      */
+    @Nullable
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -137,6 +143,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * If an event is set on an AVPlayerInterstitialEventController that already has an event with the same identifier,
      * the old event will be replaced by the new one.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -202,9 +209,10 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("interstitialEventWithPrimaryItem:identifier:date:templateItems:restrictions:resumptionOffset:playoutLimit:userDefinedAttributes:")
     public static native AVPlayerInterstitialEvent interstitialEventWithPrimaryItemIdentifierDateTemplateItemsRestrictionsResumptionOffsetPlayoutLimitUserDefinedAttributes(
-            AVPlayerItem primaryItem, String identifier, NSDate date, NSArray<? extends AVPlayerItem> templateItems,
-            @NUInt long restrictions, @ByValue CMTime resumptionOffset, @ByValue CMTime playoutLimit,
-            NSDictionary<?, ?> userDefinedAttributes);
+            @NotNull AVPlayerItem primaryItem, @Nullable String identifier, @NotNull NSDate date,
+            @NotNull NSArray<? extends AVPlayerItem> templateItems, @NUInt long restrictions,
+            @ByValue CMTime resumptionOffset, @ByValue CMTime playoutLimit,
+            @Nullable NSDictionary<?, ?> userDefinedAttributes);
 
     /**
      * interstitialEventWithPrimaryItem:time:templateItems:restrictions:resumptionOffset:
@@ -250,17 +258,19 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     @Generated
     @Selector("interstitialEventWithPrimaryItem:identifier:time:templateItems:restrictions:resumptionOffset:playoutLimit:userDefinedAttributes:")
     public static native AVPlayerInterstitialEvent interstitialEventWithPrimaryItemIdentifierTimeTemplateItemsRestrictionsResumptionOffsetPlayoutLimitUserDefinedAttributes(
-            AVPlayerItem primaryItem, String identifier, @ByValue CMTime time,
-            NSArray<? extends AVPlayerItem> templateItems, @NUInt long restrictions, @ByValue CMTime resumptionOffset,
-            @ByValue CMTime playoutLimit, NSDictionary<?, ?> userDefinedAttributes);
+            @NotNull AVPlayerItem primaryItem, @Nullable String identifier, @ByValue CMTime time,
+            @NotNull NSArray<? extends AVPlayerItem> templateItems, @NUInt long restrictions,
+            @ByValue CMTime resumptionOffset, @ByValue CMTime playoutLimit,
+            @Nullable NSDictionary<?, ?> userDefinedAttributes);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -287,6 +297,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * occur. The primaryItem must have an AVAsset that provides an intrinsic mapping from its timeline to real-time
      * dates.
      */
+    @Nullable
     @Generated
     @Selector("primaryItem")
     public native AVPlayerItem primaryItem();
@@ -347,6 +358,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * An NSInvalidArgumentException will be raised if any of the template items employs an AVAsset that lacks a URL,
      * such as an AVComposition.
      */
+    @NotNull
     @Generated
     @Selector("templateItems")
     public native NSArray<? extends AVPlayerItem> templateItems();
@@ -371,6 +383,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * 
      * Dictionary keys are attribute names. Dictionary values are attribute values.
      */
+    @NotNull
     @Generated
     @Selector("userDefinedAttributes")
     public native NSDictionary<?, ?> userDefinedAttributes();
@@ -410,11 +423,12 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
     @Selector("alignsStartWithPrimarySegmentBoundary")
     public native boolean alignsStartWithPrimarySegmentBoundary();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] cue
@@ -423,6 +437,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("cue")
     public native String cue();
@@ -445,8 +460,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("interstitialEventWithPrimaryItem:date:")
-    public static native AVPlayerInterstitialEvent interstitialEventWithPrimaryItemDate(AVPlayerItem primaryItem,
-            NSDate date);
+    public static native AVPlayerInterstitialEvent interstitialEventWithPrimaryItemDate(
+            @NotNull AVPlayerItem primaryItem, @NotNull NSDate date);
 
     /**
      * interstitialEventWithPrimaryItem:time:
@@ -466,8 +481,8 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("interstitialEventWithPrimaryItem:time:")
-    public static native AVPlayerInterstitialEvent interstitialEventWithPrimaryItemTime(AVPlayerItem primaryItem,
-            @ByValue CMTime time);
+    public static native AVPlayerInterstitialEvent interstitialEventWithPrimaryItemTime(
+            @NotNull AVPlayerItem primaryItem, @ByValue CMTime time);
 
     /**
      * API-Since: 16.0
@@ -488,21 +503,21 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setCue:")
-    public native void setCue(String value);
+    public native void setCue(@NotNull String value);
 
     /**
      * API-Since: 16.0
      */
     @Generated
     @Selector("setDate:")
-    public native void setDate(NSDate value);
+    public native void setDate(@Nullable NSDate value);
 
     /**
      * API-Since: 16.0
      */
     @Generated
     @Selector("setIdentifier:")
-    public native void setIdentifier(String value);
+    public native void setIdentifier(@NotNull String value);
 
     /**
      * API-Since: 16.0
@@ -516,13 +531,13 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setPrimaryItem:")
-    public native void setPrimaryItem_unsafe(AVPlayerItem value);
+    public native void setPrimaryItem_unsafe(@Nullable AVPlayerItem value);
 
     /**
      * API-Since: 16.0
      */
     @Generated
-    public void setPrimaryItem(AVPlayerItem value) {
+    public void setPrimaryItem(@Nullable AVPlayerItem value) {
         Object __old = primaryItem();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -552,7 +567,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setTemplateItems:")
-    public native void setTemplateItems(NSArray<? extends AVPlayerItem> value);
+    public native void setTemplateItems(@NotNull NSArray<? extends AVPlayerItem> value);
 
     /**
      * API-Since: 16.0
@@ -566,7 +581,7 @@ public class AVPlayerInterstitialEvent extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setUserDefinedAttributes:")
-    public native void setUserDefinedAttributes(NSDictionary<?, ?> value);
+    public native void setUserDefinedAttributes(@NotNull NSDictionary<?, ?> value);
 
     /**
      * API-Since: 16.0

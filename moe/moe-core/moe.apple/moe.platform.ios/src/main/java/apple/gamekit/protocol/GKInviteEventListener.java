@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * GKInviteEventListener uses the GKLocalPlayerListener mechanism on GKLocalPlayer to listen to the two kinds of invite
@@ -44,7 +45,7 @@ public interface GKInviteEventListener {
     @Generated
     @IsOptional
     @Selector("player:didAcceptInvite:")
-    default void playerDidAcceptInvite(GKPlayer player, GKInvite invite) {
+    default void playerDidAcceptInvite(@NotNull GKPlayer player, @NotNull GKInvite invite) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -60,7 +61,8 @@ public interface GKInviteEventListener {
     @IsOptional
     @Deprecated
     @Selector("player:didRequestMatchWithPlayers:")
-    default void playerDidRequestMatchWithPlayers(GKPlayer player, NSArray<String> playerIDsToInvite) {
+    default void playerDidRequestMatchWithPlayers(@NotNull GKPlayer player,
+            @NotNull NSArray<String> playerIDsToInvite) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,7 +75,8 @@ public interface GKInviteEventListener {
     @Generated
     @IsOptional
     @Selector("player:didRequestMatchWithRecipients:")
-    default void playerDidRequestMatchWithRecipients(GKPlayer player, NSArray<? extends GKPlayer> recipientPlayers) {
+    default void playerDidRequestMatchWithRecipients(@NotNull GKPlayer player,
+            @NotNull NSArray<? extends GKPlayer> recipientPlayers) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

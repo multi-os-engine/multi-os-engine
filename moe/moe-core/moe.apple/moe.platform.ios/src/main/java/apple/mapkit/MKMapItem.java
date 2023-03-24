@@ -53,6 +53,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -87,22 +89,25 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,10 +142,12 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("mapItemForCurrentLocation")
     public static native MKMapItem mapItemForCurrentLocation();
@@ -152,8 +159,8 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
 
     @Generated
     @Selector("openMapsWithItems:launchOptions:")
-    public static native boolean openMapsWithItemsLaunchOptions(NSArray<? extends MKMapItem> mapItems,
-            NSDictionary<String, ?> launchOptions);
+    public static native boolean openMapsWithItemsLaunchOptions(@NotNull NSArray<? extends MKMapItem> mapItems,
+            @Nullable NSDictionary<String, ?> launchOptions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -182,20 +189,22 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
 
     @Generated
     @Selector("initWithPlacemark:")
-    public native MKMapItem initWithPlacemark(MKPlacemark placemark);
+    public native MKMapItem initWithPlacemark(@NotNull MKPlacemark placemark);
 
     @Generated
     @Selector("isCurrentLocation")
     public native boolean isCurrentLocation();
 
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
     @Generated
     @Selector("openInMapsWithLaunchOptions:")
-    public native boolean openInMapsWithLaunchOptions(NSDictionary<String, ?> launchOptions);
+    public native boolean openInMapsWithLaunchOptions(@Nullable NSDictionary<String, ?> launchOptions);
 
+    @Nullable
     @Generated
     @Selector("phoneNumber")
     public native String phoneNumber();
@@ -203,59 +212,63 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     /**
      * If this MKMapItem represents your current location (isCurrentLocation == YES), then placemark will be nil.
      */
+    @NotNull
     @Generated
     @Selector("placemark")
     public native MKPlacemark placemark();
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setPhoneNumber:")
-    public native void setPhoneNumber(String value);
+    public native void setPhoneNumber(@Nullable String value);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
+    public native void setTimeZone(@Nullable NSTimeZone value);
 
     @Generated
     @Selector("setUrl:")
-    public native void setUrl(NSURL value);
+    public native void setUrl(@Nullable NSURL value);
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    @Nullable
     @Generated
     @Selector("url")
     public native NSURL url();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MKMapItem initWithCoder(NSCoder coder);
+    public native MKMapItem initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -263,29 +276,34 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native MKMapItem objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native MKMapItem objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public MKMapItem _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public MKMapItem _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
@@ -302,16 +320,19 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -324,9 +345,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
      */
     @Generated
     @Selector("openInMapsWithLaunchOptions:fromScene:completionHandler:")
-    public native void openInMapsWithLaunchOptionsFromSceneCompletionHandler(NSDictionary<String, ?> launchOptions,
-            UIScene scene,
-            @ObjCBlock(name = "call_openInMapsWithLaunchOptionsFromSceneCompletionHandler") Block_openInMapsWithLaunchOptionsFromSceneCompletionHandler completion);
+    public native void openInMapsWithLaunchOptionsFromSceneCompletionHandler(
+            @Nullable NSDictionary<String, ?> launchOptions, @Nullable UIScene scene,
+            @Nullable @ObjCBlock(name = "call_openInMapsWithLaunchOptionsFromSceneCompletionHandler") Block_openInMapsWithLaunchOptionsFromSceneCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -341,8 +362,9 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     @Generated
     @Selector("openMapsWithItems:launchOptions:fromScene:completionHandler:")
     public static native void openMapsWithItemsLaunchOptionsFromSceneCompletionHandler(
-            NSArray<? extends MKMapItem> mapItems, NSDictionary<String, ?> launchOptions, UIScene scene,
-            @ObjCBlock(name = "call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler") Block_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler completion);
+            @NotNull NSArray<? extends MKMapItem> mapItems, @Nullable NSDictionary<String, ?> launchOptions,
+            @Nullable UIScene scene,
+            @Nullable @ObjCBlock(name = "call_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler") Block_openMapsWithItemsLaunchOptionsFromSceneCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -354,6 +376,7 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("pointOfInterestCategory")
     public native String pointOfInterestCategory();
@@ -363,5 +386,5 @@ public class MKMapItem extends NSObject implements NSSecureCoding, NSItemProvide
      */
     @Generated
     @Selector("setPointOfInterestCategory:")
-    public native void setPointOfInterestCategory(String value);
+    public native void setPointOfInterestCategory(@Nullable String value);
 }

@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MPSNNLossCallback
@@ -30,5 +31,5 @@ public interface MPSNNLossCallback extends NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("scalarWeightForSourceImage:destinationImage:")
-    float scalarWeightForSourceImageDestinationImage(MPSImage sourceImage, MPSImage destinationImage);
+    float scalarWeightForSourceImageDestinationImage(@NotNull MPSImage sourceImage, @NotNull MPSImage destinationImage);
 }

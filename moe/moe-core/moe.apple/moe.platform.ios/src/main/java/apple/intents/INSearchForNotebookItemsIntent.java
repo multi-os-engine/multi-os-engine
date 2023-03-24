@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -58,26 +60,30 @@ public class INSearchForNotebookItemsIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("content")
     public native String content();
@@ -87,6 +93,7 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @NInt
     public native long dateSearchType();
 
+    @Nullable
     @Generated
     @Selector("dateTime")
     public native INDateComponentsRange dateTime();
@@ -110,7 +117,7 @@ public class INSearchForNotebookItemsIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchForNotebookItemsIntent initWithCoder(NSCoder coder);
+    public native INSearchForNotebookItemsIntent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 11.0
@@ -121,8 +128,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:")
     public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchType(
-            INSpeakableString title, String content, @NInt long itemType, @NInt long status, CLPlacemark location,
-            @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType);
+            @Nullable INSpeakableString title, @Nullable String content, @NInt long itemType, @NInt long status,
+            @Nullable CLPlacemark location, @NInt long locationSearchType, @Nullable INDateComponentsRange dateTime,
+            @NInt long dateSearchType);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,10 +154,12 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @NInt
     public native long itemType();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("location")
     public native CLPlacemark location();
@@ -195,6 +205,7 @@ public class INSearchForNotebookItemsIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("title")
     public native INSpeakableString title();
@@ -213,9 +224,9 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:notebookItemIdentifier:")
     public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchTypeNotebookItemIdentifier(
-            INSpeakableString title, String content, @NInt long itemType, @NInt long status, CLPlacemark location,
-            @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType,
-            String notebookItemIdentifier);
+            @Nullable INSpeakableString title, @Nullable String content, @NInt long itemType, @NInt long status,
+            @Nullable CLPlacemark location, @NInt long locationSearchType, @Nullable INDateComponentsRange dateTime,
+            @NInt long dateSearchType, @Nullable String notebookItemIdentifier);
 
     /**
      * API-Since: 13.0
@@ -223,13 +234,15 @@ public class INSearchForNotebookItemsIntent extends INIntent {
     @Generated
     @Selector("initWithTitle:content:itemType:status:location:locationSearchType:dateTime:dateSearchType:temporalEventTriggerTypes:taskPriority:notebookItemIdentifier:")
     public native INSearchForNotebookItemsIntent initWithTitleContentItemTypeStatusLocationLocationSearchTypeDateTimeDateSearchTypeTemporalEventTriggerTypesTaskPriorityNotebookItemIdentifier(
-            INSpeakableString title, String content, @NInt long itemType, @NInt long status, CLPlacemark location,
-            @NInt long locationSearchType, INDateComponentsRange dateTime, @NInt long dateSearchType,
-            @NUInt long temporalEventTriggerTypes, @NInt long taskPriority, String notebookItemIdentifier);
+            @Nullable INSpeakableString title, @Nullable String content, @NInt long itemType, @NInt long status,
+            @Nullable CLPlacemark location, @NInt long locationSearchType, @Nullable INDateComponentsRange dateTime,
+            @NInt long dateSearchType, @NUInt long temporalEventTriggerTypes, @NInt long taskPriority,
+            @Nullable String notebookItemIdentifier);
 
     /**
      * API-Since: 11.2
      */
+    @Nullable
     @Generated
     @Selector("notebookItemIdentifier")
     public native String notebookItemIdentifier();

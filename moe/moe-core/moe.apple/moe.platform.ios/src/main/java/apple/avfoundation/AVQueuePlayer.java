@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.1
@@ -72,22 +74,25 @@ public class AVQueuePlayer extends AVPlayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class AVQueuePlayer extends AVPlayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -133,11 +139,11 @@ public class AVQueuePlayer extends AVPlayer {
 
     @Generated
     @Selector("playerWithPlayerItem:")
-    public static native AVQueuePlayer playerWithPlayerItem(AVPlayerItem item);
+    public static native AVQueuePlayer playerWithPlayerItem(@Nullable AVPlayerItem item);
 
     @Generated
     @Selector("playerWithURL:")
-    public static native AVQueuePlayer playerWithURL(NSURL URL);
+    public static native AVQueuePlayer playerWithURL(@NotNull NSURL URL);
 
     /**
      * queuePlayerWithItems:
@@ -151,7 +157,7 @@ public class AVQueuePlayer extends AVPlayer {
      */
     @Generated
     @Selector("queuePlayerWithItems:")
-    public static native AVQueuePlayer queuePlayerWithItems(NSArray<? extends AVPlayerItem> items);
+    public static native AVQueuePlayer queuePlayerWithItems(@NotNull NSArray<? extends AVPlayerItem> items);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -203,7 +209,7 @@ public class AVQueuePlayer extends AVPlayer {
      */
     @Generated
     @Selector("canInsertItem:afterItem:")
-    public native boolean canInsertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
+    public native boolean canInsertItemAfterItem(@NotNull AVPlayerItem item, @Nullable AVPlayerItem afterItem);
 
     @Generated
     @Selector("init")
@@ -221,17 +227,18 @@ public class AVQueuePlayer extends AVPlayer {
      * @return
      *         An instance of AVQueuePlayer.
      */
+    @NotNull
     @Generated
     @Selector("initWithItems:")
-    public native AVQueuePlayer initWithItems(NSArray<? extends AVPlayerItem> items);
+    public native AVQueuePlayer initWithItems(@NotNull NSArray<? extends AVPlayerItem> items);
 
     @Generated
     @Selector("initWithPlayerItem:")
-    public native AVQueuePlayer initWithPlayerItem(AVPlayerItem item);
+    public native AVQueuePlayer initWithPlayerItem(@Nullable AVPlayerItem item);
 
     @Generated
     @Selector("initWithURL:")
-    public native AVQueuePlayer initWithURL(NSURL URL);
+    public native AVQueuePlayer initWithURL(@NotNull NSURL URL);
 
     /**
      * insertItem:afterItem:
@@ -248,7 +255,7 @@ public class AVQueuePlayer extends AVPlayer {
      */
     @Generated
     @Selector("insertItem:afterItem:")
-    public native void insertItemAfterItem(AVPlayerItem item, AVPlayerItem afterItem);
+    public native void insertItemAfterItem(@NotNull AVPlayerItem item, @Nullable AVPlayerItem afterItem);
 
     /**
      * items
@@ -257,6 +264,7 @@ public class AVQueuePlayer extends AVPlayer {
      * 
      * @return An NSArray containing the enqueued AVPlayerItems.
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends AVPlayerItem> items();
@@ -284,7 +292,7 @@ public class AVQueuePlayer extends AVPlayer {
      */
     @Generated
     @Selector("removeItem:")
-    public native void removeItem(AVPlayerItem item);
+    public native void removeItem(@NotNull AVPlayerItem item);
 
     @Generated
     @Selector("availableHDRModes")

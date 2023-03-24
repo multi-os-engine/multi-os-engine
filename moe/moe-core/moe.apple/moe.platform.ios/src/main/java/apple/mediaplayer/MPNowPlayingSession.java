@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -52,7 +54,7 @@ public class MPNowPlayingSession extends NSObject {
      */
     @Generated
     @Selector("addPlayer:")
-    public native void addPlayer(AVPlayer player);
+    public native void addPlayer(@NotNull AVPlayer player);
 
     @Generated
     @Owned
@@ -66,7 +68,7 @@ public class MPNowPlayingSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * When YES, now playing info will be automatically published, and nowPlayingInfoCenter must not be used.
@@ -85,7 +87,7 @@ public class MPNowPlayingSession extends NSObject {
     @Generated
     @Selector("becomeActiveIfPossibleWithCompletion:")
     public native void becomeActiveIfPossibleWithCompletion(
-            @ObjCBlock(name = "call_becomeActiveIfPossibleWithCompletion") Block_becomeActiveIfPossibleWithCompletion completion);
+            @Nullable @ObjCBlock(name = "call_becomeActiveIfPossibleWithCompletion") Block_becomeActiveIfPossibleWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -103,18 +105,21 @@ public class MPNowPlayingSession extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,6 +128,7 @@ public class MPNowPlayingSession extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -146,7 +152,7 @@ public class MPNowPlayingSession extends NSObject {
      */
     @Generated
     @Selector("initWithPlayers:")
-    public native MPNowPlayingSession initWithPlayers(NSArray<? extends AVPlayer> players);
+    public native MPNowPlayingSession initWithPlayers(@NotNull NSArray<? extends AVPlayer> players);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -172,9 +178,10 @@ public class MPNowPlayingSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,6 +191,7 @@ public class MPNowPlayingSession extends NSObject {
     /**
      * The now playing info center that is associated with this session.
      */
+    @NotNull
     @Generated
     @Selector("nowPlayingInfoCenter")
     public native MPNowPlayingInfoCenter nowPlayingInfoCenter();
@@ -191,6 +199,7 @@ public class MPNowPlayingSession extends NSObject {
     /**
      * AVPlayer instances associated with this session.
      */
+    @NotNull
     @Generated
     @Selector("players")
     public native NSArray<? extends AVPlayer> players();
@@ -198,6 +207,7 @@ public class MPNowPlayingSession extends NSObject {
     /**
      * The remote command center that is associated with this session.
      */
+    @NotNull
     @Generated
     @Selector("remoteCommandCenter")
     public native MPRemoteCommandCenter remoteCommandCenter();
@@ -207,7 +217,7 @@ public class MPNowPlayingSession extends NSObject {
      */
     @Generated
     @Selector("removePlayer:")
-    public native void removePlayer(AVPlayer player);
+    public native void removePlayer(@NotNull AVPlayer player);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -230,10 +240,10 @@ public class MPNowPlayingSession extends NSObject {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) MPNowPlayingSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) MPNowPlayingSessionDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) MPNowPlayingSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) MPNowPlayingSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

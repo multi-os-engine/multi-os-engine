@@ -15,6 +15,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -------------------------------------------------------------------------------------------------------
@@ -36,7 +38,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didAddItem:")
-    default void cameraDeviceDidAddItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidAddItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,7 +53,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDevice:didAddItems:")
-    void cameraDeviceDidAddItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
+    void cameraDeviceDidAddItems(@NotNull ICCameraDevice camera, @NotNull NSArray<? extends ICCameraItem> items);
 
     /**
      * cameraDevice:didCompleteDeleteFilesWithError:
@@ -66,7 +68,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didCompleteDeleteFilesWithError:")
-    default void cameraDeviceDidCompleteDeleteFilesWithError(ICCameraDevice camera, NSError error) {
+    default void cameraDeviceDidCompleteDeleteFilesWithError(@NotNull ICCameraDevice camera, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,8 +81,8 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDevice:didReceiveMetadata:forItem:error:")
-    void cameraDeviceDidReceiveMetadataForItemError(ICCameraDevice camera, NSDictionary<?, ?> metadata,
-            ICCameraItem item, NSError error);
+    void cameraDeviceDidReceiveMetadataForItemError(@NotNull ICCameraDevice camera,
+            @Nullable NSDictionary<?, ?> metadata, @NotNull ICCameraItem item, @Nullable NSError error);
 
     /**
      * cameraDevice:didReceiveMetadataForItem:
@@ -88,7 +90,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didReceiveMetadataForItem:")
-    default void cameraDeviceDidReceiveMetadataForItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidReceiveMetadataForItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -101,7 +103,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDevice:didReceivePTPEvent:")
-    void cameraDeviceDidReceivePTPEvent(ICCameraDevice camera, NSData eventData);
+    void cameraDeviceDidReceivePTPEvent(@NotNull ICCameraDevice camera, @NotNull NSData eventData);
 
     /**
      * cameraDevice:didReceiveThumbnail:forItem:error:
@@ -112,8 +114,8 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDevice:didReceiveThumbnail:forItem:error:")
-    void cameraDeviceDidReceiveThumbnailForItemError(ICCameraDevice camera, CGImageRef thumbnail, ICCameraItem item,
-            NSError error);
+    void cameraDeviceDidReceiveThumbnailForItemError(@NotNull ICCameraDevice camera, @Nullable CGImageRef thumbnail,
+            @NotNull ICCameraItem item, @Nullable NSError error);
 
     /**
      * cameraDevice:didReceiveThumbnailForItem:
@@ -121,7 +123,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didReceiveThumbnailForItem:")
-    default void cameraDeviceDidReceiveThumbnailForItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidReceiveThumbnailForItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -131,7 +133,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:didRemoveItem:")
-    default void cameraDeviceDidRemoveItem(ICCameraDevice camera, ICCameraItem item) {
+    default void cameraDeviceDidRemoveItem(@NotNull ICCameraDevice camera, @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -146,7 +148,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDevice:didRemoveItems:")
-    void cameraDeviceDidRemoveItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
+    void cameraDeviceDidRemoveItems(@NotNull ICCameraDevice camera, @NotNull NSArray<? extends ICCameraItem> items);
 
     /**
      * cameraDevice:didRenameItems:
@@ -159,7 +161,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDevice:didRenameItems:")
-    void cameraDeviceDidRenameItems(ICCameraDevice camera, NSArray<? extends ICCameraItem> items);
+    void cameraDeviceDidRenameItems(@NotNull ICCameraDevice camera, @NotNull NSArray<? extends ICCameraItem> items);
 
     /**
      * This message is sent when the camera device is about to execute queued requests for the metadata of a specific
@@ -173,7 +175,8 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:shouldGetMetadataOfItem:")
-    default boolean cameraDeviceShouldGetMetadataOfItem(ICCameraDevice cameraDevice, ICCameraItem item) {
+    default boolean cameraDeviceShouldGetMetadataOfItem(@NotNull ICCameraDevice cameraDevice,
+            @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -191,7 +194,8 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("cameraDevice:shouldGetThumbnailOfItem:")
-    default boolean cameraDeviceShouldGetThumbnailOfItem(ICCameraDevice cameraDevice, ICCameraItem item) {
+    default boolean cameraDeviceShouldGetThumbnailOfItem(@NotNull ICCameraDevice cameraDevice,
+            @NotNull ICCameraItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -206,7 +210,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDeviceDidChangeCapability:")
-    void cameraDeviceDidChangeCapability(ICCameraDevice camera);
+    void cameraDeviceDidChangeCapability(@NotNull ICCameraDevice camera);
 
     /**
      * deviceDidEnableAccessRestriction:
@@ -216,7 +220,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDeviceDidEnableAccessRestriction:")
-    void cameraDeviceDidEnableAccessRestriction(ICDevice device);
+    void cameraDeviceDidEnableAccessRestriction(@NotNull ICDevice device);
 
     /**
      * deviceDidRemoveAccessRestriction:
@@ -225,7 +229,7 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("cameraDeviceDidRemoveAccessRestriction:")
-    void cameraDeviceDidRemoveAccessRestriction(ICDevice device);
+    void cameraDeviceDidRemoveAccessRestriction(@NotNull ICDevice device);
 
     /**
      * deviceDidBecomeReadyWithCompleteContentCatalog:
@@ -238,5 +242,5 @@ public interface ICCameraDeviceDelegate extends ICDeviceDelegate {
      */
     @Generated
     @Selector("deviceDidBecomeReadyWithCompleteContentCatalog:")
-    void deviceDidBecomeReadyWithCompleteContentCatalog(ICCameraDevice device);
+    void deviceDidBecomeReadyWithCompleteContentCatalog(@NotNull ICCameraDevice device);
 }

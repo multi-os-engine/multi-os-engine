@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -63,7 +65,7 @@ public class UISheetPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("animateChanges:")
-    public native void animateChanges(@ObjCBlock(name = "call_animateChanges") Block_animateChanges changes);
+    public native void animateChanges(@NotNull @ObjCBlock(name = "call_animateChanges") Block_animateChanges changes);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -74,22 +76,25 @@ public class UISheetPresentationController extends UIPresentationController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +107,7 @@ public class UISheetPresentationController extends UIPresentationController {
      * The delegate inherited from UIPresentationController, redeclared with conformance to
      * UISheetPresentationControllerDelegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -117,6 +123,7 @@ public class UISheetPresentationController extends UIPresentationController {
      * Detents must be specified in order from smallest to largest height.
      * Default: an array of only [UISheetPresentationControllerDetent largeDetent]
      */
+    @NotNull
     @Generated
     @Selector("detents")
     public native NSArray<? extends UISheetPresentationControllerDetent> detents();
@@ -133,7 +140,7 @@ public class UISheetPresentationController extends UIPresentationController {
     @Generated
     @Selector("initWithPresentedViewController:presentingViewController:")
     public native UISheetPresentationController initWithPresentedViewControllerPresentingViewController(
-            UIViewController presentedViewController, UIViewController presentingViewController);
+            @NotNull UIViewController presentedViewController, @Nullable UIViewController presentingViewController);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,15 +159,17 @@ public class UISheetPresentationController extends UIPresentationController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The identifier of the largest detent that is not dimmed. When nil or the identifier is not found in detents, all
      * detents are dimmed.
      * Default: nil
      */
+    @Nullable
     @Generated
     @Selector("largestUndimmedDetentIdentifier")
     public native String largestUndimmedDetentIdentifier();
@@ -221,6 +230,7 @@ public class UISheetPresentationController extends UIPresentationController {
      * at the smallest detent.
      * Default: nil
      */
+    @Nullable
     @Generated
     @Selector("selectedDetentIdentifier")
     public native String selectedDetentIdentifier();
@@ -231,14 +241,14 @@ public class UISheetPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The delegate inherited from UIPresentationController, redeclared with conformance to
      * UISheetPresentationControllerDelegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -257,7 +267,7 @@ public class UISheetPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setDetents:")
-    public native void setDetents(NSArray<? extends UISheetPresentationControllerDetent> value);
+    public native void setDetents(@NotNull NSArray<? extends UISheetPresentationControllerDetent> value);
 
     /**
      * The identifier of the largest detent that is not dimmed. When nil or the identifier is not found in detents, all
@@ -266,7 +276,7 @@ public class UISheetPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setLargestUndimmedDetentIdentifier:")
-    public native void setLargestUndimmedDetentIdentifier(String value);
+    public native void setLargestUndimmedDetentIdentifier(@Nullable String value);
 
     /**
      * The preferred corner radius of the sheet when presented.
@@ -312,7 +322,7 @@ public class UISheetPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setSelectedDetentIdentifier:")
-    public native void setSelectedDetentIdentifier(String value);
+    public native void setSelectedDetentIdentifier(@Nullable String value);
 
     /**
      * If specified, the sheet will attempt to visually center itself over this view.
@@ -320,7 +330,7 @@ public class UISheetPresentationController extends UIPresentationController {
      */
     @Generated
     @Selector("setSourceView:")
-    public native void setSourceView(UIView value);
+    public native void setSourceView(@Nullable UIView value);
 
     @Generated
     @Selector("setVersion:")
@@ -340,6 +350,7 @@ public class UISheetPresentationController extends UIPresentationController {
      * If specified, the sheet will attempt to visually center itself over this view.
      * Default: nil
      */
+    @Nullable
     @Generated
     @Selector("sourceView")
     public native UIView sourceView();

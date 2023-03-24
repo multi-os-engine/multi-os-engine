@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MTLIOScratchBuffer
@@ -23,6 +24,7 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLIOScratchBuffer")
 public interface MTLIOScratchBuffer {
+    @NotNull
     @Generated
     @Selector("buffer")
     @MappedReturn(ObjCObjectMapper.class)

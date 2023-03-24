@@ -27,6 +27,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -55,6 +57,7 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_getBytes")
@@ -62,8 +65,9 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setGetBytes(@FunctionPtr(name = "call_getBytes") Function_getBytes value);
+    public native void setGetBytes(@Nullable @FunctionPtr(name = "call_getBytes") Function_getBytes value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_skipForward")
@@ -71,8 +75,9 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setSkipForward(@FunctionPtr(name = "call_skipForward") Function_skipForward value);
+    public native void setSkipForward(@Nullable @FunctionPtr(name = "call_skipForward") Function_skipForward value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     @FunctionPtr(name = "call_rewind")
@@ -80,8 +85,9 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setRewind(@FunctionPtr(name = "call_rewind") Function_rewind value);
+    public native void setRewind(@Nullable @FunctionPtr(name = "call_rewind") Function_rewind value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
@@ -89,34 +95,34 @@ public final class CGDataProviderSequentialCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
+    public native void setReleaseInfo(@Nullable @FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_getBytes {
         @Generated
         @NUInt
-        long call_getBytes(VoidPtr arg0, VoidPtr arg1, @NUInt long arg2);
+        long call_getBytes(@Nullable VoidPtr arg0, @NotNull VoidPtr arg1, @NUInt long arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_skipForward {
         @Generated
-        long call_skipForward(VoidPtr arg0, long arg1);
+        long call_skipForward(@Nullable VoidPtr arg0, long arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_rewind {
         @Generated
-        void call_rewind(VoidPtr arg0);
+        void call_rewind(@Nullable VoidPtr arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_releaseInfo {
         @Generated
-        void call_releaseInfo(VoidPtr arg0);
+        void call_releaseInfo(@Nullable VoidPtr arg0);
     }
 }

@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -83,36 +85,39 @@ public class QLPreviewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Returns YES if QLPreviewController can display this preview item.
      */
     @Generated
     @Selector("canPreviewItem:")
-    public static native boolean canPreviewItem(@Mapped(ObjCObjectMapper.class) QLPreviewItem item);
+    public static native boolean canPreviewItem(@NotNull @Mapped(ObjCObjectMapper.class) QLPreviewItem item);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -144,9 +149,10 @@ public class QLPreviewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +183,7 @@ public class QLPreviewController extends UIViewController {
     /**
      * The currently previewed item in the preview panel or nil if there is none.
      */
+    @Nullable
     @Generated
     @Selector("currentPreviewItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -193,6 +200,7 @@ public class QLPreviewController extends UIViewController {
     /**
      * The Preview Panel data source.
      */
+    @Nullable
     @Generated
     @Selector("dataSource")
     @MappedReturn(ObjCObjectMapper.class)
@@ -203,6 +211,7 @@ public class QLPreviewController extends UIViewController {
      * 
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -214,11 +223,12 @@ public class QLPreviewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native QLPreviewController initWithCoder(NSCoder coder);
+    public native QLPreviewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native QLPreviewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native QLPreviewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Asks the Preview Controller to recompute the preview of the currently previewed item.
@@ -248,13 +258,14 @@ public class QLPreviewController extends UIViewController {
      */
     @Generated
     @Selector("setDataSource:")
-    public native void setDataSource_unsafe(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value);
+    public native void setDataSource_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value);
 
     /**
      * The Preview Panel data source.
      */
     @Generated
-    public void setDataSource(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value) {
+    public void setDataSource(@Nullable @Mapped(ObjCObjectMapper.class) QLPreviewControllerDataSource value) {
         Object __old = dataSource();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -272,7 +283,7 @@ public class QLPreviewController extends UIViewController {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value);
 
     /**
      * The Preview Controller delegate.
@@ -280,7 +291,7 @@ public class QLPreviewController extends UIViewController {
      * Should implement the <QLPreviewControllerDelegate> protocol
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) QLPreviewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

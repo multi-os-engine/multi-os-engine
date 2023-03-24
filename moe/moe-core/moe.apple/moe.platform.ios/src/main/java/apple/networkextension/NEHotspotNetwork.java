@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotNetwork
@@ -79,22 +81,25 @@ public class NEHotspotNetwork extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class NEHotspotNetwork extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,6 +172,7 @@ public class NEHotspotNetwork extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("BSSID")
     public native String BSSID();
@@ -177,6 +184,7 @@ public class NEHotspotNetwork extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("SSID")
     public native String SSID();
@@ -268,7 +276,7 @@ public class NEHotspotNetwork extends NSObject {
      */
     @Generated
     @Selector("setPassword:")
-    public native void setPassword(String password);
+    public native void setPassword(@NotNull String password);
 
     /**
      * [@property] signalStrength
@@ -308,13 +316,13 @@ public class NEHotspotNetwork extends NSObject {
     @Generated
     @Selector("fetchCurrentWithCompletionHandler:")
     public static native void fetchCurrentWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchCurrentWithCompletionHandler") Block_fetchCurrentWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchCurrentWithCompletionHandler") Block_fetchCurrentWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchCurrentWithCompletionHandler {
         @Generated
-        void call_fetchCurrentWithCompletionHandler(NEHotspotNetwork currentNetwork);
+        void call_fetchCurrentWithCompletionHandler(@Nullable NEHotspotNetwork currentNetwork);
     }
 
     /**

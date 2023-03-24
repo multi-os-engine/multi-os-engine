@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A response to an ILClassificationRequest.
@@ -66,22 +68,25 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +101,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -113,7 +118,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native ILClassificationResponse initWithCoder(NSCoder coder);
+    public native ILClassificationResponse initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -132,9 +137,10 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,7 +167,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<String, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<String, ?> value);
 
     /**
      * The value of this string will be sent when a value for
@@ -171,7 +177,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
      */
     @Generated
     @Selector("setUserString:")
-    public native void setUserString(String value);
+    public native void setUserString(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -201,6 +207,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
      * - All dictionary keys are NSStrings
      * - NSNumbers are not NaN or infinity
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<String, ?> userInfo();
@@ -211,6 +218,7 @@ public class ILClassificationResponse extends NSObject implements NSSecureCoding
      * 
      * API-Since: 12.1
      */
+    @Nullable
     @Generated
     @Selector("userString")
     public native String userString();

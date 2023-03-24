@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A protocol that allows a user to provide an input collection of VNFaceObservations as part of a request. The protocol
@@ -23,6 +24,7 @@ public interface VNFaceObservationAccepting {
     /**
      * The VNFaceObservation objects to be processed as part of the request.
      */
+    @Nullable
     @Generated
     @Selector("inputFaceObservations")
     NSArray<? extends VNFaceObservation> inputFaceObservations();
@@ -32,5 +34,5 @@ public interface VNFaceObservationAccepting {
      */
     @Generated
     @Selector("setInputFaceObservations:")
-    void setInputFaceObservations(NSArray<? extends VNFaceObservation> value);
+    void setInputFaceObservations(@Nullable NSArray<? extends VNFaceObservation> value);
 }

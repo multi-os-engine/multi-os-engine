@@ -53,6 +53,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UISearchBar officially conformed to UITextInputTraits in iOS 8.0 and privately conformed in iOS 7.0. Prior to 7.0,
@@ -84,7 +86,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -100,64 +102,70 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UISearchBar appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UISearchBar appearanceForTraitCollection(UITraitCollection trait);
+    public static native UISearchBar appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UISearchBar appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UISearchBar appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UISearchBar appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UISearchBar appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UISearchBar appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UISearchBar appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -165,34 +173,37 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -233,10 +244,12 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -249,14 +262,14 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -288,12 +301,12 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -313,17 +326,18 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -339,16 +353,16 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -366,44 +380,50 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UISearchBar _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UISearchBar _appearanceForTraitCollection(UITraitCollection trait) {
+    public UISearchBar _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UISearchBar _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UISearchBar _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UISearchBar _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UISearchBar _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UISearchBar _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UISearchBar _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UISearchBar _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UISearchBar _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -425,6 +445,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
@@ -432,6 +453,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImageForBarPosition:barMetrics:")
     public native UIImage backgroundImageForBarPositionBarMetrics(@NInt long barPosition, @NInt long barMetrics);
@@ -454,6 +476,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
@@ -461,6 +484,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * weak reference. default is nil
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -474,6 +498,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("imageForSearchBarIcon:state:")
     public native UIImage imageForSearchBarIconState(@NInt long icon, @NUInt long state);
@@ -484,7 +509,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
 
     @Generated
     @Selector("initWithCoder:")
-    public native UISearchBar initWithCoder(NSCoder coder);
+    public native UISearchBar initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -493,6 +518,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * Allow placement of an input accessory view to the keyboard for the search bar
      */
+    @Nullable
     @Generated
     @Selector("inputAccessoryView")
     public native UIView inputAccessoryView();
@@ -505,6 +531,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("inputAssistantItem")
     public native UITextInputAssistantItem inputAssistantItem();
@@ -570,6 +597,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("placeholder")
     public native String placeholder();
@@ -585,6 +613,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("prompt")
     public native String prompt();
@@ -598,6 +627,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("scopeBarBackgroundImage")
     public native UIImage scopeBarBackgroundImage();
@@ -605,6 +635,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("scopeBarButtonBackgroundImageForState:")
     public native UIImage scopeBarButtonBackgroundImageForState(@NUInt long state);
@@ -612,6 +643,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("scopeBarButtonDividerImageForLeftSegmentState:rightSegmentState:")
     public native UIImage scopeBarButtonDividerImageForLeftSegmentStateRightSegmentState(@NUInt long leftState,
@@ -620,6 +652,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("scopeBarButtonTitleTextAttributesForState:")
     public native NSDictionary<String, ?> scopeBarButtonTitleTextAttributesForState(@NUInt long state);
@@ -629,6 +662,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("scopeButtonTitles")
     public native NSArray<String> scopeButtonTitles();
@@ -644,6 +678,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("searchFieldBackgroundImageForState:")
     public native UIImage searchFieldBackgroundImageForState(@NUInt long state);
@@ -696,7 +731,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setBackgroundImage:")
-    public native void setBackgroundImage(UIImage value);
+    public native void setBackgroundImage(@Nullable UIImage value);
 
     /**
      * Use UIBarMetricsDefaultPrompt to set a separate backgroundImage for a search bar with a prompt
@@ -705,8 +740,8 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setBackgroundImage:forBarPosition:barMetrics:")
-    public native void setBackgroundImageForBarPositionBarMetrics(UIImage backgroundImage, @NInt long barPosition,
-            @NInt long barMetrics);
+    public native void setBackgroundImageForBarPositionBarMetrics(@Nullable UIImage backgroundImage,
+            @NInt long barPosition, @NInt long barMetrics);
 
     /**
      * default is UIBarStyleDefault (blue)
@@ -722,20 +757,20 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setBarTintColor:")
-    public native void setBarTintColor(UIColor value);
+    public native void setBarTintColor(@Nullable UIColor value);
 
     /**
      * weak reference. default is nil
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UISearchBarDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UISearchBarDelegate value);
 
     /**
      * weak reference. default is nil
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UISearchBarDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UISearchBarDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -756,14 +791,14 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setImage:forSearchBarIcon:state:")
-    public native void setImageForSearchBarIconState(UIImage iconImage, @NInt long icon, @NUInt long state);
+    public native void setImageForSearchBarIconState(@Nullable UIImage iconImage, @NInt long icon, @NUInt long state);
 
     /**
      * Allow placement of an input accessory view to the keyboard for the search bar
      */
     @Generated
     @Selector("setInputAccessoryView:")
-    public native void setInputAccessoryView(UIView value);
+    public native void setInputAccessoryView(@Nullable UIView value);
 
     @Generated
     @IsOptional
@@ -780,7 +815,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setPlaceholder:")
-    public native void setPlaceholder(String value);
+    public native void setPlaceholder(@Nullable String value);
 
     /**
      * To nudge the position of the icon within the search text field
@@ -796,7 +831,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setPrompt:")
-    public native void setPrompt(String value);
+    public native void setPrompt(@Nullable String value);
 
     @Generated
     @IsOptional
@@ -808,7 +843,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setScopeBarBackgroundImage:")
-    public native void setScopeBarBackgroundImage(UIImage value);
+    public native void setScopeBarBackgroundImage(@Nullable UIImage value);
 
     /**
      * If backgroundImage is an image returned from -[UIImage resizableImageWithCapInsets:] the cap widths will be
@@ -820,7 +855,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setScopeBarButtonBackgroundImage:forState:")
-    public native void setScopeBarButtonBackgroundImageForState(UIImage backgroundImage, @NUInt long state);
+    public native void setScopeBarButtonBackgroundImageForState(@Nullable UIImage backgroundImage, @NUInt long state);
 
     /**
      * To customize the segmented control appearance you will need to provide divider images to go between two
@@ -833,7 +868,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setScopeBarButtonDividerImage:forLeftSegmentState:rightSegmentState:")
-    public native void setScopeBarButtonDividerImageForLeftSegmentStateRightSegmentState(UIImage dividerImage,
+    public native void setScopeBarButtonDividerImageForLeftSegmentStateRightSegmentState(@Nullable UIImage dividerImage,
             @NUInt long leftState, @NUInt long rightState);
 
     /**
@@ -844,7 +879,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setScopeBarButtonTitleTextAttributes:forState:")
-    public native void setScopeBarButtonTitleTextAttributesForState(NSDictionary<String, ?> attributes,
+    public native void setScopeBarButtonTitleTextAttributesForState(@Nullable NSDictionary<String, ?> attributes,
             @NUInt long state);
 
     /**
@@ -854,7 +889,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setScopeButtonTitles:")
-    public native void setScopeButtonTitles(NSArray<String> value);
+    public native void setScopeButtonTitles(@Nullable NSArray<String> value);
 
     /**
      * API-Since: 7.0
@@ -870,7 +905,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setSearchFieldBackgroundImage:forState:")
-    public native void setSearchFieldBackgroundImageForState(UIImage backgroundImage, @NUInt long state);
+    public native void setSearchFieldBackgroundImageForState(@Nullable UIImage backgroundImage, @NUInt long state);
 
     /**
      * To nudge the position of the search text field background in the search bar
@@ -948,7 +983,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     @Generated
     @IsOptional
@@ -1005,6 +1040,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * current/starting search text
      */
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
@@ -1060,8 +1096,9 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("passwordRules")
@@ -1070,6 +1107,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("searchTextField")
     public native UISearchTextField searchTextField();
@@ -1077,7 +1115,7 @@ public class UISearchBar extends UIView implements UIBarPositioning, UITextInput
     @Generated
     @IsOptional
     @Selector("setPasswordRules:")
-    public native void setPasswordRules(UITextInputPasswordRules value);
+    public native void setPasswordRules(@Nullable UITextInputPasswordRules value);
 
     /**
      * API-Since: 13.0

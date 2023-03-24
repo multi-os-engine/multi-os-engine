@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.Mapped;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -37,7 +38,7 @@ public interface UISearchResultsUpdating {
      */
     @Generated
     @Selector("updateSearchResultsForSearchController:")
-    void updateSearchResultsForSearchController(UISearchController searchController);
+    void updateSearchResultsForSearchController(@NotNull UISearchController searchController);
 
     /**
      * Called when user selects one of the search suggestion buttons displayed under the keyboard on tvOS.
@@ -47,8 +48,9 @@ public interface UISearchResultsUpdating {
     @Generated
     @IsOptional
     @Selector("updateSearchResultsForSearchController:selectingSearchSuggestion:")
-    default void updateSearchResultsForSearchControllerSelectingSearchSuggestion(UISearchController searchController,
-            @Mapped(ObjCObjectMapper.class) UISearchSuggestion searchSuggestion) {
+    default void updateSearchResultsForSearchControllerSelectingSearchSuggestion(
+            @NotNull UISearchController searchController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISearchSuggestion searchSuggestion) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

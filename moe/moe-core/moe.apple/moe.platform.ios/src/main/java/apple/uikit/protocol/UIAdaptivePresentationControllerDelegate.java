@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -43,7 +45,7 @@ public interface UIAdaptivePresentationControllerDelegate {
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:")
     @NInt
-    default long adaptivePresentationStyleForPresentationController(UIPresentationController controller) {
+    default long adaptivePresentationStyleForPresentationController(@NotNull UIPresentationController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,19 +58,20 @@ public interface UIAdaptivePresentationControllerDelegate {
     @IsOptional
     @Selector("adaptivePresentationStyleForPresentationController:traitCollection:")
     @NInt
-    default long adaptivePresentationStyleForPresentationControllerTraitCollection(UIPresentationController controller,
-            UITraitCollection traitCollection) {
+    default long adaptivePresentationStyleForPresentationControllerTraitCollection(
+            @NotNull UIPresentationController controller, @NotNull UITraitCollection traitCollection) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * If this method is not implemented, or returns nil, then the originally presented view controller is used.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("presentationController:viewControllerForAdaptivePresentationStyle:")
     default UIViewController presentationControllerViewControllerForAdaptivePresentationStyle(
-            UIPresentationController controller, @NInt long style) {
+            @NotNull UIPresentationController controller, @NInt long style) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +85,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     @IsOptional
     @Selector("presentationController:willPresentWithAdaptiveStyle:transitionCoordinator:")
     default void presentationControllerWillPresentWithAdaptiveStyleTransitionCoordinator(
-            UIPresentationController presentationController, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator transitionCoordinator) {
+            @NotNull UIPresentationController presentationController, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator transitionCoordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,7 +102,7 @@ public interface UIAdaptivePresentationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("presentationControllerDidAttemptToDismiss:")
-    default void presentationControllerDidAttemptToDismiss(UIPresentationController presentationController) {
+    default void presentationControllerDidAttemptToDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,7 +116,7 @@ public interface UIAdaptivePresentationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("presentationControllerDidDismiss:")
-    default void presentationControllerDidDismiss(UIPresentationController presentationController) {
+    default void presentationControllerDidDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,7 +132,7 @@ public interface UIAdaptivePresentationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("presentationControllerShouldDismiss:")
-    default boolean presentationControllerShouldDismiss(UIPresentationController presentationController) {
+    default boolean presentationControllerShouldDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -145,7 +148,7 @@ public interface UIAdaptivePresentationControllerDelegate {
     @Generated
     @IsOptional
     @Selector("presentationControllerWillDismiss:")
-    default void presentationControllerWillDismiss(UIPresentationController presentationController) {
+    default void presentationControllerWillDismiss(@NotNull UIPresentationController presentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,7 +162,8 @@ public interface UIAdaptivePresentationControllerDelegate {
     @IsOptional
     @Selector("presentationController:prepareAdaptivePresentationController:")
     default void presentationControllerPrepareAdaptivePresentationController(
-            UIPresentationController presentationController, UIPresentationController adaptivePresentationController) {
+            @NotNull UIPresentationController presentationController,
+            @NotNull UIPresentationController adaptivePresentationController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

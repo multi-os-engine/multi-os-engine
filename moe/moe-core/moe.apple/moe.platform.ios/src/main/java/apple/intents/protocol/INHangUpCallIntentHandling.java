@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INHangUpCallIntent. By implementing this protocol, a class can provide
@@ -43,8 +44,8 @@ public interface INHangUpCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmHangUpCall:completion:")
-    default void confirmHangUpCallCompletion(INHangUpCallIntent intent,
-            @ObjCBlock(name = "call_confirmHangUpCallCompletion") Block_confirmHangUpCallCompletion completion) {
+    default void confirmHangUpCallCompletion(@NotNull INHangUpCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmHangUpCallCompletion") Block_confirmHangUpCallCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,7 +53,7 @@ public interface INHangUpCallIntentHandling {
     @Generated
     public interface Block_confirmHangUpCallCompletion {
         @Generated
-        void call_confirmHangUpCallCompletion(INHangUpCallIntentResponse response);
+        void call_confirmHangUpCallCompletion(@NotNull INHangUpCallIntentResponse response);
     }
 
     /**
@@ -68,13 +69,13 @@ public interface INHangUpCallIntentHandling {
      */
     @Generated
     @Selector("handleHangUpCall:completion:")
-    void handleHangUpCallCompletion(INHangUpCallIntent intent,
-            @ObjCBlock(name = "call_handleHangUpCallCompletion") Block_handleHangUpCallCompletion completion);
+    void handleHangUpCallCompletion(@NotNull INHangUpCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleHangUpCallCompletion") Block_handleHangUpCallCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleHangUpCallCompletion {
         @Generated
-        void call_handleHangUpCallCompletion(INHangUpCallIntentResponse response);
+        void call_handleHangUpCallCompletion(@NotNull INHangUpCallIntentResponse response);
     }
 }

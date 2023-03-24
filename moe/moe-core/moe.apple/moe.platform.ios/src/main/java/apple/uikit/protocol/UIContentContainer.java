@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -47,7 +48,7 @@ public interface UIContentContainer {
     @Generated
     @Selector("preferredContentSizeDidChangeForChildContentContainer:")
     void preferredContentSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     /**
      * When the content container forwards viewWillTransitionToSize:withTransitionCoordinator: to its children, it will
@@ -62,7 +63,7 @@ public interface UIContentContainer {
     @Selector("sizeForChildContentContainer:withParentContainerSize:")
     @ByValue
     CGSize sizeForChildContentContainerWithParentContainerSize(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container, @ByValue CGSize parentSize);
 
     /**
      * Intended as a bridge for a view controller that does not use auto layout presenting a child that does use auto
@@ -76,7 +77,7 @@ public interface UIContentContainer {
     @Generated
     @Selector("systemLayoutFittingSizeDidChangeForChildContentContainer:")
     void systemLayoutFittingSizeDidChangeForChildContentContainer(
-            @Mapped(ObjCObjectMapper.class) UIContentContainer container);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContentContainer container);
 
     /**
      * This method is called when the view controller's view's size is changed by its parent (i.e. for the root view
@@ -90,7 +91,7 @@ public interface UIContentContainer {
     @Generated
     @Selector("viewWillTransitionToSize:withTransitionCoordinator:")
     void viewWillTransitionToSizeWithTransitionCoordinator(@ByValue CGSize size,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 
     /**
      * This method is called when the view controller's trait collection is changed by its parent.
@@ -102,6 +103,6 @@ public interface UIContentContainer {
      */
     @Generated
     @Selector("willTransitionToTraitCollection:withTransitionCoordinator:")
-    void willTransitionToTraitCollectionWithTransitionCoordinator(UITraitCollection newCollection,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
+    void willTransitionToTraitCollectionWithTransitionCoordinator(@NotNull UITraitCollection newCollection,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator);
 }

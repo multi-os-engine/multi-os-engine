@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CIQRCodeDescriptor
@@ -63,22 +65,25 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,7 +102,8 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Generated
     @Selector("descriptorWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:")
     public static native CIQRCodeDescriptor descriptorWithPayloadSymbolVersionMaskPatternErrorCorrectionLevel(
-            NSData errorCorrectedPayload, @NInt long symbolVersion, byte maskPattern, @NInt long errorCorrectionLevel);
+            @NotNull NSData errorCorrectedPayload, @NInt long symbolVersion, byte maskPattern,
+            @NInt long errorCorrectionLevel);
 
     /**
      * [@property] errorCorrectedPayload
@@ -112,6 +118,7 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
      * following "Bitstream to codeword coversion." The errorCorrectedPayload corresponds to this sequence of 8-bit
      * codewords.
      */
+    @NotNull
     @Generated
     @Selector("errorCorrectedPayload")
     public native NSData errorCorrectedPayload();
@@ -140,7 +147,7 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIQRCodeDescriptor initWithCoder(NSCoder coder);
+    public native CIQRCodeDescriptor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a descriptor that can be used as input to CIBarcodeGenerator
@@ -148,7 +155,8 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Generated
     @Selector("initWithPayload:symbolVersion:maskPattern:errorCorrectionLevel:")
     public native CIQRCodeDescriptor initWithPayloadSymbolVersionMaskPatternErrorCorrectionLevel(
-            NSData errorCorrectedPayload, @NInt long symbolVersion, byte maskPattern, @NInt long errorCorrectionLevel);
+            @NotNull NSData errorCorrectedPayload, @NInt long symbolVersion, byte maskPattern,
+            @NInt long errorCorrectionLevel);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -167,9 +175,10 @@ public class CIQRCodeDescriptor extends CIBarcodeDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maskPattern

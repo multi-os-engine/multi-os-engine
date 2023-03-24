@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Specifies the search criteria to fetch contacts.
@@ -80,22 +82,25 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +172,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -174,7 +180,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactFetchRequest initWithCoder(NSCoder coder);
+    public native CNContactFetchRequest initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Only fetch the properties that will be used.
@@ -184,13 +190,14 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      */
     @Generated
     @Selector("initWithKeysToFetch:")
-    public native CNContactFetchRequest initWithKeysToFetch(NSArray<?> keysToFetch);
+    public native CNContactFetchRequest initWithKeysToFetch(@NotNull NSArray<?> keysToFetch);
 
     /**
      * The properties to fetch in the returned contacts.
      * 
      * Should only fetch the properties that will be used. Can combine contact keys and contact key descriptors.
      */
+    @NotNull
     @Generated
     @Selector("keysToFetch")
     public native NSArray<?> keysToFetch();
@@ -212,6 +219,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      * Use only predicates from CNContact+Predicates.h. Compound predicates are not supported. Set to nil to match all
      * contacts.
      */
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -223,7 +231,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      */
     @Generated
     @Selector("setKeysToFetch:")
-    public native void setKeysToFetch(NSArray<?> value);
+    public native void setKeysToFetch(@NotNull NSArray<?> value);
 
     /**
      * To return mutable contacts.
@@ -244,7 +252,7 @@ public class CNContactFetchRequest extends CNFetchRequest implements NSSecureCod
      */
     @Generated
     @Selector("setPredicate:")
-    public native void setPredicate(NSPredicate value);
+    public native void setPredicate(@Nullable NSPredicate value);
 
     /**
      * To return contacts in a specific sort order.

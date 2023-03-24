@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A component that encapsulates a SceneKit node.
@@ -53,12 +55,12 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     @Generated
     @IsOptional
     @Selector("agentDidUpdate:")
-    public native void agentDidUpdate(GKAgent agent);
+    public native void agentDidUpdate(@NotNull GKAgent agent);
 
     @Generated
     @IsOptional
     @Selector("agentWillUpdate:")
-    public native void agentWillUpdate(GKAgent agent);
+    public native void agentWillUpdate(@NotNull GKAgent agent);
 
     @Generated
     @Owned
@@ -72,22 +74,25 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,7 +106,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
      */
     @Generated
     @Selector("componentWithNode:")
-    public static native GKSCNNodeComponent componentWithNode(SCNNode node);
+    public static native GKSCNNodeComponent componentWithNode(@NotNull SCNNode node);
 
     @Generated
     @Selector("debugDescription")
@@ -122,7 +127,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKSCNNodeComponent initWithCoder(NSCoder coder);
+    public native GKSCNNodeComponent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes component to encapsulate the given SceneKit node. When the component is
@@ -133,7 +138,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
      */
     @Generated
     @Selector("initWithNode:")
-    public native GKSCNNodeComponent initWithNode(SCNNode node);
+    public native GKSCNNodeComponent initWithNode(@NotNull SCNNode node);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,9 +157,10 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,6 +170,7 @@ public class GKSCNNodeComponent extends GKComponent implements GKAgentDelegate {
     /**
      * The SceneKit node this component encapsulates.
      */
+    @NotNull
     @Generated
     @Selector("node")
     public native SCNNode node();

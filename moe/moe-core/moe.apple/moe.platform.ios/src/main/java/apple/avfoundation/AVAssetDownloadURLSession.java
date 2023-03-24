@@ -45,6 +45,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetDownloadURLSession
@@ -83,22 +85,25 @@ public class AVAssetDownloadURLSession extends NSURLSession {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,9 +156,10 @@ public class AVAssetDownloadURLSession extends NSURLSession {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("sessionWithConfiguration:")
-    public static native NSURLSession sessionWithConfiguration(NSURLSessionConfiguration configuration);
+    public static native NSURLSession sessionWithConfiguration(@NotNull NSURLSessionConfiguration configuration);
 
     /**
      * sessionWithConfiguration:assetDownloadDelegate:delegateQueue:
@@ -167,22 +174,26 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      * @param delegateQueue
      *                      The queue to receive delegate callbacks on. If nil, a serial queue will be provided.
      */
+    @NotNull
     @Generated
     @Selector("sessionWithConfiguration:assetDownloadDelegate:delegateQueue:")
     public static native AVAssetDownloadURLSession sessionWithConfigurationAssetDownloadDelegateDelegateQueue(
-            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) AVAssetDownloadDelegate delegate,
-            NSOperationQueue delegateQueue);
+            @NotNull NSURLSessionConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) AVAssetDownloadDelegate delegate,
+            @Nullable NSOperationQueue delegateQueue);
 
+    @NotNull
     @Generated
     @Selector("sessionWithConfiguration:delegate:delegateQueue:")
     public static native NSURLSession sessionWithConfigurationDelegateDelegateQueue(
-            NSURLSessionConfiguration configuration, @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate,
-            NSOperationQueue queue);
+            @NotNull NSURLSessionConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) NSURLSessionDelegate delegate, @Nullable NSOperationQueue queue);
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedSession")
     public static native NSURLSession sharedSession();
@@ -217,10 +228,12 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      * 
      *                    API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:")
     public native AVAssetDownloadTask assetDownloadTaskWithURLAssetAssetTitleAssetArtworkDataOptions(
-            AVURLAsset URLAsset, String title, NSData artworkData, NSDictionary<String, ?> options);
+            @NotNull AVURLAsset URLAsset, @NotNull String title, @Nullable NSData artworkData,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * assetDownloadTaskWithURLAsset:destinationURL:options:
@@ -243,11 +256,12 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      *                       Deprecated-Message: Use assetDownloadTaskWithURLAsset:assetTitle:assetArtworkData:options:
      *                       instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("assetDownloadTaskWithURLAsset:destinationURL:options:")
-    public native AVAssetDownloadTask assetDownloadTaskWithURLAssetDestinationURLOptions(AVURLAsset URLAsset,
-            NSURL destinationURL, NSDictionary<String, ?> options);
+    public native AVAssetDownloadTask assetDownloadTaskWithURLAssetDestinationURLOptions(@NotNull AVURLAsset URLAsset,
+            @NotNull NSURL destinationURL, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("init")
@@ -277,11 +291,12 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      * 
      *                        API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("aggregateAssetDownloadTaskWithURLAsset:mediaSelections:assetTitle:assetArtworkData:options:")
     public native AVAggregateAssetDownloadTask aggregateAssetDownloadTaskWithURLAssetMediaSelectionsAssetTitleAssetArtworkDataOptions(
-            AVURLAsset URLAsset, NSArray<? extends AVMediaSelection> mediaSelections, String title, NSData artworkData,
-            NSDictionary<String, ?> options);
+            @NotNull AVURLAsset URLAsset, @NotNull NSArray<? extends AVMediaSelection> mediaSelections,
+            @NotNull String title, @Nullable NSData artworkData, @Nullable NSDictionary<String, ?> options);
 
     /**
      * assetDownloadTaskWithConfiguration:
@@ -295,8 +310,9 @@ public class AVAssetDownloadURLSession extends NSURLSession {
      * 
      *                              API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("assetDownloadTaskWithConfiguration:")
     public native AVAssetDownloadTask assetDownloadTaskWithConfiguration(
-            AVAssetDownloadConfiguration downloadConfiguration);
+            @NotNull AVAssetDownloadConfiguration downloadConfiguration);
 }

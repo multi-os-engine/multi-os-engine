@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CBPeripheral
@@ -79,22 +81,25 @@ public class CBPeripheral extends CBPeer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class CBPeripheral extends CBPeer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +175,7 @@ public class CBPeripheral extends CBPeer {
      *             API-Since: 5.0
      *             Deprecated-Since: 8.0
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("RSSI")
@@ -179,6 +186,7 @@ public class CBPeripheral extends CBPeer {
      * 
      * The delegate object that will receive peripheral events.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -198,8 +206,8 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("discoverCharacteristics:forService:")
-    public native void discoverCharacteristicsForService(NSArray<? extends CBUUID> characteristicUUIDs,
-            CBService service);
+    public native void discoverCharacteristicsForService(@Nullable NSArray<? extends CBUUID> characteristicUUIDs,
+            @NotNull CBService service);
 
     /**
      * discoverDescriptorsForCharacteristic:
@@ -212,7 +220,7 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("discoverDescriptorsForCharacteristic:")
-    public native void discoverDescriptorsForCharacteristic(CBCharacteristic characteristic);
+    public native void discoverDescriptorsForCharacteristic(@NotNull CBCharacteristic characteristic);
 
     /**
      * discoverIncludedServices:forService:
@@ -229,8 +237,8 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("discoverIncludedServices:forService:")
-    public native void discoverIncludedServicesForService(NSArray<? extends CBUUID> includedServiceUUIDs,
-            CBService service);
+    public native void discoverIncludedServicesForService(@Nullable NSArray<? extends CBUUID> includedServiceUUIDs,
+            @NotNull CBService service);
 
     /**
      * discoverServices:
@@ -245,7 +253,7 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("discoverServices:")
-    public native void discoverServices(NSArray<? extends CBUUID> serviceUUIDs);
+    public native void discoverServices(@Nullable NSArray<? extends CBUUID> serviceUUIDs);
 
     @Generated
     @Selector("init")
@@ -270,6 +278,7 @@ public class CBPeripheral extends CBPeer {
      * 
      * The name of the peripheral.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -296,7 +305,7 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("readValueForCharacteristic:")
-    public native void readValueForCharacteristic(CBCharacteristic characteristic);
+    public native void readValueForCharacteristic(@NotNull CBCharacteristic characteristic);
 
     /**
      * readValueForDescriptor:
@@ -309,13 +318,14 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("readValueForDescriptor:")
-    public native void readValueForDescriptor(CBDescriptor descriptor);
+    public native void readValueForDescriptor(@NotNull CBDescriptor descriptor);
 
     /**
      * [@property] services
      * 
      * A list of <code>CBService</code> objects that have been discovered on the peripheral.
      */
+    @Nullable
     @Generated
     @Selector("services")
     public native NSArray<? extends CBService> services();
@@ -327,7 +337,7 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value);
 
     /**
      * [@property] delegate
@@ -335,7 +345,7 @@ public class CBPeripheral extends CBPeer {
      * The delegate object that will receive peripheral events.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CBPeripheralDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -366,7 +376,7 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("setNotifyValue:forCharacteristic:")
-    public native void setNotifyValueForCharacteristic(boolean enabled, CBCharacteristic characteristic);
+    public native void setNotifyValueForCharacteristic(boolean enabled, @NotNull CBCharacteristic characteristic);
 
     /**
      * [@property] state
@@ -400,7 +410,8 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("writeValue:forCharacteristic:type:")
-    public native void writeValueForCharacteristicType(NSData data, CBCharacteristic characteristic, @NInt long type);
+    public native void writeValueForCharacteristicType(@NotNull NSData data, @NotNull CBCharacteristic characteristic,
+            @NInt long type);
 
     /**
      * writeValue:forDescriptor:
@@ -416,7 +427,7 @@ public class CBPeripheral extends CBPeer {
      */
     @Generated
     @Selector("writeValue:forDescriptor:")
-    public native void writeValueForDescriptor(NSData data, CBDescriptor descriptor);
+    public native void writeValueForDescriptor(@NotNull NSData data, @NotNull CBDescriptor descriptor);
 
     /**
      * [@property] canSendWriteWithoutResponse

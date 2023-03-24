@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -57,22 +59,25 @@ public class CKSystemSharingUIObserver extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +101,7 @@ public class CKSystemSharingUIObserver extends NSObject {
 
     @Generated
     @Selector("initWithContainer:")
-    public native CKSystemSharingUIObserver initWithContainer(CKContainer container);
+    public native CKSystemSharingUIObserver initWithContainer(@NotNull CKContainer container);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -115,9 +120,10 @@ public class CKSystemSharingUIObserver extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -145,13 +151,14 @@ public class CKSystemSharingUIObserver extends NSObject {
     @Generated
     @Selector("setSystemSharingUIDidSaveShareBlock:")
     public native void setSystemSharingUIDidSaveShareBlock(
-            @ObjCBlock(name = "call_setSystemSharingUIDidSaveShareBlock") Block_setSystemSharingUIDidSaveShareBlock value);
+            @Nullable @ObjCBlock(name = "call_setSystemSharingUIDidSaveShareBlock") Block_setSystemSharingUIDidSaveShareBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setSystemSharingUIDidSaveShareBlock {
         @Generated
-        void call_setSystemSharingUIDidSaveShareBlock(CKRecordID arg0, CKShare arg1, NSError arg2);
+        void call_setSystemSharingUIDidSaveShareBlock(@NotNull CKRecordID arg0, @Nullable CKShare arg1,
+                @Nullable NSError arg2);
     }
 
     /**
@@ -164,13 +171,13 @@ public class CKSystemSharingUIObserver extends NSObject {
     @Generated
     @Selector("setSystemSharingUIDidStopSharingBlock:")
     public native void setSystemSharingUIDidStopSharingBlock(
-            @ObjCBlock(name = "call_setSystemSharingUIDidStopSharingBlock") Block_setSystemSharingUIDidStopSharingBlock value);
+            @Nullable @ObjCBlock(name = "call_setSystemSharingUIDidStopSharingBlock") Block_setSystemSharingUIDidStopSharingBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setSystemSharingUIDidStopSharingBlock {
         @Generated
-        void call_setSystemSharingUIDidStopSharingBlock(CKRecordID arg0, NSError arg1);
+        void call_setSystemSharingUIDidStopSharingBlock(@NotNull CKRecordID arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -191,6 +198,7 @@ public class CKSystemSharingUIObserver extends NSObject {
      * Each @c CKSystemSharingUIObserver instance has a private serial queue. This queue is used for all callback block
      * invocations.
      */
+    @Nullable
     @Generated
     @Selector("systemSharingUIDidSaveShareBlock")
     @ObjCBlock(name = "call_systemSharingUIDidSaveShareBlock_ret")
@@ -200,7 +208,8 @@ public class CKSystemSharingUIObserver extends NSObject {
     @Generated
     public interface Block_systemSharingUIDidSaveShareBlock_ret {
         @Generated
-        void call_systemSharingUIDidSaveShareBlock_ret(CKRecordID arg0, CKShare arg1, NSError arg2);
+        void call_systemSharingUIDidSaveShareBlock_ret(@NotNull CKRecordID arg0, @Nullable CKShare arg1,
+                @Nullable NSError arg2);
     }
 
     /**
@@ -210,6 +219,7 @@ public class CKSystemSharingUIObserver extends NSObject {
      * Each @c CKSystemSharingUIObserver instance has a private serial queue. This queue is used for all callback block
      * invocations.
      */
+    @Nullable
     @Generated
     @Selector("systemSharingUIDidStopSharingBlock")
     @ObjCBlock(name = "call_systemSharingUIDidStopSharingBlock_ret")
@@ -219,7 +229,7 @@ public class CKSystemSharingUIObserver extends NSObject {
     @Generated
     public interface Block_systemSharingUIDidStopSharingBlock_ret {
         @Generated
-        void call_systemSharingUIDidStopSharingBlock_ret(CKRecordID arg0, NSError arg1);
+        void call_systemSharingUIDidStopSharingBlock_ret(@NotNull CKRecordID arg0, @Nullable NSError arg1);
     }
 
     @Generated

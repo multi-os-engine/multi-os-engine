@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -57,7 +59,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("addSelection:")
-    public native void addSelection(PDFSelection selection);
+    public native void addSelection(@NotNull PDFSelection selection);
 
     /**
      * For adding several selections, you can get better performance calling -[addSelections:] and passing in an array
@@ -70,7 +72,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("addSelections:")
-    public native void addSelections(NSArray<? extends PDFSelection> selections);
+    public native void addSelections(@NotNull NSArray<? extends PDFSelection> selections);
 
     @Generated
     @Owned
@@ -82,13 +84,14 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Selector("allocWithZone:")
     public static native PDFSelection allocWithZone(VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("attributedString")
     public native NSAttributedString attributedString();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Given a PDFPage, returns the bounds in page-space of the text covered by the selection on that page.
@@ -98,22 +101,25 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Generated
     @Selector("boundsForPage:")
     @ByValue
-    public native CGRect boundsForPage(PDFPage page);
+    public native CGRect boundsForPage(@NotNull PDFPage page);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,15 +132,17 @@ public class PDFSelection extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("color")
     public native UIColor color();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -149,7 +157,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("drawForPage:active:")
-    public native void drawForPageActive(PDFPage page, boolean active);
+    public native void drawForPageActive(@NotNull PDFPage page, boolean active);
 
     /**
      * Draws the selection in page space relative to the origin of box. Box can be kPDFDisplayBoxMediaBox,
@@ -160,7 +168,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("drawForPage:withBox:active:")
-    public native void drawForPageWithBoxActive(PDFPage page, @NInt long box, boolean active);
+    public native void drawForPageWithBoxActive(@NotNull PDFPage page, @NInt long box, boolean active);
 
     /**
      * Extends the selection at either end. Selections can be extended right off onto neighboring pages even to include
@@ -206,7 +214,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithDocument:")
-    public native PDFSelection initWithDocument(PDFDocument document);
+    public native PDFSelection initWithDocument(@NotNull PDFDocument document);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -225,9 +233,10 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -243,11 +252,12 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Generated
     @Selector("numberOfTextRangesOnPage:")
     @NUInt
-    public native long numberOfTextRangesOnPage(PDFPage page);
+    public native long numberOfTextRangesOnPage(@NotNull PDFPage page);
 
     /**
      * Array of pages covered by the selection. These are sorted by page index.
      */
+    @NotNull
     @Generated
     @Selector("pages")
     public native NSArray<? extends PDFPage> pages();
@@ -261,7 +271,7 @@ public class PDFSelection extends NSObject implements NSCopying {
     @Generated
     @Selector("rangeAtIndex:onPage:")
     @ByValue
-    public native NSRange rangeAtIndexOnPage(@NUInt long index, PDFPage page);
+    public native NSRange rangeAtIndexOnPage(@NUInt long index, @NotNull PDFPage page);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -279,6 +289,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("selectionsByLine")
     public native NSArray<? extends PDFSelection> selectionsByLine();
@@ -293,7 +304,7 @@ public class PDFSelection extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@Nullable UIColor value);
 
     @Generated
     @Selector("setVersion:")
@@ -302,6 +313,7 @@ public class PDFSelection extends NSObject implements NSCopying {
     /**
      * String representing the text covered by the selection. May contain line-feeds.
      */
+    @Nullable
     @Generated
     @Selector("string")
     public native String string();

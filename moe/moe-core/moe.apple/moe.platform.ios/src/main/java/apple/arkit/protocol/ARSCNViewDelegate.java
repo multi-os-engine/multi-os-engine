@@ -13,6 +13,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -32,8 +34,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:didAddNode:forAnchor:")
-    default void rendererDidAddNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNNode node,
-            ARAnchor anchor) {
+    default void rendererDidAddNodeForAnchor(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,8 +49,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:didRemoveNode:forAnchor:")
-    default void rendererDidRemoveNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNNode node,
-            ARAnchor anchor) {
+    default void rendererDidRemoveNodeForAnchor(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,8 +64,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:didUpdateNode:forAnchor:")
-    default void rendererDidUpdateNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNNode node,
-            ARAnchor anchor) {
+    default void rendererDidUpdateNodeForAnchor(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,10 +80,12 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
      * @param anchor   The added anchor.
      * @return Node that will be mapped to the anchor or nil.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("renderer:nodeForAnchor:")
-    default SCNNode rendererNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, ARAnchor anchor) {
+    default SCNNode rendererNodeForAnchor(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,8 +99,8 @@ public interface ARSCNViewDelegate extends SCNSceneRendererDelegate, ARSessionOb
     @Generated
     @IsOptional
     @Selector("renderer:willUpdateNode:forAnchor:")
-    default void rendererWillUpdateNodeForAnchor(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
-            SCNNode node, ARAnchor anchor) {
+    default void rendererWillUpdateNodeForAnchor(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

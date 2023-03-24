@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNCropAndResizeBilinear
@@ -70,22 +72,25 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,7 +114,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNCropAndResizeBilinear initWithCoder(NSCoder aDecoder);
+    public native MPSNNCropAndResizeBilinear initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -122,12 +127,12 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNCropAndResizeBilinear initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNCropAndResizeBilinear initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNCropAndResizeBilinear initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNCropAndResizeBilinear initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize the crop and resize bilinear filter.
@@ -143,9 +148,9 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     @Generated
     @Selector("initWithDevice:resizeWidth:resizeHeight:numberOfRegions:regions:")
     public native MPSNNCropAndResizeBilinear initWithDeviceResizeWidthResizeHeightNumberOfRegionsRegions(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resizeWidth, @NUInt long resizeHeight,
-            @NUInt long numberOfRegions,
-            @UncertainArgument("Options: reference, array Fallback: reference") MPSRegion regions);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long resizeWidth,
+            @NUInt long resizeHeight, @NUInt long numberOfRegions,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MPSRegion regions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -164,9 +169,10 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,6 +198,7 @@ public class MPSNNCropAndResizeBilinear extends MPSCNNKernel {
      * [0, 1] range is allowed, in which case we use extrapolation_value to extrapolate
      * the input image values.
      */
+    @NotNull
     @Generated
     @Selector("regions")
     @UncertainReturn("Options: reference, array Fallback: reference")

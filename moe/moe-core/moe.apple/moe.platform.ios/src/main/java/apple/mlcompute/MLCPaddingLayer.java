@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCPaddingLayer
@@ -62,22 +64,25 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,11 +96,12 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     @Selector("constantValue")
     public native float constantValue();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -131,9 +137,10 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a padding layer with constant padding
@@ -144,8 +151,8 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      */
     @Generated
     @Selector("layerWithConstantPadding:constantValue:")
-    public static native MLCPaddingLayer layerWithConstantPaddingConstantValue(NSArray<? extends NSNumber> padding,
-            float constantValue);
+    public static native MLCPaddingLayer layerWithConstantPaddingConstantValue(
+            @NotNull NSArray<? extends NSNumber> padding, float constantValue);
 
     /**
      * Create a padding layer with reflection padding
@@ -155,7 +162,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      */
     @Generated
     @Selector("layerWithReflectionPadding:")
-    public static native MLCPaddingLayer layerWithReflectionPadding(NSArray<? extends NSNumber> padding);
+    public static native MLCPaddingLayer layerWithReflectionPadding(@NotNull NSArray<? extends NSNumber> padding);
 
     /**
      * Create a padding layer with symmetric padding
@@ -165,7 +172,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      */
     @Generated
     @Selector("layerWithSymmetricPadding:")
-    public static native MLCPaddingLayer layerWithSymmetricPadding(NSArray<? extends NSNumber> padding);
+    public static native MLCPaddingLayer layerWithSymmetricPadding(@NotNull NSArray<? extends NSNumber> padding);
 
     /**
      * Create a padding layer with zero padding
@@ -175,7 +182,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
      */
     @Generated
     @Selector("layerWithZeroPadding:")
-    public static native MLCPaddingLayer layerWithZeroPadding(NSArray<? extends NSNumber> padding);
+    public static native MLCPaddingLayer layerWithZeroPadding(@NotNull NSArray<? extends NSNumber> padding);
 
     @Generated
     @Owned
@@ -249,7 +256,7 @@ public class MLCPaddingLayer extends MLCLayer implements NSCopying {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

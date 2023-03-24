@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCLSTMLayer
@@ -62,13 +64,14 @@ public class MLCLSTMLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] biases
      * 
      * The array of tensors describing the bias terms for the input, hidden, cell and output gates
      */
+    @Nullable
     @Generated
     @Selector("biases")
     public native NSArray<? extends MLCTensor> biases();
@@ -78,24 +81,28 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The bias tensor parameter used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("biasesParameters")
     public native NSArray<? extends MLCTensorParameter> biasesParameters();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,6 +120,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The LSTM descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCLSTMDescriptor descriptor();
@@ -124,6 +132,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The default gate activations are: sigmoid, sigmoid, tanh, sigmoid
      */
+    @NotNull
     @Generated
     @Selector("gateActivations")
     public native NSArray<? extends MLCActivationDescriptor> gateActivations();
@@ -138,6 +147,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The array of tensors describing the hidden weights for the input, hidden, cell and output gates
      */
+    @NotNull
     @Generated
     @Selector("hiddenWeights")
     public native NSArray<? extends MLCTensor> hiddenWeights();
@@ -147,6 +157,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The hidden weights tensor parameters used for optimizer update
      */
+    @NotNull
     @Generated
     @Selector("hiddenWeightsParameters")
     public native NSArray<? extends MLCTensorParameter> hiddenWeightsParameters();
@@ -160,6 +171,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The array of tensors describing the input weights for the input, hidden, cell and output gates
      */
+    @NotNull
     @Generated
     @Selector("inputWeights")
     public native NSArray<? extends MLCTensor> inputWeights();
@@ -169,6 +181,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The input weights tensor parameters used for optimizer update
      */
+    @NotNull
     @Generated
     @Selector("inputWeightsParameters")
     public native NSArray<? extends MLCTensorParameter> inputWeightsParameters();
@@ -190,9 +203,10 @@ public class MLCLSTMLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a LSTM layer
@@ -206,9 +220,9 @@ public class MLCLSTMLayer extends MLCLayer {
      */
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:biases:")
-    public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsBiases(MLCLSTMDescriptor descriptor,
-            NSArray<? extends MLCTensor> inputWeights, NSArray<? extends MLCTensor> hiddenWeights,
-            NSArray<? extends MLCTensor> biases);
+    public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsBiases(
+            @NotNull MLCLSTMDescriptor descriptor, @NotNull NSArray<? extends MLCTensor> inputWeights,
+            @NotNull NSArray<? extends MLCTensor> hiddenWeights, @Nullable NSArray<? extends MLCTensor> biases);
 
     /**
      * Create a LSTM layer
@@ -225,9 +239,9 @@ public class MLCLSTMLayer extends MLCLayer {
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:peepholeWeights:biases:")
     public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsPeepholeWeightsBiases(
-            MLCLSTMDescriptor descriptor, NSArray<? extends MLCTensor> inputWeights,
-            NSArray<? extends MLCTensor> hiddenWeights, NSArray<? extends MLCTensor> peepholeWeights,
-            NSArray<? extends MLCTensor> biases);
+            @NotNull MLCLSTMDescriptor descriptor, @NotNull NSArray<? extends MLCTensor> inputWeights,
+            @NotNull NSArray<? extends MLCTensor> hiddenWeights, @Nullable NSArray<? extends MLCTensor> peepholeWeights,
+            @Nullable NSArray<? extends MLCTensor> biases);
 
     /**
      * Create a LSTM layer
@@ -260,10 +274,11 @@ public class MLCLSTMLayer extends MLCLayer {
     @Generated
     @Selector("layerWithDescriptor:inputWeights:hiddenWeights:peepholeWeights:biases:gateActivations:outputResultActivation:")
     public static native MLCLSTMLayer layerWithDescriptorInputWeightsHiddenWeightsPeepholeWeightsBiasesGateActivationsOutputResultActivation(
-            MLCLSTMDescriptor descriptor, NSArray<? extends MLCTensor> inputWeights,
-            NSArray<? extends MLCTensor> hiddenWeights, NSArray<? extends MLCTensor> peepholeWeights,
-            NSArray<? extends MLCTensor> biases, NSArray<? extends MLCActivationDescriptor> gateActivations,
-            MLCActivationDescriptor outputResultActivation);
+            @NotNull MLCLSTMDescriptor descriptor, @NotNull NSArray<? extends MLCTensor> inputWeights,
+            @NotNull NSArray<? extends MLCTensor> hiddenWeights, @Nullable NSArray<? extends MLCTensor> peepholeWeights,
+            @Nullable NSArray<? extends MLCTensor> biases,
+            @NotNull NSArray<? extends MLCActivationDescriptor> gateActivations,
+            @NotNull MLCActivationDescriptor outputResultActivation);
 
     @Generated
     @Owned
@@ -275,6 +290,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The output activation descriptor
      */
+    @NotNull
     @Generated
     @Selector("outputResultActivation")
     public native MLCActivationDescriptor outputResultActivation();
@@ -284,6 +300,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The array of tensors describing the peephole weights for the input, hidden, cell and output gates
      */
+    @Nullable
     @Generated
     @Selector("peepholeWeights")
     public native NSArray<? extends MLCTensor> peepholeWeights();
@@ -293,6 +310,7 @@ public class MLCLSTMLayer extends MLCLayer {
      * 
      * The peephole weights tensor parameters used for optimizer update
      */
+    @Nullable
     @Generated
     @Selector("peepholeWeightsParameters")
     public native NSArray<? extends MLCTensorParameter> peepholeWeightsParameters();
@@ -315,7 +333,7 @@ public class MLCLSTMLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")

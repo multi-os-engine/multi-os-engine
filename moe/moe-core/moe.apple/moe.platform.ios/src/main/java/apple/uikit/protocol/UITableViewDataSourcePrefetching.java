@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * _______________________________________________________________________________________________________________
@@ -43,8 +44,8 @@ public interface UITableViewDataSourcePrefetching {
     @Generated
     @IsOptional
     @Selector("tableView:cancelPrefetchingForRowsAtIndexPaths:")
-    default void tableViewCancelPrefetchingForRowsAtIndexPaths(UITableView tableView,
-            NSArray<? extends NSIndexPath> indexPaths) {
+    default void tableViewCancelPrefetchingForRowsAtIndexPaths(@NotNull UITableView tableView,
+            @NotNull NSArray<? extends NSIndexPath> indexPaths) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,5 +54,6 @@ public interface UITableViewDataSourcePrefetching {
      */
     @Generated
     @Selector("tableView:prefetchRowsAtIndexPaths:")
-    void tableViewPrefetchRowsAtIndexPaths(UITableView tableView, NSArray<? extends NSIndexPath> indexPaths);
+    void tableViewPrefetchRowsAtIndexPaths(@NotNull UITableView tableView,
+            @NotNull NSArray<? extends NSIndexPath> indexPaths);
 }

@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -55,40 +57,46 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:")
     public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithTaskListToConfirm(
-            INTaskList taskListToConfirm);
+            @Nullable INTaskList taskListToConfirm);
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithTaskListToConfirm:forReason:")
     public static native INAddTasksTargetTaskListResolutionResult confirmationRequiredWithTaskListToConfirmForReason(
-            INTaskList taskListToConfirm, @NInt long reason);
+            @Nullable INTaskList taskListToConfirm, @NInt long reason);
 
     @Generated
     @Selector("debugDescription")
@@ -98,10 +106,11 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("disambiguationWithTaskListsToDisambiguate:")
     public static native INAddTasksTargetTaskListResolutionResult disambiguationWithTaskListsToDisambiguate(
-            NSArray<? extends INTaskList> taskListsToDisambiguate);
+            @NotNull NSArray<? extends INTaskList> taskListsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -115,7 +124,7 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Generated
     @Selector("initWithTaskListResolutionResult:")
     public native INAddTasksTargetTaskListResolutionResult initWithTaskListResolutionResult(
-            INTaskListResolutionResult taskListResolutionResult);
+            @NotNull INTaskListResolutionResult taskListResolutionResult);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,10 +143,12 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INAddTasksTargetTaskListResolutionResult needsValue();
@@ -147,6 +158,7 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Selector("new")
     public static native INAddTasksTargetTaskListResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INAddTasksTargetTaskListResolutionResult notRequired();
@@ -163,19 +175,22 @@ public class INAddTasksTargetTaskListResolutionResult extends INTaskListResoluti
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("successWithResolvedTaskList:")
     public static native INAddTasksTargetTaskListResolutionResult successWithResolvedTaskList(
-            INTaskList resolvedTaskList);
+            @NotNull INTaskList resolvedTaskList);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INAddTasksTargetTaskListResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INAddTasksTargetTaskListResolutionResult unsupportedWithReason(@NInt long reason);

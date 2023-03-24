@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -51,13 +52,14 @@ public final class AudioUnitParameterInfo extends StructObject {
     @StructureField(order = 0, isGetter = false, count = 52)
     public native void setName(byte value, int field_idx);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native CFStringRef unitName();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setUnitName(CFStringRef value);
+    public native void setUnitName(@Nullable CFStringRef value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -67,13 +69,14 @@ public final class AudioUnitParameterInfo extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setClumpID(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native CFStringRef cfNameString();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setCfNameString(CFStringRef value);
+    public native void setCfNameString(@Nullable CFStringRef value);
 
     @Generated
     @StructureField(order = 4, isGetter = true)

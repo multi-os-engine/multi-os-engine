@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -57,22 +59,25 @@ public class INAddTasksIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +101,7 @@ public class INAddTasksIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INAddTasksIntent initWithCoder(NSCoder coder);
+    public native INAddTasksIntent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 11.0
@@ -106,8 +111,8 @@ public class INAddTasksIntent extends INIntent {
     @Generated
     @Selector("initWithTargetTaskList:taskTitles:spatialEventTrigger:temporalEventTrigger:")
     public native INAddTasksIntent initWithTargetTaskListTaskTitlesSpatialEventTriggerTemporalEventTrigger(
-            INTaskList targetTaskList, NSArray<? extends INSpeakableString> taskTitles,
-            INSpatialEventTrigger spatialEventTrigger, INTemporalEventTrigger temporalEventTrigger);
+            @Nullable INTaskList targetTaskList, @Nullable NSArray<? extends INSpeakableString> taskTitles,
+            @Nullable INSpatialEventTrigger spatialEventTrigger, @Nullable INTemporalEventTrigger temporalEventTrigger);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,9 +131,10 @@ public class INAddTasksIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,6 +153,7 @@ public class INAddTasksIntent extends INIntent {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @Nullable
     @Generated
     @Selector("spatialEventTrigger")
     public native INSpatialEventTrigger spatialEventTrigger();
@@ -165,14 +172,17 @@ public class INAddTasksIntent extends INIntent {
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("targetTaskList")
     public native INTaskList targetTaskList();
 
+    @Nullable
     @Generated
     @Selector("taskTitles")
     public native NSArray<? extends INSpeakableString> taskTitles();
 
+    @Nullable
     @Generated
     @Selector("temporalEventTrigger")
     public native INTemporalEventTrigger temporalEventTrigger();
@@ -188,8 +198,8 @@ public class INAddTasksIntent extends INIntent {
     @Generated
     @Selector("initWithTargetTaskList:taskTitles:spatialEventTrigger:temporalEventTrigger:priority:")
     public native INAddTasksIntent initWithTargetTaskListTaskTitlesSpatialEventTriggerTemporalEventTriggerPriority(
-            INTaskList targetTaskList, NSArray<? extends INSpeakableString> taskTitles,
-            INSpatialEventTrigger spatialEventTrigger, INTemporalEventTrigger temporalEventTrigger,
+            @Nullable INTaskList targetTaskList, @Nullable NSArray<? extends INSpeakableString> taskTitles,
+            @Nullable INSpatialEventTrigger spatialEventTrigger, @Nullable INTemporalEventTrigger temporalEventTrigger,
             @NInt long priority);
 
     /**

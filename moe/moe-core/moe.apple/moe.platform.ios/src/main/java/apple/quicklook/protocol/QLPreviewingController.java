@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * For view based previews, the view controller that implements the QLPreviewingController protocol must at least
@@ -48,8 +50,8 @@ public interface QLPreviewingController {
     @Generated
     @IsOptional
     @Selector("preparePreviewOfFileAtURL:completionHandler:")
-    default void preparePreviewOfFileAtURLCompletionHandler(NSURL url,
-            @ObjCBlock(name = "call_preparePreviewOfFileAtURLCompletionHandler") Block_preparePreviewOfFileAtURLCompletionHandler handler) {
+    default void preparePreviewOfFileAtURLCompletionHandler(@NotNull NSURL url,
+            @NotNull @ObjCBlock(name = "call_preparePreviewOfFileAtURLCompletionHandler") Block_preparePreviewOfFileAtURLCompletionHandler handler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +59,7 @@ public interface QLPreviewingController {
     @Generated
     public interface Block_preparePreviewOfFileAtURLCompletionHandler {
         @Generated
-        void call_preparePreviewOfFileAtURLCompletionHandler(NSError arg0);
+        void call_preparePreviewOfFileAtURLCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -75,9 +77,9 @@ public interface QLPreviewingController {
     @Generated
     @IsOptional
     @Selector("preparePreviewOfSearchableItemWithIdentifier:queryString:completionHandler:")
-    default void preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(String identifier,
-            String queryString,
-            @ObjCBlock(name = "call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler") Block_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler handler) {
+    default void preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(@NotNull String identifier,
+            @Nullable String queryString,
+            @NotNull @ObjCBlock(name = "call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler") Block_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler handler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,7 +87,7 @@ public interface QLPreviewingController {
     @Generated
     public interface Block_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler {
         @Generated
-        void call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(NSError arg0);
+        void call_preparePreviewOfSearchableItemWithIdentifierQueryStringCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -101,8 +103,8 @@ public interface QLPreviewingController {
     @Generated
     @IsOptional
     @Selector("providePreviewForFileRequest:completionHandler:")
-    default void providePreviewForFileRequestCompletionHandler(QLFilePreviewRequest request,
-            @ObjCBlock(name = "call_providePreviewForFileRequestCompletionHandler") Block_providePreviewForFileRequestCompletionHandler handler) {
+    default void providePreviewForFileRequestCompletionHandler(@NotNull QLFilePreviewRequest request,
+            @NotNull @ObjCBlock(name = "call_providePreviewForFileRequestCompletionHandler") Block_providePreviewForFileRequestCompletionHandler handler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,6 +112,7 @@ public interface QLPreviewingController {
     @Generated
     public interface Block_providePreviewForFileRequestCompletionHandler {
         @Generated
-        void call_providePreviewForFileRequestCompletionHandler(QLPreviewReply reply, NSError error);
+        void call_providePreviewForFileRequestCompletionHandler(@Nullable QLPreviewReply reply,
+                @Nullable NSError error);
     }
 }

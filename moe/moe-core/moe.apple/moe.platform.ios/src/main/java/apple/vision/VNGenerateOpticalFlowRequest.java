@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNGenerateOpticalFlowRequest will determine directional change vectors for each pixel in the targeted image to
@@ -95,22 +97,25 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -159,139 +164,139 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Generated
     @Selector("initWithCompletionHandler:")
     public native VNGenerateOpticalFlowRequest initWithCompletionHandler(
-            @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_initWithCompletionHandler") VNRequest.Block_initWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCGImage:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOptions(CGImageRef cgImage,
-            NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOptions(@NotNull CGImageRef cgImage,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCGImage:options:completionHandler:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOptionsCompletionHandler(CGImageRef cgImage,
-            NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCGImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOptionsCompletionHandler completionHandler);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOptionsCompletionHandler(
+            @NotNull CGImageRef cgImage, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCGImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOrientationOptions(CGImageRef cgImage,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOrientationOptions(@NotNull CGImageRef cgImage,
+            int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCGImage:orientation:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCGImageOrientationOptionsCompletionHandler(
-            CGImageRef cgImage, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCGImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CGImageRef cgImage, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCGImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCGImageOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCIImage:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOptions(CIImage ciImage,
-            NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOptions(@NotNull CIImage ciImage,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCIImage:options:completionHandler:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOptionsCompletionHandler(CIImage ciImage,
-            NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCIImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOptionsCompletionHandler completionHandler);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOptionsCompletionHandler(@NotNull CIImage ciImage,
+            @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCIImageOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOrientationOptions(CIImage ciImage,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOrientationOptions(@NotNull CIImage ciImage,
+            int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCIImage:orientation:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCIImageOrientationOptionsCompletionHandler(
-            CIImage ciImage, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCIImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CIImage ciImage, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCIImageOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCIImageOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCMSampleBufferOptions(CMSampleBufferRef sampleBuffer,
-            NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCMSampleBufferOptions(
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCMSampleBufferOptionsCompletionHandler(
-            CMSampleBufferRef sampleBuffer, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
+            @NotNull CMSampleBufferRef sampleBuffer, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCMSampleBufferOrientationOptions(
-            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options);
+            @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCMSampleBuffer:orientation:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler(
-            CMSampleBufferRef sampleBuffer, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CMSampleBufferRef sampleBuffer, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCMSampleBufferOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCVPixelBufferOptions(CVBufferRef pixelBuffer,
-            NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCVPixelBufferOptions(@NotNull CVBufferRef pixelBuffer,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCVPixelBufferOptionsCompletionHandler(
-            CVBufferRef pixelBuffer, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOptionsCompletionHandler completionHandler);
+            @NotNull CVBufferRef pixelBuffer, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedCVPixelBufferOrientationOptions(CVBufferRef pixelBuffer,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedCVPixelBufferOrientationOptions(
+            @NotNull CVBufferRef pixelBuffer, int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedCVPixelBuffer:orientation:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler(
-            CVBufferRef pixelBuffer, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler completionHandler);
+            @NotNull CVBufferRef pixelBuffer, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedCVPixelBufferOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageData:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOptions(NSData imageData,
-            NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOptions(@NotNull NSData imageData,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageData:options:completionHandler:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOptionsCompletionHandler(NSData imageData,
-            NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageDataOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOptionsCompletionHandler completionHandler);
+    public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOptionsCompletionHandler(
+            @NotNull NSData imageData, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageDataOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOrientationOptions(NSData imageData,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOrientationOptions(@NotNull NSData imageData,
+            int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageData:orientation:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedImageDataOrientationOptionsCompletionHandler(
-            NSData imageData, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageDataOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOrientationOptionsCompletionHandler completionHandler);
+            @NotNull NSData imageData, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageDataOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageDataOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageURL:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOptions(NSURL imageURL,
-            NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOptions(@NotNull NSURL imageURL,
+            @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageURL:options:completionHandler:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOptionsCompletionHandler(NSURL imageURL,
-            NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageURLOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOptionsCompletionHandler completionHandler);
+    public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOptionsCompletionHandler(@NotNull NSURL imageURL,
+            @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageURLOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:")
-    public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOrientationOptions(NSURL imageURL,
-            int orientation, NSDictionary<String, ?> options);
+    public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOrientationOptions(@NotNull NSURL imageURL,
+            int orientation, @NotNull NSDictionary<String, ?> options);
 
     @Generated
     @Selector("initWithTargetedImageURL:orientation:options:completionHandler:")
     public native VNGenerateOpticalFlowRequest initWithTargetedImageURLOrientationOptionsCompletionHandler(
-            NSURL imageURL, int orientation, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_initWithTargetedImageURLOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOrientationOptionsCompletionHandler completionHandler);
+            @NotNull NSURL imageURL, int orientation, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_initWithTargetedImageURLOrientationOptionsCompletionHandler") VNTargetedImageRequest.Block_initWithTargetedImageURLOrientationOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -310,9 +315,10 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -366,6 +372,7 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedRevisions")
     public static native NSIndexSet supportedRevisions();
@@ -378,6 +385,7 @@ public class VNGenerateOpticalFlowRequest extends VNTargetedImageRequest {
     /**
      * VNPixelBufferObservation results.
      */
+    @Nullable
     @Generated
     @Selector("results")
     public native NSArray<? extends VNPixelBufferObservation> results();

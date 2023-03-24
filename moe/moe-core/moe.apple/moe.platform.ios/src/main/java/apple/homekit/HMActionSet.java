@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents a collection of action objects that can be executed.
@@ -78,22 +80,25 @@ public class HMActionSet extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class HMActionSet extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +171,7 @@ public class HMActionSet extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("actionSetType")
     public native String actionSetType();
@@ -172,6 +179,7 @@ public class HMActionSet extends NSObject {
     /**
      * Set of HMAction objects that represent the individual items of the action set.
      */
+    @NotNull
     @Generated
     @Selector("actions")
     public native NSSet<? extends HMAction> actions();
@@ -187,8 +195,8 @@ public class HMActionSet extends NSObject {
      */
     @Generated
     @Selector("addAction:completionHandler:")
-    public native void addActionCompletionHandler(HMAction action,
-            @ObjCBlock(name = "call_addActionCompletionHandler") Block_addActionCompletionHandler completion);
+    public native void addActionCompletionHandler(@NotNull HMAction action,
+            @NotNull @ObjCBlock(name = "call_addActionCompletionHandler") Block_addActionCompletionHandler completion);
 
     @Generated
     @Selector("init")
@@ -206,6 +214,7 @@ public class HMActionSet extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("lastExecutionDate")
     public native NSDate lastExecutionDate();
@@ -213,6 +222,7 @@ public class HMActionSet extends NSObject {
     /**
      * The name of the action set.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -228,14 +238,15 @@ public class HMActionSet extends NSObject {
      */
     @Generated
     @Selector("removeAction:completionHandler:")
-    public native void removeActionCompletionHandler(HMAction action,
-            @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
+    public native void removeActionCompletionHandler(@NotNull HMAction action,
+            @NotNull @ObjCBlock(name = "call_removeActionCompletionHandler") Block_removeActionCompletionHandler completion);
 
     /**
      * A unique identifier for the action set.
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniqueIdentifier")
     public native NSUUID uniqueIdentifier();
@@ -251,27 +262,27 @@ public class HMActionSet extends NSObject {
      */
     @Generated
     @Selector("updateName:completionHandler:")
-    public native void updateNameCompletionHandler(String name,
-            @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
+    public native void updateNameCompletionHandler(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_updateNameCompletionHandler") Block_updateNameCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addActionCompletionHandler {
         @Generated
-        void call_addActionCompletionHandler(NSError error);
+        void call_addActionCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeActionCompletionHandler {
         @Generated
-        void call_removeActionCompletionHandler(NSError error);
+        void call_removeActionCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateNameCompletionHandler {
         @Generated
-        void call_updateNameCompletionHandler(NSError error);
+        void call_updateNameCompletionHandler(@Nullable NSError error);
     }
 }

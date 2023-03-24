@@ -35,6 +35,8 @@ import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -62,7 +64,7 @@ public class PDFPage extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("addAnnotation:")
-    public native void addAnnotation(PDFAnnotation annotation);
+    public native void addAnnotation(@NotNull PDFAnnotation annotation);
 
     @Generated
     @Owned
@@ -77,6 +79,7 @@ public class PDFPage extends NSObject implements NSCopying {
     /**
      * Hit-testing method returns the annotation at point (or NULL if none). The point is in page-space.
      */
+    @Nullable
     @Generated
     @Selector("annotationAtPoint:")
     public native PDFAnnotation annotationAtPoint(@ByValue CGPoint point);
@@ -84,17 +87,19 @@ public class PDFPage extends NSObject implements NSCopying {
     /**
      * Array of all PDFAnnotation objects on this page.
      */
+    @NotNull
     @Generated
     @Selector("annotations")
     public native NSArray<? extends PDFAnnotation> annotations();
 
+    @Nullable
     @Generated
     @Selector("attributedString")
     public native NSAttributedString attributedString();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The bounds for the specified box (see defines above). Only the media box is required for a PDF. If the crop box
@@ -113,13 +118,14 @@ public class PDFPage extends NSObject implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Returns the bounds in page-space, of the character at index.
@@ -140,19 +146,22 @@ public class PDFPage extends NSObject implements NSCopying {
     @NInt
     public native long characterIndexAtPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns PDF data (a proper PDF document) consisting of a single page (this page).
@@ -160,6 +169,7 @@ public class PDFPage extends NSObject implements NSCopying {
      * NOTE: Versions of PDFKit before SnowLeopard did not return autorelease data for -[dataRepresentation]. You had to
      * release the data yourself. Beginning with apps compiled on SnowLeopard the data returned is autoreleased.
      */
+    @Nullable
     @Generated
     @Selector("dataRepresentation")
     public native NSData dataRepresentation();
@@ -182,6 +192,7 @@ public class PDFPage extends NSObject implements NSCopying {
     /**
      * The PDFDocument the page is associated with.
      */
+    @Nullable
     @Generated
     @Selector("document")
     public native PDFDocument document();
@@ -195,7 +206,7 @@ public class PDFPage extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("drawWithBox:toContext:")
-    public native void drawWithBoxToContext(@NInt long box, CGContextRef context);
+    public native void drawWithBoxToContext(@NInt long box, @NotNull CGContextRef context);
 
     @Generated
     @Selector("hash")
@@ -217,7 +228,7 @@ public class PDFPage extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithImage:")
-    public native PDFPage initWithImage(UIImage image);
+    public native PDFPage initWithImage(@NotNull UIImage image);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -236,13 +247,15 @@ public class PDFPage extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The page label. Usually "1" for the first page, "2" for the second, etc.
      */
+    @Nullable
     @Generated
     @Selector("label")
     public native String label();
@@ -267,13 +280,14 @@ public class PDFPage extends NSObject implements NSCopying {
      * was
      * created independently.
      */
+    @Nullable
     @Generated
     @Selector("pageRef")
     public native CGPDFPageRef pageRef();
 
     @Generated
     @Selector("removeAnnotation:")
-    public native void removeAnnotation(PDFAnnotation annotation);
+    public native void removeAnnotation(@NotNull PDFAnnotation annotation);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -297,6 +311,7 @@ public class PDFPage extends NSObject implements NSCopying {
      * Given a point in page-space, returns a selection representing a whole line at that point. May return NULL if no
      * character (and by extension no line) under point.
      */
+    @Nullable
     @Generated
     @Selector("selectionForLineAtPoint:")
     public native PDFSelection selectionForLineAtPoint(@ByValue CGPoint point);
@@ -306,6 +321,7 @@ public class PDFPage extends NSObject implements NSCopying {
      * bounds.
      * Will return NULL for an empty selection.
      */
+    @Nullable
     @Generated
     @Selector("selectionForRange:")
     public native PDFSelection selectionForRange(@ByValue NSRange range);
@@ -313,6 +329,7 @@ public class PDFPage extends NSObject implements NSCopying {
     /**
      * Given a rect in page-space, returns a selection representing enclosed text on page.
      */
+    @Nullable
     @Generated
     @Selector("selectionForRect:")
     public native PDFSelection selectionForRect(@ByValue CGRect rect);
@@ -322,6 +339,7 @@ public class PDFPage extends NSObject implements NSCopying {
      * character (and by extension no word) under point. If data dectors are enabled (-[PDFView enableDataDetectors]),
      * this return the smart-selection for the content at the given point.
      */
+    @Nullable
     @Generated
     @Selector("selectionForWordAtPoint:")
     public native PDFSelection selectionForWordAtPoint(@ByValue CGPoint point);
@@ -330,6 +348,7 @@ public class PDFPage extends NSObject implements NSCopying {
      * Returns a selection representing text between startPt and endPt. Points are sorted first top to bottom, left to
      * right.
      */
+    @Nullable
     @Generated
     @Selector("selectionFromPoint:toPoint:")
     public native PDFSelection selectionFromPointToPoint(@ByValue CGPoint startPoint, @ByValue CGPoint endPoint);
@@ -367,6 +386,7 @@ public class PDFPage extends NSObject implements NSCopying {
     /**
      * String (with linefeeds and in some cases spaces inserted) representing the text on the page.
      */
+    @Nullable
     @Generated
     @Selector("string")
     public native String string();
@@ -382,6 +402,7 @@ public class PDFPage extends NSObject implements NSCopying {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("thumbnailOfSize:forBox:")
     public native UIImage thumbnailOfSizeForBox(@ByValue CGSize size, @NInt long box);
@@ -395,7 +416,7 @@ public class PDFPage extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("transformContext:forBox:")
-    public native void transformContextForBox(CGContextRef context, @NInt long box);
+    public native void transformContextForBox(@NotNull CGContextRef context, @NInt long box);
 
     /**
      * This transform correctly rotates and offsets based on the given page's rotation property and the display box
@@ -420,5 +441,5 @@ public class PDFPage extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithImage:options:")
-    public native PDFPage initWithImageOptions(UIImage image, NSDictionary<String, ?> options);
+    public native PDFPage initWithImageOptions(@NotNull UIImage image, @NotNull NSDictionary<String, ?> options);
 }

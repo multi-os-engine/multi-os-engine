@@ -10,6 +10,8 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -31,7 +33,8 @@ public final class _SparseIterativeMethodBaseOptions extends StructObject {
     }
 
     @Generated
-    public _SparseIterativeMethodBaseOptions(@FunctionPtr(name = "call_reportError") Function_reportError reportError) {
+    public _SparseIterativeMethodBaseOptions(
+            @FunctionPtr(name = "call_reportError") @Nullable Function_reportError reportError) {
         super(_SparseIterativeMethodBaseOptions.class);
         setReportError(reportError);
     }
@@ -39,6 +42,7 @@ public final class _SparseIterativeMethodBaseOptions extends StructObject {
     /**
      * reportError should always be FIRST member in below structs
      */
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_reportError")
@@ -49,7 +53,7 @@ public final class _SparseIterativeMethodBaseOptions extends StructObject {
     public interface Function_reportError {
         @Generated
         void call_reportError(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
     }
 
     /**
@@ -57,5 +61,5 @@ public final class _SparseIterativeMethodBaseOptions extends StructObject {
      */
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setReportError(@FunctionPtr(name = "call_reportError") Function_reportError value);
+    public native void setReportError(@Nullable @FunctionPtr(name = "call_reportError") Function_reportError value);
 }

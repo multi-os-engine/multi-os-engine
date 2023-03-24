@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -58,22 +60,25 @@ public class INMediaUserContext extends INUserContext {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,7 +102,7 @@ public class INMediaUserContext extends INUserContext {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INMediaUserContext initWithCoder(NSCoder coder);
+    public native INMediaUserContext initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -116,9 +121,10 @@ public class INMediaUserContext extends INUserContext {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -129,6 +135,7 @@ public class INMediaUserContext extends INUserContext {
      * Approximate number of relevant items available in the user's library (playlists, songs, podcasts, albums, etc.) -
      * used as a signal of user affinity for the app
      */
+    @Nullable
     @Generated
     @Selector("numberOfLibraryItems")
     public native NSNumber numberOfLibraryItems();
@@ -147,7 +154,7 @@ public class INMediaUserContext extends INUserContext {
      */
     @Generated
     @Selector("setNumberOfLibraryItems:")
-    public native void setNumberOfLibraryItems(NSNumber value);
+    public native void setNumberOfLibraryItems(@Nullable NSNumber value);
 
     /**
      * Used as a signal of user affinity for the app

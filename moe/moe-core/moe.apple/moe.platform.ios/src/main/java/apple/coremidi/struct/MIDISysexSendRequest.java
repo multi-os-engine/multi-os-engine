@@ -28,6 +28,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstBytePtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -56,13 +58,14 @@ public final class MIDISysexSendRequest extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setDestination(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native ConstBytePtr data();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setData(ConstBytePtr value);
+    public native void setData(@NotNull ConstBytePtr value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)
@@ -88,6 +91,7 @@ public final class MIDISysexSendRequest extends StructObject {
     @StructureField(order = 4, isGetter = false, count = 3)
     public native void setReserved(byte value, int field_idx);
 
+    @NotNull
     @Generated
     @StructureField(order = 5, isGetter = true)
     @FunctionPtr(name = "call_completionProc")
@@ -95,21 +99,23 @@ public final class MIDISysexSendRequest extends StructObject {
 
     @Generated
     @StructureField(order = 5, isGetter = false)
-    public native void setCompletionProc(@FunctionPtr(name = "call_completionProc") Function_completionProc value);
+    public native void setCompletionProc(
+            @NotNull @FunctionPtr(name = "call_completionProc") Function_completionProc value);
 
+    @Nullable
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native VoidPtr completionRefCon();
 
     @Generated
     @StructureField(order = 6, isGetter = false)
-    public native void setCompletionRefCon(VoidPtr value);
+    public native void setCompletionRefCon(@Nullable VoidPtr value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_completionProc {
         @Generated
         void call_completionProc(
-                @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest arg0);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MIDISysexSendRequest arg0);
     }
 }

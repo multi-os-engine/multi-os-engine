@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -56,7 +58,7 @@ public class CSUserQuery extends CSSearchQuery {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancel")
@@ -64,18 +66,21 @@ public class CSUserQuery extends CSSearchQuery {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +107,7 @@ public class CSUserQuery extends CSSearchQuery {
      * but the value will always be a complete, ordered list. The query serializes all the foundSuggestionsHandler
      * invocations. If no handler is set, suggestions will not be generated.
      */
+    @Nullable
     @Generated
     @Selector("foundSuggestionsHandler")
     @ObjCBlock(name = "call_foundSuggestionsHandler_ret")
@@ -111,7 +117,7 @@ public class CSUserQuery extends CSSearchQuery {
     @Generated
     public interface Block_foundSuggestionsHandler_ret {
         @Generated
-        void call_foundSuggestionsHandler_ret(NSArray<? extends CSSuggestion> arg0);
+        void call_foundSuggestionsHandler_ret(@NotNull NSArray<? extends CSSuggestion> arg0);
     }
 
     @Generated
@@ -125,16 +131,18 @@ public class CSUserQuery extends CSSearchQuery {
 
     @Generated
     @Selector("initWithQueryString:attributes:")
-    public native CSUserQuery initWithQueryStringAttributes(String queryString, NSArray<String> attributes);
+    public native CSUserQuery initWithQueryStringAttributes(@NotNull String queryString,
+            @Nullable NSArray<String> attributes);
 
     @Generated
     @Selector("initWithQueryString:queryContext:")
-    public native CSUserQuery initWithQueryStringQueryContext(String queryString, CSSearchQueryContext queryContext);
+    public native CSUserQuery initWithQueryStringQueryContext(@NotNull String queryString,
+            @Nullable CSSearchQueryContext queryContext);
 
     @Generated
     @Selector("initWithUserQueryString:userQueryContext:")
-    public native CSUserQuery initWithUserQueryStringUserQueryContext(String userQueryString,
-            CSUserQueryContext userQueryContext);
+    public native CSUserQuery initWithUserQueryStringUserQueryContext(@Nullable String userQueryString,
+            @Nullable CSUserQueryContext userQueryContext);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -153,9 +161,10 @@ public class CSUserQuery extends CSSearchQuery {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,13 +187,13 @@ public class CSUserQuery extends CSSearchQuery {
     @Generated
     @Selector("setFoundSuggestionsHandler:")
     public native void setFoundSuggestionsHandler(
-            @ObjCBlock(name = "call_setFoundSuggestionsHandler") Block_setFoundSuggestionsHandler value);
+            @Nullable @ObjCBlock(name = "call_setFoundSuggestionsHandler") Block_setFoundSuggestionsHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFoundSuggestionsHandler {
         @Generated
-        void call_setFoundSuggestionsHandler(NSArray<? extends CSSuggestion> arg0);
+        void call_setFoundSuggestionsHandler(@NotNull NSArray<? extends CSSuggestion> arg0);
     }
 
     @Generated

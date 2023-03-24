@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -76,22 +78,25 @@ public class MPMediaItemArtwork extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class MPMediaItemArtwork extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,6 +186,7 @@ public class MPMediaItemArtwork extends NSObject {
     /**
      * Returns the artwork image for an item at a given size (in points).
      */
+    @Nullable
     @Generated
     @Selector("imageWithSize:")
     public native UIImage imageWithSize(@ByValue CGSize size);
@@ -194,7 +201,7 @@ public class MPMediaItemArtwork extends NSObject {
     @Generated
     @Selector("initWithBoundsSize:requestHandler:")
     public native MPMediaItemArtwork initWithBoundsSizeRequestHandler(@ByValue CGSize boundsSize,
-            @ObjCBlock(name = "call_initWithBoundsSizeRequestHandler") Block_initWithBoundsSizeRequestHandler requestHandler);
+            @NotNull @ObjCBlock(name = "call_initWithBoundsSizeRequestHandler") Block_initWithBoundsSizeRequestHandler requestHandler);
 
     /**
      * API-Since: 5.0
@@ -204,11 +211,12 @@ public class MPMediaItemArtwork extends NSObject {
     @Deprecated
     @Generated
     @Selector("initWithImage:")
-    public native MPMediaItemArtwork initWithImage(UIImage image);
+    public native MPMediaItemArtwork initWithImage(@NotNull UIImage image);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithBoundsSizeRequestHandler {
+        @NotNull
         @Generated
         UIImage call_initWithBoundsSizeRequestHandler(@ByValue CGSize size);
     }

@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol for specifying a custom layer implementation.
@@ -40,8 +42,8 @@ public interface MLCustomLayer {
     @IsOptional
     @Selector("encodeToCommandBuffer:inputs:outputs:error:")
     default boolean encodeToCommandBufferInputsOutputsError(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, NSArray<?> inputs, NSArray<?> outputs,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull NSArray<?> inputs,
+            @NotNull NSArray<?> outputs, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,8 +56,9 @@ public interface MLCustomLayer {
      */
     @Generated
     @Selector("evaluateOnCPUWithInputs:outputs:error:")
-    boolean evaluateOnCPUWithInputsOutputsError(NSArray<? extends MLMultiArray> inputs,
-            NSArray<? extends MLMultiArray> outputs, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean evaluateOnCPUWithInputsOutputsError(@NotNull NSArray<? extends MLMultiArray> inputs,
+            @NotNull NSArray<? extends MLMultiArray> outputs,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Initialize the custom layer implementation. The dictionary contains the contents of the
@@ -63,10 +66,11 @@ public interface MLCustomLayer {
      * We expect the implementation to return 'nil' and set an error in the event of failure
      * initializing the object.
      */
+    @Nullable
     @Generated
     @Selector("initWithParameterDictionary:error:")
-    MLCustomLayer initWithParameterDictionaryError(NSDictionary<String, ?> parameters,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MLCustomLayer initWithParameterDictionaryError(@NotNull NSDictionary<String, ?> parameters,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * For the given input shapes, the implementation needs to return the output shape produced by this layer.
@@ -76,11 +80,12 @@ public interface MLCustomLayer {
      * about how layers use these dimensions. This will get called at load and run time. In the event of an error
      * the implementation should return 'nil' and set an error.
      */
+    @Nullable
     @Generated
     @Selector("outputShapesForInputShapes:error:")
     NSArray<? extends NSArray<? extends NSNumber>> outputShapesForInputShapesError(
-            NSArray<? extends NSArray<? extends NSNumber>> inputShapes,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSArray<? extends NSArray<? extends NSNumber>> inputShapes,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * The data encoded in the 'weights' field of the model specification will be loaded and made
@@ -92,6 +97,6 @@ public interface MLCustomLayer {
      */
     @Generated
     @Selector("setWeightData:error:")
-    boolean setWeightDataError(NSArray<? extends NSData> weights,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    boolean setWeightDataError(@NotNull NSArray<? extends NSData> weights,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

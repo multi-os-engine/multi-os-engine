@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UNNotificationRequests can be scheduled using UNUserNotificationCenter. They can also be sent to the device from a
@@ -80,22 +82,25 @@ public class UNUserNotificationCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -103,6 +108,7 @@ public class UNUserNotificationCenter extends NSObject {
     /**
      * The UNUserNotificationCenter for the current application
      */
+    @NotNull
     @Generated
     @Selector("currentNotificationCenter")
     public static native UNUserNotificationCenter currentNotificationCenter();
@@ -137,9 +143,10 @@ public class UNUserNotificationCenter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,12 +183,13 @@ public class UNUserNotificationCenter extends NSObject {
      */
     @Generated
     @Selector("addNotificationRequest:withCompletionHandler:")
-    public native void addNotificationRequestWithCompletionHandler(UNNotificationRequest request,
-            @ObjCBlock(name = "call_addNotificationRequestWithCompletionHandler") Block_addNotificationRequestWithCompletionHandler completionHandler);
+    public native void addNotificationRequestWithCompletionHandler(@NotNull UNNotificationRequest request,
+            @Nullable @ObjCBlock(name = "call_addNotificationRequestWithCompletionHandler") Block_addNotificationRequestWithCompletionHandler completionHandler);
 
     /**
      * The delegate can only be set from an application
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -194,12 +202,12 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     @Selector("getDeliveredNotificationsWithCompletionHandler:")
     public native void getDeliveredNotificationsWithCompletionHandler(
-            @ObjCBlock(name = "call_getDeliveredNotificationsWithCompletionHandler") Block_getDeliveredNotificationsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getDeliveredNotificationsWithCompletionHandler") Block_getDeliveredNotificationsWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("getNotificationCategoriesWithCompletionHandler:")
     public native void getNotificationCategoriesWithCompletionHandler(
-            @ObjCBlock(name = "call_getNotificationCategoriesWithCompletionHandler") Block_getNotificationCategoriesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getNotificationCategoriesWithCompletionHandler") Block_getNotificationCategoriesWithCompletionHandler completionHandler);
 
     /**
      * The application's user notification settings
@@ -207,7 +215,7 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     @Selector("getNotificationSettingsWithCompletionHandler:")
     public native void getNotificationSettingsWithCompletionHandler(
-            @ObjCBlock(name = "call_getNotificationSettingsWithCompletionHandler") Block_getNotificationSettingsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getNotificationSettingsWithCompletionHandler") Block_getNotificationSettingsWithCompletionHandler completionHandler);
 
     /**
      * Notification requests that have been scheduled for a future time or location and are waiting for their trigger to
@@ -216,7 +224,7 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     @Selector("getPendingNotificationRequestsWithCompletionHandler:")
     public native void getPendingNotificationRequestsWithCompletionHandler(
-            @ObjCBlock(name = "call_getPendingNotificationRequestsWithCompletionHandler") Block_getPendingNotificationRequestsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getPendingNotificationRequestsWithCompletionHandler") Block_getPendingNotificationRequestsWithCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -232,7 +240,7 @@ public class UNUserNotificationCenter extends NSObject {
 
     @Generated
     @Selector("removeDeliveredNotificationsWithIdentifiers:")
-    public native void removeDeliveredNotificationsWithIdentifiers(NSArray<String> identifiers);
+    public native void removeDeliveredNotificationsWithIdentifiers(@NotNull NSArray<String> identifiers);
 
     /**
      * Removes notifications that have been scheduled for a future time or location and are waiting for their trigger to
@@ -241,7 +249,7 @@ public class UNUserNotificationCenter extends NSObject {
      */
     @Generated
     @Selector("removePendingNotificationRequestsWithIdentifiers:")
-    public native void removePendingNotificationRequestsWithIdentifiers(NSArray<String> identifiers);
+    public native void removePendingNotificationRequestsWithIdentifiers(@NotNull NSArray<String> identifiers);
 
     /**
      * User authorization is required for applications to notify the user using UNUserNotificationCenter via both local
@@ -250,20 +258,21 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     @Selector("requestAuthorizationWithOptions:completionHandler:")
     public native void requestAuthorizationWithOptionsCompletionHandler(@NUInt long options,
-            @ObjCBlock(name = "call_requestAuthorizationWithOptionsCompletionHandler") Block_requestAuthorizationWithOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorizationWithOptionsCompletionHandler") Block_requestAuthorizationWithOptionsCompletionHandler completionHandler);
 
     /**
      * The delegate can only be set from an application
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value);
 
     /**
      * The delegate can only be set from an application
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UNUserNotificationCenterDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -279,7 +288,7 @@ public class UNUserNotificationCenter extends NSObject {
      */
     @Generated
     @Selector("setNotificationCategories:")
-    public native void setNotificationCategories(NSSet<? extends UNNotificationCategory> categories);
+    public native void setNotificationCategories(@NotNull NSSet<? extends UNNotificationCategory> categories);
 
     /**
      * Returns YES if the current device supports content extensions
@@ -292,28 +301,30 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     public interface Block_addNotificationRequestWithCompletionHandler {
         @Generated
-        void call_addNotificationRequestWithCompletionHandler(NSError error);
+        void call_addNotificationRequestWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDeliveredNotificationsWithCompletionHandler {
         @Generated
-        void call_getDeliveredNotificationsWithCompletionHandler(NSArray<? extends UNNotification> notifications);
+        void call_getDeliveredNotificationsWithCompletionHandler(
+                @NotNull NSArray<? extends UNNotification> notifications);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getNotificationCategoriesWithCompletionHandler {
         @Generated
-        void call_getNotificationCategoriesWithCompletionHandler(NSSet<? extends UNNotificationCategory> categories);
+        void call_getNotificationCategoriesWithCompletionHandler(
+                @NotNull NSSet<? extends UNNotificationCategory> categories);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getNotificationSettingsWithCompletionHandler {
         @Generated
-        void call_getNotificationSettingsWithCompletionHandler(UNNotificationSettings settings);
+        void call_getNotificationSettingsWithCompletionHandler(@NotNull UNNotificationSettings settings);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -321,14 +332,14 @@ public class UNUserNotificationCenter extends NSObject {
     public interface Block_getPendingNotificationRequestsWithCompletionHandler {
         @Generated
         void call_getPendingNotificationRequestsWithCompletionHandler(
-                NSArray<? extends UNNotificationRequest> requests);
+                @NotNull NSArray<? extends UNNotificationRequest> requests);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAuthorizationWithOptionsCompletionHandler {
         @Generated
-        void call_requestAuthorizationWithOptionsCompletionHandler(boolean granted, NSError error);
+        void call_requestAuthorizationWithOptionsCompletionHandler(boolean granted, @Nullable NSError error);
     }
 
     /**
@@ -337,12 +348,12 @@ public class UNUserNotificationCenter extends NSObject {
     @Generated
     @Selector("setBadgeCount:withCompletionHandler:")
     public native void setBadgeCountWithCompletionHandler(@NInt long newBadgeCount,
-            @ObjCBlock(name = "call_setBadgeCountWithCompletionHandler") Block_setBadgeCountWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_setBadgeCountWithCompletionHandler") Block_setBadgeCountWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setBadgeCountWithCompletionHandler {
         @Generated
-        void call_setBadgeCountWithCompletionHandler(NSError error);
+        void call_setBadgeCountWithCompletionHandler(@Nullable NSError error);
     }
 }

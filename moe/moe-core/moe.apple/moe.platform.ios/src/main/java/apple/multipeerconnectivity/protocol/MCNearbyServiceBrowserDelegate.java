@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MultipeerConnectivity")
@@ -39,7 +41,7 @@ public interface MCNearbyServiceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("browser:didNotStartBrowsingForPeers:")
-    default void browserDidNotStartBrowsingForPeers(MCNearbyServiceBrowser browser, NSError error) {
+    default void browserDidNotStartBrowsingForPeers(@NotNull MCNearbyServiceBrowser browser, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -48,13 +50,13 @@ public interface MCNearbyServiceBrowserDelegate {
      */
     @Generated
     @Selector("browser:foundPeer:withDiscoveryInfo:")
-    void browserFoundPeerWithDiscoveryInfo(MCNearbyServiceBrowser browser, MCPeerID peerID,
-            NSDictionary<String, String> info);
+    void browserFoundPeerWithDiscoveryInfo(@NotNull MCNearbyServiceBrowser browser, @NotNull MCPeerID peerID,
+            @Nullable NSDictionary<String, String> info);
 
     /**
      * A nearby peer has stopped advertising.
      */
     @Generated
     @Selector("browser:lostPeer:")
-    void browserLostPeer(MCNearbyServiceBrowser browser, MCPeerID peerID);
+    void browserLostPeer(@NotNull MCNearbyServiceBrowser browser, @NotNull MCPeerID peerID);
 }

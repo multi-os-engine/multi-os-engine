@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INAddMediaIntent. By implementing this protocol, a class can provide
@@ -46,8 +47,8 @@ public interface INAddMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmAddMedia:completion:")
-    default void confirmAddMediaCompletion(INAddMediaIntent intent,
-            @ObjCBlock(name = "call_confirmAddMediaCompletion") Block_confirmAddMediaCompletion completion) {
+    default void confirmAddMediaCompletion(@NotNull INAddMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmAddMediaCompletion") Block_confirmAddMediaCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +56,7 @@ public interface INAddMediaIntentHandling {
     @Generated
     public interface Block_confirmAddMediaCompletion {
         @Generated
-        void call_confirmAddMediaCompletion(INAddMediaIntentResponse response);
+        void call_confirmAddMediaCompletion(@NotNull INAddMediaIntentResponse response);
     }
 
     /**
@@ -71,21 +72,21 @@ public interface INAddMediaIntentHandling {
      */
     @Generated
     @Selector("handleAddMedia:completion:")
-    void handleAddMediaCompletion(INAddMediaIntent intent,
-            @ObjCBlock(name = "call_handleAddMediaCompletion") Block_handleAddMediaCompletion completion);
+    void handleAddMediaCompletion(@NotNull INAddMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleAddMediaCompletion") Block_handleAddMediaCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAddMediaCompletion {
         @Generated
-        void call_handleAddMediaCompletion(INAddMediaIntentResponse response);
+        void call_handleAddMediaCompletion(@NotNull INAddMediaIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveMediaDestinationForAddMedia:withCompletion:")
-    default void resolveMediaDestinationForAddMediaWithCompletion(INAddMediaIntent intent,
-            @ObjCBlock(name = "call_resolveMediaDestinationForAddMediaWithCompletion") Block_resolveMediaDestinationForAddMediaWithCompletion completion) {
+    default void resolveMediaDestinationForAddMediaWithCompletion(@NotNull INAddMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveMediaDestinationForAddMediaWithCompletion") Block_resolveMediaDestinationForAddMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +95,7 @@ public interface INAddMediaIntentHandling {
     public interface Block_resolveMediaDestinationForAddMediaWithCompletion {
         @Generated
         void call_resolveMediaDestinationForAddMediaWithCompletion(
-                INAddMediaMediaDestinationResolutionResult resolutionResult);
+                @NotNull INAddMediaMediaDestinationResolutionResult resolutionResult);
     }
 
     /**
@@ -111,8 +112,8 @@ public interface INAddMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveMediaItemsForAddMedia:withCompletion:")
-    default void resolveMediaItemsForAddMediaWithCompletion(INAddMediaIntent intent,
-            @ObjCBlock(name = "call_resolveMediaItemsForAddMediaWithCompletion") Block_resolveMediaItemsForAddMediaWithCompletion completion) {
+    default void resolveMediaItemsForAddMediaWithCompletion(@NotNull INAddMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveMediaItemsForAddMediaWithCompletion") Block_resolveMediaItemsForAddMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,6 +122,6 @@ public interface INAddMediaIntentHandling {
     public interface Block_resolveMediaItemsForAddMediaWithCompletion {
         @Generated
         void call_resolveMediaItemsForAddMediaWithCompletion(
-                NSArray<? extends INAddMediaMediaItemResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INAddMediaMediaItemResolutionResult> resolutionResults);
     }
 }

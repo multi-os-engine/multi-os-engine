@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -60,22 +62,25 @@ public class NLTokenizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,13 +104,14 @@ public class NLTokenizer extends NSObject {
     @Generated
     @Selector("enumerateTokensInRange:usingBlock:")
     public native void enumerateTokensInRangeUsingBlock(@ByValue NSRange range,
-            @ObjCBlock(name = "call_enumerateTokensInRangeUsingBlock") Block_enumerateTokensInRangeUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateTokensInRangeUsingBlock") Block_enumerateTokensInRangeUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateTokensInRangeUsingBlock {
         @Generated
-        void call_enumerateTokensInRangeUsingBlock(@ByValue NSRange tokenRange, @NUInt long flags, BoolPtr stop);
+        void call_enumerateTokensInRangeUsingBlock(@ByValue NSRange tokenRange, @NUInt long flags,
+                @NotNull BoolPtr stop);
     }
 
     @Generated
@@ -141,9 +147,10 @@ public class NLTokenizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,7 +172,7 @@ public class NLTokenizer extends NSObject {
      */
     @Generated
     @Selector("setLanguage:")
-    public native void setLanguage(String language);
+    public native void setLanguage(@NotNull String language);
 
     /**
      * An NLTokenizer instance must be assigned a string to tokenize, and clients can then obtain ranges for tokens in
@@ -175,7 +182,7 @@ public class NLTokenizer extends NSObject {
      */
     @Generated
     @Selector("setString:")
-    public native void setString(String value);
+    public native void setString(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -187,6 +194,7 @@ public class NLTokenizer extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("string")
     public native String string();
@@ -211,6 +219,7 @@ public class NLTokenizer extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("tokensForRange:")
     public native NSArray<? extends NSValue> tokensForRange(@ByValue NSRange range);

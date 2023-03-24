@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVAssetResourceLoaderDelegate
@@ -52,8 +53,8 @@ public interface AVAssetResourceLoaderDelegate {
     @Generated
     @IsOptional
     @Selector("resourceLoader:didCancelAuthenticationChallenge:")
-    default void resourceLoaderDidCancelAuthenticationChallenge(AVAssetResourceLoader resourceLoader,
-            NSURLAuthenticationChallenge authenticationChallenge) {
+    default void resourceLoaderDidCancelAuthenticationChallenge(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull NSURLAuthenticationChallenge authenticationChallenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +76,8 @@ public interface AVAssetResourceLoaderDelegate {
     @Generated
     @IsOptional
     @Selector("resourceLoader:didCancelLoadingRequest:")
-    default void resourceLoaderDidCancelLoadingRequest(AVAssetResourceLoader resourceLoader,
-            AVAssetResourceLoadingRequest loadingRequest) {
+    default void resourceLoaderDidCancelLoadingRequest(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull AVAssetResourceLoadingRequest loadingRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,8 +118,8 @@ public interface AVAssetResourceLoaderDelegate {
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForLoadingOfRequestedResource:")
-    default boolean resourceLoaderShouldWaitForLoadingOfRequestedResource(AVAssetResourceLoader resourceLoader,
-            AVAssetResourceLoadingRequest loadingRequest) {
+    default boolean resourceLoaderShouldWaitForLoadingOfRequestedResource(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull AVAssetResourceLoadingRequest loadingRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,8 +161,8 @@ public interface AVAssetResourceLoaderDelegate {
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForRenewalOfRequestedResource:")
-    default boolean resourceLoaderShouldWaitForRenewalOfRequestedResource(AVAssetResourceLoader resourceLoader,
-            AVAssetResourceRenewalRequest renewalRequest) {
+    default boolean resourceLoaderShouldWaitForRenewalOfRequestedResource(@NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull AVAssetResourceRenewalRequest renewalRequest) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -190,8 +191,9 @@ public interface AVAssetResourceLoaderDelegate {
     @Generated
     @IsOptional
     @Selector("resourceLoader:shouldWaitForResponseToAuthenticationChallenge:")
-    default boolean resourceLoaderShouldWaitForResponseToAuthenticationChallenge(AVAssetResourceLoader resourceLoader,
-            NSURLAuthenticationChallenge authenticationChallenge) {
+    default boolean resourceLoaderShouldWaitForResponseToAuthenticationChallenge(
+            @NotNull AVAssetResourceLoader resourceLoader,
+            @NotNull NSURLAuthenticationChallenge authenticationChallenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

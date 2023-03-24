@@ -53,6 +53,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @SuppressWarnings({ "rawtypes", "unchecked"
 })
@@ -86,22 +88,25 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,48 +126,51 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
      * API-Since: 2.0
      * Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("dictionaryWithContentsOfFile:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfFile(
-            String path);
+            @NotNull String path);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("dictionaryWithContentsOfURL:")
     public static native <_KeyType, _ObjectType> NSDictionary<_KeyType, _ObjectType> dictionaryWithContentsOfURL(
-            NSURL url);
+            @NotNull NSURL url);
 
     @Generated
     @Selector("dictionaryWithDictionary:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithDictionary(
-            NSDictionary<_KeyType, _ObjectType> dict);
+            @NotNull NSDictionary<_KeyType, _ObjectType> dict);
 
     @Generated
     @Selector("dictionaryWithObject:forKey:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectForKey(
-            @Mapped(ObjCObjectMapper.class) _ObjectType object, @Mapped(ObjCObjectMapper.class) _KeyType key);
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType object,
+            @NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeys(
-            NSArray<_ObjectType> objects, NSArray<_KeyType> keys);
+            @NotNull NSArray<_ObjectType> objects, @NotNull NSArray<_KeyType> keys);
 
     @Generated
     @Selector("dictionaryWithObjects:forKeys:count:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsForKeysCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
     @Selector("dictionaryWithObjectsAndKeys:")
     public static native <_KeyType, _ObjectType> NSDictionary<?, ?> dictionaryWithObjectsAndKeys(
-            @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object firstObject, Object... varargs);
 
     @Generated
     @Selector("hash")
@@ -186,9 +194,10 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -220,10 +229,11 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("sharedKeySetForKeys:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(NSArray<_KeyType> keys);
+    public static native <_KeyType, _ObjectType> Object sharedKeySetForKeys(@NotNull NSArray<_KeyType> keys);
 
     @Generated
     @Selector("superclass")
@@ -238,23 +248,27 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("allKeys")
     public native NSArray<_KeyType> allKeys();
 
+    @NotNull
     @Generated
     @Selector("allKeysForObject:")
-    public native NSArray<_KeyType> allKeysForObject(@Mapped(ObjCObjectMapper.class) _ObjectType anObject);
+    public native NSArray<_KeyType> allKeysForObject(@NotNull @Mapped(ObjCObjectMapper.class) _ObjectType anObject);
 
+    @NotNull
     @Generated
     @Selector("allValues")
     public native NSArray<_ObjectType> allValues();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("count")
@@ -264,28 +278,33 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
 
+    @NotNull
     @Generated
     @Selector("descriptionInStringsFileFormat")
     public native String descriptionInStringsFileFormat();
 
+    @NotNull
     @Generated
     @Selector("descriptionWithLocale:")
-    public native String descriptionWithLocale(@Mapped(ObjCObjectMapper.class) Object locale);
+    public native String descriptionWithLocale(@Nullable @Mapped(ObjCObjectMapper.class) Object locale);
 
+    @NotNull
     @Generated
     @Selector("descriptionWithLocale:indent:")
-    public native String descriptionWithLocaleIndent(@Mapped(ObjCObjectMapper.class) Object locale, @NUInt long level);
+    public native String descriptionWithLocaleIndent(@Nullable @Mapped(ObjCObjectMapper.class) Object locale,
+            @NUInt long level);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 4.0
@@ -293,7 +312,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Generated
     @Selector("enumerateKeysAndObjectsUsingBlock:")
     public native void enumerateKeysAndObjectsUsingBlock(
-            @ObjCBlock(name = "call_enumerateKeysAndObjectsUsingBlock") Block_enumerateKeysAndObjectsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateKeysAndObjectsUsingBlock") Block_enumerateKeysAndObjectsUsingBlock block);
 
     /**
      * API-Since: 4.0
@@ -301,8 +320,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Generated
     @Selector("enumerateKeysAndObjectsWithOptions:usingBlock:")
     public native void enumerateKeysAndObjectsWithOptionsUsingBlock(@NUInt long opts,
-            @ObjCBlock(name = "call_enumerateKeysAndObjectsWithOptionsUsingBlock") Block_enumerateKeysAndObjectsWithOptionsUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateKeysAndObjectsWithOptionsUsingBlock") Block_enumerateKeysAndObjectsWithOptionsUsingBlock block);
 
+    @Nullable
     @Generated
     @Selector("fileCreationDate")
     public native NSDate fileCreationDate();
@@ -311,10 +331,12 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("fileExtensionHidden")
     public native boolean fileExtensionHidden();
 
+    @Nullable
     @Generated
     @Selector("fileGroupOwnerAccountID")
     public native NSNumber fileGroupOwnerAccountID();
 
+    @Nullable
     @Generated
     @Selector("fileGroupOwnerAccountName")
     public native String fileGroupOwnerAccountName();
@@ -335,14 +357,17 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Selector("fileIsImmutable")
     public native boolean fileIsImmutable();
 
+    @Nullable
     @Generated
     @Selector("fileModificationDate")
     public native NSDate fileModificationDate();
 
+    @Nullable
     @Generated
     @Selector("fileOwnerAccountID")
     public native NSNumber fileOwnerAccountID();
 
+    @Nullable
     @Generated
     @Selector("fileOwnerAccountName")
     public native String fileOwnerAccountName();
@@ -366,6 +391,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @NInt
     public native long fileSystemNumber();
 
+    @Nullable
     @Generated
     @Selector("fileType")
     public native String fileType();
@@ -381,8 +407,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Deprecated
     @Generated
     @Selector("getObjects:andKeys:")
-    public native void getObjectsAndKeys(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys);
+    public native void getObjectsAndKeys(@Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys);
 
     /**
      * count refers to the number of elements in the dictionary
@@ -391,8 +417,9 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
      */
     @Generated
     @Selector("getObjects:andKeys:count:")
-    public native void getObjectsAndKeysCount(@ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long count);
+    public native void getObjectsAndKeysCount(
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long count);
 
     @Generated
     @Selector("init")
@@ -400,55 +427,59 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDictionary<?, ?> initWithCoder(NSCoder coder);
+    public native NSDictionary<?, ?> initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("initWithContentsOfFile:")
-    public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfFile(String path);
+    public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfFile(@NotNull String path);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 100000.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("initWithContentsOfURL:")
-    public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfURL(NSURL url);
+    public native NSDictionary<_KeyType, _ObjectType> initWithContentsOfURL(@NotNull NSURL url);
 
     @Generated
     @Selector("initWithDictionary:")
-    public native NSDictionary<?, ?> initWithDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
+    public native NSDictionary<?, ?> initWithDictionary(@NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
     @Generated
     @Selector("initWithDictionary:copyItems:")
-    public native NSDictionary<?, ?> initWithDictionaryCopyItems(NSDictionary<_KeyType, _ObjectType> otherDictionary,
-            boolean flag);
+    public native NSDictionary<?, ?> initWithDictionaryCopyItems(
+            @NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary, boolean flag);
 
     @Generated
     @Selector("initWithObjects:forKeys:")
-    public native NSDictionary<?, ?> initWithObjectsForKeys(NSArray<_ObjectType> objects, NSArray<_KeyType> keys);
+    public native NSDictionary<?, ?> initWithObjectsForKeys(@NotNull NSArray<_ObjectType> objects,
+            @NotNull NSArray<_KeyType> keys);
 
     @Generated
     @Selector("initWithObjects:forKeys:count:")
     public native NSDictionary<?, ?> initWithObjectsForKeysCount(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_ObjectType> objects,
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<_KeyType> keys, @NUInt long cnt);
 
     @Generated
     @Variadic()
     @Selector("initWithObjectsAndKeys:")
-    public native NSDictionary<?, ?> initWithObjectsAndKeys(@Mapped(ObjCObjectMapper.class) Object firstObject,
+    public native NSDictionary<?, ?> initWithObjectsAndKeys(@NotNull @Mapped(ObjCObjectMapper.class) Object firstObject,
             Object... varargs);
 
     @Generated
     @Selector("isEqualToDictionary:")
-    public native boolean isEqualToDictionary(NSDictionary<_KeyType, _ObjectType> otherDictionary);
+    public native boolean isEqualToDictionary(@NotNull NSDictionary<_KeyType, _ObjectType> otherDictionary);
 
+    @NotNull
     @Generated
     @Selector("keyEnumerator")
     public native NSEnumerator<_KeyType> keyEnumerator();
@@ -456,66 +487,76 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("keysOfEntriesPassingTest:")
     public native NSSet<_KeyType> keysOfEntriesPassingTest(
-            @ObjCBlock(name = "call_keysOfEntriesPassingTest") Block_keysOfEntriesPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_keysOfEntriesPassingTest") Block_keysOfEntriesPassingTest predicate);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("keysOfEntriesWithOptions:passingTest:")
     public native NSSet<_KeyType> keysOfEntriesWithOptionsPassingTest(@NUInt long opts,
-            @ObjCBlock(name = "call_keysOfEntriesWithOptionsPassingTest") Block_keysOfEntriesWithOptionsPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_keysOfEntriesWithOptionsPassingTest") Block_keysOfEntriesWithOptionsPassingTest predicate);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("keysSortedByValueUsingComparator:")
     public native NSArray<_KeyType> keysSortedByValueUsingComparator(
-            @ObjCBlock(name = "call_keysSortedByValueUsingComparator") Block_keysSortedByValueUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_keysSortedByValueUsingComparator") Block_keysSortedByValueUsingComparator cmptr);
 
+    @NotNull
     @Generated
     @Selector("keysSortedByValueUsingSelector:")
-    public native NSArray<_KeyType> keysSortedByValueUsingSelector(SEL comparator);
+    public native NSArray<_KeyType> keysSortedByValueUsingSelector(@NotNull SEL comparator);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("keysSortedByValueWithOptions:usingComparator:")
     public native NSArray<_KeyType> keysSortedByValueWithOptionsUsingComparator(@NUInt long opts,
-            @ObjCBlock(name = "call_keysSortedByValueWithOptionsUsingComparator") Block_keysSortedByValueWithOptionsUsingComparator cmptr);
+            @NotNull @ObjCBlock(name = "call_keysSortedByValueWithOptionsUsingComparator") Block_keysSortedByValueWithOptionsUsingComparator cmptr);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("objectEnumerator")
     public native NSEnumerator<_ObjectType> objectEnumerator();
 
+    @Nullable
     @Generated
     @Selector("objectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType objectForKey(@Mapped(ObjCObjectMapper.class) _KeyType aKey);
+    public native _ObjectType objectForKey(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType aKey);
 
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) _KeyType key);
+    public native _ObjectType objectForKeyedSubscript(@NotNull @Mapped(ObjCObjectMapper.class) _KeyType key);
 
+    @NotNull
     @Generated
     @Selector("objectsForKeys:notFoundMarker:")
-    public native NSArray<_ObjectType> objectsForKeysNotFoundMarker(NSArray<_KeyType> keys,
-            @Mapped(ObjCObjectMapper.class) _ObjectType marker);
+    public native NSArray<_ObjectType> objectsForKeysNotFoundMarker(@NotNull NSArray<_KeyType> keys,
+            @NotNull @Mapped(ObjCObjectMapper.class) _ObjectType marker);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -526,10 +567,11 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     /**
      * Return the result of sending -objectForKey: to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native _ObjectType valueForKey(String key);
+    public native _ObjectType valueForKey(@NotNull String key);
 
     /**
      * API-Since: 2.0
@@ -538,7 +580,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Deprecated
     @Generated
     @Selector("writeToFile:atomically:")
-    public native boolean writeToFileAtomically(String path, boolean useAuxiliaryFile);
+    public native boolean writeToFileAtomically(@NotNull String path, boolean useAuxiliaryFile);
 
     /**
      * the atomically flag is ignored if url of a type that cannot be written atomically.
@@ -549,7 +591,7 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Deprecated
     @Generated
     @Selector("writeToURL:atomically:")
-    public native boolean writeToURLAtomically(NSURL url, boolean atomically);
+    public native boolean writeToURLAtomically(@NotNull NSURL url, boolean atomically);
 
     @Override
     public void clear() {
@@ -668,32 +710,32 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     @Generated
     public interface Block_enumerateKeysAndObjectsUsingBlock {
         @Generated
-        void call_enumerateKeysAndObjectsUsingBlock(@Mapped(ObjCObjectMapper.class) Object key,
-                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        void call_enumerateKeysAndObjectsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object key,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateKeysAndObjectsWithOptionsUsingBlock {
         @Generated
-        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@Mapped(ObjCObjectMapper.class) Object key,
-                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        void call_enumerateKeysAndObjectsWithOptionsUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object key,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_keysOfEntriesPassingTest {
         @Generated
-        boolean call_keysOfEntriesPassingTest(@Mapped(ObjCObjectMapper.class) Object key,
-                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        boolean call_keysOfEntriesPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object key,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_keysOfEntriesWithOptionsPassingTest {
         @Generated
-        boolean call_keysOfEntriesWithOptionsPassingTest(@Mapped(ObjCObjectMapper.class) Object key,
-                @Mapped(ObjCObjectMapper.class) Object obj, BoolPtr stop);
+        boolean call_keysOfEntriesWithOptionsPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object key,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -701,8 +743,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     public interface Block_keysSortedByValueUsingComparator {
         @Generated
         @NInt
-        long call_keysSortedByValueUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_keysSortedByValueUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -710,8 +752,8 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
     public interface Block_keysSortedByValueWithOptionsUsingComparator {
         @Generated
         @NInt
-        long call_keysSortedByValueWithOptionsUsingComparator(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_keysSortedByValueWithOptionsUsingComparator(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     private static final class NSDictionaryEntrySet<_KeyType, _ObjectType> implements
@@ -1186,20 +1228,22 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("dictionaryWithContentsOfURL:error:")
     public static native <_KeyType, _ObjectType> NSDictionary<String, _ObjectType> dictionaryWithContentsOfURLError(
-            NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL url, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Reads dictionary stored in NSPropertyList format from the specified url.
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("initWithContentsOfURL:error:")
-    public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDictionary<String, _ObjectType> initWithContentsOfURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Serializes this instance to the specified URL in the NSPropertyList format (using NSPropertyListXMLFormat_v1_0).
@@ -1209,5 +1253,6 @@ public class NSDictionary<_KeyType, _ObjectType> extends NSObject implements NSC
      */
     @Generated
     @Selector("writeToURL:error:")
-    public native boolean writeToURLError(NSURL url, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean writeToURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

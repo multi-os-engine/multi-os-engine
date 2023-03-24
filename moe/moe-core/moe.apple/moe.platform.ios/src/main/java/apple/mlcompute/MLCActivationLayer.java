@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -44,6 +46,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("absoluteLayer")
     public static native MLCActivationLayer absoluteLayer();
@@ -64,23 +67,25 @@ public class MLCActivationLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Create a CELU activation layer
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("celuLayer")
     public static native MLCActivationLayer celuLayer();
@@ -91,6 +96,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param a The \p a value for the CELU formation
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("celuLayerWithA:")
     public static native MLCActivationLayer celuLayerWithA(float a);
@@ -102,14 +108,17 @@ public class MLCActivationLayer extends MLCLayer {
      * @param maxValue The maximum range used by clamp
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("clampLayerWithMinValue:maxValue:")
     public static native MLCActivationLayer clampLayerWithMinValueMaxValue(float minValue, float maxValue);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,6 +136,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * The activation descriptor
      */
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCActivationDescriptor descriptor();
@@ -136,6 +146,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("eluLayer")
     public static native MLCActivationLayer eluLayer();
@@ -146,6 +157,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param a The \p a value for the ELU formation
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("eluLayerWithA:")
     public static native MLCActivationLayer eluLayerWithA(float a);
@@ -155,6 +167,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("geluLayer")
     public static native MLCActivationLayer geluLayer();
@@ -164,6 +177,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("hardShrinkLayer")
     public static native MLCActivationLayer hardShrinkLayer();
@@ -174,6 +188,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param a The \p a value for the hard shrink formation
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("hardShrinkLayerWithA:")
     public static native MLCActivationLayer hardShrinkLayerWithA(float a);
@@ -183,6 +198,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("hardSigmoidLayer")
     public static native MLCActivationLayer hardSigmoidLayer();
@@ -192,6 +208,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("hardSwishLayer")
     public static native MLCActivationLayer hardSwishLayer();
@@ -222,9 +239,10 @@ public class MLCActivationLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create an activation layer
@@ -234,13 +252,14 @@ public class MLCActivationLayer extends MLCLayer {
      */
     @Generated
     @Selector("layerWithDescriptor:")
-    public static native MLCActivationLayer layerWithDescriptor(MLCActivationDescriptor descriptor);
+    public static native MLCActivationLayer layerWithDescriptor(@NotNull MLCActivationDescriptor descriptor);
 
     /**
      * Create a leaky ReLU activation layer
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("leakyReLULayer")
     public static native MLCActivationLayer leakyReLULayer();
@@ -251,6 +270,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param negativeSlope Controls the angle of the negative slope
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("leakyReLULayerWithNegativeSlope:")
     public static native MLCActivationLayer leakyReLULayerWithNegativeSlope(float negativeSlope);
@@ -262,6 +282,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param bias  The bias value
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("linearLayerWithScale:bias:")
     public static native MLCActivationLayer linearLayerWithScaleBias(float scale, float bias);
@@ -271,6 +292,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("logSigmoidLayer")
     public static native MLCActivationLayer logSigmoidLayer();
@@ -285,6 +307,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("relu6Layer")
     public static native MLCActivationLayer relu6Layer();
@@ -294,6 +317,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("reluLayer")
     public static native MLCActivationLayer reluLayer();
@@ -307,6 +331,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param b The \p b value
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("relunLayerWithA:b:")
     public static native MLCActivationLayer relunLayerWithAB(float a, float b);
@@ -324,6 +349,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("seluLayer")
     public static native MLCActivationLayer seluLayer();
@@ -337,6 +363,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("sigmoidLayer")
     public static native MLCActivationLayer sigmoidLayer();
@@ -346,6 +373,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("softPlusLayer")
     public static native MLCActivationLayer softPlusLayer();
@@ -356,6 +384,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param beta The beta value for the softplus formation
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("softPlusLayerWithBeta:")
     public static native MLCActivationLayer softPlusLayerWithBeta(float beta);
@@ -365,6 +394,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("softShrinkLayer")
     public static native MLCActivationLayer softShrinkLayer();
@@ -375,6 +405,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param a The \p a value for the soft shrink formation
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("softShrinkLayerWithA:")
     public static native MLCActivationLayer softShrinkLayerWithA(float a);
@@ -384,6 +415,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("softSignLayer")
     public static native MLCActivationLayer softSignLayer();
@@ -394,13 +426,14 @@ public class MLCActivationLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     /**
      * Create a tanh activation layer
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("tanhLayer")
     public static native MLCActivationLayer tanhLayer();
@@ -410,6 +443,7 @@ public class MLCActivationLayer extends MLCLayer {
      * 
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("tanhShrinkLayer")
     public static native MLCActivationLayer tanhShrinkLayer();
@@ -421,6 +455,7 @@ public class MLCActivationLayer extends MLCLayer {
      * @param replacement The value to replace with
      * @return A new activation layer
      */
+    @NotNull
     @Generated
     @Selector("thresholdLayerWithThreshold:replacement:")
     public static native MLCActivationLayer thresholdLayerWithThresholdReplacement(float threshold, float replacement);

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTLLinkedFunctions
@@ -64,7 +66,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] binaryFunctions
@@ -73,33 +75,38 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("binaryFunctions")
     public native NSArray<?> binaryFunctions();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -114,6 +121,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * 
      * The array of functions to be AIR linked.
      */
+    @Nullable
     @Generated
     @Selector("functions")
     public native NSArray<?> functions();
@@ -123,6 +131,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * 
      * Groups of functions, grouped to match callsites in the shader code.
      */
+    @Nullable
     @Generated
     @Selector("groups")
     public native NSDictionary<String, ? extends NSArray<?>> groups();
@@ -153,15 +162,17 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * linkedFunctions
      * 
      * Create an autoreleased MTLLinkedFunctions object.
      */
+    @NotNull
     @Generated
     @Selector("linkedFunctions")
     public static native MTLLinkedFunctions linkedFunctions();
@@ -188,7 +199,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setBinaryFunctions:")
-    public native void setBinaryFunctions(NSArray<?> value);
+    public native void setBinaryFunctions(@Nullable NSArray<?> value);
 
     /**
      * [@property] functions
@@ -197,7 +208,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setFunctions:")
-    public native void setFunctions(NSArray<?> value);
+    public native void setFunctions(@Nullable NSArray<?> value);
 
     /**
      * [@property] groups
@@ -206,7 +217,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setGroups:")
-    public native void setGroups(NSDictionary<String, ? extends NSArray<?>> value);
+    public native void setGroups(@Nullable NSDictionary<String, ? extends NSArray<?>> value);
 
     @Generated
     @Selector("setVersion:")
@@ -231,6 +242,7 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("privateFunctions")
     public native NSArray<?> privateFunctions();
@@ -247,5 +259,5 @@ public class MTLLinkedFunctions extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setPrivateFunctions:")
-    public native void setPrivateFunctions(NSArray<?> value);
+    public native void setPrivateFunctions(@Nullable NSArray<?> value);
 }

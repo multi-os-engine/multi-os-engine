@@ -8,6 +8,7 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -29,7 +30,7 @@ public final class BNNSLayerParametersArithmetic extends StructObject {
     }
 
     @Generated
-    public BNNSLayerParametersArithmetic(int arithmetic_function, VoidPtr arithmetic_function_fields,
+    public BNNSLayerParametersArithmetic(int arithmetic_function, @NotNull VoidPtr arithmetic_function_fields,
             @ByValue BNNSActivation activation) {
         super(BNNSLayerParametersArithmetic.class);
         setArithmetic_function(arithmetic_function);
@@ -45,13 +46,14 @@ public final class BNNSLayerParametersArithmetic extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setArithmetic_function(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr arithmetic_function_fields();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setArithmetic_function_fields(VoidPtr value);
+    public native void setArithmetic_function_fields(@NotNull VoidPtr value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)

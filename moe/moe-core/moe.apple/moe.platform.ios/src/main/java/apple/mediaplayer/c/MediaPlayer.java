@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("MediaPlayer")
@@ -73,6 +74,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -83,6 +85,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -93,6 +96,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -103,6 +107,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -111,6 +116,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -121,6 +127,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -131,6 +138,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -141,6 +149,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -151,6 +160,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -161,6 +171,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -171,6 +182,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -181,6 +193,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -191,6 +204,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -201,6 +215,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -209,6 +224,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -217,6 +233,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -225,6 +242,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -233,6 +251,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -241,6 +260,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -249,6 +269,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -257,6 +278,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -265,6 +287,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -275,6 +298,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -283,6 +307,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -291,6 +316,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -299,6 +325,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -307,6 +334,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -317,6 +345,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -327,6 +356,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 9.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -337,6 +367,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -347,6 +378,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -357,6 +389,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -365,6 +398,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -373,6 +407,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -381,6 +416,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -389,6 +425,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -397,6 +434,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -405,6 +443,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -414,6 +453,7 @@ public final class MediaPlayer {
      * Any items or playlists which were previously cached should be re-evaluated from queries when
      * MPMediaLibraryDidChangeNotification is posted.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -422,6 +462,7 @@ public final class MediaPlayer {
     /**
      * filterable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -430,6 +471,7 @@ public final class MediaPlayer {
     /**
      * filterable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -438,6 +480,7 @@ public final class MediaPlayer {
     /**
      * filterable
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -448,6 +491,7 @@ public final class MediaPlayer {
      * to the generate the playlist.
      * Returns nil for playlists without MPMediaPlaylistAttributeGenius set.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -456,6 +500,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -464,6 +509,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -856,6 +902,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -866,6 +913,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -876,6 +924,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -888,6 +937,7 @@ public final class MediaPlayer {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use AVRouteDetectorMultipleRoutesDetectedDidChangeNotification instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -901,6 +951,7 @@ public final class MediaPlayer {
      * Deprecated-Since: 13.0
      * Deprecated-Message: Use AVPlayer.externalPlaybackActive KVO instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -910,6 +961,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -920,6 +972,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -930,6 +983,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -940,6 +994,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -950,6 +1005,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -960,6 +1016,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -970,6 +1027,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -980,6 +1038,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -990,6 +1049,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1000,6 +1060,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1010,6 +1071,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1020,6 +1082,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1030,6 +1093,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1040,6 +1104,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1050,6 +1115,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1060,6 +1126,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1072,6 +1139,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1080,6 +1148,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1088,6 +1157,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1096,6 +1166,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1104,6 +1175,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1112,6 +1184,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1120,6 +1193,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1128,6 +1202,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1136,6 +1211,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1144,6 +1220,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1154,6 +1231,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1164,6 +1242,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1174,6 +1253,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1184,6 +1264,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1194,6 +1275,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1204,6 +1286,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1212,6 +1295,7 @@ public final class MediaPlayer {
     /**
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1222,6 +1306,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1232,6 +1317,7 @@ public final class MediaPlayer {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

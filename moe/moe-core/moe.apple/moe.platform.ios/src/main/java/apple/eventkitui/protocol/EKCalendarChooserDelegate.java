@@ -24,6 +24,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("EventKitUI")
@@ -33,7 +34,7 @@ public interface EKCalendarChooserDelegate {
     @Generated
     @IsOptional
     @Selector("calendarChooserDidCancel:")
-    default void calendarChooserDidCancel(EKCalendarChooser calendarChooser) {
+    default void calendarChooserDidCancel(@NotNull EKCalendarChooser calendarChooser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -44,7 +45,7 @@ public interface EKCalendarChooserDelegate {
     @Generated
     @IsOptional
     @Selector("calendarChooserDidFinish:")
-    default void calendarChooserDidFinish(EKCalendarChooser calendarChooser) {
+    default void calendarChooserDidFinish(@NotNull EKCalendarChooser calendarChooser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -54,7 +55,7 @@ public interface EKCalendarChooserDelegate {
     @Generated
     @IsOptional
     @Selector("calendarChooserSelectionDidChange:")
-    default void calendarChooserSelectionDidChange(EKCalendarChooser calendarChooser) {
+    default void calendarChooserSelectionDidChange(@NotNull EKCalendarChooser calendarChooser) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

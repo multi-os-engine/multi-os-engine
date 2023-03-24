@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Messages related to the operation of a task that delivers data
@@ -51,8 +53,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeDownloadTask:")
-    default void URLSessionDataTaskDidBecomeDownloadTask(NSURLSession session, NSURLSessionDataTask dataTask,
-            NSURLSessionDownloadTask downloadTask) {
+    default void URLSessionDataTaskDidBecomeDownloadTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSURLSessionDownloadTask downloadTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,8 +79,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didBecomeStreamTask:")
-    default void URLSessionDataTaskDidBecomeStreamTask(NSURLSession session, NSURLSessionDataTask dataTask,
-            NSURLSessionStreamTask streamTask) {
+    default void URLSessionDataTaskDidBecomeStreamTask(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSURLSessionStreamTask streamTask) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,7 +93,8 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveData:")
-    default void URLSessionDataTaskDidReceiveData(NSURLSession session, NSURLSessionDataTask dataTask, NSData data) {
+    default void URLSessionDataTaskDidReceiveData(@NotNull NSURLSession session, @NotNull NSURLSessionDataTask dataTask,
+            @NotNull NSData data) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,9 +110,9 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:didReceiveResponse:completionHandler:")
-    default void URLSessionDataTaskDidReceiveResponseCompletionHandler(NSURLSession session,
-            NSURLSessionDataTask dataTask, NSURLResponse response,
-            @ObjCBlock(name = "call_URLSessionDataTaskDidReceiveResponseCompletionHandler") Block_URLSessionDataTaskDidReceiveResponseCompletionHandler completionHandler) {
+    default void URLSessionDataTaskDidReceiveResponseCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSURLResponse response,
+            @NotNull @ObjCBlock(name = "call_URLSessionDataTaskDidReceiveResponseCompletionHandler") Block_URLSessionDataTaskDidReceiveResponseCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,9 +126,9 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:dataTask:willCacheResponse:completionHandler:")
-    default void URLSessionDataTaskWillCacheResponseCompletionHandler(NSURLSession session,
-            NSURLSessionDataTask dataTask, NSCachedURLResponse proposedResponse,
-            @ObjCBlock(name = "call_URLSessionDataTaskWillCacheResponseCompletionHandler") Block_URLSessionDataTaskWillCacheResponseCompletionHandler completionHandler) {
+    default void URLSessionDataTaskWillCacheResponseCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionDataTask dataTask, @NotNull NSCachedURLResponse proposedResponse,
+            @NotNull @ObjCBlock(name = "call_URLSessionDataTaskWillCacheResponseCompletionHandler") Block_URLSessionDataTaskWillCacheResponseCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -140,6 +143,6 @@ public interface NSURLSessionDataDelegate extends NSURLSessionTaskDelegate {
     @Generated
     public interface Block_URLSessionDataTaskWillCacheResponseCompletionHandler {
         @Generated
-        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(NSCachedURLResponse cachedResponse);
+        void call_URLSessionDataTaskWillCacheResponseCompletionHandler(@Nullable NSCachedURLResponse cachedResponse);
     }
 }

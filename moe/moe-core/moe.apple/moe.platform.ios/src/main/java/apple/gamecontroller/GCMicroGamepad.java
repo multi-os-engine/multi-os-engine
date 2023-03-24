@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -72,22 +74,25 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +173,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * Button A is the primary action button, it indicates affirmative action and should be used to advance in menus
      * or perform the primary action in gameplay.
      */
+    @NotNull
     @Generated
     @Selector("buttonA")
     public native GCControllerButtonInput buttonA();
@@ -181,10 +188,12 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * 
      * @see buttonA
      */
+    @NotNull
     @Generated
     @Selector("buttonX")
     public native GCControllerButtonInput buttonX();
 
+    @Nullable
     @Generated
     @Selector("controller")
     public native GCController controller();
@@ -192,6 +201,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     /**
      * Optionally analog in the Micro profile. All the elements of this directional input are either analog or digital.
      */
+    @NotNull
     @Generated
     @Selector("dpad")
     public native GCControllerDirectionPad dpad();
@@ -232,6 +242,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      *      Deprecated-Since: 13.0
      *      Deprecated-Message: GCMicroGamepadSnapshot has been deprecated, use [GCController capture] instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("saveSnapshot")
@@ -267,8 +278,9 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
-            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    @Nullable
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")
@@ -278,14 +290,14 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCMicroGamepad gamepad, GCControllerElement element);
+        void call_setValueChangedHandler(@NotNull GCMicroGamepad gamepad, @NotNull GCControllerElement element);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCMicroGamepad gamepad, GCControllerElement element);
+        void call_valueChangedHandler_ret(@NotNull GCMicroGamepad gamepad, @NotNull GCControllerElement element);
     }
 
     /**
@@ -293,6 +305,7 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("buttonMenu")
     public native GCControllerButtonInput buttonMenu();
@@ -308,5 +321,5 @@ public class GCMicroGamepad extends GCPhysicalInputProfile {
      */
     @Generated
     @Selector("setStateFromMicroGamepad:")
-    public native void setStateFromMicroGamepad(GCMicroGamepad microGamepad);
+    public native void setStateFromMicroGamepad(@NotNull GCMicroGamepad microGamepad);
 }

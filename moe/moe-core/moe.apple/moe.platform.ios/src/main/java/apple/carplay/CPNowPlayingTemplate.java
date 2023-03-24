@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -51,7 +53,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("addObserver:")
-    public native void addObserver(@Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
+    public native void addObserver(@NotNull @Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
 
     @Generated
     @Owned
@@ -65,22 +67,25 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,7 +109,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPNowPlayingTemplate initWithCoder(NSCoder coder);
+    public native CPNowPlayingTemplate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -146,9 +151,10 @@ public class CPNowPlayingTemplate extends CPTemplate {
     @Selector("isUpNextButtonEnabled")
     public native boolean isUpNextButtonEnabled();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,6 +168,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * 
      * Buttons are filled in array order, from the leading side to the trailing side of the screen.
      */
+    @NotNull
     @Generated
     @Selector("nowPlayingButtons")
     public native NSArray<? extends CPNowPlayingButton> nowPlayingButtons();
@@ -171,7 +178,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("removeObserver:")
-    public native void removeObserver(@Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
+    public native void removeObserver(@NotNull @Mapped(ObjCObjectMapper.class) CPNowPlayingTemplateObserver observer);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -213,7 +220,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("setUpNextTitle:")
-    public native void setUpNextTitle(String value);
+    public native void setUpNextTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -229,6 +236,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * When the system needs to present now playing on behalf of your app, it will present
      * this shared instance.
      */
+    @NotNull
     @Generated
     @Selector("sharedTemplate")
     public static native CPNowPlayingTemplate sharedTemplate();
@@ -254,6 +262,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      * 
      * @see -[CPNowPlayingTemplate upNextButtonEnabled].
      */
+    @NotNull
     @Generated
     @Selector("upNextTitle")
     public native String upNextTitle();
@@ -263,7 +272,7 @@ public class CPNowPlayingTemplate extends CPTemplate {
      */
     @Generated
     @Selector("updateNowPlayingButtons:")
-    public native void updateNowPlayingButtons(NSArray<? extends CPNowPlayingButton> nowPlayingButtons);
+    public native void updateNowPlayingButtons(@NotNull NSArray<? extends CPNowPlayingButton> nowPlayingButtons);
 
     @Generated
     @Selector("version")

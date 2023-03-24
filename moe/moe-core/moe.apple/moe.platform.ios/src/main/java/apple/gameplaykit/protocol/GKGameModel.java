@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A protocol for abstracting a game model for use with the GKMinmaxStrategist class. The minmax
@@ -44,6 +46,7 @@ public interface GKGameModel extends NSCopying {
      * The player whose turn it is to perform an update to the game model. GKMinmaxStrategist assumes
      * that the next call to the applyGameModelUpdate: method will perform a move on behalf of this player.
      */
+    @Nullable
     @Generated
     @Selector("activePlayer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -57,7 +60,7 @@ public interface GKGameModel extends NSCopying {
      */
     @Generated
     @Selector("applyGameModelUpdate:")
-    void applyGameModelUpdate(@Mapped(ObjCObjectMapper.class) GKGameModelUpdate gameModelUpdate);
+    void applyGameModelUpdate(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModelUpdate gameModelUpdate);
 
     /**
      * Returns an array of all the GKGameModelUpdates (i.e. actions/moves) that the active
@@ -65,9 +68,10 @@ public interface GKGameModel extends NSCopying {
      * Returns nil if the specified player is invalid, is not a part of the game model, or
      * if there are no valid moves available.
      */
+    @Nullable
     @Generated
     @Selector("gameModelUpdatesForPlayer:")
-    NSArray<?> gameModelUpdatesForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
+    NSArray<?> gameModelUpdatesForPlayer(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player);
 
     /**
      * Returns YES if the specified player has reached a loss state, NO if otherwise. Note that NO does not
@@ -76,7 +80,7 @@ public interface GKGameModel extends NSCopying {
     @Generated
     @IsOptional
     @Selector("isLossForPlayer:")
-    default boolean isLossForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
+    default boolean isLossForPlayer(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -87,7 +91,7 @@ public interface GKGameModel extends NSCopying {
     @Generated
     @IsOptional
     @Selector("isWinForPlayer:")
-    default boolean isWinForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
+    default boolean isWinForPlayer(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,6 +100,7 @@ public interface GKGameModel extends NSCopying {
      * GKMinmaxStrategist class is used to find an optimal move for a specific player, it uses this
      * array to rate the moves of that player’s opponent(s).
      */
+    @Nullable
     @Generated
     @Selector("players")
     NSArray<?> players();
@@ -110,7 +115,7 @@ public interface GKGameModel extends NSCopying {
     @IsOptional
     @Selector("scoreForPlayer:")
     @NInt
-    default long scoreForPlayer(@Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
+    default long scoreForPlayer(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModelPlayer player) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,12 +127,12 @@ public interface GKGameModel extends NSCopying {
      */
     @Generated
     @Selector("setGameModel:")
-    void setGameModel(@Mapped(ObjCObjectMapper.class) GKGameModel gameModel);
+    void setGameModel(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModel gameModel);
 
     @Generated
     @IsOptional
     @Selector("unapplyGameModelUpdate:")
-    default void unapplyGameModelUpdate(@Mapped(ObjCObjectMapper.class) GKGameModelUpdate gameModelUpdate) {
+    default void unapplyGameModelUpdate(@NotNull @Mapped(ObjCObjectMapper.class) GKGameModelUpdate gameModelUpdate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

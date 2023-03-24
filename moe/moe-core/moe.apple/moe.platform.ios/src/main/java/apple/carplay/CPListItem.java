@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPListItem describes a single object appearing in a list template.
@@ -65,22 +67,25 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +101,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     /**
      * Any extra text displayed below the primary text in a cell displaying this list item.
      */
+    @Nullable
     @Generated
     @Selector("detailText")
     public native String detailText();
@@ -120,6 +126,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * To properly size your list images, your app should size them to the display scale of the car screen.
      * See -[CPInterfaceController carTraitCollection].
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -133,7 +140,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("initWithText:detailText:")
-    public native CPListItem initWithTextDetailText(String text, String detailText);
+    public native CPListItem initWithTextDetailText(@Nullable String text, @Nullable String detailText);
 
     /**
      * Initialize a list item with text, detail text, and an image.
@@ -156,7 +163,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("initWithText:detailText:image:")
-    public native CPListItem initWithTextDetailTextImage(String text, String detailText, UIImage image);
+    public native CPListItem initWithTextDetailTextImage(@Nullable String text, @Nullable String detailText,
+            @Nullable UIImage image);
 
     /**
      * Initialize a list item with text, detailtext, an image, and a disclosure indicator.
@@ -172,8 +180,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @Deprecated
     @Generated
     @Selector("initWithText:detailText:image:showsDisclosureIndicator:")
-    public native CPListItem initWithTextDetailTextImageShowsDisclosureIndicator(String text, String detailText,
-            UIImage image, boolean showsDisclosureIndicator);
+    public native CPListItem initWithTextDetailTextImageShowsDisclosureIndicator(@Nullable String text,
+            @Nullable String detailText, @Nullable UIImage image, boolean showsDisclosureIndicator);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -192,9 +200,10 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -211,7 +220,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -237,10 +246,12 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -266,6 +277,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      * 
      * [@note] If set, this property takes precedence over the @c accessoryType.
      */
+    @Nullable
     @Generated
     @Selector("accessoryImage")
     public native UIImage accessoryImage();
@@ -283,6 +295,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
     @NInt
     public native long accessoryType();
 
+    @Nullable
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -310,8 +323,9 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("initWithText:detailText:image:accessoryImage:accessoryType:")
-    public native CPListItem initWithTextDetailTextImageAccessoryImageAccessoryType(String text, String detailText,
-            UIImage image, UIImage accessoryImage, @NInt long accessoryType);
+    public native CPListItem initWithTextDetailTextImageAccessoryImageAccessoryType(@Nullable String text,
+            @Nullable String detailText, @Nullable UIImage image, @Nullable UIImage accessoryImage,
+            @NInt long accessoryType);
 
     /**
      * If YES, a cell displaying this list item will render with an explicit indicator to the trailing edge of the text
@@ -384,7 +398,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("setAccessoryImage:")
-    public native void setAccessoryImage(UIImage accessoryImage);
+    public native void setAccessoryImage(@Nullable UIImage accessoryImage);
 
     /**
      * An accessory image type to display in the trailing portion of this list item.
@@ -405,7 +419,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("setDetailText:")
-    public native void setDetailText(String detailText);
+    public native void setDetailText(@Nullable String detailText);
 
     /**
      * If YES, a cell displaying this list item will render with an explicit indicator to the trailing edge of the text
@@ -420,7 +434,8 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
 
     @Generated
     @Selector("setHandler:")
-    public native void setHandler(@ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
+    public native void setHandler(
+            @Nullable @ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
 
     /**
      * Update the image in this list item, reloading this item in the table if needed.
@@ -437,7 +452,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage image);
+    public native void setImage(@Nullable UIImage image);
 
     /**
      * Set a fractional value between 0 and 1 to display a progress bar on this list item.
@@ -489,7 +504,7 @@ public class CPListItem extends NSObject implements CPSelectableListItem {
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String text);
+    public native void setText(@NotNull String text);
 
     /**
      * If YES, a cell displaying this list item will render with an explicit label to the trailing edge of the text

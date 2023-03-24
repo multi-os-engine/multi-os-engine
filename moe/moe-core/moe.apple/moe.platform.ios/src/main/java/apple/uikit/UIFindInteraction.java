@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -51,6 +53,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      * If there's a currently active find session (implying isFindNavigatorVisible is true), returns the active find
      * session.
      */
+    @Nullable
     @Generated
     @Selector("activeFindSession")
     public native UIFindSession activeFindSession();
@@ -67,22 +70,25 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +100,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     /**
      * See UIFindInteractionDelegate above.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -105,7 +112,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
 
     @Generated
     @Selector("didMoveToView:")
-    public native void didMoveToView(UIView view);
+    public native void didMoveToView(@Nullable UIView view);
 
     /**
      * Dismisses the find navigator panel.
@@ -143,7 +150,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     @Generated
     @Selector("initWithSessionDelegate:")
     public native UIFindInteraction initWithSessionDelegate(
-            @Mapped(ObjCObjectMapper.class) UIFindInteractionDelegate sessionDelegate);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIFindInteractionDelegate sessionDelegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,9 +176,10 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,6 +191,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      * provided, representing the options
      * available in @c UITextSearchOptions, which can be either modified, augmented, or omitted.
      */
+    @Nullable
     @Generated
     @Selector("optionsMenuProvider")
     @ObjCBlock(name = "call_optionsMenuProvider_ret")
@@ -191,8 +200,9 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_optionsMenuProvider_ret {
+        @Nullable
         @Generated
-        UIMenu call_optionsMenuProvider_ret(NSArray<? extends UIMenuElement> arg0);
+        UIMenu call_optionsMenuProvider_ret(@NotNull NSArray<? extends UIMenuElement> arg0);
     }
 
     /**
@@ -209,6 +219,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      * If replacement is supported, assign this property to pre-populate the system find panel's replace text field with
      * a replacement string.
      */
+    @Nullable
     @Generated
     @Selector("replacementText")
     public native String replacementText();
@@ -224,6 +235,7 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     /**
      * Assign this property to pre-populate the system find panel's search text field with a search query.
      */
+    @Nullable
     @Generated
     @Selector("searchText")
     public native String searchText();
@@ -236,13 +248,14 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     @Generated
     @Selector("setOptionsMenuProvider:")
     public native void setOptionsMenuProvider(
-            @ObjCBlock(name = "call_setOptionsMenuProvider") Block_setOptionsMenuProvider value);
+            @Nullable @ObjCBlock(name = "call_setOptionsMenuProvider") Block_setOptionsMenuProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setOptionsMenuProvider {
+        @Nullable
         @Generated
-        UIMenu call_setOptionsMenuProvider(NSArray<? extends UIMenuElement> arg0);
+        UIMenu call_setOptionsMenuProvider(@NotNull NSArray<? extends UIMenuElement> arg0);
     }
 
     /**
@@ -251,14 +264,14 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
      */
     @Generated
     @Selector("setReplacementText:")
-    public native void setReplacementText(String value);
+    public native void setReplacementText(@Nullable String value);
 
     /**
      * Assign this property to pre-populate the system find panel's search text field with a search query.
      */
     @Generated
     @Selector("setSearchText:")
-    public native void setSearchText(String value);
+    public native void setSearchText(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -281,11 +294,12 @@ public class UIFindInteraction extends NSObject implements UIInteraction {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("view")
     public native UIView view();
 
     @Generated
     @Selector("willMoveToView:")
-    public native void willMoveToView(UIView view);
+    public native void willMoveToView(@Nullable UIView view);
 }

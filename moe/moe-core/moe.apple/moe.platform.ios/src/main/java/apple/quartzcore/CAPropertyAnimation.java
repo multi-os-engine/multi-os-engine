@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Subclass for property-based animations. *
@@ -85,26 +87,29 @@ public class CAPropertyAnimation extends CAAnimation {
      */
     @Generated
     @Selector("animationWithKeyPath:")
-    public static native CAPropertyAnimation animationWithKeyPath(String path);
+    public static native CAPropertyAnimation animationWithKeyPath(@Nullable String path);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,10 +118,11 @@ public class CAPropertyAnimation extends CAAnimation {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -144,9 +150,10 @@ public class CAPropertyAnimation extends CAAnimation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,7 +187,7 @@ public class CAPropertyAnimation extends CAAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAPropertyAnimation initWithCoder(NSCoder coder);
+    public native CAPropertyAnimation initWithCoder(@NotNull NSCoder coder);
 
     /**
      * When true the value specified by the animation will be "added" to
@@ -229,6 +236,7 @@ public class CAPropertyAnimation extends CAAnimation {
     /**
      * The key-path describing the property to be animated.
      */
+    @Nullable
     @Generated
     @Selector("keyPath")
     public native String keyPath();
@@ -238,7 +246,7 @@ public class CAPropertyAnimation extends CAAnimation {
      */
     @Generated
     @Selector("setKeyPath:")
-    public native void setKeyPath(String value);
+    public native void setKeyPath(@Nullable String value);
 
     /**
      * If non-nil a function that is applied to interpolated values
@@ -247,20 +255,22 @@ public class CAPropertyAnimation extends CAAnimation {
      */
     @Generated
     @Selector("setValueFunction:")
-    public native void setValueFunction(CAValueFunction value);
+    public native void setValueFunction(@Nullable CAValueFunction value);
 
     /**
      * If non-nil a function that is applied to interpolated values
      * before they are set as the new presentation value of the animation's
      * target property. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("valueFunction")
     public native CAValueFunction valueFunction();
 
+    @NotNull
     @Generated
     @Selector("animationWithSCNAnimation:")
-    public static native CAAnimation animationWithSCNAnimation(SCNAnimation animation);
+    public static native CAAnimation animationWithSCNAnimation(@NotNull SCNAnimation animation);
 
     @Generated
     @Selector("supportsSecureCoding")

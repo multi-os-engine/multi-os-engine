@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWTCPConnection
@@ -78,22 +80,25 @@ public class NWTCPConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class NWTCPConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,6 +188,7 @@ public class NWTCPConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("connectedPath")
     public native NWPath connectedPath();
@@ -193,6 +200,7 @@ public class NWTCPConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
@@ -205,6 +213,7 @@ public class NWTCPConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -253,7 +262,7 @@ public class NWTCPConnection extends NSObject {
      */
     @Generated
     @Selector("initWithUpgradeForConnection:")
-    public native NWTCPConnection initWithUpgradeForConnection(NWTCPConnection connection);
+    public native NWTCPConnection initWithUpgradeForConnection(@NotNull NWTCPConnection connection);
 
     /**
      * [@property] viable
@@ -273,6 +282,7 @@ public class NWTCPConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("localAddress")
     public native NWEndpoint localAddress();
@@ -291,7 +301,7 @@ public class NWTCPConnection extends NSObject {
     @Generated
     @Selector("readLength:completionHandler:")
     public native void readLengthCompletionHandler(@NUInt long length,
-            @ObjCBlock(name = "call_readLengthCompletionHandler") Block_readLengthCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_readLengthCompletionHandler") Block_readLengthCompletionHandler completion);
 
     /**
      * readMinimumLength:maximumLength:completionHandler:
@@ -323,7 +333,7 @@ public class NWTCPConnection extends NSObject {
     @Generated
     @Selector("readMinimumLength:maximumLength:completionHandler:")
     public native void readMinimumLengthMaximumLengthCompletionHandler(@NUInt long minimum, @NUInt long maximum,
-            @ObjCBlock(name = "call_readMinimumLengthMaximumLengthCompletionHandler") Block_readMinimumLengthMaximumLengthCompletionHandler completion);
+            @NotNull @ObjCBlock(name = "call_readMinimumLengthMaximumLengthCompletionHandler") Block_readMinimumLengthMaximumLengthCompletionHandler completion);
 
     /**
      * [@property] remoteAddress
@@ -332,6 +342,7 @@ public class NWTCPConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("remoteAddress")
     public native NWEndpoint remoteAddress();
@@ -357,6 +368,7 @@ public class NWTCPConnection extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("txtRecord")
     public native NSData txtRecord();
@@ -376,8 +388,8 @@ public class NWTCPConnection extends NSObject {
      */
     @Generated
     @Selector("write:completionHandler:")
-    public native void writeCompletionHandler(NSData data,
-            @ObjCBlock(name = "call_writeCompletionHandler") Block_writeCompletionHandler completion);
+    public native void writeCompletionHandler(@NotNull NSData data,
+            @NotNull @ObjCBlock(name = "call_writeCompletionHandler") Block_writeCompletionHandler completion);
 
     /**
      * writeClose:
@@ -397,20 +409,20 @@ public class NWTCPConnection extends NSObject {
     @Generated
     public interface Block_readLengthCompletionHandler {
         @Generated
-        void call_readLengthCompletionHandler(NSData data, NSError error);
+        void call_readLengthCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readMinimumLengthMaximumLengthCompletionHandler {
         @Generated
-        void call_readMinimumLengthMaximumLengthCompletionHandler(NSData data, NSError error);
+        void call_readMinimumLengthMaximumLengthCompletionHandler(@Nullable NSData data, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeCompletionHandler {
         @Generated
-        void call_writeCompletionHandler(NSError error);
+        void call_writeCompletionHandler(@Nullable NSError error);
     }
 }

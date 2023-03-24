@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INAnswerCallIntent. By implementing this protocol, a class can provide
@@ -43,8 +44,8 @@ public interface INAnswerCallIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmAnswerCall:completion:")
-    default void confirmAnswerCallCompletion(INAnswerCallIntent intent,
-            @ObjCBlock(name = "call_confirmAnswerCallCompletion") Block_confirmAnswerCallCompletion completion) {
+    default void confirmAnswerCallCompletion(@NotNull INAnswerCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmAnswerCallCompletion") Block_confirmAnswerCallCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,7 +53,7 @@ public interface INAnswerCallIntentHandling {
     @Generated
     public interface Block_confirmAnswerCallCompletion {
         @Generated
-        void call_confirmAnswerCallCompletion(INAnswerCallIntentResponse response);
+        void call_confirmAnswerCallCompletion(@NotNull INAnswerCallIntentResponse response);
     }
 
     /**
@@ -68,13 +69,13 @@ public interface INAnswerCallIntentHandling {
      */
     @Generated
     @Selector("handleAnswerCall:completion:")
-    void handleAnswerCallCompletion(INAnswerCallIntent intent,
-            @ObjCBlock(name = "call_handleAnswerCallCompletion") Block_handleAnswerCallCompletion completion);
+    void handleAnswerCallCompletion(@NotNull INAnswerCallIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleAnswerCallCompletion") Block_handleAnswerCallCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAnswerCallCompletion {
         @Generated
-        void call_handleAnswerCallCompletion(INAnswerCallIntentResponse response);
+        void call_handleAnswerCallCompletion(@NotNull INAnswerCallIntentResponse response);
     }
 }

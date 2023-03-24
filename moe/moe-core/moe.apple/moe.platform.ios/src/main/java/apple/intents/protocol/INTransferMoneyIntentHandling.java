@@ -14,6 +14,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INTransferMoneyIntent. By implementing this protocol, a class can provide
@@ -50,8 +51,8 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmTransferMoney:completion:")
-    default void confirmTransferMoneyCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_confirmTransferMoneyCompletion") Block_confirmTransferMoneyCompletion completion) {
+    default void confirmTransferMoneyCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmTransferMoneyCompletion") Block_confirmTransferMoneyCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,7 +60,7 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_confirmTransferMoneyCompletion {
         @Generated
-        void call_confirmTransferMoneyCompletion(INTransferMoneyIntentResponse response);
+        void call_confirmTransferMoneyCompletion(@NotNull INTransferMoneyIntentResponse response);
     }
 
     /**
@@ -75,14 +76,14 @@ public interface INTransferMoneyIntentHandling {
      */
     @Generated
     @Selector("handleTransferMoney:completion:")
-    void handleTransferMoneyCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_handleTransferMoneyCompletion") Block_handleTransferMoneyCompletion completion);
+    void handleTransferMoneyCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleTransferMoneyCompletion") Block_handleTransferMoneyCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleTransferMoneyCompletion {
         @Generated
-        void call_handleTransferMoneyCompletion(INTransferMoneyIntentResponse response);
+        void call_handleTransferMoneyCompletion(@NotNull INTransferMoneyIntentResponse response);
     }
 
     /**
@@ -99,8 +100,8 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveFromAccountForTransferMoney:withCompletion:")
-    default void resolveFromAccountForTransferMoneyWithCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_resolveFromAccountForTransferMoneyWithCompletion") Block_resolveFromAccountForTransferMoneyWithCompletion completion) {
+    default void resolveFromAccountForTransferMoneyWithCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveFromAccountForTransferMoneyWithCompletion") Block_resolveFromAccountForTransferMoneyWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,14 +109,15 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveFromAccountForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveFromAccountForTransferMoneyWithCompletion(INPaymentAccountResolutionResult resolutionResult);
+        void call_resolveFromAccountForTransferMoneyWithCompletion(
+                @NotNull INPaymentAccountResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveToAccountForTransferMoney:withCompletion:")
-    default void resolveToAccountForTransferMoneyWithCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_resolveToAccountForTransferMoneyWithCompletion") Block_resolveToAccountForTransferMoneyWithCompletion completion) {
+    default void resolveToAccountForTransferMoneyWithCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveToAccountForTransferMoneyWithCompletion") Block_resolveToAccountForTransferMoneyWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,14 +125,15 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveToAccountForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveToAccountForTransferMoneyWithCompletion(INPaymentAccountResolutionResult resolutionResult);
+        void call_resolveToAccountForTransferMoneyWithCompletion(
+                @NotNull INPaymentAccountResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTransactionAmountForTransferMoney:withCompletion:")
-    default void resolveTransactionAmountForTransferMoneyWithCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_resolveTransactionAmountForTransferMoneyWithCompletion") Block_resolveTransactionAmountForTransferMoneyWithCompletion completion) {
+    default void resolveTransactionAmountForTransferMoneyWithCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTransactionAmountForTransferMoneyWithCompletion") Block_resolveTransactionAmountForTransferMoneyWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,14 +142,14 @@ public interface INTransferMoneyIntentHandling {
     public interface Block_resolveTransactionAmountForTransferMoneyWithCompletion {
         @Generated
         void call_resolveTransactionAmountForTransferMoneyWithCompletion(
-                INPaymentAmountResolutionResult resolutionResult);
+                @NotNull INPaymentAmountResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTransactionNoteForTransferMoney:withCompletion:")
-    default void resolveTransactionNoteForTransferMoneyWithCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_resolveTransactionNoteForTransferMoneyWithCompletion") Block_resolveTransactionNoteForTransferMoneyWithCompletion completion) {
+    default void resolveTransactionNoteForTransferMoneyWithCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTransactionNoteForTransferMoneyWithCompletion") Block_resolveTransactionNoteForTransferMoneyWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -154,14 +157,15 @@ public interface INTransferMoneyIntentHandling {
     @Generated
     public interface Block_resolveTransactionNoteForTransferMoneyWithCompletion {
         @Generated
-        void call_resolveTransactionNoteForTransferMoneyWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveTransactionNoteForTransferMoneyWithCompletion(
+                @NotNull INStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTransactionScheduledDateForTransferMoney:withCompletion:")
-    default void resolveTransactionScheduledDateForTransferMoneyWithCompletion(INTransferMoneyIntent intent,
-            @ObjCBlock(name = "call_resolveTransactionScheduledDateForTransferMoneyWithCompletion") Block_resolveTransactionScheduledDateForTransferMoneyWithCompletion completion) {
+    default void resolveTransactionScheduledDateForTransferMoneyWithCompletion(@NotNull INTransferMoneyIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTransactionScheduledDateForTransferMoneyWithCompletion") Block_resolveTransactionScheduledDateForTransferMoneyWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -170,6 +174,6 @@ public interface INTransferMoneyIntentHandling {
     public interface Block_resolveTransactionScheduledDateForTransferMoneyWithCompletion {
         @Generated
         void call_resolveTransactionScheduledDateForTransferMoneyWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 }

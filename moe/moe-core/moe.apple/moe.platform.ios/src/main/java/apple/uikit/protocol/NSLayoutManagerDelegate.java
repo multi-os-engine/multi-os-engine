@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -54,7 +56,7 @@ public interface NSLayoutManagerDelegate {
     @Selector("layoutManager:boundingBoxForControlGlyphAtIndex:forTextContainer:proposedLineFragment:glyphPosition:characterIndex:")
     @ByValue
     default CGRect layoutManagerBoundingBoxForControlGlyphAtIndexForTextContainerProposedLineFragmentGlyphPositionCharacterIndex(
-            NSLayoutManager layoutManager, @NUInt long glyphIndex, NSTextContainer textContainer,
+            @NotNull NSLayoutManager layoutManager, @NUInt long glyphIndex, @NotNull NSTextContainer textContainer,
             @ByValue CGRect proposedRect, @ByValue CGPoint glyphPosition, @NUInt long charIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -69,8 +71,8 @@ public interface NSLayoutManagerDelegate {
     @Generated
     @IsOptional
     @Selector("layoutManager:didCompleteLayoutForTextContainer:atEnd:")
-    default void layoutManagerDidCompleteLayoutForTextContainerAtEnd(NSLayoutManager layoutManager,
-            NSTextContainer textContainer, boolean layoutFinishedFlag) {
+    default void layoutManagerDidCompleteLayoutForTextContainerAtEnd(@NotNull NSLayoutManager layoutManager,
+            @Nullable NSTextContainer textContainer, boolean layoutFinishedFlag) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,8 +85,8 @@ public interface NSLayoutManagerDelegate {
     @IsOptional
     @Selector("layoutManager:lineSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:")
     @NFloat
-    default double layoutManagerLineSpacingAfterGlyphAtIndexWithProposedLineFragmentRect(NSLayoutManager layoutManager,
-            @NUInt long glyphIndex, @ByValue CGRect rect) {
+    default double layoutManagerLineSpacingAfterGlyphAtIndexWithProposedLineFragmentRect(
+            @NotNull NSLayoutManager layoutManager, @NUInt long glyphIndex, @ByValue CGRect rect) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,7 +100,7 @@ public interface NSLayoutManagerDelegate {
     @Selector("layoutManager:paragraphSpacingAfterGlyphAtIndex:withProposedLineFragmentRect:")
     @NFloat
     default double layoutManagerParagraphSpacingAfterGlyphAtIndexWithProposedLineFragmentRect(
-            NSLayoutManager layoutManager, @NUInt long glyphIndex, @ByValue CGRect rect) {
+            @NotNull NSLayoutManager layoutManager, @NUInt long glyphIndex, @ByValue CGRect rect) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,7 +114,7 @@ public interface NSLayoutManagerDelegate {
     @Selector("layoutManager:paragraphSpacingBeforeGlyphAtIndex:withProposedLineFragmentRect:")
     @NFloat
     default double layoutManagerParagraphSpacingBeforeGlyphAtIndexWithProposedLineFragmentRect(
-            NSLayoutManager layoutManager, @NUInt long glyphIndex, @ByValue CGRect rect) {
+            @NotNull NSLayoutManager layoutManager, @NUInt long glyphIndex, @ByValue CGRect rect) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,8 +127,8 @@ public interface NSLayoutManagerDelegate {
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldBreakLineByHyphenatingBeforeCharacterAtIndex:")
-    default boolean layoutManagerShouldBreakLineByHyphenatingBeforeCharacterAtIndex(NSLayoutManager layoutManager,
-            @NUInt long charIndex) {
+    default boolean layoutManagerShouldBreakLineByHyphenatingBeforeCharacterAtIndex(
+            @NotNull NSLayoutManager layoutManager, @NUInt long charIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,7 +141,7 @@ public interface NSLayoutManagerDelegate {
     @Generated
     @IsOptional
     @Selector("layoutManager:shouldBreakLineByWordBeforeCharacterAtIndex:")
-    default boolean layoutManagerShouldBreakLineByWordBeforeCharacterAtIndex(NSLayoutManager layoutManager,
+    default boolean layoutManagerShouldBreakLineByWordBeforeCharacterAtIndex(@NotNull NSLayoutManager layoutManager,
             @NUInt long charIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -160,8 +162,8 @@ public interface NSLayoutManagerDelegate {
     @Selector("layoutManager:shouldGenerateGlyphs:properties:characterIndexes:font:forGlyphRange:")
     @NUInt
     default long layoutManagerShouldGenerateGlyphsPropertiesCharacterIndexesFontForGlyphRange(
-            NSLayoutManager layoutManager, ConstCharPtr glyphs, ConstNIntPtr props, ConstNUIntPtr charIndexes,
-            UIFont aFont, @ByValue NSRange glyphRange) {
+            @NotNull NSLayoutManager layoutManager, @NotNull ConstCharPtr glyphs, @NotNull ConstNIntPtr props,
+            @NotNull ConstNUIntPtr charIndexes, @NotNull UIFont aFont, @ByValue NSRange glyphRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -177,8 +179,9 @@ public interface NSLayoutManagerDelegate {
     @IsOptional
     @Selector("layoutManager:shouldSetLineFragmentRect:lineFragmentUsedRect:baselineOffset:inTextContainer:forGlyphRange:")
     default boolean layoutManagerShouldSetLineFragmentRectLineFragmentUsedRectBaselineOffsetInTextContainerForGlyphRange(
-            NSLayoutManager layoutManager, CGRect lineFragmentRect, CGRect lineFragmentUsedRect,
-            NFloatPtr baselineOffset, NSTextContainer textContainer, @ByValue NSRange glyphRange) {
+            @NotNull NSLayoutManager layoutManager, @NotNull CGRect lineFragmentRect,
+            @NotNull CGRect lineFragmentUsedRect, @NotNull NFloatPtr baselineOffset,
+            @NotNull NSTextContainer textContainer, @ByValue NSRange glyphRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -191,7 +194,7 @@ public interface NSLayoutManagerDelegate {
     @IsOptional
     @Selector("layoutManager:shouldUseAction:forControlCharacterAtIndex:")
     @NInt
-    default long layoutManagerShouldUseActionForControlCharacterAtIndex(NSLayoutManager layoutManager,
+    default long layoutManagerShouldUseActionForControlCharacterAtIndex(@NotNull NSLayoutManager layoutManager,
             @NInt long action, @NUInt long charIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -206,8 +209,8 @@ public interface NSLayoutManagerDelegate {
     @Generated
     @IsOptional
     @Selector("layoutManager:textContainer:didChangeGeometryFromSize:")
-    default void layoutManagerTextContainerDidChangeGeometryFromSize(NSLayoutManager layoutManager,
-            NSTextContainer textContainer, @ByValue CGSize oldSize) {
+    default void layoutManagerTextContainerDidChangeGeometryFromSize(@NotNull NSLayoutManager layoutManager,
+            @NotNull NSTextContainer textContainer, @ByValue CGSize oldSize) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -221,7 +224,7 @@ public interface NSLayoutManagerDelegate {
     @Generated
     @IsOptional
     @Selector("layoutManagerDidInvalidateLayout:")
-    default void layoutManagerDidInvalidateLayout(NSLayoutManager sender) {
+    default void layoutManagerDidInvalidateLayout(@NotNull NSLayoutManager sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

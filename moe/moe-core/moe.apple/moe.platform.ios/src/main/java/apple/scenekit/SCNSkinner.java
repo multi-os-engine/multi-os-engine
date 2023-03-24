@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNSkinner
@@ -79,22 +81,25 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,9 +174,9 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("skinnerWithBaseGeometry:bones:boneInverseBindTransforms:boneWeights:boneIndices:")
     public static native SCNSkinner skinnerWithBaseGeometryBonesBoneInverseBindTransformsBoneWeightsBoneIndices(
-            SCNGeometry baseGeometry, NSArray<? extends SCNNode> bones,
-            NSArray<? extends NSValue> boneInverseBindTransforms, SCNGeometrySource boneWeights,
-            SCNGeometrySource boneIndices);
+            @Nullable SCNGeometry baseGeometry, @NotNull NSArray<? extends SCNNode> bones,
+            @Nullable NSArray<? extends NSValue> boneInverseBindTransforms, @NotNull SCNGeometrySource boneWeights,
+            @NotNull SCNGeometrySource boneIndices);
 
     @Generated
     @Selector("superclass")
@@ -196,6 +202,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * instances), with
      * different sources, for instance.
      */
+    @Nullable
     @Generated
     @Selector("baseGeometry")
     public native SCNGeometry baseGeometry();
@@ -216,6 +223,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * 
      * The bone indices of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("boneIndices")
     public native SCNGeometrySource boneIndices();
@@ -227,6 +235,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * 
      * boneInverseBindTransforms is an array of SCNMatrix4 wrapped into instances of NSValue.
      */
+    @Nullable
     @Generated
     @Selector("boneInverseBindTransforms")
     public native NSArray<? extends NSValue> boneInverseBindTransforms();
@@ -236,6 +245,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * 
      * The bone weights of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("boneWeights")
     public native SCNGeometrySource boneWeights();
@@ -245,13 +255,14 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * 
      * The bones of the skinner.
      */
+    @NotNull
     @Generated
     @Selector("bones")
     public native NSArray<? extends SCNNode> bones();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -259,7 +270,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNSkinner initWithCoder(NSCoder coder);
+    public native SCNSkinner initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] baseGeometry
@@ -274,7 +285,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setBaseGeometry:")
-    public native void setBaseGeometry(SCNGeometry value);
+    public native void setBaseGeometry(@Nullable SCNGeometry value);
 
     /**
      * [@property] baseGeometryBindTransform
@@ -295,7 +306,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setSkeleton:")
-    public native void setSkeleton_unsafe(SCNNode value);
+    public native void setSkeleton_unsafe(@Nullable SCNNode value);
 
     /**
      * [@property] skeleton
@@ -304,6 +315,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * 
      * When setting a new skeleton, the new skeleton must have the same hierarchy of joints.
      */
+    @Nullable
     @Generated
     @Selector("skeleton")
     public native SCNNode skeleton();
@@ -322,7 +334,7 @@ public class SCNSkinner extends NSObject implements NSSecureCoding {
      * When setting a new skeleton, the new skeleton must have the same hierarchy of joints.
      */
     @Generated
-    public void setSkeleton(SCNNode value) {
+    public void setSkeleton(@Nullable SCNNode value) {
         Object __old = skeleton();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

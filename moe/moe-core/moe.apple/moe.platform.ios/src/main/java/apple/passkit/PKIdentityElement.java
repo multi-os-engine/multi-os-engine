@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Elements that can be requested from identity documents. Not
@@ -53,6 +55,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The address on record with the issuer.
      */
+    @NotNull
     @Generated
     @Selector("addressElement")
     public static native PKIdentityElement addressElement();
@@ -60,6 +63,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The user's age in years.
      */
+    @NotNull
     @Generated
     @Selector("ageElement")
     public static native PKIdentityElement ageElement();
@@ -70,6 +74,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
      * This value is only available for a given age if it was provided by the issuer. If this value
      * is not available, it will automatically fall back to a request for age.
      */
+    @NotNull
     @Generated
     @Selector("ageThresholdElementWithAge:")
     public static native PKIdentityElement ageThresholdElementWithAge(@NInt long age);
@@ -86,35 +91,40 @@ public class PKIdentityElement extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * The user's date of birth.
      */
+    @NotNull
     @Generated
     @Selector("dateOfBirthElement")
     public static native PKIdentityElement dateOfBirthElement();
@@ -131,6 +141,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
      * The document's expiration date. This is usually the expiration date of the corresponding physical
      * document, if applicable.
      */
+    @NotNull
     @Generated
     @Selector("documentExpirationDateElement")
     public static native PKIdentityElement documentExpirationDateElement();
@@ -139,6 +150,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
      * The document's issue date. This is usually the issue date of the corresponding physical
      * document, if applicable.
      */
+    @NotNull
     @Generated
     @Selector("documentIssueDateElement")
     public static native PKIdentityElement documentIssueDateElement();
@@ -146,6 +158,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The doument's number, as defined by the document's issuing authority.
      */
+    @NotNull
     @Generated
     @Selector("documentNumberElement")
     public static native PKIdentityElement documentNumberElement();
@@ -153,6 +166,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The user's driving privileges.
      */
+    @NotNull
     @Generated
     @Selector("drivingPrivilegesElement")
     public static native PKIdentityElement drivingPrivilegesElement();
@@ -160,6 +174,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The user's family name or last name.
      */
+    @NotNull
     @Generated
     @Selector("familyNameElement")
     public static native PKIdentityElement familyNameElement();
@@ -167,6 +182,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The user's given name or first name.
      */
+    @NotNull
     @Generated
     @Selector("givenNameElement")
     public static native PKIdentityElement givenNameElement();
@@ -200,13 +216,15 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The state or government that issued the identity document.
      */
+    @NotNull
     @Generated
     @Selector("issuingAuthorityElement")
     public static native PKIdentityElement issuingAuthorityElement();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -216,6 +234,7 @@ public class PKIdentityElement extends NSObject implements NSCopying {
     /**
      * The portrait of the user on record with the issuer.
      */
+    @NotNull
     @Generated
     @Selector("portraitElement")
     public static native PKIdentityElement portraitElement();

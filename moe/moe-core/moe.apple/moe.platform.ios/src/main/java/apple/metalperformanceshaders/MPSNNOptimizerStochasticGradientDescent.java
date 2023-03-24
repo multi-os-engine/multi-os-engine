@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSNNOptimizerStochasticGradientDescent
@@ -78,22 +80,25 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -144,10 +149,11 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationGradientState:batchNormalizationSourceState:inputMomentumVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationGradientStateBatchNormalizationSourceStateInputMomentumVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationGradientState,
-            MPSCNNBatchNormalizationState batchNormalizationSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationGradientState,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationSourceState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerStochasticGradientDescent object to a command buffer to perform out of place update
@@ -184,9 +190,10 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:batchNormalizationState:inputMomentumVectors:resultState:")
     public native void encodeToCommandBufferBatchNormalizationStateInputMomentumVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNBatchNormalizationState batchNormalizationState, NSArray<? extends MPSVector> inputMomentumVectors,
-            MPSCNNNormalizationGammaAndBetaState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull MPSCNNNormalizationGammaAndBetaState resultState);
 
     /**
      * Encode an MPSNNOptimizerStochasticGradientDescent object to a command buffer to perform out of place update
@@ -226,10 +233,11 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:convolutionGradientState:convolutionSourceState:inputMomentumVectors:resultState:")
     public native void encodeToCommandBufferConvolutionGradientStateConvolutionSourceStateInputMomentumVectorsResultState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MPSCNNConvolutionGradientState convolutionGradientState,
-            MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
-            NSArray<? extends MPSVector> inputMomentumVectors, MPSCNNConvolutionWeightsAndBiasesState resultState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSCNNConvolutionGradientState convolutionGradientState,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState convolutionSourceState,
+            @Nullable NSArray<? extends MPSVector> inputMomentumVectors,
+            @NotNull MPSCNNConvolutionWeightsAndBiasesState resultState);
 
     /**
      * API-Since: 13.0
@@ -237,8 +245,9 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientMatrix:inputValuesMatrix:inputMomentumMatrix:resultValuesMatrix:")
     public native void encodeToCommandBufferInputGradientMatrixInputValuesMatrixInputMomentumMatrixResultValuesMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix inputGradientMatrix,
-            MPSMatrix inputValuesMatrix, MPSMatrix inputMomentumMatrix, MPSMatrix resultValuesMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrix inputGradientMatrix, @NotNull MPSMatrix inputValuesMatrix,
+            @Nullable MPSMatrix inputMomentumMatrix, @NotNull MPSMatrix resultValuesMatrix);
 
     /**
      * Encode an MPSNNOptimizerStochasticGradientDescent object to a command buffer to perform out of place update
@@ -273,8 +282,9 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("encodeToCommandBuffer:inputGradientVector:inputValuesVector:inputMomentumVector:resultValuesVector:")
     public native void encodeToCommandBufferInputGradientVectorInputValuesVectorInputMomentumVectorResultValuesVector(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSVector inputGradientVector,
-            MPSVector inputValuesVector, MPSVector inputMomentumVector, MPSVector resultValuesVector);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSVector inputGradientVector, @NotNull MPSVector inputValuesVector,
+            @Nullable MPSVector inputMomentumVector, @NotNull MPSVector resultValuesVector);
 
     @Generated
     @Selector("hash")
@@ -287,16 +297,17 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNNOptimizerStochasticGradientDescent initWithCoder(NSCoder aDecoder);
+    public native MPSNNOptimizerStochasticGradientDescent initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNNOptimizerStochasticGradientDescent initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerStochasticGradientDescent initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNNOptimizerStochasticGradientDescent initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNNOptimizerStochasticGradientDescent initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Convenience initialization for the momentum update
@@ -309,13 +320,13 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("initWithDevice:learningRate:")
     public native MPSNNOptimizerStochasticGradientDescent initWithDeviceLearningRate(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float learningRate);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float learningRate);
 
     @Generated
     @Selector("initWithDevice:momentumScale:useNestrovMomentum:optimizerDescriptor:")
     public native MPSNNOptimizerStochasticGradientDescent initWithDeviceMomentumScaleUseNestrovMomentumOptimizerDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float momentumScale, boolean useNestrovMomentum,
-            MPSNNOptimizerDescriptor optimizerDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float momentumScale, boolean useNestrovMomentum,
+            @NotNull MPSNNOptimizerDescriptor optimizerDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -334,9 +345,10 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] momentumScale
@@ -405,8 +417,8 @@ public class MPSNNOptimizerStochasticGradientDescent extends MPSNNOptimizer {
     @Generated
     @Selector("initWithDevice:momentumScale:useNesterovMomentum:optimizerDescriptor:")
     public native MPSNNOptimizerStochasticGradientDescent initWithDeviceMomentumScaleUseNesterovMomentumOptimizerDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float momentumScale, boolean useNesterovMomentum,
-            MPSNNOptimizerDescriptor optimizerDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float momentumScale, boolean useNesterovMomentum,
+            @NotNull MPSNNOptimizerDescriptor optimizerDescriptor);
 
     /**
      * [@property] useNesterovMomentum

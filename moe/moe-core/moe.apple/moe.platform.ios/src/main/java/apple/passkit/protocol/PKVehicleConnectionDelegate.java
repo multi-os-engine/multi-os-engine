@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 15.4
@@ -26,5 +27,5 @@ public interface PKVehicleConnectionDelegate {
      */
     @Generated
     @Selector("sessionDidReceiveData:")
-    void sessionDidReceiveData(NSData data);
+    void sessionDidReceiveData(@NotNull NSData data);
 }

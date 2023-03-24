@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -59,22 +61,25 @@ public class CPTabBarTemplate extends CPTemplate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,6 +91,7 @@ public class CPTabBarTemplate extends CPTemplate {
     /**
      * The tab bar delegate is informed of tab bar events, like selecting a tab.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -106,7 +112,7 @@ public class CPTabBarTemplate extends CPTemplate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPTabBarTemplate initWithCoder(NSCoder coder);
+    public native CPTabBarTemplate initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize the tab bar with an array of templates. Each template in the array
@@ -116,7 +122,7 @@ public class CPTabBarTemplate extends CPTemplate {
      */
     @Generated
     @Selector("initWithTemplates:")
-    public native CPTabBarTemplate initWithTemplates(NSArray<? extends CPTemplate> templates);
+    public native CPTabBarTemplate initWithTemplates(@NotNull NSArray<? extends CPTemplate> templates);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -135,9 +141,10 @@ public class CPTabBarTemplate extends CPTemplate {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The maximum number of tabs that your app may display in a @c CPTabBarTemplate,
@@ -167,6 +174,7 @@ public class CPTabBarTemplate extends CPTemplate {
     /**
      * The currently-selected template in the tab bar.
      */
+    @Nullable
     @Generated
     @Selector("selectedTemplate")
     public native CPTemplate selectedTemplate();
@@ -176,13 +184,13 @@ public class CPTabBarTemplate extends CPTemplate {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value);
 
     /**
      * The tab bar delegate is informed of tab bar events, like selecting a tab.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPTabBarTemplateDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -215,6 +223,7 @@ public class CPTabBarTemplate extends CPTemplate {
      * The currently-visible templates in the tab bar. Each template corresponds to
      * a single tab on the tab bar.
      */
+    @NotNull
     @Generated
     @Selector("templates")
     public native NSArray<? extends CPTemplate> templates();
@@ -225,7 +234,7 @@ public class CPTabBarTemplate extends CPTemplate {
      */
     @Generated
     @Selector("updateTemplates:")
-    public native void updateTemplates(NSArray<? extends CPTemplate> newTemplates);
+    public native void updateTemplates(@NotNull NSArray<? extends CPTemplate> newTemplates);
 
     @Generated
     @Selector("version")

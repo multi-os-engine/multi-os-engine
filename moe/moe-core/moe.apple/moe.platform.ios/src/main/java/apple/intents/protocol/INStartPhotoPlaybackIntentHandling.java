@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INStartPhotoPlaybackIntent. By implementing this protocol, a class can
@@ -67,8 +68,8 @@ public interface INStartPhotoPlaybackIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmStartPhotoPlayback:completion:")
-    default void confirmStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntent intent,
-            @ObjCBlock(name = "call_confirmStartPhotoPlaybackCompletion") Block_confirmStartPhotoPlaybackCompletion completion) {
+    default void confirmStartPhotoPlaybackCompletion(@NotNull INStartPhotoPlaybackIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmStartPhotoPlaybackCompletion") Block_confirmStartPhotoPlaybackCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,14 +86,14 @@ public interface INStartPhotoPlaybackIntentHandling {
      */
     @Generated
     @Selector("handleStartPhotoPlayback:completion:")
-    void handleStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntent intent,
-            @ObjCBlock(name = "call_handleStartPhotoPlaybackCompletion") Block_handleStartPhotoPlaybackCompletion completion);
+    void handleStartPhotoPlaybackCompletion(@NotNull INStartPhotoPlaybackIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleStartPhotoPlaybackCompletion") Block_handleStartPhotoPlaybackCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveAlbumNameForStartPhotoPlayback:withCompletion:")
-    default void resolveAlbumNameForStartPhotoPlaybackWithCompletion(INStartPhotoPlaybackIntent intent,
-            @ObjCBlock(name = "call_resolveAlbumNameForStartPhotoPlaybackWithCompletion") Block_resolveAlbumNameForStartPhotoPlaybackWithCompletion completion) {
+    default void resolveAlbumNameForStartPhotoPlaybackWithCompletion(@NotNull INStartPhotoPlaybackIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAlbumNameForStartPhotoPlaybackWithCompletion") Block_resolveAlbumNameForStartPhotoPlaybackWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,24 +111,24 @@ public interface INStartPhotoPlaybackIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveDateCreatedForStartPhotoPlayback:withCompletion:")
-    default void resolveDateCreatedForStartPhotoPlaybackWithCompletion(INStartPhotoPlaybackIntent intent,
-            @ObjCBlock(name = "call_resolveDateCreatedForStartPhotoPlaybackWithCompletion") Block_resolveDateCreatedForStartPhotoPlaybackWithCompletion completion) {
+    default void resolveDateCreatedForStartPhotoPlaybackWithCompletion(@NotNull INStartPhotoPlaybackIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDateCreatedForStartPhotoPlaybackWithCompletion") Block_resolveDateCreatedForStartPhotoPlaybackWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveLocationCreatedForStartPhotoPlayback:withCompletion:")
-    default void resolveLocationCreatedForStartPhotoPlaybackWithCompletion(INStartPhotoPlaybackIntent intent,
-            @ObjCBlock(name = "call_resolveLocationCreatedForStartPhotoPlaybackWithCompletion") Block_resolveLocationCreatedForStartPhotoPlaybackWithCompletion completion) {
+    default void resolveLocationCreatedForStartPhotoPlaybackWithCompletion(@NotNull INStartPhotoPlaybackIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveLocationCreatedForStartPhotoPlaybackWithCompletion") Block_resolveLocationCreatedForStartPhotoPlaybackWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolvePeopleInPhotoForStartPhotoPlayback:withCompletion:")
-    default void resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion(INStartPhotoPlaybackIntent intent,
-            @ObjCBlock(name = "call_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion") Block_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion completion) {
+    default void resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion(@NotNull INStartPhotoPlaybackIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion") Block_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,21 +136,22 @@ public interface INStartPhotoPlaybackIntentHandling {
     @Generated
     public interface Block_confirmStartPhotoPlaybackCompletion {
         @Generated
-        void call_confirmStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntentResponse response);
+        void call_confirmStartPhotoPlaybackCompletion(@NotNull INStartPhotoPlaybackIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleStartPhotoPlaybackCompletion {
         @Generated
-        void call_handleStartPhotoPlaybackCompletion(INStartPhotoPlaybackIntentResponse response);
+        void call_handleStartPhotoPlaybackCompletion(@NotNull INStartPhotoPlaybackIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveAlbumNameForStartPhotoPlaybackWithCompletion {
         @Generated
-        void call_resolveAlbumNameForStartPhotoPlaybackWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveAlbumNameForStartPhotoPlaybackWithCompletion(
+                @NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -157,7 +159,7 @@ public interface INStartPhotoPlaybackIntentHandling {
     public interface Block_resolveDateCreatedForStartPhotoPlaybackWithCompletion {
         @Generated
         void call_resolveDateCreatedForStartPhotoPlaybackWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -165,7 +167,7 @@ public interface INStartPhotoPlaybackIntentHandling {
     public interface Block_resolveLocationCreatedForStartPhotoPlaybackWithCompletion {
         @Generated
         void call_resolveLocationCreatedForStartPhotoPlaybackWithCompletion(
-                INPlacemarkResolutionResult resolutionResult);
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -173,6 +175,6 @@ public interface INStartPhotoPlaybackIntentHandling {
     public interface Block_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion {
         @Generated
         void call_resolvePeopleInPhotoForStartPhotoPlaybackWithCompletion(
-                NSArray<? extends INPersonResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPersonResolutionResult> resolutionResults);
     }
 }

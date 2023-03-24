@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CIKernel is an object that encapsulates a Core Image Kernel Language
@@ -91,22 +93,25 @@ public class CIKernel extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -155,7 +160,7 @@ public class CIKernel extends NSObject {
     @Deprecated
     @Generated
     @Selector("kernelWithString:")
-    public static native CIKernel kernelWithString(String string);
+    public static native CIKernel kernelWithString(@NotNull String string);
 
     /**
      * The string argument should contain a program in the Core Image Kernel Language.
@@ -170,14 +175,16 @@ public class CIKernel extends NSObject {
      * Deprecated-Message: Core Image Kernel Language API deprecated. (Define CI_SILENCE_GL_DEPRECATION to silence these
      * warnings)
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("kernelsWithString:")
-    public static native NSArray<? extends CIKernel> kernelsWithString(String string);
+    public static native NSArray<? extends CIKernel> kernelsWithString(@NotNull String string);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -221,11 +228,12 @@ public class CIKernel extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("applyWithExtent:roiCallback:arguments:")
     public native CIImage applyWithExtentRoiCallbackArguments(@ByValue CGRect extent,
-            @ObjCBlock(name = "call_applyWithExtentRoiCallbackArguments") Block_applyWithExtentRoiCallbackArguments callback,
-            NSArray<?> args);
+            @NotNull @ObjCBlock(name = "call_applyWithExtentRoiCallbackArguments") Block_applyWithExtentRoiCallbackArguments callback,
+            @Nullable NSArray<?> args);
 
     @Generated
     @Selector("init")
@@ -236,6 +244,7 @@ public class CIKernel extends NSObject {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -263,7 +272,7 @@ public class CIKernel extends NSObject {
      */
     @Generated
     @Selector("setROISelector:")
-    public native void setROISelector(SEL method);
+    public native void setROISelector(@NotNull SEL method);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -284,16 +293,16 @@ public class CIKernel extends NSObject {
      */
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:error:")
-    public static native CIKernel kernelWithFunctionNameFromMetalLibraryDataError(String name, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native CIKernel kernelWithFunctionNameFromMetalLibraryDataError(@NotNull String name,
+            @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @Selector("kernelWithFunctionName:fromMetalLibraryData:outputPixelFormat:error:")
-    public static native CIKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(String name,
-            NSData data, int format, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native CIKernel kernelWithFunctionNameFromMetalLibraryDataOutputPixelFormatError(@NotNull String name,
+            @NotNull NSData data, int format, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * This method will return an array of strings corresponding to names of all of the kernels
@@ -301,9 +310,10 @@ public class CIKernel extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("kernelNamesFromMetalLibraryData:")
-    public static native NSArray<String> kernelNamesFromMetalLibraryData(NSData data);
+    public static native NSArray<String> kernelNamesFromMetalLibraryData(@NotNull NSData data);
 
     /**
      * The string argument should contain a program in the Metal Language.
@@ -315,8 +325,9 @@ public class CIKernel extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("kernelsWithMetalString:error:")
-    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(String source,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<? extends CIKernel> kernelsWithMetalStringError(@NotNull String source,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

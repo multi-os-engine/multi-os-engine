@@ -8,6 +8,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLIOCommandQueue
@@ -28,6 +30,7 @@ public interface MTLIOCommandQueue {
      * Vends an autoreleased commandBuffer that can be used to
      * encode commands that read from handle objects and write to MTLResource objects.
      */
+    @NotNull
     @Generated
     @Selector("commandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -44,6 +47,7 @@ public interface MTLIOCommandQueue {
      * For correct execution its the application's responsibility to retain
      * objects referenced by commands within the commandBuffer.
      */
+    @NotNull
     @Generated
     @Selector("commandBufferWithUnretainedReferences")
     @MappedReturn(ObjCObjectMapper.class)
@@ -67,6 +71,7 @@ public interface MTLIOCommandQueue {
      * 
      * An optional label for this handle.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -78,5 +83,5 @@ public interface MTLIOCommandQueue {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

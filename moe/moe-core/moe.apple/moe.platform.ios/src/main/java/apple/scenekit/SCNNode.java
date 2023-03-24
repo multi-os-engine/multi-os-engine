@@ -70,6 +70,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNNode
@@ -110,22 +112,25 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -160,9 +165,10 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,16 +191,17 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * @param geometry The geometry to attach.
      */
+    @NotNull
     @Generated
     @Selector("nodeWithGeometry:")
-    public static native SCNNode nodeWithGeometry(SCNGeometry geometry);
+    public static native SCNNode nodeWithGeometry(@Nullable SCNGeometry geometry);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("nodeWithMDLObject:")
-    public static native SCNNode nodeWithMDLObject(MDLObject mdlObject);
+    public static native SCNNode nodeWithMDLObject(@NotNull MDLObject mdlObject);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -221,17 +228,20 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("actionForKey:")
-    public native SCNAction actionForKey(String key);
+    public native SCNAction actionForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("actionKeys")
     public native NSArray<String> actionKeys();
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
     /**
      * addAudioPlayer:
@@ -242,7 +252,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("addAudioPlayer:")
-    public native void addAudioPlayer(SCNAudioPlayer player);
+    public native void addAudioPlayer(@NotNull SCNAudioPlayer player);
 
     /**
      * addChildNode:
@@ -253,20 +263,22 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("addChildNode:")
-    public native void addChildNode(SCNNode child);
+    public native void addChildNode(@NotNull SCNNode child);
 
     /**
      * Add a particle system to the receiver.
      */
     @Generated
     @Selector("addParticleSystem:")
-    public native void addParticleSystem(SCNParticleSystem system);
+    public native void addParticleSystem(@NotNull SCNParticleSystem system);
 
+    @Nullable
     @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
@@ -278,6 +290,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("audioPlayers")
     public native NSArray<? extends SCNAudioPlayer> audioPlayers();
@@ -287,6 +300,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Determines the camera attached to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("camera")
     public native SCNCamera camera();
@@ -325,15 +339,17 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * @param name        The name of the node you are searching for.
      * @param recursively Set to YES if you want the search to look through the sub-nodes recursively.
      */
+    @Nullable
     @Generated
     @Selector("childNodeWithName:recursively:")
-    public native SCNNode childNodeWithNameRecursively(String name, boolean recursively);
+    public native SCNNode childNodeWithNameRecursively(@NotNull String name, boolean recursively);
 
     /**
      * [@property] childNodes
      * 
      * Returns the child node array of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("childNodes")
     public native NSArray<? extends SCNNode> childNodes();
@@ -351,10 +367,11 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      *                  should only ever set this Boolean to YES within the Block. The Block returns a Boolean value
      *                  that indicates whether "child" passed the test.
      */
+    @NotNull
     @Generated
     @Selector("childNodesPassingTest:")
     public native NSArray<? extends SCNNode> childNodesPassingTest(
-            @ObjCBlock(name = "call_childNodesPassingTest") Block_childNodesPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_childNodesPassingTest") Block_childNodesPassingTest predicate);
 
     /**
      * clone
@@ -366,6 +383,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * if you want, for example, to change the materials of the copy independently of the original object, you'll
      * have to copy the geometry of the node separately.
      */
+    @NotNull
     @Generated
     @Selector("clone")
     public native SCNNode clone();
@@ -377,6 +395,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Adding or removing a constraint can be implicitly animated based on the current transaction.
      */
+    @Nullable
     @Generated
     @Selector("constraints")
     public native NSArray<? extends SCNConstraint> constraints();
@@ -393,7 +412,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("convertPosition:fromNode:")
     @ByValue
-    public native SCNVector3 convertPositionFromNode(@ByValue SCNVector3 position, SCNNode node);
+    public native SCNVector3 convertPositionFromNode(@ByValue SCNVector3 position, @Nullable SCNNode node);
 
     /**
      * convertPosition:toNode:
@@ -407,7 +426,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("convertPosition:toNode:")
     @ByValue
-    public native SCNVector3 convertPositionToNode(@ByValue SCNVector3 position, SCNNode node);
+    public native SCNVector3 convertPositionToNode(@ByValue SCNVector3 position, @Nullable SCNNode node);
 
     /**
      * convertTransform:fromNode:
@@ -421,7 +440,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("convertTransform:fromNode:")
     @ByValue
-    public native SCNMatrix4 convertTransformFromNode(@ByValue SCNMatrix4 transform, SCNNode node);
+    public native SCNMatrix4 convertTransformFromNode(@ByValue SCNMatrix4 transform, @Nullable SCNNode node);
 
     /**
      * convertTransform:toNode:
@@ -435,17 +454,18 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("convertTransform:toNode:")
     @ByValue
-    public native SCNMatrix4 convertTransformToNode(@ByValue SCNMatrix4 transform, SCNNode node);
+    public native SCNMatrix4 convertTransformToNode(@ByValue SCNMatrix4 transform, @Nullable SCNNode node);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * enumerateChildNodesUsingBlock:
@@ -462,7 +482,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("enumerateChildNodesUsingBlock:")
     public native void enumerateChildNodesUsingBlock(
-            @ObjCBlock(name = "call_enumerateChildNodesUsingBlock") Block_enumerateChildNodesUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateChildNodesUsingBlock") Block_enumerateChildNodesUsingBlock block);
 
     /**
      * enumerateHierarchyUsingBlock:
@@ -482,7 +502,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("enumerateHierarchyUsingBlock:")
     public native void enumerateHierarchyUsingBlock(
-            @ObjCBlock(name = "call_enumerateHierarchyUsingBlock") Block_enumerateHierarchyUsingBlock block);
+            @NotNull @ObjCBlock(name = "call_enumerateHierarchyUsingBlock") Block_enumerateHierarchyUsingBlock block);
 
     /**
      * [@property] eulerAngles
@@ -511,6 +531,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * filter is attached to. If the inputs of the filter are modified directly after the filter is attached to a node,
      * the behavior is undefined.
      */
+    @Nullable
     @Generated
     @Selector("filters")
     public native NSArray<? extends CIFilter> filters();
@@ -522,6 +543,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * hierarchy.
      * The returned clone is autoreleased.
      */
+    @NotNull
     @Generated
     @Selector("flattenedClone")
     public native SCNNode flattenedClone();
@@ -531,17 +553,18 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Returns the geometry attached to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("geometry")
     public native SCNGeometry geometry();
 
     @Generated
     @Selector("getBoundingBoxMin:max:")
-    public native boolean getBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
+    public native boolean getBoundingBoxMinMax(@Nullable SCNVector3 min, @Nullable SCNVector3 max);
 
     @Generated
     @Selector("getBoundingSphereCenter:radius:")
-    public native boolean getBoundingSphereCenterRadius(SCNVector3 center, NFloatPtr radius);
+    public native boolean getBoundingSphereCenterRadius(@Nullable SCNVector3 center, @Nullable NFloatPtr radius);
 
     @Generated
     @Selector("hasActions")
@@ -560,10 +583,11 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * @param options Optional parameters (see the "Hit test options" section in SCNSceneRenderer.h for the available
      *                options).
      */
+    @NotNull
     @Generated
     @Selector("hitTestWithSegmentFromPoint:toPoint:options:")
     public native NSArray<? extends SCNHitTestResult> hitTestWithSegmentFromPointToPointOptions(
-            @ByValue SCNVector3 pointA, @ByValue SCNVector3 pointB, NSDictionary<String, ?> options);
+            @ByValue SCNVector3 pointA, @ByValue SCNVector3 pointB, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("init")
@@ -571,7 +595,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNNode initWithCoder(NSCoder coder);
+    public native SCNNode initWithCoder(@NotNull NSCoder coder);
 
     /**
      * insertChildNode:atIndex:
@@ -583,12 +607,12 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("insertChildNode:atIndex:")
-    public native void insertChildNodeAtIndex(SCNNode child, @NUInt long index);
+    public native void insertChildNodeAtIndex(@NotNull SCNNode child, @NUInt long index);
 
     @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     /**
      * [@property] hidden
@@ -631,6 +655,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Determines the light attached to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("light")
     public native SCNLight light();
@@ -640,6 +665,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Returns the morpher attached to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("morpher")
     public native SCNMorpher morpher();
@@ -663,6 +689,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Determines the name of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -692,6 +719,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Returns the parent node of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("parentNode")
     public native SCNNode parentNode();
@@ -699,6 +727,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     /**
      * The particle systems attached to the node.
      */
+    @Nullable
     @Generated
     @Selector("particleSystems")
     public native NSArray<? extends SCNParticleSystem> particleSystems();
@@ -706,7 +735,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     /**
      * [@property] physicsBody
@@ -715,6 +744,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Default is nil.
      */
+    @Nullable
     @Generated
     @Selector("physicsBody")
     public native SCNPhysicsBody physicsBody();
@@ -726,6 +756,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Default is nil.
      */
+    @Nullable
     @Generated
     @Selector("physicsField")
     public native SCNPhysicsField physicsField();
@@ -761,13 +792,14 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * The effect of attempting to modify the returned node in any way is undefined. The returned node has no parent and
      * no child nodes.
      */
+    @NotNull
     @Generated
     @Selector("presentationNode")
     public native SCNNode presentationNode();
 
     @Generated
     @Selector("removeActionForKey:")
-    public native void removeActionForKey(String key);
+    public native void removeActionForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllActions")
@@ -797,12 +829,12 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * removeAudioPlayer:
@@ -813,7 +845,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("removeAudioPlayer:")
-    public native void removeAudioPlayer(SCNAudioPlayer player);
+    public native void removeAudioPlayer(@NotNull SCNAudioPlayer player);
 
     /**
      * removeFromParentNode
@@ -829,7 +861,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("removeParticleSystem:")
-    public native void removeParticleSystem(SCNParticleSystem system);
+    public native void removeParticleSystem(@NotNull SCNParticleSystem system);
 
     /**
      * [@property] rendererDelegate
@@ -844,6 +876,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * You would typically use a renderer delegate with a node that has no geometry and only serves as a location in
      * space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
      */
+    @Nullable
     @Generated
     @Selector("rendererDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -873,12 +906,12 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("replaceChildNode:with:")
-    public native void replaceChildNodeWith(SCNNode oldChild, SCNNode newChild);
+    public native void replaceChildNodeWith(@NotNull SCNNode oldChild, @NotNull SCNNode newChild);
 
     @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] rotation
@@ -895,21 +928,21 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("runAction:")
-    public native void runAction(SCNAction action);
+    public native void runAction(@NotNull SCNAction action);
 
     @Generated
     @Selector("runAction:completionHandler:")
-    public native void runActionCompletionHandler(SCNAction action,
-            @ObjCBlock(name = "call_runActionCompletionHandler") SCNActionable.Block_runActionCompletionHandler block);
+    public native void runActionCompletionHandler(@NotNull SCNAction action,
+            @Nullable @ObjCBlock(name = "call_runActionCompletionHandler") SCNActionable.Block_runActionCompletionHandler block);
 
     @Generated
     @Selector("runAction:forKey:")
-    public native void runActionForKey(SCNAction action, String key);
+    public native void runActionForKey(@NotNull SCNAction action, @Nullable String key);
 
     @Generated
     @Selector("runAction:forKey:completionHandler:")
-    public native void runActionForKeyCompletionHandler(SCNAction action, String key,
-            @ObjCBlock(name = "call_runActionForKeyCompletionHandler") SCNActionable.Block_runActionForKeyCompletionHandler block);
+    public native void runActionForKeyCompletionHandler(@NotNull SCNAction action, @Nullable String key,
+            @Nullable @ObjCBlock(name = "call_runActionForKeyCompletionHandler") SCNActionable.Block_runActionForKeyCompletionHandler block);
 
     /**
      * [@property] scale
@@ -923,7 +956,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("setBoundingBoxMin:max:")
-    public native void setBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
+    public native void setBoundingBoxMinMax(@Nullable SCNVector3 min, @Nullable SCNVector3 max);
 
     /**
      * [@property] camera
@@ -932,7 +965,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setCamera:")
-    public native void setCamera(SCNCamera value);
+    public native void setCamera(@Nullable SCNCamera value);
 
     /**
      * [@property] castsShadow
@@ -966,7 +999,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setConstraints:")
-    public native void setConstraints(NSArray<? extends SCNConstraint> value);
+    public native void setConstraints(@Nullable NSArray<? extends SCNConstraint> value);
 
     /**
      * [@property] eulerAngles
@@ -996,7 +1029,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setFilters:")
-    public native void setFilters(NSArray<? extends CIFilter> value);
+    public native void setFilters(@Nullable NSArray<? extends CIFilter> value);
 
     /**
      * [@property] geometry
@@ -1005,7 +1038,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setGeometry:")
-    public native void setGeometry(SCNGeometry value);
+    public native void setGeometry(@Nullable SCNGeometry value);
 
     /**
      * [@property] light
@@ -1014,7 +1047,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setLight:")
-    public native void setLight(SCNLight value);
+    public native void setLight(@Nullable SCNLight value);
 
     /**
      * [@property] morpher
@@ -1023,7 +1056,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setMorpher:")
-    public native void setMorpher(SCNMorpher value);
+    public native void setMorpher(@Nullable SCNMorpher value);
 
     /**
      * [@property] movabilityHint
@@ -1045,7 +1078,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * [@property] opacity
@@ -1074,7 +1107,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setPhysicsBody:")
-    public native void setPhysicsBody(SCNPhysicsBody value);
+    public native void setPhysicsBody(@Nullable SCNPhysicsBody value);
 
     /**
      * [@property] physicsField
@@ -1085,7 +1118,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setPhysicsField:")
-    public native void setPhysicsField(SCNPhysicsField value);
+    public native void setPhysicsField(@Nullable SCNPhysicsField value);
 
     /**
      * [@property] pivot
@@ -1120,7 +1153,8 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setRendererDelegate:")
-    public native void setRendererDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNNodeRendererDelegate value);
+    public native void setRendererDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) SCNNodeRendererDelegate value);
 
     /**
      * [@property] rendererDelegate
@@ -1136,7 +1170,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * space. An example would be attaching a particle system to that node and render it with custom OpenGL code.
      */
     @Generated
-    public void setRendererDelegate(@Mapped(ObjCObjectMapper.class) SCNNodeRendererDelegate value) {
+    public void setRendererDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SCNNodeRendererDelegate value) {
         Object __old = rendererDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1186,12 +1220,12 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setSkinner:")
-    public native void setSkinner(SCNSkinner value);
+    public native void setSkinner(@Nullable SCNSkinner value);
 
     @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * [@property] transform
@@ -1210,6 +1244,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      * Returns the skinner attached to the receiver.
      */
+    @Nullable
     @Generated
     @Selector("skinner")
     public native SCNSkinner skinner();
@@ -1247,30 +1282,31 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     public interface Block_childNodesPassingTest {
         @Generated
-        boolean call_childNodesPassingTest(SCNNode child, BoolPtr stop);
+        boolean call_childNodesPassingTest(@NotNull SCNNode child, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateChildNodesUsingBlock {
         @Generated
-        void call_enumerateChildNodesUsingBlock(SCNNode child, BoolPtr stop);
+        void call_enumerateChildNodesUsingBlock(@NotNull SCNNode child, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateHierarchyUsingBlock {
         @Generated
-        void call_enumerateHierarchyUsingBlock(SCNNode node, BoolPtr stop);
+        void call_enumerateHierarchyUsingBlock(@NotNull SCNNode node, @NotNull BoolPtr stop);
     }
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     @Generated
     @Selector("canBecomeFocused")
@@ -1290,7 +1326,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("convertVector:fromNode:")
     @ByValue
-    public native SCNVector3 convertVectorFromNode(@ByValue SCNVector3 vector, SCNNode node);
+    public native SCNVector3 convertVectorFromNode(@ByValue SCNVector3 vector, @Nullable SCNNode node);
 
     /**
      * Converts a vector from the coordinate system of a given node to that of the receiver.
@@ -1306,12 +1342,12 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @Selector("convertVector:toNode:")
     @ByValue
-    public native SCNVector3 convertVectorToNode(@ByValue SCNVector3 vector, SCNNode node);
+    public native SCNVector3 convertVectorToNode(@ByValue SCNVector3 vector, @Nullable SCNNode node);
 
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    public native void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     /**
      * The GKEntity associated with the node via a GKSCNNodeComponent.
@@ -1320,6 +1356,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      * 
      *      API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("entity")
     public native GKEntity entity();
@@ -1422,10 +1459,12 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     public native void lookAtUpLocalFront(@ByValue SCNVector3 worldTarget, @ByValue SCNVector3 worldUp,
             @ByValue SCNVector3 localFront);
 
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
@@ -1434,7 +1473,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * Apply a rotation relative to a target point in parent space.
@@ -1457,7 +1496,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      */
     @Generated
     @Selector("setEntity:")
-    public native void setEntity_unsafe(GKEntity value);
+    public native void setEntity_unsafe(@Nullable GKEntity value);
 
     /**
      * The GKEntity associated with the node via a GKSCNNodeComponent.
@@ -1467,7 +1506,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
      *      API-Since: 11.0
      */
     @Generated
-    public void setEntity(GKEntity value) {
+    public void setEntity(@Nullable GKEntity value) {
         Object __old = entity();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -1524,7 +1563,7 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
 
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    public native boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     @Generated
     @Selector("updateFocusIfNeeded")
@@ -1593,8 +1632,9 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @Generated
     @IsOptional
     @Selector("didHintFocusMovement:")
-    public native void didHintFocusMovement(UIFocusMovementHint hint);
+    public native void didHintFocusMovement(@NotNull UIFocusMovementHint hint);
 
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1605,16 +1645,19 @@ public class SCNNode extends NSObject implements NSCopying, NSSecureCoding, SCNA
     @ByValue
     public native CGRect frame();
 
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusEnvironment parentFocusEnvironment();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusEffect")

@@ -47,6 +47,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The @c CNContactViewController is used to display a contact.
@@ -91,29 +93,32 @@ public class CNContactViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -130,6 +135,7 @@ public class CNContactViewController extends UIViewController {
      * this descriptor must have been included in the @c keysToFetch property of the
      * [@c] CNContactFetchRequest. (A newly created @c CNMutableContact may be used safely.)
      */
+    @NotNull
     @Generated
     @Selector("descriptorForRequiredKeys")
     @MappedReturn(ObjCObjectMapper.class)
@@ -157,9 +163,10 @@ public class CNContactViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,7 +207,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("viewControllerForContact:")
-    public static native CNContactViewController viewControllerForContact(CNContact contact);
+    public static native CNContactViewController viewControllerForContact(@NotNull CNContact contact);
 
     /**
      * Initializes a contact view controller for creating a new contact.
@@ -211,7 +218,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("viewControllerForNewContact:")
-    public static native CNContactViewController viewControllerForNewContact(CNContact contact);
+    public static native CNContactViewController viewControllerForNewContact(@Nullable CNContact contact);
 
     /**
      * Initializes a contact view controller for an unknown contact.
@@ -226,7 +233,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("viewControllerForUnknownContact:")
-    public static native CNContactViewController viewControllerForUnknownContact(CNContact contact);
+    public static native CNContactViewController viewControllerForUnknownContact(@NotNull CNContact contact);
 
     /**
      * YES by default
@@ -245,6 +252,7 @@ public class CNContactViewController extends UIViewController {
     /**
      * The name to use if the contact has no display name.
      */
+    @Nullable
     @Generated
     @Selector("alternateName")
     public native String alternateName();
@@ -252,6 +260,7 @@ public class CNContactViewController extends UIViewController {
     /**
      * The contact being displayed.
      */
+    @NotNull
     @Generated
     @Selector("contact")
     public native CNContact contact();
@@ -271,6 +280,7 @@ public class CNContactViewController extends UIViewController {
      * 
      * @see allowsEditing
      */
+    @Nullable
     @Generated
     @Selector("contactStore")
     public native CNContactStore contactStore();
@@ -278,6 +288,7 @@ public class CNContactViewController extends UIViewController {
     /**
      * The delegate to be notified.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -289,6 +300,7 @@ public class CNContactViewController extends UIViewController {
      * If @c nil, all properties are displayed. (The property is @c nil by default.)
      * [@note] All properties are visible when editing the contact.
      */
+    @Nullable
     @Generated
     @Selector("displayedPropertyKeys")
     public native NSArray<?> displayedPropertyKeys();
@@ -301,7 +313,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("highlightPropertyWithKey:identifier:")
-    public native void highlightPropertyWithKeyIdentifier(String key, String identifier);
+    public native void highlightPropertyWithKeyIdentifier(@NotNull String key, @Nullable String identifier);
 
     @Generated
     @Selector("init")
@@ -309,15 +321,17 @@ public class CNContactViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContactViewController initWithCoder(NSCoder coder);
+    public native CNContactViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native CNContactViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native CNContactViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * The message to display under the name.
      */
+    @Nullable
     @Generated
     @Selector("message")
     public native String message();
@@ -327,6 +341,7 @@ public class CNContactViewController extends UIViewController {
      * 
      * If not set the contact is added to the default container.
      */
+    @Nullable
     @Generated
     @Selector("parentContainer")
     public native CNContainer parentContainer();
@@ -338,6 +353,7 @@ public class CNContactViewController extends UIViewController {
      * [@note] When set to a group not in the default container, the container
      * property must also be set to the container of parentGroup.
      */
+    @Nullable
     @Generated
     @Selector("parentGroup")
     public native CNGroup parentGroup();
@@ -361,7 +377,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("setAlternateName:")
-    public native void setAlternateName(String value);
+    public native void setAlternateName(@Nullable String value);
 
     /**
      * The @c CNContactStore where the contact was fetched from or will be saved to.
@@ -380,20 +396,21 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("setContactStore:")
-    public native void setContactStore(CNContactStore value);
+    public native void setContactStore(@Nullable CNContactStore value);
 
     /**
      * The delegate to be notified.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value);
 
     /**
      * The delegate to be notified.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CNContactViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -412,14 +429,14 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("setDisplayedPropertyKeys:")
-    public native void setDisplayedPropertyKeys(NSArray<?> value);
+    public native void setDisplayedPropertyKeys(@Nullable NSArray<?> value);
 
     /**
      * The message to display under the name.
      */
     @Generated
     @Selector("setMessage:")
-    public native void setMessage(String value);
+    public native void setMessage(@Nullable String value);
 
     /**
      * A @c CNContainer where the new contact will be created.
@@ -428,7 +445,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("setParentContainer:")
-    public native void setParentContainer(CNContainer value);
+    public native void setParentContainer(@Nullable CNContainer value);
 
     /**
      * A @c CNGroup where the new contact will be assigned membership.
@@ -439,7 +456,7 @@ public class CNContactViewController extends UIViewController {
      */
     @Generated
     @Selector("setParentGroup:")
-    public native void setParentGroup(CNGroup value);
+    public native void setParentGroup(@Nullable CNGroup value);
 
     /**
      * NO by default

@@ -8,6 +8,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to \c GCButtonElement represents a momentary switch,
@@ -25,6 +27,7 @@ public interface GCButtonElement extends GCPhysicalInputElement {
     /**
      * Get the input containing the pressed state of the button.
      */
+    @NotNull
     @Generated
     @Selector("pressedInput")
     @MappedReturn(ObjCObjectMapper.class)
@@ -36,6 +39,7 @@ public interface GCButtonElement extends GCPhysicalInputElement {
      * Some buttons feature capacitive touch capabilities where the user can touch the
      * button without pressing it.
      */
+    @Nullable
     @Generated
     @Selector("touchedInput")
     @MappedReturn(ObjCObjectMapper.class)

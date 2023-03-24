@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] SCNProgramDelegate
@@ -50,7 +51,7 @@ public interface SCNProgramDelegate {
     @Generated
     @IsOptional
     @Selector("program:handleError:")
-    default void programHandleError(SCNProgram program, NSError error) {
+    default void programHandleError(@NotNull SCNProgram program, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

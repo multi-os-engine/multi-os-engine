@@ -28,6 +28,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCapturePhoto
@@ -83,6 +85,7 @@ public class AVCapturePhoto extends NSObject {
      * @return
      *         A CGImageRef, or nil if the conversion process fails.
      */
+    @Nullable
     @Generated
     @Selector("CGImageRepresentation")
     public native CGImageRef CGImageRepresentation();
@@ -103,7 +106,7 @@ public class AVCapturePhoto extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] bracketSettings
@@ -117,6 +120,7 @@ public class AVCapturePhoto extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("bracketSettings")
     public native AVCaptureBracketedStillImageSettings bracketSettings();
@@ -131,24 +135,28 @@ public class AVCapturePhoto extends NSObject {
      * camera calibration information is delivered with all resultant photos and is specific to the constituent device
      * producing that photo.
      */
+    @Nullable
     @Generated
     @Selector("cameraCalibrationData")
     public native AVCameraCalibrationData cameraCalibrationData();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -167,6 +175,7 @@ public class AVCapturePhoto extends NSObject {
      * delivery. Note that the depth data is only embedded in the photo's internal file format container if you set
      * -[AVCapturePhotoSettings setEmbedsDepthDataInPhoto:YES].
      */
+    @Nullable
     @Generated
     @Selector("depthData")
     public native AVDepthData depthData();
@@ -184,6 +193,7 @@ public class AVCapturePhoto extends NSObject {
      * setEmbeddedThumbnailPhotoFormat:] with a non-nil value, this property offers access to the resolved embedded
      * thumbnail AVVideoSettings dictionary. Nil is returned if you did not request an embedded thumbnail image.
      */
+    @Nullable
     @Generated
     @Selector("embeddedThumbnailPhotoFormat")
     public native NSDictionary<String, ?> embeddedThumbnailPhotoFormat();
@@ -199,6 +209,7 @@ public class AVCapturePhoto extends NSObject {
      * 
      *         API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("fileDataRepresentation")
     public native NSData fileDataRepresentation();
@@ -253,13 +264,14 @@ public class AVCapturePhoto extends NSObject {
      *         API-Since: 11.0
      *         Deprecated-Since: 12.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("fileDataRepresentationWithReplacementMetadata:replacementEmbeddedThumbnailPhotoFormat:replacementEmbeddedThumbnailPixelBuffer:replacementDepthData:")
     public native NSData fileDataRepresentationWithReplacementMetadataReplacementEmbeddedThumbnailPhotoFormatReplacementEmbeddedThumbnailPixelBufferReplacementDepthData(
-            NSDictionary<String, ?> replacementMetadata,
-            NSDictionary<String, ?> replacementEmbeddedThumbnailPhotoFormat,
-            CVBufferRef replacementEmbeddedThumbnailPixelBuffer, AVDepthData replacementDepthData);
+            @Nullable NSDictionary<String, ?> replacementMetadata,
+            @Nullable NSDictionary<String, ?> replacementEmbeddedThumbnailPhotoFormat,
+            @Nullable CVBufferRef replacementEmbeddedThumbnailPixelBuffer, @Nullable AVDepthData replacementDepthData);
 
     @Generated
     @Selector("hash")
@@ -300,9 +312,10 @@ public class AVCapturePhoto extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lensStabilizationStatus
@@ -330,6 +343,7 @@ public class AVCapturePhoto extends NSObject {
      * Valid metadata keys are found in <ImageIO/CGImageProperties.h>, such as kCGImagePropertyOrientation,
      * kCGImagePropertyExifDictionary, kCGImagePropertyMakerAppleDictionary, etc.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -365,6 +379,7 @@ public class AVCapturePhoto extends NSObject {
      * CMSampleBufferGetImageBuffer(). The pixel buffer contains only the minimal attachments required for correct
      * display. Compressed captures, such as 'jpeg', return nil.
      */
+    @Nullable
     @Generated
     @Selector("pixelBuffer")
     public native CVBufferRef pixelBuffer();
@@ -386,6 +401,7 @@ public class AVCapturePhoto extends NSObject {
      * @return
      *         A CGImageRef, or nil if the conversion process fails, or if you did not request a preview photo.
      */
+    @Nullable
     @Generated
     @Selector("previewCGImageRepresentation")
     public native CGImageRef previewCGImageRepresentation();
@@ -400,6 +416,7 @@ public class AVCapturePhoto extends NSObject {
      * CMSampleBufferGetImageBuffer(). The pixel buffer contains only the minimal attachments required for correct
      * display. Nil is returned if you did not request a preview image.
      */
+    @Nullable
     @Generated
     @Selector("previewPixelBuffer")
     public native CVBufferRef previewPixelBuffer();
@@ -420,6 +437,7 @@ public class AVCapturePhoto extends NSObject {
      * 
      * Even in the event of an error, the resolved settings are always non nil.
      */
+    @NotNull
     @Generated
     @Selector("resolvedSettings")
     public native AVCaptureResolvedPhotoSettings resolvedSettings();
@@ -455,6 +473,7 @@ public class AVCapturePhoto extends NSObject {
      * capture, the source device type is equal to the -[AVCaptureDevice deviceType] of the AVCaptureDevice to which the
      * AVCapturePhotoOutput is connected. Returns nil if the source of the photo is not an AVCaptureDevice.
      */
+    @Nullable
     @Generated
     @Selector("sourceDeviceType")
     public native String sourceDeviceType();
@@ -498,10 +517,11 @@ public class AVCapturePhoto extends NSObject {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("fileDataRepresentationWithCustomizer:")
     public native NSData fileDataRepresentationWithCustomizer(
-            @Mapped(ObjCObjectMapper.class) AVCapturePhotoFileDataRepresentationCustomizer customizer);
+            @NotNull @Mapped(ObjCObjectMapper.class) AVCapturePhotoFileDataRepresentationCustomizer customizer);
 
     /**
      * [@property] portraitEffectsMatte
@@ -516,6 +536,7 @@ public class AVCapturePhoto extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("portraitEffectsMatte")
     public native AVPortraitEffectsMatte portraitEffectsMatte();
@@ -539,7 +560,9 @@ public class AVCapturePhoto extends NSObject {
      * @return
      *         An instance of AVSemanticSegmentationMatte, or nil if none could be found for the specified type.
      */
+    @Nullable
     @Generated
     @Selector("semanticSegmentationMatteForType:")
-    public native AVSemanticSegmentationMatte semanticSegmentationMatteForType(String semanticSegmentationMatteType);
+    public native AVSemanticSegmentationMatte semanticSegmentationMatteForType(
+            @NotNull String semanticSegmentationMatteType);
 }

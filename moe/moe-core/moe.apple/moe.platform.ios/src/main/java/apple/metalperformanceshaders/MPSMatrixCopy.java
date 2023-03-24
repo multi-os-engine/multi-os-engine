@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -59,22 +61,25 @@ public class MPSMatrixCopy extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,7 +125,8 @@ public class MPSMatrixCopy extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:")
     public native void encodeToCommandBufferCopyDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrixCopyDescriptor copyDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrixCopyDescriptor copyDescriptor);
 
     @Generated
     @Selector("hash")
@@ -133,7 +139,7 @@ public class MPSMatrixCopy extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixCopy initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixCopy initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -148,11 +154,12 @@ public class MPSMatrixCopy extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixCopy initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixCopy initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixCopy initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixCopy initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a copy operator
@@ -167,7 +174,7 @@ public class MPSMatrixCopy extends MPSKernel {
     @Generated
     @Selector("initWithDevice:copyRows:copyColumns:sourcesAreTransposed:destinationsAreTransposed:")
     public native MPSMatrixCopy initWithDeviceCopyRowsCopyColumnsSourcesAreTransposedDestinationsAreTransposed(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long copyRows, @NUInt long copyColumns,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long copyRows, @NUInt long copyColumns,
             boolean sourcesAreTransposed, boolean destinationsAreTransposed);
 
     @Generated
@@ -187,9 +194,10 @@ public class MPSMatrixCopy extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -263,7 +271,7 @@ public class MPSMatrixCopy extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:copyDescriptor:rowPermuteIndices:rowPermuteOffset:columnPermuteIndices:columnPermuteOffset:")
     public native void encodeToCommandBufferCopyDescriptorRowPermuteIndicesRowPermuteOffsetColumnPermuteIndicesColumnPermuteOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrixCopyDescriptor copyDescriptor,
-            MPSVector rowPermuteIndices, @NUInt long rowPermuteOffset, MPSVector columnPermuteIndices,
-            @NUInt long columnPermuteOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSMatrixCopyDescriptor copyDescriptor, @Nullable MPSVector rowPermuteIndices,
+            @NUInt long rowPermuteOffset, @Nullable MPSVector columnPermuteIndices, @NUInt long columnPermuteOffset);
 }

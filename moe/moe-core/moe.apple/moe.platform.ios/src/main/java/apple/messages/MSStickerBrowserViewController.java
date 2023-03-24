@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The MSStickerBrowserViewController class creates a controller object that manages a MSStickerBrowserView.
@@ -82,29 +84,32 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +141,10 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,11 +178,12 @@ public class MSStickerBrowserViewController extends UIViewController implements 
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSStickerBrowserViewController initWithCoder(NSCoder coder);
+    public native MSStickerBrowserViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native MSStickerBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native MSStickerBrowserViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * initWithStickerSize:
@@ -191,20 +198,23 @@ public class MSStickerBrowserViewController extends UIViewController implements 
     @Generated
     @Selector("numberOfStickersInStickerBrowserView:")
     @NInt
-    public native long numberOfStickersInStickerBrowserView(MSStickerBrowserView stickerBrowserView);
+    public native long numberOfStickersInStickerBrowserView(@NotNull MSStickerBrowserView stickerBrowserView);
 
     /**
      * [@property] stickerBrowserView
      * 
      * Returns the sticker browser view managed by the controller object.
      */
+    @NotNull
     @Generated
     @Selector("stickerBrowserView")
     public native MSStickerBrowserView stickerBrowserView();
 
+    @NotNull
     @Generated
     @Selector("stickerBrowserView:stickerAtIndex:")
-    public native MSSticker stickerBrowserViewStickerAtIndex(MSStickerBrowserView stickerBrowserView, @NInt long index);
+    public native MSSticker stickerBrowserViewStickerAtIndex(@NotNull MSStickerBrowserView stickerBrowserView,
+            @NInt long index);
 
     /**
      * Controls the size of the stickers are displayed at in the sticker browser view.

@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLBeaconRegion
@@ -92,22 +94,25 @@ public class CLBeaconRegion extends CLRegion {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,9 +147,10 @@ public class CLBeaconRegion extends CLRegion {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -184,11 +190,11 @@ public class CLBeaconRegion extends CLRegion {
     @Deprecated
     @Selector("initCircularRegionWithCenter:radius:identifier:")
     public native CLBeaconRegion initCircularRegionWithCenterRadiusIdentifier(@ByValue CLLocationCoordinate2D center,
-            double radius, String identifier);
+            double radius, @NotNull String identifier);
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLBeaconRegion initWithCoder(NSCoder coder);
+    public native CLBeaconRegion initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 7.0
@@ -197,7 +203,8 @@ public class CLBeaconRegion extends CLRegion {
     @Deprecated
     @Generated
     @Selector("initWithProximityUUID:identifier:")
-    public native CLBeaconRegion initWithProximityUUIDIdentifier(NSUUID proximityUUID, String identifier);
+    public native CLBeaconRegion initWithProximityUUIDIdentifier(@NotNull NSUUID proximityUUID,
+            @NotNull String identifier);
 
     /**
      * API-Since: 7.0
@@ -206,8 +213,8 @@ public class CLBeaconRegion extends CLRegion {
     @Deprecated
     @Generated
     @Selector("initWithProximityUUID:major:identifier:")
-    public native CLBeaconRegion initWithProximityUUIDMajorIdentifier(NSUUID proximityUUID, char major,
-            String identifier);
+    public native CLBeaconRegion initWithProximityUUIDMajorIdentifier(@NotNull NSUUID proximityUUID, char major,
+            @NotNull String identifier);
 
     /**
      * API-Since: 7.0
@@ -216,8 +223,8 @@ public class CLBeaconRegion extends CLRegion {
     @Deprecated
     @Generated
     @Selector("initWithProximityUUID:major:minor:identifier:")
-    public native CLBeaconRegion initWithProximityUUIDMajorMinorIdentifier(NSUUID proximityUUID, char major, char minor,
-            String identifier);
+    public native CLBeaconRegion initWithProximityUUIDMajorMinorIdentifier(@NotNull NSUUID proximityUUID, char major,
+            char minor, @NotNull String identifier);
 
     /**
      * major
@@ -225,6 +232,7 @@ public class CLBeaconRegion extends CLRegion {
      * Discussion:
      * Most significant value associated with the region. If a major value wasn't specified, this will be nil.
      */
+    @Nullable
     @Generated
     @Selector("major")
     public native NSNumber major();
@@ -235,6 +243,7 @@ public class CLBeaconRegion extends CLRegion {
      * Discussion:
      * Least significant value associated with the region. If a minor value wasn't specified, this will be nil.
      */
+    @Nullable
     @Generated
     @Selector("minor")
     public native NSNumber minor();
@@ -262,14 +271,16 @@ public class CLBeaconRegion extends CLRegion {
      * This value is optional, but should be specified to achieve the best ranging performance.
      * If not specified, it will default to a pre-determined value for the device.
      */
+    @NotNull
     @Generated
     @Selector("peripheralDataWithMeasuredPower:")
-    public native NSMutableDictionary<String, Object> peripheralDataWithMeasuredPower(NSNumber measuredPower);
+    public native NSMutableDictionary<String, Object> peripheralDataWithMeasuredPower(@Nullable NSNumber measuredPower);
 
     /**
      * API-Since: 7.0
      * Deprecated-Since: 13.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("proximityUUID")
@@ -301,6 +312,7 @@ public class CLBeaconRegion extends CLRegion {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("UUID")
     public native NSUUID UUID();
@@ -313,6 +325,7 @@ public class CLBeaconRegion extends CLRegion {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("beaconIdentityConstraint")
     public native CLBeaconIdentityConstraint beaconIdentityConstraint();
@@ -330,7 +343,7 @@ public class CLBeaconRegion extends CLRegion {
     @Generated
     @Selector("initWithBeaconIdentityConstraint:identifier:")
     public native CLBeaconRegion initWithBeaconIdentityConstraintIdentifier(
-            CLBeaconIdentityConstraint beaconIdentityConstraint, String identifier);
+            @NotNull CLBeaconIdentityConstraint beaconIdentityConstraint, @NotNull String identifier);
 
     /**
      * initWithUUID:identifier:
@@ -343,7 +356,7 @@ public class CLBeaconRegion extends CLRegion {
      */
     @Generated
     @Selector("initWithUUID:identifier:")
-    public native CLBeaconRegion initWithUUIDIdentifier(NSUUID uuid, String identifier);
+    public native CLBeaconRegion initWithUUIDIdentifier(@NotNull NSUUID uuid, @NotNull String identifier);
 
     /**
      * initWithUUID:major:identifier:
@@ -356,7 +369,8 @@ public class CLBeaconRegion extends CLRegion {
      */
     @Generated
     @Selector("initWithUUID:major:identifier:")
-    public native CLBeaconRegion initWithUUIDMajorIdentifier(NSUUID uuid, char major, String identifier);
+    public native CLBeaconRegion initWithUUIDMajorIdentifier(@NotNull NSUUID uuid, char major,
+            @NotNull String identifier);
 
     /**
      * initWithUUID:major:minor:identifier:
@@ -369,6 +383,6 @@ public class CLBeaconRegion extends CLRegion {
      */
     @Generated
     @Selector("initWithUUID:major:minor:identifier:")
-    public native CLBeaconRegion initWithUUIDMajorMinorIdentifier(NSUUID uuid, char major, char minor,
-            String identifier);
+    public native CLBeaconRegion initWithUUIDMajorMinorIdentifier(@NotNull NSUUID uuid, char major, char minor,
+            @NotNull String identifier);
 }

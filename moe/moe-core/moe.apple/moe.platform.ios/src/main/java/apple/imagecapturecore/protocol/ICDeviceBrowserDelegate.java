@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * ------------------------------------------------------------------------------------------------------
@@ -35,7 +36,7 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("deviceBrowser:deviceDidChangeName:")
-    default void deviceBrowserDeviceDidChangeName(ICDeviceBrowser browser, ICDevice device) {
+    default void deviceBrowserDeviceDidChangeName(@NotNull ICDeviceBrowser browser, @NotNull ICDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,7 +50,7 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("deviceBrowser:deviceDidChangeSharingState:")
-    default void deviceBrowserDeviceDidChangeSharingState(ICDeviceBrowser browser, ICDevice device) {
+    default void deviceBrowserDeviceDidChangeSharingState(@NotNull ICDeviceBrowser browser, @NotNull ICDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,7 +66,8 @@ public interface ICDeviceBrowserDelegate {
      */
     @Generated
     @Selector("deviceBrowser:didAddDevice:moreComing:")
-    void deviceBrowserDidAddDeviceMoreComing(ICDeviceBrowser browser, ICDevice device, boolean moreComing);
+    void deviceBrowserDidAddDeviceMoreComing(@NotNull ICDeviceBrowser browser, @NotNull ICDevice device,
+            boolean moreComing);
 
     /**
      * deviceBrowser:didRemoveDevice:moreGoing:
@@ -79,7 +81,8 @@ public interface ICDeviceBrowserDelegate {
      */
     @Generated
     @Selector("deviceBrowser:didRemoveDevice:moreGoing:")
-    void deviceBrowserDidRemoveDeviceMoreGoing(ICDeviceBrowser browser, ICDevice device, boolean moreGoing);
+    void deviceBrowserDidRemoveDeviceMoreGoing(@NotNull ICDeviceBrowser browser, @NotNull ICDevice device,
+            boolean moreGoing);
 
     /**
      * deviceBrowserDidCancelSuspendOperations:
@@ -96,7 +99,7 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("deviceBrowserDidCancelSuspendOperations:")
-    default void deviceBrowserDidCancelSuspendOperations(ICDeviceBrowser browser) {
+    default void deviceBrowserDidCancelSuspendOperations(@NotNull ICDeviceBrowser browser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,7 +115,7 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("deviceBrowserDidResumeOperations:")
-    default void deviceBrowserDidResumeOperations(ICDeviceBrowser browser) {
+    default void deviceBrowserDidResumeOperations(@NotNull ICDeviceBrowser browser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -132,7 +135,7 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("deviceBrowserDidSuspendOperations:")
-    default void deviceBrowserDidSuspendOperations(ICDeviceBrowser browser) {
+    default void deviceBrowserDidSuspendOperations(@NotNull ICDeviceBrowser browser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,7 +154,7 @@ public interface ICDeviceBrowserDelegate {
     @Generated
     @IsOptional
     @Selector("deviceBrowserWillSuspendOperations:")
-    default void deviceBrowserWillSuspendOperations(ICDeviceBrowser browser) {
+    default void deviceBrowserWillSuspendOperations(@NotNull ICDeviceBrowser browser) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

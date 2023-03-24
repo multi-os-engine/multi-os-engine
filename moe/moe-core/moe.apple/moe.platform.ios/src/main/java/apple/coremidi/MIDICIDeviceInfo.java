@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MIDICIDeviceInfo
@@ -63,22 +65,25 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,11 +98,12 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * 2 bytes
      */
+    @NotNull
     @Generated
     @Selector("family")
     public native NSData family();
@@ -113,12 +119,13 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MIDICIDeviceInfo initWithCoder(NSCoder coder);
+    public native MIDICIDeviceInfo initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithDestination:manufacturer:family:model:revision:")
     public native MIDICIDeviceInfo initWithDestinationManufacturerFamilyModelRevision(int midiDestination,
-            NSData manufacturer, NSData family, NSData modelNumber, NSData revisionLevel);
+            @NotNull NSData manufacturer, @NotNull NSData family, @NotNull NSData modelNumber,
+            @NotNull NSData revisionLevel);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -137,13 +144,15 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * 3 bytes
      */
+    @NotNull
     @Generated
     @Selector("manufacturerID")
     public native NSData manufacturerID();
@@ -158,6 +167,7 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     /**
      * 2 bytes
      */
+    @NotNull
     @Generated
     @Selector("modelNumber")
     public native NSData modelNumber();
@@ -178,6 +188,7 @@ public class MIDICIDeviceInfo extends NSObject implements NSSecureCoding {
     /**
      * 4 bytes
      */
+    @NotNull
     @Generated
     @Selector("revisionLevel")
     public native NSData revisionLevel();

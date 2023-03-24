@@ -34,6 +34,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class conforming to the WKNavigationDelegate protocol can provide
@@ -61,9 +63,9 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationAction:decisionHandler:")
-    default void webViewDecidePolicyForNavigationActionDecisionHandler(WKWebView webView,
-            WKNavigationAction navigationAction,
-            @ObjCBlock(name = "call_webViewDecidePolicyForNavigationActionDecisionHandler") Block_webViewDecidePolicyForNavigationActionDecisionHandler decisionHandler) {
+    default void webViewDecidePolicyForNavigationActionDecisionHandler(@NotNull WKWebView webView,
+            @NotNull WKNavigationAction navigationAction,
+            @NotNull @ObjCBlock(name = "call_webViewDecidePolicyForNavigationActionDecisionHandler") Block_webViewDecidePolicyForNavigationActionDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,9 +85,9 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationResponse:decisionHandler:")
-    default void webViewDecidePolicyForNavigationResponseDecisionHandler(WKWebView webView,
-            WKNavigationResponse navigationResponse,
-            @ObjCBlock(name = "call_webViewDecidePolicyForNavigationResponseDecisionHandler") Block_webViewDecidePolicyForNavigationResponseDecisionHandler decisionHandler) {
+    default void webViewDecidePolicyForNavigationResponseDecisionHandler(@NotNull WKWebView webView,
+            @NotNull WKNavigationResponse navigationResponse,
+            @NotNull @ObjCBlock(name = "call_webViewDecidePolicyForNavigationResponseDecisionHandler") Block_webViewDecidePolicyForNavigationResponseDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,7 +100,7 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didCommitNavigation:")
-    default void webViewDidCommitNavigation(WKWebView webView, WKNavigation navigation) {
+    default void webViewDidCommitNavigation(@NotNull WKWebView webView, WKNavigation navigation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,7 +115,8 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didFailNavigation:withError:")
-    default void webViewDidFailNavigationWithError(WKWebView webView, WKNavigation navigation, NSError error) {
+    default void webViewDidFailNavigationWithError(@NotNull WKWebView webView, WKNavigation navigation,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,8 +131,8 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didFailProvisionalNavigation:withError:")
-    default void webViewDidFailProvisionalNavigationWithError(WKWebView webView, WKNavigation navigation,
-            NSError error) {
+    default void webViewDidFailProvisionalNavigationWithError(@NotNull WKWebView webView, WKNavigation navigation,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -142,7 +145,7 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didFinishNavigation:")
-    default void webViewDidFinishNavigation(WKWebView webView, WKNavigation navigation) {
+    default void webViewDidFinishNavigation(@NotNull WKWebView webView, WKNavigation navigation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -165,9 +168,9 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didReceiveAuthenticationChallenge:completionHandler:")
-    default void webViewDidReceiveAuthenticationChallengeCompletionHandler(WKWebView webView,
-            NSURLAuthenticationChallenge challenge,
-            @ObjCBlock(name = "call_webViewDidReceiveAuthenticationChallengeCompletionHandler") Block_webViewDidReceiveAuthenticationChallengeCompletionHandler completionHandler) {
+    default void webViewDidReceiveAuthenticationChallengeCompletionHandler(@NotNull WKWebView webView,
+            @NotNull NSURLAuthenticationChallenge challenge,
+            @NotNull @ObjCBlock(name = "call_webViewDidReceiveAuthenticationChallengeCompletionHandler") Block_webViewDidReceiveAuthenticationChallengeCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -181,7 +184,8 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didReceiveServerRedirectForProvisionalNavigation:")
-    default void webViewDidReceiveServerRedirectForProvisionalNavigation(WKWebView webView, WKNavigation navigation) {
+    default void webViewDidReceiveServerRedirectForProvisionalNavigation(@NotNull WKWebView webView,
+            WKNavigation navigation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,7 +198,7 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didStartProvisionalNavigation:")
-    default void webViewDidStartProvisionalNavigation(WKWebView webView, WKNavigation navigation) {
+    default void webViewDidStartProvisionalNavigation(@NotNull WKWebView webView, WKNavigation navigation) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,7 +212,7 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webViewWebContentProcessDidTerminate:")
-    default void webViewWebContentProcessDidTerminate(WKWebView webView) {
+    default void webViewWebContentProcessDidTerminate(@NotNull WKWebView webView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -231,7 +235,7 @@ public interface WKNavigationDelegate {
     public interface Block_webViewDidReceiveAuthenticationChallengeCompletionHandler {
         @Generated
         void call_webViewDidReceiveAuthenticationChallengeCompletionHandler(@NInt long disposition,
-                NSURLCredential credential);
+                @Nullable NSURLCredential credential);
     }
 
     /**
@@ -254,9 +258,9 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:decidePolicyForNavigationAction:preferences:decisionHandler:")
-    default void webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(WKWebView webView,
-            WKNavigationAction navigationAction, WKWebpagePreferences preferences,
-            @ObjCBlock(name = "call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler") Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler decisionHandler) {
+    default void webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(@NotNull WKWebView webView,
+            @NotNull WKNavigationAction navigationAction, @NotNull WKWebpagePreferences preferences,
+            @NotNull @ObjCBlock(name = "call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler") Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,7 +269,7 @@ public interface WKNavigationDelegate {
     public interface Block_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler {
         @Generated
         void call_webViewDecidePolicyForNavigationActionPreferencesDecisionHandler(@NInt long arg0,
-                WKWebpagePreferences arg1);
+                @NotNull WKWebpagePreferences arg1);
     }
 
     /**
@@ -281,9 +285,9 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:authenticationChallenge:shouldAllowDeprecatedTLS:")
-    default void webViewAuthenticationChallengeShouldAllowDeprecatedTLS(WKWebView webView,
-            NSURLAuthenticationChallenge challenge,
-            @ObjCBlock(name = "call_webViewAuthenticationChallengeShouldAllowDeprecatedTLS") Block_webViewAuthenticationChallengeShouldAllowDeprecatedTLS decisionHandler) {
+    default void webViewAuthenticationChallengeShouldAllowDeprecatedTLS(@NotNull WKWebView webView,
+            @NotNull NSURLAuthenticationChallenge challenge,
+            @NotNull @ObjCBlock(name = "call_webViewAuthenticationChallengeShouldAllowDeprecatedTLS") Block_webViewAuthenticationChallengeShouldAllowDeprecatedTLS decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -308,8 +312,8 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:navigationAction:didBecomeDownload:")
-    default void webViewNavigationActionDidBecomeDownload(WKWebView webView, WKNavigationAction navigationAction,
-            WKDownload download) {
+    default void webViewNavigationActionDidBecomeDownload(@NotNull WKWebView webView,
+            @NotNull WKNavigationAction navigationAction, @NotNull WKDownload download) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -327,8 +331,8 @@ public interface WKNavigationDelegate {
     @Generated
     @IsOptional
     @Selector("webView:navigationResponse:didBecomeDownload:")
-    default void webViewNavigationResponseDidBecomeDownload(WKWebView webView, WKNavigationResponse navigationResponse,
-            WKDownload download) {
+    default void webViewNavigationResponseDidBecomeDownload(@NotNull WKWebView webView,
+            @NotNull WKNavigationResponse navigationResponse, @NotNull WKDownload download) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

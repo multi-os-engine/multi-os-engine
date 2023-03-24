@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -29,8 +30,8 @@ public interface UICalendarSelectionMultiDateDelegate {
     @Generated
     @IsOptional
     @Selector("multiDateSelection:canDeselectDate:")
-    default boolean multiDateSelectionCanDeselectDate(UICalendarSelectionMultiDate selection,
-            NSDateComponents dateComponents) {
+    default boolean multiDateSelectionCanDeselectDate(@NotNull UICalendarSelectionMultiDate selection,
+            @NotNull NSDateComponents dateComponents) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,8 +46,8 @@ public interface UICalendarSelectionMultiDateDelegate {
     @Generated
     @IsOptional
     @Selector("multiDateSelection:canSelectDate:")
-    default boolean multiDateSelectionCanSelectDate(UICalendarSelectionMultiDate selection,
-            NSDateComponents dateComponents) {
+    default boolean multiDateSelectionCanSelectDate(@NotNull UICalendarSelectionMultiDate selection,
+            @NotNull NSDateComponents dateComponents) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +59,8 @@ public interface UICalendarSelectionMultiDateDelegate {
      */
     @Generated
     @Selector("multiDateSelection:didDeselectDate:")
-    void multiDateSelectionDidDeselectDate(UICalendarSelectionMultiDate selection, NSDateComponents dateComponents);
+    void multiDateSelectionDidDeselectDate(@NotNull UICalendarSelectionMultiDate selection,
+            @NotNull NSDateComponents dateComponents);
 
     /**
      * Called after the user selects a date in the calendar view.
@@ -68,5 +70,6 @@ public interface UICalendarSelectionMultiDateDelegate {
      */
     @Generated
     @Selector("multiDateSelection:didSelectDate:")
-    void multiDateSelectionDidSelectDate(UICalendarSelectionMultiDate selection, NSDateComponents dateComponents);
+    void multiDateSelectionDidSelectDate(@NotNull UICalendarSelectionMultiDate selection,
+            @NotNull NSDateComponents dateComponents);
 }

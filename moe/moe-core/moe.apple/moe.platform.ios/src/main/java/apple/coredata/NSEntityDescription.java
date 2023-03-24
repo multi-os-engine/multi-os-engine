@@ -48,6 +48,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Entities describe the "types" of objects available.
@@ -84,22 +86,25 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,20 +117,22 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("description")
     public static native String description_static();
 
+    @Nullable
     @Generated
     @Selector("entityForName:inManagedObjectContext:")
-    public static native NSEntityDescription entityForNameInManagedObjectContext(String entityName,
-            NSManagedObjectContext context);
+    public static native NSEntityDescription entityForNameInManagedObjectContext(@NotNull String entityName,
+            @NotNull NSManagedObjectContext context);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("insertNewObjectForEntityForName:inManagedObjectContext:")
-    public static native NSManagedObject insertNewObjectForEntityForNameInManagedObjectContext(String entityName,
-            NSManagedObjectContext context);
+    public static native NSManagedObject insertNewObjectForEntityForNameInManagedObjectContext(
+            @NotNull String entityName, @NotNull NSManagedObjectContext context);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -144,9 +151,10 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +185,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     /**
      * convenience methods to get the most common (and most relevant) types of properties for an entity
      */
+    @NotNull
     @Generated
     @Selector("attributesByName")
     public native NSDictionary<String, ? extends NSAttributeDescription> attributesByName();
@@ -193,26 +202,28 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * Deprecated-Since: 11.0
      * Deprecated-Message: Use NSEntityDescription.indexes instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("compoundIndexes")
     public native NSArray<? extends NSArray<?>> compoundIndexes();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -220,7 +231,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSEntityDescription initWithCoder(NSCoder coder);
+    public native NSEntityDescription initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("isAbstract")
@@ -238,40 +249,47 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      */
     @Generated
     @Selector("isKindOfEntity:")
-    public native boolean isKindOfEntity(NSEntityDescription entity);
+    public native boolean isKindOfEntity(@NotNull NSEntityDescription entity);
 
     @Generated
     @Selector("managedObjectClassName")
     public native String managedObjectClassName();
 
+    @NotNull
     @Generated
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
 
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
 
+    @NotNull
     @Generated
     @Selector("properties")
     public native NSArray<? extends NSPropertyDescription> properties();
 
+    @NotNull
     @Generated
     @Selector("propertiesByName")
     public native NSDictionary<String, ? extends NSPropertyDescription> propertiesByName();
 
+    @NotNull
     @Generated
     @Selector("relationshipsByName")
     public native NSDictionary<String, ? extends NSRelationshipDescription> relationshipsByName();
 
+    @NotNull
     @Generated
     @Selector("relationshipsWithDestinationEntity:")
     public native NSArray<? extends NSRelationshipDescription> relationshipsWithDestinationEntity(
-            NSEntityDescription entity);
+            @NotNull NSEntityDescription entity);
 
     /**
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("renamingIdentifier")
     public native String renamingIdentifier();
@@ -291,7 +309,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
     @Deprecated
     @Generated
     @Selector("setCompoundIndexes:")
-    public native void setCompoundIndexes(NSArray<? extends NSArray<?>> value);
+    public native void setCompoundIndexes(@NotNull NSArray<? extends NSArray<?>> value);
 
     @Generated
     @Selector("setManagedObjectClassName:")
@@ -299,22 +317,22 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setProperties:")
-    public native void setProperties(NSArray<? extends NSPropertyDescription> value);
+    public native void setProperties(@NotNull NSArray<? extends NSPropertyDescription> value);
 
     /**
      * API-Since: 3.0
      */
     @Generated
     @Selector("setRenamingIdentifier:")
-    public native void setRenamingIdentifier(String value);
+    public native void setRenamingIdentifier(@Nullable String value);
 
     @Generated
     @Selector("setSubentities:")
-    public native void setSubentities(NSArray<? extends NSEntityDescription> value);
+    public native void setSubentities(@NotNull NSArray<? extends NSEntityDescription> value);
 
     /**
      * Returns/sets uniqueness constraints for the entity. A uniqueness constraint is a set of one or more attributes
@@ -334,11 +352,11 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      */
     @Generated
     @Selector("setUniquenessConstraints:")
-    public native void setUniquenessConstraints(NSArray<? extends NSArray<?>> value);
+    public native void setUniquenessConstraints(@NotNull NSArray<? extends NSArray<?>> value);
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * Returns/sets the version hash modifier for the entity. This value is included in the version hash for the entity,
@@ -350,16 +368,19 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      */
     @Generated
     @Selector("setVersionHashModifier:")
-    public native void setVersionHashModifier(String value);
+    public native void setVersionHashModifier(@Nullable String value);
 
+    @NotNull
     @Generated
     @Selector("subentities")
     public native NSArray<? extends NSEntityDescription> subentities();
 
+    @NotNull
     @Generated
     @Selector("subentitiesByName")
     public native NSDictionary<String, ? extends NSEntityDescription> subentitiesByName();
 
+    @Nullable
     @Generated
     @Selector("superentity")
     public native NSEntityDescription superentity();
@@ -380,10 +401,12 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("uniquenessConstraints")
     public native NSArray<? extends NSArray<?>> uniquenessConstraints();
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();
@@ -398,6 +421,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("versionHash")
     public native NSData versionHash();
@@ -410,6 +434,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * 
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("versionHashModifier")
     public native String versionHashModifier();
@@ -419,6 +444,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("coreSpotlightDisplayNameExpression")
     public native NSExpression coreSpotlightDisplayNameExpression();
@@ -433,6 +459,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("indexes")
     public native NSArray<? extends NSFetchIndexDescription> indexes();
@@ -444,7 +471,7 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      */
     @Generated
     @Selector("setCoreSpotlightDisplayNameExpression:")
-    public native void setCoreSpotlightDisplayNameExpression(NSExpression value);
+    public native void setCoreSpotlightDisplayNameExpression(@NotNull NSExpression value);
 
     /**
      * Returns/sets the set of indexes for the entity. Returns/takes an array of NSFetchIndexDescription instances. This
@@ -458,5 +485,5 @@ public class NSEntityDescription extends NSObject implements NSCoding, NSCopying
      */
     @Generated
     @Selector("setIndexes:")
-    public native void setIndexes(NSArray<? extends NSFetchIndexDescription> value);
+    public native void setIndexes(@NotNull NSArray<? extends NSFetchIndexDescription> value);
 }

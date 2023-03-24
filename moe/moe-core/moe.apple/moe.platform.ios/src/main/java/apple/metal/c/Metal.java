@@ -41,6 +41,8 @@ import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Metal")
@@ -95,6 +97,7 @@ public final class Metal {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
@@ -113,6 +116,7 @@ public final class Metal {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -125,6 +129,7 @@ public final class Metal {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -172,6 +177,7 @@ public final class Metal {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -180,6 +186,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -188,6 +195,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -196,6 +204,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -204,6 +213,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -212,6 +222,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -220,6 +231,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -228,6 +240,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -236,6 +249,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -244,6 +258,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -252,6 +267,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -260,6 +276,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -268,6 +285,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -276,6 +294,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -284,6 +303,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -292,6 +312,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -300,6 +321,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -308,6 +330,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -316,6 +339,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -328,6 +352,7 @@ public final class Metal {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -340,6 +365,7 @@ public final class Metal {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -348,6 +374,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -356,6 +383,7 @@ public final class Metal {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -388,10 +416,11 @@ public final class Metal {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr MTLIOCreateCompressionContext(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String path,
             @NInt long type, @NUInt long chunkSize);
 
     /**
@@ -403,7 +432,8 @@ public final class Metal {
      */
     @Generated
     @CFunction
-    public static native void MTLIOCompressionContextAppendData(VoidPtr context, ConstVoidPtr data, @NUInt long size);
+    public static native void MTLIOCompressionContextAppendData(@NotNull VoidPtr context, @NotNull ConstVoidPtr data,
+            @NUInt long size);
 
     /**
      * [@function] MTLIOFlushAndDestroyCompressionContext
@@ -415,11 +445,12 @@ public final class Metal {
     @Generated
     @CFunction
     @NInt
-    public static native long MTLIOFlushAndDestroyCompressionContext(VoidPtr context);
+    public static native long MTLIOFlushAndDestroyCompressionContext(@NotNull VoidPtr context);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -56,6 +56,8 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
 import apple.videotoolbox.opaque.VTPixelRotationSessionRef;
 import apple.videotoolbox.opaque.VTPixelTransferSessionRef;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("VideoToolbox")
@@ -89,8 +91,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTSessionCopySupportedPropertyDictionary(ConstVoidPtr session,
-            Ptr<CFDictionaryRef> supportedPropertyDictionaryOut);
+    public static native int VTSessionCopySupportedPropertyDictionary(@NotNull ConstVoidPtr session,
+            @NotNull Ptr<CFDictionaryRef> supportedPropertyDictionaryOut);
 
     /**
      * [@function] VTSessionSetProperty
@@ -103,8 +105,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTSessionSetProperty(ConstVoidPtr session, CFStringRef propertyKey,
-            ConstVoidPtr propertyValue);
+    public static native int VTSessionSetProperty(@NotNull ConstVoidPtr session, @NotNull CFStringRef propertyKey,
+            @Nullable ConstVoidPtr propertyValue);
 
     /**
      * [@function] VTSessionCopyProperty
@@ -134,8 +136,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTSessionCopyProperty(ConstVoidPtr session, CFStringRef propertyKey,
-            CFAllocatorRef allocator, VoidPtr propertyValueOut);
+    public static native int VTSessionCopyProperty(@NotNull ConstVoidPtr session, @NotNull CFStringRef propertyKey,
+            @Nullable CFAllocatorRef allocator, @Nullable VoidPtr propertyValueOut);
 
     /**
      * [@function] VTSessionSetProperties
@@ -148,7 +150,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTSessionSetProperties(ConstVoidPtr session, CFDictionaryRef propertyDictionary);
+    public static native int VTSessionSetProperties(@NotNull ConstVoidPtr session,
+            @NotNull CFDictionaryRef propertyDictionary);
 
     /**
      * [@function] VTSessionCopySerializableProperties
@@ -162,8 +165,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTSessionCopySerializableProperties(ConstVoidPtr session, CFAllocatorRef allocator,
-            Ptr<CFDictionaryRef> dictionaryOut);
+    public static native int VTSessionCopySerializableProperties(@NotNull ConstVoidPtr session,
+            @Nullable CFAllocatorRef allocator, @NotNull Ptr<CFDictionaryRef> dictionaryOut);
 
     /**
      * [@function] VTCompressionSessionCreate
@@ -213,11 +216,11 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionCreate(CFAllocatorRef allocator, int width, int height, int codecType,
-            CFDictionaryRef encoderSpecification, CFDictionaryRef sourceImageBufferAttributes,
-            CFAllocatorRef compressedDataAllocator,
-            @FunctionPtr(name = "call_VTCompressionSessionCreate") Function_VTCompressionSessionCreate outputCallback,
-            VoidPtr outputCallbackRefCon, Ptr<VTCompressionSessionRef> compressionSessionOut);
+    public static native int VTCompressionSessionCreate(@Nullable CFAllocatorRef allocator, int width, int height,
+            int codecType, @Nullable CFDictionaryRef encoderSpecification,
+            @Nullable CFDictionaryRef sourceImageBufferAttributes, @Nullable CFAllocatorRef compressedDataAllocator,
+            @Nullable @FunctionPtr(name = "call_VTCompressionSessionCreate") Function_VTCompressionSessionCreate outputCallback,
+            @Nullable VoidPtr outputCallbackRefCon, @NotNull Ptr<VTCompressionSessionRef> compressionSessionOut);
 
     /**
      * [@function] VTCompressionSessionInvalidate
@@ -234,7 +237,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native void VTCompressionSessionInvalidate(VTCompressionSessionRef session);
+    public static native void VTCompressionSessionInvalidate(@NotNull VTCompressionSessionRef session);
 
     /**
      * [@function] VTCompressionSessionGetTypeID
@@ -269,9 +272,11 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CVPixelBufferPoolRef VTCompressionSessionGetPixelBufferPool(VTCompressionSessionRef session);
+    public static native CVPixelBufferPoolRef VTCompressionSessionGetPixelBufferPool(
+            @NotNull VTCompressionSessionRef session);
 
     /**
      * [@function] VTCompressionSessionPrepareToEncodeFrames
@@ -291,7 +296,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionPrepareToEncodeFrames(VTCompressionSessionRef session);
+    public static native int VTCompressionSessionPrepareToEncodeFrames(@NotNull VTCompressionSessionRef session);
 
     /**
      * [@function] VTCompressionSessionEncodeFrame
@@ -333,9 +338,10 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionEncodeFrame(VTCompressionSessionRef session, CVBufferRef imageBuffer,
-            @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration, CFDictionaryRef frameProperties,
-            VoidPtr sourceFrameRefcon, IntPtr infoFlagsOut);
+    public static native int VTCompressionSessionEncodeFrame(@NotNull VTCompressionSessionRef session,
+            @NotNull CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration,
+            @Nullable CFDictionaryRef frameProperties, @Nullable VoidPtr sourceFrameRefcon,
+            @Nullable IntPtr infoFlagsOut);
 
     /**
      * [@function] VTCompressionSessionEncodeFrameWithOutputHandler
@@ -379,10 +385,10 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionEncodeFrameWithOutputHandler(VTCompressionSessionRef session,
-            CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration,
-            CFDictionaryRef frameProperties, IntPtr infoFlagsOut,
-            @ObjCBlock(name = "call_VTCompressionSessionEncodeFrameWithOutputHandler") Block_VTCompressionSessionEncodeFrameWithOutputHandler outputHandler);
+    public static native int VTCompressionSessionEncodeFrameWithOutputHandler(@NotNull VTCompressionSessionRef session,
+            @NotNull CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp, @ByValue CMTime duration,
+            @Nullable CFDictionaryRef frameProperties, @Nullable IntPtr infoFlagsOut,
+            @NotNull @ObjCBlock(name = "call_VTCompressionSessionEncodeFrameWithOutputHandler") Block_VTCompressionSessionEncodeFrameWithOutputHandler outputHandler);
 
     /**
      * [@function] VTCompressionSessionCompleteFrames
@@ -398,7 +404,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionCompleteFrames(VTCompressionSessionRef session,
+    public static native int VTCompressionSessionCompleteFrames(@NotNull VTCompressionSessionRef session,
             @ByValue CMTime completeUntilPresentationTimeStamp);
 
     /**
@@ -418,8 +424,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionBeginPass(VTCompressionSessionRef session, int beginPassFlags,
-            IntPtr reserved);
+    public static native int VTCompressionSessionBeginPass(@NotNull VTCompressionSessionRef session, int beginPassFlags,
+            @Nullable IntPtr reserved);
 
     /**
      * [@function] VTCompressionSessionEndPass
@@ -444,8 +450,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionEndPass(VTCompressionSessionRef session,
-            BytePtr furtherPassesRequestedOut, IntPtr reserved);
+    public static native int VTCompressionSessionEndPass(@NotNull VTCompressionSessionRef session,
+            @Nullable BytePtr furtherPassesRequestedOut, @Nullable IntPtr reserved);
 
     /**
      * [@function] VTCompressionSessionGetTimeRangesForNextPass
@@ -474,8 +480,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCompressionSessionGetTimeRangesForNextPass(VTCompressionSessionRef session,
-            NIntPtr timeRangeCountOut, Ptr<ConstPtr<CMTimeRange>> timeRangeArrayOut);
+    public static native int VTCompressionSessionGetTimeRangesForNextPass(@NotNull VTCompressionSessionRef session,
+            @NotNull NIntPtr timeRangeCountOut, @NotNull Ptr<ConstPtr<CMTimeRange>> timeRangeArrayOut);
 
     /**
      * [@function] VTDecompressionSessionCreate
@@ -506,11 +512,11 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTDecompressionSessionCreate(CFAllocatorRef allocator,
-            CMFormatDescriptionRef videoFormatDescription, CFDictionaryRef videoDecoderSpecification,
-            CFDictionaryRef destinationImageBufferAttributes,
-            @UncertainArgument("Options: reference, array Fallback: reference") VTDecompressionOutputCallbackRecord outputCallback,
-            Ptr<VTDecompressionSessionRef> decompressionSessionOut);
+    public static native int VTDecompressionSessionCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull CMFormatDescriptionRef videoFormatDescription, @Nullable CFDictionaryRef videoDecoderSpecification,
+            @Nullable CFDictionaryRef destinationImageBufferAttributes,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") VTDecompressionOutputCallbackRecord outputCallback,
+            @NotNull Ptr<VTDecompressionSessionRef> decompressionSessionOut);
 
     /**
      * [@function] VTDecompressionSessionInvalidate
@@ -527,7 +533,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native void VTDecompressionSessionInvalidate(VTDecompressionSessionRef session);
+    public static native void VTDecompressionSessionInvalidate(@NotNull VTDecompressionSessionRef session);
 
     /**
      * [@function] VTDecompressionSessionGetTypeID
@@ -582,8 +588,9 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTDecompressionSessionDecodeFrame(VTDecompressionSessionRef session,
-            CMSampleBufferRef sampleBuffer, int decodeFlags, VoidPtr sourceFrameRefCon, IntPtr infoFlagsOut);
+    public static native int VTDecompressionSessionDecodeFrame(@NotNull VTDecompressionSessionRef session,
+            @NotNull CMSampleBufferRef sampleBuffer, int decodeFlags, @Nullable VoidPtr sourceFrameRefCon,
+            @Nullable IntPtr infoFlagsOut);
 
     /**
      * [@function] VTDecompressionSessionDecodeFrameWithOutputHandler
@@ -625,9 +632,10 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTDecompressionSessionDecodeFrameWithOutputHandler(VTDecompressionSessionRef session,
-            CMSampleBufferRef sampleBuffer, int decodeFlags, IntPtr infoFlagsOut,
-            @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOutputHandler") Block_VTDecompressionSessionDecodeFrameWithOutputHandler outputHandler);
+    public static native int VTDecompressionSessionDecodeFrameWithOutputHandler(
+            @NotNull VTDecompressionSessionRef session, @NotNull CMSampleBufferRef sampleBuffer, int decodeFlags,
+            @Nullable IntPtr infoFlagsOut,
+            @NotNull @ObjCBlock(name = "call_VTDecompressionSessionDecodeFrameWithOutputHandler") Block_VTDecompressionSessionDecodeFrameWithOutputHandler outputHandler);
 
     /**
      * [@function] VTDecompressionSessionFinishDelayedFrames
@@ -644,7 +652,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTDecompressionSessionFinishDelayedFrames(VTDecompressionSessionRef session);
+    public static native int VTDecompressionSessionFinishDelayedFrames(@NotNull VTDecompressionSessionRef session);
 
     /**
      * [@function] VTDecompressionSessionCanAcceptFormatDescription
@@ -659,8 +667,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native byte VTDecompressionSessionCanAcceptFormatDescription(VTDecompressionSessionRef session,
-            CMFormatDescriptionRef newFormatDesc);
+    public static native byte VTDecompressionSessionCanAcceptFormatDescription(
+            @NotNull VTDecompressionSessionRef session, @NotNull CMFormatDescriptionRef newFormatDesc);
 
     /**
      * [@function] VTDecompressionSessionWaitForAsynchronousFrames
@@ -674,7 +682,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTDecompressionSessionWaitForAsynchronousFrames(VTDecompressionSessionRef session);
+    public static native int VTDecompressionSessionWaitForAsynchronousFrames(
+            @NotNull VTDecompressionSessionRef session);
 
     /**
      * [@function] VTDecompressionSessionCopyBlackPixelBuffer
@@ -693,8 +702,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTDecompressionSessionCopyBlackPixelBuffer(VTDecompressionSessionRef session,
-            Ptr<CVBufferRef> pixelBufferOut);
+    public static native int VTDecompressionSessionCopyBlackPixelBuffer(@NotNull VTDecompressionSessionRef session,
+            @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * API-Since: 8.0
@@ -727,8 +736,9 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTFrameSiloCreate(CFAllocatorRef allocator, CFURLRef fileURL,
-            @ByValue CMTimeRange timeRange, CFDictionaryRef options, Ptr<VTFrameSiloRef> frameSiloOut);
+    public static native int VTFrameSiloCreate(@Nullable CFAllocatorRef allocator, @Nullable CFURLRef fileURL,
+            @ByValue CMTimeRange timeRange, @Nullable CFDictionaryRef options,
+            @NotNull Ptr<VTFrameSiloRef> frameSiloOut);
 
     /**
      * [@function] VTFrameSiloAddSampleBuffer
@@ -749,7 +759,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTFrameSiloAddSampleBuffer(VTFrameSiloRef silo, CMSampleBufferRef sampleBuffer);
+    public static native int VTFrameSiloAddSampleBuffer(@NotNull VTFrameSiloRef silo,
+            @NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * [@function] VTFrameSiloSetTimeRangesForNextPass
@@ -768,8 +779,9 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTFrameSiloSetTimeRangesForNextPass(VTFrameSiloRef silo, @NInt long timeRangeCount,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeArray);
+    public static native int VTFrameSiloSetTimeRangesForNextPass(@NotNull VTFrameSiloRef silo,
+            @NInt long timeRangeCount,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeArray);
 
     /**
      * [@function] VTFrameSiloGetProgressOfCurrentPass
@@ -786,7 +798,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTFrameSiloGetProgressOfCurrentPass(VTFrameSiloRef silo, FloatPtr progressOut);
+    public static native int VTFrameSiloGetProgressOfCurrentPass(@NotNull VTFrameSiloRef silo,
+            @NotNull FloatPtr progressOut);
 
     /**
      * [@function] VTFrameSiloCallFunctionForEachSampleBuffer
@@ -813,9 +826,9 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTFrameSiloCallFunctionForEachSampleBuffer(VTFrameSiloRef silo,
-            @ByValue CMTimeRange timeRange, VoidPtr refcon,
-            @FunctionPtr(name = "call_VTFrameSiloCallFunctionForEachSampleBuffer") Function_VTFrameSiloCallFunctionForEachSampleBuffer callback);
+    public static native int VTFrameSiloCallFunctionForEachSampleBuffer(@NotNull VTFrameSiloRef silo,
+            @ByValue CMTimeRange timeRange, @Nullable VoidPtr refcon,
+            @NotNull @FunctionPtr(name = "call_VTFrameSiloCallFunctionForEachSampleBuffer") Function_VTFrameSiloCallFunctionForEachSampleBuffer callback);
 
     /**
      * [@function] VTFrameSiloCallBlockForEachSampleBuffer
@@ -842,9 +855,9 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTFrameSiloCallBlockForEachSampleBuffer(VTFrameSiloRef silo,
+    public static native int VTFrameSiloCallBlockForEachSampleBuffer(@NotNull VTFrameSiloRef silo,
             @ByValue CMTimeRange timeRange,
-            @ObjCBlock(name = "call_VTFrameSiloCallBlockForEachSampleBuffer") Block_VTFrameSiloCallBlockForEachSampleBuffer handler);
+            @NotNull @ObjCBlock(name = "call_VTFrameSiloCallBlockForEachSampleBuffer") Block_VTFrameSiloCallBlockForEachSampleBuffer handler);
 
     /**
      * API-Since: 8.0
@@ -878,8 +891,9 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTMultiPassStorageCreate(CFAllocatorRef allocator, CFURLRef fileURL,
-            @ByValue CMTimeRange timeRange, CFDictionaryRef options, Ptr<VTMultiPassStorageRef> multiPassStorageOut);
+    public static native int VTMultiPassStorageCreate(@Nullable CFAllocatorRef allocator, @Nullable CFURLRef fileURL,
+            @ByValue CMTimeRange timeRange, @Nullable CFDictionaryRef options,
+            @NotNull Ptr<VTMultiPassStorageRef> multiPassStorageOut);
 
     /**
      * [@function] VTMultiPassStorageClose
@@ -893,7 +907,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTMultiPassStorageClose(VTMultiPassStorageRef multiPassStorage);
+    public static native int VTMultiPassStorageClose(@NotNull VTMultiPassStorageRef multiPassStorage);
 
     /**
      * [@function] VTCopyVideoEncoderList
@@ -906,7 +920,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCopyVideoEncoderList(CFDictionaryRef options, Ptr<CFArrayRef> listOfVideoEncodersOut);
+    public static native int VTCopyVideoEncoderList(@Nullable CFDictionaryRef options,
+            @NotNull Ptr<CFArrayRef> listOfVideoEncodersOut);
 
     /**
      * [@function] VTCreateCGImageFromCVPixelBuffer
@@ -932,14 +947,15 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTCreateCGImageFromCVPixelBuffer(CVBufferRef pixelBuffer, CFDictionaryRef options,
-            Ptr<CGImageRef> imageOut);
+    public static native int VTCreateCGImageFromCVPixelBuffer(@NotNull CVBufferRef pixelBuffer,
+            @Nullable CFDictionaryRef options, @NotNull Ptr<CGImageRef> imageOut);
 
     /**
      * Read-only, CFNumber<int>
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_NumberOfPendingFrames();
@@ -949,6 +965,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_PixelBufferPoolIsShared();
@@ -958,6 +975,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_VideoEncoderPixelBufferAttributes();
@@ -967,6 +985,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MaxKeyFrameInterval();
@@ -976,6 +995,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MaxKeyFrameIntervalDuration();
@@ -985,6 +1005,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AllowTemporalCompression();
@@ -994,6 +1015,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AllowFrameReordering();
@@ -1003,6 +1025,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AverageBitRate();
@@ -1012,6 +1035,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_DataRateLimits();
@@ -1021,6 +1045,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_Quality();
@@ -1030,6 +1055,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MoreFramesBeforeStart();
@@ -1039,6 +1065,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MoreFramesAfterEnd();
@@ -1048,6 +1075,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ProfileLevel();
@@ -1055,6 +1083,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_1_3();
@@ -1062,6 +1091,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_3_0();
@@ -1069,6 +1099,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_3_1();
@@ -1076,6 +1107,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_3_2();
@@ -1083,6 +1115,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_4_0();
@@ -1090,6 +1123,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_4_1();
@@ -1097,6 +1131,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_4_2();
@@ -1104,6 +1139,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_5_0();
@@ -1111,6 +1147,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_5_1();
@@ -1118,6 +1155,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_5_2();
@@ -1125,6 +1163,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Baseline_AutoLevel();
@@ -1132,6 +1171,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_3_0();
@@ -1139,6 +1179,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_3_1();
@@ -1146,6 +1187,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_3_2();
@@ -1153,6 +1195,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_4_0();
@@ -1160,6 +1203,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_4_1();
@@ -1167,6 +1211,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_4_2();
@@ -1174,6 +1219,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_5_0();
@@ -1181,6 +1227,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_5_1();
@@ -1188,6 +1235,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_5_2();
@@ -1195,6 +1243,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Main_AutoLevel();
@@ -1202,6 +1251,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Extended_5_0();
@@ -1209,6 +1259,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_Extended_AutoLevel();
@@ -1216,6 +1267,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_3_0();
@@ -1223,6 +1275,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_3_1();
@@ -1230,6 +1283,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_3_2();
@@ -1237,6 +1291,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_4_0();
@@ -1244,6 +1299,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_4_1();
@@ -1251,6 +1307,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_4_2();
@@ -1258,6 +1315,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_5_0();
@@ -1265,6 +1323,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_5_1();
@@ -1272,6 +1331,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_5_2();
@@ -1279,6 +1339,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_High_AutoLevel();
@@ -1286,6 +1347,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L0();
@@ -1293,6 +1355,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L1();
@@ -1300,6 +1363,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L2();
@@ -1307,6 +1371,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Simple_L3();
@@ -1314,6 +1379,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Main_L2();
@@ -1321,6 +1387,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Main_L3();
@@ -1328,6 +1395,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_Main_L4();
@@ -1335,6 +1403,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L0();
@@ -1342,6 +1411,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L1();
@@ -1349,6 +1419,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L2();
@@ -1356,6 +1427,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L3();
@@ -1363,6 +1435,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_MP4V_AdvancedSimple_L4();
@@ -1370,6 +1443,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H263_Profile0_Level10();
@@ -1377,6 +1451,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H263_Profile0_Level45();
@@ -1384,6 +1459,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H263_Profile3_Level45();
@@ -1393,6 +1469,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_H264EntropyMode();
@@ -1400,6 +1477,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTH264EntropyMode_CAVLC();
@@ -1407,6 +1485,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTH264EntropyMode_CABAC();
@@ -1416,6 +1495,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_Depth();
@@ -1425,6 +1505,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MaxFrameDelayCount();
@@ -1434,6 +1515,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MaxH264SliceBytes();
@@ -1443,6 +1525,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_RealTime();
@@ -1452,6 +1535,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_SourceFrameCount();
@@ -1461,6 +1545,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ExpectedFrameRate();
@@ -1470,6 +1555,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ExpectedDuration();
@@ -1479,6 +1565,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTEncodeFrameOptionKey_ForceKeyFrame();
@@ -1488,6 +1575,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_CleanAperture();
@@ -1497,6 +1585,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_PixelAspectRatio();
@@ -1506,6 +1595,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_FieldCount();
@@ -1515,6 +1605,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_FieldDetail();
@@ -1524,6 +1615,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AspectRatio16x9();
@@ -1533,6 +1625,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ProgressiveScan();
@@ -1542,6 +1635,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ColorPrimaries();
@@ -1551,6 +1645,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_TransferFunction();
@@ -1560,6 +1655,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_YCbCrMatrix();
@@ -1569,6 +1665,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ICCProfile();
@@ -1578,6 +1675,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_PixelTransferProperties();
@@ -1587,6 +1685,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MultiPassStorage();
@@ -1596,6 +1695,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyTypeKey();
@@ -1605,6 +1705,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyType_Enumeration();
@@ -1614,6 +1715,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyType_Boolean();
@@ -1623,6 +1725,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyType_Number();
@@ -1630,6 +1733,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyReadWriteStatusKey();
@@ -1637,6 +1741,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyReadWriteStatus_ReadOnly();
@@ -1644,6 +1749,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyReadWriteStatus_ReadWrite();
@@ -1653,6 +1759,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyShouldBeSerializedKey();
@@ -1662,6 +1769,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertySupportedValueMinimumKey();
@@ -1671,6 +1779,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertySupportedValueMaximumKey();
@@ -1680,6 +1789,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertySupportedValueListKey();
@@ -1689,6 +1799,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPropertyDocumentationKey();
@@ -1698,6 +1809,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderSpecification_EncoderID();
@@ -1707,6 +1819,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_PixelBufferPool();
@@ -1716,6 +1829,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_PixelBufferPoolIsShared();
@@ -1725,6 +1839,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_OutputPoolRequestedMinimumBufferCount();
@@ -1734,6 +1849,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_NumberOfFramesBeingDecoded();
@@ -1743,6 +1859,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_MinOutputPresentationTimeStampOfFramesBeingDecoded();
@@ -1752,6 +1869,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_MaxOutputPresentationTimeStampOfFramesBeingDecoded();
@@ -1761,6 +1879,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_ContentHasInterframeDependencies();
@@ -1770,6 +1889,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_RealTime();
@@ -1779,6 +1899,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_ThreadCount();
@@ -1788,6 +1909,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_FieldMode();
@@ -1795,6 +1917,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_BothFields();
@@ -1802,6 +1925,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_TopFieldOnly();
@@ -1809,6 +1933,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_BottomFieldOnly();
@@ -1818,6 +1943,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_SingleField();
@@ -1825,6 +1951,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_FieldMode_DeinterlaceFields();
@@ -1835,6 +1962,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_DeinterlaceMode();
@@ -1844,6 +1972,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_DeinterlaceMode_VerticalFilter();
@@ -1856,6 +1985,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_DeinterlaceMode_Temporal();
@@ -1865,6 +1995,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_ReducedResolutionDecode();
@@ -1874,6 +2005,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionResolutionKey_Width();
@@ -1883,6 +2015,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionResolutionKey_Height();
@@ -1892,6 +2025,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_ReducedCoefficientDecode();
@@ -1901,6 +2035,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_ReducedFrameDelivery();
@@ -1910,6 +2045,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_OnlyTheseFrames();
@@ -1917,6 +2053,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_AllFrames();
@@ -1924,6 +2061,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_NonDroppableFrames();
@@ -1931,6 +2069,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_IFrames();
@@ -1938,6 +2077,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_OnlyTheseFrames_KeyFrames();
@@ -1947,6 +2087,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_SuggestedQualityOfServiceTiers();
@@ -1956,6 +2097,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_SupportedPixelFormatsOrderedByQuality();
@@ -1965,6 +2107,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_SupportedPixelFormatsOrderedByPerformance();
@@ -1974,6 +2117,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_PixelFormatsWithReducedResolutionSupport();
@@ -1983,6 +2127,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_PixelTransferProperties();
@@ -1990,6 +2135,7 @@ public final class VideoToolbox {
     /**
      * CFBoolean, false by default. Provided for use when debugging video encoders.
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTMultiPassStorageCreationOption_DoNotDelete();
@@ -1999,6 +2145,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_CodecType();
@@ -2009,6 +2156,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_EncoderID();
@@ -2018,6 +2166,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_CodecName();
@@ -2027,6 +2176,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_EncoderName();
@@ -2036,6 +2186,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_DisplayName();
@@ -2045,6 +2196,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_ScalingMode();
@@ -2055,6 +2207,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTScalingMode_Normal();
@@ -2064,6 +2217,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTScalingMode_CropSourceToCleanAperture();
@@ -2073,6 +2227,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTScalingMode_Letterbox();
@@ -2082,6 +2237,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTScalingMode_Trim();
@@ -2092,6 +2248,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DestinationCleanAperture();
@@ -2102,6 +2259,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DestinationPixelAspectRatio();
@@ -2111,6 +2269,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DownsamplingMode();
@@ -2120,6 +2279,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDownsamplingMode_Decimate();
@@ -2129,6 +2289,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDownsamplingMode_Average();
@@ -2138,6 +2299,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DestinationColorPrimaries();
@@ -2147,6 +2309,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DestinationTransferFunction();
@@ -2156,6 +2319,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DestinationICCProfile();
@@ -2165,6 +2329,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_DestinationYCbCrMatrix();
@@ -2173,7 +2338,8 @@ public final class VideoToolbox {
     @Generated
     public interface Function_VTCompressionSessionCreate {
         @Generated
-        void call_VTCompressionSessionCreate(VoidPtr arg0, VoidPtr arg1, int arg2, int arg3, CMSampleBufferRef arg4);
+        void call_VTCompressionSessionCreate(@Nullable VoidPtr arg0, @Nullable VoidPtr arg1, int arg2, int arg3,
+                @Nullable CMSampleBufferRef arg4);
     }
 
     @Runtime(CRuntime.class)
@@ -2181,29 +2347,30 @@ public final class VideoToolbox {
     public interface Block_VTCompressionSessionEncodeFrameWithOutputHandler {
         @Generated
         void call_VTCompressionSessionEncodeFrameWithOutputHandler(int status, int infoFlags,
-                CMSampleBufferRef sampleBuffer);
+                @Nullable CMSampleBufferRef sampleBuffer);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_VTDecompressionSessionDecodeFrameWithOutputHandler {
         @Generated
-        void call_VTDecompressionSessionDecodeFrameWithOutputHandler(int status, int infoFlags, CVBufferRef imageBuffer,
-                @ByValue CMTime presentationTimeStamp, @ByValue CMTime presentationDuration);
+        void call_VTDecompressionSessionDecodeFrameWithOutputHandler(int status, int infoFlags,
+                @Nullable CVBufferRef imageBuffer, @ByValue CMTime presentationTimeStamp,
+                @ByValue CMTime presentationDuration);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_VTFrameSiloCallFunctionForEachSampleBuffer {
         @Generated
-        int call_VTFrameSiloCallFunctionForEachSampleBuffer(VoidPtr arg0, CMSampleBufferRef arg1);
+        int call_VTFrameSiloCallFunctionForEachSampleBuffer(@Nullable VoidPtr arg0, @NotNull CMSampleBufferRef arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_VTFrameSiloCallBlockForEachSampleBuffer {
         @Generated
-        int call_VTFrameSiloCallBlockForEachSampleBuffer(CMSampleBufferRef arg0);
+        int call_VTFrameSiloCallBlockForEachSampleBuffer(@NotNull CMSampleBufferRef arg0);
     }
 
     /**
@@ -2235,12 +2402,13 @@ public final class VideoToolbox {
     @Generated
     @CFunction
     public static native int VTCopySupportedPropertyDictionaryForEncoder(int width, int height, int codecType,
-            CFDictionaryRef encoderSpecification, Ptr<CFStringRef> encoderIDOut,
-            Ptr<CFDictionaryRef> supportedPropertiesOut);
+            @Nullable CFDictionaryRef encoderSpecification, @Nullable Ptr<CFStringRef> encoderIDOut,
+            @Nullable Ptr<CFDictionaryRef> supportedPropertiesOut);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_HEVC_Main_AutoLevel();
@@ -2248,6 +2416,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_HEVC_Main10_AutoLevel();
@@ -2257,6 +2426,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_BaseLayerFrameRate();
@@ -2266,6 +2436,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MasteringDisplayColorVolume();
@@ -2275,6 +2446,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ContentLightLevelInfo();
@@ -2284,6 +2456,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_EncoderID();
@@ -2293,6 +2466,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionProperty_TemporalLevelLimit();
@@ -2302,6 +2476,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AllowOpenGOP();
@@ -2311,6 +2486,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_TargetQualityForAlpha();
@@ -2320,6 +2496,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MaximizePowerEfficiency();
@@ -2327,6 +2504,7 @@ public final class VideoToolbox {
     /**
      * CFNumber, Optional
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderSpecification_RequiredEncoderGPURegistryID();
@@ -2334,6 +2512,7 @@ public final class VideoToolbox {
     /**
      * CFNumber, Optional
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderSpecification_PreferredEncoderGPURegistryID();
@@ -2341,6 +2520,7 @@ public final class VideoToolbox {
     /**
      * CFNumberRef, Read;
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_UsingGPURegistryID();
@@ -2348,6 +2528,7 @@ public final class VideoToolbox {
     /**
      * Read/write, CFNumber (see kCMFormatDescriptionExtension_GammaLevel), Optional
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_GammaLevel();
@@ -2358,6 +2539,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_AlphaChannelMode();
@@ -2365,6 +2547,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTAlphaChannelMode_StraightAlpha();
@@ -2372,6 +2555,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTAlphaChannelMode_PremultipliedAlpha();
@@ -2381,6 +2565,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_MaximizePowerEfficiency();
@@ -2388,6 +2573,7 @@ public final class VideoToolbox {
     /**
      * CFNumber, Optional
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoDecoderSpecification_RequiredDecoderGPURegistryID();
@@ -2395,6 +2581,7 @@ public final class VideoToolbox {
     /**
      * CFNumber, Optional
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID();
@@ -2402,6 +2589,7 @@ public final class VideoToolbox {
     /**
      * CFNumberRef, Read;
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_UsingGPURegistryID();
@@ -2410,6 +2598,7 @@ public final class VideoToolbox {
      * optional. CFNumberRef. If encoder is associated with a specific GPU, this corresponds to the GPU registryID as
      * reported by [MTLDevice registryID].
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_GPURegistryID();
@@ -2420,6 +2609,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_SupportedSelectionProperties();
@@ -2430,6 +2620,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_PerformanceRating();
@@ -2441,6 +2632,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_QualityRating();
@@ -2451,6 +2643,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_InstanceLimit();
@@ -2460,6 +2653,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_IsHardwareAccelerated();
@@ -2467,6 +2661,7 @@ public final class VideoToolbox {
     /**
      * Read/write, CFBoolean, default NULL
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelTransferPropertyKey_RealTime();
@@ -2476,6 +2671,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_PrioritizeEncodingSpeedOverQuality();
@@ -2485,6 +2681,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_HDRMetadataInsertionMode();
@@ -2492,6 +2689,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTHDRMetadataInsertionMode_None();
@@ -2499,6 +2697,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTHDRMetadataInsertionMode_Auto();
@@ -2508,6 +2707,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_PreserveDynamicHDRMetadata();
@@ -2517,6 +2717,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTDecompressionPropertyKey_PropagatePerFrameHDRDisplayMetadata();
@@ -2527,6 +2728,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderList_SupportsFrameReordering();
@@ -2534,6 +2736,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_ConstrainedBaseline_AutoLevel();
@@ -2541,6 +2744,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_H264_ConstrainedHigh_AutoLevel();
@@ -2550,6 +2754,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_BaseLayerFrameRateFraction();
@@ -2559,6 +2764,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_BaseLayerBitRateFraction();
@@ -2568,6 +2774,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_SupportsBaseFrameQP();
@@ -2577,6 +2784,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTEncodeFrameOptionKey_BaseFrameQP();
@@ -2586,6 +2794,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 14.5
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderSpecification_EnableLowLatencyRateControl();
@@ -2595,6 +2804,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MaxAllowedFrameQP();
@@ -2604,6 +2814,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_EnableLTR();
@@ -2613,6 +2824,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTEncodeFrameOptionKey_AcknowledgedLTRTokens();
@@ -2622,6 +2834,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTEncodeFrameOptionKey_ForceLTRRefresh();
@@ -2631,6 +2844,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTSampleAttachmentKey_RequireLTRAcknowledgementToken();
@@ -2641,6 +2855,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTVideoEncoderListOption_IncludeStandardDefinitionDVEncoders();
@@ -2659,8 +2874,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTPixelTransferSessionCreate(CFAllocatorRef allocator,
-            Ptr<VTPixelTransferSessionRef> pixelTransferSessionOut);
+    public static native int VTPixelTransferSessionCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull Ptr<VTPixelTransferSessionRef> pixelTransferSessionOut);
 
     /**
      * [@function] VTPixelTransferSessionInvalidate
@@ -2675,7 +2890,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native void VTPixelTransferSessionInvalidate(VTPixelTransferSessionRef session);
+    public static native void VTPixelTransferSessionInvalidate(@NotNull VTPixelTransferSessionRef session);
 
     /**
      * [@function] VTPixelTransferSessionGetTypeID
@@ -2710,8 +2925,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTPixelTransferSessionTransferImage(VTPixelTransferSessionRef session,
-            CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
+    public static native int VTPixelTransferSessionTransferImage(@NotNull VTPixelTransferSessionRef session,
+            @NotNull CVBufferRef sourceBuffer, @NotNull CVBufferRef destinationBuffer);
 
     /**
      * [@function] VTPixelRotationSessionCreate
@@ -2727,8 +2942,8 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTPixelRotationSessionCreate(CFAllocatorRef allocator,
-            Ptr<VTPixelRotationSessionRef> pixelRotationSessionOut);
+    public static native int VTPixelRotationSessionCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull Ptr<VTPixelRotationSessionRef> pixelRotationSessionOut);
 
     /**
      * [@function] VTPixelRotationSessionInvalidate
@@ -2745,7 +2960,7 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native void VTPixelRotationSessionInvalidate(VTPixelRotationSessionRef session);
+    public static native void VTPixelRotationSessionInvalidate(@NotNull VTPixelRotationSessionRef session);
 
     /**
      * [@function] VTPixelRotationSessionGetTypeID
@@ -2786,14 +3001,15 @@ public final class VideoToolbox {
      */
     @Generated
     @CFunction
-    public static native int VTPixelRotationSessionRotateImage(VTPixelRotationSessionRef session,
-            CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
+    public static native int VTPixelRotationSessionRotateImage(@NotNull VTPixelRotationSessionRef session,
+            @NotNull CVBufferRef sourceBuffer, @NotNull CVBufferRef destinationBuffer);
 
     /**
      * CFNumber bits per second, Optional
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ConstantBitRate();
@@ -2803,6 +3019,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_EstimatedAverageBytesPerFrame();
@@ -2810,6 +3027,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTProfileLevel_HEVC_Main42210_AutoLevel();
@@ -2819,6 +3037,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 15.4
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_OutputBitDepth();
@@ -2828,6 +3047,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_PreserveAlphaChannel();
@@ -2837,6 +3057,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_ReferenceBufferCount();
@@ -2846,6 +3067,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTCompressionPropertyKey_MinAllowedFrameQP();
@@ -2861,6 +3083,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelRotationPropertyKey_Rotation();
@@ -2868,6 +3091,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTRotation_0();
@@ -2875,6 +3099,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTRotation_CW90();
@@ -2882,6 +3107,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTRotation_180();
@@ -2889,6 +3115,7 @@ public final class VideoToolbox {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTRotation_CCW90();
@@ -2904,6 +3131,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelRotationPropertyKey_FlipHorizontalOrientation();
@@ -2919,6 +3147,7 @@ public final class VideoToolbox {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kVTPixelRotationPropertyKey_FlipVerticalOrientation();

@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNTrajectoryObservation
@@ -65,22 +67,25 @@ public class VNTrajectoryObservation extends VNObservation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +105,7 @@ public class VNTrajectoryObservation extends VNObservation {
      * may be slightly off the ideal trajectory as these are the measured points that fall within the allowed tolerance.
      * The maximum number or past points is limited by the maximum trajectory length set in the request.
      */
+    @NotNull
     @Generated
     @Selector("detectedPoints")
     public native NSArray<? extends VNPoint> detectedPoints();
@@ -115,7 +121,7 @@ public class VNTrajectoryObservation extends VNObservation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNTrajectoryObservation initWithCoder(NSCoder coder);
+    public native VNTrajectoryObservation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,9 +140,10 @@ public class VNTrajectoryObservation extends VNObservation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,6 +157,7 @@ public class VNTrajectoryObservation extends VNObservation {
      * equation and the projected points of the detected trajectory get refined over time. The maximum number of cached
      * points is limited by the maximum points needed to describe the trajectory together with the parabolic equation.
      */
+    @NotNull
     @Generated
     @Selector("projectedPoints")
     public native NSArray<? extends VNPoint> projectedPoints();

@@ -29,6 +29,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 10.0
@@ -57,8 +58,8 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     @IsOptional
     @Selector("confirmGetAvailableRestaurantReservationBookings:completion:")
     default void confirmGetAvailableRestaurantReservationBookingsCompletion(
-            INGetAvailableRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_confirmGetAvailableRestaurantReservationBookingsCompletion") Block_confirmGetAvailableRestaurantReservationBookingsCompletion completion) {
+            @NotNull INGetAvailableRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmGetAvailableRestaurantReservationBookingsCompletion") Block_confirmGetAvailableRestaurantReservationBookingsCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,15 +78,15 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     @Generated
     @Selector("handleGetAvailableRestaurantReservationBookings:completion:")
     void handleGetAvailableRestaurantReservationBookingsCompletion(
-            INGetAvailableRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_handleGetAvailableRestaurantReservationBookingsCompletion") Block_handleGetAvailableRestaurantReservationBookingsCompletion completion);
+            @NotNull INGetAvailableRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetAvailableRestaurantReservationBookingsCompletion") Block_handleGetAvailableRestaurantReservationBookingsCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolvePartySizeForGetAvailableRestaurantReservationBookings:withCompletion:")
     default void resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion(
-            INGetAvailableRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion") Block_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion completion) {
+            @NotNull INGetAvailableRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion") Block_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,8 +94,8 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     @IsOptional
     @Selector("resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookings:withCompletion:")
     default void resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion(
-            INGetAvailableRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion") Block_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion completion) {
+            @NotNull INGetAvailableRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion") Block_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,8 +114,8 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     @IsOptional
     @Selector("resolveRestaurantForGetAvailableRestaurantReservationBookings:withCompletion:")
     default void resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion(
-            INGetAvailableRestaurantReservationBookingsIntent intent,
-            @ObjCBlock(name = "call_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion") Block_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion completion) {
+            @NotNull INGetAvailableRestaurantReservationBookingsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion") Block_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,7 +124,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_confirmGetAvailableRestaurantReservationBookingsCompletion {
         @Generated
         void call_confirmGetAvailableRestaurantReservationBookingsCompletion(
-                INGetAvailableRestaurantReservationBookingsIntentResponse response);
+                @NotNull INGetAvailableRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -131,7 +132,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_handleGetAvailableRestaurantReservationBookingsCompletion {
         @Generated
         void call_handleGetAvailableRestaurantReservationBookingsCompletion(
-                INGetAvailableRestaurantReservationBookingsIntentResponse response);
+                @NotNull INGetAvailableRestaurantReservationBookingsIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -139,7 +140,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolvePartySizeForGetAvailableRestaurantReservationBookingsWithCompletion(
-                INIntegerResolutionResult resolutionResult);
+                @NotNull INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -147,7 +148,7 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolvePreferredBookingDateComponentsForGetAvailableRestaurantReservationBookingsWithCompletion(
-                INDateComponentsResolutionResult resolutionResult);
+                @NotNull INDateComponentsResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -155,6 +156,6 @@ public interface INGetAvailableRestaurantReservationBookingsIntentHandling {
     public interface Block_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion {
         @Generated
         void call_resolveRestaurantForGetAvailableRestaurantReservationBookingsWithCompletion(
-                INRestaurantResolutionResult resolutionResult);
+                @NotNull INRestaurantResolutionResult resolutionResult);
     }
 }

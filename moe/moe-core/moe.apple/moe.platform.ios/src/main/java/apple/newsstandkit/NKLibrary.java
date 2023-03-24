@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NKLibrary
@@ -86,22 +88,25 @@ public class NKLibrary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class NKLibrary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,6 +168,7 @@ public class NKLibrary extends NSObject {
      * 
      * The application's shared Newsstand Content Library
      */
+    @Nullable
     @Generated
     @Selector("sharedLibrary")
     public static native NKLibrary sharedLibrary();
@@ -180,9 +187,10 @@ public class NKLibrary extends NSObject {
      * 
      * Add a new issue to the Newsstand Content Library.
      */
+    @NotNull
     @Generated
     @Selector("addIssueWithName:date:")
-    public native NKIssue addIssueWithNameDate(String name, NSDate date);
+    public native NKIssue addIssueWithNameDate(@NotNull String name, @NotNull NSDate date);
 
     /**
      * [@property] currentlyReadingIssue
@@ -191,6 +199,7 @@ public class NKLibrary extends NSObject {
      * set this property to the currently read issue to prevent data
      * from being purged when under disk pressure.
      */
+    @Nullable
     @Generated
     @Selector("currentlyReadingIssue")
     public native NKIssue currentlyReadingIssue();
@@ -202,6 +211,7 @@ public class NKLibrary extends NSObject {
      * Newsstand library. The issue that this asset is associated with
      * can be determined from the asset itself.
      */
+    @NotNull
     @Generated
     @Selector("downloadingAssets")
     public native NSArray<? extends NKAssetDownload> downloadingAssets();
@@ -215,15 +225,17 @@ public class NKLibrary extends NSObject {
      * 
      * Return the issue identified by the given name if it exists.
      */
+    @Nullable
     @Generated
     @Selector("issueWithName:")
-    public native NKIssue issueWithName(String name);
+    public native NKIssue issueWithName(@NotNull String name);
 
     /**
      * [@property] issues
      * 
      * The Newsstand issues in the library
      */
+    @NotNull
     @Generated
     @Selector("issues")
     public native NSArray<? extends NKIssue> issues();
@@ -235,7 +247,7 @@ public class NKLibrary extends NSObject {
      */
     @Generated
     @Selector("removeIssue:")
-    public native void removeIssue(NKIssue issue);
+    public native void removeIssue(@NotNull NKIssue issue);
 
     /**
      * [@property] currentlyReadingIssue
@@ -246,5 +258,5 @@ public class NKLibrary extends NSObject {
      */
     @Generated
     @Selector("setCurrentlyReadingIssue:")
-    public native void setCurrentlyReadingIssue(NKIssue value);
+    public native void setCurrentlyReadingIssue(@Nullable NKIssue value);
 }

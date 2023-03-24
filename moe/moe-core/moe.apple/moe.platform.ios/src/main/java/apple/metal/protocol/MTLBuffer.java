@@ -29,6 +29,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLBuffer
@@ -64,13 +66,14 @@ public interface MTLBuffer extends MTLResource {
      */
     @Generated
     @Selector("addDebugMarker:range:")
-    void addDebugMarkerRange(String marker, @ByValue NSRange range);
+    void addDebugMarkerRange(@NotNull String marker, @ByValue NSRange range);
 
     /**
      * contents
      * 
      * Returns the data pointer of this buffer's shared copy.
      */
+    @NotNull
     @Generated
     @Selector("contents")
     VoidPtr contents();
@@ -92,10 +95,11 @@ public interface MTLBuffer extends MTLResource {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("newTextureWithDescriptor:offset:bytesPerRow:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLTexture newTextureWithDescriptorOffsetBytesPerRow(MTLTextureDescriptor descriptor, @NUInt long offset,
+    MTLTexture newTextureWithDescriptorOffsetBytesPerRow(@NotNull MTLTextureDescriptor descriptor, @NUInt long offset,
             @NUInt long bytesPerRow);
 
     /**

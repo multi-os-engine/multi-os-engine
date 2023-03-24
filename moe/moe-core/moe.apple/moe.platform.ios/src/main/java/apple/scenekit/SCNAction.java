@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SceneKit")
@@ -78,22 +80,25 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,10 +106,11 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that executes a block over a duration.
      */
+    @NotNull
     @Generated
     @Selector("customActionWithDuration:actionBlock:")
     public static native SCNAction customActionWithDurationActionBlock(double seconds,
-            @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
+            @NotNull @ObjCBlock(name = "call_customActionWithDurationActionBlock") Block_customActionWithDurationActionBlock block);
 
     @Generated
     @Selector("debugDescription")
@@ -117,6 +123,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that changes the opacity value of the node to 1.0
      */
+    @NotNull
     @Generated
     @Selector("fadeInWithDuration:")
     public static native SCNAction fadeInWithDuration(double sec);
@@ -124,6 +131,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that adjusts the opacity value of a node by a relative value.
      */
+    @NotNull
     @Generated
     @Selector("fadeOpacityBy:duration:")
     public static native SCNAction fadeOpacityByDuration(@NFloat double factor, double sec);
@@ -131,6 +139,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that adjusts the opacity value of a node to a new value.
      */
+    @NotNull
     @Generated
     @Selector("fadeOpacityTo:duration:")
     public static native SCNAction fadeOpacityToDuration(@NFloat double opacity, double sec);
@@ -138,6 +147,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that changes the opacity value of the node to 0.0
      */
+    @NotNull
     @Generated
     @Selector("fadeOutWithDuration:")
     public static native SCNAction fadeOutWithDuration(double sec);
@@ -145,9 +155,10 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that runs a collection of actions in parallel.
      */
+    @NotNull
     @Generated
     @Selector("group:")
-    public static native SCNAction group(NSArray<? extends SCNAction> actions);
+    public static native SCNAction group(@NotNull NSArray<? extends SCNAction> actions);
 
     @Generated
     @Selector("hash")
@@ -159,6 +170,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("hide")
     public static native SCNAction hide();
@@ -184,14 +196,17 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
      * Creates an action that runs a javascript script over a duration. the node can be accessed from javascript via the
      * "node" symbol and the elapsed time (between 0 and 1 relative to the duration) via the "elapsedTime" symbol.
      */
+    @NotNull
     @Generated
     @Selector("javaScriptActionWithScript:duration:")
-    public static native SCNAction javaScriptActionWithScriptDuration(String script, double seconds);
+    public static native SCNAction javaScriptActionWithScriptDuration(@NotNull String script, double seconds);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("moveBy:duration:")
     public static native SCNAction moveByDuration(@ByValue SCNVector3 delta, double duration);
@@ -199,6 +214,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that moves a node relative to its current position.
      */
+    @NotNull
     @Generated
     @Selector("moveByX:y:z:duration:")
     public static native SCNAction moveByXYZDuration(@NFloat double deltaX, @NFloat double deltaY,
@@ -207,6 +223,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that moves a node to a new position.
      */
+    @NotNull
     @Generated
     @Selector("moveTo:duration:")
     public static native SCNAction moveToDuration(@ByValue SCNVector3 location, double duration);
@@ -226,13 +243,15 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
      * 
      *               API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("playAudioSource:waitForCompletion:")
-    public static native SCNAction playAudioSourceWaitForCompletion(SCNAudioSource source, boolean wait_);
+    public static native SCNAction playAudioSourceWaitForCompletion(@NotNull SCNAudioSource source, boolean wait_);
 
     /**
      * Creates an action that removes the node from its parent node.
      */
+    @NotNull
     @Generated
     @Selector("removeFromParentNode")
     public static native SCNAction removeFromParentNode();
@@ -240,16 +259,18 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that repeats another action a specified number of times.
      */
+    @NotNull
     @Generated
     @Selector("repeatAction:count:")
-    public static native SCNAction repeatActionCount(SCNAction action, @NUInt long count);
+    public static native SCNAction repeatActionCount(@NotNull SCNAction action, @NUInt long count);
 
     /**
      * Creates an action that repeats another action forever.
      */
+    @NotNull
     @Generated
     @Selector("repeatActionForever:")
-    public static native SCNAction repeatActionForever(SCNAction action);
+    public static native SCNAction repeatActionForever(@NotNull SCNAction action);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -262,6 +283,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that rotates the node arond an axis by the specified angle in radian
      */
+    @NotNull
     @Generated
     @Selector("rotateByAngle:aroundAxis:duration:")
     public static native SCNAction rotateByAngleAroundAxisDuration(@NFloat double angle, @ByValue SCNVector3 axis,
@@ -270,11 +292,13 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that rotates the node by a relative value in radian.
      */
+    @NotNull
     @Generated
     @Selector("rotateByX:y:z:duration:")
     public static native SCNAction rotateByXYZDuration(@NFloat double xAngle, @NFloat double yAngle,
             @NFloat double zAngle, double duration);
 
+    @NotNull
     @Generated
     @Selector("rotateToAxisAngle:duration:")
     public static native SCNAction rotateToAxisAngleDuration(@ByValue SCNVector4 axisAngle, double duration);
@@ -282,11 +306,13 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that rotates the node to an absolute angle in radian.
      */
+    @NotNull
     @Generated
     @Selector("rotateToX:y:z:duration:")
     public static native SCNAction rotateToXYZDuration(@NFloat double xAngle, @NFloat double yAngle,
             @NFloat double zAngle, double duration);
 
+    @NotNull
     @Generated
     @Selector("rotateToX:y:z:duration:shortestUnitArc:")
     public static native SCNAction rotateToXYZDurationShortestUnitArc(@NFloat double xAngle, @NFloat double yAngle,
@@ -295,18 +321,21 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that executes a block.
      */
+    @NotNull
     @Generated
     @Selector("runBlock:")
-    public static native SCNAction runBlock(@ObjCBlock(name = "call_runBlock") Block_runBlock block);
+    public static native SCNAction runBlock(@NotNull @ObjCBlock(name = "call_runBlock") Block_runBlock block);
 
+    @NotNull
     @Generated
     @Selector("runBlock:queue:")
-    public static native SCNAction runBlockQueue(@ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block,
-            NSObject queue);
+    public static native SCNAction runBlockQueue(
+            @NotNull @ObjCBlock(name = "call_runBlockQueue") Block_runBlockQueue block, @NotNull NSObject queue);
 
     /**
      * Creates an action that changes the x, y and z scale values of a node by a relative value.
      */
+    @NotNull
     @Generated
     @Selector("scaleBy:duration:")
     public static native SCNAction scaleByDuration(@NFloat double scale, double sec);
@@ -314,6 +343,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that changes the x, y and z scale values of a node.
      */
+    @NotNull
     @Generated
     @Selector("scaleTo:duration:")
     public static native SCNAction scaleToDuration(@NFloat double scale, double sec);
@@ -321,9 +351,10 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that runs a collection of actions sequentially.
      */
+    @NotNull
     @Generated
     @Selector("sequence:")
-    public static native SCNAction sequence(NSArray<? extends SCNAction> actions);
+    public static native SCNAction sequence(@NotNull NSArray<? extends SCNAction> actions);
 
     @Generated
     @Selector("setVersion:")
@@ -342,6 +373,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("unhide")
     public static native SCNAction unhide();
@@ -354,6 +386,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that idles for a specified period of time.
      */
+    @NotNull
     @Generated
     @Selector("waitForDuration:")
     public static native SCNAction waitForDuration(double sec);
@@ -361,15 +394,17 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Creates an action that idles for a randomized period of time.
      */
+    @NotNull
     @Generated
     @Selector("waitForDuration:withRange:")
     public static native SCNAction waitForDurationWithRange(double sec, double durationRange);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] duration
@@ -383,7 +418,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -391,13 +426,14 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAction initWithCoder(NSCoder coder);
+    public native SCNAction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * reversedAction
      * 
      * Creates an action that reverses the behavior of another action.
      */
+    @NotNull
     @Generated
     @Selector("reversedAction")
     public native SCNAction reversedAction();
@@ -429,7 +465,8 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setTimingFunction:")
-    public native void setTimingFunction(@ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
+    public native void setTimingFunction(
+            @Nullable @ObjCBlock(name = "call_setTimingFunction") Block_setTimingFunction value);
 
     /**
      * [@property] timingMode
@@ -462,6 +499,7 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @see SCNActionTimingFunction
      */
+    @Nullable
     @Generated
     @Selector("timingFunction")
     @ObjCBlock(name = "call_timingFunction_ret")
@@ -481,21 +519,21 @@ public class SCNAction extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_customActionWithDurationActionBlock {
         @Generated
-        void call_customActionWithDurationActionBlock(SCNNode node, @NFloat double elapsedTime);
+        void call_customActionWithDurationActionBlock(@NotNull SCNNode node, @NFloat double elapsedTime);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_runBlock {
         @Generated
-        void call_runBlock(SCNNode node);
+        void call_runBlock(@NotNull SCNNode node);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_runBlockQueue {
         @Generated
-        void call_runBlockQueue(SCNNode node);
+        void call_runBlockQueue(@NotNull SCNNode node);
     }
 
     @Runtime(ObjCRuntime.class)

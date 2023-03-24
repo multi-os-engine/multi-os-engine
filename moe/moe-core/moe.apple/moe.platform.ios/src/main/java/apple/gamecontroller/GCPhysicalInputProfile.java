@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A game controller profile representing physical buttons, thumbsticks, dpads, etc... on a controller.
@@ -57,6 +59,7 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("allAxes")
     public native NSSet<? extends GCControllerAxisInput> allAxes();
@@ -64,6 +67,7 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("allButtons")
     public native NSSet<? extends GCControllerButtonInput> allButtons();
@@ -71,6 +75,7 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("allDpads")
     public native NSSet<? extends GCControllerDirectionPad> allDpads();
@@ -80,6 +85,7 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("allElements")
     public native NSSet<? extends GCControllerElement> allElements();
@@ -96,11 +102,12 @@ public class GCPhysicalInputProfile extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("axes")
     public native NSDictionary<String, ? extends GCControllerAxisInput> axes();
@@ -108,19 +115,21 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("buttons")
     public native NSDictionary<String, ? extends GCControllerButtonInput> buttons();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Polls the state vector of the physical input input and saves it to a new and writable instance of
@@ -134,14 +143,17 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      *         API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("capture")
     public native GCPhysicalInputProfile capture();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -159,6 +171,7 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -167,6 +180,7 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("dpads")
     public native NSDictionary<String, ? extends GCControllerDirectionPad> dpads();
@@ -181,6 +195,7 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("elements")
     public native NSDictionary<String, ? extends GCControllerElement> elements();
@@ -211,9 +226,10 @@ public class GCPhysicalInputProfile extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The last time elements of this profile were updated.
@@ -238,9 +254,10 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native GCControllerElement objectForKeyedSubscript(String key);
+    public native GCControllerElement objectForKeyedSubscript(@NotNull String key);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -262,7 +279,7 @@ public class GCPhysicalInputProfile extends NSObject {
      */
     @Generated
     @Selector("setStateFromPhysicalInput:")
-    public native void setStateFromPhysicalInput(GCPhysicalInputProfile physicalInput);
+    public native void setStateFromPhysicalInput(@NotNull GCPhysicalInputProfile physicalInput);
 
     @Generated
     @Selector("setVersion:")
@@ -280,6 +297,7 @@ public class GCPhysicalInputProfile extends NSObject {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("allTouchpads")
     public native NSSet<? extends GCControllerTouchpad> allTouchpads();
@@ -310,9 +328,10 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      * @param inputName A GCInput string corresponding to the physical button you want the mapped element alias for.
      */
+    @NotNull
     @Generated
     @Selector("mappedElementAliasForPhysicalInputName:")
-    public native String mappedElementAliasForPhysicalInputName(String inputName);
+    public native String mappedElementAliasForPhysicalInputName(@NotNull String inputName);
 
     /**
      * Returns a set of GCInput strings corresponding to physical inputs that are mapped to a given GCControllerElement.
@@ -331,13 +350,15 @@ public class GCPhysicalInputProfile extends NSObject {
      * @param elementAlias A GCInput string corresponding to an alias of the GCControllerElement you want the physical
      *                     buttons for.
      */
+    @NotNull
     @Generated
     @Selector("mappedPhysicalInputNamesForElementAlias:")
-    public native NSSet<String> mappedPhysicalInputNamesForElementAlias(String elementAlias);
+    public native NSSet<String> mappedPhysicalInputNamesForElementAlias(@NotNull String elementAlias);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("touchpads")
     public native NSDictionary<String, ? extends GCControllerTouchpad> touchpads();
@@ -356,13 +377,13 @@ public class GCPhysicalInputProfile extends NSObject {
     @Generated
     @Selector("setValueDidChangeHandler:")
     public native void setValueDidChangeHandler(
-            @ObjCBlock(name = "call_setValueDidChangeHandler") Block_setValueDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueDidChangeHandler") Block_setValueDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setValueDidChangeHandler {
         @Generated
-        void call_setValueDidChangeHandler(GCPhysicalInputProfile arg0, GCControllerElement arg1);
+        void call_setValueDidChangeHandler(@NotNull GCPhysicalInputProfile arg0, @NotNull GCControllerElement arg1);
     }
 
     /**
@@ -376,6 +397,7 @@ public class GCPhysicalInputProfile extends NSObject {
      * 
      *                API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("valueDidChangeHandler")
     @ObjCBlock(name = "call_valueDidChangeHandler_ret")
@@ -385,6 +407,6 @@ public class GCPhysicalInputProfile extends NSObject {
     @Generated
     public interface Block_valueDidChangeHandler_ret {
         @Generated
-        void call_valueDidChangeHandler_ret(GCPhysicalInputProfile arg0, GCControllerElement arg1);
+        void call_valueDidChangeHandler_ret(@NotNull GCPhysicalInputProfile arg0, @NotNull GCControllerElement arg1);
     }
 }

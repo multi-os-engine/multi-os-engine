@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNAnimation represents an animation that targets a specific key path.
@@ -67,6 +69,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * Called when the animation starts.
      */
+    @Nullable
     @Generated
     @Selector("animationDidStart")
     @ObjCBlock(name = "call_animationDidStart_ret")
@@ -76,7 +79,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     public interface Block_animationDidStart_ret {
         @Generated
-        void call_animationDidStart_ret(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver);
+        void call_animationDidStart_ret(@NotNull SCNAnimation animation,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver);
     }
 
     /**
@@ -85,6 +89,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * SCNAnimationDidStopBlock
      * is true if the animation reached the end of its active duration without being removed.
      */
+    @Nullable
     @Generated
     @Selector("animationDidStop")
     @ObjCBlock(name = "call_animationDidStop_ret")
@@ -94,8 +99,8 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     public interface Block_animationDidStop_ret {
         @Generated
-        void call_animationDidStop_ret(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver,
-                boolean completed);
+        void call_animationDidStop_ret(@NotNull SCNAnimation animation,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver, boolean completed);
     }
 
     /**
@@ -103,6 +108,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * @see SCNAnimationEvent
      */
+    @Nullable
     @Generated
     @Selector("animationEvents")
     public native NSArray<? extends SCNAnimationEvent> animationEvents();
@@ -112,9 +118,10 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * @param animationName The name of the animation to load.
      */
+    @NotNull
     @Generated
     @Selector("animationNamed:")
-    public static native SCNAnimation animationNamed(String animationName);
+    public static native SCNAnimation animationNamed(@NotNull String animationName);
 
     /**
      * bridge with Core Animation
@@ -124,22 +131,24 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * 
      * @param caAnimation The CAAnimation to initialize from.
      */
+    @NotNull
     @Generated
     @Selector("animationWithCAAnimation:")
-    public static native SCNAnimation animationWithCAAnimation(CAAnimation caAnimation);
+    public static native SCNAnimation animationWithCAAnimation(@NotNull CAAnimation caAnimation);
 
     /**
      * Loads and returns an animation loaded from the specified URL.
      * 
      * @param animationUrl The url to load.
      */
+    @NotNull
     @Generated
     @Selector("animationWithContentsOfURL:")
-    public static native SCNAnimation animationWithContentsOfURL(NSURL animationUrl);
+    public static native SCNAnimation animationWithContentsOfURL(@NotNull NSURL animationUrl);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * When true, the object plays backwards after playing forwards. Defaults to NO.
@@ -170,27 +179,31 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -209,7 +222,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * When true, the animation is active before its active duration and evaluates to its start value. Defaults to NO.
@@ -236,7 +249,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNAnimation initWithCoder(NSCoder coder);
+    public native SCNAnimation initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -297,13 +310,15 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      * The key-path uses the KVC syntax. It's also possible to target a specific sub-node with the following syntax:
      * /<node-name>.property1.property2.field (field is optional, <node-name> is the name of the targeted node).
      */
+    @Nullable
     @Generated
     @Selector("keyPath")
     public native String keyPath();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -343,13 +358,14 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     @Selector("setAnimationDidStart:")
     public native void setAnimationDidStart(
-            @ObjCBlock(name = "call_setAnimationDidStart") Block_setAnimationDidStart value);
+            @Nullable @ObjCBlock(name = "call_setAnimationDidStart") Block_setAnimationDidStart value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setAnimationDidStart {
         @Generated
-        void call_setAnimationDidStart(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver);
+        void call_setAnimationDidStart(@NotNull SCNAnimation animation,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver);
     }
 
     /**
@@ -361,14 +377,14 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     @Generated
     @Selector("setAnimationDidStop:")
     public native void setAnimationDidStop(
-            @ObjCBlock(name = "call_setAnimationDidStop") Block_setAnimationDidStop value);
+            @Nullable @ObjCBlock(name = "call_setAnimationDidStop") Block_setAnimationDidStop value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setAnimationDidStop {
         @Generated
-        void call_setAnimationDidStop(SCNAnimation animation, @Mapped(ObjCObjectMapper.class) Object receiver,
-                boolean completed);
+        void call_setAnimationDidStop(@NotNull SCNAnimation animation,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object receiver, boolean completed);
     }
 
     /**
@@ -378,7 +394,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      */
     @Generated
     @Selector("setAnimationEvents:")
-    public native void setAnimationEvents(NSArray<? extends SCNAnimationEvent> value);
+    public native void setAnimationEvents(@Nullable NSArray<? extends SCNAnimationEvent> value);
 
     /**
      * When true, the animation is applied to the model tree once its active duration has passed. Defaults to NO.
@@ -454,7 +470,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      */
     @Generated
     @Selector("setKeyPath:")
-    public native void setKeyPath(String value);
+    public native void setKeyPath(@Nullable String value);
 
     /**
      * When true, the animation is removed from the render tree once its active duration has passed. Defaults to YES.
@@ -495,7 +511,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
      */
     @Generated
     @Selector("setTimingFunction:")
-    public native void setTimingFunction(SCNTimingFunction value);
+    public native void setTimingFunction(@NotNull SCNTimingFunction value);
 
     /**
      * Determines whether the receiver is evaluated using the scene time or the system time. Defaults to NO.
@@ -551,6 +567,7 @@ public class SCNAnimation extends NSObject implements apple.scenekit.protocol.SC
     /**
      * A timing function defining the pacing of the animation. Defaults to nil indicating linear pacing.
      */
+    @NotNull
     @Generated
     @Selector("timingFunction")
     public native SCNTimingFunction timingFunction();

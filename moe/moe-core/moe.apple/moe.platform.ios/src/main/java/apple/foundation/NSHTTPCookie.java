@@ -34,6 +34,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSHTTPCookie
@@ -77,22 +79,25 @@ public class NSHTTPCookie extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,9 +118,10 @@ public class NSHTTPCookie extends NSObject {
      *         a required key is missing, or a recognized key maps to an illegal
      *         value.
      */
+    @Nullable
     @Generated
     @Selector("cookieWithProperties:")
-    public static native NSHTTPCookie cookieWithProperties(NSDictionary<String, ?> properties);
+    public static native NSHTTPCookie cookieWithProperties(@NotNull NSDictionary<String, ?> properties);
 
     /**
      * cookiesWithResponseHeaderFields:forURL:
@@ -129,10 +135,11 @@ public class NSHTTPCookie extends NSObject {
      * @param URL          The URL that the cookies came from - relevant to how the cookies are interpreted.
      * @return An NSArray of NSHTTPCookie objects
      */
+    @NotNull
     @Generated
     @Selector("cookiesWithResponseHeaderFields:forURL:")
     public static native NSArray<? extends NSHTTPCookie> cookiesWithResponseHeaderFieldsForURL(
-            NSDictionary<String, String> headerFields, NSURL URL);
+            @NotNull NSDictionary<String, String> headerFields, @NotNull NSURL URL);
 
     @Generated
     @Selector("debugDescription")
@@ -164,9 +171,10 @@ public class NSHTTPCookie extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -183,10 +191,11 @@ public class NSHTTPCookie extends NSObject {
      * @return An NSDictionary where the keys are header field names, and the values
      *         are the corresponding header field values.
      */
+    @NotNull
     @Generated
     @Selector("requestHeaderFieldsWithCookies:")
     public static native NSDictionary<String, String> requestHeaderFieldsWithCookies(
-            NSArray<? extends NSHTTPCookie> cookies);
+            @NotNull NSArray<? extends NSHTTPCookie> cookies);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -214,6 +223,7 @@ public class NSHTTPCookie extends NSObject {
      * @return The comment of the receiver, or nil if the receiver has no
      *         comment.
      */
+    @Nullable
     @Generated
     @Selector("comment")
     public native String comment();
@@ -228,6 +238,7 @@ public class NSHTTPCookie extends NSObject {
      * @return The comment URL of the receiver, or nil if the receiver
      *         has no comment URL.
      */
+    @Nullable
     @Generated
     @Selector("commentURL")
     public native NSURL commentURL();
@@ -242,6 +253,7 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return The domain of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("domain")
     public native String domain();
@@ -256,6 +268,7 @@ public class NSHTTPCookie extends NSObject {
      * @return the expires date of the receiver.
      * @return The expires date of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("expiresDate")
     public native NSDate expiresDate();
@@ -392,7 +405,7 @@ public class NSHTTPCookie extends NSObject {
      */
     @Generated
     @Selector("initWithProperties:")
-    public native NSHTTPCookie initWithProperties(NSDictionary<String, ?> properties);
+    public native NSHTTPCookie initWithProperties(@NotNull NSDictionary<String, ?> properties);
 
     /**
      * Returns whether the receiver should only be sent to HTTP servers
@@ -443,6 +456,7 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return the name of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -456,6 +470,7 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return The path of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("path")
     public native String path();
@@ -472,6 +487,7 @@ public class NSHTTPCookie extends NSObject {
      *         array may be nil, in which case this cookie can be sent to any
      *         port.
      */
+    @Nullable
     @Generated
     @Selector("portList")
     public native NSArray<? extends NSNumber> portList();
@@ -489,6 +505,7 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return The dictionary representation of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("properties")
     public native NSDictionary<String, ?> properties();
@@ -498,6 +515,7 @@ public class NSHTTPCookie extends NSObject {
      * 
      * @return the value of the receiver.
      */
+    @NotNull
     @Generated
     @Selector("value")
     public native String value();
@@ -530,6 +548,7 @@ public class NSHTTPCookie extends NSObject {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("sameSitePolicy")
     public native String sameSitePolicy();

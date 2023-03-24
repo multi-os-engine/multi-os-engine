@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CTTelephonyNetworkInfo
@@ -80,22 +82,25 @@ public class CTTelephonyNetworkInfo extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +176,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * API-Since: 7.0
      * Deprecated-Since: 12.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("currentRadioAccessTechnology")
@@ -195,7 +202,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Generated
     @Selector("setSubscriberCellularProviderDidUpdateNotifier:")
     public native void setSubscriberCellularProviderDidUpdateNotifier(
-            @ObjCBlock(name = "call_setSubscriberCellularProviderDidUpdateNotifier") Block_setSubscriberCellularProviderDidUpdateNotifier value);
+            @Nullable @ObjCBlock(name = "call_setSubscriberCellularProviderDidUpdateNotifier") Block_setSubscriberCellularProviderDidUpdateNotifier value);
 
     /**
      * subscriberCellularProvider
@@ -207,6 +214,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * API-Since: 4.0
      * Deprecated-Since: 12.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("subscriberCellularProvider")
@@ -224,6 +232,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * API-Since: 4.0
      * Deprecated-Since: 12.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("subscriberCellularProviderDidUpdateNotifier")
@@ -234,14 +243,14 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Generated
     public interface Block_setSubscriberCellularProviderDidUpdateNotifier {
         @Generated
-        void call_setSubscriberCellularProviderDidUpdateNotifier(CTCarrier arg0);
+        void call_setSubscriberCellularProviderDidUpdateNotifier(@NotNull CTCarrier arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_subscriberCellularProviderDidUpdateNotifier_ret {
         @Generated
-        void call_subscriberCellularProviderDidUpdateNotifier_ret(CTCarrier arg0);
+        void call_subscriberCellularProviderDidUpdateNotifier_ret(@NotNull CTCarrier arg0);
     }
 
     /**
@@ -252,6 +261,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("dataServiceIdentifier")
     public native String dataServiceIdentifier();
@@ -259,6 +269,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -273,6 +284,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("serviceCurrentRadioAccessTechnology")
     public native NSDictionary<String, String> serviceCurrentRadioAccessTechnology();
@@ -286,6 +298,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("serviceSubscriberCellularProviders")
     public native NSDictionary<String, ? extends CTCarrier> serviceSubscriberCellularProviders();
@@ -303,6 +316,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("serviceSubscriberCellularProvidersDidUpdateNotifier")
     @ObjCBlock(name = "call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret")
@@ -312,7 +326,7 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Generated
     public interface Block_serviceSubscriberCellularProvidersDidUpdateNotifier_ret {
         @Generated
-        void call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret(String arg0);
+        void call_serviceSubscriberCellularProvidersDidUpdateNotifier_ret(@NotNull String arg0);
     }
 
     /**
@@ -320,13 +334,14 @@ public class CTTelephonyNetworkInfo extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value);
 
     /**
      * API-Since: 13.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CTTelephonyNetworkInfoDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -353,12 +368,12 @@ public class CTTelephonyNetworkInfo extends NSObject {
     @Generated
     @Selector("setServiceSubscriberCellularProvidersDidUpdateNotifier:")
     public native void setServiceSubscriberCellularProvidersDidUpdateNotifier(
-            @ObjCBlock(name = "call_setServiceSubscriberCellularProvidersDidUpdateNotifier") Block_setServiceSubscriberCellularProvidersDidUpdateNotifier value);
+            @Nullable @ObjCBlock(name = "call_setServiceSubscriberCellularProvidersDidUpdateNotifier") Block_setServiceSubscriberCellularProvidersDidUpdateNotifier value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setServiceSubscriberCellularProvidersDidUpdateNotifier {
         @Generated
-        void call_setServiceSubscriberCellularProvidersDidUpdateNotifier(String arg0);
+        void call_setServiceSubscriberCellularProvidersDidUpdateNotifier(@NotNull String arg0);
     }
 }

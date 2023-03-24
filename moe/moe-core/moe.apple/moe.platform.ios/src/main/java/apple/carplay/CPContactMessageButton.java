@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -57,22 +59,25 @@ public class CPContactMessageButton extends CPButton {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,8 +101,8 @@ public class CPContactMessageButton extends CPButton {
 
     @Generated
     @Selector("initWithImage:handler:")
-    public native CPContactMessageButton initWithImageHandler(UIImage image,
-            @ObjCBlock(name = "call_initWithImageHandler") CPButton.Block_initWithImageHandler handler);
+    public native CPContactMessageButton initWithImageHandler(@NotNull UIImage image,
+            @Nullable @ObjCBlock(name = "call_initWithImageHandler") CPButton.Block_initWithImageHandler handler);
 
     /**
      * Create a contact button that, when tapped, launches to Siri to compose a message to this entity.
@@ -109,7 +114,7 @@ public class CPContactMessageButton extends CPButton {
      */
     @Generated
     @Selector("initWithPhoneOrEmail:")
-    public native CPContactMessageButton initWithPhoneOrEmail(String phoneOrEmail);
+    public native CPContactMessageButton initWithPhoneOrEmail(@NotNull String phoneOrEmail);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,15 +133,17 @@ public class CPContactMessageButton extends CPButton {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native CPContactMessageButton new_objc();
 
+    @NotNull
     @Generated
     @Selector("phoneOrEmail")
     public native String phoneOrEmail();

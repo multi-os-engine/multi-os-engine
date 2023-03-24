@@ -27,6 +27,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -48,26 +50,28 @@ public final class AudioOutputUnitMIDICallbacks extends StructObject {
     }
 
     @Generated
-    public AudioOutputUnitMIDICallbacks(VoidPtr userData,
-            @FunctionPtr(name = "call_MIDIEventProc") Function_MIDIEventProc MIDIEventProc,
-            @FunctionPtr(name = "call_MIDISysExProc") Function_MIDISysExProc MIDISysExProc) {
+    public AudioOutputUnitMIDICallbacks(@Nullable VoidPtr userData,
+            @FunctionPtr(name = "call_MIDIEventProc") @NotNull Function_MIDIEventProc MIDIEventProc,
+            @FunctionPtr(name = "call_MIDISysExProc") @NotNull Function_MIDISysExProc MIDISysExProc) {
         super(AudioOutputUnitMIDICallbacks.class);
         setUserData(userData);
         setMIDIEventProc(MIDIEventProc);
         setMIDISysExProc(MIDISysExProc);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr userData();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setUserData(VoidPtr value);
+    public native void setUserData(@Nullable VoidPtr value);
 
     /**
      * see MusicDeviceMIDIEvent, MusicDeviceSysEx
      */
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_MIDIEventProc")
@@ -78,8 +82,10 @@ public final class AudioOutputUnitMIDICallbacks extends StructObject {
      */
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMIDIEventProc(@FunctionPtr(name = "call_MIDIEventProc") Function_MIDIEventProc value);
+    public native void setMIDIEventProc(
+            @NotNull @FunctionPtr(name = "call_MIDIEventProc") Function_MIDIEventProc value);
 
+    @NotNull
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_MIDISysExProc")
@@ -87,21 +93,22 @@ public final class AudioOutputUnitMIDICallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setMIDISysExProc(@FunctionPtr(name = "call_MIDISysExProc") Function_MIDISysExProc value);
+    public native void setMIDISysExProc(
+            @NotNull @FunctionPtr(name = "call_MIDISysExProc") Function_MIDISysExProc value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_MIDIEventProc {
         @Generated
-        void call_MIDIEventProc(VoidPtr arg0, int arg1, int arg2, int arg3, int arg4);
+        void call_MIDIEventProc(@Nullable VoidPtr arg0, int arg1, int arg2, int arg3, int arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_MIDISysExProc {
         @Generated
-        void call_MIDISysExProc(VoidPtr arg0,
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
+        void call_MIDISysExProc(@Nullable VoidPtr arg0,
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg1,
                 int arg2);
     }
 }

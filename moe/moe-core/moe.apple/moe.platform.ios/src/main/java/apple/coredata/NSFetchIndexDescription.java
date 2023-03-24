@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -60,22 +62,25 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,14 +96,16 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     /**
      * Will throw if the new value is invalid (ie includes both rtree and non-rtree elements).
      */
+    @NotNull
     @Generated
     @Selector("elements")
     public native NSArray<? extends NSFetchIndexElementDescription> elements();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("entity")
     public native NSEntityDescription entity();
@@ -114,12 +121,12 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFetchIndexDescription initWithCoder(NSCoder coder);
+    public native NSFetchIndexDescription initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithName:elements:")
-    public native NSFetchIndexDescription initWithNameElements(String name,
-            NSArray<? extends NSFetchIndexElementDescription> elements);
+    public native NSFetchIndexDescription initWithNameElements(@NotNull String name,
+            @Nullable NSArray<? extends NSFetchIndexElementDescription> elements);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,10 +145,12 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -154,6 +163,7 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     /**
      * If the index should be a partial index, specifies the predicate selecting rows for indexing
      */
+    @Nullable
     @Generated
     @Selector("partialIndexPredicate")
     public native NSPredicate partialIndexPredicate();
@@ -171,18 +181,18 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
      */
     @Generated
     @Selector("setElements:")
-    public native void setElements(NSArray<? extends NSFetchIndexElementDescription> value);
+    public native void setElements(@NotNull NSArray<? extends NSFetchIndexElementDescription> value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * If the index should be a partial index, specifies the predicate selecting rows for indexing
      */
     @Generated
     @Selector("setPartialIndexPredicate:")
-    public native void setPartialIndexPredicate(NSPredicate value);
+    public native void setPartialIndexPredicate(@Nullable NSPredicate value);
 
     @Generated
     @Selector("setVersion:")
@@ -197,9 +207,10 @@ public class NSFetchIndexDescription extends NSObject implements NSCoding, NSCop
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 }

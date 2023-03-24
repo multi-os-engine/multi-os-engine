@@ -14,6 +14,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -26,79 +28,79 @@ public interface UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("scene:continueUserActivity:")
-    default void sceneContinueUserActivity(UIScene scene, NSUserActivity userActivity) {
+    default void sceneContinueUserActivity(@NotNull UIScene scene, @NotNull NSUserActivity userActivity) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("scene:didFailToContinueUserActivityWithType:error:")
-    default void sceneDidFailToContinueUserActivityWithTypeError(UIScene scene, String userActivityType,
-            NSError error) {
+    default void sceneDidFailToContinueUserActivityWithTypeError(@NotNull UIScene scene,
+            @NotNull String userActivityType, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("scene:didUpdateUserActivity:")
-    default void sceneDidUpdateUserActivity(UIScene scene, NSUserActivity userActivity) {
+    default void sceneDidUpdateUserActivity(@NotNull UIScene scene, @NotNull NSUserActivity userActivity) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("scene:openURLContexts:")
-    default void sceneOpenURLContexts(UIScene scene, NSSet<? extends UIOpenURLContext> URLContexts) {
+    default void sceneOpenURLContexts(@NotNull UIScene scene, @NotNull NSSet<? extends UIOpenURLContext> URLContexts) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("scene:willConnectToSession:options:")
-    default void sceneWillConnectToSessionOptions(UIScene scene, UISceneSession session,
-            UISceneConnectionOptions connectionOptions) {
+    default void sceneWillConnectToSessionOptions(@NotNull UIScene scene, @NotNull UISceneSession session,
+            @NotNull UISceneConnectionOptions connectionOptions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("scene:willContinueUserActivityWithType:")
-    default void sceneWillContinueUserActivityWithType(UIScene scene, String userActivityType) {
+    default void sceneWillContinueUserActivityWithType(@NotNull UIScene scene, @NotNull String userActivityType) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sceneDidBecomeActive:")
-    default void sceneDidBecomeActive(UIScene scene) {
+    default void sceneDidBecomeActive(@NotNull UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sceneDidDisconnect:")
-    default void sceneDidDisconnect(UIScene scene) {
+    default void sceneDidDisconnect(@NotNull UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sceneDidEnterBackground:")
-    default void sceneDidEnterBackground(UIScene scene) {
+    default void sceneDidEnterBackground(@NotNull UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sceneWillEnterForeground:")
-    default void sceneWillEnterForeground(UIScene scene) {
+    default void sceneWillEnterForeground(@NotNull UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("sceneWillResignActive:")
-    default void sceneWillResignActive(UIScene scene) {
+    default void sceneWillResignActive(@NotNull UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,10 +115,11 @@ public interface UISceneDelegate {
      * method is called to update the activity. This is done synchronously and ensures the activity
      * has all info filled in before it is saved.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("stateRestorationActivityForScene:")
-    default NSUserActivity stateRestorationActivityForScene(UIScene scene) {
+    default NSUserActivity stateRestorationActivityForScene(@NotNull UIScene scene) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,7 +133,8 @@ public interface UISceneDelegate {
     @Generated
     @IsOptional
     @Selector("scene:restoreInteractionStateWithUserActivity:")
-    default void sceneRestoreInteractionStateWithUserActivity(UIScene scene, NSUserActivity stateRestorationActivity) {
+    default void sceneRestoreInteractionStateWithUserActivity(@NotNull UIScene scene,
+            @NotNull NSUserActivity stateRestorationActivity) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

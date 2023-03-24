@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INAppendToNoteIntent. By implementing this protocol, a class can provide
@@ -48,8 +49,8 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmAppendToNote:completion:")
-    default void confirmAppendToNoteCompletion(INAppendToNoteIntent intent,
-            @ObjCBlock(name = "call_confirmAppendToNoteCompletion") Block_confirmAppendToNoteCompletion completion) {
+    default void confirmAppendToNoteCompletion(@NotNull INAppendToNoteIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmAppendToNoteCompletion") Block_confirmAppendToNoteCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,7 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_confirmAppendToNoteCompletion {
         @Generated
-        void call_confirmAppendToNoteCompletion(INAppendToNoteIntentResponse response);
+        void call_confirmAppendToNoteCompletion(@NotNull INAppendToNoteIntentResponse response);
     }
 
     /**
@@ -73,21 +74,21 @@ public interface INAppendToNoteIntentHandling {
      */
     @Generated
     @Selector("handleAppendToNote:completion:")
-    void handleAppendToNoteCompletion(INAppendToNoteIntent intent,
-            @ObjCBlock(name = "call_handleAppendToNoteCompletion") Block_handleAppendToNoteCompletion completion);
+    void handleAppendToNoteCompletion(@NotNull INAppendToNoteIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleAppendToNoteCompletion") Block_handleAppendToNoteCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleAppendToNoteCompletion {
         @Generated
-        void call_handleAppendToNoteCompletion(INAppendToNoteIntentResponse response);
+        void call_handleAppendToNoteCompletion(@NotNull INAppendToNoteIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveContentForAppendToNote:withCompletion:")
-    default void resolveContentForAppendToNoteWithCompletion(INAppendToNoteIntent intent,
-            @ObjCBlock(name = "call_resolveContentForAppendToNoteWithCompletion") Block_resolveContentForAppendToNoteWithCompletion completion) {
+    default void resolveContentForAppendToNoteWithCompletion(@NotNull INAppendToNoteIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveContentForAppendToNoteWithCompletion") Block_resolveContentForAppendToNoteWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,7 +96,7 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_resolveContentForAppendToNoteWithCompletion {
         @Generated
-        void call_resolveContentForAppendToNoteWithCompletion(INNoteContentResolutionResult resolutionResult);
+        void call_resolveContentForAppendToNoteWithCompletion(@NotNull INNoteContentResolutionResult resolutionResult);
     }
 
     /**
@@ -112,8 +113,8 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveTargetNoteForAppendToNote:withCompletion:")
-    default void resolveTargetNoteForAppendToNoteWithCompletion(INAppendToNoteIntent intent,
-            @ObjCBlock(name = "call_resolveTargetNoteForAppendToNoteWithCompletion") Block_resolveTargetNoteForAppendToNoteWithCompletion completion) {
+    default void resolveTargetNoteForAppendToNoteWithCompletion(@NotNull INAppendToNoteIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTargetNoteForAppendToNoteWithCompletion") Block_resolveTargetNoteForAppendToNoteWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,6 +122,6 @@ public interface INAppendToNoteIntentHandling {
     @Generated
     public interface Block_resolveTargetNoteForAppendToNoteWithCompletion {
         @Generated
-        void call_resolveTargetNoteForAppendToNoteWithCompletion(INNoteResolutionResult resolutionResult);
+        void call_resolveTargetNoteForAppendToNoteWithCompletion(@NotNull INNoteResolutionResult resolutionResult);
     }
 }

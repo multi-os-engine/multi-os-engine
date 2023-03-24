@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -80,22 +82,25 @@ public class GLKMesh extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class GLKMesh extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -152,12 +158,13 @@ public class GLKMesh extends NSObject {
      * @param error        Pointer to an NSError object set if an error occurred
      * @param return       GLKit meshes created from the Model I/O asset
      */
+    @Nullable
     @Generated
     @Owned
     @Selector("newMeshesFromAsset:sourceMeshes:error:")
-    public static native NSArray<? extends GLKMesh> newMeshesFromAssetSourceMeshesError(MDLAsset asset,
-            @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends MDLMesh>> sourceMeshes,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<? extends GLKMesh> newMeshesFromAssetSourceMeshesError(@NotNull MDLAsset asset,
+            @Nullable @ReferenceInfo(type = NSArray.class) Ptr<NSArray<? extends MDLMesh>> sourceMeshes,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,7 +203,8 @@ public class GLKMesh extends NSObject {
      */
     @Generated
     @Selector("initWithMesh:error:")
-    public native GLKMesh initWithMeshError(MDLMesh mesh, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native GLKMesh initWithMeshError(@NotNull MDLMesh mesh,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * [@property] name
@@ -205,6 +213,7 @@ public class GLKMesh extends NSObject {
      * 
      * Can be used by the app to identiry the mesh in it's scene/world/renderer etc.
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -216,6 +225,7 @@ public class GLKMesh extends NSObject {
      * 
      * Submeshes may also contain texture materials to apply when rendering this object
      */
+    @NotNull
     @Generated
     @Selector("submeshes")
     public native NSArray<? extends GLKSubmesh> submeshes();
@@ -225,6 +235,7 @@ public class GLKMesh extends NSObject {
      * 
      * Array of buffers in which mesh vertex data resides
      */
+    @NotNull
     @Generated
     @Selector("vertexBuffers")
     public native NSArray<? extends GLKMeshBuffer> vertexBuffers();
@@ -247,6 +258,7 @@ public class GLKMesh extends NSObject {
      * This is not directly used by this object, but the application can use this information to determine rendering
      * state or setup a vertex attribute object.
      */
+    @NotNull
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();

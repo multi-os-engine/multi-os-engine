@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An agent is a point mass whose local coordinate system is aligned to its velocity. Agents have a variety of
@@ -85,22 +87,25 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +175,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
      * The behavior to apply when updateWithDeltaTime is called.
      * All forces from the goals in the behavior are summed and then applied.
      */
+    @Nullable
     @Generated
     @Selector("behavior")
     public native GKBehavior behavior();
@@ -176,6 +183,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
     /**
      * Object which has agentDidUpdate called on it during this agent's behavior updatekbeha
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -183,7 +191,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -191,7 +199,7 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKAgent initWithCoder(NSCoder coder);
+    public native GKAgent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Agent's mass. Used for agent impulse application purposes.
@@ -236,20 +244,20 @@ public class GKAgent extends GKComponent implements NSSecureCoding {
      */
     @Generated
     @Selector("setBehavior:")
-    public native void setBehavior(GKBehavior value);
+    public native void setBehavior(@Nullable GKBehavior value);
 
     /**
      * Object which has agentDidUpdate called on it during this agent's behavior updatekbeha
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) GKAgentDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) GKAgentDelegate value);
 
     /**
      * Object which has agentDidUpdate called on it during this agent's behavior updatekbeha
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) GKAgentDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) GKAgentDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

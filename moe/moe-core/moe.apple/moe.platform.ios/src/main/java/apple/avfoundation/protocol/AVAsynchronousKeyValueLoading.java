@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVAsynchronousKeyValueLoading
@@ -72,8 +74,8 @@ public interface AVAsynchronousKeyValueLoading {
      */
     @Generated
     @Selector("loadValuesAsynchronouslyForKeys:completionHandler:")
-    void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
-            @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
+    void loadValuesAsynchronouslyForKeysCompletionHandler(@NotNull NSArray<String> keys,
+            @Nullable @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
     /**
      * statusOfValueForKey:
@@ -110,7 +112,8 @@ public interface AVAsynchronousKeyValueLoading {
     @Generated
     @Selector("statusOfValueForKey:error:")
     @NInt
-    long statusOfValueForKeyError(String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    long statusOfValueForKeyError(@NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Runtime(ObjCRuntime.class)
     @Generated

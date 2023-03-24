@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A renderer for displaying a SpriteKit scene in an existing Metal workflow.
@@ -64,22 +66,25 @@ public class SKRenderer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class SKRenderer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,8 +160,8 @@ public class SKRenderer extends NSObject {
     @Generated
     @Selector("renderWithViewport:commandBuffer:renderPassDescriptor:")
     public native void renderWithViewportCommandBufferRenderPassDescriptor(@ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            MTLRenderPassDescriptor renderPassDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
      * Render the scene content using a specific Metal command encoder.
@@ -169,8 +175,9 @@ public class SKRenderer extends NSObject {
     @Generated
     @Selector("renderWithViewport:renderCommandEncoder:renderPassDescriptor:commandQueue:")
     public native void renderWithViewportRenderCommandEncoderRenderPassDescriptorCommandQueue(@ByValue CGRect viewport,
-            @Mapped(ObjCObjectMapper.class) MTLRenderCommandEncoder renderCommandEncoder,
-            MTLRenderPassDescriptor renderPassDescriptor, @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLRenderCommandEncoder renderCommandEncoder,
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandQueue commandQueue);
 
     /**
      * Creates a renderer with the specified Metal device.
@@ -178,9 +185,10 @@ public class SKRenderer extends NSObject {
      * @param device A Metal device.
      * @return A new renderer object.
      */
+    @NotNull
     @Generated
     @Selector("rendererWithDevice:")
-    public static native SKRenderer rendererWithDevice(@Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public static native SKRenderer rendererWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -193,6 +201,7 @@ public class SKRenderer extends NSObject {
     /**
      * The currently presented scene, otherwise nil. If in a transition, the 'incoming' scene is returned.
      */
+    @Nullable
     @Generated
     @Selector("scene")
     public native SKScene scene();
@@ -219,7 +228,7 @@ public class SKRenderer extends NSObject {
      */
     @Generated
     @Selector("setScene:")
-    public native void setScene(SKScene value);
+    public native void setScene(@Nullable SKScene value);
 
     /**
      * A boolean that indicated whether non-visible nodes should be automatically culled when rendering.

@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNTechnique
@@ -88,22 +90,25 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,9 +143,10 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,9 +183,11 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      * 
      * @param techniques The techniques to sequence.
      */
+    @Nullable
     @Generated
     @Selector("techniqueBySequencingTechniques:")
-    public static native SCNTechnique techniqueBySequencingTechniques(NSArray<? extends SCNTechnique> techniques);
+    public static native SCNTechnique techniqueBySequencingTechniques(
+            @NotNull NSArray<? extends SCNTechnique> techniques);
 
     /**
      * techniqueWithDictionary:
@@ -439,9 +447,10 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      * 
      * @param dictionary The dictionary representation of the technique.
      */
+    @Nullable
     @Generated
     @Selector("techniqueWithDictionary:")
-    public static native SCNTechnique techniqueWithDictionary(NSDictionary<String, ?> dictionary);
+    public static native SCNTechnique techniqueWithDictionary(@NotNull NSDictionary<String, ?> dictionary);
 
     @Generated
     @Selector("version")
@@ -450,35 +459,40 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
+    @Nullable
     @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] dictionaryRepresentation
      * 
      * Returns the dictionary representation of the technique.
      */
+    @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<String, ?> dictionaryRepresentation();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * handleBindingOfSymbol:usingBlock:
@@ -492,8 +506,8 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      */
     @Generated
     @Selector("handleBindingOfSymbol:usingBlock:")
-    public native void handleBindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block);
+    public native void handleBindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") Block_handleBindingOfSymbolUsingBlock block);
 
     @Generated
     @Selector("init")
@@ -501,12 +515,12 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNTechnique initWithCoder(NSCoder coder);
+    public native SCNTechnique initWithCoder(@NotNull NSCoder coder);
 
     @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     /**
      * SCNTechnique is a key-value coding compliant class, which means that you can set values for arbitrary keys. Even
@@ -534,15 +548,16 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("objectForKeyedSubscript:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object objectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object key);
+    public native Object objectForKeyedSubscript(@NotNull @Mapped(ObjCObjectMapper.class) Object key);
 
     @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllAnimations")
@@ -550,30 +565,30 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("setObject:forKeyedSubscript:")
-    public native void setObjectForKeyedSubscript(@Mapped(ObjCObjectMapper.class) Object obj,
-            @Mapped(ObjCObjectMapper.class) Object key);
+    public native void setObjectForKeyedSubscript(@Nullable @Mapped(ObjCObjectMapper.class) Object obj,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object key);
 
     @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -585,21 +600,22 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
     @Generated
     public interface Block_handleBindingOfSymbolUsingBlock {
         @Generated
-        void call_handleBindingOfSymbolUsingBlock(int programID, int location, SCNNode renderedNode,
-                SCNRenderer renderer);
+        void call_handleBindingOfSymbolUsingBlock(int programID, int location, @Nullable SCNNode renderedNode,
+                @NotNull SCNRenderer renderer);
     }
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * [@property] library
@@ -609,6 +625,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("library")
     @MappedReturn(ObjCObjectMapper.class)
@@ -624,7 +641,7 @@ public class SCNTechnique extends NSObject implements SCNAnimatable, NSCopying, 
      */
     @Generated
     @Selector("setLibrary:")
-    public native void setLibrary(@Mapped(ObjCObjectMapper.class) MTLLibrary value);
+    public native void setLibrary(@Nullable @Mapped(ObjCObjectMapper.class) MTLLibrary value);
 
     @Generated
     @Selector("removeAllAnimationsWithBlendOutDuration:")

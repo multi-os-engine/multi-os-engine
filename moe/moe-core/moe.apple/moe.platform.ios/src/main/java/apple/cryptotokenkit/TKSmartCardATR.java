@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents parsed SmartCard ATR. Provides routine for parsing byte stream or NSData with binary ATR and accessors to
@@ -59,29 +61,33 @@ public class TKSmartCardATR extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Full ATR as string of bytes
      */
+    @NotNull
     @Generated
     @Selector("bytes")
     public native NSData bytes();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +108,7 @@ public class TKSmartCardATR extends NSObject {
     /**
      * Just historical bytes of ATR, without Tck and interface bytes.
      */
+    @NotNull
     @Generated
     @Selector("historicalBytes")
     public native NSData historicalBytes();
@@ -114,6 +121,7 @@ public class TKSmartCardATR extends NSObject {
      * appended into the returned records as if historical bytes would begin with 0x80 and 0x8 record is present
      * in historical bytes.
      */
+    @Nullable
     @Generated
     @Selector("historicalRecords")
     public native NSArray<? extends TKCompactTLVRecord> historicalRecords();
@@ -130,7 +138,7 @@ public class TKSmartCardATR extends NSObject {
      */
     @Generated
     @Selector("initWithBytes:")
-    public native TKSmartCardATR initWithBytes(NSData bytes);
+    public native TKSmartCardATR initWithBytes(@NotNull NSData bytes);
 
     /**
      * Parses ATR from stream.
@@ -140,7 +148,8 @@ public class TKSmartCardATR extends NSObject {
      */
     @Generated
     @Selector("initWithSource:")
-    public native TKSmartCardATR initWithSource(@ObjCBlock(name = "call_initWithSource") Block_initWithSource source);
+    public native TKSmartCardATR initWithSource(
+            @NotNull @ObjCBlock(name = "call_initWithSource") Block_initWithSource source);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -168,6 +177,7 @@ public class TKSmartCardATR extends NSObject {
      * @param index Index of the requested interface group. Indexing conforms to ISO7816-3, i.e. starts from 1.
      * @return Interface group with given index, or nil of no such group was present.
      */
+    @Nullable
     @Generated
     @Selector("interfaceGroupAtIndex:")
     public native TKSmartCardATRInterfaceGroup interfaceGroupAtIndex(@NInt long index);
@@ -177,6 +187,7 @@ public class TKSmartCardATR extends NSObject {
      * 
      * @param protocol Protocol number for which the interface group is requested.
      */
+    @Nullable
     @Generated
     @Selector("interfaceGroupForProtocol:")
     public native TKSmartCardATRInterfaceGroup interfaceGroupForProtocol(@NUInt long protocol);
@@ -185,9 +196,10 @@ public class TKSmartCardATR extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -198,6 +210,7 @@ public class TKSmartCardATR extends NSObject {
      * Array of NSNumber of protocols indicated in ATR, in the correct order (i.e. the default protocol comes first),
      * duplicates sorted out.
      */
+    @NotNull
     @Generated
     @Selector("protocols")
     public native NSArray<? extends NSNumber> protocols();

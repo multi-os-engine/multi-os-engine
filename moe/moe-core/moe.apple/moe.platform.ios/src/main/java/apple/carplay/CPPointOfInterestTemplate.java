@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.carplay.protocol.CPBarButtonProviding;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -60,22 +62,25 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,7 +104,7 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPPointOfInterestTemplate initWithCoder(NSCoder coder);
+    public native CPPointOfInterestTemplate initWithCoder(@NotNull NSCoder coder);
 
     /**
      * CPPointOfInterestTemplate displays a map view with selectable points of interest.
@@ -113,8 +118,8 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
      */
     @Generated
     @Selector("initWithTitle:pointsOfInterest:selectedIndex:")
-    public native CPPointOfInterestTemplate initWithTitlePointsOfInterestSelectedIndex(String title,
-            NSArray<? extends CPPointOfInterest> pointsOfInterest, @NUInt long selectedIndex);
+    public native CPPointOfInterestTemplate initWithTitlePointsOfInterestSelectedIndex(@NotNull String title,
+            @NotNull NSArray<? extends CPPointOfInterest> pointsOfInterest, @NUInt long selectedIndex);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -133,9 +138,10 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -145,11 +151,13 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     /**
      * The Point of Interest template's delegate is informed of user events.
      */
+    @Nullable
     @Generated
     @Selector("pointOfInterestDelegate")
     @MappedReturn(ObjCObjectMapper.class)
     public native CPPointOfInterestTemplateDelegate pointOfInterestDelegate();
 
+    @NotNull
     @Generated
     @Selector("pointsOfInterest")
     public native NSArray<? extends CPPointOfInterest> pointsOfInterest();
@@ -176,13 +184,14 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     @Generated
     @Selector("setPointOfInterestDelegate:")
     public native void setPointOfInterestDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) CPPointOfInterestTemplateDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) CPPointOfInterestTemplateDelegate value);
 
     /**
      * The Point of Interest template's delegate is informed of user events.
      */
     @Generated
-    public void setPointOfInterestDelegate(@Mapped(ObjCObjectMapper.class) CPPointOfInterestTemplateDelegate value) {
+    public void setPointOfInterestDelegate(
+            @Nullable @Mapped(ObjCObjectMapper.class) CPPointOfInterestTemplateDelegate value) {
         Object __old = pointOfInterestDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -204,7 +213,7 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
      */
     @Generated
     @Selector("setPointsOfInterest:selectedIndex:")
-    public native void setPointsOfInterestSelectedIndex(NSArray<? extends CPPointOfInterest> pointsOfInterest,
+    public native void setPointsOfInterestSelectedIndex(@NotNull NSArray<? extends CPPointOfInterest> pointsOfInterest,
             @NUInt long selectedIndex);
 
     /**
@@ -219,7 +228,7 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -242,6 +251,7 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     /**
      * Template title appears on the template point of interest picker
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -251,26 +261,29 @@ public class CPPointOfInterestTemplate extends CPTemplate implements CPBarButton
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("backButton")
     public native CPBarButton backButton();
 
+    @NotNull
     @Generated
     @Selector("leadingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> leadingNavigationBarButtons();
 
     @Generated
     @Selector("setBackButton:")
-    public native void setBackButton(CPBarButton value);
+    public native void setBackButton(@Nullable CPBarButton value);
 
     @Generated
     @Selector("setLeadingNavigationBarButtons:")
-    public native void setLeadingNavigationBarButtons(NSArray<? extends CPBarButton> value);
+    public native void setLeadingNavigationBarButtons(@NotNull NSArray<? extends CPBarButton> value);
 
     @Generated
     @Selector("setTrailingNavigationBarButtons:")
-    public native void setTrailingNavigationBarButtons(NSArray<? extends CPBarButton> value);
+    public native void setTrailingNavigationBarButtons(@NotNull NSArray<? extends CPBarButton> value);
 
+    @NotNull
     @Generated
     @Selector("trailingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();

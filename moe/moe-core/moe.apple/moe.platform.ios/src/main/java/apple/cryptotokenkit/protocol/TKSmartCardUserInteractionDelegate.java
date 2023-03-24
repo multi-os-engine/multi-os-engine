@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Delegate for user interactions involving the SmartCard reader.
@@ -23,7 +24,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("characterEnteredInUserInteraction:")
-    default void characterEnteredInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void characterEnteredInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -33,7 +34,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("correctionKeyPressedInUserInteraction:")
-    default void correctionKeyPressedInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void correctionKeyPressedInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +44,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("invalidCharacterEnteredInUserInteraction:")
-    default void invalidCharacterEnteredInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void invalidCharacterEnteredInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +54,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("newPINConfirmationRequestedInUserInteraction:")
-    default void newPINConfirmationRequestedInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void newPINConfirmationRequestedInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +64,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("newPINRequestedInUserInteraction:")
-    default void newPINRequestedInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void newPINRequestedInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,7 +74,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("oldPINRequestedInUserInteraction:")
-    default void oldPINRequestedInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void oldPINRequestedInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -83,7 +84,7 @@ public interface TKSmartCardUserInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("validationKeyPressedInUserInteraction:")
-    default void validationKeyPressedInUserInteraction(TKSmartCardUserInteraction interaction) {
+    default void validationKeyPressedInUserInteraction(@NotNull TKSmartCardUserInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

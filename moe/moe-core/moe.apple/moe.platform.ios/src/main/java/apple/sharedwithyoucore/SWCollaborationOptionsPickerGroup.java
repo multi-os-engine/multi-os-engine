@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWCollaborationOptionsPickerGroup
@@ -65,22 +67,25 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,12 +109,12 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWCollaborationOptionsPickerGroup initWithCoder(NSCoder coder);
+    public native SWCollaborationOptionsPickerGroup initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithIdentifier:options:")
-    public native SWCollaborationOptionsPickerGroup initWithIdentifierOptions(String identifier,
-            NSArray<? extends SWCollaborationOption> options);
+    public native SWCollaborationOptionsPickerGroup initWithIdentifierOptions(@NotNull String identifier,
+            @NotNull NSArray<? extends SWCollaborationOption> options);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,19 +133,21 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SWCollaborationOptionsPickerGroup new_objc();
 
+    @NotNull
     @Generated
     @Selector("optionsGroupWithIdentifier:options:")
-    public static native SWCollaborationOptionsGroup optionsGroupWithIdentifierOptions(String identifier,
-            NSArray<? extends SWCollaborationOption> options);
+    public static native SWCollaborationOptionsGroup optionsGroupWithIdentifierOptions(@NotNull String identifier,
+            @NotNull NSArray<? extends SWCollaborationOption> options);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -153,6 +160,7 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
     /**
      * The identifier of the selected option in the group. Defaults to the first SWCollaborationOption's identifier.
      */
+    @NotNull
     @Generated
     @Selector("selectedOptionIdentifier")
     public native String selectedOptionIdentifier();
@@ -162,7 +170,7 @@ public class SWCollaborationOptionsPickerGroup extends SWCollaborationOptionsGro
      */
     @Generated
     @Selector("setSelectedOptionIdentifier:")
-    public native void setSelectedOptionIdentifier(String value);
+    public native void setSelectedOptionIdentifier(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")

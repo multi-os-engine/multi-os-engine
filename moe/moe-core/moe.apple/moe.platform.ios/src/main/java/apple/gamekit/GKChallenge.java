@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -78,22 +80,25 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Query challenges for the current game issued to the local player -- equivalent GKChallenge objects are not
@@ -139,7 +145,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     @Selector("loadReceivedChallengesWithCompletionHandler:")
     public static native void loadReceivedChallengesWithCompletionHandler(
-            @ObjCBlock(name = "call_loadReceivedChallengesWithCompletionHandler") Block_loadReceivedChallengesWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_loadReceivedChallengesWithCompletionHandler") Block_loadReceivedChallengesWithCompletionHandler completionHandler);
 
     @Generated
     @Owned
@@ -174,6 +180,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * Date the challenge was completed or aborted
      */
+    @Nullable
     @Generated
     @Selector("completionDate")
     public native NSDate completionDate();
@@ -188,7 +195,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -196,11 +203,12 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKChallenge initWithCoder(NSCoder coder);
+    public native GKChallenge initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Date the challenge was issued
      */
+    @NotNull
     @Generated
     @Selector("issueDate")
     public native NSDate issueDate();
@@ -210,6 +218,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("issuingPlayer")
     public native GKPlayer issuingPlayer();
@@ -221,6 +230,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * Deprecated-Since: 8.0
      * Deprecated-Message: This property is obsolete, Use issuingPlayer instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("issuingPlayerID")
@@ -229,6 +239,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     /**
      * The message sent to receivers of this challenge
      */
+    @Nullable
     @Generated
     @Selector("message")
     public native String message();
@@ -238,6 +249,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("receivingPlayer")
     public native GKPlayer receivingPlayer();
@@ -249,6 +261,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
      * Deprecated-Since: 8.0
      * Deprecated-Message: This property is obsolete, Use receivingPlayer instead
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("receivingPlayerID")
@@ -272,6 +285,7 @@ public class GKChallenge extends NSObject implements NSCoding, NSSecureCoding {
     @Generated
     public interface Block_loadReceivedChallengesWithCompletionHandler {
         @Generated
-        void call_loadReceivedChallengesWithCompletionHandler(NSArray<? extends GKChallenge> challenges, NSError error);
+        void call_loadReceivedChallengesWithCompletionHandler(@Nullable NSArray<? extends GKChallenge> challenges,
+                @Nullable NSError error);
     }
 }

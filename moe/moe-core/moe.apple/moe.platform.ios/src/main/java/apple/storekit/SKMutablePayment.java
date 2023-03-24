@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -72,22 +74,25 @@ public class SKMutablePayment extends SKPayment {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,9 +127,10 @@ public class SKMutablePayment extends SKPayment {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -133,12 +139,12 @@ public class SKMutablePayment extends SKPayment {
 
     @Generated
     @Selector("paymentWithProduct:")
-    public static native SKMutablePayment paymentWithProduct(SKProduct product);
+    public static native SKMutablePayment paymentWithProduct(@NotNull SKProduct product);
 
     @Generated
     @Deprecated
     @Selector("paymentWithProductIdentifier:")
-    public static native SKMutablePayment paymentWithProductIdentifier(String identifier);
+    public static native SKMutablePayment paymentWithProductIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -164,6 +170,7 @@ public class SKMutablePayment extends SKPayment {
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("applicationUsername")
     public native String applicationUsername();
@@ -175,6 +182,7 @@ public class SKMutablePayment extends SKPayment {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("productIdentifier")
     public native String productIdentifier();
@@ -190,6 +198,7 @@ public class SKMutablePayment extends SKPayment {
     /**
      * API-Since: 3.0
      */
+    @Nullable
     @Generated
     @Selector("requestData")
     public native NSData requestData();
@@ -199,14 +208,14 @@ public class SKMutablePayment extends SKPayment {
      */
     @Generated
     @Selector("setApplicationUsername:")
-    public native void setApplicationUsername(String value);
+    public native void setApplicationUsername(@Nullable String value);
 
     /**
      * API-Since: 3.0
      */
     @Generated
     @Selector("setProductIdentifier:")
-    public native void setProductIdentifier(String value);
+    public native void setProductIdentifier(@NotNull String value);
 
     /**
      * API-Since: 3.0
@@ -220,7 +229,7 @@ public class SKMutablePayment extends SKPayment {
      */
     @Generated
     @Selector("setRequestData:")
-    public native void setRequestData(NSData value);
+    public native void setRequestData(@Nullable NSData value);
 
     /**
      * API-Since: 8.3
@@ -239,6 +248,7 @@ public class SKMutablePayment extends SKPayment {
     /**
      * API-Since: 12.2
      */
+    @Nullable
     @Generated
     @Selector("paymentDiscount")
     public native SKPaymentDiscount paymentDiscount();
@@ -248,5 +258,5 @@ public class SKMutablePayment extends SKPayment {
      */
     @Generated
     @Selector("setPaymentDiscount:")
-    public native void setPaymentDiscount(SKPaymentDiscount value);
+    public native void setPaymentDiscount(@Nullable SKPaymentDiscount value);
 }

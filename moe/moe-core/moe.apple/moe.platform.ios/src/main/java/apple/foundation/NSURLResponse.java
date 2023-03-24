@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSURLResponse
@@ -83,22 +85,25 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -179,6 +185,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * 
      * @return The MIME type of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("MIMEType")
     public native String MIMEType();
@@ -188,19 +195,21 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * 
      * @return The URL of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Returns the expected content length of the receiver.
@@ -226,7 +235,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSURLResponse initWithCoder(NSCoder coder);
+    public native NSURLResponse initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithURL:MIMEType:expectedContentLength:textEncodingName:
@@ -243,8 +252,8 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      */
     @Generated
     @Selector("initWithURL:MIMEType:expectedContentLength:textEncodingName:")
-    public native NSURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(NSURL URL, String MIMEType,
-            @NInt long length, String name);
+    public native NSURLResponse initWithURLMIMETypeExpectedContentLengthTextEncodingName(@NotNull NSURL URL,
+            @Nullable String MIMEType, @NInt long length, @Nullable String name);
 
     /**
      * Returns a suggested filename if the resource were saved to disk.
@@ -259,6 +268,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * 
      * @return A suggested filename to use if saving the resource to disk.
      */
+    @Nullable
     @Generated
     @Selector("suggestedFilename")
     public native String suggestedFilename();
@@ -281,6 +291,7 @@ public class NSURLResponse extends NSObject implements NSSecureCoding, NSCopying
      * @return The name of the text encoding of the receiver, or nil if no
      *         text encoding was specified.
      */
+    @Nullable
     @Generated
     @Selector("textEncodingName")
     public native String textEncodingName();

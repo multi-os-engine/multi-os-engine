@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 6.0
@@ -84,29 +86,32 @@ public class SKStoreProductViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -138,9 +143,10 @@ public class SKStoreProductViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,6 +179,7 @@ public class SKStoreProductViewController extends UIViewController {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -184,11 +191,12 @@ public class SKStoreProductViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKStoreProductViewController initWithCoder(NSCoder coder);
+    public native SKStoreProductViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native SKStoreProductViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native SKStoreProductViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Load product view for the product with the given parameters. See below for parameters (SKStoreProductParameter*).
@@ -198,8 +206,8 @@ public class SKStoreProductViewController extends UIViewController {
      */
     @Generated
     @Selector("loadProductWithParameters:completionBlock:")
-    public native void loadProductWithParametersCompletionBlock(NSDictionary<String, ?> parameters,
-            @ObjCBlock(name = "call_loadProductWithParametersCompletionBlock") Block_loadProductWithParametersCompletionBlock block);
+    public native void loadProductWithParametersCompletionBlock(@NotNull NSDictionary<String, ?> parameters,
+            @Nullable @ObjCBlock(name = "call_loadProductWithParametersCompletionBlock") Block_loadProductWithParametersCompletionBlock block);
 
     /**
      * Delegate for product page events
@@ -208,7 +216,8 @@ public class SKStoreProductViewController extends UIViewController {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value);
 
     /**
      * Delegate for product page events
@@ -216,7 +225,7 @@ public class SKStoreProductViewController extends UIViewController {
      * API-Since: 6.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SKStoreProductViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -231,7 +240,7 @@ public class SKStoreProductViewController extends UIViewController {
     @Generated
     public interface Block_loadProductWithParametersCompletionBlock {
         @Generated
-        void call_loadProductWithParametersCompletionBlock(boolean result, NSError error);
+        void call_loadProductWithParametersCompletionBlock(boolean result, @Nullable NSError error);
     }
 
     /**
@@ -243,14 +252,14 @@ public class SKStoreProductViewController extends UIViewController {
      */
     @Generated
     @Selector("loadProductWithParameters:impression:completionBlock:")
-    public native void loadProductWithParametersImpressionCompletionBlock(NSDictionary<String, ?> parameters,
-            SKAdImpression impression,
-            @ObjCBlock(name = "call_loadProductWithParametersImpressionCompletionBlock") Block_loadProductWithParametersImpressionCompletionBlock block);
+    public native void loadProductWithParametersImpressionCompletionBlock(@NotNull NSDictionary<String, ?> parameters,
+            @NotNull SKAdImpression impression,
+            @Nullable @ObjCBlock(name = "call_loadProductWithParametersImpressionCompletionBlock") Block_loadProductWithParametersImpressionCompletionBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadProductWithParametersImpressionCompletionBlock {
         @Generated
-        void call_loadProductWithParametersImpressionCompletionBlock(boolean result, NSError error);
+        void call_loadProductWithParametersImpressionCompletionBlock(boolean result, @Nullable NSError error);
     }
 }

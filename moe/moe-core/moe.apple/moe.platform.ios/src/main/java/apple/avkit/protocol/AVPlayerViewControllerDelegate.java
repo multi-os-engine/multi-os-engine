@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.avkit.AVInterstitialTimeRange;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPlayerViewControllerDelegate
@@ -54,8 +55,8 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewController:failedToStartPictureInPictureWithError:")
-    default void playerViewControllerFailedToStartPictureInPictureWithError(AVPlayerViewController playerViewController,
-            NSError error) {
+    default void playerViewControllerFailedToStartPictureInPictureWithError(
+            @NotNull AVPlayerViewController playerViewController, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,8 +74,8 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
     default void playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-            AVPlayerViewController playerViewController,
-            @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,7 +90,7 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStartPictureInPicture:")
-    default void playerViewControllerDidStartPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerDidStartPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,7 +105,7 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewControllerDidStopPictureInPicture:")
-    default void playerViewControllerDidStopPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerDidStopPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,7 +122,7 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart:")
     default boolean playerViewControllerShouldAutomaticallyDismissAtPictureInPictureStart(
-            AVPlayerViewController playerViewController) {
+            @NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,7 +137,7 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStartPictureInPicture:")
-    default void playerViewControllerWillStartPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerWillStartPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,7 +152,7 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewControllerWillStopPictureInPicture:")
-    default void playerViewControllerWillStopPictureInPicture(AVPlayerViewController playerViewController) {
+    default void playerViewControllerWillStopPictureInPicture(@NotNull AVPlayerViewController playerViewController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,8 +186,8 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewController:willBeginFullScreenPresentationWithAnimationCoordinator:")
     default void playerViewControllerWillBeginFullScreenPresentationWithAnimationCoordinator(
-            AVPlayerViewController playerViewController,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,8 +210,8 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewController:willEndFullScreenPresentationWithAnimationCoordinator:")
     default void playerViewControllerWillEndFullScreenPresentationWithAnimationCoordinator(
-            AVPlayerViewController playerViewController,
-            @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerTransitionCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -231,8 +232,8 @@ public interface AVPlayerViewControllerDelegate {
     @IsOptional
     @Selector("playerViewController:restoreUserInterfaceForFullScreenExitWithCompletionHandler:")
     default void playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler(
-            AVPlayerViewController playerViewController,
-            @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler completionHandler) {
+            @NotNull AVPlayerViewController playerViewController,
+            @NotNull @ObjCBlock(name = "call_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler") Block_playerViewControllerRestoreUserInterfaceForFullScreenExitWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,8 +260,8 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewController:didPresentInterstitialTimeRange:")
-    default void playerViewControllerDidPresentInterstitialTimeRange(AVPlayerViewController playerViewController,
-            AVInterstitialTimeRange interstitial) {
+    default void playerViewControllerDidPresentInterstitialTimeRange(
+            @NotNull AVPlayerViewController playerViewController, @NotNull AVInterstitialTimeRange interstitial) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -280,8 +281,8 @@ public interface AVPlayerViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("playerViewController:willPresentInterstitialTimeRange:")
-    default void playerViewControllerWillPresentInterstitialTimeRange(AVPlayerViewController playerViewController,
-            AVInterstitialTimeRange interstitial) {
+    default void playerViewControllerWillPresentInterstitialTimeRange(
+            @NotNull AVPlayerViewController playerViewController, @NotNull AVInterstitialTimeRange interstitial) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

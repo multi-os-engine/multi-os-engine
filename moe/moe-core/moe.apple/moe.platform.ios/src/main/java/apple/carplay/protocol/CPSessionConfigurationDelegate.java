@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 12.0
@@ -24,7 +25,7 @@ public interface CPSessionConfigurationDelegate {
     @Generated
     @IsOptional
     @Selector("sessionConfiguration:contentStyleChanged:")
-    default void sessionConfigurationContentStyleChanged(CPSessionConfiguration sessionConfiguration,
+    default void sessionConfigurationContentStyleChanged(@NotNull CPSessionConfiguration sessionConfiguration,
             @NUInt long contentStyle) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -35,7 +36,7 @@ public interface CPSessionConfigurationDelegate {
     @Generated
     @IsOptional
     @Selector("sessionConfiguration:limitedUserInterfacesChanged:")
-    default void sessionConfigurationLimitedUserInterfacesChanged(CPSessionConfiguration sessionConfiguration,
+    default void sessionConfigurationLimitedUserInterfacesChanged(@NotNull CPSessionConfiguration sessionConfiguration,
             @NUInt long limitedUserInterfaces) {
         throw new java.lang.UnsupportedOperationException();
     }

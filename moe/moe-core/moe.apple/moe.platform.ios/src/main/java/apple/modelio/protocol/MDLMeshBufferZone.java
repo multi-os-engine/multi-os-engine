@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MDLMeshBufferZone
@@ -44,6 +45,7 @@ public interface MDLMeshBufferZone {
      * 
      * Allocator used to create the zone
      */
+    @NotNull
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)

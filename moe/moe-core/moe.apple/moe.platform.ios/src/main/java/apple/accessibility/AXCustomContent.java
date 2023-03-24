@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -59,50 +61,56 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("allocWithZone:")
     public static native AXCustomContent allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("attributedLabel")
     public native NSAttributedString attributedLabel();
 
+    @NotNull
     @Generated
     @Selector("attributedValue")
     public native NSAttributedString attributedValue();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("customContentWithAttributedLabel:attributedValue:")
-    public static native AXCustomContent customContentWithAttributedLabelAttributedValue(NSAttributedString label,
-            NSAttributedString value);
+    public static native AXCustomContent customContentWithAttributedLabelAttributedValue(
+            @NotNull NSAttributedString label, @NotNull NSAttributedString value);
 
     @Generated
     @Selector("customContentWithLabel:value:")
-    public static native AXCustomContent customContentWithLabelValue(String label, String value);
+    public static native AXCustomContent customContentWithLabelValue(@NotNull String label, @NotNull String value);
 
     @Generated
     @Selector("debugDescription")
@@ -114,7 +122,7 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -137,7 +145,7 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native AXCustomContent initWithCoder(NSCoder coder);
+    public native AXCustomContent initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -156,14 +164,16 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A localized string that describes how to name this content.
      * For example, 'Orientation' would be an appropriate name used for photo information.
      */
+    @NotNull
     @Generated
     @Selector("label")
     public native String label();
@@ -212,6 +222,7 @@ public class AXCustomContent extends NSObject implements NSCopying, NSSecureCodi
      * A localized string that describes the content.
      * For example, 'Portrait' or 'Landscape' would be an appropriate content value for 'Orientation.'
      */
+    @NotNull
     @Generated
     @Selector("value")
     public native String value();

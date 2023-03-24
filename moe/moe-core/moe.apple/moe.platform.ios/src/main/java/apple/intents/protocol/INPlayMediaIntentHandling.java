@@ -16,6 +16,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INPlayMediaIntent. By implementing this protocol, a class can provide
@@ -49,8 +50,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmPlayMedia:completion:")
-    default void confirmPlayMediaCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_confirmPlayMediaCompletion") Block_confirmPlayMediaCompletion completion) {
+    default void confirmPlayMediaCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmPlayMediaCompletion") Block_confirmPlayMediaCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +59,7 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_confirmPlayMediaCompletion {
         @Generated
-        void call_confirmPlayMediaCompletion(INPlayMediaIntentResponse response);
+        void call_confirmPlayMediaCompletion(@NotNull INPlayMediaIntentResponse response);
     }
 
     /**
@@ -74,14 +75,14 @@ public interface INPlayMediaIntentHandling {
      */
     @Generated
     @Selector("handlePlayMedia:completion:")
-    void handlePlayMediaCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_handlePlayMediaCompletion") Block_handlePlayMediaCompletion completion);
+    void handlePlayMediaCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_handlePlayMediaCompletion") Block_handlePlayMediaCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handlePlayMediaCompletion {
         @Generated
-        void call_handlePlayMediaCompletion(INPlayMediaIntentResponse response);
+        void call_handlePlayMediaCompletion(@NotNull INPlayMediaIntentResponse response);
     }
 
     /**
@@ -100,8 +101,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveMediaItemsForPlayMedia:withCompletion:")
-    default void resolveMediaItemsForPlayMediaWithCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_resolveMediaItemsForPlayMediaWithCompletion") Block_resolveMediaItemsForPlayMediaWithCompletion completion) {
+    default void resolveMediaItemsForPlayMediaWithCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveMediaItemsForPlayMediaWithCompletion") Block_resolveMediaItemsForPlayMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,7 +111,7 @@ public interface INPlayMediaIntentHandling {
     public interface Block_resolveMediaItemsForPlayMediaWithCompletion {
         @Generated
         void call_resolveMediaItemsForPlayMediaWithCompletion(
-                NSArray<? extends INPlayMediaMediaItemResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INPlayMediaMediaItemResolutionResult> resolutionResults);
     }
 
     /**
@@ -119,8 +120,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePlayShuffledForPlayMedia:withCompletion:")
-    default void resolvePlayShuffledForPlayMediaWithCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_resolvePlayShuffledForPlayMediaWithCompletion") Block_resolvePlayShuffledForPlayMediaWithCompletion completion) {
+    default void resolvePlayShuffledForPlayMediaWithCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePlayShuffledForPlayMediaWithCompletion") Block_resolvePlayShuffledForPlayMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,7 +129,7 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolvePlayShuffledForPlayMediaWithCompletion {
         @Generated
-        void call_resolvePlayShuffledForPlayMediaWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolvePlayShuffledForPlayMediaWithCompletion(@NotNull INBooleanResolutionResult resolutionResult);
     }
 
     /**
@@ -137,8 +138,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePlaybackQueueLocationForPlayMedia:withCompletion:")
-    default void resolvePlaybackQueueLocationForPlayMediaWithCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_resolvePlaybackQueueLocationForPlayMediaWithCompletion") Block_resolvePlaybackQueueLocationForPlayMediaWithCompletion completion) {
+    default void resolvePlaybackQueueLocationForPlayMediaWithCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePlaybackQueueLocationForPlayMediaWithCompletion") Block_resolvePlaybackQueueLocationForPlayMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -147,7 +148,7 @@ public interface INPlayMediaIntentHandling {
     public interface Block_resolvePlaybackQueueLocationForPlayMediaWithCompletion {
         @Generated
         void call_resolvePlaybackQueueLocationForPlayMediaWithCompletion(
-                INPlaybackQueueLocationResolutionResult resolutionResult);
+                @NotNull INPlaybackQueueLocationResolutionResult resolutionResult);
     }
 
     /**
@@ -156,8 +157,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePlaybackRepeatModeForPlayMedia:withCompletion:")
-    default void resolvePlaybackRepeatModeForPlayMediaWithCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_resolvePlaybackRepeatModeForPlayMediaWithCompletion") Block_resolvePlaybackRepeatModeForPlayMediaWithCompletion completion) {
+    default void resolvePlaybackRepeatModeForPlayMediaWithCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePlaybackRepeatModeForPlayMediaWithCompletion") Block_resolvePlaybackRepeatModeForPlayMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,7 +167,7 @@ public interface INPlayMediaIntentHandling {
     public interface Block_resolvePlaybackRepeatModeForPlayMediaWithCompletion {
         @Generated
         void call_resolvePlaybackRepeatModeForPlayMediaWithCompletion(
-                INPlaybackRepeatModeResolutionResult resolutionResult);
+                @NotNull INPlaybackRepeatModeResolutionResult resolutionResult);
     }
 
     /**
@@ -175,8 +176,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePlaybackSpeedForPlayMedia:withCompletion:")
-    default void resolvePlaybackSpeedForPlayMediaWithCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_resolvePlaybackSpeedForPlayMediaWithCompletion") Block_resolvePlaybackSpeedForPlayMediaWithCompletion completion) {
+    default void resolvePlaybackSpeedForPlayMediaWithCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePlaybackSpeedForPlayMediaWithCompletion") Block_resolvePlaybackSpeedForPlayMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,7 +186,7 @@ public interface INPlayMediaIntentHandling {
     public interface Block_resolvePlaybackSpeedForPlayMediaWithCompletion {
         @Generated
         void call_resolvePlaybackSpeedForPlayMediaWithCompletion(
-                INPlayMediaPlaybackSpeedResolutionResult resolutionResult);
+                @NotNull INPlayMediaPlaybackSpeedResolutionResult resolutionResult);
     }
 
     /**
@@ -194,8 +195,8 @@ public interface INPlayMediaIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveResumePlaybackForPlayMedia:withCompletion:")
-    default void resolveResumePlaybackForPlayMediaWithCompletion(INPlayMediaIntent intent,
-            @ObjCBlock(name = "call_resolveResumePlaybackForPlayMediaWithCompletion") Block_resolveResumePlaybackForPlayMediaWithCompletion completion) {
+    default void resolveResumePlaybackForPlayMediaWithCompletion(@NotNull INPlayMediaIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveResumePlaybackForPlayMediaWithCompletion") Block_resolveResumePlaybackForPlayMediaWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,6 +204,6 @@ public interface INPlayMediaIntentHandling {
     @Generated
     public interface Block_resolveResumePlaybackForPlayMediaWithCompletion {
         @Generated
-        void call_resolveResumePlaybackForPlayMediaWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveResumePlaybackForPlayMediaWithCompletion(@NotNull INBooleanResolutionResult resolutionResult);
     }
 }

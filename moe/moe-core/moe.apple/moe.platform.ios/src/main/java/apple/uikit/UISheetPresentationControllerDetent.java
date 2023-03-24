@@ -24,6 +24,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.protocol.UISheetPresentationControllerDetentResolutionContext;
 import org.moe.natj.general.ann.NFloat;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -58,22 +60,25 @@ public class UISheetPresentationControllerDetent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,13 +117,15 @@ public class UISheetPresentationControllerDetent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * A system detent for a sheet at full height.
      */
+    @NotNull
     @Generated
     @Selector("largeDetent")
     public static native UISheetPresentationControllerDetent largeDetent();
@@ -127,6 +134,7 @@ public class UISheetPresentationControllerDetent extends NSObject {
      * A system detent for a sheet that is approximately half the height of the screen, and is inactive in compact
      * height.
      */
+    @NotNull
     @Generated
     @Selector("mediumDetent")
     public static native UISheetPresentationControllerDetent mediumDetent();
@@ -173,17 +181,19 @@ public class UISheetPresentationControllerDetent extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("customDetentWithIdentifier:resolver:")
-    public static native UISheetPresentationControllerDetent customDetentWithIdentifierResolver(String identifier,
-            @ObjCBlock(name = "call_customDetentWithIdentifierResolver") Block_customDetentWithIdentifierResolver resolver);
+    public static native UISheetPresentationControllerDetent customDetentWithIdentifierResolver(
+            @Nullable String identifier,
+            @NotNull @ObjCBlock(name = "call_customDetentWithIdentifierResolver") Block_customDetentWithIdentifierResolver resolver);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_customDetentWithIdentifierResolver {
         @Generated
         @NFloat
-        double call_customDetentWithIdentifierResolver(@Mapped(ObjCObjectMapper.class) Object context);
+        double call_customDetentWithIdentifierResolver(@NotNull @Mapped(ObjCObjectMapper.class) Object context);
     }
 
     /**
@@ -191,6 +201,7 @@ public class UISheetPresentationControllerDetent extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -208,5 +219,5 @@ public class UISheetPresentationControllerDetent extends NSObject {
     @Selector("resolvedValueInContext:")
     @NFloat
     public native double resolvedValueInContext(
-            @Mapped(ObjCObjectMapper.class) UISheetPresentationControllerDetentResolutionContext context);
+            @NotNull @Mapped(ObjCObjectMapper.class) UISheetPresentationControllerDetentResolutionContext context);
 }

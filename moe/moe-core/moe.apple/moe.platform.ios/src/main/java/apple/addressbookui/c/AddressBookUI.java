@@ -26,6 +26,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AddressBookUI")
@@ -52,17 +53,20 @@ public final class AddressBookUI {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use CNPostalAddressFormatter from Contacts.framework instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
-    public static native String ABCreateStringWithAddressDictionary(NSDictionary<?, ?> address, boolean addCountryName);
+    public static native String ABCreateStringWithAddressDictionary(@NotNull NSDictionary<?, ?> address,
+            boolean addCountryName);
 
     /**
      * "namePrefix" NSString
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -73,6 +77,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -83,6 +88,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -93,6 +99,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -103,6 +110,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -113,6 +121,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -123,6 +132,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -133,6 +143,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -143,6 +154,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -153,6 +165,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -163,6 +176,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -173,6 +187,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -183,6 +198,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -193,6 +209,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -203,6 +220,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -213,6 +231,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -223,6 +242,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -233,6 +253,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -243,6 +264,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -253,6 +275,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -263,6 +286,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -273,6 +297,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -283,6 +308,7 @@ public final class AddressBookUI {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -30,7 +32,8 @@ public interface PKShareSecureElementPassViewControllerDelegate {
     @IsOptional
     @Selector("shareSecureElementPassViewController:didCreateShareURL:activationCode:")
     default void shareSecureElementPassViewControllerDidCreateShareURLActivationCode(
-            PKShareSecureElementPassViewController controller, NSURL universalShareURL, String activationCode) {
+            @NotNull PKShareSecureElementPassViewController controller, @Nullable NSURL universalShareURL,
+            @Nullable String activationCode) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -41,6 +44,6 @@ public interface PKShareSecureElementPassViewControllerDelegate {
      */
     @Generated
     @Selector("shareSecureElementPassViewController:didFinishWithResult:")
-    void shareSecureElementPassViewControllerDidFinishWithResult(PKShareSecureElementPassViewController controller,
-            @NInt long result);
+    void shareSecureElementPassViewControllerDidFinishWithResult(
+            @NotNull PKShareSecureElementPassViewController controller, @NInt long result);
 }

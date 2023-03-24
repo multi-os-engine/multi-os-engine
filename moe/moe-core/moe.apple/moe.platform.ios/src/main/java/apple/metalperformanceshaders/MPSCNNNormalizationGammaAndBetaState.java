@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNNormalizationGammaAndBetaState
@@ -66,13 +68,14 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
      * 
      * A MTLBuffer containing the beta terms.
      */
+    @NotNull
     @Generated
     @Selector("beta")
     @MappedReturn(ObjCObjectMapper.class)
@@ -80,18 +83,21 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,6 +115,7 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * 
      * A MTLBuffer containing the gamma terms.
      */
+    @NotNull
     @Generated
     @Selector("gamma")
     @MappedReturn(ObjCObjectMapper.class)
@@ -126,17 +133,17 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSCNNNormalizationGammaAndBetaState initWithDeviceBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSCNNNormalizationGammaAndBetaState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSCNNNormalizationGammaAndBetaState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     /**
      * Initialize a MPSCNNNormalizationGammaAndBetaState object using values
@@ -149,16 +156,17 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Generated
     @Selector("initWithGamma:beta:")
     public native MPSCNNNormalizationGammaAndBetaState initWithGammaBeta(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer gamma, @Mapped(ObjCObjectMapper.class) MTLBuffer beta);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer gamma,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer beta);
 
     @Generated
     @Selector("initWithResource:")
     public native MPSCNNNormalizationGammaAndBetaState initWithResource(
-            @Mapped(ObjCObjectMapper.class) MTLResource resource);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNNormalizationGammaAndBetaState initWithResources(NSArray<?> resources);
+    public native MPSCNNNormalizationGammaAndBetaState initWithResources(@Nullable NSArray<?> resources);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -177,9 +185,10 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,15 +211,17 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
      * Create a temporary MPSCNNNormalizationGammaAndBetaState suitable
@@ -223,20 +234,25 @@ public class MPSCNNNormalizationGammaAndBetaState extends MPSState {
      * @param numberOfFeatureChannels The number of feature channels used to size the
      *                                state.
      */
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:numberOfFeatureChannels:")
     public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferNumberOfFeatureChannels(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long numberOfFeatureChannels);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NUInt long numberOfFeatureChannels);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNNormalizationGammaAndBetaState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     @Generated
     @Selector("version")

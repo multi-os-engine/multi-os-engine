@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An NSURLSessionStreamTask provides an interface to perform reads
@@ -90,22 +92,25 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,9 +145,10 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 7.0
@@ -230,7 +236,7 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
     @Selector("readDataOfMinLength:maxLength:timeout:completionHandler:")
     public native void readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@NUInt long minBytes, @NUInt long maxBytes,
             double timeout,
-            @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler") Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler completionHandler);
 
     /**
      * Begin encrypted handshake. The handshake begins after all pending
@@ -265,20 +271,21 @@ public class NSURLSessionStreamTask extends NSURLSessionTask {
      */
     @Generated
     @Selector("writeData:timeout:completionHandler:")
-    public native void writeDataTimeoutCompletionHandler(NSData data, double timeout,
-            @ObjCBlock(name = "call_writeDataTimeoutCompletionHandler") Block_writeDataTimeoutCompletionHandler completionHandler);
+    public native void writeDataTimeoutCompletionHandler(@NotNull NSData data, double timeout,
+            @NotNull @ObjCBlock(name = "call_writeDataTimeoutCompletionHandler") Block_writeDataTimeoutCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readDataOfMinLengthMaxLengthTimeoutCompletionHandler {
         @Generated
-        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(NSData data, boolean atEOF, NSError error);
+        void call_readDataOfMinLengthMaxLengthTimeoutCompletionHandler(@Nullable NSData data, boolean atEOF,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDataTimeoutCompletionHandler {
         @Generated
-        void call_writeDataTimeoutCompletionHandler(NSError error);
+        void call_writeDataTimeoutCompletionHandler(@Nullable NSError error);
     }
 }

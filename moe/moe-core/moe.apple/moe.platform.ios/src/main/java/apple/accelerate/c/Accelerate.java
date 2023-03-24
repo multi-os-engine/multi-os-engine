@@ -77,6 +77,8 @@ import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.ShortPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Accelerate")
@@ -99,6 +101,7 @@ public final class Accelerate {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native FFTSetup vDSP_create_fftsetup(@NUInt long __Log2n, int __Radix);
@@ -108,11 +111,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_destroy_fftsetup(FFTSetup __setup);
+    public static native void vDSP_destroy_fftsetup(@Nullable FFTSetup __setup);
 
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native FFTSetupD vDSP_create_fftsetupD(@NUInt long __Log2n, int __Radix);
@@ -122,7 +126,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_destroy_fftsetupD(FFTSetupD __setup);
+    public static native void vDSP_destroy_fftsetupD(@Nullable FFTSetupD __setup);
 
     /**
      * vDSP_biquad_CreateSetup allocates memory and prepares the coefficients for
@@ -133,30 +137,34 @@ public final class Accelerate {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_biquad_Setup vDSP_biquad_CreateSetup(ConstDoublePtr __Coefficients, @NUInt long __M);
+    public static native vDSP_biquad_Setup vDSP_biquad_CreateSetup(@NotNull ConstDoublePtr __Coefficients,
+            @NUInt long __M);
+
+    /**
+     * API-Since: 6.0
+     */
+    @Nullable
+    @Generated
+    @CFunction
+    public static native vDSP_biquad_SetupD vDSP_biquad_CreateSetupD(@NotNull ConstDoublePtr __Coefficients,
+            @NUInt long __M);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native vDSP_biquad_SetupD vDSP_biquad_CreateSetupD(ConstDoublePtr __Coefficients, @NUInt long __M);
+    public static native void vDSP_biquad_DestroySetup(@Nullable vDSP_biquad_Setup __setup);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquad_DestroySetup(vDSP_biquad_Setup __setup);
-
-    /**
-     * API-Since: 6.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_biquad_DestroySetupD(vDSP_biquad_SetupD __setup);
+    public static native void vDSP_biquad_DestroySetupD(@Nullable vDSP_biquad_SetupD __setup);
 
     /**
      * vDSP_biquadm_CreateSetup (for float) or vDSP_biquadm_CreateSetupD (for
@@ -174,32 +182,34 @@ public final class Accelerate {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_biquadm_Setup vDSP_biquadm_CreateSetup(ConstDoublePtr __coeffs, @NUInt long __M,
+    public static native vDSP_biquadm_Setup vDSP_biquadm_CreateSetup(@NotNull ConstDoublePtr __coeffs, @NUInt long __M,
             @NUInt long __N);
 
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_biquadm_SetupD vDSP_biquadm_CreateSetupD(ConstDoublePtr __coeffs, @NUInt long __M,
-            @NUInt long __N);
+    public static native vDSP_biquadm_SetupD vDSP_biquadm_CreateSetupD(@NotNull ConstDoublePtr __coeffs,
+            @NUInt long __M, @NUInt long __N);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_DestroySetup(vDSP_biquadm_Setup __setup);
+    public static native void vDSP_biquadm_DestroySetup(@NotNull vDSP_biquadm_Setup __setup);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_DestroySetupD(vDSP_biquadm_SetupD __setup);
+    public static native void vDSP_biquadm_DestroySetupD(@NotNull vDSP_biquadm_SetupD __setup);
 
     /**
      * vDSP_biquadm_CopyState (for float) or vDSP_biquadm_CopyStateD (for double)
@@ -214,28 +224,28 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_CopyState(vDSP_biquadm_Setup __dest, VoidPtr __src);
+    public static native void vDSP_biquadm_CopyState(@NotNull vDSP_biquadm_Setup __dest, @NotNull VoidPtr __src);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_CopyStateD(vDSP_biquadm_SetupD __dest, VoidPtr __src);
+    public static native void vDSP_biquadm_CopyStateD(@NotNull vDSP_biquadm_SetupD __dest, @NotNull VoidPtr __src);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_ResetState(vDSP_biquadm_Setup __setup);
+    public static native void vDSP_biquadm_ResetState(@NotNull vDSP_biquadm_Setup __setup);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_ResetStateD(vDSP_biquadm_SetupD __setup);
+    public static native void vDSP_biquadm_ResetStateD(@NotNull vDSP_biquadm_SetupD __setup);
 
     /**
      * vDSP_biquadm_SetCoefficientsDouble will
@@ -245,8 +255,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetCoefficientsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetCoefficientsDouble(@NotNull vDSP_biquadm_Setup __setup,
+            @NotNull ConstDoublePtr __coeffs, @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec,
+            @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetTargetsDouble will
@@ -256,9 +267,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetTargetsDouble(vDSP_biquadm_Setup __setup, ConstDoublePtr __targets,
-            float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
-            @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetTargetsDouble(@NotNull vDSP_biquadm_Setup __setup,
+            @NotNull ConstDoublePtr __targets, float __interp_rate, float __interp_threshold, @NUInt long __start_sec,
+            @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetCoefficientsSingle will
@@ -270,8 +281,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetCoefficientsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetCoefficientsSingle(@NotNull vDSP_biquadm_Setup __setup,
+            @NotNull ConstFloatPtr __coeffs, @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec,
+            @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetTargetsSingle will
@@ -282,9 +294,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetTargetsSingle(vDSP_biquadm_Setup __setup, ConstFloatPtr __targets,
-            float __interp_rate, float __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
-            @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetTargetsSingle(@NotNull vDSP_biquadm_Setup __setup,
+            @NotNull ConstFloatPtr __targets, float __interp_rate, float __interp_threshold, @NUInt long __start_sec,
+            @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetActiveFilters will set the overall active/inactive filter
@@ -294,7 +306,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetActiveFilters(vDSP_biquadm_Setup __setup, ConstBoolPtr __filter_states);
+    public static native void vDSP_biquadm_SetActiveFilters(@NotNull vDSP_biquadm_Setup __setup,
+            @NotNull ConstBoolPtr __filter_states);
 
     /**
      * Convert a complex array to a complex-split array.
@@ -304,9 +317,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_ctoz(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Z, @NInt long __IZ,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Z,
+            @NInt long __IZ, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -314,8 +328,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_ctozD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Z,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Z,
             @NInt long __IZ, @NUInt long __N);
 
     /**
@@ -326,9 +341,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_ztoc(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Z, @NInt long __IZ,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Z,
+            @NInt long __IZ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -336,8 +352,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_ztocD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Z,
-            @NInt long __IZ, @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Z,
+            @NInt long __IZ,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -348,17 +365,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zip(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __Log2N, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft_zipD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft_zip(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
@@ -366,9 +374,19 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zipt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fft_zipD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NUInt long __Log2N, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft_zipt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -376,10 +394,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_ziptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft_ziptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -390,31 +408,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __Log2N, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft_zopt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
-            @NUInt long __Log2N, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft_zopD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft_zop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
@@ -422,12 +419,36 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zoptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft_zopt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+            @NUInt long __Log2N, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft_zopD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NUInt long __Log2N, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft_zoptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -439,17 +460,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zrip(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __Log2N, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft_zripD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft_zrip(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
@@ -457,9 +469,19 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zript(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fft_zripD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NUInt long __Log2N, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft_zript(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -467,10 +489,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zriptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft_zriptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -482,20 +504,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zrop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __Log2N, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft_zropD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft_zrop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
@@ -503,10 +515,23 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zropt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fft_zropD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NUInt long __Log2N, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft_zropt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -514,12 +539,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft_zroptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft_zroptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, int __Direction);
 
     /**
@@ -530,17 +555,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zip(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC0,
-            @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft2d_zipD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft2d_zip(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -548,10 +564,19 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zipt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC1,
-            @NInt long __IC0,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fft2d_zipD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft2d_zipt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC1, @NInt long __IC0,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -559,10 +584,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_ziptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft2d_ziptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -573,20 +598,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA0,
-            @NInt long __IA1, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
-            @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fft2d_zopD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft2d_zop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA0, @NInt long __IA1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -594,11 +609,23 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zopt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA0,
-            @NInt long __IA1, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+    public static native void vDSP_fft2d_zopD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA0, @NInt long __IA1,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fft2d_zopt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA0, @NInt long __IA1,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -606,12 +633,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zoptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft2d_zoptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA0, @NInt long __IA1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -622,17 +649,17 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zrip(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC0,
-            @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
+    public static native void vDSP_fft2d_zrip(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zripD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft2d_zripD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __flag);
 
     /**
@@ -640,10 +667,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zript(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC0,
-            @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fft2d_zript(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC0, @NInt long __IC1,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -651,10 +678,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zriptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fft2d_zriptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __flag);
 
     /**
@@ -665,9 +692,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zrop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA0,
-            @NInt long __IA1, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+    public static native void vDSP_fft2d_zrop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA0, @NInt long __IA1,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -675,11 +703,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zropt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA0,
-            @NInt long __IA1, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+    public static native void vDSP_fft2d_zropt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA0, @NInt long __IA1,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -687,10 +716,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zropD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft2d_zropD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA0, @NInt long __IA1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1, @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -698,12 +727,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fft2d_zroptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft2d_zroptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA0, @NInt long __IA1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC0, @NInt long __IC1,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N0, @NUInt long __Log2N1, int __Direction);
 
     /**
@@ -714,17 +743,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zip(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fftm_zipD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fftm_zip(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -732,10 +752,19 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zipt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NInt long __IM,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fftm_zipD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fftm_zipt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NInt long __IM,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -743,10 +772,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_ziptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fftm_ziptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IM,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -757,20 +786,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @NInt long __IMA, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
-            @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fftm_zopD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fftm_zop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA, @NInt long __IMA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -778,11 +797,23 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zopt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @NInt long __IMA, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+    public static native void vDSP_fftm_zopD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NInt long __IMA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fftm_zopt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NInt long __IMA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IMC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -790,12 +821,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zoptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fftm_zoptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, @NInt long __IMA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IMC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -807,17 +838,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zrip(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_fftm_zripD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fftm_zrip(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -825,10 +847,19 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zript(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NInt long __IM,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+    public static native void vDSP_fftm_zripD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NInt long __IM, @NUInt long __Log2N, @NUInt long __M, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_fftm_zript(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NInt long __IM,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -836,10 +867,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zriptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_fftm_zriptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IM,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -851,9 +882,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zrop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @NInt long __IMA, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+    public static native void vDSP_fftm_zrop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NInt long __IMA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -861,11 +893,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zropt(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @NInt long __IMA, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+    public static native void vDSP_fftm_zropt(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NInt long __IMA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NInt long __IMC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -873,10 +906,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zropD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fftm_zropD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, @NInt long __IMA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IMC, @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -884,12 +917,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_fftm_zroptD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fftm_zroptD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA, @NInt long __IMA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NInt long __IMC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __Buffer,
             @NUInt long __Log2N, @NUInt long __M, int __Direction);
 
     /**
@@ -902,22 +935,10 @@ public final class Accelerate {
     @Generated
     @Deprecated
     @CFunction
-    public static native void vDSP_fft3_zop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __Log2N, int __Direction);
-
-    /**
-     * API-Since: 4.0
-     * Deprecated-Since: 9.0
-     */
-    @Generated
-    @Deprecated
-    @CFunction
-    public static native void vDSP_fft3_zopD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft3_zop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
@@ -927,10 +948,11 @@ public final class Accelerate {
     @Generated
     @Deprecated
     @CFunction
-    public static native void vDSP_fft5_zop(FFTSetup __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __Log2N, int __Direction);
+    public static native void vDSP_fft3_zopD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
      * API-Since: 4.0
@@ -939,10 +961,23 @@ public final class Accelerate {
     @Generated
     @Deprecated
     @CFunction
-    public static native void vDSP_fft5_zopD(FFTSetupD __Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+    public static native void vDSP_fft5_zop(@NotNull FFTSetup __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __Log2N, int __Direction);
+
+    /**
+     * API-Since: 4.0
+     * Deprecated-Since: 9.0
+     */
+    @Generated
+    @Deprecated
+    @CFunction
+    public static native void vDSP_fft5_zopD(@NotNull FFTSetupD __Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __Log2N, int __Direction);
 
     /**
@@ -952,16 +987,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquad(VoidPtr __Setup, FloatPtr __Delay, ConstFloatPtr __X, @NInt long __IX,
-            FloatPtr __Y, @NInt long __IY, @NUInt long __N);
+    public static native void vDSP_biquad(@NotNull VoidPtr __Setup, @NotNull FloatPtr __Delay,
+            @NotNull ConstFloatPtr __X, @NInt long __IX, @NotNull FloatPtr __Y, @NInt long __IY, @NUInt long __N);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadD(VoidPtr __Setup, DoublePtr __Delay, ConstDoublePtr __X, @NInt long __IX,
-            DoublePtr __Y, @NInt long __IY, @NUInt long __N);
+    public static native void vDSP_biquadD(@NotNull VoidPtr __Setup, @NotNull DoublePtr __Delay,
+            @NotNull ConstDoublePtr __X, @NInt long __IX, @NotNull DoublePtr __Y, @NInt long __IY, @NUInt long __N);
 
     /**
      * vDSP_biquadm (for float) or vDSP_biquadmD (for double) applies a
@@ -972,16 +1007,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm(vDSP_biquadm_Setup __Setup, Ptr<ConstFloatPtr> __X, @NInt long __IX,
-            Ptr<FloatPtr> __Y, @NInt long __IY, @NUInt long __N);
+    public static native void vDSP_biquadm(@NotNull vDSP_biquadm_Setup __Setup, @NotNull Ptr<ConstFloatPtr> __X,
+            @NInt long __IX, @NotNull Ptr<FloatPtr> __Y, @NInt long __IY, @NUInt long __N);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadmD(vDSP_biquadm_SetupD __Setup, Ptr<ConstDoublePtr> __X, @NInt long __IX,
-            Ptr<DoublePtr> __Y, @NInt long __IY, @NUInt long __N);
+    public static native void vDSP_biquadmD(@NotNull vDSP_biquadm_SetupD __Setup, @NotNull Ptr<ConstDoublePtr> __X,
+            @NInt long __IX, @NotNull Ptr<DoublePtr> __Y, @NInt long __IY, @NUInt long __N);
 
     /**
      * Convolution and correlation.
@@ -990,16 +1025,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_conv(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __F, @NInt long __IF,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_conv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __F,
+            @NInt long __IF, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_convD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __F, @NInt long __IF,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_convD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __F,
+            @NInt long __IF, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -1007,10 +1042,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zconv(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __F, @NInt long __IF,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N, @NUInt long __P);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __F,
+            @NInt long __IF,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -1018,11 +1055,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zconvD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __F,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __F,
             @NInt long __IF,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
@@ -1032,32 +1069,32 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_f3x3(ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC, ConstFloatPtr __F,
-            FloatPtr __C);
+    public static native void vDSP_f3x3(@NotNull ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC,
+            @NotNull ConstFloatPtr __F, @NotNull FloatPtr __C);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_f3x3D(ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC, ConstDoublePtr __F,
-            DoublePtr __C);
+    public static native void vDSP_f3x3D(@NotNull ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC,
+            @NotNull ConstDoublePtr __F, @NotNull DoublePtr __C);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_f5x5(ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC, ConstFloatPtr __F,
-            FloatPtr __C);
+    public static native void vDSP_f5x5(@NotNull ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC,
+            @NotNull ConstFloatPtr __F, @NotNull FloatPtr __C);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_f5x5D(ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC, ConstDoublePtr __F,
-            DoublePtr __C);
+    public static native void vDSP_f5x5D(@NotNull ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC,
+            @NotNull ConstDoublePtr __F, @NotNull DoublePtr __C);
 
     /**
      * Two-dimensional (image) convolution.
@@ -1066,16 +1103,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_imgfir(ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC, ConstFloatPtr __F,
-            FloatPtr __C, @NUInt long __P, @NUInt long __Q);
+    public static native void vDSP_imgfir(@NotNull ConstFloatPtr __A, @NUInt long __NR, @NUInt long __NC,
+            @NotNull ConstFloatPtr __F, @NotNull FloatPtr __C, @NUInt long __P, @NUInt long __Q);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_imgfirD(ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC, ConstDoublePtr __F,
-            DoublePtr __C, @NUInt long __P, @NUInt long __Q);
+    public static native void vDSP_imgfirD(@NotNull ConstDoublePtr __A, @NUInt long __NR, @NUInt long __NC,
+            @NotNull ConstDoublePtr __F, @NotNull DoublePtr __C, @NUInt long __P, @NUInt long __Q);
 
     /**
      * Maps:
@@ -1112,16 +1149,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_mtrans(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __M, @NUInt long __N);
+    public static native void vDSP_mtrans(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __M, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_mtransD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __M, @NUInt long __N);
+    public static native void vDSP_mtransD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __M, @NUInt long __N);
 
     /**
      * Matrix multiply.
@@ -1130,16 +1167,17 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_mmul(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_mmul(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_mmulD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_mmulD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __M, @NUInt long __N,
+            @NUInt long __P);
 
     /**
      * Split-complex matrix multiply and add.
@@ -1149,11 +1187,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmma(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @NUInt long __M, @NUInt long __N, @NUInt long __P);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -1161,13 +1202,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmmaD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
@@ -1178,11 +1219,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmms(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @NUInt long __M, @NUInt long __N, @NUInt long __P);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -1190,13 +1234,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmmsD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
@@ -1207,13 +1251,18 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmmaa(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __E, @NInt long __IE,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __F, @NInt long __IF,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __E,
+            @NInt long __IE,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __F,
+            @NInt long __IF, @NUInt long __N);
 
     /**
      * API-Since: 8.0
@@ -1221,17 +1270,17 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmmaaD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __E,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __E,
             @NInt long __IE,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __F,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __F,
             @NInt long __IF, @NUInt long __N);
 
     /**
@@ -1242,11 +1291,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmsm(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @NUInt long __M, @NUInt long __N, @NUInt long __P);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -1254,13 +1306,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmsmD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
@@ -1271,10 +1323,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmmul(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __M, @NUInt long __N, @NUInt long __P);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -1282,11 +1336,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zmmulD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __M, @NUInt long __N, @NUInt long __P);
 
     /**
@@ -1296,24 +1350,24 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vadd(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vadd(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vaddD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vaddD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vaddi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, @NInt long __IB, IntPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vaddi(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull ConstIntPtr __B,
+            @NInt long __IB, @NotNull IntPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1321,10 +1375,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvadd(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1332,11 +1388,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvaddD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1345,10 +1401,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvadd(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            ConstFloatPtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1356,9 +1412,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvaddD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1368,16 +1424,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsub(ConstFloatPtr __B, @NInt long __IB, ConstFloatPtr __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsub(@NotNull ConstFloatPtr __B, @NInt long __IB, @NotNull ConstFloatPtr __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsubD(ConstDoublePtr __B, @NInt long __IB, ConstDoublePtr __A, @NInt long __IA,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsubD(@NotNull ConstDoublePtr __B, @NInt long __IB, @NotNull ConstDoublePtr __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1385,10 +1441,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvsub(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1396,11 +1454,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvsubD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1410,16 +1468,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmul(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmul(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmulD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmulD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1427,10 +1485,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvmul(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            ConstFloatPtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1438,9 +1496,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvmulD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1450,24 +1508,24 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdiv(ConstFloatPtr __B, @NInt long __IB, ConstFloatPtr __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vdiv(@NotNull ConstFloatPtr __B, @NInt long __IB, @NotNull ConstFloatPtr __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdivD(ConstDoublePtr __B, @NInt long __IB, ConstDoublePtr __A, @NInt long __IA,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vdivD(@NotNull ConstDoublePtr __B, @NInt long __IB, @NotNull ConstDoublePtr __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdivi(ConstIntPtr __B, @NInt long __IB, ConstIntPtr __A, @NInt long __IA, IntPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vdivi(@NotNull ConstIntPtr __B, @NInt long __IB, @NotNull ConstIntPtr __A,
+            @NInt long __IA, @NotNull IntPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1475,10 +1533,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvdiv(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1486,11 +1546,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvdivD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1499,10 +1559,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvdiv(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            ConstFloatPtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1510,9 +1570,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvdivD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1522,16 +1582,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmul(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsmul(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmulD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsmulD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector square.
@@ -1540,16 +1600,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vsq(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vsqD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector signed square.
@@ -1558,16 +1618,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vssq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vssq(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vssqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vssqD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Euclidean distance, squared.
@@ -1576,16 +1636,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_distancesq(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_distancesq(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NUInt long __N);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_distancesqD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_distancesqD(@NotNull ConstDoublePtr __A, @NInt long __IA,
+            @NotNull ConstDoublePtr __B, @NInt long __IB, @NotNull DoublePtr __C, @NUInt long __N);
 
     /**
      * Dot product.
@@ -1594,16 +1654,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_dotpr(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotprD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_dotprD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1611,9 +1671,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zdotpr(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1621,11 +1684,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zdotprD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
     /**
@@ -1634,9 +1697,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrdotpr(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            ConstFloatPtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1644,9 +1708,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrdotprD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
     /**
@@ -1656,16 +1720,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vam(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vam(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vamD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __IDD, @NUInt long __N);
+    public static native void vDSP_vamD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __IDD,
+            @NUInt long __N);
 
     /**
      * Vector multiply and add.
@@ -1674,16 +1740,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vma(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vmaD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * API-Since: 7.0
@@ -1691,11 +1759,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvma(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 8.0
@@ -1703,13 +1774,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmaD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __N);
 
     /**
@@ -1720,10 +1791,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmul(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N, int __Conjugate);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N, int __Conjugate);
 
     /**
      * API-Since: 4.0
@@ -1731,11 +1804,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmulD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N, int __Conjugate);
 
     /**
@@ -1746,9 +1819,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zidotpr(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1756,11 +1832,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zidotprD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
     /**
@@ -1771,11 +1847,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvcma(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1783,13 +1862,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvcmaD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __N);
 
     /**
@@ -1800,10 +1879,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvsub(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            ConstFloatPtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1811,9 +1890,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrvsubD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1823,16 +1902,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdpsp(ConstDoublePtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vdpsp(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vspdp(ConstFloatPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vspdp(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector absolute value.
@@ -1841,24 +1920,24 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vabs(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vabs(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vabsD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vabsD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vabsi(ConstIntPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vabsi(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1866,8 +1945,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvabs(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -1875,8 +1954,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvabsD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector bit-wise equivalence, NOT (A XOR B).
@@ -1885,8 +1964,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_veqvi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, @NInt long __IB, IntPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_veqvi(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull ConstIntPtr __B,
+            @NInt long __IB, @NotNull IntPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector fill.
@@ -1895,30 +1974,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfill(ConstFloatPtr __A, FloatPtr __C, @NInt long __IC, @NUInt long __N);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_vfillD(ConstDoublePtr __A, DoublePtr __C, @NInt long __IC, @NUInt long __N);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_vfilli(ConstIntPtr __A, IntPtr __C, @NInt long __IC, @NUInt long __N);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_zvfill(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
+    public static native void vDSP_vfill(@NotNull ConstFloatPtr __A, @NotNull FloatPtr __C, @NInt long __IC,
             @NUInt long __N);
 
     /**
@@ -1926,9 +1982,35 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
+    public static native void vDSP_vfillD(@NotNull ConstDoublePtr __A, @NotNull DoublePtr __C, @NInt long __IC,
+            @NUInt long __N);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_vfilli(@NotNull ConstIntPtr __A, @NotNull IntPtr __C, @NInt long __IC,
+            @NUInt long __N);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_zvfill(
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
     public static native void vDSP_zvfillD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -1938,24 +2020,24 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsadd(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsadd(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsaddD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsaddD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsaddi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, IntPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsaddi(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull ConstIntPtr __B,
+            @NotNull IntPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector-scalar divide.
@@ -1964,24 +2046,24 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsdiv(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsdiv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsdivD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsdivD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsdivi(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, IntPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsdivi(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull ConstIntPtr __B,
+            @NotNull IntPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Complex-split accumulating autospectrum.
@@ -1991,8 +2073,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zaspec(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, FloatPtr __C,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NotNull FloatPtr __C, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2000,8 +2082,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zaspecD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            DoublePtr __C, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull DoublePtr __C, @NUInt long __N);
 
     /**
      * Create Blackman window.
@@ -2010,14 +2092,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_blkman_window(FloatPtr __C, @NUInt long __N, int __Flag);
+    public static native void vDSP_blkman_window(@NotNull FloatPtr __C, @NUInt long __N, int __Flag);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_blkman_windowD(DoublePtr __C, @NUInt long __N, int __Flag);
+    public static native void vDSP_blkman_windowD(@NotNull DoublePtr __C, @NUInt long __N, int __Flag);
 
     /**
      * Coherence function.
@@ -2026,18 +2108,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_zcoher(ConstFloatPtr __A, ConstFloatPtr __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, FloatPtr __D,
-            @NUInt long __N);
+    public static native void vDSP_zcoher(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NotNull FloatPtr __D, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_zcoherD(ConstDoublePtr __A, ConstDoublePtr __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
-            DoublePtr __D, @NUInt long __N);
+    public static native void vDSP_zcoherD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull DoublePtr __D, @NUInt long __N);
 
     /**
      * Anti-aliasing down-sample with real filter.
@@ -2046,16 +2128,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_desamp(ConstFloatPtr __A, @NInt long __DF, ConstFloatPtr __F, FloatPtr __C,
-            @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_desamp(@NotNull ConstFloatPtr __A, @NInt long __DF, @NotNull ConstFloatPtr __F,
+            @NotNull FloatPtr __C, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_desampD(ConstDoublePtr __A, @NInt long __DF, ConstDoublePtr __F, DoublePtr __C,
-            @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_desampD(@NotNull ConstDoublePtr __A, @NInt long __DF, @NotNull ConstDoublePtr __F,
+            @NotNull DoublePtr __C, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
@@ -2063,8 +2145,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrdesamp(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __DF,
-            ConstFloatPtr __F, @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __DF, @NotNull ConstFloatPtr __F,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
             @NUInt long __N, @NUInt long __P);
 
     /**
@@ -2073,9 +2156,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zrdesampD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __DF, ConstDoublePtr __F,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __DF, @NotNull ConstDoublePtr __F,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N, @NUInt long __P);
 
     /**
@@ -2085,18 +2168,19 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_ztrans(ConstFloatPtr __A,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
+    public static native void vDSP_ztrans(@NotNull ConstFloatPtr __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_ztransD(ConstDoublePtr __A,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+    public static native void vDSP_ztransD(@NotNull ConstDoublePtr __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
     /**
@@ -2107,9 +2191,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zcspec(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2117,9 +2202,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zcspecD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NUInt long __N);
 
     /**
@@ -2130,10 +2215,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvcmul(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B, @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NInt long __IB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2141,11 +2228,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvcmulD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
             @NInt long __IB,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __iC, @NUInt long __N);
 
     /**
@@ -2156,9 +2243,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvconj(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2166,9 +2254,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvconjD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -2179,10 +2267,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvzsml(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2190,10 +2279,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvzsmlD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -2204,8 +2293,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmags(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2213,8 +2302,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmagsD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector magnitudes square and add.
@@ -2224,8 +2313,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmgsa(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            ConstFloatPtr __B, @NInt long __IB, FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2233,8 +2323,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmgsaD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull ConstDoublePtr __B, @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC,
+            @NUInt long __N);
 
     /**
      * Complex-split vector move.
@@ -2244,9 +2335,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmov(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2254,9 +2346,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvmovD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -2267,9 +2359,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvneg(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2277,9 +2370,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvnegD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC, @NUInt long __N);
 
     /**
@@ -2290,8 +2383,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvphas(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2299,8 +2392,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvphasD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
-            @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector multiply by scalar and add.
@@ -2310,11 +2403,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvsma(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A, @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C, @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D, @NInt long __ID,
-            @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __A,
+            @NInt long __IA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __C,
+            @NInt long __IC,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPSplitComplex __D,
+            @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -2322,12 +2417,12 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_zvsmaD(
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __A,
             @NInt long __IA,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __C,
             @NInt long __IC,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleSplitComplex __D,
             @NInt long __ID, @NUInt long __N);
 
     /**
@@ -2337,16 +2432,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_deq22(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_deq22(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_deq22D(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_deq22D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Create Hamming window.
@@ -2355,14 +2450,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_hamm_window(FloatPtr __C, @NUInt long __N, int __Flag);
+    public static native void vDSP_hamm_window(@NotNull FloatPtr __C, @NUInt long __N, int __Flag);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_hamm_windowD(DoublePtr __C, @NUInt long __N, int __Flag);
+    public static native void vDSP_hamm_windowD(@NotNull DoublePtr __C, @NUInt long __N, int __Flag);
 
     /**
      * Create Hanning window.
@@ -2371,30 +2466,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_hann_window(FloatPtr __C, @NUInt long __N, int __Flag);
+    public static native void vDSP_hann_window(@NotNull FloatPtr __C, @NUInt long __N, int __Flag);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_hann_windowD(DoublePtr __C, @NUInt long __N, int __Flag);
-
-    /**
-     * Maximum magnitude of vector.
-     * 
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_maxmgv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
-
-    /**
-     * API-Since: 4.0
-     */
-    @Generated
-    @CFunction
-    public static native void vDSP_maxmgvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_hann_windowD(@NotNull DoublePtr __C, @NUInt long __N, int __Flag);
 
     /**
      * Maximum magnitude of vector.
@@ -2403,7 +2482,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_maxmgvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
+    public static native void vDSP_maxmgv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
             @NUInt long __N);
 
     /**
@@ -2411,8 +2490,26 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_maxmgviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
+    public static native void vDSP_maxmgvD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
             @NUInt long __N);
+
+    /**
+     * Maximum magnitude of vector.
+     * 
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_maxmgvi(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
+
+    /**
+     * API-Since: 4.0
+     */
+    @Generated
+    @CFunction
+    public static native void vDSP_maxmgviD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * Maximum value of vector.
@@ -2421,14 +2518,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_maxv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_maxv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_maxvD(ConstDoublePtr __A, @NInt long __I, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_maxvD(@NotNull ConstDoublePtr __A, @NInt long __I, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Maximum value of vector, with index.
@@ -2437,16 +2536,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_maxvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
-            @NUInt long __N);
+    public static native void vDSP_maxvi(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_maxviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
-            @NUInt long __N);
+    public static native void vDSP_maxviD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * Mean magnitude of vector.
@@ -2455,14 +2554,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_meamgv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_meamgv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_meamgvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_meamgvD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Mean of vector.
@@ -2471,14 +2572,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_meanv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_meanv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_meanvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_meanvD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Mean square of vector.
@@ -2487,14 +2590,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_measqv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_measqv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_measqvD(ConstDoublePtr __A, @NInt long __I, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_measqvD(@NotNull ConstDoublePtr __A, @NInt long __I, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Minimum magnitude of vector.
@@ -2503,14 +2608,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_minmgv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_minmgv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_minmgvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_minmgvD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Minimum magnitude of vector, with index.
@@ -2519,16 +2626,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_minmgvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
-            @NUInt long __N);
+    public static native void vDSP_minmgvi(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_minmgviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
-            @NUInt long __N);
+    public static native void vDSP_minmgviD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * Minimum value of vector.
@@ -2537,14 +2644,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_minv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_minv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_minvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_minvD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Minimum value of vector, with index.
@@ -2553,16 +2662,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_minvi(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, NUIntPtr __I,
-            @NUInt long __N);
+    public static native void vDSP_minvi(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_minviD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, NUIntPtr __I,
-            @NUInt long __N);
+    public static native void vDSP_minviD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NotNull NUIntPtr __I, @NUInt long __N);
 
     /**
      * Matrix move.
@@ -2571,16 +2680,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_mmov(ConstFloatPtr __A, FloatPtr __C, @NUInt long __M, @NUInt long __N,
-            @NUInt long __TA, @NUInt long __TC);
+    public static native void vDSP_mmov(@NotNull ConstFloatPtr __A, @NotNull FloatPtr __C, @NUInt long __M,
+            @NUInt long __N, @NUInt long __TA, @NUInt long __TC);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_mmovD(ConstDoublePtr __A, DoublePtr __C, @NUInt long __M, @NUInt long __N,
-            @NUInt long __TA, @NUInt long __TC);
+    public static native void vDSP_mmovD(@NotNull ConstDoublePtr __A, @NotNull DoublePtr __C, @NUInt long __M,
+            @NUInt long __N, @NUInt long __TA, @NUInt long __TC);
 
     /**
      * Mean of signed squares of vector.
@@ -2589,14 +2698,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_mvessq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_mvessq(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_mvessqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_mvessqD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Find zero crossing.
@@ -2605,16 +2716,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_nzcros(ConstFloatPtr __A, @NInt long __IA, @NUInt long __B, NUIntPtr __C,
-            NUIntPtr __D, @NUInt long __N);
+    public static native void vDSP_nzcros(@NotNull ConstFloatPtr __A, @NInt long __IA, @NUInt long __B,
+            @NotNull NUIntPtr __C, @NotNull NUIntPtr __D, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_nzcrosD(ConstDoublePtr __A, @NInt long __IA, @NUInt long __B, NUIntPtr __C,
-            NUIntPtr __D, @NUInt long __N);
+    public static native void vDSP_nzcrosD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NUInt long __B,
+            @NotNull NUIntPtr __C, @NotNull NUIntPtr __D, @NUInt long __N);
 
     /**
      * Convert rectangular to polar.
@@ -2623,16 +2734,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_polar(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_polar(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_polarD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_polarD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Convert polar to rectangular.
@@ -2641,16 +2752,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_rect(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_rect(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_rectD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_rectD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Root-mean-square of vector.
@@ -2659,14 +2770,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_rmsqv(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_rmsqv(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_rmsqvD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_rmsqvD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Scalar-vector divide.
@@ -2675,16 +2788,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_svdiv(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_svdiv(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_svdivD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_svdivD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Sum of vector elements.
@@ -2693,14 +2806,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_sve(ConstFloatPtr __A, @NInt long __I, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_sve(@NotNull ConstFloatPtr __A, @NInt long __I, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_sveD(ConstDoublePtr __A, @NInt long __I, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_sveD(@NotNull ConstDoublePtr __A, @NInt long __I, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Sum of vector elements magnitudes.
@@ -2709,14 +2824,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_svemg(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_svemg(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_svemgD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_svemgD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Sum of vector elements' squares.
@@ -2725,14 +2842,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_svesq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_svesq(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_svesqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_svesqD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Sum of vector elements and sum of vector elements' squares.
@@ -2741,32 +2860,32 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_sve_svesq(ConstFloatPtr __A, @NInt long __IA, FloatPtr __Sum,
-            FloatPtr __SumOfSquares, @NUInt long __N);
+    public static native void vDSP_sve_svesq(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __Sum,
+            @NotNull FloatPtr __SumOfSquares, @NUInt long __N);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_sve_svesqD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __Sum,
-            DoublePtr __SumOfSquares, @NUInt long __N);
+    public static native void vDSP_sve_svesqD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __Sum,
+            @NotNull DoublePtr __SumOfSquares, @NUInt long __N);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_normalize(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            FloatPtr __Mean, FloatPtr __StandardDeviation, @NUInt long __N);
+    public static native void vDSP_normalize(@NotNull ConstFloatPtr __A, @NInt long __IA, @Nullable FloatPtr __C,
+            @NInt long __IC, @NotNull FloatPtr __Mean, @NotNull FloatPtr __StandardDeviation, @NUInt long __N);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_normalizeD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            DoublePtr __Mean, DoublePtr __StandardDeviation, @NUInt long __N);
+    public static native void vDSP_normalizeD(@NotNull ConstDoublePtr __A, @NInt long __IA, @Nullable DoublePtr __C,
+            @NInt long __IC, @NotNull DoublePtr __Mean, @NotNull DoublePtr __StandardDeviation, @NUInt long __N);
 
     /**
      * Sum of vector elements' signed squares.
@@ -2775,14 +2894,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_svs(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NUInt long __N);
+    public static native void vDSP_svs(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_svsD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NUInt long __N);
+    public static native void vDSP_svsD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NUInt long __N);
 
     /**
      * Vector add, add, and multiply.
@@ -2791,18 +2912,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vaam(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vaam(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NInt long __ID,
+            @NotNull FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vaamD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vaamD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NInt long __ID,
+            @NotNull DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector add, subtract, and multiply.
@@ -2811,18 +2932,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vasbm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vasbm(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NInt long __ID,
+            @NotNull FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vasbmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vasbmD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NInt long __ID,
+            @NotNull DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector add and scalar multiply.
@@ -2831,16 +2952,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vasm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vasm(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vasmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vasmD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector linear average.
@@ -2849,16 +2970,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vavlin(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vavlin(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vavlinD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vavlinD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector clip.
@@ -2867,16 +2988,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vclip(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vclip(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vclipD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vclipD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector clip and count.
@@ -2885,16 +3006,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vclipc(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            FloatPtr __D, @NInt long __ID, @NUInt long __N, NUIntPtr __NLow, NUIntPtr __NHigh);
+    public static native void vDSP_vclipc(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N,
+            @NotNull NUIntPtr __NLow, @NotNull NUIntPtr __NHigh);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vclipcD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __D, @NInt long __ID, @NUInt long __N, NUIntPtr __NLow, NUIntPtr __NHigh);
+    public static native void vDSP_vclipcD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N,
+            @NotNull NUIntPtr __NLow, @NotNull NUIntPtr __NHigh);
 
     /**
      * Vector clear.
@@ -2903,14 +3026,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vclr(FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vclr(@NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vclrD(DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vclrD(@NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector compress.
@@ -2919,16 +3042,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vcmprs(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vcmprs(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vcmprsD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vcmprsD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert to decibels, power, or amplitude.
@@ -2937,16 +3060,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdbcon(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N, int __F);
+    public static native void vDSP_vdbcon(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N, int __F);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdbconD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N, int __F);
+    public static native void vDSP_vdbconD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N, int __F);
 
     /**
      * Vector distance.
@@ -2955,16 +3078,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdist(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vdist(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vdistD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vdistD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector envelope.
@@ -2973,16 +3096,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_venvlp(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_venvlp(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_venvlpD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_venvlpD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * Vector convert to integer, round toward zero.
@@ -2991,96 +3116,96 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfix8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfix8(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfix8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfix8D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfix16(ConstFloatPtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfix16(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ShortPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfix16D(ConstDoublePtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfix16D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ShortPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfix32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfix32(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfix32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfix32D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixu8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixu8(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixu8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixu8D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixu16(ConstFloatPtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixu16(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull CharPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixu16D(ConstDoublePtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixu16D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull CharPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixu32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixu32(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixu32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixu32D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert single precision to 24-bit integer with pre-scaling.
@@ -3090,9 +3215,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmfixu24(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vsmfixu24(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert single precision to 24-bit unsigned integer with pre-scaling.
@@ -3102,9 +3227,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmfix24(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B,
-            @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vsmfix24(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert 24-bit integer to single-precision float.
@@ -3114,8 +3239,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vfltu24(
-            @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 7.0
@@ -3123,8 +3248,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vflt24(
-            @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __A, @NInt long __IA,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert 24-bit integer to single-precision float and scale.
@@ -3134,8 +3259,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vfltsmu24(
-            @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __A, @NInt long __IA,
-            ConstFloatPtr __B, FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") vDSP_uint24 __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 7.0
@@ -3143,8 +3268,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vfltsm24(
-            @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __A, @NInt long __IA,
-            ConstFloatPtr __B, FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") vDSP_int24 __A,
+            @NInt long __IA, @NotNull ConstFloatPtr __B, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert to integer, round to nearest.
@@ -3153,96 +3278,96 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixr8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixr8(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixr8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixr8D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixr16(ConstFloatPtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixr16(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ShortPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixr16D(ConstDoublePtr __A, @NInt long __IA, ShortPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixr16D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ShortPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixr32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixr32(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixr32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixr32D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixru8(ConstFloatPtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixru8(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixru8D(ConstDoublePtr __A, @NInt long __IA, BytePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixru8D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull BytePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixru16(ConstFloatPtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixru16(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull CharPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixru16D(ConstDoublePtr __A, @NInt long __IA, CharPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixru16D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull CharPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixru32(ConstFloatPtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixru32(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfixru32D(ConstDoublePtr __A, @NInt long __IA, IntPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfixru32D(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull IntPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector convert to floating-point from integer.
@@ -3252,8 +3377,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vflt8(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
-            @NInt long __IA, FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -3261,40 +3386,40 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vflt8D(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
-            @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vflt16(ConstShortPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vflt16(@NotNull ConstShortPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vflt16D(ConstShortPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vflt16D(@NotNull ConstShortPtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vflt32(ConstIntPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vflt32(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vflt32D(ConstIntPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vflt32D(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -3302,8 +3427,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vfltu8(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
-            @NInt long __IA, FloatPtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
+            @NInt long __IA, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -3311,40 +3436,40 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void vDSP_vfltu8D(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
-            @NInt long __IA, DoublePtr __C, @NInt long __IC, @NUInt long __N);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String __A,
+            @NInt long __IA, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfltu16(ConstCharPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfltu16(@NotNull ConstCharPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfltu16D(ConstCharPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfltu16D(@NotNull ConstCharPtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfltu32(ConstIntPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfltu32(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfltu32D(ConstIntPtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfltu32D(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector fraction part (subtract integer toward zero).
@@ -3353,16 +3478,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfrac(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfrac(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vfracD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vfracD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector gather.
@@ -3371,16 +3496,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgathr(ConstFloatPtr __A, ConstNUIntPtr __B, @NInt long __IB, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vgathr(@NotNull ConstFloatPtr __A, @NotNull ConstNUIntPtr __B, @NInt long __IB,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgathrD(ConstDoublePtr __A, ConstNUIntPtr __B, @NInt long __IB, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vgathrD(@NotNull ConstDoublePtr __A, @NotNull ConstNUIntPtr __B, @NInt long __IB,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector gather, absolute pointers.
@@ -3389,16 +3514,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgathra(ConstPtr<ConstFloatPtr> __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vgathra(@NotNull ConstPtr<ConstFloatPtr> __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgathraD(ConstPtr<ConstDoublePtr> __A, @NInt long __IA, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vgathraD(@NotNull ConstPtr<ConstDoublePtr> __A, @NInt long __IA,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector generate tapered ramp.
@@ -3407,16 +3532,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgen(ConstFloatPtr __A, ConstFloatPtr __B, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vgen(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgenD(ConstDoublePtr __A, ConstDoublePtr __B, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vgenD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector generate by extrapolation and interpolation.
@@ -3425,16 +3550,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgenp(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
+    public static native void vDSP_vgenp(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vgenpD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
+    public static native void vDSP_vgenpD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
     /**
      * Vector inverted clip.
@@ -3443,16 +3568,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_viclip(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_viclip(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_viclipD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_viclipD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector index, C[i] = A[truncate[B[i]].
@@ -3461,16 +3586,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vindex(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vindex(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vindexD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vindexD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector interpolation between vectors.
@@ -3479,16 +3604,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vintb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vintb(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vintbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vintbD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector test limit.
@@ -3497,16 +3622,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vlim(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vlim(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vlimD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vlimD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector linear interpolation.
@@ -3515,16 +3640,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vlint(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N, @NUInt long __M);
+    public static native void vDSP_vlint(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vlintD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N, @NUInt long __M);
+    public static native void vDSP_vlintD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
     /**
      * Vector maxima.
@@ -3533,16 +3658,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmax(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmax(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmaxD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmaxD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector maximum magnitude.
@@ -3551,16 +3676,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmaxmg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmaxmg(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmaxmgD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmaxmgD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector sliding window maxima.
@@ -3569,16 +3694,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vswmax(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N, @NUInt long __WindowLength);
+    public static native void vDSP_vswmax(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N, @NUInt long __WindowLength);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vswmaxD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N, @NUInt long __WindowLength);
+    public static native void vDSP_vswmaxD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N, @NUInt long __WindowLength);
 
     /**
      * Vector minima.
@@ -3587,16 +3712,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmin(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vmin(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vminD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vminD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector minimum magnitude.
@@ -3605,16 +3730,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vminmg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vminmg(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vminmgD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vminmgD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector multiply, multiply, and add.
@@ -3623,18 +3748,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vmma(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NInt long __ID,
+            @NotNull FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vmmaD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NInt long __ID,
+            @NotNull DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector multiply, multiply, and subtract.
@@ -3643,18 +3768,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmmsb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vmmsb(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NInt long __ID,
+            @NotNull FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmmsbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vmmsbD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NInt long __ID,
+            @NotNull DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector multiply and scalar add.
@@ -3663,16 +3788,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmsa(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vmsa(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmsaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vmsaD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector multiply and subtract.
@@ -3681,16 +3806,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmsb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vmsb(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vmsbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vmsbD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * Vector negative absolute value.
@@ -3699,16 +3826,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vnabs(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vnabs(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vnabsD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vnabsD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector negate.
@@ -3717,16 +3844,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vneg(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vneg(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vnegD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vnegD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector polynomial.
@@ -3735,16 +3862,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vpoly(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_vpoly(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vpolyD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_vpolyD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * Vector Pythagoras.
@@ -3753,18 +3880,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vpythg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vpythg(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NInt long __ID,
+            @NotNull FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vpythgD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vpythgD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NInt long __ID,
+            @NotNull DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector quadratic interpolation.
@@ -3773,16 +3900,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vqint(ConstFloatPtr __A, ConstFloatPtr __B, @NInt long __IB, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N, @NUInt long __M);
+    public static native void vDSP_vqint(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B, @NInt long __IB,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vqintD(ConstDoublePtr __A, ConstDoublePtr __B, @NInt long __IB, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N, @NUInt long __M);
+    public static native void vDSP_vqintD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B, @NInt long __IB,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N, @NUInt long __M);
 
     /**
      * Vector build ramp.
@@ -3791,16 +3918,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vramp(ConstFloatPtr __A, ConstFloatPtr __B, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vramp(@NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __B, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampD(ConstDoublePtr __A, ConstDoublePtr __B, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N);
+    public static native void vDSP_vrampD(@NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector running sum integration.
@@ -3809,16 +3936,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrsum(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __S, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vrsum(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __S,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrsumD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __S, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vrsumD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __S,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector reverse order, in-place.
@@ -3827,14 +3954,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrvrs(FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vrvrs(@NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrvrsD(DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vrvrsD(@NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector subtract and multiply.
@@ -3843,16 +3970,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsbm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsbm(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsbmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsbmD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __ID,
+            @NUInt long __N);
 
     /**
      * Vector subtract, subtract, and multiply.
@@ -3861,18 +3990,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsbsbm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, @NInt long __IC, ConstFloatPtr __D, @NInt long __ID, FloatPtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vsbsbm(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NInt long __ID,
+            @NotNull FloatPtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsbsbmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, @NInt long __IC, ConstDoublePtr __D, @NInt long __ID, DoublePtr __E, @NInt long __IE,
-            @NUInt long __N);
+    public static native void vDSP_vsbsbmD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NInt long __ID,
+            @NotNull DoublePtr __E, @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector subtract and scalar multiply.
@@ -3881,16 +4010,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsbsm(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            ConstFloatPtr __C, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsbsm(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsbsmD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            ConstDoublePtr __C, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsbsmD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector Simpson integration.
@@ -3899,16 +4028,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsimps(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsimps(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsimpsD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vsimpsD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector-scalar multiply and vector add.
@@ -3917,16 +4046,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsma(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsmaD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector-scalar multiply and scalar add.
@@ -3935,16 +4064,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmsa(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsmsa(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmsaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsmsaD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector scalar multiply and vector subtract.
@@ -3953,16 +4082,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmsb(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            @NInt long __IC, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsmsb(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmsbD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            @NInt long __IC, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vsmsbD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector-scalar multiply, vector-scalar multiply and vector add.
@@ -3971,16 +4100,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmsma(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            @NInt long __IC, ConstFloatPtr __D, FloatPtr __E, @NInt long __IE, @NUInt long __N);
+    public static native void vDSP_vsmsma(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NInt long __IC, @NotNull ConstFloatPtr __D, @NotNull FloatPtr __E,
+            @NInt long __IE, @NUInt long __N);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsmsmaD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            @NInt long __IC, ConstDoublePtr __D, DoublePtr __E, @NInt long __IE, @NUInt long __N);
+    public static native void vDSP_vsmsmaD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NInt long __IC, @NotNull ConstDoublePtr __D, @NotNull DoublePtr __E,
+            @NInt long __IE, @NUInt long __N);
 
     /**
      * Vector sort, in-place.
@@ -3989,14 +4120,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsort(FloatPtr __C, @NUInt long __N, int __Order);
+    public static native void vDSP_vsort(@NotNull FloatPtr __C, @NUInt long __N, int __Order);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsortD(DoublePtr __C, @NUInt long __N, int __Order);
+    public static native void vDSP_vsortD(@NotNull DoublePtr __C, @NUInt long __N, int __Order);
 
     /**
      * Vector sort indices, in-place.
@@ -4005,16 +4136,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsorti(ConstFloatPtr __C, NUIntPtr __I, NUIntPtr __Temporary, @NUInt long __N,
-            int __Order);
+    public static native void vDSP_vsorti(@NotNull ConstFloatPtr __C, @NotNull NUIntPtr __I,
+            @Nullable NUIntPtr __Temporary, @NUInt long __N, int __Order);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vsortiD(ConstDoublePtr __C, NUIntPtr __I, NUIntPtr __Temporary, @NUInt long __N,
-            int __Order);
+    public static native void vDSP_vsortiD(@NotNull ConstDoublePtr __C, @NotNull NUIntPtr __I,
+            @Nullable NUIntPtr __Temporary, @NUInt long __N, int __Order);
 
     /**
      * Vector swap.
@@ -4023,15 +4154,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vswap(FloatPtr __A, @NInt long __IA, FloatPtr __B, @NInt long __IB, @NUInt long __N);
+    public static native void vDSP_vswap(@NotNull FloatPtr __A, @NInt long __IA, @NotNull FloatPtr __B, @NInt long __IB,
+            @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vswapD(DoublePtr __A, @NInt long __IA, DoublePtr __B, @NInt long __IB,
-            @NUInt long __N);
+    public static native void vDSP_vswapD(@NotNull DoublePtr __A, @NInt long __IA, @NotNull DoublePtr __B,
+            @NInt long __IB, @NUInt long __N);
 
     /**
      * Vector sliding window sum.
@@ -4040,16 +4172,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vswsum(ConstFloatPtr __A, @NInt long __IA, FloatPtr __C, @NInt long __IC,
-            @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_vswsum(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull FloatPtr __C,
+            @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vswsumD(ConstDoublePtr __A, @NInt long __IA, DoublePtr __C, @NInt long __IC,
-            @NUInt long __N, @NUInt long __P);
+    public static native void vDSP_vswsumD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull DoublePtr __C,
+            @NInt long __IC, @NUInt long __N, @NUInt long __P);
 
     /**
      * Vector table lookup and interpolation.
@@ -4058,16 +4190,18 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vtabi(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __S1, ConstFloatPtr __S2,
-            ConstFloatPtr __C, @NUInt long __M, FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vtabi(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __S1,
+            @NotNull ConstFloatPtr __S2, @NotNull ConstFloatPtr __C, @NUInt long __M, @NotNull FloatPtr __D,
+            @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vtabiD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __S1, ConstDoublePtr __S2,
-            ConstDoublePtr __C, @NUInt long __M, DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vtabiD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __S1,
+            @NotNull ConstDoublePtr __S2, @NotNull ConstDoublePtr __C, @NUInt long __M, @NotNull DoublePtr __D,
+            @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector threshold.
@@ -4076,16 +4210,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vthr(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vthr(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vthrD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vthrD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector threshold with zero fill.
@@ -4094,16 +4228,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vthres(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vthres(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vthresD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vthresD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector threshold with signed constant.
@@ -4112,16 +4246,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vthrsc(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, ConstFloatPtr __C,
-            FloatPtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vthrsc(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull ConstFloatPtr __C, @NotNull FloatPtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vthrscD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, ConstDoublePtr __C,
-            DoublePtr __D, @NInt long __ID, @NUInt long __N);
+    public static native void vDSP_vthrscD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull ConstDoublePtr __C, @NotNull DoublePtr __D, @NInt long __ID, @NUInt long __N);
 
     /**
      * Vector tapered merge.
@@ -4130,16 +4264,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vtmerg(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, @NInt long __IB,
-            FloatPtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vtmerg(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NInt long __IB, @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vtmergD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, @NInt long __IB,
-            DoublePtr __C, @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vtmergD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NInt long __IB, @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Vector trapezoidal integration.
@@ -4148,16 +4282,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vtrapz(ConstFloatPtr __A, @NInt long __IA, ConstFloatPtr __B, FloatPtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vtrapz(@NotNull ConstFloatPtr __A, @NInt long __IA, @NotNull ConstFloatPtr __B,
+            @NotNull FloatPtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_vtrapzD(ConstDoublePtr __A, @NInt long __IA, ConstDoublePtr __B, DoublePtr __C,
-            @NInt long __IC, @NUInt long __N);
+    public static native void vDSP_vtrapzD(@NotNull ConstDoublePtr __A, @NInt long __IA, @NotNull ConstDoublePtr __B,
+            @NotNull DoublePtr __C, @NInt long __IC, @NUInt long __N);
 
     /**
      * Wiener Levinson.
@@ -4166,16 +4300,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_wiener(@NUInt long __L, ConstFloatPtr __A, ConstFloatPtr __C, FloatPtr __F,
-            FloatPtr __P, int __Flag, IntPtr __Error);
+    public static native void vDSP_wiener(@NUInt long __L, @NotNull ConstFloatPtr __A, @NotNull ConstFloatPtr __C,
+            @NotNull FloatPtr __F, @NotNull FloatPtr __P, int __Flag, @NotNull IntPtr __Error);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_wienerD(@NUInt long __L, ConstDoublePtr __A, ConstDoublePtr __C, DoublePtr __F,
-            DoublePtr __P, int __Flag, IntPtr __Error);
+    public static native void vDSP_wienerD(@NUInt long __L, @NotNull ConstDoublePtr __A, @NotNull ConstDoublePtr __C,
+            @NotNull DoublePtr __F, @NotNull DoublePtr __P, int __Flag, @NotNull IntPtr __Error);
 
     /**
      * vDSP_FFT16_copv and vDSP_FFT32_copv perform 16- and 32-element FFTs on
@@ -4222,14 +4356,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_FFT16_copv(FloatPtr __Output, ConstFloatPtr __Input, int __Direction);
+    public static native void vDSP_FFT16_copv(@NotNull FloatPtr __Output, @NotNull ConstFloatPtr __Input,
+            int __Direction);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_FFT32_copv(FloatPtr __Output, ConstFloatPtr __Input, int __Direction);
+    public static native void vDSP_FFT32_copv(@NotNull FloatPtr __Output, @NotNull ConstFloatPtr __Input,
+            int __Direction);
 
     /**
      * vDSP_FFT16_zopv and vDSP_FFT32_zopv perform 16- and 32-element FFTs on
@@ -4277,16 +4413,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_FFT16_zopv(FloatPtr __Or, FloatPtr __Oi, ConstFloatPtr __Ir, ConstFloatPtr __Ii,
-            int __Direction);
+    public static native void vDSP_FFT16_zopv(@NotNull FloatPtr __Or, @NotNull FloatPtr __Oi,
+            @NotNull ConstFloatPtr __Ir, @NotNull ConstFloatPtr __Ii, int __Direction);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_FFT32_zopv(FloatPtr __Or, FloatPtr __Oi, ConstFloatPtr __Ir, ConstFloatPtr __Ii,
-            int __Direction);
+    public static native void vDSP_FFT32_zopv(@NotNull FloatPtr __Or, @NotNull FloatPtr __Oi,
+            @NotNull ConstFloatPtr __Ir, @NotNull ConstFloatPtr __Ii, int __Direction);
 
     /**
      * vDSP_DFT_CreateSetup is a DFT setup routine. It creates a setup object
@@ -4320,9 +4456,10 @@ public final class Accelerate {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_DFT_Setup vDSP_DFT_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length);
+    public static native vDSP_DFT_Setup vDSP_DFT_CreateSetup(@Nullable vDSP_DFT_Setup __Previous, @NUInt long __Length);
 
     /**
      * vDSP_DFT_zop_CreateSetup is a DFT setup routine. It creates a setup object
@@ -4414,18 +4551,20 @@ public final class Accelerate {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_DFT_Setup vDSP_DFT_zop_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length,
-            int __Direction);
+    public static native vDSP_DFT_Setup vDSP_DFT_zop_CreateSetup(@Nullable vDSP_DFT_Setup __Previous,
+            @NUInt long __Length, int __Direction);
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_DFT_SetupD vDSP_DFT_zop_CreateSetupD(vDSP_DFT_SetupD __Previous, @NUInt long __Length,
-            int __Direction);
+    public static native vDSP_DFT_SetupD vDSP_DFT_zop_CreateSetupD(@Nullable vDSP_DFT_SetupD __Previous,
+            @NUInt long __Length, int __Direction);
 
     /**
      * vDSP_DFT_zrop_CreateSetup and vDSP_DFT_zrop_CreateSetupD are DFT setup
@@ -4549,18 +4688,20 @@ public final class Accelerate {
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_DFT_Setup vDSP_DFT_zrop_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length,
-            int __Direction);
+    public static native vDSP_DFT_Setup vDSP_DFT_zrop_CreateSetup(@Nullable vDSP_DFT_Setup __Previous,
+            @NUInt long __Length, int __Direction);
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_DFT_SetupD vDSP_DFT_zrop_CreateSetupD(vDSP_DFT_SetupD __Previous, @NUInt long __Length,
-            int __Direction);
+    public static native vDSP_DFT_SetupD vDSP_DFT_zrop_CreateSetupD(@Nullable vDSP_DFT_SetupD __Previous,
+            @NUInt long __Length, int __Direction);
 
     /**
      * vDSP_DFT_DestroySetup and vDSP_DFT_DestroySetupD are DFT destroy routines.
@@ -4591,14 +4732,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_DestroySetup(vDSP_DFT_Setup __Setup);
+    public static native void vDSP_DFT_DestroySetup(@Nullable vDSP_DFT_Setup __Setup);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_DestroySetupD(vDSP_DFT_SetupD __Setup);
+    public static native void vDSP_DFT_DestroySetupD(@Nullable vDSP_DFT_SetupD __Setup);
 
     /**
      * vDSP_DFT_zop is a DFT execution routine. It performs a DFT, with the aid
@@ -4691,8 +4832,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_zop(VoidPtr __Setup, ConstFloatPtr __Ir, ConstFloatPtr __Ii, @NInt long __Is,
-            FloatPtr __Or, FloatPtr __Oi, @NInt long __Os, int __Direction);
+    public static native void vDSP_DFT_zop(@NotNull VoidPtr __Setup, @NotNull ConstFloatPtr __Ir,
+            @NotNull ConstFloatPtr __Ii, @NInt long __Is, @NotNull FloatPtr __Or, @NotNull FloatPtr __Oi,
+            @NInt long __Os, int __Direction);
 
     /**
      * vDSP_DFT_Execute and vDSP_DFT_ExecuteD are DFT execution routines. They
@@ -4747,23 +4889,24 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_Execute(VoidPtr __Setup, ConstFloatPtr __Ir, ConstFloatPtr __Ii, FloatPtr __Or,
-            FloatPtr __Oi);
+    public static native void vDSP_DFT_Execute(@NotNull VoidPtr __Setup, @NotNull ConstFloatPtr __Ir,
+            @NotNull ConstFloatPtr __Ii, @NotNull FloatPtr __Or, @NotNull FloatPtr __Oi);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_ExecuteD(VoidPtr __Setup, ConstDoublePtr __Ir, ConstDoublePtr __Ii,
-            DoublePtr __Or, DoublePtr __Oi);
+    public static native void vDSP_DFT_ExecuteD(@NotNull VoidPtr __Setup, @NotNull ConstDoublePtr __Ir,
+            @NotNull ConstDoublePtr __Ii, @NotNull DoublePtr __Or, @NotNull DoublePtr __Oi);
 
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native vDSP_DFT_Setup vDSP_DCT_CreateSetup(vDSP_DFT_Setup __Previous, @NUInt long __Length,
+    public static native vDSP_DFT_Setup vDSP_DCT_CreateSetup(@Nullable vDSP_DFT_Setup __Previous, @NUInt long __Length,
             int __Type);
 
     /**
@@ -4796,7 +4939,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DCT_Execute(VoidPtr __Setup, ConstFloatPtr __Input, FloatPtr __Output);
+    public static native void vDSP_DCT_Execute(@NotNull VoidPtr __Setup, @NotNull ConstFloatPtr __Input,
+            @NotNull FloatPtr __Output);
 
     /**
      * vDSP_dotpr2, vector single-precision stereo dot product.
@@ -4853,8 +4997,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2(ConstFloatPtr __A0, @NInt long __IA0, ConstFloatPtr __A1, @NInt long __IA1,
-            ConstFloatPtr __B, @NInt long __IB, FloatPtr __C0, FloatPtr __C1, @NUInt long __N);
+    public static native void vDSP_dotpr2(@NotNull ConstFloatPtr __A0, @NInt long __IA0, @NotNull ConstFloatPtr __A1,
+            @NInt long __IA1, @NotNull ConstFloatPtr __B, @NInt long __IB, @NotNull FloatPtr __C0,
+            @NotNull FloatPtr __C1, @NUInt long __N);
 
     /**
      * vDSP_dotpr2D, vector double-precision stereo dot product.
@@ -4911,8 +5056,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2D(ConstDoublePtr __A0, @NInt long __IA0, ConstDoublePtr __A1, @NInt long __IA1,
-            ConstDoublePtr __B, @NInt long __IB, DoublePtr __C0, DoublePtr __C1, @NUInt long __N);
+    public static native void vDSP_dotpr2D(@NotNull ConstDoublePtr __A0, @NInt long __IA0, @NotNull ConstDoublePtr __A1,
+            @NInt long __IA1, @NotNull ConstDoublePtr __B, @NInt long __IB, @NotNull DoublePtr __C0,
+            @NotNull DoublePtr __C1, @NUInt long __N);
 
     /**
      * vDSP_dotpr_s1_15, vector integer 1.15 format dot product.
@@ -4960,8 +5106,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr_s1_15(ConstShortPtr __A, @NInt long __IA, ConstShortPtr __B, @NInt long __IB,
-            ShortPtr __C, @NUInt long __N);
+    public static native void vDSP_dotpr_s1_15(@NotNull ConstShortPtr __A, @NInt long __IA, @NotNull ConstShortPtr __B,
+            @NInt long __IB, @NotNull ShortPtr __C, @NUInt long __N);
 
     /**
      * vDSP_dotpr2_s1_15, vector integer 1.15 format stereo dot product.
@@ -5022,8 +5168,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2_s1_15(ConstShortPtr __A0, @NInt long __IA0, ConstShortPtr __A1,
-            @NInt long __IA1, ConstShortPtr __B, @NInt long __IB, ShortPtr __C0, ShortPtr __C1, @NUInt long __N);
+    public static native void vDSP_dotpr2_s1_15(@NotNull ConstShortPtr __A0, @NInt long __IA0,
+            @NotNull ConstShortPtr __A1, @NInt long __IA1, @NotNull ConstShortPtr __B, @NInt long __IB,
+            @NotNull ShortPtr __C0, @NotNull ShortPtr __C1, @NUInt long __N);
 
     /**
      * vDSP_dotpr_s8_24, vector integer 8.24 format dot product.
@@ -5071,8 +5218,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr_s8_24(ConstIntPtr __A, @NInt long __IA, ConstIntPtr __B, @NInt long __IB,
-            IntPtr __C, @NUInt long __N);
+    public static native void vDSP_dotpr_s8_24(@NotNull ConstIntPtr __A, @NInt long __IA, @NotNull ConstIntPtr __B,
+            @NInt long __IB, @NotNull IntPtr __C, @NUInt long __N);
 
     /**
      * vDSP_dotpr2_s8_24, vector integer 8.24 format stereo dot product.
@@ -5133,8 +5280,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_dotpr2_s8_24(ConstIntPtr __A0, @NInt long __IA0, ConstIntPtr __A1, @NInt long __IA1,
-            ConstIntPtr __B, @NInt long __IB, IntPtr __C0, IntPtr __C1, @NUInt long __N);
+    public static native void vDSP_dotpr2_s8_24(@NotNull ConstIntPtr __A0, @NInt long __IA0, @NotNull ConstIntPtr __A1,
+            @NInt long __IA1, @NotNull ConstIntPtr __B, @NInt long __IB, @NotNull IntPtr __C0, @NotNull IntPtr __C1,
+            @NUInt long __N);
 
     /**
      * vDSP_vaddsub, vector single-precision add and subtract.
@@ -5178,8 +5326,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vaddsub(ConstFloatPtr __I0, @NInt long __I0S, ConstFloatPtr __I1, @NInt long __I1S,
-            FloatPtr __O0, @NInt long __O0S, FloatPtr __O1, @NInt long __O1S, @NUInt long __N);
+    public static native void vDSP_vaddsub(@NotNull ConstFloatPtr __I0, @NInt long __I0S, @NotNull ConstFloatPtr __I1,
+            @NInt long __I1S, @NotNull FloatPtr __O0, @NInt long __O0S, @NotNull FloatPtr __O1, @NInt long __O1S,
+            @NUInt long __N);
 
     /**
      * vDSP_vaddsubD, vector double-precision add and subtract.
@@ -5223,8 +5372,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vaddsubD(ConstDoublePtr __I0, @NInt long __I0S, ConstDoublePtr __I1,
-            @NInt long __I1S, DoublePtr __O0, @NInt long __O0S, DoublePtr __O1, @NInt long __O1S, @NUInt long __N);
+    public static native void vDSP_vaddsubD(@NotNull ConstDoublePtr __I0, @NInt long __I0S,
+            @NotNull ConstDoublePtr __I1, @NInt long __I1S, @NotNull DoublePtr __O0, @NInt long __O0S,
+            @NotNull DoublePtr __O1, @NInt long __O1S, @NUInt long __N);
 
     /**
      * vDSP_vrampmul, vector single-precision vramp and multiply.
@@ -5275,8 +5425,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul(ConstFloatPtr __I, @NInt long __IS, FloatPtr __Start, ConstFloatPtr __Step,
-            FloatPtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul(@NotNull ConstFloatPtr __I, @NInt long __IS, @NotNull FloatPtr __Start,
+            @NotNull ConstFloatPtr __Step, @NotNull FloatPtr __O, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmulD, vector double-precision vramp and multiply.
@@ -5327,8 +5477,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmulD(ConstDoublePtr __I, @NInt long __IS, DoublePtr __Start,
-            ConstDoublePtr __Step, DoublePtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmulD(@NotNull ConstDoublePtr __I, @NInt long __IS, @NotNull DoublePtr __Start,
+            @NotNull ConstDoublePtr __Step, @NotNull DoublePtr __O, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd, vector single-precision vramp, multiply and add.
@@ -5379,8 +5529,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd(ConstFloatPtr __I, @NInt long __IS, FloatPtr __Start,
-            ConstFloatPtr __Step, FloatPtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd(@NotNull ConstFloatPtr __I, @NInt long __IS, @NotNull FloatPtr __Start,
+            @NotNull ConstFloatPtr __Step, @NotNull FloatPtr __O, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladdD, vector double-precision vramp, multiply and add.
@@ -5431,8 +5581,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladdD(ConstDoublePtr __I, @NInt long __IS, DoublePtr __Start,
-            ConstDoublePtr __Step, DoublePtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladdD(@NotNull ConstDoublePtr __I, @NInt long __IS,
+            @NotNull DoublePtr __Start, @NotNull ConstDoublePtr __Step, @NotNull DoublePtr __O, @NInt long __OS,
+            @NUInt long __N);
 
     /**
      * vDSP_vrampmul2, stereo vector single-precision vramp and multiply.
@@ -5491,8 +5642,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul2(ConstFloatPtr __I0, ConstFloatPtr __I1, @NInt long __IS, FloatPtr __Start,
-            ConstFloatPtr __Step, FloatPtr __O0, FloatPtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul2(@NotNull ConstFloatPtr __I0, @NotNull ConstFloatPtr __I1, @NInt long __IS,
+            @NotNull FloatPtr __Start, @NotNull ConstFloatPtr __Step, @NotNull FloatPtr __O0, @NotNull FloatPtr __O1,
+            @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmul2D, stereo vector double-precision vramp and multiply.
@@ -5551,8 +5703,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul2D(ConstDoublePtr __I0, ConstDoublePtr __I1, @NInt long __IS,
-            DoublePtr __Start, ConstDoublePtr __Step, DoublePtr __O0, DoublePtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul2D(@NotNull ConstDoublePtr __I0, @NotNull ConstDoublePtr __I1,
+            @NInt long __IS, @NotNull DoublePtr __Start, @NotNull ConstDoublePtr __Step, @NotNull DoublePtr __O0,
+            @NotNull DoublePtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd2, stereo vector single-precision vramp, multiply and add.
@@ -5611,8 +5764,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd2(ConstFloatPtr __I0, ConstFloatPtr __I1, @NInt long __IS,
-            FloatPtr __Start, ConstFloatPtr __Step, FloatPtr __O0, FloatPtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd2(@NotNull ConstFloatPtr __I0, @NotNull ConstFloatPtr __I1,
+            @NInt long __IS, @NotNull FloatPtr __Start, @NotNull ConstFloatPtr __Step, @NotNull FloatPtr __O0,
+            @NotNull FloatPtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd2D, stereo vector double-precision vramp, multiply and add.
@@ -5671,8 +5825,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd2D(ConstDoublePtr __I0, ConstDoublePtr __I1, @NInt long __IS,
-            DoublePtr __Start, ConstDoublePtr __Step, DoublePtr __O0, DoublePtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd2D(@NotNull ConstDoublePtr __I0, @NotNull ConstDoublePtr __I1,
+            @NInt long __IS, @NotNull DoublePtr __Start, @NotNull ConstDoublePtr __Step, @NotNull DoublePtr __O0,
+            @NotNull DoublePtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmul_s1_15, vector integer 1.15 format vramp and multiply.
@@ -5725,8 +5880,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul_s1_15(ConstShortPtr __I, @NInt long __IS, ShortPtr __Start,
-            ConstShortPtr __Step, ShortPtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul_s1_15(@NotNull ConstShortPtr __I, @NInt long __IS,
+            @NotNull ShortPtr __Start, @NotNull ConstShortPtr __Step, @NotNull ShortPtr __O, @NInt long __OS,
+            @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd_s1_15, vector integer 1.15 format vramp, multiply and add.
@@ -5779,8 +5935,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd_s1_15(ConstShortPtr __I, @NInt long __IS, ShortPtr __Start,
-            ConstShortPtr __Step, ShortPtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd_s1_15(@NotNull ConstShortPtr __I, @NInt long __IS,
+            @NotNull ShortPtr __Start, @NotNull ConstShortPtr __Step, @NotNull ShortPtr __O, @NInt long __OS,
+            @NUInt long __N);
 
     /**
      * vDSP_vrampmul2_s1_15, stereo vector integer 1.15 format vramp and multiply.
@@ -5842,8 +5999,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul2_s1_15(ConstShortPtr __I0, ConstShortPtr __I1, @NInt long __IS,
-            ShortPtr __Start, ConstShortPtr __Step, ShortPtr __O0, ShortPtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul2_s1_15(@NotNull ConstShortPtr __I0, @NotNull ConstShortPtr __I1,
+            @NInt long __IS, @NotNull ShortPtr __Start, @NotNull ConstShortPtr __Step, @NotNull ShortPtr __O0,
+            @NotNull ShortPtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd2_s1_15, stereo vector integer 1.15 format vramp, multiply
@@ -5906,8 +6064,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd2_s1_15(ConstShortPtr __I0, ConstShortPtr __I1, @NInt long __IS,
-            ShortPtr __Start, ConstShortPtr __Step, ShortPtr __O0, ShortPtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd2_s1_15(@NotNull ConstShortPtr __I0, @NotNull ConstShortPtr __I1,
+            @NInt long __IS, @NotNull ShortPtr __Start, @NotNull ConstShortPtr __Step, @NotNull ShortPtr __O0,
+            @NotNull ShortPtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmul_s8_24, vector integer 8.24 format vramp and multiply.
@@ -5960,8 +6119,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul_s8_24(ConstIntPtr __I, @NInt long __IS, IntPtr __Start, ConstIntPtr __Step,
-            IntPtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul_s8_24(@NotNull ConstIntPtr __I, @NInt long __IS, @NotNull IntPtr __Start,
+            @NotNull ConstIntPtr __Step, @NotNull IntPtr __O, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd_s8_24, vector integer 8.24 format vramp, multiply and add.
@@ -6014,8 +6173,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd_s8_24(ConstIntPtr __I, @NInt long __IS, IntPtr __Start,
-            ConstIntPtr __Step, IntPtr __O, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd_s8_24(@NotNull ConstIntPtr __I, @NInt long __IS, @NotNull IntPtr __Start,
+            @NotNull ConstIntPtr __Step, @NotNull IntPtr __O, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmul2_s8_24, stereo vector integer 8.24 format vramp and multiply.
@@ -6077,8 +6236,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmul2_s8_24(ConstIntPtr __I0, ConstIntPtr __I1, @NInt long __IS, IntPtr __Start,
-            ConstIntPtr __Step, IntPtr __O0, IntPtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmul2_s8_24(@NotNull ConstIntPtr __I0, @NotNull ConstIntPtr __I1,
+            @NInt long __IS, @NotNull IntPtr __Start, @NotNull ConstIntPtr __Step, @NotNull IntPtr __O0,
+            @NotNull IntPtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * vDSP_vrampmuladd2_s8_24, stereo vector integer 8.24 format vramp, multiply
@@ -6141,8 +6301,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_vrampmuladd2_s8_24(ConstIntPtr __I0, ConstIntPtr __I1, @NInt long __IS,
-            IntPtr __Start, ConstIntPtr __Step, IntPtr __O0, IntPtr __O1, @NInt long __OS, @NUInt long __N);
+    public static native void vDSP_vrampmuladd2_s8_24(@NotNull ConstIntPtr __I0, @NotNull ConstIntPtr __I1,
+            @NInt long __IS, @NotNull IntPtr __Start, @NotNull ConstIntPtr __Step, @NotNull IntPtr __O0,
+            @NotNull IntPtr __O1, @NInt long __OS, @NUInt long __N);
 
     /**
      * API-Since: 4.0
@@ -21585,10 +21746,11 @@ public final class Accelerate {
      * @return
      *         The retained object.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_retain(NSObject object);
+    public static native NSObject la_retain(@NotNull NSObject object);
 
     /**
      * Decrement the reference count of an la_object_t object.
@@ -21606,7 +21768,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native void la_release(NSObject object);
+    public static native void la_release(@NotNull NSObject object);
 
     /**
      * Add attributes to an la_object_t object.
@@ -21637,7 +21799,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native void la_add_attributes(NSObject object, @NUInt long attributes);
+    public static native void la_add_attributes(@NotNull NSObject object, @NUInt long attributes);
 
     /**
      * Remove attributes from an la_object_t object.
@@ -21664,7 +21826,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native void la_remove_attributes(NSObject object, @NUInt long attributes);
+    public static native void la_remove_attributes(@NotNull NSObject object, @NUInt long attributes);
 
     /**
      * Query the status of an la_object.
@@ -21713,7 +21875,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long la_status(NSObject object);
+    public static native long la_status(@NotNull NSObject object);
 
     /**
      * Create a matrix using data from a buffer of floats. Ownership of the buffer
@@ -21761,10 +21923,11 @@ public final class Accelerate {
      * 
      * @return a new la_object_t object representing the matrix.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_float_buffer(ConstFloatPtr buffer, @NUInt long matrix_rows,
+    public static native NSObject la_matrix_from_float_buffer(@NotNull ConstFloatPtr buffer, @NUInt long matrix_rows,
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint, @NUInt long attributes);
 
     /**
@@ -21813,10 +21976,11 @@ public final class Accelerate {
      * 
      * @return a new la_object_t object representing the matrix.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_double_buffer(ConstDoublePtr buffer, @NUInt long matrix_rows,
+    public static native NSObject la_matrix_from_double_buffer(@NotNull ConstDoublePtr buffer, @NUInt long matrix_rows,
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint, @NUInt long attributes);
 
     /**
@@ -21869,12 +22033,13 @@ public final class Accelerate {
      * 
      * @return a new la_object_t object representing the matrix.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_float_buffer_nocopy(FloatPtr buffer, @NUInt long matrix_rows,
+    public static native NSObject la_matrix_from_float_buffer_nocopy(@NotNull FloatPtr buffer, @NUInt long matrix_rows,
             @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
-            @FunctionPtr(name = "call_la_matrix_from_float_buffer_nocopy") Function_la_matrix_from_float_buffer_nocopy deallocator,
+            @Nullable @FunctionPtr(name = "call_la_matrix_from_float_buffer_nocopy") Function_la_matrix_from_float_buffer_nocopy deallocator,
             @NUInt long attributes);
 
     /**
@@ -21927,12 +22092,13 @@ public final class Accelerate {
      * 
      * @return a new la_object_t object representing the matrix.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_double_buffer_nocopy(DoublePtr buffer, @NUInt long matrix_rows,
-            @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
-            @FunctionPtr(name = "call_la_matrix_from_double_buffer_nocopy") Function_la_matrix_from_double_buffer_nocopy deallocator,
+    public static native NSObject la_matrix_from_double_buffer_nocopy(@NotNull DoublePtr buffer,
+            @NUInt long matrix_rows, @NUInt long matrix_cols, @NUInt long matrix_row_stride, @NUInt long matrix_hint,
+            @Nullable @FunctionPtr(name = "call_la_matrix_from_double_buffer_nocopy") Function_la_matrix_from_double_buffer_nocopy deallocator,
             @NUInt long attributes);
 
     /**
@@ -21972,8 +22138,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long la_matrix_to_float_buffer(FloatPtr buffer, @NUInt long buffer_row_stride,
-            NSObject matrix);
+    public static native long la_matrix_to_float_buffer(@NotNull FloatPtr buffer, @NUInt long buffer_row_stride,
+            @NotNull NSObject matrix);
 
     /**
      * Stores the elements of a matrix to a buffer.
@@ -22012,8 +22178,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long la_matrix_to_double_buffer(DoublePtr buffer, @NUInt long buffer_row_stride,
-            NSObject matrix);
+    public static native long la_matrix_to_double_buffer(@NotNull DoublePtr buffer, @NUInt long buffer_row_stride,
+            @NotNull NSObject matrix);
 
     /**
      * Get the number of rows in a matrix.
@@ -22032,7 +22198,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long la_matrix_rows(NSObject matrix);
+    public static native long la_matrix_rows(@NotNull NSObject matrix);
 
     /**
      * Get the number of columns in a matrix.
@@ -22051,7 +22217,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long la_matrix_cols(NSObject matrix);
+    public static native long la_matrix_cols(@NotNull NSObject matrix);
 
     /**
      * Create a slice of a matrix.
@@ -22108,10 +22274,11 @@ public final class Accelerate {
      *         A new matrix with size slice_rows x slice_cols whose elements are taken
      *         from the source matrix.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_slice(NSObject matrix, @NInt long matrix_first_row,
+    public static native NSObject la_matrix_slice(@NotNull NSObject matrix, @NInt long matrix_first_row,
             @NInt long matrix_first_col, @NInt long matrix_row_stride, @NInt long matrix_col_stride,
             @NUInt long slice_rows, @NUInt long slice_cols);
 
@@ -22120,6 +22287,7 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
@@ -22152,10 +22320,11 @@ public final class Accelerate {
      * @param matrix_diagonal
      *                        The index of the non-zero diagonal.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_diagonal_matrix_from_vector(NSObject vector, @NInt long matrix_diagonal);
+    public static native NSObject la_diagonal_matrix_from_vector(@NotNull NSObject vector, @NInt long matrix_diagonal);
 
     /**
      * Creates a vector from the specified row of the matrix.
@@ -22181,10 +22350,11 @@ public final class Accelerate {
      * @return
      *         The resulting vector is a 1 x cols(matrix) vector.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_matrix_row(NSObject matrix, @NUInt long matrix_row);
+    public static native NSObject la_vector_from_matrix_row(@NotNull NSObject matrix, @NUInt long matrix_row);
 
     /**
      * Creates a vector from the specified column of the matrix.
@@ -22210,10 +22380,11 @@ public final class Accelerate {
      * @return
      *         The resulting vector is a rows(matrix) x 1 vector.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_matrix_col(NSObject matrix, @NUInt long matrix_col);
+    public static native NSObject la_vector_from_matrix_col(@NotNull NSObject matrix, @NUInt long matrix_col);
 
     /**
      * Creates a vector from the specified diagonal of the matrix.
@@ -22249,10 +22420,11 @@ public final class Accelerate {
      *         The resulting vector is a length x 1 vector where length is
      *         min(rows(matrix),cols(matrix)-abs(matrix_diagonal)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_matrix_diagonal(NSObject matrix, @NInt long matrix_diagonal);
+    public static native NSObject la_vector_from_matrix_diagonal(@NotNull NSObject matrix, @NInt long matrix_diagonal);
 
     /**
      * Stores the elements of a vector to a buffer.
@@ -22305,7 +22477,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long la_vector_to_float_buffer(FloatPtr buffer, @NInt long buffer_stride, NSObject vector);
+    public static native long la_vector_to_float_buffer(@NotNull FloatPtr buffer, @NInt long buffer_stride,
+            @NotNull NSObject vector);
 
     /**
      * Stores the elements of a vector to a buffer.
@@ -22362,7 +22535,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NInt
-    public static native long la_vector_to_double_buffer(DoublePtr buffer, @NInt long buffer_stride, NSObject vector);
+    public static native long la_vector_to_double_buffer(@NotNull DoublePtr buffer, @NInt long buffer_stride,
+            @NotNull NSObject vector);
 
     /**
      * Get the length of a vector.
@@ -22381,7 +22555,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long la_vector_length(NSObject vector);
+    public static native long la_vector_length(@NotNull NSObject vector);
 
     /**
      * Create a slice of a vector.
@@ -22429,11 +22603,12 @@ public final class Accelerate {
      * @return
      *         A new vector with length slice_length whose elements are taken from vector.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_slice(NSObject vector, @NInt long vector_first, @NInt long vector_stride,
-            @NUInt long slice_length);
+    public static native NSObject la_vector_slice(@NotNull NSObject vector, @NInt long vector_first,
+            @NInt long vector_stride, @NUInt long slice_length);
 
     /**
      * Splat objects are a feature that is relatively unique to the LinearAlgebra
@@ -22468,6 +22643,7 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
@@ -22478,6 +22654,7 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
@@ -22488,20 +22665,22 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_splat_from_vector_element(NSObject vector, @NInt long vector_index);
+    public static native NSObject la_splat_from_vector_element(@NotNull NSObject vector, @NInt long vector_index);
 
     /**
      * API-Since: 8.0
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_splat_from_matrix_element(NSObject matrix, @NInt long matrix_row,
+    public static native NSObject la_splat_from_matrix_element(@NotNull NSObject matrix, @NInt long matrix_row,
             @NInt long matrix_col);
 
     /**
@@ -22517,20 +22696,22 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_vector_from_splat(NSObject splat, @NUInt long simd_length);
+    public static native NSObject la_vector_from_splat(@NotNull NSObject splat, @NUInt long simd_length);
 
     /**
      * API-Since: 8.0
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_from_splat(NSObject splat, @NUInt long matrix_rows,
+    public static native NSObject la_matrix_from_splat(@NotNull NSObject splat, @NUInt long matrix_rows,
             @NUInt long matrix_cols);
 
     /**
@@ -22544,10 +22725,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_transpose(NSObject matrix);
+    public static native NSObject la_transpose(@NotNull NSObject matrix);
 
     /**
      * Multiply a matrix or vector by a scalar given by a float.
@@ -22564,10 +22746,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_scale_with_float(NSObject matrix, float scalar);
+    public static native NSObject la_scale_with_float(@NotNull NSObject matrix, float scalar);
 
     /**
      * Multiply a matrix or vector by a scalar given by a double.
@@ -22584,10 +22767,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_scale_with_double(NSObject matrix, double scalar);
+    public static native NSObject la_scale_with_double(@NotNull NSObject matrix, double scalar);
 
     /**
      * Compute the element-wise sum of two vectors or matrices.
@@ -22608,10 +22792,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_sum(NSObject obj_left, NSObject obj_right);
+    public static native NSObject la_sum(@NotNull NSObject obj_left, @NotNull NSObject obj_right);
 
     /**
      * Compute the element-wise difference of two vectors or matrices.
@@ -22633,10 +22818,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_difference(NSObject obj_left, NSObject obj_right);
+    public static native NSObject la_difference(@NotNull NSObject obj_left, @NotNull NSObject obj_right);
 
     /**
      * Compute the element-wise product of two vectors or matrices.
@@ -22657,10 +22843,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_elementwise_product(NSObject obj_left, NSObject obj_right);
+    public static native NSObject la_elementwise_product(@NotNull NSObject obj_left, @NotNull NSObject obj_right);
 
     /**
      * Compute the inner product of two vectors.
@@ -22682,10 +22869,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_inner_product(NSObject vector_left, NSObject vector_right);
+    public static native NSObject la_inner_product(@NotNull NSObject vector_left, @NotNull NSObject vector_right);
 
     /**
      * Compute the outer product of two vectors.
@@ -22707,10 +22895,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_outer_product(NSObject vector_left, NSObject vector_right);
+    public static native NSObject la_outer_product(@NotNull NSObject vector_left, @NotNull NSObject vector_right);
 
     /**
      * Compute a matrix product.
@@ -22751,10 +22940,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_matrix_product(NSObject matrix_left, NSObject matrix_right);
+    public static native NSObject la_matrix_product(@NotNull NSObject matrix_left, @NotNull NSObject matrix_right);
 
     /**
      * Solves a system of linear equations
@@ -22811,10 +23001,11 @@ public final class Accelerate {
      * @return
      *         A matrix of the solution(s) of the system of equations.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_solve(NSObject matrix_system, NSObject obj_rhs);
+    public static native NSObject la_solve(@NotNull NSObject matrix_system, @NotNull NSObject obj_rhs);
 
     /**
      * Compute a norm of a vector or matrix.
@@ -22832,7 +23023,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native float la_norm_as_float(NSObject vector, @NUInt long vector_norm);
+    public static native float la_norm_as_float(@NotNull NSObject vector, @NUInt long vector_norm);
 
     /**
      * API-Since: 8.0
@@ -22842,7 +23033,7 @@ public final class Accelerate {
     @Deprecated
     @Generated
     @CFunction
-    public static native double la_norm_as_double(NSObject vector, @NUInt long vector_norm);
+    public static native double la_norm_as_double(@NotNull NSObject vector, @NUInt long vector_norm);
 
     /**
      * "Normalizes" a vector or matrix.
@@ -22858,10 +23049,11 @@ public final class Accelerate {
      * Deprecated-Since: 14.0
      * Deprecated-Message: This API is deprecated, please use BLAS and LAPACK
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native NSObject la_normalized_vector(NSObject vector, @NUInt long vector_norm);
+    public static native NSObject la_normalized_vector(@NotNull NSObject vector, @NUInt long vector_norm);
 
     /**
      * Compute the inner product of sparse vector x with dense vector y.
@@ -24783,10 +24975,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native double quadrature_integrate(
-            @UncertainArgument("Options: reference, array Fallback: reference") quadrature_integrate_function __f,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") quadrature_integrate_function __f,
             double __a, double __b,
-            @UncertainArgument("Options: reference, array Fallback: reference") quadrature_integrate_options options,
-            IntPtr status, DoublePtr abs_error, @NUInt long workspace_size, VoidPtr workspace);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") quadrature_integrate_options options,
+            @Nullable IntPtr status, @Nullable DoublePtr abs_error, @NUInt long workspace_size,
+            @Nullable VoidPtr workspace);
 
     /**
      * Create a convolution layer filter (DEPRECATED, Use BNNSFilterCreateLayerConvolution)
@@ -24805,14 +24998,15 @@ public final class Accelerate {
      *         API-Since: 10.0
      *         Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateConvolutionLayer(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor in_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor out_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSConvolutionLayerParameters layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor in_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor out_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSConvolutionLayerParameters layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a fully connected layer filter (DEPRECATED, Use BNNSFilterCreateLayerFullyConnected)
@@ -24831,14 +25025,15 @@ public final class Accelerate {
      *         API-Since: 10.0
      *         Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateFullyConnectedLayer(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor in_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFullyConnectedLayerParameters layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor in_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSFullyConnectedLayerParameters layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a pooling layer filter (DEPRECATED, Use BNNSFilterCreateLayerPooling)
@@ -24857,14 +25052,15 @@ public final class Accelerate {
      *         API-Since: 10.0
      *         Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreatePoolingLayer(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor in_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor out_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSPoolingLayerParameters layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor in_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSImageStackDescriptor out_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSPoolingLayerParameters layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Apply a filter
@@ -24879,7 +25075,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFilterApply(VoidPtr filter, ConstVoidPtr in, VoidPtr out);
+    public static native int BNNSFilterApply(@Nullable VoidPtr filter, @NotNull ConstVoidPtr in, @NotNull VoidPtr out);
 
     /**
      * Apply a filter to several pairs of (input, output) data
@@ -24902,8 +25098,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride);
+    public static native int BNNSFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride, @NotNull VoidPtr out, @NUInt long out_stride);
 
     /**
      * Destroy filter
@@ -24917,7 +25113,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void BNNSFilterDestroy(VoidPtr filter);
+    public static native void BNNSFilterDestroy(@Nullable VoidPtr filter);
 
     /**
      * Calculates the reciprocal for each element of a vector.
@@ -24932,7 +25128,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvrecf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvrecf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the reciprocal for each element of a vector.
@@ -24947,7 +25143,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvrec(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvrec(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the quotient of the two source vectors.
@@ -24964,7 +25160,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvdivf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvdivf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstFloatPtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates the quotient of the two source vectors.
@@ -24981,7 +25178,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvdiv(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvdiv(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstDoublePtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates the square root for each element of a vector.
@@ -24996,7 +25194,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsqrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvsqrtf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the square root for each element of a vector.
@@ -25011,7 +25209,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsqrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvsqrt(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the cube root for each element of a vector.
@@ -25026,7 +25224,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcbrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvcbrtf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the cube root for each element of a vector.
@@ -25041,7 +25239,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcbrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvcbrt(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the reciprocal square root for each element of a
@@ -25057,7 +25255,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvrsqrtf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvrsqrtf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the reciprocal square root for each element of a
@@ -25073,7 +25271,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvrsqrt(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvrsqrt(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the exponential function e**x for each element of a
@@ -25089,7 +25287,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvexpf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvexpf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the exponential function e**x for each element of a
@@ -25105,7 +25303,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvexp(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvexp(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates (e**x) - 1 for each element of a vector, with high
@@ -25128,7 +25326,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvexpm1f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvexpm1f(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates (e**x) - 1 for each element of a vector, with high
@@ -25151,7 +25349,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvexpm1(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvexpm1(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the natural logarithm for each element of a vector.
@@ -25166,7 +25364,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlogf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvlogf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the natural logarithm for each element of a vector.
@@ -25181,7 +25379,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvlog(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the logarithm base 10 for each element of a vector.
@@ -25196,7 +25394,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog10f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvlog10f(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the logarithm base 10 for each element of a vector.
@@ -25211,7 +25409,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog10(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvlog10(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates log(1+x) for each element of a vector, with high
@@ -25234,7 +25432,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog1pf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvlog1pf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates log(1+x) for each element of a vector, with high
@@ -25257,7 +25455,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog1p(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvlog1p(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns, as a floating-point value, the unbiased floating-point
@@ -25281,7 +25479,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlogbf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvlogbf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns, as a floating-point value, the unbiased floating-point
@@ -25305,7 +25503,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlogb(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvlogb(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the absolute value for each element of a vector.
@@ -25320,7 +25518,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvfabsf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvfabsf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the absolute value for each element of a vector.
@@ -25335,7 +25533,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvfabs(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvfabs(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates, elementwise, x**y for two vectors x and y.
@@ -25374,7 +25572,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvpowf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvpowf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstFloatPtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, x**y for two vectors x and y.
@@ -25413,7 +25612,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvpow(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvpow(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstDoublePtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, x**y for a vector x and a scalar y.
@@ -25430,7 +25630,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvpowsf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvpowsf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstFloatPtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, x**y for a vector x and a scalar y.
@@ -25447,7 +25648,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvpows(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvpows(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2,
+            @NotNull ConstDoublePtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Returns the sine for each element of a vector.
@@ -25465,7 +25667,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsinf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvsinf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the sine for each element of a vector.
@@ -25483,7 +25685,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsin(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvsin(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the cosine for each element of a vector.
@@ -25500,7 +25702,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcosf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvcosf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the cosine for each element of a vector.
@@ -25517,7 +25719,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcos(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvcos(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the tangent for each element of a vector.
@@ -25535,7 +25737,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvtanf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvtanf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the tangent for each element of a vector.
@@ -25553,7 +25755,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvtan(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvtan(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the principal value of arc sine for each element of a
@@ -25573,7 +25775,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvasinf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvasinf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the principal value of arc sine for each element of a
@@ -25593,7 +25795,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvasin(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvasin(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the principal value of arc cosine for each element of a
@@ -25613,7 +25815,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvacosf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvacosf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the principal value of arc cosine for each element of a
@@ -25633,7 +25835,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvacos(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvacos(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the principal value of arc tangent for each element of a
@@ -25653,7 +25855,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvatanf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvatanf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Returns the principal value of arc tangent for each element of a
@@ -25673,7 +25875,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvatan(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvatan(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates, elementwise, the principal value of the arc tangent
@@ -25710,7 +25912,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvatan2f(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvatan2f(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstFloatPtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, the principal value of the arc tangent
@@ -25747,7 +25950,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvatan2(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvatan2(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2,
+            @NotNull ConstDoublePtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Returns the sine and cosine for each element of a vector.
@@ -25764,7 +25968,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsincosf(FloatPtr arg1, FloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvsincosf(@NotNull FloatPtr arg1, @NotNull FloatPtr arg2, @NotNull ConstFloatPtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Returns the sine and cosine for each element of a vector.
@@ -25781,7 +25986,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsincos(DoublePtr arg1, DoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvsincos(@NotNull DoublePtr arg1, @NotNull DoublePtr arg2, @NotNull ConstDoublePtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates the hyperbolic sine for each element of a vector.
@@ -25799,7 +26005,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsinhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvsinhf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the hyperbolic sine for each element of a vector.
@@ -25817,7 +26023,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsinh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvsinh(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the hyperbolic cosine for each element of a vector.
@@ -25835,7 +26041,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcoshf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvcoshf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the hyperbolic cosine for each element of a vector.
@@ -25853,7 +26059,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcosh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvcosh(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the hyperbolic tangent for each element of a vector.
@@ -25871,7 +26077,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvtanhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvtanhf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the hyperbolic tangent for each element of a vector.
@@ -25889,7 +26095,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvtanh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvtanh(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the inverse hyperbolic sine for each element of a
@@ -25908,7 +26114,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvasinhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvasinhf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the inverse hyperbolic sine for each element of a
@@ -25927,7 +26133,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvasinh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvasinh(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the principal value of inverse hyperbolic cosine for
@@ -25948,7 +26154,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvacoshf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvacoshf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the principal value of inverse hyperbolic cosine for
@@ -25969,7 +26175,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvacosh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvacosh(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the inverse hyperbolic tangent for each element of a
@@ -25989,7 +26195,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvatanhf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvatanhf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the inverse hyperbolic tangent for each element of a
@@ -26009,7 +26215,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvatanh(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvatanh(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the integer truncation for each element of a vector.
@@ -26029,7 +26235,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvintf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvintf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the integer truncation for each element of a vector.
@@ -26049,7 +26255,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvint(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvint(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the rounding to the nearest integer for each element
@@ -26068,7 +26274,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvnintf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvnintf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the rounding to the nearest integer for each element
@@ -26087,7 +26293,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvnint(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvnint(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the ceiling function for each element of a vector.
@@ -26105,7 +26311,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvceilf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvceilf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the ceiling function for each element of a vector.
@@ -26123,7 +26329,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvceil(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvceil(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the floor function for each element of a vector.
@@ -26141,7 +26347,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvfloorf(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvfloorf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the floor function for each element of a vector.
@@ -26159,7 +26365,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvfloor(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvfloor(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates, elementwise, the floating-point remainder of y/x,
@@ -26190,7 +26396,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvfmodf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvfmodf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstFloatPtr arg3,
+            @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, the floating-point remainder of y/x,
@@ -26221,7 +26428,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvfmod(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvfmod(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2,
+            @NotNull ConstDoublePtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, the difference between k*x and y, where
@@ -26250,7 +26458,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvremainderf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvremainderf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2,
+            @NotNull ConstFloatPtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates, elementwise, the difference between k*x and y, where
@@ -26279,7 +26488,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvremainder(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvremainder(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2,
+            @NotNull ConstDoublePtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Copies, elementwise, the sign of x with the value of y, for two
@@ -26298,7 +26508,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcopysignf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvcopysignf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2,
+            @NotNull ConstFloatPtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Copies, elementwise, the sign of x with the value of y, for two
@@ -26317,7 +26528,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcopysign(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvcopysign(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2,
+            @NotNull ConstDoublePtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Determines, elementwise, the next machine representable number
@@ -26336,7 +26548,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvnextafterf(FloatPtr arg1, ConstFloatPtr arg2, ConstFloatPtr arg3, ConstIntPtr arg4);
+    public static native void vvnextafterf(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2,
+            @NotNull ConstFloatPtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Determines, elementwise, the next machine representable number
@@ -26355,7 +26568,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvnextafter(DoublePtr arg1, ConstDoublePtr arg2, ConstDoublePtr arg3, ConstIntPtr arg4);
+    public static native void vvnextafter(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2,
+            @NotNull ConstDoublePtr arg3, @NotNull ConstIntPtr arg4);
 
     /**
      * Calculates the base 2 logarithm for each element of a vector.
@@ -26370,7 +26584,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog2f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvlog2f(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the base 2 logarithm for each element of a vector.
@@ -26385,7 +26599,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvlog2(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvlog2(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the base 2 exponential function 2**x for each element
@@ -26401,7 +26615,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvexp2f(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvexp2f(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the base 2 exponential function 2**x for each element
@@ -26417,7 +26631,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvexp2(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvexp2(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the sine for pi times each element of a vector.
@@ -26432,7 +26646,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsinpif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvsinpif(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the sine for pi times each element of a vector.
@@ -26447,7 +26661,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvsinpi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvsinpi(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the cosine for pi times each element of a vector.
@@ -26462,7 +26676,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcospif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvcospif(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the cosine for pi times each element of a vector.
@@ -26477,7 +26691,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvcospi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvcospi(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the tangent for pi times each element of a vector.
@@ -26492,7 +26706,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvtanpif(FloatPtr arg1, ConstFloatPtr arg2, ConstIntPtr arg3);
+    public static native void vvtanpif(@NotNull FloatPtr arg1, @NotNull ConstFloatPtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * Calculates the tangent for pi times each element of a vector.
@@ -26507,7 +26721,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vvtanpi(DoublePtr arg1, ConstDoublePtr arg2, ConstIntPtr arg3);
+    public static native void vvtanpi(@NotNull DoublePtr arg1, @NotNull ConstDoublePtr arg2, @NotNull ConstIntPtr arg3);
 
     /**
      * [@function] vImageAlphaBlend_Planar8
@@ -41612,28 +41826,29 @@ public final class Accelerate {
      *         API-Since: 11.0
      *         Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateVectorActivationLayer(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor in_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSActivation activation,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor in_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSVectorDescriptor out_desc,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSActivation activation,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseRetainSymbolic(VoidPtr symbolicFactor);
+    public static native void _SparseRetainSymbolic(@NotNull VoidPtr symbolicFactor);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseDestroyOpaqueSymbolic(VoidPtr toFree);
+    public static native void _SparseDestroyOpaqueSymbolic(@NotNull VoidPtr toFree);
 
     /**
      * API-Since: 11.0
@@ -41641,7 +41856,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @ByValue
-    public static native SparseSymbolicFactorOptions _SparseGetOptionsFromSymbolicFactor(VoidPtr factor);
+    public static native SparseSymbolicFactorOptions _SparseGetOptionsFromSymbolicFactor(@NotNull VoidPtr factor);
 
     /**
      * API-Since: 11.0
@@ -41655,132 +41870,56 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void _SparseRefactorSymmetric_Double(VoidPtr Matrix, VoidPtr Factorization,
-            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
-            VoidPtr workspace);
+    public static native void _SparseRefactorSymmetric_Double(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseRefactorQR_Double(VoidPtr Matrix, VoidPtr Factorization,
-            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
-            VoidPtr workspace);
+    public static native void _SparseRefactorQR_Double(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseMultiplySubfactor_Double(VoidPtr Subfactor, VoidPtr x, VoidPtr y,
-            BytePtr workspace);
+    public static native void _SparseMultiplySubfactor_Double(@NotNull VoidPtr Subfactor, @Nullable VoidPtr x,
+            @NotNull VoidPtr y, @NotNull BytePtr workspace);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseSolveSubfactor_Double(VoidPtr Subfactor, VoidPtr b, VoidPtr x, BytePtr workspace);
+    public static native void _SparseSolveSubfactor_Double(@NotNull VoidPtr Subfactor, @Nullable VoidPtr b,
+            @NotNull VoidPtr x, @NotNull BytePtr workspace);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseSolveOpaque_Double(VoidPtr Factored, VoidPtr RHS, VoidPtr Soln, VoidPtr workspace);
+    public static native void _SparseSolveOpaque_Double(@NotNull VoidPtr Factored, @Nullable VoidPtr RHS,
+            @NotNull VoidPtr Soln, @NotNull VoidPtr workspace);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseDestroyOpaqueNumeric_Double(VoidPtr toFree);
+    public static native void _SparseDestroyOpaqueNumeric_Double(@NotNull VoidPtr toFree);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseRetainNumeric_Double(VoidPtr numericFactor);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    @ByValue
-    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Double(VoidPtr factor);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long _SparseGetIterativeStateSize_Double(VoidPtr method, boolean preconditioner, int m, int n,
-            int nrhs);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseReleaseOpaquePreconditioner_Double(VoidPtr toFree);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseRefactorSymmetric_Float(VoidPtr Matrix, VoidPtr Factorization,
-            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
-            VoidPtr workspace);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseRefactorQR_Float(VoidPtr Matrix, VoidPtr Factorization,
-            @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
-            VoidPtr workspace);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseMultiplySubfactor_Float(VoidPtr Subfactor, VoidPtr x, VoidPtr y,
-            BytePtr workspace);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseSolveSubfactor_Float(VoidPtr Subfactor, VoidPtr b, VoidPtr x, BytePtr workspace);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseSolveOpaque_Float(VoidPtr Factored, VoidPtr RHS, VoidPtr Soln, VoidPtr workspace);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseDestroyOpaqueNumeric_Float(VoidPtr toFree);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void _SparseRetainNumeric_Float(VoidPtr numericFactor);
+    public static native void _SparseRetainNumeric_Double(@NotNull VoidPtr numericFactor);
 
     /**
      * API-Since: 11.0
@@ -41788,7 +41927,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @ByValue
-    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Float(VoidPtr factor);
+    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Double(@NotNull VoidPtr factor);
 
     /**
      * API-Since: 11.0
@@ -41796,15 +41935,95 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long _SparseGetIterativeStateSize_Float(VoidPtr method, boolean preconditioner, int m, int n,
-            int nrhs);
+    public static native long _SparseGetIterativeStateSize_Double(@NotNull VoidPtr method, boolean preconditioner,
+            int m, int n, int nrhs);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native void _SparseReleaseOpaquePreconditioner_Float(VoidPtr toFree);
+    public static native void _SparseReleaseOpaquePreconditioner_Double(@NotNull VoidPtr toFree);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorSymmetric_Float(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRefactorQR_Float(@NotNull VoidPtr Matrix, @NotNull VoidPtr Factorization,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") SparseNumericFactorOptions nfoptions,
+            @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseMultiplySubfactor_Float(@NotNull VoidPtr Subfactor, @Nullable VoidPtr x,
+            @NotNull VoidPtr y, @NotNull BytePtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseSolveSubfactor_Float(@NotNull VoidPtr Subfactor, @Nullable VoidPtr b,
+            @NotNull VoidPtr x, @NotNull BytePtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseSolveOpaque_Float(@NotNull VoidPtr Factored, @Nullable VoidPtr RHS,
+            @NotNull VoidPtr Soln, @NotNull VoidPtr workspace);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseDestroyOpaqueNumeric_Float(@NotNull VoidPtr toFree);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseRetainNumeric_Float(@NotNull VoidPtr numericFactor);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @ByValue
+    public static native SparseNumericFactorOptions _SparseGetOptionsFromNumericFactor_Float(@NotNull VoidPtr factor);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long _SparseGetIterativeStateSize_Float(@NotNull VoidPtr method, boolean preconditioner, int m,
+            int n, int nrhs);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native void _SparseReleaseOpaquePreconditioner_Float(@NotNull VoidPtr toFree);
 
     /**
      * Create a convolution layer filter
@@ -41820,11 +42039,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerConvolution(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersConvolution layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersConvolution layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a transposed convolution layer filter (also known as deconvolution)
@@ -41841,11 +42061,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerTransposedConvolution(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersConvolution layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersConvolution layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a fully connected layer filter
@@ -41861,11 +42082,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerFullyConnected(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersFullyConnected layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersFullyConnected layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a pooling layer filter
@@ -41881,11 +42103,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerPooling(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPooling layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPooling layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a Activation/Conversion layer filter
@@ -41901,11 +42124,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerActivation(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersActivation layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersActivation layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a Loss layer filter
@@ -41920,10 +42144,11 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr BNNSFilterCreateLayerLoss(ConstVoidPtr layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+    public static native VoidPtr BNNSFilterCreateLayerLoss(@NotNull ConstVoidPtr layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a Normalization layer filter
@@ -41940,11 +42165,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerNormalization(int normType,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersNormalization layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersNormalization layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create an Arithmetic layer filter
@@ -41959,11 +42185,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerArithmetic(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersArithmetic layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersArithmetic layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a Permute layer filter
@@ -41978,11 +42205,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerPermute(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPermute layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPermute layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a dropout filter
@@ -41998,11 +42226,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerDropout(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersDropout layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersDropout layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a padding filter
@@ -42018,11 +42247,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerPadding(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPadding layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersPadding layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a layer representing a broadcast matrix multiplication
@@ -42037,11 +42267,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerBroadcastMatMul(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersBroadcastMatMul layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersBroadcastMatMul layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Creates a layer representing an arbitrary tensor contraction
@@ -42056,11 +42287,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerTensorContraction(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersTensorContraction layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersTensorContraction layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a layer representing a Gram matrix calculation
@@ -42076,11 +42308,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerGram(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersGram layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersGram layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a layer representing a resizing in one or more dimensions
@@ -42095,11 +42328,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerResize(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersResize layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersResize layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a multiheaded attention layer
@@ -42114,11 +42348,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerMultiheadAttention(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersMultiheadAttention layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersMultiheadAttention layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a reduction layer
@@ -42133,11 +42368,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerReduction(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersReduction layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersReduction layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a fused filter
@@ -42219,11 +42455,12 @@ public final class Accelerate {
      * 
      *         API-Since: 14.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateFusedLayer(@NUInt long number_of_fused_filters,
-            ConstIntPtr filter_type, Ptr<ConstVoidPtr> layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull ConstIntPtr filter_type, @NotNull Ptr<ConstVoidPtr> layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Applies a previously created pooling layer filter
@@ -42252,8 +42489,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSPoolingFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, NUIntPtr indices, @NUInt long idx_stride);
+    public static native int BNNSPoolingFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride, @NotNull VoidPtr out, @NUInt long out_stride,
+            @Nullable NUIntPtr indices, @NUInt long idx_stride);
 
     /**
      * Apply a filter
@@ -42269,7 +42507,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFilterApplyTwoInput(VoidPtr filter, ConstVoidPtr inA, ConstVoidPtr inB, VoidPtr out);
+    public static native int BNNSFilterApplyTwoInput(@Nullable VoidPtr filter, @NotNull ConstVoidPtr inA,
+            @NotNull ConstVoidPtr inB, @NotNull VoidPtr out);
 
     /**
      * Apply a filter to a several pairs of (input, output) data
@@ -42294,8 +42533,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFilterApplyTwoInputBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr inA,
-            @NUInt long inA_stride, ConstVoidPtr inB, @NUInt long inB_stride, VoidPtr out, @NUInt long out_stride);
+    public static native int BNNSFilterApplyTwoInputBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr inA, @NUInt long inA_stride, @NotNull ConstVoidPtr inB, @NUInt long inB_stride,
+            @NotNull VoidPtr out, @NUInt long out_stride);
 
     /**
      * Apply a normalization filter to several pairs of (input, output) data
@@ -42332,8 +42572,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSNormalizationFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, boolean training);
+    public static native int BNNSNormalizationFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride, @NotNull VoidPtr out, @NUInt long out_stride,
+            boolean training);
 
     /**
      * Apply a fused filter to several pairs of (input, output) data
@@ -42359,8 +42600,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFusedFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, boolean training);
+    public static native int BNNSFusedFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride, @NotNull VoidPtr out, @NUInt long out_stride,
+            boolean training);
 
     /**
      * Apply an arithmetic filter to several pairs of (input set, output) data
@@ -42414,9 +42656,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSArithmeticFilterApplyBatch(VoidPtr filter, @NUInt long batch_size,
-            @NUInt long number_of_inputs, Ptr<ConstVoidPtr> in, ConstNUIntPtr in_stride, VoidPtr out,
-            @NUInt long out_stride);
+    public static native int BNNSArithmeticFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NUInt long number_of_inputs, @NotNull Ptr<ConstVoidPtr> in, @NotNull ConstNUIntPtr in_stride,
+            @NotNull VoidPtr out, @NUInt long out_stride);
 
     /**
      * Applies a previously created multihead attention layer
@@ -42490,13 +42732,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSApplyMultiheadAttention(VoidPtr F, @NUInt long batch_size, ConstVoidPtr query,
-            @NUInt long query_stride, ConstVoidPtr key, @NUInt long key_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_mask,
-            @NUInt long key_mask_stride, ConstVoidPtr value, @NUInt long value_stride, VoidPtr output,
+    public static native int BNNSApplyMultiheadAttention(@Nullable VoidPtr F, @NUInt long batch_size,
+            @NotNull ConstVoidPtr query, @NUInt long query_stride, @NotNull ConstVoidPtr key, @NUInt long key_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_mask,
+            @NUInt long key_mask_stride, @NotNull ConstVoidPtr value, @NUInt long value_stride, @NotNull VoidPtr output,
             @NUInt long output_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor add_to_attention,
-            NUIntPtr backprop_cache_size, VoidPtr backprop_cache, NUIntPtr workspace_size, VoidPtr workspace);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor add_to_attention,
+            @Nullable NUIntPtr backprop_cache_size, @Nullable VoidPtr backprop_cache, @Nullable NUIntPtr workspace_size,
+            @Nullable VoidPtr workspace);
 
     /**
      * Apply a single step of optimization to one or more parameters
@@ -42573,10 +42816,11 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSOptimizerStep(int function, ConstVoidPtr OptimizerAlgFields,
-            @NUInt long number_of_parameters, Ptr<Ptr<BNNSNDArrayDescriptor>> parameters,
-            Ptr<ConstPtr<BNNSNDArrayDescriptor>> gradients, Ptr<Ptr<BNNSNDArrayDescriptor>> accumulators,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+    public static native int BNNSOptimizerStep(int function, @NotNull ConstVoidPtr OptimizerAlgFields,
+            @NUInt long number_of_parameters, @NotNull Ptr<Ptr<BNNSNDArrayDescriptor>> parameters,
+            @NotNull Ptr<ConstPtr<BNNSNDArrayDescriptor>> gradients,
+            @Nullable Ptr<Ptr<BNNSNDArrayDescriptor>> accumulators,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Apply filter backward to generate input delta, weights delta and bias delta
@@ -42686,14 +42930,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @Nullable ConstVoidPtr in, @NUInt long in_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor weights_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor weights_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
 
     /**
      * Apply pooling filter backward to generate input delta and bias delta
@@ -42730,14 +42974,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSPoolingFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
-            ConstVoidPtr in, @NUInt long in_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSPoolingFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @Nullable ConstVoidPtr in, @NUInt long in_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta,
-            ConstNUIntPtr indices, @NUInt long idx_stride);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta,
+            @Nullable ConstNUIntPtr indices, @NUInt long idx_stride);
 
     /**
      * Apply filter backward to generate input deltas, weights delta and bias delta (two input version)
@@ -42841,16 +43085,16 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFilterApplyBackwardTwoInputBatch(VoidPtr filter, @NUInt long batch_size,
-            ConstVoidPtr inA, @NUInt long inA_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inA_delta,
-            @NUInt long inA_delta_stride, ConstVoidPtr inB, @NUInt long inB_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inB_delta,
-            @NUInt long inB_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSFilterApplyBackwardTwoInputBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @Nullable ConstVoidPtr inA, @NUInt long inA_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inA_delta,
+            @NUInt long inA_delta_stride, @Nullable ConstVoidPtr inB, @NUInt long inB_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inB_delta,
+            @NUInt long inB_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor weights_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor weights_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta);
 
     /**
      * Apply a normalization filter backward to generate input delta, beta delta and gamma delta
@@ -42887,13 +43131,13 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSNormalizationFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSNormalizationFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor beta_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor gamma_delta);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor beta_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor gamma_delta);
 
     /**
      * Apply a fused filter backward to generate gradients.
@@ -42942,12 +43186,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFusedFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
-            @NUInt long out_delta_stride, Ptr<Ptr<BNNSNDArrayDescriptor>> delta_parameters);
+    public static native int BNNSFusedFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @Nullable ConstVoidPtr in, @NUInt long in_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride, @Nullable Ptr<Ptr<BNNSNDArrayDescriptor>> delta_parameters);
 
     /**
      * Apply an arithmetic filter backward to generate input gradients
@@ -42984,11 +43228,11 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSArithmeticFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
-            @NUInt long number_of_inputs, Ptr<ConstVoidPtr> in, ConstNUIntPtr in_stride,
-            Ptr<Ptr<BNNSNDArrayDescriptor>> in_delta, ConstNUIntPtr in_delta_stride, ConstVoidPtr out,
-            @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSArithmeticFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NUInt long number_of_inputs, @Nullable Ptr<ConstVoidPtr> in, @Nullable ConstNUIntPtr in_stride,
+            @NotNull Ptr<Ptr<BNNSNDArrayDescriptor>> in_delta, @NotNull ConstNUIntPtr in_delta_stride,
+            @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride);
 
     /**
@@ -43008,10 +43252,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSPermuteFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+    public static native int BNNSPermuteFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
             @NUInt long in_delta_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride);
 
     /**
@@ -43062,10 +43306,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSLossFilterApplyBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride, ConstVoidPtr labels, @NUInt long labels_stride, ConstVoidPtr weights,
-            @NUInt long weights_size, VoidPtr out,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+    public static native int BNNSLossFilterApplyBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride, @NotNull ConstVoidPtr labels, @NUInt long labels_stride,
+            @Nullable ConstVoidPtr weights, @NUInt long weights_size, @NotNull VoidPtr out,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
             @NUInt long in_delta_stride);
 
     /**
@@ -43104,12 +43348,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSLossFilterApplyBackwardBatch(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @NUInt long in_delta_stride, ConstVoidPtr labels, @NUInt long labels_stride, ConstVoidPtr weights,
-            @NUInt long weights_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSLossFilterApplyBackwardBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, @NotNull ConstVoidPtr labels, @NUInt long labels_stride,
+            @Nullable ConstVoidPtr weights, @NUInt long weights_size,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride);
 
     /**
@@ -43181,21 +43425,22 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSApplyMultiheadAttentionBackward(VoidPtr F, @NUInt long batch_size, ConstVoidPtr query,
-            @NUInt long query_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters query_param_delta,
-            ConstVoidPtr key, @NUInt long key_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_mask,
+    public static native int BNNSApplyMultiheadAttentionBackward(@Nullable VoidPtr F, @NUInt long batch_size,
+            @Nullable ConstVoidPtr query, @NUInt long query_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters query_param_delta,
+            @Nullable ConstVoidPtr key, @NUInt long key_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_mask,
             @NUInt long key_mask_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters key_param_delta,
-            ConstVoidPtr value, @NUInt long value_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters value_param_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor add_to_attention,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_attn_bias_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor value_attn_bias_delta,
-            ConstVoidPtr output, @NUInt long output_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters output_param_delta,
-            @NUInt long backprop_cache_size, VoidPtr backprop_cache, NUIntPtr workspace_size, VoidPtr workspace);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters key_param_delta,
+            @Nullable ConstVoidPtr value, @NUInt long value_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters value_param_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor add_to_attention,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor key_attn_bias_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor value_attn_bias_delta,
+            @Nullable ConstVoidPtr output, @NUInt long output_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSMHAProjectionParameters output_param_delta,
+            @NUInt long backprop_cache_size, @Nullable VoidPtr backprop_cache, @Nullable NUIntPtr workspace_size,
+            @Nullable VoidPtr workspace);
 
     /**
      * return the minimum bytes capacity of the training cache buffer (used to store intermediate results during the
@@ -43209,7 +43454,7 @@ public final class Accelerate {
     @CFunction
     @NUInt
     public static native long BNNSComputeLSTMTrainingCacheCapacity(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params);
 
     /**
      * Direct Apply LSTM with training caching
@@ -43233,9 +43478,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyLSTMBatchTrainingCaching(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
-            VoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            @Nullable VoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
 
     /**
      * Direct Apply an Activation/Conversion filter to several pairs of (input, output) data
@@ -43258,8 +43503,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyActivationBatch(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersActivation layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersActivation layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
             @NUInt long batch_size, @NUInt long in_stride, @NUInt long out_stride);
 
     /**
@@ -43276,9 +43521,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSCopy(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Directly apply a broadcast matrix multiplication layer.
@@ -43301,10 +43546,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native void BNNSDirectApplyBroadcastMatMul(boolean transA, boolean transB, float alpha,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Transposes a tensor by swapping two of its dimensions.
@@ -43338,10 +43583,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSTranspose(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
             @NUInt long axis0, @NUInt long axis1,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Apply Reduction on selected axis
@@ -43359,8 +43604,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyReduction(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersReduction layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersReduction layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * create and return a new tensor of bool type by comparing two input tensors
@@ -43383,9 +43628,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSCompareTensor(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in0,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in1, int op,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in0,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in1,
+            int op,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out);
 
     /**
      * Returns top K values
@@ -43413,13 +43659,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyTopK(@NUInt long K, @NUInt long axis, @NUInt long batch_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
             @NUInt long input_batch_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor best_values,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor best_values,
             @NUInt long best_values_batch_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor best_indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor best_indices,
             @NUInt long best_indices_batch_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Given a tensor index for each member of a batch, returns a boolean vector indicating whether each index
@@ -43456,13 +43702,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyInTopK(@NUInt long K, @NUInt long axis, @NUInt long batch_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
             @NUInt long input_batch_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor test_indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor test_indices,
             @NUInt long test_indices_batch_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
             @NUInt long output_batch_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Direct Apply LSTM with training caching
@@ -43483,10 +43729,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyLSTMBatchBackward(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_delta_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
-            ConstVoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_params,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersLSTM layer_delta_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            @Nullable ConstVoidPtr training_cache_ptr, @NUInt long training_cache_capacity);
 
     /**
      * Get NDArray descriptor containing reference to filter data member
@@ -43509,7 +43755,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @ByValue
-    public static native BNNSNDArrayDescriptor BNNSGetPointer(VoidPtr filter, int target);
+    public static native BNNSNDArrayDescriptor BNNSGetPointer(@Nullable VoidPtr filter, int target);
 
     /**
      * [@function] vImageSepConvolve_Planar8
@@ -44254,8 +44500,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquad_SetCoefficientsDouble(vDSP_biquad_Setup __setup, ConstDoublePtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __nsec);
+    public static native void vDSP_biquad_SetCoefficientsDouble(@NotNull vDSP_biquad_Setup __setup,
+            @NotNull ConstDoublePtr __coeffs, @NUInt long __start_sec, @NUInt long __nsec);
 
     /**
      * vDSP_biquad_SetCoefficientsSingle will
@@ -44267,8 +44513,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquad_SetCoefficientsSingle(vDSP_biquad_Setup __setup, ConstFloatPtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __nsec);
+    public static native void vDSP_biquad_SetCoefficientsSingle(@NotNull vDSP_biquad_Setup __setup,
+            @NotNull ConstFloatPtr __coeffs, @NUInt long __start_sec, @NUInt long __nsec);
 
     /**
      * DFT setup routine for interleaved complex data, single-precision
@@ -44291,10 +44537,11 @@ public final class Accelerate {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native vDSP_DFT_Interleaved_Setup vDSP_DFT_Interleaved_CreateSetup(
-            vDSP_DFT_Interleaved_Setup Previous, @NUInt long Length, int Direction, byte RealtoComplex);
+            @Nullable vDSP_DFT_Interleaved_Setup Previous, @NUInt long Length, int Direction, byte RealtoComplex);
 
     /**
      * DFT setup routine for interleaved complex data, double-precision
@@ -44317,10 +44564,11 @@ public final class Accelerate {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native vDSP_DFT_Interleaved_SetupD vDSP_DFT_Interleaved_CreateSetupD(
-            vDSP_DFT_Interleaved_SetupD Previous, @NUInt long Length, int Direction, byte RealtoComplex);
+            @Nullable vDSP_DFT_Interleaved_SetupD Previous, @NUInt long Length, int Direction, byte RealtoComplex);
 
     /**
      * DFT execution routine for real data, single-precision
@@ -44338,9 +44586,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_Interleaved_Execute(vDSP_DFT_Interleaved_Setup Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex Iri,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex Ori);
+    public static native void vDSP_DFT_Interleaved_Execute(@NotNull vDSP_DFT_Interleaved_Setup Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex Iri,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPComplex Ori);
 
     /**
      * DFT execution routine for interleaved complex data, double-precision
@@ -44358,9 +44606,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_Interleaved_ExecuteD(vDSP_DFT_Interleaved_SetupD Setup,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex Iri,
-            @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex Ori);
+    public static native void vDSP_DFT_Interleaved_ExecuteD(@NotNull vDSP_DFT_Interleaved_SetupD Setup,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex Iri,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") DSPDoubleComplex Ori);
 
     /**
      * DFT destroy routine, single-precision
@@ -44375,7 +44623,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_Interleaved_DestroySetup(vDSP_DFT_Interleaved_Setup Setup);
+    public static native void vDSP_DFT_Interleaved_DestroySetup(@Nullable vDSP_DFT_Interleaved_Setup Setup);
 
     /**
      * DFT destroy routine, double-precision
@@ -44390,7 +44638,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_DFT_Interleaved_DestroySetupD(vDSP_DFT_Interleaved_SetupD Setup);
+    public static native void vDSP_DFT_Interleaved_DestroySetupD(@Nullable vDSP_DFT_Interleaved_SetupD Setup);
 
     /**
      * =====================================
@@ -45534,11 +45782,12 @@ public final class Accelerate {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSFilterCreateLayerEmbedding(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersEmbedding layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersEmbedding layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Apply a fused filter to several pairs of (input set, output) data
@@ -45568,9 +45817,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFusedFilterApplyMultiInputBatch(VoidPtr filter, @NUInt long batch_size,
-            @NUInt long number_of_inputs, Ptr<ConstVoidPtr> in, ConstNUIntPtr in_stride, VoidPtr out,
-            @NUInt long out_stride, boolean training);
+    public static native int BNNSFusedFilterApplyMultiInputBatch(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NUInt long number_of_inputs, @NotNull Ptr<ConstVoidPtr> in, @NotNull ConstNUIntPtr in_stride,
+            @NotNull VoidPtr out, @NUInt long out_stride, boolean training);
 
     /**
      * Direct Apply a Quantization filter
@@ -45590,8 +45839,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSDirectApplyQuantizer(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersQuantization layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersQuantization layer_params,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params,
             @NUInt long batch_size, @NUInt long input_stride, @NUInt long output_stride);
 
     /**
@@ -45612,8 +45861,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSClipByValue(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
             float min_val, float max_val);
 
     /**
@@ -45635,8 +45884,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSClipByNorm(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
             float max_norm, int axis_flags);
 
     /**
@@ -45659,8 +45908,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSClipByGlobalNorm(Ptr<Ptr<BNNSNDArrayDescriptor>> dest,
-            Ptr<ConstPtr<BNNSNDArrayDescriptor>> src, @NUInt long count, float max_norm, float use_norm);
+    public static native int BNNSClipByGlobalNorm(@NotNull Ptr<Ptr<BNNSNDArrayDescriptor>> dest,
+            @NotNull Ptr<ConstPtr<BNNSNDArrayDescriptor>> src, @NUInt long count, float max_norm, float use_norm);
 
     /**
      * Compute the norm of the input tensor.
@@ -45682,8 +45931,8 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSComputeNorm(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor dest,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor src,
             int norm_type, int axis_flags);
 
     /**
@@ -45705,10 +45954,10 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSComputeNormBackward(ConstVoidPtr in,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            ConstVoidPtr out,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSComputeNormBackward(@NotNull ConstVoidPtr in,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NotNull ConstVoidPtr out,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             int norm_type, int axis_flags);
 
     /**
@@ -45757,12 +46006,12 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSFusedFilterApplyBackwardMultiInputBatch(VoidPtr filter, @NUInt long batch_size,
-            @NUInt long number_of_inputs, Ptr<ConstVoidPtr> in, ConstNUIntPtr in_stride,
-            Ptr<Ptr<BNNSNDArrayDescriptor>> in_delta, ConstNUIntPtr in_delta_stride, ConstVoidPtr out,
-            @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
-            @NUInt long out_delta_stride, Ptr<Ptr<BNNSNDArrayDescriptor>> delta_parameters);
+    public static native int BNNSFusedFilterApplyBackwardMultiInputBatch(@Nullable VoidPtr filter,
+            @NUInt long batch_size, @NUInt long number_of_inputs, @Nullable Ptr<ConstVoidPtr> in,
+            @Nullable ConstNUIntPtr in_stride, @NotNull Ptr<Ptr<BNNSNDArrayDescriptor>> in_delta,
+            @NotNull ConstNUIntPtr in_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @NUInt long out_delta_stride, @Nullable Ptr<Ptr<BNNSNDArrayDescriptor>> delta_parameters);
 
     /**
      * Create a random number generator
@@ -45781,10 +46030,11 @@ public final class Accelerate {
      * 
      *      API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSCreateRandomGenerator(int method,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Create a random number generator using the given seed
@@ -45804,10 +46054,11 @@ public final class Accelerate {
      * 
      *      API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native VoidPtr BNNSCreateRandomGeneratorWithSeed(int method, long seed,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Destroys a random number generator object
@@ -45820,7 +46071,7 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void BNNSDestroyRandomGenerator(VoidPtr generator);
+    public static native void BNNSDestroyRandomGenerator(@Nullable VoidPtr generator);
 
     /**
      * Get the state size in bytes for a RandomGenerator
@@ -45838,7 +46089,7 @@ public final class Accelerate {
     @Generated
     @CFunction
     @NUInt
-    public static native long BNNSRandomGeneratorStateSize(VoidPtr generator);
+    public static native long BNNSRandomGeneratorStateSize(@Nullable VoidPtr generator);
 
     /**
      * Get the state for a RandomGenerator
@@ -45865,7 +46116,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSRandomGeneratorGetState(VoidPtr generator, @NUInt long state_size, VoidPtr state);
+    public static native int BNNSRandomGeneratorGetState(@Nullable VoidPtr generator, @NUInt long state_size,
+            @NotNull VoidPtr state);
 
     /**
      * Set the state for a RandomGenerator
@@ -45890,7 +46142,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSRandomGeneratorSetState(VoidPtr generator, @NUInt long state_size, VoidPtr state);
+    public static native int BNNSRandomGeneratorSetState(@Nullable VoidPtr generator, @NUInt long state_size,
+            @NotNull VoidPtr state);
 
     /**
      * Fill the supplied tensor with random float data using the supplied generator mapped to the Unif(a, b)
@@ -45922,9 +46175,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSRandomFillUniformFloat(VoidPtr generator,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor desc, float a,
-            float b);
+    public static native int BNNSRandomFillUniformFloat(@Nullable VoidPtr generator,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor desc,
+            float a, float b);
 
     /**
      * Fill the supplied tensor with random integer data using the supplied generator mapped to the Unif(a, b)
@@ -45954,9 +46207,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSRandomFillUniformInt(VoidPtr generator,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor desc, long a,
-            long b);
+    public static native int BNNSRandomFillUniformInt(@Nullable VoidPtr generator,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor desc,
+            long a, long b);
 
     /**
      * vDSP_biquadm_SetCoefficientsDoubleD will
@@ -45966,8 +46219,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetCoefficientsDoubleD(vDSP_biquadm_SetupD __setup, ConstDoublePtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetCoefficientsDoubleD(@NotNull vDSP_biquadm_SetupD __setup,
+            @NotNull ConstDoublePtr __coeffs, @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec,
+            @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetTargetsDoubleD will
@@ -45977,9 +46231,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetTargetsDoubleD(vDSP_biquadm_SetupD __setup, ConstDoublePtr __targets,
-            double __interp_rate, double __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
-            @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetTargetsDoubleD(@NotNull vDSP_biquadm_SetupD __setup,
+            @NotNull ConstDoublePtr __targets, double __interp_rate, double __interp_threshold, @NUInt long __start_sec,
+            @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetCoefficientsSingleD will
@@ -45991,8 +46245,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetCoefficientsSingleD(vDSP_biquadm_SetupD __setup, ConstFloatPtr __coeffs,
-            @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetCoefficientsSingleD(@NotNull vDSP_biquadm_SetupD __setup,
+            @NotNull ConstFloatPtr __coeffs, @NUInt long __start_sec, @NUInt long __start_chn, @NUInt long __nsec,
+            @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetTargetsSingleD will
@@ -46003,9 +46258,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetTargetsSingleD(vDSP_biquadm_SetupD __setup, ConstFloatPtr __targets,
-            double __interp_rate, double __interp_threshold, @NUInt long __start_sec, @NUInt long __start_chn,
-            @NUInt long __nsec, @NUInt long __nchn);
+    public static native void vDSP_biquadm_SetTargetsSingleD(@NotNull vDSP_biquadm_SetupD __setup,
+            @NotNull ConstFloatPtr __targets, double __interp_rate, double __interp_threshold, @NUInt long __start_sec,
+            @NUInt long __start_chn, @NUInt long __nsec, @NUInt long __nchn);
 
     /**
      * vDSP_biquadm_SetActiveFiltersD will set the overall active/inactive filter
@@ -46015,7 +46270,8 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native void vDSP_biquadm_SetActiveFiltersD(vDSP_biquadm_SetupD __setup, ConstBoolPtr __filter_states);
+    public static native void vDSP_biquadm_SetActiveFiltersD(@NotNull vDSP_biquadm_SetupD __setup,
+            @NotNull ConstBoolPtr __filter_states);
 
     /**
      * Applies a previously created pooling layer filter, supporting multiple index data types
@@ -46043,9 +46299,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSPoolingFilterApplyBatchEx(VoidPtr filter, @NUInt long batch_size, ConstVoidPtr in,
-            @NUInt long in_stride, VoidPtr out, @NUInt long out_stride, int indices_data_type, VoidPtr indices,
-            @NUInt long idx_stride);
+    public static native int BNNSPoolingFilterApplyBatchEx(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @NotNull ConstVoidPtr in, @NUInt long in_stride, @NotNull VoidPtr out, @NUInt long out_stride,
+            int indices_data_type, @Nullable VoidPtr indices, @NUInt long idx_stride);
 
     /**
      * Apply pooling filter backward to generate input delta and bias delta, supporting multiple index data types
@@ -46084,14 +46340,14 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSPoolingFilterApplyBackwardBatchEx(VoidPtr filter, @NUInt long batch_size,
-            ConstVoidPtr in, @NUInt long in_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @NUInt long in_delta_stride, ConstVoidPtr out, @NUInt long out_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+    public static native int BNNSPoolingFilterApplyBackwardBatchEx(@Nullable VoidPtr filter, @NUInt long batch_size,
+            @Nullable ConstVoidPtr in, @NUInt long in_stride,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NUInt long in_delta_stride, @Nullable ConstVoidPtr out, @NUInt long out_stride,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
             @NUInt long out_delta_stride,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta,
-            int indices_data_type, ConstVoidPtr indices, @NUInt long idx_stride);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor bias_delta,
+            int indices_data_type, @Nullable ConstVoidPtr indices, @NUInt long idx_stride);
 
     /**
      * Returns required workspace size for a call to BNNSMatMul() with the given paramters.
@@ -46115,10 +46371,10 @@ public final class Accelerate {
     @CFunction
     @NInt
     public static native long BNNSMatMulWorkspaceSize(boolean transA, boolean transB, float alpha,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Directly apply a broadcast matrix multiplication layer.
@@ -46155,11 +46411,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSMatMul(boolean transA, boolean transB, float alpha,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            VoidPtr workspace,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputA,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor inputB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable VoidPtr workspace,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * return a new tensor by replicating the input tensor multiple times
@@ -46177,9 +46433,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSTile(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Gather elements along a single axis
@@ -46206,10 +46462,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSGather(@NUInt long axis,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Scatter elements along a single axis
@@ -46242,10 +46498,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSScatter(@NUInt long axis, int op,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Gathers a (k-1)-dimensional set of slices or elements from the input array
@@ -46278,10 +46534,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSGatherND(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Scatters a (k-1)-dimensional set of slices or elements across the output array
@@ -46320,10 +46576,10 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSScatterND(int op,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Rearranges elements in a tensor according to shuffle type
@@ -46339,9 +46595,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSShuffle(int type,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Set elements outside a center band to zeros for the innermost matrix (the two dimensions with
@@ -46363,9 +46619,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSBandPart(int num_lower, int num_upper,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Resize the spatial dimensions (two dimensions with the smallest strides) of the first input
@@ -46385,11 +46641,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSCropResize(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersCropResize layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor roi,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersCropResize layer_params,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor input,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor roi,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor output,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * backward path of BNNSTile to calculate input delta from output delta
@@ -46407,9 +46663,9 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSTileBackward(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * backward path of BNNSCropResize to calculate input delta from output delta
@@ -46428,11 +46684,11 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSCropResizeBackward(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersCropResize layer_params,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor roi,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSLayerParametersCropResize layer_params,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_delta,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor roi,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out_delta,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * calculate the size in bytes of the array data
@@ -46445,7 +46701,7 @@ public final class Accelerate {
     @CFunction
     @NUInt
     public static native long BNNSNDArrayGetDataSize(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor array);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor array);
 
     /**
      * Converts sparse tensor from the standardized COO layout to a device specific sparse layout used by FullyConnected
@@ -46492,13 +46748,13 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSNDArrayFullyConnectedSparsifySparseCOO(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_dense_shape,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_indices,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_values,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSSparsityParameters sparse_params,
-            @NUInt long batch_size, VoidPtr workspace, @NUInt long workspace_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_dense_shape,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_values,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSSparsityParameters sparse_params,
+            @NUInt long batch_size, @Nullable VoidPtr workspace, @NUInt long workspace_size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Converts sparse tensor from the standardized CSR layout to a device specific sparse layout used by FullyConnected
@@ -46543,14 +46799,14 @@ public final class Accelerate {
     @Generated
     @CFunction
     public static native int BNNSNDArrayFullyConnectedSparsifySparseCSR(
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_dense_shape,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_column_indices,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_row_starts,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_values,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSSparsityParameters sparse_params,
-            @NUInt long batch_size, VoidPtr workspace, @NUInt long workspace_size,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_dense_shape,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_column_indices,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_row_starts,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor in_values,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor out,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSSparsityParameters sparse_params,
+            @NUInt long batch_size, @Nullable VoidPtr workspace, @NUInt long workspace_size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") BNNSFilterParameters filter_params);
 
     /**
      * Fill the supplied tensor with random float data using the supplied generator mapped to a normal distribution
@@ -46579,9 +46835,9 @@ public final class Accelerate {
      */
     @Generated
     @CFunction
-    public static native int BNNSRandomFillNormalFloat(VoidPtr generator,
-            @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor desc, float mean,
-            float stddev);
+    public static native int BNNSRandomFillNormalFloat(@Nullable VoidPtr generator,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") BNNSNDArrayDescriptor desc,
+            float mean, float stddev);
 
     /**
      * [@function] vImagePremultiplyData_RGBA16F

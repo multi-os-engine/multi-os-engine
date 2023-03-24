@@ -11,6 +11,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AuthenticationServices")
@@ -27,6 +28,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -35,6 +37,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -51,6 +54,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -59,6 +63,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -67,6 +72,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -75,6 +81,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -83,6 +90,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -91,6 +99,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -99,6 +108,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -107,6 +117,7 @@ public final class AuthenticationServices {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -127,6 +138,7 @@ public final class AuthenticationServices {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -137,6 +149,7 @@ public final class AuthenticationServices {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native NSArray<String> ASAuthorizationAllSupportedPublicKeyCredentialDescriptorTransports();
@@ -265,6 +278,7 @@ public final class AuthenticationServices {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -275,6 +289,7 @@ public final class AuthenticationServices {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -285,6 +300,7 @@ public final class AuthenticationServices {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -296,6 +312,7 @@ public final class AuthenticationServices {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -55,37 +57,43 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INObjectResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
     /**
      * This resolution result is to ask Siri to confirm if this is the object with which the user wants to continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithObjectToConfirm:")
-    public static native INObjectResolutionResult confirmationRequiredWithObjectToConfirm(INObject objectToConfirm);
+    public static native INObjectResolutionResult confirmationRequiredWithObjectToConfirm(
+            @Nullable INObject objectToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -98,10 +106,11 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to disambiguate between the provided INObject.
      */
+    @NotNull
     @Generated
     @Selector("disambiguationWithObjectsToDisambiguate:")
     public static native INObjectResolutionResult disambiguationWithObjectsToDisambiguate(
-            NSArray<? extends INObject> objectsToDisambiguate);
+            @NotNull NSArray<? extends INObject> objectsToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -129,10 +138,12 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INObjectResolutionResult needsValue();
@@ -142,6 +153,7 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INObjectResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INObjectResolutionResult notRequired();
@@ -164,18 +176,21 @@ public class INObjectResolutionResult extends INIntentResolutionResult {
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedObject:")
-    public static native INObjectResolutionResult successWithResolvedObject(INObject resolvedObject);
+    public static native INObjectResolutionResult successWithResolvedObject(@NotNull INObject resolvedObject);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INObjectResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INObjectResolutionResult unsupportedWithReason(@NInt long reason);

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INGetRideStatusIntent. By implementing this protocol, a class can provide
@@ -61,8 +62,8 @@ public interface INGetRideStatusIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmGetRideStatus:completion:")
-    default void confirmGetRideStatusCompletion(INGetRideStatusIntent intent,
-            @ObjCBlock(name = "call_confirmGetRideStatusCompletion") Block_confirmGetRideStatusCompletion completion) {
+    default void confirmGetRideStatusCompletion(@NotNull INGetRideStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmGetRideStatusCompletion") Block_confirmGetRideStatusCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,29 +80,29 @@ public interface INGetRideStatusIntentHandling {
      */
     @Generated
     @Selector("handleGetRideStatus:completion:")
-    void handleGetRideStatusCompletion(INGetRideStatusIntent intent,
-            @ObjCBlock(name = "call_handleGetRideStatusCompletion") Block_handleGetRideStatusCompletion completion);
+    void handleGetRideStatusCompletion(@NotNull INGetRideStatusIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetRideStatusCompletion") Block_handleGetRideStatusCompletion completion);
 
     @Generated
     @Selector("startSendingUpdatesForGetRideStatus:toObserver:")
-    void startSendingUpdatesForGetRideStatusToObserver(INGetRideStatusIntent intent,
-            @Mapped(ObjCObjectMapper.class) INGetRideStatusIntentResponseObserver observer);
+    void startSendingUpdatesForGetRideStatusToObserver(@NotNull INGetRideStatusIntent intent,
+            @NotNull @Mapped(ObjCObjectMapper.class) INGetRideStatusIntentResponseObserver observer);
 
     @Generated
     @Selector("stopSendingUpdatesForGetRideStatus:")
-    void stopSendingUpdatesForGetRideStatus(INGetRideStatusIntent intent);
+    void stopSendingUpdatesForGetRideStatus(@NotNull INGetRideStatusIntent intent);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_confirmGetRideStatusCompletion {
         @Generated
-        void call_confirmGetRideStatusCompletion(INGetRideStatusIntentResponse response);
+        void call_confirmGetRideStatusCompletion(@NotNull INGetRideStatusIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetRideStatusCompletion {
         @Generated
-        void call_handleGetRideStatusCompletion(INGetRideStatusIntentResponse response);
+        void call_handleGetRideStatusCompletion(@NotNull INGetRideStatusIntentResponse response);
     }
 }

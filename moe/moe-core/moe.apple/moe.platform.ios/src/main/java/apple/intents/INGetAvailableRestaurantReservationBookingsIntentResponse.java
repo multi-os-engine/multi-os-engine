@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -74,22 +76,25 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,6 +164,7 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("availableBookings")
     public native NSArray<? extends INRestaurantReservationBooking> availableBookings();
@@ -174,16 +181,17 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     @Generated
     @Selector("initWithAvailableBookings:code:userActivity:")
     public native INGetAvailableRestaurantReservationBookingsIntentResponse initWithAvailableBookingsCodeUserActivity(
-            NSArray<? extends INRestaurantReservationBooking> availableBookings, @NInt long code,
-            NSUserActivity userActivity);
+            @NotNull NSArray<? extends INRestaurantReservationBooking> availableBookings, @NInt long code,
+            @Nullable NSUserActivity userActivity);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INGetAvailableRestaurantReservationBookingsIntentResponse initWithCoder(NSCoder coder);
+    public native INGetAvailableRestaurantReservationBookingsIntentResponse initWithCoder(@NotNull NSCoder coder);
 
     /**
      * An optional string to be displayed in UI that allows the vendor to detail things like specials or incentives.
      */
+    @Nullable
     @Generated
     @Selector("localizedBookingAdvisementText")
     public native String localizedBookingAdvisementText();
@@ -192,6 +200,7 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
      * An optional string to be displayed in UI that allows the vendor to specify details or history about the
      * restaurant.
      */
+    @Nullable
     @Generated
     @Selector("localizedRestaurantDescriptionText")
     public native String localizedRestaurantDescriptionText();
@@ -201,7 +210,7 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
      */
     @Generated
     @Selector("setLocalizedBookingAdvisementText:")
-    public native void setLocalizedBookingAdvisementText(String value);
+    public native void setLocalizedBookingAdvisementText(@Nullable String value);
 
     /**
      * An optional string to be displayed in UI that allows the vendor to specify details or history about the
@@ -209,14 +218,14 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
      */
     @Generated
     @Selector("setLocalizedRestaurantDescriptionText:")
-    public native void setLocalizedRestaurantDescriptionText(String value);
+    public native void setLocalizedRestaurantDescriptionText(@Nullable String value);
 
     /**
      * An optional object allowing the vendor to display terms of use for its service
      */
     @Generated
     @Selector("setTermsAndConditions:")
-    public native void setTermsAndConditions(INTermsAndConditions value);
+    public native void setTermsAndConditions(@Nullable INTermsAndConditions value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -227,6 +236,7 @@ public class INGetAvailableRestaurantReservationBookingsIntentResponse extends I
     /**
      * An optional object allowing the vendor to display terms of use for its service
      */
+    @Nullable
     @Generated
     @Selector("termsAndConditions")
     public native INTermsAndConditions termsAndConditions();

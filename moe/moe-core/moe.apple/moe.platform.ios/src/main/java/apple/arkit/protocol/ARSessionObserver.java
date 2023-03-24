@@ -13,6 +13,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -31,7 +32,7 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:cameraDidChangeTrackingState:")
-    default void sessionCameraDidChangeTrackingState(ARSession session, ARCamera camera) {
+    default void sessionCameraDidChangeTrackingState(@NotNull ARSession session, @NotNull ARCamera camera) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,7 +47,7 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didFailWithError:")
-    default void sessionDidFailWithError(ARSession session, NSError error) {
+    default void sessionDidFailWithError(@NotNull ARSession session, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,7 +60,8 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didOutputAudioSampleBuffer:")
-    default void sessionDidOutputAudioSampleBuffer(ARSession session, CMSampleBufferRef audioSampleBuffer) {
+    default void sessionDidOutputAudioSampleBuffer(@NotNull ARSession session,
+            @NotNull CMSampleBufferRef audioSampleBuffer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -76,7 +78,7 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("sessionInterruptionEnded:")
-    default void sessionInterruptionEnded(ARSession session) {
+    default void sessionInterruptionEnded(@NotNull ARSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +96,7 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("sessionWasInterrupted:")
-    default void sessionWasInterrupted(ARSession session) {
+    default void sessionWasInterrupted(@NotNull ARSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,7 +114,7 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didOutputCollaborationData:")
-    default void sessionDidOutputCollaborationData(ARSession session, ARCollaborationData data) {
+    default void sessionDidOutputCollaborationData(@NotNull ARSession session, @NotNull ARCollaborationData data) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -135,7 +137,7 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("sessionShouldAttemptRelocalization:")
-    default boolean sessionShouldAttemptRelocalization(ARSession session) {
+    default boolean sessionShouldAttemptRelocalization(@NotNull ARSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -150,7 +152,8 @@ public interface ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("session:didChangeGeoTrackingStatus:")
-    default void sessionDidChangeGeoTrackingStatus(ARSession session, ARGeoTrackingStatus geoTrackingStatus) {
+    default void sessionDidChangeGeoTrackingStatus(@NotNull ARSession session,
+            @NotNull ARGeoTrackingStatus geoTrackingStatus) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

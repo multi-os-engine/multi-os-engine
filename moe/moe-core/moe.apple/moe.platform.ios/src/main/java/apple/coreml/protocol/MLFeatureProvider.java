@@ -8,6 +8,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol for accessing a feature value for a feature name
@@ -19,6 +21,7 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MLFeatureProvider")
 public interface MLFeatureProvider {
+    @NotNull
     @Generated
     @Selector("featureNames")
     NSSet<String> featureNames();
@@ -26,7 +29,8 @@ public interface MLFeatureProvider {
     /**
      * Returns nil if the provided featureName is not in the set of featureNames
      */
+    @Nullable
     @Generated
     @Selector("featureValueForName:")
-    MLFeatureValue featureValueForName(String featureName);
+    MLFeatureValue featureValueForName(@NotNull String featureName);
 }

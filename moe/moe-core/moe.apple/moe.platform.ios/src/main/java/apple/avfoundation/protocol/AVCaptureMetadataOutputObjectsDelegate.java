@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVCaptureMetadataOutputObjectsDelegate
@@ -64,8 +65,8 @@ public interface AVCaptureMetadataOutputObjectsDelegate {
     @Generated
     @IsOptional
     @Selector("captureOutput:didOutputMetadataObjects:fromConnection:")
-    default void captureOutputDidOutputMetadataObjectsFromConnection(AVCaptureOutput output,
-            NSArray<? extends AVMetadataObject> metadataObjects, AVCaptureConnection connection) {
+    default void captureOutputDidOutputMetadataObjectsFromConnection(@NotNull AVCaptureOutput output,
+            @NotNull NSArray<? extends AVMetadataObject> metadataObjects, @NotNull AVCaptureConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

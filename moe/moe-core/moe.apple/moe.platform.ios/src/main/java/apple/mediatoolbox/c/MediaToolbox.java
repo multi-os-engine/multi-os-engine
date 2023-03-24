@@ -35,6 +35,8 @@ import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.NIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MediaToolbox")
@@ -87,9 +89,9 @@ public final class MediaToolbox {
      */
     @Generated
     @CFunction
-    public static native int MTAudioProcessingTapCreate(CFAllocatorRef allocator,
-            @UncertainArgument("Options: reference, array Fallback: reference") MTAudioProcessingTapCallbacks callbacks,
-            int flags, Ptr<MTAudioProcessingTapRef> tapOut);
+    public static native int MTAudioProcessingTapCreate(@Nullable CFAllocatorRef allocator,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") MTAudioProcessingTapCallbacks callbacks,
+            int flags, @NotNull Ptr<MTAudioProcessingTapRef> tapOut);
 
     /**
      * [@function] MTAudioProcessingTapGetStorage
@@ -103,9 +105,10 @@ public final class MediaToolbox {
      * 
      *         API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native VoidPtr MTAudioProcessingTapGetStorage(MTAudioProcessingTapRef tap);
+    public static native VoidPtr MTAudioProcessingTapGetStorage(@NotNull MTAudioProcessingTapRef tap);
 
     /**
      * [@function] MTAudioProcessingTapGetSourceAudio
@@ -141,16 +144,19 @@ public final class MediaToolbox {
      */
     @Generated
     @CFunction
-    public static native int MTAudioProcessingTapGetSourceAudio(MTAudioProcessingTapRef tap, @NInt long numberFrames,
-            @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferListInOut,
-            IntPtr flagsOut,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeOut,
-            NIntPtr numberFramesOut);
+    public static native int MTAudioProcessingTapGetSourceAudio(@NotNull MTAudioProcessingTapRef tap,
+            @NInt long numberFrames,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList bufferListInOut,
+            @Nullable IntPtr flagsOut,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CMTimeRange timeRangeOut,
+            @Nullable NIntPtr numberFramesOut);
 
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef MTCopyLocalizedNameForMediaType(int mediaType);
 
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef MTCopyLocalizedNameForMediaSubType(int mediaType, int mediaSubType);

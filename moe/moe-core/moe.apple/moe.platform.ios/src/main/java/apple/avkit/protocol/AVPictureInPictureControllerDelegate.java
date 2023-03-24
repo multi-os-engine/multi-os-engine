@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPictureInPictureControllerDelegate
@@ -53,7 +54,7 @@ public interface AVPictureInPictureControllerDelegate {
     @IsOptional
     @Selector("pictureInPictureController:failedToStartPictureInPictureWithError:")
     default void pictureInPictureControllerFailedToStartPictureInPictureWithError(
-            AVPictureInPictureController pictureInPictureController, NSError error) {
+            @NotNull AVPictureInPictureController pictureInPictureController, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,8 +72,8 @@ public interface AVPictureInPictureControllerDelegate {
     @IsOptional
     @Selector("pictureInPictureController:restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:")
     default void pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler(
-            AVPictureInPictureController pictureInPictureController,
-            @ObjCBlock(name = "call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
+            @NotNull AVPictureInPictureController pictureInPictureController,
+            @NotNull @ObjCBlock(name = "call_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler") Block_pictureInPictureControllerRestoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,7 +89,7 @@ public interface AVPictureInPictureControllerDelegate {
     @IsOptional
     @Selector("pictureInPictureControllerDidStartPictureInPicture:")
     default void pictureInPictureControllerDidStartPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,7 +105,7 @@ public interface AVPictureInPictureControllerDelegate {
     @IsOptional
     @Selector("pictureInPictureControllerDidStopPictureInPicture:")
     default void pictureInPictureControllerDidStopPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,7 +121,7 @@ public interface AVPictureInPictureControllerDelegate {
     @IsOptional
     @Selector("pictureInPictureControllerWillStartPictureInPicture:")
     default void pictureInPictureControllerWillStartPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,7 +137,7 @@ public interface AVPictureInPictureControllerDelegate {
     @IsOptional
     @Selector("pictureInPictureControllerWillStopPictureInPicture:")
     default void pictureInPictureControllerWillStopPictureInPicture(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 

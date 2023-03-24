@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVPictureInPictureSampleBufferPlaybackDelegate
@@ -40,8 +41,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      */
     @Generated
     @Selector("pictureInPictureController:didTransitionToRenderSize:")
-    void pictureInPictureControllerDidTransitionToRenderSize(AVPictureInPictureController pictureInPictureController,
-            @ByValue CMVideoDimensions newRenderSize);
+    void pictureInPictureControllerDidTransitionToRenderSize(
+            @NotNull AVPictureInPictureController pictureInPictureController, @ByValue CMVideoDimensions newRenderSize);
 
     /**
      * pictureInPictureController:setPlaying:
@@ -55,7 +56,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      */
     @Generated
     @Selector("pictureInPictureController:setPlaying:")
-    void pictureInPictureControllerSetPlaying(AVPictureInPictureController pictureInPictureController, boolean playing);
+    void pictureInPictureControllerSetPlaying(@NotNull AVPictureInPictureController pictureInPictureController,
+            boolean playing);
 
     /**
      * pictureInPictureController:skipByInterval:completionHandler:
@@ -79,8 +81,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
     @Generated
     @Selector("pictureInPictureController:skipByInterval:completionHandler:")
     void pictureInPictureControllerSkipByIntervalCompletionHandler(
-            AVPictureInPictureController pictureInPictureController, @ByValue CMTime skipInterval,
-            @ObjCBlock(name = "call_pictureInPictureControllerSkipByIntervalCompletionHandler") Block_pictureInPictureControllerSkipByIntervalCompletionHandler completionHandler);
+            @NotNull AVPictureInPictureController pictureInPictureController, @ByValue CMTime skipInterval,
+            @NotNull @ObjCBlock(name = "call_pictureInPictureControllerSkipByIntervalCompletionHandler") Block_pictureInPictureControllerSkipByIntervalCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -105,7 +107,8 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
      */
     @Generated
     @Selector("pictureInPictureControllerIsPlaybackPaused:")
-    boolean pictureInPictureControllerIsPlaybackPaused(AVPictureInPictureController pictureInPictureController);
+    boolean pictureInPictureControllerIsPlaybackPaused(
+            @NotNull AVPictureInPictureController pictureInPictureController);
 
     /**
      * pictureInPictureControllerShouldProhibitBackgroundAudioPlayback:
@@ -127,7 +130,7 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
     @IsOptional
     @Selector("pictureInPictureControllerShouldProhibitBackgroundAudioPlayback:")
     default boolean pictureInPictureControllerShouldProhibitBackgroundAudioPlayback(
-            AVPictureInPictureController pictureInPictureController) {
+            @NotNull AVPictureInPictureController pictureInPictureController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,5 +152,6 @@ public interface AVPictureInPictureSampleBufferPlaybackDelegate {
     @Generated
     @Selector("pictureInPictureControllerTimeRangeForPlayback:")
     @ByValue
-    CMTimeRange pictureInPictureControllerTimeRangeForPlayback(AVPictureInPictureController pictureInPictureController);
+    CMTimeRange pictureInPictureControllerTimeRangeForPlayback(
+            @NotNull AVPictureInPictureController pictureInPictureController);
 }

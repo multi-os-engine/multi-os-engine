@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -57,22 +59,25 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -88,6 +93,7 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     /**
      * If set, the date at which the recurring payments will end. Default is nil.
      */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -135,9 +141,10 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,7 +164,7 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
      */
     @Generated
     @Selector("setEndDate:")
-    public native void setEndDate(NSDate value);
+    public native void setEndDate(@Nullable NSDate value);
 
     /**
      * The number of intervals between payments. Default is 1.
@@ -179,7 +186,7 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
      */
     @Generated
     @Selector("setStartDate:")
-    public native void setStartDate(NSDate value);
+    public native void setStartDate(@Nullable NSDate value);
 
     @Generated
     @Selector("setVersion:")
@@ -188,18 +195,20 @@ public class PKRecurringPaymentSummaryItem extends PKPaymentSummaryItem {
     /**
      * The timestamp at which the first payment will be taken; nil indicates immediately. The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
 
     @Generated
     @Selector("summaryItemWithLabel:amount:")
-    public static native PKRecurringPaymentSummaryItem summaryItemWithLabelAmount(String label, NSDecimalNumber amount);
+    public static native PKRecurringPaymentSummaryItem summaryItemWithLabelAmount(@NotNull String label,
+            @NotNull NSDecimalNumber amount);
 
     @Generated
     @Selector("summaryItemWithLabel:amount:type:")
-    public static native PKRecurringPaymentSummaryItem summaryItemWithLabelAmountType(String label,
-            NSDecimalNumber amount, @NUInt long type);
+    public static native PKRecurringPaymentSummaryItem summaryItemWithLabelAmountType(@NotNull String label,
+            @NotNull NSDecimalNumber amount, @NUInt long type);
 
     @Generated
     @Selector("superclass")

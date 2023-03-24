@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -41,7 +43,7 @@ public interface AVAssetWriterDelegate {
     @Generated
     @IsOptional
     @Selector("assetWriter:didOutputSegmentData:segmentType:")
-    default void assetWriterDidOutputSegmentDataSegmentType(AVAssetWriter writer, NSData segmentData,
+    default void assetWriterDidOutputSegmentDataSegmentType(@NotNull AVAssetWriter writer, @NotNull NSData segmentData,
             @NInt long segmentType) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,8 +112,8 @@ public interface AVAssetWriterDelegate {
     @Generated
     @IsOptional
     @Selector("assetWriter:didOutputSegmentData:segmentType:segmentReport:")
-    default void assetWriterDidOutputSegmentDataSegmentTypeSegmentReport(AVAssetWriter writer, NSData segmentData,
-            @NInt long segmentType, AVAssetSegmentReport segmentReport) {
+    default void assetWriterDidOutputSegmentDataSegmentTypeSegmentReport(@NotNull AVAssetWriter writer,
+            @NotNull NSData segmentData, @NInt long segmentType, @Nullable AVAssetSegmentReport segmentReport) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -77,22 +79,25 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,15 +167,16 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -177,15 +184,17 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native INRideVehicle initWithCoder(NSCoder coder);
+    public native INRideVehicle initWithCoder(@NotNull NSCoder coder);
 
     /**
      * The course of this location is significant; see below.
      */
+    @Nullable
     @Generated
     @Selector("location")
     public native CLLocation location();
 
+    @Nullable
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
@@ -194,14 +203,17 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
      * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the
      * .vehicleLocation property, and rotated to match that location's course.
      */
+    @Nullable
     @Generated
     @Selector("mapAnnotationImage")
     public native INImage mapAnnotationImage();
 
+    @Nullable
     @Generated
     @Selector("model")
     public native String model();
 
+    @Nullable
     @Generated
     @Selector("registrationPlate")
     public native String registrationPlate();
@@ -211,11 +223,11 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setLocation:")
-    public native void setLocation(CLLocation value);
+    public native void setLocation(@Nullable CLLocation value);
 
     @Generated
     @Selector("setManufacturer:")
-    public native void setManufacturer(String value);
+    public native void setManufacturer(@Nullable String value);
 
     /**
      * An image suitable for display as a map annotation. Will be centered at the coordinate provided through the
@@ -223,15 +235,15 @@ public class INRideVehicle extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setMapAnnotationImage:")
-    public native void setMapAnnotationImage(INImage value);
+    public native void setMapAnnotationImage(@Nullable INImage value);
 
     @Generated
     @Selector("setModel:")
-    public native void setModel(String value);
+    public native void setModel(@Nullable String value);
 
     @Generated
     @Selector("setRegistrationPlate:")
-    public native void setRegistrationPlate(String value);
+    public native void setRegistrationPlate(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -70,7 +72,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("addTrackAssociationToTrack:type:")
-    public native void addTrackAssociationToTrackType(AVMovieTrack movieTrack, String trackAssociationType);
+    public native void addTrackAssociationToTrackType(@NotNull AVMovieTrack movieTrack,
+            @NotNull String trackAssociationType);
 
     @Generated
     @Owned
@@ -144,29 +147,32 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("appendSampleBuffer:decodeTime:presentationTime:error:")
-    public native boolean appendSampleBufferDecodeTimePresentationTimeError(CMSampleBufferRef sampleBuffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTime outDecodeTime,
-            @UncertainArgument("Options: reference, array Fallback: reference") CMTime outPresentationTime,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean appendSampleBufferDecodeTimePresentationTimeError(@NotNull CMSampleBufferRef sampleBuffer,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CMTime outDecodeTime,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CMTime outPresentationTime,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -207,6 +213,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * The value of this property is an IETF BCP 47 (RFC 4646) language identifier indicating the language tag
      * associated with the track; may be nil if no language tag is indicated.
      */
+    @Nullable
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -302,8 +309,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     @Generated
     @Selector("insertTimeRange:ofTrack:atTime:copySampleData:error:")
     public native boolean insertTimeRangeOfTrackAtTimeCopySampleDataError(@ByValue CMTimeRange timeRange,
-            AVAssetTrack track, @ByValue CMTime startTime, boolean copySampleData,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @NotNull AVAssetTrack track, @ByValue CMTime startTime, boolean copySampleData,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -343,9 +350,10 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] languageCode
@@ -355,6 +363,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * The value of this property is an ISO 639-2/T language code indicating the language associated with the track; may
      * be nil if no language is indicated.
      */
+    @Nullable
     @Generated
     @Selector("languageCode")
     public native String languageCode();
@@ -377,6 +386,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * The value of this property is an AVMediaDataStorage object that indicates the location at which media data
      * inserted or appended to the track will be written.
      */
+    @Nullable
     @Generated
     @Selector("mediaDataStorage")
     public native AVMediaDataStorage mediaDataStorage();
@@ -389,6 +399,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * The value of this property is an array of AVMetadataItem objects representing the collection of metadata stored
      * by the track.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -512,7 +523,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("removeTrackAssociationToTrack:type:")
-    public native void removeTrackAssociationToTrackType(AVMovieTrack movieTrack, String trackAssociationType);
+    public native void removeTrackAssociationToTrackType(@NotNull AVMovieTrack movieTrack,
+            @NotNull String trackAssociationType);
 
     /**
      * replaceFormatDescription:withFormatDescription:
@@ -539,8 +551,8 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("replaceFormatDescription:withFormatDescription:")
-    public native void replaceFormatDescriptionWithFormatDescription(CMFormatDescriptionRef formatDescription,
-            CMFormatDescriptionRef newFormatDescription);
+    public native void replaceFormatDescriptionWithFormatDescription(@NotNull CMFormatDescriptionRef formatDescription,
+            @NotNull CMFormatDescriptionRef newFormatDescription);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -569,6 +581,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      * 
      * The default value is nil, which means that the location will be written unmodified.
      */
+    @Nullable
     @Generated
     @Selector("sampleReferenceBaseURL")
     public native NSURL sampleReferenceBaseURL();
@@ -633,7 +646,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("setExtendedLanguageTag:")
-    public native void setExtendedLanguageTag(String value);
+    public native void setExtendedLanguageTag(@Nullable String value);
 
     /**
      * [@property] languageCode
@@ -645,7 +658,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("setLanguageCode:")
-    public native void setLanguageCode(String value);
+    public native void setLanguageCode(@Nullable String value);
 
     /**
      * [@property] layer
@@ -666,7 +679,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("setMediaDataStorage:")
-    public native void setMediaDataStorage(AVMediaDataStorage value);
+    public native void setMediaDataStorage(@Nullable AVMediaDataStorage value);
 
     /**
      * [@property] metadata
@@ -678,7 +691,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(NSArray<? extends AVMetadataItem> value);
+    public native void setMetadata(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * [@property] modified
@@ -794,7 +807,7 @@ public class AVMutableMovieTrack extends AVMovieTrack {
      */
     @Generated
     @Selector("setSampleReferenceBaseURL:")
-    public native void setSampleReferenceBaseURL(NSURL value);
+    public native void setSampleReferenceBaseURL(@Nullable NSURL value);
 
     /**
      * [@property] timescale
@@ -840,23 +853,26 @@ public class AVMutableMovieTrack extends AVMovieTrack {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("associatedTracksOfType:")
-    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(String trackAssociationType);
+    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
 
     @Generated
     @Selector("hasMediaCharacteristic:")
-    public native boolean hasMediaCharacteristic(String mediaCharacteristic);
+    public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    @NotNull
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     @Generated
     @Selector("samplePresentationTimeForTrackTime:")
     @ByValue
     public native CMTime samplePresentationTimeForTrackTime(@ByValue CMTime trackTime);
 
+    @Nullable
     @Generated
     @Selector("segmentForTrackTime:")
     public native AVAssetTrackSegment segmentForTrackTime(@ByValue CMTime trackTime);

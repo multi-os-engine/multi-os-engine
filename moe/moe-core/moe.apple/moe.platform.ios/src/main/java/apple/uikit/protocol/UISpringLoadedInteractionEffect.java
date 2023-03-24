@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The interaction effect of a `UISpringLoadedInteraction` object must adopt the `UISpringLoadedInteractionEffect`
@@ -30,6 +31,6 @@ public interface UISpringLoadedInteractionEffect {
      */
     @Generated
     @Selector("interaction:didChangeWithContext:")
-    void interactionDidChangeWithContext(UISpringLoadedInteraction interaction,
-            @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
+    void interactionDidChangeWithContext(@NotNull UISpringLoadedInteraction interaction,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context);
 }

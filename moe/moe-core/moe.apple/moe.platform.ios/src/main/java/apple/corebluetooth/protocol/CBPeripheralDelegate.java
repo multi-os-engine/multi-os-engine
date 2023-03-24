@@ -31,6 +31,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CBPeripheralDelegate
@@ -56,8 +58,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverCharacteristicsForService:error:")
-    default void peripheralDidDiscoverCharacteristicsForServiceError(CBPeripheral peripheral, CBService service,
-            NSError error) {
+    default void peripheralDidDiscoverCharacteristicsForServiceError(@NotNull CBPeripheral peripheral,
+            @NotNull CBService service, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +77,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverDescriptorsForCharacteristic:error:")
-    default void peripheralDidDiscoverDescriptorsForCharacteristicError(CBPeripheral peripheral,
-            CBCharacteristic characteristic, NSError error) {
+    default void peripheralDidDiscoverDescriptorsForCharacteristicError(@NotNull CBPeripheral peripheral,
+            @NotNull CBCharacteristic characteristic, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,8 +96,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverIncludedServicesForService:error:")
-    default void peripheralDidDiscoverIncludedServicesForServiceError(CBPeripheral peripheral, CBService service,
-            NSError error) {
+    default void peripheralDidDiscoverIncludedServicesForServiceError(@NotNull CBPeripheral peripheral,
+            @NotNull CBService service, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,7 +114,7 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didDiscoverServices:")
-    default void peripheralDidDiscoverServices(CBPeripheral peripheral, NSError error) {
+    default void peripheralDidDiscoverServices(@NotNull CBPeripheral peripheral, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -131,8 +133,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didModifyServices:")
-    default void peripheralDidModifyServices(CBPeripheral peripheral,
-            NSArray<? extends CBService> invalidatedServices) {
+    default void peripheralDidModifyServices(@NotNull CBPeripheral peripheral,
+            @NotNull NSArray<? extends CBService> invalidatedServices) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -150,7 +152,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didReadRSSI:error:")
-    default void peripheralDidReadRSSIError(CBPeripheral peripheral, NSNumber RSSI, NSError error) {
+    default void peripheralDidReadRSSIError(@NotNull CBPeripheral peripheral, @NotNull NSNumber RSSI,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,8 +169,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateNotificationStateForCharacteristic:error:")
-    default void peripheralDidUpdateNotificationStateForCharacteristicError(CBPeripheral peripheral,
-            CBCharacteristic characteristic, NSError error) {
+    default void peripheralDidUpdateNotificationStateForCharacteristicError(@NotNull CBPeripheral peripheral,
+            @NotNull CBCharacteristic characteristic, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,8 +187,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateValueForCharacteristic:error:")
-    default void peripheralDidUpdateValueForCharacteristicError(CBPeripheral peripheral,
-            CBCharacteristic characteristic, NSError error) {
+    default void peripheralDidUpdateValueForCharacteristicError(@NotNull CBPeripheral peripheral,
+            @NotNull CBCharacteristic characteristic, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,8 +204,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didUpdateValueForDescriptor:error:")
-    default void peripheralDidUpdateValueForDescriptorError(CBPeripheral peripheral, CBDescriptor descriptor,
-            NSError error) {
+    default void peripheralDidUpdateValueForDescriptorError(@NotNull CBPeripheral peripheral,
+            @NotNull CBDescriptor descriptor, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,8 +222,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didWriteValueForCharacteristic:error:")
-    default void peripheralDidWriteValueForCharacteristicError(CBPeripheral peripheral, CBCharacteristic characteristic,
-            NSError error) {
+    default void peripheralDidWriteValueForCharacteristicError(@NotNull CBPeripheral peripheral,
+            @NotNull CBCharacteristic characteristic, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -236,8 +239,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didWriteValueForDescriptor:error:")
-    default void peripheralDidWriteValueForDescriptorError(CBPeripheral peripheral, CBDescriptor descriptor,
-            NSError error) {
+    default void peripheralDidWriteValueForDescriptorError(@NotNull CBPeripheral peripheral,
+            @NotNull CBDescriptor descriptor, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -253,7 +256,7 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralDidUpdateName:")
-    default void peripheralDidUpdateName(CBPeripheral peripheral) {
+    default void peripheralDidUpdateName(@NotNull CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -274,7 +277,7 @@ public interface CBPeripheralDelegate {
     @IsOptional
     @Deprecated
     @Selector("peripheralDidUpdateRSSI:error:")
-    default void peripheralDidUpdateRSSIError(CBPeripheral peripheral, NSError error) {
+    default void peripheralDidUpdateRSSIError(@NotNull CBPeripheral peripheral, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -290,7 +293,8 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheral:didOpenL2CAPChannel:error:")
-    default void peripheralDidOpenL2CAPChannelError(CBPeripheral peripheral, CBL2CAPChannel channel, NSError error) {
+    default void peripheralDidOpenL2CAPChannelError(@NotNull CBPeripheral peripheral, @Nullable CBL2CAPChannel channel,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -306,7 +310,7 @@ public interface CBPeripheralDelegate {
     @Generated
     @IsOptional
     @Selector("peripheralIsReadyToSendWriteWithoutResponse:")
-    default void peripheralIsReadyToSendWriteWithoutResponse(CBPeripheral peripheral) {
+    default void peripheralIsReadyToSendWriteWithoutResponse(@NotNull CBPeripheral peripheral) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

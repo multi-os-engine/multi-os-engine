@@ -9,6 +9,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object conforming to \c GCTouchedStateInput represents the touched state of
@@ -66,19 +68,20 @@ public interface GCTouchedStateInput {
     @Generated
     @Selector("setTouchedDidChangeHandler:")
     void setTouchedDidChangeHandler(
-            @ObjCBlock(name = "call_setTouchedDidChangeHandler") Block_setTouchedDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setTouchedDidChangeHandler") Block_setTouchedDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTouchedDidChangeHandler {
         @Generated
-        void call_setTouchedDidChangeHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_setTouchedDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
     }
 
     /**
      * Set this block if you want to be notified when the touched state changes.
      */
+    @Nullable
     @Generated
     @Selector("touchedDidChangeHandler")
     @ObjCBlock(name = "call_touchedDidChangeHandler_ret")
@@ -88,7 +91,7 @@ public interface GCTouchedStateInput {
     @Generated
     public interface Block_touchedDidChangeHandler_ret {
         @Generated
-        void call_touchedDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
+        void call_touchedDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1, boolean arg2);
     }
 }

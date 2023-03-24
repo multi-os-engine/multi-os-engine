@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Foundation")
@@ -34,7 +35,7 @@ public interface NSStreamDelegate {
     @Generated
     @IsOptional
     @Selector("stream:handleEvent:")
-    default void streamHandleEvent(NSStream aStream, @NUInt long eventCode) {
+    default void streamHandleEvent(@NotNull NSStream aStream, @NUInt long eventCode) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

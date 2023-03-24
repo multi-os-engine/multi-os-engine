@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.UIColor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPAlertAction represents a single action that appears inside of a @c CPActionSheetTemplate or @c
@@ -69,22 +71,25 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -99,8 +104,9 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -110,7 +116,7 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Generated
     public interface Block_handler_ret {
         @Generated
-        void call_handler_ret(CPAlertAction arg0);
+        void call_handler_ret(@NotNull CPAlertAction arg0);
     }
 
     @Generated
@@ -124,7 +130,7 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPAlertAction initWithCoder(NSCoder coder);
+    public native CPAlertAction initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create an alert action with a title, display style, and a callback handler that is invoked
@@ -132,14 +138,14 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithTitle:style:handler:")
-    public native CPAlertAction initWithTitleStyleHandler(String title, @NUInt long style,
-            @ObjCBlock(name = "call_initWithTitleStyleHandler") Block_initWithTitleStyleHandler handler);
+    public native CPAlertAction initWithTitleStyleHandler(@NotNull String title, @NUInt long style,
+            @NotNull @ObjCBlock(name = "call_initWithTitleStyleHandler") Block_initWithTitleStyleHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTitleStyleHandler {
         @Generated
-        void call_initWithTitleStyleHandler(CPAlertAction arg0);
+        void call_initWithTitleStyleHandler(@NotNull CPAlertAction arg0);
     }
 
     @Generated
@@ -159,9 +165,10 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,6 +206,7 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -211,6 +219,7 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("color")
     public native UIColor color();
@@ -228,13 +237,13 @@ public class CPAlertAction extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithTitle:color:handler:")
-    public native CPAlertAction initWithTitleColorHandler(String title, UIColor color,
-            @ObjCBlock(name = "call_initWithTitleColorHandler") Block_initWithTitleColorHandler handler);
+    public native CPAlertAction initWithTitleColorHandler(@NotNull String title, @NotNull UIColor color,
+            @NotNull @ObjCBlock(name = "call_initWithTitleColorHandler") Block_initWithTitleColorHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTitleColorHandler {
         @Generated
-        void call_initWithTitleColorHandler(CPAlertAction arg0);
+        void call_initWithTitleColorHandler(@NotNull CPAlertAction arg0);
     }
 }

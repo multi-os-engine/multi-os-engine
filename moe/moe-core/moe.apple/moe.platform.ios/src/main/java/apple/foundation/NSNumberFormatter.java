@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -69,22 +71,25 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,16 +132,18 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("localizedStringFromNumber:numberStyle:")
-    public static native String localizedStringFromNumberNumberStyle(NSNumber num, @NUInt long nstyle);
+    public static native String localizedStringFromNumberNumberStyle(@NotNull NSNumber num, @NUInt long nstyle);
 
     @Generated
     @Owned
@@ -232,8 +239,9 @@ public class NSNumberFormatter extends NSFormatter {
      */
     @Generated
     @Selector("getObjectValue:forString:range:error:")
-    public native boolean getObjectValueForStringRangeError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj,
-            String string, NSRange rangep, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean getObjectValueForStringRangeError(
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, @NotNull String string,
+            @Nullable NSRange rangep, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("groupingSeparator")
@@ -250,7 +258,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSNumberFormatter initWithCoder(NSCoder coder);
+    public native NSNumberFormatter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("internationalCurrencySymbol")
@@ -288,6 +296,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("locale")
     public native NSLocale locale();
 
+    @Nullable
     @Generated
     @Selector("maximum")
     public native NSNumber maximum();
@@ -310,6 +319,7 @@ public class NSNumberFormatter extends NSFormatter {
     @NUInt
     public native long maximumSignificantDigits();
 
+    @Nullable
     @Generated
     @Selector("minimum")
     public native NSNumber minimum();
@@ -336,6 +346,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("minusSign")
     public native String minusSign();
 
+    @Nullable
     @Generated
     @Selector("multiplier")
     public native NSNumber multiplier();
@@ -344,6 +355,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("negativeFormat")
     public native String negativeFormat();
 
+    @NotNull
     @Generated
     @Selector("negativeInfinitySymbol")
     public native String negativeInfinitySymbol();
@@ -356,6 +368,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("negativeSuffix")
     public native String negativeSuffix();
 
+    @NotNull
     @Generated
     @Selector("nilSymbol")
     public native String nilSymbol();
@@ -364,9 +377,10 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("notANumberSymbol")
     public native String notANumberSymbol();
 
+    @Nullable
     @Generated
     @Selector("numberFromString:")
-    public native NSNumber numberFromString(String string);
+    public native NSNumber numberFromString(@NotNull String string);
 
     @Generated
     @Selector("numberStyle")
@@ -398,6 +412,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("positiveFormat")
     public native String positiveFormat();
 
+    @NotNull
     @Generated
     @Selector("positiveInfinitySymbol")
     public native String positiveInfinitySymbol();
@@ -498,7 +513,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setMaximum:")
-    public native void setMaximum(NSNumber value);
+    public native void setMaximum(@Nullable NSNumber value);
 
     @Generated
     @Selector("setMaximumFractionDigits:")
@@ -517,7 +532,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setMinimum:")
-    public native void setMinimum(NSNumber value);
+    public native void setMinimum(@Nullable NSNumber value);
 
     @Generated
     @Selector("setMinimumFractionDigits:")
@@ -540,7 +555,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setMultiplier:")
-    public native void setMultiplier(NSNumber value);
+    public native void setMultiplier(@Nullable NSNumber value);
 
     @Generated
     @Selector("setNegativeFormat:")
@@ -548,7 +563,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setNegativeInfinitySymbol:")
-    public native void setNegativeInfinitySymbol(String value);
+    public native void setNegativeInfinitySymbol(@NotNull String value);
 
     @Generated
     @Selector("setNegativePrefix:")
@@ -560,7 +575,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setNilSymbol:")
-    public native void setNilSymbol(String value);
+    public native void setNilSymbol(@NotNull String value);
 
     @Generated
     @Selector("setNotANumberSymbol:")
@@ -596,7 +611,7 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setPositiveInfinitySymbol:")
-    public native void setPositiveInfinitySymbol(String value);
+    public native void setPositiveInfinitySymbol(@NotNull String value);
 
     @Generated
     @Selector("setPositivePrefix:")
@@ -620,31 +635,31 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setTextAttributesForNegativeInfinity:")
-    public native void setTextAttributesForNegativeInfinity(NSDictionary<String, ?> value);
+    public native void setTextAttributesForNegativeInfinity(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setTextAttributesForNegativeValues:")
-    public native void setTextAttributesForNegativeValues(NSDictionary<String, ?> value);
+    public native void setTextAttributesForNegativeValues(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setTextAttributesForNil:")
-    public native void setTextAttributesForNil(NSDictionary<String, ?> value);
+    public native void setTextAttributesForNil(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setTextAttributesForNotANumber:")
-    public native void setTextAttributesForNotANumber(NSDictionary<String, ?> value);
+    public native void setTextAttributesForNotANumber(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setTextAttributesForPositiveInfinity:")
-    public native void setTextAttributesForPositiveInfinity(NSDictionary<String, ?> value);
+    public native void setTextAttributesForPositiveInfinity(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setTextAttributesForPositiveValues:")
-    public native void setTextAttributesForPositiveValues(NSDictionary<String, ?> value);
+    public native void setTextAttributesForPositiveValues(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setTextAttributesForZero:")
-    public native void setTextAttributesForZero(NSDictionary<String, ?> value);
+    public native void setTextAttributesForZero(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setUsesGroupingSeparator:")
@@ -659,40 +674,48 @@ public class NSNumberFormatter extends NSFormatter {
 
     @Generated
     @Selector("setZeroSymbol:")
-    public native void setZeroSymbol(String value);
+    public native void setZeroSymbol(@Nullable String value);
 
     /**
      * Even though NSNumberFormatter responds to the usual NSFormatter methods,
      * here are some convenience methods which are a little more obvious.
      */
+    @Nullable
     @Generated
     @Selector("stringFromNumber:")
-    public native String stringFromNumber(NSNumber number);
+    public native String stringFromNumber(@NotNull NSNumber number);
 
+    @Nullable
     @Generated
     @Selector("textAttributesForNegativeInfinity")
     public native NSDictionary<String, ?> textAttributesForNegativeInfinity();
 
+    @Nullable
     @Generated
     @Selector("textAttributesForNegativeValues")
     public native NSDictionary<String, ?> textAttributesForNegativeValues();
 
+    @Nullable
     @Generated
     @Selector("textAttributesForNil")
     public native NSDictionary<String, ?> textAttributesForNil();
 
+    @Nullable
     @Generated
     @Selector("textAttributesForNotANumber")
     public native NSDictionary<String, ?> textAttributesForNotANumber();
 
+    @Nullable
     @Generated
     @Selector("textAttributesForPositiveInfinity")
     public native NSDictionary<String, ?> textAttributesForPositiveInfinity();
 
+    @Nullable
     @Generated
     @Selector("textAttributesForPositiveValues")
     public native NSDictionary<String, ?> textAttributesForPositiveValues();
 
+    @Nullable
     @Generated
     @Selector("textAttributesForZero")
     public native NSDictionary<String, ?> textAttributesForZero();
@@ -708,6 +731,7 @@ public class NSNumberFormatter extends NSFormatter {
     @Selector("usesSignificantDigits")
     public native boolean usesSignificantDigits();
 
+    @Nullable
     @Generated
     @Selector("zeroSymbol")
     public native String zeroSymbol();

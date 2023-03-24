@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -18,15 +19,18 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLFunctionLog")
 public interface MTLFunctionLog {
+    @Nullable
     @Generated
     @Selector("debugLocation")
     @MappedReturn(ObjCObjectMapper.class)
     MTLFunctionLogDebugLocation debugLocation();
 
+    @Nullable
     @Generated
     @Selector("encoderLabel")
     String encoderLabel();
 
+    @Nullable
     @Generated
     @Selector("function")
     @MappedReturn(ObjCObjectMapper.class)

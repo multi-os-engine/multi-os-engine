@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -45,8 +47,8 @@ public interface CNContactViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("contactViewController:didCompleteWithContact:")
-    default void contactViewControllerDidCompleteWithContact(CNContactViewController viewController,
-            CNContact contact) {
+    default void contactViewControllerDidCompleteWithContact(@NotNull CNContactViewController viewController,
+            @Nullable CNContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +63,7 @@ public interface CNContactViewControllerDelegate {
     @IsOptional
     @Selector("contactViewController:shouldPerformDefaultActionForContactProperty:")
     default boolean contactViewControllerShouldPerformDefaultActionForContactProperty(
-            CNContactViewController viewController, CNContactProperty property) {
+            @NotNull CNContactViewController viewController, @NotNull CNContactProperty property) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

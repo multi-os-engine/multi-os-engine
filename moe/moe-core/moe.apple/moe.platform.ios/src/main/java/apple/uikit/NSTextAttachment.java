@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -86,22 +88,25 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,7 +176,8 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     @Selector("attachmentBoundsForTextContainer:proposedLineFragment:glyphPosition:characterIndex:")
     @ByValue
     public native CGRect attachmentBoundsForTextContainerProposedLineFragmentGlyphPositionCharacterIndex(
-            NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position, @NUInt long charIndex);
+            @Nullable NSTextContainer textContainer, @ByValue CGRect lineFrag, @ByValue CGPoint position,
+            @NUInt long charIndex);
 
     /**
      * Defines the layout bounds of the receiver's graphical representation in the text coordinate system. The origin is
@@ -189,17 +196,19 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("contents")
     public native NSData contents();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("fileType")
     public native String fileType();
@@ -208,6 +217,7 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of
      * invalidating -image, -contents, and fileType properties.
      */
+    @Nullable
     @Generated
     @Selector("fileWrapper")
     public native NSFileWrapper fileWrapper();
@@ -218,14 +228,16 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
 
+    @Nullable
     @Generated
     @Selector("imageForBounds:textContainer:characterIndex:")
     public native UIImage imageForBoundsTextContainerCharacterIndex(@ByValue CGRect imageBounds,
-            NSTextContainer textContainer, @NUInt long charIndex);
+            @Nullable NSTextContainer textContainer, @NUInt long charIndex);
 
     @Generated
     @Selector("init")
@@ -233,7 +245,7 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextAttachment initWithCoder(NSCoder coder);
+    public native NSTextAttachment initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Designated initializer. Both arguments can be nil. When contentData==nil || uti==nil, the receiver is consider to
@@ -244,7 +256,7 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      */
     @Generated
     @Selector("initWithData:ofType:")
-    public native NSTextAttachment initWithDataOfType(NSData contentData, String uti);
+    public native NSTextAttachment initWithDataOfType(@Nullable NSData contentData, @Nullable String uti);
 
     /**
      * Defines the layout bounds of the receiver's graphical representation in the text coordinate system. The origin is
@@ -264,14 +276,14 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      */
     @Generated
     @Selector("setContents:")
-    public native void setContents(NSData value);
+    public native void setContents(@Nullable NSData value);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("setFileType:")
-    public native void setFileType(String value);
+    public native void setFileType(@Nullable String value);
 
     /**
      * Optionally, NSTextAttachment can be associated with a file wrapper. Modifying this property has a side effect of
@@ -279,7 +291,7 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      */
     @Generated
     @Selector("setFileWrapper:")
-    public native void setFileWrapper(NSFileWrapper value);
+    public native void setFileWrapper(@Nullable NSFileWrapper value);
 
     /**
      * Image representing the text attachment contents. Modifying this property invalidates -contents, -fileType, and
@@ -289,7 +301,7 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     @Generated
     @Selector("adjustsImageSizeForAccessibilityContentSizeCategory")
@@ -312,9 +324,10 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("textAttachmentWithImage:")
-    public static native NSTextAttachment textAttachmentWithImage(UIImage image);
+    public static native NSTextAttachment textAttachmentWithImage(@NotNull UIImage image);
 
     /**
      * When YES, the text attachment tries to use a text attachment view returned by
@@ -330,14 +343,16 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     @Selector("attachmentBoundsForAttributes:location:textContainer:proposedLineFragment:position:")
     @ByValue
     public native CGRect attachmentBoundsForAttributesLocationTextContainerProposedLineFragmentPosition(
-            NSDictionary<String, ?> attributes, @Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            NSTextContainer textContainer, @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
+            @NotNull NSDictionary<String, ?> attributes,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @Nullable NSTextContainer textContainer,
+            @ByValue CGRect proposedLineFragment, @ByValue CGPoint position);
 
+    @Nullable
     @Generated
     @Selector("imageForBounds:attributes:location:textContainer:")
     public native UIImage imageForBoundsAttributesLocationTextContainer(@ByValue CGRect bounds,
-            NSDictionary<String, ?> attributes, @Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            NSTextContainer textContainer);
+            @NotNull NSDictionary<String, ?> attributes,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @Nullable NSTextContainer textContainer);
 
     /**
      * Layout padding before and after the text attachment bounds. The layout and rendering bounds X origin gets inset
@@ -355,8 +370,8 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      */
     @Generated
     @Selector("registerTextAttachmentViewProviderClass:forFileType:")
-    public static native void registerTextAttachmentViewProviderClassForFileType(Class textAttachmentViewProviderClass,
-            String fileType);
+    public static native void registerTextAttachmentViewProviderClassForFileType(
+            @NotNull Class textAttachmentViewProviderClass, @NotNull String fileType);
 
     /**
      * When YES, the text attachment tries to use a text attachment view returned by
@@ -383,9 +398,10 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("textAttachmentViewProviderClassForFileType:")
-    public static native Class textAttachmentViewProviderClassForFileType(String fileType);
+    public static native Class textAttachmentViewProviderClassForFileType(@NotNull String fileType);
 
     /**
      * Returns YES if the text attachment is configured to use text attachment views. By default, it checks
@@ -397,8 +413,10 @@ public class NSTextAttachment extends NSObject implements NSTextAttachmentLayout
     @Selector("usesTextAttachmentView")
     public native boolean usesTextAttachmentView();
 
+    @Nullable
     @Generated
     @Selector("viewProviderForParentView:location:textContainer:")
-    public native NSTextAttachmentViewProvider viewProviderForParentViewLocationTextContainer(UIView parentView,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation location, NSTextContainer textContainer);
+    public native NSTextAttachmentViewProvider viewProviderForParentViewLocationTextContainer(
+            @Nullable UIView parentView, @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location,
+            @Nullable NSTextContainer textContainer);
 }

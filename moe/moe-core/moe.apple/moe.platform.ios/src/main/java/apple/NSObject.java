@@ -59,6 +59,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -108,17 +110,18 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Implemented by classes to substitute new instances for the receiving
@@ -131,10 +134,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * -replacementObjectForCoder: as might be expected. This is a concession
      * to source compatibility.
      */
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -193,9 +198,10 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -258,6 +264,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityAssistiveTechnologyFocusedIdentifiers")
     public native NSSet<String> accessibilityAssistiveTechnologyFocusedIdentifiers();
@@ -272,6 +279,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityCustomActions")
     public native NSArray<? extends UIAccessibilityCustomAction> accessibilityCustomActions();
@@ -279,6 +287,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityCustomRotors")
     public native NSArray<? extends UIAccessibilityCustomRotor> accessibilityCustomRotors();
@@ -294,6 +303,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * Returns the accessibility element in order, based on index.
      * default == nil
      */
+    @Nullable
     @Generated
     @Selector("accessibilityElementAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -340,6 +350,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityElements")
     public native NSArray<?> accessibilityElements();
@@ -373,6 +384,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * default == nil
      * Setting the property will change the hint that is returned to the accessibility client.
      */
+    @Nullable
     @Generated
     @Selector("accessibilityHint")
     public native String accessibilityHint();
@@ -399,6 +411,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * default on UIKit controls == derived from the title
      * Setting the property will change the label that is returned to the accessibility client.
      */
+    @Nullable
     @Generated
     @Selector("accessibilityLabel")
     public native String accessibilityLabel();
@@ -410,6 +423,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * For example, en-US specifies U.S. English.
      * default == nil
      */
+    @Nullable
     @Generated
     @Selector("accessibilityLanguage")
     public native String accessibilityLanguage();
@@ -437,6 +451,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityPath")
     public native UIBezierPath accessibilityPath();
@@ -498,6 +513,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * default on UIKit controls == values for appropriate controls
      * Setting the property will change the value that is returned to the accessibility client.
      */
+    @Nullable
     @Generated
     @Selector("accessibilityValue")
     public native String accessibilityValue();
@@ -524,8 +540,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("addObserver:forKeyPath:options:context:")
-    public native void addObserverForKeyPathOptionsContext(NSObject observer, String keyPath, @NUInt long options,
-            VoidPtr context);
+    public native void addObserverForKeyPathOptionsContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @NUInt long options, @Nullable VoidPtr context);
 
     /**
      * Given that an error alert has been presented applicaton-modally to the user, and the user has chosen one of the
@@ -535,7 +551,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("attemptRecoveryFromError:optionIndex:")
-    public native boolean attemptRecoveryFromErrorOptionIndex(NSError error, @NUInt long recoveryOptionIndex);
+    public native boolean attemptRecoveryFromErrorOptionIndex(@NotNull NSError error, @NUInt long recoveryOptionIndex);
 
     /**
      * Given that an error alert has been presented document-modally to the user, and the user has chosen one of the
@@ -549,22 +565,24 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("attemptRecoveryFromError:optionIndex:delegate:didRecoverSelector:contextInfo:")
-    public native void attemptRecoveryFromErrorOptionIndexDelegateDidRecoverSelectorContextInfo(NSError error,
-            @NUInt long recoveryOptionIndex, @Mapped(ObjCObjectMapper.class) Object delegate, SEL didRecoverSelector,
-            VoidPtr contextInfo);
+    public native void attemptRecoveryFromErrorOptionIndexDelegateDidRecoverSelectorContextInfo(@NotNull NSError error,
+            @NUInt long recoveryOptionIndex, @Nullable @Mapped(ObjCObjectMapper.class) Object delegate,
+            @Nullable SEL didRecoverSelector, @Nullable VoidPtr contextInfo);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("autoContentAccessingProxy")
     @MappedReturn(ObjCObjectMapper.class)
     public native Object autoContentAccessingProxy();
 
+    @Nullable
     @Generated
     @Selector("awakeAfterUsingCoder:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object awakeAfterUsingCoder(NSCoder coder);
+    public native Object awakeAfterUsingCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("awakeFromNib")
@@ -574,10 +592,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Selector("class")
     public native Class class_objc();
 
+    @NotNull
     @Generated
     @Selector("classForCoder")
     public native Class classForCoder();
 
+    @Nullable
     @Generated
     @Selector("classForKeyedArchiver")
     public native Class classForKeyedArchiver();
@@ -607,22 +627,24 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * collections of to-many-related objects. Entries for which -valueForKey: returns nil have NSNull as their value in
      * the returned dictionary.
      */
+    @NotNull
     @Generated
     @Selector("dictionaryWithValuesForKeys:")
-    public native NSDictionary<String, ?> dictionaryWithValuesForKeys(NSArray<String> keys);
+    public native NSDictionary<String, ?> dictionaryWithValuesForKeys(@NotNull NSArray<String> keys);
 
     @Generated
     @Selector("didChange:valuesAtIndexes:forKey:")
-    public native void didChangeValuesAtIndexesForKey(@NUInt long changeKind, NSIndexSet indexes, String key);
+    public native void didChangeValuesAtIndexesForKey(@NUInt long changeKind, @NotNull NSIndexSet indexes,
+            @NotNull String key);
 
     @Generated
     @Selector("didChangeValueForKey:")
-    public native void didChangeValueForKey(String key);
+    public native void didChangeValueForKey(@NotNull String key);
 
     @Generated
     @Selector("didChangeValueForKey:withSetMutation:usingObjects:")
-    public native void didChangeValueForKeyWithSetMutationUsingObjects(String key, @NUInt long mutationKind,
-            NSSet<?> objects);
+    public native void didChangeValueForKeyWithSetMutationUsingObjects(@NotNull String key, @NUInt long mutationKind,
+            @NotNull NSSet<?> objects);
 
     @Generated
     @Selector("doesNotRecognizeSelector:")
@@ -636,7 +658,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Deprecated
     @Selector("fileManager:shouldProceedAfterError:")
-    public native boolean fileManagerShouldProceedAfterError(NSFileManager fm, NSDictionary<?, ?> errorInfo);
+    public native boolean fileManagerShouldProceedAfterError(@NotNull NSFileManager fm,
+            @NotNull NSDictionary<?, ?> errorInfo);
 
     /**
      * API-Since: 2.0
@@ -646,7 +669,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Deprecated
     @Selector("fileManager:willProcessPath:")
-    public native void fileManagerWillProcessPath(NSFileManager fm, String path);
+    public native void fileManagerWillProcessPath(@NotNull NSFileManager fm, @NotNull String path);
 
     @Generated
     @Selector("finalize")
@@ -676,7 +699,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("indexOfAccessibilityElement:")
     @NInt
-    public native long indexOfAccessibilityElement(@Mapped(ObjCObjectMapper.class) Object element);
+    public native long indexOfAccessibilityElement(@NotNull @Mapped(ObjCObjectMapper.class) Object element);
 
     @Generated
     @Selector("init")
@@ -754,13 +777,15 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * problem. For better performance implement insertion and removal methods that fulfill the requirements for step 1
      * in your KVC-compliant class. For best performance implement a replacement method too.
      */
+    @NotNull
     @Generated
     @Selector("mutableArrayValueForKey:")
-    public native NSMutableArray<?> mutableArrayValueForKey(String key);
+    public native NSMutableArray<?> mutableArrayValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("mutableArrayValueForKeyPath:")
-    public native NSMutableArray<?> mutableArrayValueForKeyPath(String keyPath);
+    public native NSMutableArray<?> mutableArrayValueForKeyPath(@NotNull String keyPath);
 
     @Owned
     @Generated
@@ -807,16 +832,18 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("mutableOrderedSetValueForKey:")
-    public native NSMutableOrderedSet<?> mutableOrderedSetValueForKey(String key);
+    public native NSMutableOrderedSet<?> mutableOrderedSetValueForKey(@NotNull String key);
 
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("mutableOrderedSetValueForKeyPath:")
-    public native NSMutableOrderedSet<?> mutableOrderedSetValueForKeyPath(String keyPath);
+    public native NSMutableOrderedSet<?> mutableOrderedSetValueForKeyPath(@NotNull String keyPath);
 
     /**
      * Given a key that identifies an _unordered_ and uniquing to-many relationship, return a mutable set that provides
@@ -853,13 +880,15 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * problem. For better performance implement methods that fulfill the requirements for step 1 in your KVC-compliant
      * class.
      */
+    @NotNull
     @Generated
     @Selector("mutableSetValueForKey:")
-    public native NSMutableSet<?> mutableSetValueForKey(String key);
+    public native NSMutableSet<?> mutableSetValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("mutableSetValueForKeyPath:")
-    public native NSMutableSet<?> mutableSetValueForKeyPath(String keyPath);
+    public native NSMutableSet<?> mutableSetValueForKeyPath(@NotNull String keyPath);
 
     /**
      * Take or return a pointer that identifies information about all of the observers that are registered with the
@@ -868,6 +897,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * override these methods to store the opaque data pointer in an instance variable. Overrides of these methods must
      * not attempt to send Objective-C messages to the passed-in observation info, including -retain and -release.
      */
+    @Nullable
     @Generated
     @Selector("observationInfo")
     public native VoidPtr observationInfo();
@@ -914,8 +944,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("observeValueForKeyPath:ofObject:change:context:")
-    public native void observeValueForKeyPathOfObjectChangeContext(String keyPath,
-            @Mapped(ObjCObjectMapper.class) Object object, NSDictionary<String, ?> change, VoidPtr context);
+    public native void observeValueForKeyPathOfObjectChangeContext(@Nullable String keyPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object object, @Nullable NSDictionary<String, ?> change,
+            @Nullable VoidPtr context);
 
     @Generated
     @Selector("performSelector:")
@@ -927,8 +958,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("performSelector:onThread:withObject:waitUntilDone:")
-    public native void performSelectorOnThreadWithObjectWaitUntilDone(SEL aSelector, NSThread thr,
-            @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_);
+    public native void performSelectorOnThreadWithObjectWaitUntilDone(@NotNull SEL aSelector, @NotNull NSThread thr,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_);
 
     /**
      * equivalent to the first method with kCFRunLoopCommonModes
@@ -937,8 +968,9 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("performSelector:onThread:withObject:waitUntilDone:modes:")
-    public native void performSelectorOnThreadWithObjectWaitUntilDoneModes(SEL aSelector, NSThread thr,
-            @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_, NSArray<String> array);
+    public native void performSelectorOnThreadWithObjectWaitUntilDoneModes(@NotNull SEL aSelector,
+            @NotNull NSThread thr, @Nullable @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_,
+            @Nullable NSArray<String> array);
 
     @Generated
     @Selector("performSelector:withObject:")
@@ -947,13 +979,13 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
 
     @Generated
     @Selector("performSelector:withObject:afterDelay:")
-    public native void performSelectorWithObjectAfterDelay(SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument, double delay);
+    public native void performSelectorWithObjectAfterDelay(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument, double delay);
 
     @Generated
     @Selector("performSelector:withObject:afterDelay:inModes:")
-    public native void performSelectorWithObjectAfterDelayInModes(SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument, double delay, NSArray<String> modes);
+    public native void performSelectorWithObjectAfterDelayInModes(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument, double delay, @NotNull NSArray<String> modes);
 
     @Generated
     @Selector("performSelector:withObject:withObject:")
@@ -968,17 +1000,18 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("performSelectorInBackground:withObject:")
-    public native void performSelectorInBackgroundWithObject(SEL aSelector, @Mapped(ObjCObjectMapper.class) Object arg);
+    public native void performSelectorInBackgroundWithObject(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object arg);
 
     @Generated
     @Selector("performSelectorOnMainThread:withObject:waitUntilDone:")
-    public native void performSelectorOnMainThreadWithObjectWaitUntilDone(SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_);
+    public native void performSelectorOnMainThreadWithObjectWaitUntilDone(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_);
 
     @Generated
     @Selector("performSelectorOnMainThread:withObject:waitUntilDone:modes:")
-    public native void performSelectorOnMainThreadWithObjectWaitUntilDoneModes(SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_, NSArray<String> array);
+    public native void performSelectorOnMainThreadWithObjectWaitUntilDoneModes(@NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object arg, boolean wait_, @Nullable NSArray<String> array);
 
     /**
      * API-Since: 8.0
@@ -1005,25 +1038,27 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("provideImageData:bytesPerRow:origin::size::userInfo:")
-    public native void provideImageDataBytesPerRowOrigin_Size_UserInfo(VoidPtr data, @NUInt long rowbytes,
+    public native void provideImageDataBytesPerRowOrigin_Size_UserInfo(@NotNull VoidPtr data, @NUInt long rowbytes,
             @NUInt long x, @NUInt long y, @NUInt long width, @NUInt long height,
-            @Mapped(ObjCObjectMapper.class) Object info);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object info);
 
     @Generated
     @Selector("removeObserver:forKeyPath:")
-    public native void removeObserverForKeyPath(NSObject observer, String keyPath);
+    public native void removeObserverForKeyPath(@NotNull NSObject observer, @NotNull String keyPath);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("removeObserver:forKeyPath:context:")
-    public native void removeObserverForKeyPathContext(NSObject observer, String keyPath, VoidPtr context);
+    public native void removeObserverForKeyPathContext(@NotNull NSObject observer, @NotNull String keyPath,
+            @Nullable VoidPtr context);
 
+    @Nullable
     @Generated
     @Selector("replacementObjectForCoder:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object replacementObjectForCoder(NSCoder coder);
+    public native Object replacementObjectForCoder(@NotNull NSCoder coder);
 
     /**
      * Implemented by classes to substitute a new class for instances during
@@ -1034,10 +1069,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * [self classForArchiver] by default, NOT -classForCoder as might be
      * expected. This is a concession to source compatibility.
      */
+    @Nullable
     @Generated
     @Selector("replacementObjectForKeyedArchiver:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object replacementObjectForKeyedArchiver(NSKeyedArchiver archiver);
+    public native Object replacementObjectForKeyedArchiver(@NotNull NSKeyedArchiver archiver);
 
     @Generated
     @Selector("respondsToSelector:")
@@ -1069,14 +1105,14 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityCustomActions:")
-    public native void setAccessibilityCustomActions(NSArray<? extends UIAccessibilityCustomAction> value);
+    public native void setAccessibilityCustomActions(@Nullable NSArray<? extends UIAccessibilityCustomAction> value);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("setAccessibilityCustomRotors:")
-    public native void setAccessibilityCustomRotors(NSArray<? extends UIAccessibilityCustomRotor> value);
+    public native void setAccessibilityCustomRotors(@Nullable NSArray<? extends UIAccessibilityCustomRotor> value);
 
     /**
      * A list of container elements managed by the receiver.
@@ -1087,7 +1123,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityElements:")
-    public native void setAccessibilityElements(NSArray<?> value);
+    public native void setAccessibilityElements(@Nullable NSArray<?> value);
 
     /**
      * Marks all the accessible elements contained within as hidden.
@@ -1119,7 +1155,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityHint:")
-    public native void setAccessibilityHint(String value);
+    public native void setAccessibilityHint(@Nullable String value);
 
     /**
      * Returns the localized label that represents the element.
@@ -1133,7 +1169,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityLabel:")
-    public native void setAccessibilityLabel(String value);
+    public native void setAccessibilityLabel(@Nullable String value);
 
     /**
      * Returns the language code that the element's label, value and hint should be spoken in.
@@ -1144,7 +1180,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityLanguage:")
-    public native void setAccessibilityLanguage(String value);
+    public native void setAccessibilityLanguage(@Nullable String value);
 
     /**
      * Some assistive technologies allow the user to select a parent view or container to navigate its elements.
@@ -1170,7 +1206,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityPath:")
-    public native void setAccessibilityPath(UIBezierPath value);
+    public native void setAccessibilityPath(@Nullable UIBezierPath value);
 
     /**
      * Returns a UIAccessibilityTraits mask that is the OR combination of
@@ -1196,7 +1232,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityValue:")
-    public native void setAccessibilityValue(String value);
+    public native void setAccessibilityValue(@Nullable String value);
 
     /**
      * Informs whether the receiving view should be considered modal by accessibility. If YES, then
@@ -1228,7 +1264,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setNilValueForKey:")
-    public native void setNilValueForKey(String key);
+    public native void setNilValueForKey(@NotNull String key);
 
     /**
      * Take or return a pointer that identifies information about all of the observers that are registered with the
@@ -1239,7 +1275,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setObservationInfo:")
-    public native void setObservationInfo(VoidPtr value);
+    public native void setObservationInfo(@Nullable VoidPtr value);
 
     /**
      * Forces children elements to be grouped together regardless of their position on screen.
@@ -1292,11 +1328,12 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setValue:forKey:")
-    public native void setValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value, @NotNull String key);
 
     @Generated
     @Selector("setValue:forKeyPath:")
-    public native void setValueForKeyPath(@Mapped(ObjCObjectMapper.class) Object value, String keyPath);
+    public native void setValueForKeyPath(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String keyPath);
 
     /**
      * Given that an invocation of -setValue:forKey: would be unable to set the keyed value using its default mechanism,
@@ -1305,7 +1342,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setValue:forUndefinedKey:")
-    public native void setValueForUndefinedKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setValueForUndefinedKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key);
 
     /**
      * Given a dictionary containing keyed attribute values, to-one-related objects, and/or collections of
@@ -1314,7 +1352,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setValuesForKeysWithDictionary:")
-    public native void setValuesForKeysWithDictionary(NSDictionary<String, ?> keyedValues);
+    public native void setValuesForKeysWithDictionary(@NotNull NSDictionary<String, ?> keyedValues);
 
     /**
      * Forces children elements to be grouped together regardless of their position on screen.
@@ -1348,13 +1386,15 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("validateValue:forKey:error:")
-    public native boolean validateValueForKeyError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue,
-            String inKey, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean validateValueForKeyError(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue, @NotNull String inKey,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("validateValue:forKeyPath:error:")
-    public native boolean validateValueForKeyPathError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue,
-            String inKeyPath, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean validateValueForKeyPathError(
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> ioValue, @NotNull String inKeyPath,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Given a key that identifies an attribute or to-one relationship, return the attribute value or the related
@@ -1413,10 +1453,11 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * -valueForUndefinedKey: in step 6, if the implementation of -handleQueryWithUnboundKey: in the receiver's class is
      * not NSObject's.
      */
+    @Nullable
     @Generated
     @Selector("valueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForKey(String key);
+    public native Object valueForKey(@NotNull String key);
 
     /**
      * Key-path-taking variants of like-named methods. The default implementation of each parses the key path enough to
@@ -1425,20 +1466,22 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * invoked recursively on the result, with the remainder of the key path passed as an argument. If not, the
      * like-named non-key-path-taking method is invoked.
      */
+    @Nullable
     @Generated
     @Selector("valueForKeyPath:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForKeyPath(String keyPath);
+    public native Object valueForKeyPath(@NotNull String keyPath);
 
     /**
      * Given that an invocation of -valueForKey: would be unable to get a keyed value using its default access
      * mechanism, return the keyed value using some other mechanism. The default implementation of this method raises an
      * NSUndefinedKeyException. You can override it to handle properties that are dynamically defined at run-time.
      */
+    @Nullable
     @Generated
     @Selector("valueForUndefinedKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object valueForUndefinedKey(String key);
+    public native Object valueForUndefinedKey(@NotNull String key);
 
     /**
      * Given a key that identifies an _ordered_ to-many relationship, send
@@ -1460,7 +1503,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("willChange:valuesAtIndexes:forKey:")
-    public native void willChangeValuesAtIndexesForKey(@NUInt long changeKind, NSIndexSet indexes, String key);
+    public native void willChangeValuesAtIndexesForKey(@NUInt long changeKind, @NotNull NSIndexSet indexes,
+            @NotNull String key);
 
     /**
      * Given a key that identifies a property (attribute, to-one relationship, or ordered or unordered to-many
@@ -1478,7 +1522,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("willChangeValueForKey:")
-    public native void willChangeValueForKey(String key);
+    public native void willChangeValueForKey(@NotNull String key);
 
     /**
      * Given a key that identifies an _unordered_ to-many relationship, send
@@ -1503,8 +1547,8 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("willChangeValueForKey:withSetMutation:usingObjects:")
-    public native void willChangeValueForKeyWithSetMutationUsingObjects(String key, @NUInt long mutationKind,
-            NSSet<?> objects);
+    public native void willChangeValueForKeyWithSetMutationUsingObjects(@NotNull String key, @NUInt long mutationKind,
+            @NotNull NSSet<?> objects);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1526,6 +1570,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityAttributedHint")
     public native NSAttributedString accessibilityAttributedHint();
@@ -1536,6 +1581,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityAttributedLabel")
     public native NSAttributedString accessibilityAttributedLabel();
@@ -1546,6 +1592,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityAttributedValue")
     public native NSAttributedString accessibilityAttributedValue();
@@ -1600,6 +1647,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityDragSourceDescriptors")
     public native NSArray<? extends UIAccessibilityLocationDescriptor> accessibilityDragSourceDescriptors();
@@ -1607,6 +1655,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityDropPointDescriptors")
     public native NSArray<? extends UIAccessibilityLocationDescriptor> accessibilityDropPointDescriptors();
@@ -1619,7 +1668,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityAttributedHint:")
-    public native void setAccessibilityAttributedHint(NSAttributedString value);
+    public native void setAccessibilityAttributedHint(@Nullable NSAttributedString value);
 
     /**
      * The underlying attributed version of the accessibility label. Setting this property will change the
@@ -1629,7 +1678,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityAttributedLabel:")
-    public native void setAccessibilityAttributedLabel(NSAttributedString value);
+    public native void setAccessibilityAttributedLabel(@Nullable NSAttributedString value);
 
     /**
      * The underlying attributed version of the accessibility value. Setting this property will change the
@@ -1639,7 +1688,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityAttributedValue:")
-    public native void setAccessibilityAttributedValue(NSAttributedString value);
+    public native void setAccessibilityAttributedValue(@Nullable NSAttributedString value);
 
     /**
      * Some containers provide more context for accessibility elements, such as tables or lists.
@@ -1693,14 +1742,15 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
     @Generated
     @Selector("setAccessibilityDragSourceDescriptors:")
     public native void setAccessibilityDragSourceDescriptors(
-            NSArray<? extends UIAccessibilityLocationDescriptor> value);
+            @Nullable NSArray<? extends UIAccessibilityLocationDescriptor> value);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @Selector("setAccessibilityDropPointDescriptors:")
-    public native void setAccessibilityDropPointDescriptors(NSArray<? extends UIAccessibilityLocationDescriptor> value);
+    public native void setAccessibilityDropPointDescriptors(
+            @Nullable NSArray<? extends UIAccessibilityLocationDescriptor> value);
 
     /**
      * The underlying attributed versions of the accessibility user input label(s).
@@ -1734,6 +1784,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("accessibilityTextualContext")
     public native String accessibilityTextualContext();
@@ -1789,7 +1840,7 @@ public class NSObject extends ObjCObject implements apple.protocol.NSObject {
      */
     @Generated
     @Selector("setAccessibilityTextualContext:")
-    public native void setAccessibilityTextualContext(String value);
+    public native void setAccessibilityTextualContext(@Nullable String value);
 
     /**
      * Returns the localized label(s) that should be provided by the user to refer to this element.

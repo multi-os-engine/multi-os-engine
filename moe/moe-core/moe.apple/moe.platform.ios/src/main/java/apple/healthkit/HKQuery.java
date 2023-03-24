@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSNumber;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -77,22 +79,25 @@ public class HKQuery extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class HKQuery extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,10 +159,11 @@ public class HKQuery extends NSObject {
      * 
      *                            API-Since: 9.3
      */
+    @NotNull
     @Generated
     @Selector("predicateForActivitySummariesBetweenStartDateComponents:endDateComponents:")
     public static native NSPredicate predicateForActivitySummariesBetweenStartDateComponentsEndDateComponents(
-            NSDateComponents startDateComponents, NSDateComponents endDateComponents);
+            @NotNull NSDateComponents startDateComponents, @NotNull NSDateComponents endDateComponents);
 
     /**
      * predicateForActivitySummaryWithDateComponents:
@@ -171,10 +178,13 @@ public class HKQuery extends NSObject {
      * 
      *                       API-Since: 9.3
      */
+    @NotNull
     @Generated
     @Selector("predicateForActivitySummaryWithDateComponents:")
-    public static native NSPredicate predicateForActivitySummaryWithDateComponents(NSDateComponents dateComponents);
+    public static native NSPredicate predicateForActivitySummaryWithDateComponents(
+            @NotNull NSDateComponents dateComponents);
 
+    @NotNull
     @Generated
     @Selector("predicateForCategorySamplesWithOperatorType:value:")
     public static native NSPredicate predicateForCategorySamplesWithOperatorTypeValue(@NUInt long operatorType,
@@ -189,9 +199,10 @@ public class HKQuery extends NSObject {
      * 
      * @param UUID The UUID of the object.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectWithUUID:")
-    public static native NSPredicate predicateForObjectWithUUID(NSUUID UUID);
+    public static native NSPredicate predicateForObjectWithUUID(@NotNull NSUUID UUID);
 
     /**
      * predicateForObjectsFromDevices:
@@ -206,9 +217,10 @@ public class HKQuery extends NSObject {
      * 
      *                API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsFromDevices:")
-    public static native NSPredicate predicateForObjectsFromDevices(NSSet<? extends HKDevice> devices);
+    public static native NSPredicate predicateForObjectsFromDevices(@NotNull NSSet<? extends HKDevice> devices);
 
     /**
      * predicateForObjectsFromSource:
@@ -219,9 +231,10 @@ public class HKQuery extends NSObject {
      * 
      * @param source The source.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsFromSource:")
-    public static native NSPredicate predicateForObjectsFromSource(HKSource source);
+    public static native NSPredicate predicateForObjectsFromSource(@NotNull HKSource source);
 
     /**
      * predicateForObjectsFromSourceRevisions:
@@ -234,10 +247,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsFromSourceRevisions:")
     public static native NSPredicate predicateForObjectsFromSourceRevisions(
-            NSSet<? extends HKSourceRevision> sourceRevisions);
+            @NotNull NSSet<? extends HKSourceRevision> sourceRevisions);
 
     /**
      * predicateForObjectsFromSources:
@@ -248,9 +262,10 @@ public class HKQuery extends NSObject {
      * 
      * @param sources The list of sources.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsFromSources:")
-    public static native NSPredicate predicateForObjectsFromSources(NSSet<? extends HKSource> sources);
+    public static native NSPredicate predicateForObjectsFromSources(@NotNull NSSet<? extends HKSource> sources);
 
     /**
      * predicateForObjectsFromWorkout:
@@ -261,9 +276,10 @@ public class HKQuery extends NSObject {
      * 
      * @param workout The HKWorkout that the object was added to.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsFromWorkout:")
-    public static native NSPredicate predicateForObjectsFromWorkout(HKWorkout workout);
+    public static native NSPredicate predicateForObjectsFromWorkout(@NotNull HKWorkout workout);
 
     /**
      * predicateForObjectsWithDeviceProperty:allowedValues:
@@ -280,10 +296,11 @@ public class HKQuery extends NSObject {
      * 
      *                      API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsWithDeviceProperty:allowedValues:")
-    public static native NSPredicate predicateForObjectsWithDevicePropertyAllowedValues(String key,
-            NSSet<String> allowedValues);
+    public static native NSPredicate predicateForObjectsWithDevicePropertyAllowedValues(@NotNull String key,
+            @NotNull NSSet<String> allowedValues);
 
     /**
      * predicateForObjectsWithMetadataKey:
@@ -294,9 +311,10 @@ public class HKQuery extends NSObject {
      * 
      * @param key The metadata key.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsWithMetadataKey:")
-    public static native NSPredicate predicateForObjectsWithMetadataKey(String key);
+    public static native NSPredicate predicateForObjectsWithMetadataKey(@NotNull String key);
 
     /**
      * predicateForObjectsWithMetadataKey:allowedValues:
@@ -309,10 +327,11 @@ public class HKQuery extends NSObject {
      * @param key           The metadata key.
      * @param allowedValues The list of values that the metadata value can be equal to.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsWithMetadataKey:allowedValues:")
-    public static native NSPredicate predicateForObjectsWithMetadataKeyAllowedValues(String key,
-            NSArray<?> allowedValues);
+    public static native NSPredicate predicateForObjectsWithMetadataKeyAllowedValues(@NotNull String key,
+            @NotNull NSArray<?> allowedValues);
 
     /**
      * predicateForObjectsWithMetadataKey:operatorType:value:
@@ -326,10 +345,11 @@ public class HKQuery extends NSObject {
      * @param operatorType The comparison operator type for the expression.
      * @param value        The value to be compared against.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsWithMetadataKey:operatorType:value:")
-    public static native NSPredicate predicateForObjectsWithMetadataKeyOperatorTypeValue(String key,
-            @NUInt long operatorType, @Mapped(ObjCObjectMapper.class) Object value);
+    public static native NSPredicate predicateForObjectsWithMetadataKeyOperatorTypeValue(@NotNull String key,
+            @NUInt long operatorType, @NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * predicateForObjectsNoCorrelation
@@ -338,6 +358,7 @@ public class HKQuery extends NSObject {
      * 
      * Creates a query predicate that matches the objects that are not associated with an HKCorrelation.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsWithNoCorrelation")
     public static native NSPredicate predicateForObjectsWithNoCorrelation();
@@ -351,9 +372,10 @@ public class HKQuery extends NSObject {
      * 
      * @param UUIDs The set of NSUUIDs.
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsWithUUIDs:")
-    public static native NSPredicate predicateForObjectsWithUUIDs(NSSet<? extends NSUUID> UUIDs);
+    public static native NSPredicate predicateForObjectsWithUUIDs(@NotNull NSSet<? extends NSUUID> UUIDs);
 
     /**
      * predicateForQuantitySamplesWithOperatorType:quantity:
@@ -367,10 +389,11 @@ public class HKQuery extends NSObject {
      * @param quantity     The quantity that the sample's quantity is being compared to. It is the right hand side
      *                     of the expression.
      */
+    @NotNull
     @Generated
     @Selector("predicateForQuantitySamplesWithOperatorType:quantity:")
     public static native NSPredicate predicateForQuantitySamplesWithOperatorTypeQuantity(@NUInt long operatorType,
-            HKQuantity quantity);
+            @NotNull HKQuantity quantity);
 
     /**
      * predicateForSamplesWithStartDate:endDate:options:
@@ -384,10 +407,11 @@ public class HKQuery extends NSObject {
      * @param endDate   The end date of the predicate's time interval.
      * @param options   The rules for how a sample's time interval overlaps with the predicate's time interval.
      */
+    @NotNull
     @Generated
     @Selector("predicateForSamplesWithStartDate:endDate:options:")
-    public static native NSPredicate predicateForSamplesWithStartDateEndDateOptions(NSDate startDate, NSDate endDate,
-            @NUInt long options);
+    public static native NSPredicate predicateForSamplesWithStartDateEndDateOptions(@Nullable NSDate startDate,
+            @Nullable NSDate endDate, @NUInt long options);
 
     /**
      * predicateForWorkoutsWithOperatorType:duration:
@@ -400,6 +424,7 @@ public class HKQuery extends NSObject {
      * @param duration     The value that the workout's duration is being compared to. It is the right hand side of the
      *                     expression.
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:duration:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeDuration(@NUInt long operatorType,
@@ -423,11 +448,12 @@ public class HKQuery extends NSObject {
      *                      predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
      *                      HKQuantityType for the desired distance type
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalDistance:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalDistance(@NUInt long operatorType,
-            HKQuantity totalDistance);
+            @NotNull HKQuantity totalDistance);
 
     /**
      * predicateForWorkoutsWithOperatorType:totalEnergyBurned:
@@ -447,11 +473,12 @@ public class HKQuery extends NSObject {
      *                          predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
      *                          HKQuantityType for HKQuantityTypeIdentifierActiveEnergyBurned
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalEnergyBurned:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalEnergyBurned(@NUInt long operatorType,
-            HKQuantity totalEnergyBurned);
+            @NotNull HKQuantity totalEnergyBurned);
 
     /**
      * predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:
@@ -470,11 +497,12 @@ public class HKQuery extends NSObject {
      *                                 Deprecated-Message: Use
      *                                 predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalSwimmingStrokeCount:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalSwimmingStrokeCount(
-            @NUInt long operatorType, HKQuantity totalSwimmingStrokeCount);
+            @NUInt long operatorType, @NotNull HKQuantity totalSwimmingStrokeCount);
 
     /**
      * predicateForWorkoutsWithWorkoutActivityType:
@@ -485,6 +513,7 @@ public class HKQuery extends NSObject {
      * 
      * @param workoutActivityType The HKWorkoutActivity type of the workout
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithWorkoutActivityType:")
     public static native NSPredicate predicateForWorkoutsWithWorkoutActivityType(@NUInt long workoutActivityType);
@@ -517,10 +546,12 @@ public class HKQuery extends NSObject {
     /**
      * API-Since: 9.3
      */
+    @Nullable
     @Generated
     @Selector("objectType")
     public native HKObjectType objectType();
 
+    @Nullable
     @Generated
     @Selector("predicate")
     public native NSPredicate predicate();
@@ -529,6 +560,7 @@ public class HKQuery extends NSObject {
      * API-Since: 8.0
      * Deprecated-Since: 9.3
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("sampleType")
@@ -552,11 +584,12 @@ public class HKQuery extends NSObject {
      *                            predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity: passing the
      *                            HKQuantityType for HKQuantityTypeIdentifierSwimmingStrokeCount
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:totalFlightsClimbed:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeTotalFlightsClimbed(@NUInt long operatorType,
-            HKQuantity totalFlightsClimbed);
+            @NotNull HKQuantity totalFlightsClimbed);
 
     /**
      * predicateForClinicalRecordsFromSource:withFHIRResourceType:identifier:
@@ -572,10 +605,11 @@ public class HKQuery extends NSObject {
      * 
      *                     API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForClinicalRecordsFromSource:FHIRResourceType:identifier:")
-    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(HKSource source,
-            String resourceType, String identifier);
+    public static native NSPredicate predicateForClinicalRecordsFromSourceFHIRResourceTypeIdentifier(
+            @NotNull HKSource source, @NotNull String resourceType, @NotNull String identifier);
 
     /**
      * predicateForClinicalRecordsWithFHIRResourceType:
@@ -588,9 +622,10 @@ public class HKQuery extends NSObject {
      * 
      *                     API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForClinicalRecordsWithFHIRResourceType:")
-    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(String resourceType);
+    public static native NSPredicate predicateForClinicalRecordsWithFHIRResourceType(@NotNull String resourceType);
 
     /**
      * predicateForElectrocardiogramsWithClassification:
@@ -603,6 +638,7 @@ public class HKQuery extends NSObject {
      * 
      *                       API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForElectrocardiogramsWithClassification:")
     public static native NSPredicate predicateForElectrocardiogramsWithClassification(@NInt long classification);
@@ -618,6 +654,7 @@ public class HKQuery extends NSObject {
      * 
      *                       API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForElectrocardiogramsWithSymptomsStatus:")
     public static native NSPredicate predicateForElectrocardiogramsWithSymptomsStatus(@NInt long symptomsStatus);
@@ -633,10 +670,11 @@ public class HKQuery extends NSObject {
      * 
      *                          API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForObjectsAssociatedWithElectrocardiogram:")
     public static native NSPredicate predicateForObjectsAssociatedWithElectrocardiogram(
-            HKElectrocardiogram electrocardiogram);
+            @NotNull HKElectrocardiogram electrocardiogram);
 
     /**
      * predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:
@@ -649,10 +687,11 @@ public class HKQuery extends NSObject {
      * 
      *                     API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval:")
     public static native NSPredicate predicateForVerifiableClinicalRecordsWithRelevantDateWithinDateInterval(
-            NSDateInterval dateInterval);
+            @NotNull NSDateInterval dateInterval);
 
     /**
      * predicateForCategorySamplesEqualToValues:
@@ -661,9 +700,11 @@ public class HKQuery extends NSObject {
      * 
      * Creates a query predicate that matches all specified category values.
      */
+    @NotNull
     @Generated
     @Selector("predicateForCategorySamplesEqualToValues:")
-    public static native NSPredicate predicateForCategorySamplesEqualToValues(NSSet<? extends NSNumber> values);
+    public static native NSPredicate predicateForCategorySamplesEqualToValues(
+            @NotNull NSSet<? extends NSNumber> values);
 
     /**
      * predicateForWorkoutActivitiesWithOperatorType:duration:
@@ -680,6 +721,7 @@ public class HKQuery extends NSObject {
      * 
      *                     API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithOperatorType:duration:")
     public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeDuration(@NUInt long operatorType,
@@ -704,10 +746,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:averageQuantity:")
     public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeAverageQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity averageQuantity);
 
     /**
      * predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:
@@ -728,10 +771,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:maximumQuantity:")
     public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMaximumQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity maximumQuantity);
 
     /**
      * predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:
@@ -752,10 +796,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:minimumQuantity:")
     public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeMinimumQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity minimumQuantity);
 
     /**
      * predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:
@@ -776,10 +821,11 @@ public class HKQuery extends NSObject {
      * 
      *                     API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithOperatorType:quantityType:sumQuantity:")
     public static native NSPredicate predicateForWorkoutActivitiesWithOperatorTypeQuantityTypeSumQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity sumQuantity);
 
     /**
      * predicateForWorkoutActivitiesWithStartDate:endDate:options:
@@ -797,10 +843,11 @@ public class HKQuery extends NSObject {
      * 
      *                  API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithStartDate:endDate:options:")
-    public static native NSPredicate predicateForWorkoutActivitiesWithStartDateEndDateOptions(NSDate startDate,
-            NSDate endDate, @NUInt long options);
+    public static native NSPredicate predicateForWorkoutActivitiesWithStartDateEndDateOptions(
+            @Nullable NSDate startDate, @Nullable NSDate endDate, @NUInt long options);
 
     /**
      * predicateForWorkoutActivitiesWithWorkoutActivityType:
@@ -815,6 +862,7 @@ public class HKQuery extends NSObject {
      * 
      *                            API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutActivitiesWithWorkoutActivityType:")
     public static native NSPredicate predicateForWorkoutActivitiesWithWorkoutActivityType(
@@ -831,9 +879,10 @@ public class HKQuery extends NSObject {
      * 
      *                          API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithActivityPredicate:")
-    public static native NSPredicate predicateForWorkoutsWithActivityPredicate(NSPredicate activityPredicate);
+    public static native NSPredicate predicateForWorkoutsWithActivityPredicate(@NotNull NSPredicate activityPredicate);
 
     /**
      * predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:
@@ -852,10 +901,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:quantityType:averageQuantity:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeAverageQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity averageQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity averageQuantity);
 
     /**
      * predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:
@@ -874,10 +924,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:quantityType:maximumQuantity:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMaximumQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity maximumQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity maximumQuantity);
 
     /**
      * predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:
@@ -896,10 +947,11 @@ public class HKQuery extends NSObject {
      * 
      *                        API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:quantityType:minimumQuantity:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeMinimumQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity minimumQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity minimumQuantity);
 
     /**
      * predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:
@@ -918,8 +970,9 @@ public class HKQuery extends NSObject {
      * 
      *                     API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForWorkoutsWithOperatorType:quantityType:sumQuantity:")
     public static native NSPredicate predicateForWorkoutsWithOperatorTypeQuantityTypeSumQuantity(
-            @NUInt long operatorType, HKQuantityType quantityType, HKQuantity sumQuantity);
+            @NUInt long operatorType, @NotNull HKQuantityType quantityType, @NotNull HKQuantity sumQuantity);
 }

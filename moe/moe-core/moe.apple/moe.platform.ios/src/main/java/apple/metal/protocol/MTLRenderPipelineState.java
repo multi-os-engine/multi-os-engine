@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLRenderPipelineState
@@ -50,11 +52,13 @@ import apple.metal.struct.MTLResourceID;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("MTLRenderPipelineState")
 public interface MTLRenderPipelineState {
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
     MTLDevice device();
 
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -120,10 +124,11 @@ public interface MTLRenderPipelineState {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("functionHandleWithFunction:stage:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLFunctionHandle functionHandleWithFunctionStage(@Mapped(ObjCObjectMapper.class) MTLFunction function,
+    MTLFunctionHandle functionHandleWithFunctionStage(@NotNull @Mapped(ObjCObjectMapper.class) MTLFunction function,
             @NUInt long stage);
 
     /**
@@ -133,11 +138,12 @@ public interface MTLRenderPipelineState {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("newIntersectionFunctionTableWithDescriptor:stage:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLIntersectionFunctionTable newIntersectionFunctionTableWithDescriptorStage(
-            MTLIntersectionFunctionTableDescriptor descriptor, @NUInt long stage);
+            @NotNull MTLIntersectionFunctionTableDescriptor descriptor, @NUInt long stage);
 
     /**
      * newRenderPipelineStateWithAdditionalBinaryFunctions:error:
@@ -146,12 +152,13 @@ public interface MTLRenderPipelineState {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("newRenderPipelineStateWithAdditionalBinaryFunctions:error:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLRenderPipelineState newRenderPipelineStateWithAdditionalBinaryFunctionsError(
-            MTLRenderPipelineFunctionsDescriptor additionalBinaryFunctions,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull MTLRenderPipelineFunctionsDescriptor additionalBinaryFunctions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * newVisibleFunctionTableWithDescriptor:stage:
@@ -160,11 +167,12 @@ public interface MTLRenderPipelineState {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("newVisibleFunctionTableWithDescriptor:stage:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLVisibleFunctionTable newVisibleFunctionTableWithDescriptorStage(MTLVisibleFunctionTableDescriptor descriptor,
-            @NUInt long stage);
+    MTLVisibleFunctionTable newVisibleFunctionTableWithDescriptorStage(
+            @NotNull MTLVisibleFunctionTableDescriptor descriptor, @NUInt long stage);
 
     /**
      * [@property] gpuResourceID

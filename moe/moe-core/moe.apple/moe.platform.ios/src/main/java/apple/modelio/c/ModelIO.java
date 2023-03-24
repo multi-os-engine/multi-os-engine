@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("ModelIO")
@@ -42,6 +43,7 @@ public final class ModelIO {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -52,6 +54,7 @@ public final class ModelIO {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,6 +65,7 @@ public final class ModelIO {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -72,6 +76,7 @@ public final class ModelIO {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -82,6 +87,7 @@ public final class ModelIO {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -91,6 +97,7 @@ public final class ModelIO {
      * The attribute data describes the degree to which a surface’s appearance
      * changes in appearance when rotated about its normal vector.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -99,6 +106,7 @@ public final class ModelIO {
     /**
      * The normal to a curve at a vertex position
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -107,6 +115,7 @@ public final class ModelIO {
     /**
      * The vector completing a tangent basis at a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -115,6 +124,7 @@ public final class ModelIO {
     /**
      * Color of a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -124,6 +134,7 @@ public final class ModelIO {
      * A crease value along an edge to be applied during subdivision.
      * A zero value indicates an edge is smooth, one is sharply creased.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -132,6 +143,7 @@ public final class ModelIO {
     /**
      * Indices of joints in an animation rig corresponding to weighting information
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -140,6 +152,7 @@ public final class ModelIO {
     /**
      * Weights corresponding to joints for the purpose of blending animation
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -148,6 +161,7 @@ public final class ModelIO {
     /**
      * The direction of a normal at a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -156,6 +170,7 @@ public final class ModelIO {
     /**
      * A value indicating the degree to which a vertex is occluded by surrounding geometry
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -164,6 +179,7 @@ public final class ModelIO {
     /**
      * The position of a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -172,6 +188,7 @@ public final class ModelIO {
     /**
      * The u direction of a shading basis at a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -180,6 +197,7 @@ public final class ModelIO {
     /**
      * The v direction of a shading basis at a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -188,6 +206,7 @@ public final class ModelIO {
     /**
      * Stencil values for subdivision at a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -196,6 +215,7 @@ public final class ModelIO {
     /**
      * A vector tangent to a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -204,6 +224,7 @@ public final class ModelIO {
     /**
      * Texture coordinate mapping at a vertex
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -215,6 +236,7 @@ public final class ModelIO {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

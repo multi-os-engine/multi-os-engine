@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNDistanceConstraint
@@ -62,22 +64,25 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,7 +102,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("distanceConstraintWithTarget:")
-    public static native SCNDistanceConstraint distanceConstraintWithTarget(SCNNode target);
+    public static native SCNDistanceConstraint distanceConstraintWithTarget(@Nullable SCNNode target);
 
     @Generated
     @Selector("hash")
@@ -110,7 +115,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNDistanceConstraint initWithCoder(NSCoder coder);
+    public native SCNDistanceConstraint initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -129,9 +134,10 @@ public class SCNDistanceConstraint extends SCNConstraint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] maximumDistance
@@ -191,7 +197,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
      */
     @Generated
     @Selector("setTarget:")
-    public native void setTarget(SCNNode value);
+    public native void setTarget(@Nullable SCNNode value);
 
     @Generated
     @Selector("setVersion:")
@@ -216,6 +222,7 @@ public class SCNDistanceConstraint extends SCNConstraint {
      * 
      * Defines the target node to keep distance with.
      */
+    @Nullable
     @Generated
     @Selector("target")
     public native SCNNode target();

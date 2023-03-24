@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An objecting conforming to \c GCDevicePhysicalInput provides properties and
@@ -34,6 +36,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * 
      * @return An input state with the duplicated state vector of the current input.
      */
+    @NotNull
     @Generated
     @Selector("capture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -42,6 +45,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     /**
      * The device that this profile is mapping input from.
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -63,6 +67,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * @param element
      *                The element that has been modified.
      */
+    @Nullable
     @Generated
     @Selector("elementValueDidChangeHandler")
     @ObjCBlock(name = "call_elementValueDidChangeHandler_ret")
@@ -72,8 +77,8 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     public interface Block_elementValueDidChangeHandler_ret {
         @Generated
-        void call_elementValueDidChangeHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_elementValueDidChangeHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 
     /**
@@ -109,6 +114,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * }
      * };
      */
+    @Nullable
     @Generated
     @Selector("inputStateAvailableHandler")
     @ObjCBlock(name = "call_inputStateAvailableHandler_ret")
@@ -118,7 +124,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     public interface Block_inputStateAvailableHandler_ret {
         @Generated
-        void call_inputStateAvailableHandler_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_inputStateAvailableHandler_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     /**
@@ -140,6 +146,7 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
      * Pop the oldest pending input state from the queue. This method returns \c nil
      * when there are no more input states pending.
      */
+    @Nullable
     @Generated
     @Selector("nextInputState")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,14 +171,14 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     @Selector("setElementValueDidChangeHandler:")
     void setElementValueDidChangeHandler(
-            @ObjCBlock(name = "call_setElementValueDidChangeHandler") Block_setElementValueDidChangeHandler value);
+            @Nullable @ObjCBlock(name = "call_setElementValueDidChangeHandler") Block_setElementValueDidChangeHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setElementValueDidChangeHandler {
         @Generated
-        void call_setElementValueDidChangeHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                @Mapped(ObjCObjectMapper.class) Object arg1);
+        void call_setElementValueDidChangeHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object arg1);
     }
 
     /**
@@ -210,13 +217,13 @@ public interface GCDevicePhysicalInput extends GCDevicePhysicalInputState {
     @Generated
     @Selector("setInputStateAvailableHandler:")
     void setInputStateAvailableHandler(
-            @ObjCBlock(name = "call_setInputStateAvailableHandler") Block_setInputStateAvailableHandler value);
+            @Nullable @ObjCBlock(name = "call_setInputStateAvailableHandler") Block_setInputStateAvailableHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setInputStateAvailableHandler {
         @Generated
-        void call_setInputStateAvailableHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_setInputStateAvailableHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     /**

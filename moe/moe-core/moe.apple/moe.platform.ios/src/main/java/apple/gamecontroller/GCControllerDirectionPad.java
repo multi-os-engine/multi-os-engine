@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A direction pad is a common grouping of 2 axis inputs where the input can also be interpreted as 2 sets of mutually
@@ -76,22 +78,25 @@ public class GCControllerDirectionPad extends GCControllerElement {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +162,7 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("down")
     public native GCControllerButtonInput down();
@@ -164,10 +171,12 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Selector("init")
     public native GCControllerDirectionPad init();
 
+    @NotNull
     @Generated
     @Selector("left")
     public native GCControllerButtonInput left();
 
+    @NotNull
     @Generated
     @Selector("right")
     public native GCControllerButtonInput right();
@@ -175,21 +184,25 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Generated
     @Selector("setValueChangedHandler:")
     public native void setValueChangedHandler(
-            @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
+            @Nullable @ObjCBlock(name = "call_setValueChangedHandler") Block_setValueChangedHandler value);
 
+    @NotNull
     @Generated
     @Selector("up")
     public native GCControllerButtonInput up();
 
+    @Nullable
     @Generated
     @Selector("valueChangedHandler")
     @ObjCBlock(name = "call_valueChangedHandler_ret")
     public native Block_valueChangedHandler_ret valueChangedHandler();
 
+    @NotNull
     @Generated
     @Selector("xAxis")
     public native GCControllerAxisInput xAxis();
 
+    @NotNull
     @Generated
     @Selector("yAxis")
     public native GCControllerAxisInput yAxis();
@@ -198,14 +211,14 @@ public class GCControllerDirectionPad extends GCControllerElement {
     @Generated
     public interface Block_setValueChangedHandler {
         @Generated
-        void call_setValueChangedHandler(GCControllerDirectionPad dpad, float xValue, float yValue);
+        void call_setValueChangedHandler(@NotNull GCControllerDirectionPad dpad, float xValue, float yValue);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_valueChangedHandler_ret {
         @Generated
-        void call_valueChangedHandler_ret(GCControllerDirectionPad dpad, float xValue, float yValue);
+        void call_valueChangedHandler_ret(@NotNull GCControllerDirectionPad dpad, float xValue, float yValue);
     }
 
     /**

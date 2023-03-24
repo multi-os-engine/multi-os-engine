@@ -34,6 +34,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSetClimateSettingsInCarIntent. By implementing this protocol, a class
@@ -71,8 +72,8 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSetClimateSettingsInCar:completion:")
-    default void confirmSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_confirmSetClimateSettingsInCarCompletion") Block_confirmSetClimateSettingsInCarCompletion completion) {
+    default void confirmSetClimateSettingsInCarCompletion(@NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSetClimateSettingsInCarCompletion") Block_confirmSetClimateSettingsInCarCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,23 +90,24 @@ public interface INSetClimateSettingsInCarIntentHandling {
      */
     @Generated
     @Selector("handleSetClimateSettingsInCar:completion:")
-    void handleSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_handleSetClimateSettingsInCarCompletion") Block_handleSetClimateSettingsInCarCompletion completion);
+    void handleSetClimateSettingsInCarCompletion(@NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSetClimateSettingsInCarCompletion") Block_handleSetClimateSettingsInCarCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveAirCirculationModeForSetClimateSettingsInCar:withCompletion:")
     default void resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion(
-            INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion") Block_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion completion) {
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion") Block_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveClimateZoneForSetClimateSettingsInCar:withCompletion:")
-    default void resolveClimateZoneForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveClimateZoneForSetClimateSettingsInCarWithCompletion") Block_resolveClimateZoneForSetClimateSettingsInCarWithCompletion completion) {
+    default void resolveClimateZoneForSetClimateSettingsInCarWithCompletion(
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveClimateZoneForSetClimateSettingsInCarWithCompletion") Block_resolveClimateZoneForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -113,16 +115,17 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @IsOptional
     @Selector("resolveEnableAirConditionerForSetClimateSettingsInCar:withCompletion:")
     default void resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion(
-            INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion") Block_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion completion) {
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion") Block_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveEnableAutoModeForSetClimateSettingsInCar:withCompletion:")
-    default void resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion") Block_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion completion) {
+    default void resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion(
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion") Block_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,8 +133,8 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @IsOptional
     @Selector("resolveEnableClimateControlForSetClimateSettingsInCar:withCompletion:")
     default void resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion(
-            INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion") Block_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion completion) {
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion") Block_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,16 +152,18 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveEnableFanForSetClimateSettingsInCar:withCompletion:")
-    default void resolveEnableFanForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveEnableFanForSetClimateSettingsInCarWithCompletion") Block_resolveEnableFanForSetClimateSettingsInCarWithCompletion completion) {
+    default void resolveEnableFanForSetClimateSettingsInCarWithCompletion(
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveEnableFanForSetClimateSettingsInCarWithCompletion") Block_resolveEnableFanForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveFanSpeedIndexForSetClimateSettingsInCar:withCompletion:")
-    default void resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion") Block_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion completion) {
+    default void resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion(
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion") Block_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,8 +171,8 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @IsOptional
     @Selector("resolveFanSpeedPercentageForSetClimateSettingsInCar:withCompletion:")
     default void resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion(
-            INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion") Block_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion completion) {
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion") Block_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,8 +180,8 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @IsOptional
     @Selector("resolveRelativeFanSpeedSettingForSetClimateSettingsInCar:withCompletion:")
     default void resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion(
-            INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion") Block_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion completion) {
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion") Block_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,16 +189,17 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @IsOptional
     @Selector("resolveRelativeTemperatureSettingForSetClimateSettingsInCar:withCompletion:")
     default void resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion(
-            INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion") Block_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion completion) {
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion") Block_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveTemperatureForSetClimateSettingsInCar:withCompletion:")
-    default void resolveTemperatureForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveTemperatureForSetClimateSettingsInCarWithCompletion") Block_resolveTemperatureForSetClimateSettingsInCarWithCompletion completion) {
+    default void resolveTemperatureForSetClimateSettingsInCarWithCompletion(
+            @NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTemperatureForSetClimateSettingsInCarWithCompletion") Block_resolveTemperatureForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,14 +207,14 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @Generated
     public interface Block_confirmSetClimateSettingsInCarCompletion {
         @Generated
-        void call_confirmSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntentResponse response);
+        void call_confirmSetClimateSettingsInCarCompletion(@NotNull INSetClimateSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSetClimateSettingsInCarCompletion {
         @Generated
-        void call_handleSetClimateSettingsInCarCompletion(INSetClimateSettingsInCarIntentResponse response);
+        void call_handleSetClimateSettingsInCarCompletion(@NotNull INSetClimateSettingsInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -216,7 +222,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveAirCirculationModeForSetClimateSettingsInCarWithCompletion(
-                INCarAirCirculationModeResolutionResult resolutionResult);
+                @NotNull INCarAirCirculationModeResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -224,7 +230,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveClimateZoneForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveClimateZoneForSetClimateSettingsInCarWithCompletion(
-                INCarSeatResolutionResult resolutionResult);
+                @NotNull INCarSeatResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -232,7 +238,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveEnableAirConditionerForSetClimateSettingsInCarWithCompletion(
-                INBooleanResolutionResult resolutionResult);
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -240,7 +246,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveEnableAutoModeForSetClimateSettingsInCarWithCompletion(
-                INBooleanResolutionResult resolutionResult);
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -248,14 +254,15 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveEnableClimateControlForSetClimateSettingsInCarWithCompletion(
-                INBooleanResolutionResult resolutionResult);
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveEnableFanForSetClimateSettingsInCarWithCompletion {
         @Generated
-        void call_resolveEnableFanForSetClimateSettingsInCarWithCompletion(INBooleanResolutionResult resolutionResult);
+        void call_resolveEnableFanForSetClimateSettingsInCarWithCompletion(
+                @NotNull INBooleanResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -263,7 +270,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveFanSpeedIndexForSetClimateSettingsInCarWithCompletion(
-                INIntegerResolutionResult resolutionResult);
+                @NotNull INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -271,7 +278,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveFanSpeedPercentageForSetClimateSettingsInCarWithCompletion(
-                INDoubleResolutionResult resolutionResult);
+                @NotNull INDoubleResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -279,7 +286,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveRelativeFanSpeedSettingForSetClimateSettingsInCarWithCompletion(
-                INRelativeSettingResolutionResult resolutionResult);
+                @NotNull INRelativeSettingResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -287,7 +294,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveRelativeTemperatureSettingForSetClimateSettingsInCarWithCompletion(
-                INRelativeSettingResolutionResult resolutionResult);
+                @NotNull INRelativeSettingResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -295,7 +302,7 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveTemperatureForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveTemperatureForSetClimateSettingsInCarWithCompletion(
-                INTemperatureResolutionResult resolutionResult);
+                @NotNull INTemperatureResolutionResult resolutionResult);
     }
 
     /**
@@ -304,8 +311,8 @@ public interface INSetClimateSettingsInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCarNameForSetClimateSettingsInCar:withCompletion:")
-    default void resolveCarNameForSetClimateSettingsInCarWithCompletion(INSetClimateSettingsInCarIntent intent,
-            @ObjCBlock(name = "call_resolveCarNameForSetClimateSettingsInCarWithCompletion") Block_resolveCarNameForSetClimateSettingsInCarWithCompletion completion) {
+    default void resolveCarNameForSetClimateSettingsInCarWithCompletion(@NotNull INSetClimateSettingsInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCarNameForSetClimateSettingsInCarWithCompletion") Block_resolveCarNameForSetClimateSettingsInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -314,6 +321,6 @@ public interface INSetClimateSettingsInCarIntentHandling {
     public interface Block_resolveCarNameForSetClimateSettingsInCarWithCompletion {
         @Generated
         void call_resolveCarNameForSetClimateSettingsInCarWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -63,29 +65,32 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -95,6 +100,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("extensionContext")
     public native ASCredentialProviderExtensionContext extensionContext();
@@ -110,12 +116,12 @@ public class ASCredentialProviderViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native ASCredentialProviderViewController initWithCoder(NSCoder coder);
+    public native ASCredentialProviderViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native ASCredentialProviderViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native ASCredentialProviderViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -134,9 +140,10 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,7 +171,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Generated
     @Selector("prepareCredentialListForServiceIdentifiers:")
     public native void prepareCredentialListForServiceIdentifiers(
-            NSArray<? extends ASCredentialServiceIdentifier> serviceIdentifiers);
+            @NotNull NSArray<? extends ASCredentialServiceIdentifier> serviceIdentifiers);
 
     /**
      * Prepare the view controller to show user interface when the user enables your extension.
@@ -202,7 +209,8 @@ public class ASCredentialProviderViewController extends UIViewController {
      */
     @Generated
     @Selector("prepareInterfaceToProvideCredentialForIdentity:")
-    public native void prepareInterfaceToProvideCredentialForIdentity(ASPasswordCredentialIdentity credentialIdentity);
+    public native void prepareInterfaceToProvideCredentialForIdentity(
+            @NotNull ASPasswordCredentialIdentity credentialIdentity);
 
     /**
      * Attempt to provide the user-requested credential without any user interaction.
@@ -229,7 +237,7 @@ public class ASCredentialProviderViewController extends UIViewController {
     @Generated
     @Selector("provideCredentialWithoutUserInteractionForIdentity:")
     public native void provideCredentialWithoutUserInteractionForIdentity(
-            ASPasswordCredentialIdentity credentialIdentity);
+            @NotNull ASPasswordCredentialIdentity credentialIdentity);
 
     @Generated
     @Selector("resolveClassMethod:")

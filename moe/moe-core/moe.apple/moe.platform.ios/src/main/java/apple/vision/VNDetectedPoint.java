@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * VNDetectedPoint
@@ -66,22 +68,25 @@ public class VNDetectedPoint extends VNPoint {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,7 +109,7 @@ public class VNDetectedPoint extends VNPoint {
     @Deprecated
     @Generated
     @Selector("distanceBetweenPoint:point:")
-    public static native double distanceBetweenPointPoint(VNPoint point1, VNPoint point2);
+    public static native double distanceBetweenPointPoint(@NotNull VNPoint point1, @NotNull VNPoint point2);
 
     @Generated
     @Selector("hash")
@@ -117,7 +122,7 @@ public class VNDetectedPoint extends VNPoint {
 
     @Generated
     @Selector("initWithCoder:")
-    public native VNDetectedPoint initWithCoder(NSCoder coder);
+    public native VNDetectedPoint initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLocation:")
@@ -144,18 +149,20 @@ public class VNDetectedPoint extends VNPoint {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native VNDetectedPoint new_objc();
 
+    @NotNull
     @Generated
     @Selector("pointByApplyingVector:toPoint:")
-    public static native VNPoint pointByApplyingVectorToPoint(VNVector vector, VNPoint point);
+    public static native VNPoint pointByApplyingVectorToPoint(@NotNull VNVector vector, @NotNull VNPoint point);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -188,6 +195,7 @@ public class VNDetectedPoint extends VNPoint {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("zeroPoint")
     public static native VNPoint zeroPoint();

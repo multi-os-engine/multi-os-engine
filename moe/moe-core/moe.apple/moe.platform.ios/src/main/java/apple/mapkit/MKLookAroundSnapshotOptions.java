@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -58,22 +60,25 @@ public class MKLookAroundSnapshotOptions extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,15 +117,17 @@ public class MKLookAroundSnapshotOptions extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MKLookAroundSnapshotOptions new_objc();
 
+    @Nullable
     @Generated
     @Selector("pointOfInterestFilter")
     public native MKPointOfInterestFilter pointOfInterestFilter();
@@ -135,7 +142,7 @@ public class MKLookAroundSnapshotOptions extends NSObject {
 
     @Generated
     @Selector("setPointOfInterestFilter:")
-    public native void setPointOfInterestFilter(MKPointOfInterestFilter value);
+    public native void setPointOfInterestFilter(@Nullable MKPointOfInterestFilter value);
 
     /**
      * The size of the image to create. Defaults to 256x256
@@ -149,7 +156,7 @@ public class MKLookAroundSnapshotOptions extends NSObject {
      */
     @Generated
     @Selector("setTraitCollection:")
-    public native void setTraitCollection(UITraitCollection value);
+    public native void setTraitCollection(@NotNull UITraitCollection value);
 
     @Generated
     @Selector("setVersion:")
@@ -170,6 +177,7 @@ public class MKLookAroundSnapshotOptions extends NSObject {
     /**
      * Set traitCollection.displayScale to specify the scale factor to use when creating the image
      */
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();

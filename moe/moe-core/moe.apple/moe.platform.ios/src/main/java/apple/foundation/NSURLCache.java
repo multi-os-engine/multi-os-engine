@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -69,22 +71,25 @@ public class NSURLCache extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -119,9 +124,10 @@ public class NSURLCache extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,7 +172,7 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("setSharedURLCache:")
-    public static native void setSharedURLCache(NSURLCache value);
+    public static native void setSharedURLCache(@NotNull NSURLCache value);
 
     @Generated
     @Selector("setVersion:")
@@ -200,6 +206,7 @@ public class NSURLCache extends NSObject {
      * 
      * @return the shared NSURLCache instance.
      */
+    @NotNull
     @Generated
     @Selector("sharedURLCache")
     public static native NSURLCache sharedURLCache();
@@ -227,9 +234,10 @@ public class NSURLCache extends NSObject {
      *         request, or nil if there is no NSCachedURLResponse stored with the
      *         given request.
      */
+    @Nullable
     @Generated
     @Selector("cachedResponseForRequest:")
-    public native NSCachedURLResponse cachedResponseForRequest(NSURLRequest request);
+    public native NSCachedURLResponse cachedResponseForRequest(@NotNull NSURLRequest request);
 
     /**
      * Returns the current amount of space consumed by the
@@ -275,8 +283,8 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("getCachedResponseForDataTask:completionHandler:")
-    public native void getCachedResponseForDataTaskCompletionHandler(NSURLSessionDataTask dataTask,
-            @ObjCBlock(name = "call_getCachedResponseForDataTaskCompletionHandler") Block_getCachedResponseForDataTaskCompletionHandler completionHandler);
+    public native void getCachedResponseForDataTaskCompletionHandler(@NotNull NSURLSessionDataTask dataTask,
+            @NotNull @ObjCBlock(name = "call_getCachedResponseForDataTaskCompletionHandler") Block_getCachedResponseForDataTaskCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -306,7 +314,7 @@ public class NSURLCache extends NSObject {
     @Generated
     @Selector("initWithMemoryCapacity:diskCapacity:diskPath:")
     public native NSURLCache initWithMemoryCapacityDiskCapacityDiskPath(@NUInt long memoryCapacity,
-            @NUInt long diskCapacity, String path);
+            @NUInt long diskCapacity, @Nullable String path);
 
     /**
      * In-memory capacity of the receiver.
@@ -335,7 +343,7 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("removeCachedResponseForDataTask:")
-    public native void removeCachedResponseForDataTask(NSURLSessionDataTask dataTask);
+    public native void removeCachedResponseForDataTask(@NotNull NSURLSessionDataTask dataTask);
 
     /**
      * removeCachedResponseForRequest:
@@ -350,7 +358,7 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("removeCachedResponseForRequest:")
-    public native void removeCachedResponseForRequest(NSURLRequest request);
+    public native void removeCachedResponseForRequest(@NotNull NSURLRequest request);
 
     /**
      * removeCachedResponsesSince:
@@ -361,7 +369,7 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("removeCachedResponsesSinceDate:")
-    public native void removeCachedResponsesSinceDate(NSDate date);
+    public native void removeCachedResponsesSinceDate(@NotNull NSDate date);
 
     /**
      * The on-disk capacity of the receiver.
@@ -389,8 +397,8 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("storeCachedResponse:forDataTask:")
-    public native void storeCachedResponseForDataTask(NSCachedURLResponse cachedResponse,
-            NSURLSessionDataTask dataTask);
+    public native void storeCachedResponseForDataTask(@NotNull NSCachedURLResponse cachedResponse,
+            @NotNull NSURLSessionDataTask dataTask);
 
     /**
      * storeCachedResponse:forRequest:
@@ -403,13 +411,14 @@ public class NSURLCache extends NSObject {
      */
     @Generated
     @Selector("storeCachedResponse:forRequest:")
-    public native void storeCachedResponseForRequest(NSCachedURLResponse cachedResponse, NSURLRequest request);
+    public native void storeCachedResponseForRequest(@NotNull NSCachedURLResponse cachedResponse,
+            @NotNull NSURLRequest request);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCachedResponseForDataTaskCompletionHandler {
         @Generated
-        void call_getCachedResponseForDataTaskCompletionHandler(NSCachedURLResponse cachedResponse);
+        void call_getCachedResponseForDataTaskCompletionHandler(@Nullable NSCachedURLResponse cachedResponse);
     }
 
     /**
@@ -428,5 +437,5 @@ public class NSURLCache extends NSObject {
     @Generated
     @Selector("initWithMemoryCapacity:diskCapacity:directoryURL:")
     public native NSURLCache initWithMemoryCapacityDiskCapacityDirectoryURL(@NUInt long memoryCapacity,
-            @NUInt long diskCapacity, NSURL directoryURL);
+            @NUInt long diskCapacity, @Nullable NSURL directoryURL);
 }

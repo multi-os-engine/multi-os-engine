@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixSolveCholesky
@@ -75,22 +77,25 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,8 +135,8 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:")
     public native void encodeToCommandBufferSourceMatrixRightHandSideMatrixSolutionMatrix(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSMatrix sourceMatrix,
-            MPSMatrix rightHandSideMatrix, MPSMatrix solutionMatrix);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSMatrix sourceMatrix,
+            @NotNull MPSMatrix rightHandSideMatrix, @NotNull MPSMatrix solutionMatrix);
 
     @Generated
     @Selector("hash")
@@ -144,16 +149,16 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixSolveCholesky initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixSolveCholesky initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixSolveCholesky initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSolveCholesky initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixSolveCholesky initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSolveCholesky initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize an MPSMatrixSolveCholesky object on a device
@@ -175,7 +180,7 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
     @Generated
     @Selector("initWithDevice:upper:order:numberOfRightHandSides:")
     public native MPSMatrixSolveCholesky initWithDeviceUpperOrderNumberOfRightHandSides(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean upper, @NUInt long order,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, boolean upper, @NUInt long order,
             @NUInt long numberOfRightHandSides);
 
     @Generated
@@ -195,9 +200,10 @@ public class MPSMatrixSolveCholesky extends MPSMatrixBinaryKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

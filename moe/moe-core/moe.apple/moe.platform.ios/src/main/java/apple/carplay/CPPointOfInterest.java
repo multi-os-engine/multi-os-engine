@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
 import org.moe.natj.general.ann.ByValue;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -63,22 +65,25 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +101,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c subtitle.
      */
+    @Nullable
     @Generated
     @Selector("detailSubtitle")
     public native String detailSubtitle();
@@ -105,6 +111,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c summary.
      */
+    @Nullable
     @Generated
     @Selector("detailSummary")
     public native String detailSummary();
@@ -114,13 +121,14 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * [@note] If not provided, the point of interest will fall back to displaying @c title.
      */
+    @Nullable
     @Generated
     @Selector("detailTitle")
     public native String detailTitle();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -133,7 +141,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPPointOfInterest initWithCoder(NSCoder coder);
+    public native CPPointOfInterest initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a point of interest to be used with @c CPPointOfInterestTemplate.
@@ -162,8 +170,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithLocation:title:subtitle:summary:detailTitle:detailSubtitle:detailSummary:pinImage:")
     public native CPPointOfInterest initWithLocationTitleSubtitleSummaryDetailTitleDetailSubtitleDetailSummaryPinImage(
-            MKMapItem location, String title, String subtitle, String summary, String detailTitle,
-            String detailSubtitle, String detailSummary, UIImage pinImage);
+            @NotNull MKMapItem location, @NotNull String title, @Nullable String subtitle, @Nullable String summary,
+            @Nullable String detailTitle, @Nullable String detailSubtitle, @Nullable String detailSummary,
+            @Nullable UIImage pinImage);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -182,13 +191,15 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Location associated with this point of interest.
      */
+    @NotNull
     @Generated
     @Selector("location")
     public native MKMapItem location();
@@ -204,6 +215,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * To properly size your pin image, your app should size them to the display scale of the car screen. See
      * -[CPInterfaceController carTraitCollection].
      */
+    @Nullable
     @Generated
     @Selector("pinImage")
     public native UIImage pinImage();
@@ -211,6 +223,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     /**
      * Point of Interest detail card buttons.
      */
+    @Nullable
     @Generated
     @Selector("primaryButton")
     public native CPTextButton primaryButton();
@@ -223,6 +236,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @Nullable
     @Generated
     @Selector("secondaryButton")
     public native CPTextButton secondaryButton();
@@ -234,7 +248,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setDetailSubtitle:")
-    public native void setDetailSubtitle(String value);
+    public native void setDetailSubtitle(@Nullable String value);
 
     /**
      * Summary text to be used when POI detail card is visible.
@@ -243,7 +257,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setDetailSummary:")
-    public native void setDetailSummary(String value);
+    public native void setDetailSummary(@Nullable String value);
 
     /**
      * Title to be used when POI detail card is visible.
@@ -252,14 +266,14 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setDetailTitle:")
-    public native void setDetailTitle(String value);
+    public native void setDetailTitle(@Nullable String value);
 
     /**
      * Location associated with this point of interest.
      */
     @Generated
     @Selector("setLocation:")
-    public native void setLocation(MKMapItem value);
+    public native void setLocation(@NotNull MKMapItem value);
 
     /**
      * Image used for map view unselected annotations.
@@ -269,46 +283,46 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setPinImage:")
-    public native void setPinImage(UIImage value);
+    public native void setPinImage(@Nullable UIImage value);
 
     /**
      * Point of Interest detail card buttons.
      */
     @Generated
     @Selector("setPrimaryButton:")
-    public native void setPrimaryButton(CPTextButton value);
+    public native void setPrimaryButton(@Nullable CPTextButton value);
 
     @Generated
     @Selector("setSecondaryButton:")
-    public native void setSecondaryButton(CPTextButton value);
+    public native void setSecondaryButton(@Nullable CPTextButton value);
 
     /**
      * Subtitle for this point of interest.
      */
     @Generated
     @Selector("setSubtitle:")
-    public native void setSubtitle(String value);
+    public native void setSubtitle(@Nullable String value);
 
     /**
      * Summary text for this point of interest.
      */
     @Generated
     @Selector("setSummary:")
-    public native void setSummary(String value);
+    public native void setSummary(@Nullable String value);
 
     /**
      * Primary title for this point of interest.
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * Any custom data or an object associated with this Point of Interest.
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -317,6 +331,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     /**
      * Subtitle for this point of interest.
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -324,6 +339,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     /**
      * Summary text for this point of interest.
      */
+    @Nullable
     @Generated
     @Selector("summary")
     public native String summary();
@@ -345,6 +361,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     /**
      * Primary title for this point of interest.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -352,6 +369,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     /**
      * Any custom data or an object associated with this Point of Interest.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)
@@ -392,8 +410,9 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithLocation:title:subtitle:summary:detailTitle:detailSubtitle:detailSummary:pinImage:selectedPinImage:")
     public native CPPointOfInterest initWithLocationTitleSubtitleSummaryDetailTitleDetailSubtitleDetailSummaryPinImageSelectedPinImage(
-            MKMapItem location, String title, String subtitle, String summary, String detailTitle,
-            String detailSubtitle, String detailSummary, UIImage pinImage, UIImage selectedPinImage);
+            @NotNull MKMapItem location, @NotNull String title, @Nullable String subtitle, @Nullable String summary,
+            @Nullable String detailTitle, @Nullable String detailSubtitle, @Nullable String detailSummary,
+            @Nullable UIImage pinImage, @Nullable UIImage selectedPinImage);
 
     /**
      * If you provide a custom image for this point of interest, the unselected image must be this size. Any image
@@ -414,6 +433,7 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("selectedPinImage")
     public native UIImage selectedPinImage();
@@ -439,5 +459,5 @@ public class CPPointOfInterest extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setSelectedPinImage:")
-    public native void setSelectedPinImage(UIImage value);
+    public native void setSelectedPinImage(@Nullable UIImage value);
 }

@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -69,26 +71,30 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("backButton")
     public native CPBarButton backButton();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +102,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     /**
      * The currently-visible navigation alert, if any.
      */
+    @Nullable
     @Generated
     @Selector("currentNavigationAlert")
     public native CPNavigationAlert currentNavigationAlert();
@@ -119,7 +126,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Generated
     @Selector("dismissNavigationAlertAnimated:completion:")
     public native void dismissNavigationAlertAnimatedCompletion(boolean animated,
-            @ObjCBlock(name = "call_dismissNavigationAlertAnimatedCompletion") Block_dismissNavigationAlertAnimatedCompletion completion);
+            @NotNull @ObjCBlock(name = "call_dismissNavigationAlertAnimatedCompletion") Block_dismissNavigationAlertAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -143,6 +150,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      * default will be used. Font color will automatically be adjusted by the system to correspond with this color.
      * Alpha values will be ignored.
      */
+    @NotNull
     @Generated
     @Selector("guidanceBackgroundColor")
     public native UIColor guidanceBackgroundColor();
@@ -172,7 +180,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPMapTemplate initWithCoder(NSCoder coder);
+    public native CPMapTemplate initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -198,10 +206,12 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("leadingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> leadingNavigationBarButtons();
@@ -211,10 +221,12 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      * [@note] The map template may display a maximum of 4 buttons. Setting more than 4 buttons to this
      * property will only display the first 4 buttons.
      */
+    @NotNull
     @Generated
     @Selector("mapButtons")
     public native NSArray<? extends CPMapButton> mapButtons();
 
+    @Nullable
     @Generated
     @Selector("mapDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -237,7 +249,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("presentNavigationAlert:animated:")
-    public native void presentNavigationAlertAnimated(CPNavigationAlert navigationAlert, boolean animated);
+    public native void presentNavigationAlertAnimated(@NotNull CPNavigationAlert navigationAlert, boolean animated);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -256,7 +268,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     @Generated
     @Selector("setBackButton:")
-    public native void setBackButton(CPBarButton value);
+    public native void setBackButton(@Nullable CPBarButton value);
 
     /**
      * Background color to use when displaying guidance. The system will automatically determine if the provided
@@ -266,7 +278,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("setGuidanceBackgroundColor:")
-    public native void setGuidanceBackgroundColor(UIColor value);
+    public native void setGuidanceBackgroundColor(@NotNull UIColor value);
 
     /**
      * Hides the map buttons when hiding the navigation bar. Defaults to YES.
@@ -277,7 +289,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     @Generated
     @Selector("setLeadingNavigationBarButtons:")
-    public native void setLeadingNavigationBarButtons(NSArray<? extends CPBarButton> value);
+    public native void setLeadingNavigationBarButtons(@NotNull NSArray<? extends CPBarButton> value);
 
     /**
      * An array of bar buttons to be displayed on the trailing bottom corner of the map template.
@@ -286,14 +298,14 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("setMapButtons:")
-    public native void setMapButtons(NSArray<? extends CPMapButton> value);
+    public native void setMapButtons(@NotNull NSArray<? extends CPMapButton> value);
 
     @Generated
     @Selector("setMapDelegate:")
-    public native void setMapDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CPMapTemplateDelegate value);
+    public native void setMapDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) CPMapTemplateDelegate value);
 
     @Generated
-    public void setMapDelegate(@Mapped(ObjCObjectMapper.class) CPMapTemplateDelegate value) {
+    public void setMapDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPMapTemplateDelegate value) {
         Object __old = mapDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -306,7 +318,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
 
     @Generated
     @Selector("setTrailingNavigationBarButtons:")
-    public native void setTrailingNavigationBarButtons(NSArray<? extends CPBarButton> value);
+    public native void setTrailingNavigationBarButtons(@NotNull NSArray<? extends CPBarButton> value);
 
     /**
      * The style used to display trip estimates during active navigation. If not set, will update automatically with
@@ -339,8 +351,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("showRouteChoicesPreviewForTrip:textConfiguration:")
-    public native void showRouteChoicesPreviewForTripTextConfiguration(CPTrip tripPreview,
-            CPTripPreviewTextConfiguration textConfiguration);
+    public native void showRouteChoicesPreviewForTripTextConfiguration(@NotNull CPTrip tripPreview,
+            @Nullable CPTripPreviewTextConfiguration textConfiguration);
 
     /**
      * Display a preview for a trip. Used to provide an overview for the upcoming trip or can show multiple trip
@@ -350,17 +362,18 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("showTripPreviews:textConfiguration:")
-    public native void showTripPreviewsTextConfiguration(NSArray<? extends CPTrip> tripPreviews,
-            CPTripPreviewTextConfiguration textConfiguration);
+    public native void showTripPreviewsTextConfiguration(@NotNull NSArray<? extends CPTrip> tripPreviews,
+            @Nullable CPTripPreviewTextConfiguration textConfiguration);
 
     /**
      * * Begins guidance for a trip.
      * 
      * @return CPNavigationSession maintain a reference to the navigation session to perform guidance updates
      */
+    @NotNull
     @Generated
     @Selector("startNavigationSessionForTrip:")
-    public native CPNavigationSession startNavigationSessionForTrip(CPTrip trip);
+    public native CPNavigationSession startNavigationSessionForTrip(@NotNull CPTrip trip);
 
     @Generated
     @Selector("superclass")
@@ -376,6 +389,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("trailingNavigationBarButtons")
     public native NSArray<? extends CPBarButton> trailingNavigationBarButtons();
@@ -395,7 +409,7 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("updateTravelEstimates:forTrip:")
-    public native void updateTravelEstimatesForTrip(CPTravelEstimates estimates, CPTrip trip);
+    public native void updateTravelEstimatesForTrip(@NotNull CPTravelEstimates estimates, @NotNull CPTrip trip);
 
     /**
      * Updates the arrival time, time remaining and distance remaining estimates for a trip preview or actively
@@ -403,8 +417,8 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("updateTravelEstimates:forTrip:withTimeRemainingColor:")
-    public native void updateTravelEstimatesForTripWithTimeRemainingColor(CPTravelEstimates estimates, CPTrip trip,
-            @NUInt long timeRemainingColor);
+    public native void updateTravelEstimatesForTripWithTimeRemainingColor(@NotNull CPTravelEstimates estimates,
+            @NotNull CPTrip trip, @NUInt long timeRemainingColor);
 
     @Generated
     @Selector("version")
@@ -421,6 +435,6 @@ public class CPMapTemplate extends CPTemplate implements CPBarButtonProviding {
      */
     @Generated
     @Selector("showTripPreviews:selectedTrip:textConfiguration:")
-    public native void showTripPreviewsSelectedTripTextConfiguration(NSArray<? extends CPTrip> tripPreviews,
-            CPTrip selectedTrip, CPTripPreviewTextConfiguration textConfiguration);
+    public native void showTripPreviewsSelectedTripTextConfiguration(@NotNull NSArray<? extends CPTrip> tripPreviews,
+            @Nullable CPTrip selectedTrip, @Nullable CPTripPreviewTextConfiguration textConfiguration);
 }

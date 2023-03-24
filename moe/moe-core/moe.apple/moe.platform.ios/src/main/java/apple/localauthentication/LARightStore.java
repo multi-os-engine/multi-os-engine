@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Persistent storage for @c LARight instances.
@@ -60,22 +62,25 @@ public class LARightStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,9 +119,10 @@ public class LARightStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -131,13 +137,13 @@ public class LARightStore extends NSObject {
     @Generated
     @Selector("removeAllRightsWithCompletion:")
     public native void removeAllRightsWithCompletion(
-            @ObjCBlock(name = "call_removeAllRightsWithCompletion") Block_removeAllRightsWithCompletion handler);
+            @NotNull @ObjCBlock(name = "call_removeAllRightsWithCompletion") Block_removeAllRightsWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeAllRightsWithCompletion {
         @Generated
-        void call_removeAllRightsWithCompletion(NSError error);
+        void call_removeAllRightsWithCompletion(@Nullable NSError error);
     }
 
     /**
@@ -148,14 +154,14 @@ public class LARightStore extends NSObject {
      */
     @Generated
     @Selector("removeRight:completion:")
-    public native void removeRightCompletion(LAPersistedRight right,
-            @ObjCBlock(name = "call_removeRightCompletion") Block_removeRightCompletion handler);
+    public native void removeRightCompletion(@NotNull LAPersistedRight right,
+            @NotNull @ObjCBlock(name = "call_removeRightCompletion") Block_removeRightCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeRightCompletion {
         @Generated
-        void call_removeRightCompletion(NSError error);
+        void call_removeRightCompletion(@Nullable NSError error);
     }
 
     /**
@@ -166,14 +172,14 @@ public class LARightStore extends NSObject {
      */
     @Generated
     @Selector("removeRightForIdentifier:completion:")
-    public native void removeRightForIdentifierCompletion(String identifier,
-            @ObjCBlock(name = "call_removeRightForIdentifierCompletion") Block_removeRightForIdentifierCompletion handler);
+    public native void removeRightForIdentifierCompletion(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_removeRightForIdentifierCompletion") Block_removeRightForIdentifierCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_removeRightForIdentifierCompletion {
         @Generated
-        void call_removeRightForIdentifierCompletion(NSError error);
+        void call_removeRightForIdentifierCompletion(@Nullable NSError error);
     }
 
     @Generated
@@ -192,14 +198,14 @@ public class LARightStore extends NSObject {
      */
     @Generated
     @Selector("rightForIdentifier:completion:")
-    public native void rightForIdentifierCompletion(String identifier,
-            @ObjCBlock(name = "call_rightForIdentifierCompletion") Block_rightForIdentifierCompletion handler);
+    public native void rightForIdentifierCompletion(@NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_rightForIdentifierCompletion") Block_rightForIdentifierCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_rightForIdentifierCompletion {
         @Generated
-        void call_rightForIdentifierCompletion(LAPersistedRight arg0, NSError arg1);
+        void call_rightForIdentifierCompletion(@Nullable LAPersistedRight arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -211,14 +217,14 @@ public class LARightStore extends NSObject {
      */
     @Generated
     @Selector("saveRight:identifier:completion:")
-    public native void saveRightIdentifierCompletion(LARight right, String identifier,
-            @ObjCBlock(name = "call_saveRightIdentifierCompletion") Block_saveRightIdentifierCompletion handler);
+    public native void saveRightIdentifierCompletion(@NotNull LARight right, @NotNull String identifier,
+            @NotNull @ObjCBlock(name = "call_saveRightIdentifierCompletion") Block_saveRightIdentifierCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveRightIdentifierCompletion {
         @Generated
-        void call_saveRightIdentifierCompletion(LAPersistedRight arg0, NSError arg1);
+        void call_saveRightIdentifierCompletion(@Nullable LAPersistedRight arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -231,14 +237,15 @@ public class LARightStore extends NSObject {
      */
     @Generated
     @Selector("saveRight:identifier:secret:completion:")
-    public native void saveRightIdentifierSecretCompletion(LARight right, String identifier, NSData secret,
-            @ObjCBlock(name = "call_saveRightIdentifierSecretCompletion") Block_saveRightIdentifierSecretCompletion handler);
+    public native void saveRightIdentifierSecretCompletion(@NotNull LARight right, @NotNull String identifier,
+            @NotNull NSData secret,
+            @NotNull @ObjCBlock(name = "call_saveRightIdentifierSecretCompletion") Block_saveRightIdentifierSecretCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveRightIdentifierSecretCompletion {
         @Generated
-        void call_saveRightIdentifierSecretCompletion(LAPersistedRight arg0, NSError arg1);
+        void call_saveRightIdentifierSecretCompletion(@Nullable LAPersistedRight arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -248,6 +255,7 @@ public class LARightStore extends NSObject {
     /**
      * Shared instance of @c LARightStore.
      */
+    @NotNull
     @Generated
     @Selector("sharedStore")
     public static native LARightStore sharedStore();

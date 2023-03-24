@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Objects conforming to UIFocusEnvironment influence and respond to focus behavior within a specific area of the screen
@@ -47,8 +49,8 @@ public interface UIFocusEnvironment {
      */
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     /**
      * The preferred focus environments define where to search for the default focused item in an environment, such as
@@ -58,6 +60,7 @@ public interface UIFocusEnvironment {
      * Preferred focus environments can include focusable and non-focusable items, in addition to non-item environments.
      * Returning an empty array is equivalent to returning an array containing only 'self'.
      */
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     NSArray<?> preferredFocusEnvironments();
@@ -66,6 +69,7 @@ public interface UIFocusEnvironment {
      * API-Since: 9.0
      * Deprecated-Since: 10.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
@@ -91,7 +95,7 @@ public interface UIFocusEnvironment {
      */
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     /**
      * Forces focus to be updated immediately. If there is an environment that has requested a focus update via
@@ -109,6 +113,7 @@ public interface UIFocusEnvironment {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -121,6 +126,7 @@ public interface UIFocusEnvironment {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
@@ -132,6 +138,7 @@ public interface UIFocusEnvironment {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusGroupIdentifier")

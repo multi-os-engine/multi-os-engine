@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -70,26 +72,30 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("baseUnit")
     public static native NSUnitPower baseUnit();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,10 +108,12 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("femtowatts")
     public static native NSUnitPower femtowatts();
 
+    @NotNull
     @Generated
     @Selector("gigawatts")
     public static native NSUnitPower gigawatts();
@@ -115,6 +123,7 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("horsepower")
     public static native NSUnitPower horsepower();
@@ -136,26 +145,32 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("kilowatts")
     public static native NSUnitPower kilowatts();
 
+    @NotNull
     @Generated
     @Selector("megawatts")
     public static native NSUnitPower megawatts();
 
+    @NotNull
     @Generated
     @Selector("microwatts")
     public static native NSUnitPower microwatts();
 
+    @NotNull
     @Generated
     @Selector("milliwatts")
     public static native NSUnitPower milliwatts();
 
+    @NotNull
     @Generated
     @Selector("nanowatts")
     public static native NSUnitPower nanowatts();
@@ -165,6 +180,7 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @Selector("new")
     public static native NSUnitPower new_objc();
 
+    @NotNull
     @Generated
     @Selector("picowatts")
     public static native NSUnitPower picowatts();
@@ -192,6 +208,7 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     /**
      * Base unit - watts
      */
+    @NotNull
     @Generated
     @Selector("terawatts")
     public static native NSUnitPower terawatts();
@@ -201,13 +218,14 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("watts")
     public static native NSUnitPower watts();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -215,15 +233,15 @@ public class NSUnitPower extends NSDimension implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSUnitPower initWithCoder(NSCoder coder);
+    public native NSUnitPower initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSymbol:")
-    public native NSUnitPower initWithSymbol(String symbol);
+    public native NSUnitPower initWithSymbol(@NotNull String symbol);
 
     @Generated
     @Selector("initWithSymbol:converter:")
-    public native NSUnitPower initWithSymbolConverter(String symbol, NSUnitConverter converter);
+    public native NSUnitPower initWithSymbolConverter(@NotNull String symbol, @NotNull NSUnitConverter converter);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

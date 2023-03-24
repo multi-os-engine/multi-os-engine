@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -81,29 +83,32 @@ public class UIApplication extends UIResponder {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -135,9 +140,10 @@ public class UIApplication extends UIResponder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,7 +163,7 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("registerObjectForStateRestoration:restorationIdentifier:")
     public static native void registerObjectForStateRestorationRestorationIdentifier(
-            @Mapped(ObjCObjectMapper.class) UIStateRestoring object, String restorationIdentifier);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIStateRestoring object, @NotNull String restorationIdentifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -171,6 +177,7 @@ public class UIApplication extends UIResponder {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedApplication")
     public static native UIApplication sharedApplication();
@@ -236,7 +243,7 @@ public class UIApplication extends UIResponder {
     @Selector("beginBackgroundTaskWithExpirationHandler:")
     @NUInt
     public native long beginBackgroundTaskWithExpirationHandler(
-            @ObjCBlock(name = "call_beginBackgroundTaskWithExpirationHandler") Block_beginBackgroundTaskWithExpirationHandler handler);
+            @Nullable @ObjCBlock(name = "call_beginBackgroundTaskWithExpirationHandler") Block_beginBackgroundTaskWithExpirationHandler handler);
 
     /**
      * API-Since: 7.0
@@ -244,8 +251,8 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("beginBackgroundTaskWithName:expirationHandler:")
     @NUInt
-    public native long beginBackgroundTaskWithNameExpirationHandler(String taskName,
-            @ObjCBlock(name = "call_beginBackgroundTaskWithNameExpirationHandler") Block_beginBackgroundTaskWithNameExpirationHandler handler);
+    public native long beginBackgroundTaskWithNameExpirationHandler(@Nullable String taskName,
+            @Nullable @ObjCBlock(name = "call_beginBackgroundTaskWithNameExpirationHandler") Block_beginBackgroundTaskWithNameExpirationHandler handler);
 
     /**
      * nested. set should be set during animations & transitions to ignore touch and other events
@@ -271,7 +278,7 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("canOpenURL:")
-    public native boolean canOpenURL(NSURL url);
+    public native boolean canOpenURL(@NotNull NSURL url);
 
     /**
      * API-Since: 4.0
@@ -293,7 +300,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Generated
     @Selector("cancelLocalNotification:")
-    public native void cancelLocalNotification(UILocalNotification notification);
+    public native void cancelLocalNotification(@NotNull UILocalNotification notification);
 
     /**
      * API-Since: 4.0
@@ -321,11 +328,13 @@ public class UIApplication extends UIResponder {
      * getNotificationSettingsWithCompletionHandler:] and -[UNUserNotificationCenter
      * getNotificationCategoriesWithCompletionHandler:]
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("currentUserNotificationSettings")
     public native UIUserNotificationSettings currentUserNotificationSettings();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -512,6 +521,7 @@ public class UIApplication extends UIResponder {
      * Deprecated-Message: Should not be used for applications that support multiple scenes as it returns a key window
      * across all connected scenes
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("keyWindow")
@@ -524,7 +534,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Generated
     @Selector("openURL:")
-    public native boolean openURL(NSURL url);
+    public native boolean openURL(@NotNull NSURL url);
 
     /**
      * Options are specified in the section below for openURL options. An empty options dictionary will result in the
@@ -538,14 +548,15 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("openURL:options:completionHandler:")
-    public native void openURLOptionsCompletionHandler(NSURL url, NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_openURLOptionsCompletionHandler") Block_openURLOptionsCompletionHandler completion);
+    public native void openURLOptionsCompletionHandler(@NotNull NSURL url, @NotNull NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_openURLOptionsCompletionHandler") Block_openURLOptionsCompletionHandler completion);
 
     /**
      * Return the size category
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("preferredContentSizeCategory")
     public native String preferredContentSizeCategory();
@@ -559,7 +570,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Generated
     @Selector("presentLocalNotificationNow:")
-    public native void presentLocalNotificationNow(UILocalNotification notification);
+    public native void presentLocalNotificationNow(@NotNull UILocalNotification notification);
 
     /**
      * API-Since: 3.0
@@ -595,7 +606,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Generated
     @Selector("registerUserNotificationSettings:")
-    public native void registerUserNotificationSettings(UIUserNotificationSettings notificationSettings);
+    public native void registerUserNotificationSettings(@NotNull UIUserNotificationSettings notificationSettings);
 
     /**
      * copies notification
@@ -608,7 +619,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Generated
     @Selector("scheduleLocalNotification:")
-    public native void scheduleLocalNotification(UILocalNotification notification);
+    public native void scheduleLocalNotification(@NotNull UILocalNotification notification);
 
     /**
      * API-Since: 4.0
@@ -616,6 +627,7 @@ public class UIApplication extends UIResponder {
      * Deprecated-Message: Use UserNotifications Framework's -[UNUserNotificationCenter
      * getPendingNotificationRequestsWithCompletionHandler:]
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("scheduledLocalNotifications")
@@ -623,12 +635,13 @@ public class UIApplication extends UIResponder {
 
     @Generated
     @Selector("sendAction:to:from:forEvent:")
-    public native boolean sendActionToFromForEvent(SEL action, @Mapped(ObjCObjectMapper.class) Object target,
-            @Mapped(ObjCObjectMapper.class) Object sender, UIEvent event);
+    public native boolean sendActionToFromForEvent(@NotNull SEL action,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender, @Nullable UIEvent event);
 
     @Generated
     @Selector("sendEvent:")
-    public native void sendEvent(UIEvent event);
+    public native void sendEvent(@NotNull UIEvent event);
 
     /**
      * set to 0 to hide. default is 0. In iOS 8.0 and later, your application must register for user notifications using
@@ -647,10 +660,10 @@ public class UIApplication extends UIResponder {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIApplicationDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIApplicationDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIApplicationDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIApplicationDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -670,7 +683,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Selector("setKeepAliveTimeout:handler:")
     public native boolean setKeepAliveTimeoutHandler(double timeout,
-            @ObjCBlock(name = "call_setKeepAliveTimeoutHandler") Block_setKeepAliveTimeoutHandler keepAliveHandler);
+            @Nullable @ObjCBlock(name = "call_setKeepAliveTimeoutHandler") Block_setKeepAliveTimeoutHandler keepAliveHandler);
 
     /**
      * The system guarantees that it will not wake up your application for a background fetch more
@@ -699,7 +712,7 @@ public class UIApplication extends UIResponder {
     @Generated
     @Deprecated
     @Selector("setNewsstandIconImage:")
-    public native void setNewsstandIconImage(UIImage image);
+    public native void setNewsstandIconImage(@Nullable UIImage image);
 
     /**
      * API-Since: 4.0
@@ -710,7 +723,7 @@ public class UIApplication extends UIResponder {
     @Deprecated
     @Generated
     @Selector("setScheduledLocalNotifications:")
-    public native void setScheduledLocalNotifications(NSArray<? extends UILocalNotification> value);
+    public native void setScheduledLocalNotifications(@Nullable NSArray<? extends UILocalNotification> value);
 
     /**
      * Register shortcuts to display on the home screen, or retrieve currently registered shortcuts.
@@ -719,7 +732,7 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("setShortcutItems:")
-    public native void setShortcutItems(NSArray<? extends UIApplicationShortcutItem> value);
+    public native void setShortcutItems(@Nullable NSArray<? extends UIApplicationShortcutItem> value);
 
     /**
      * API-Since: 2.0
@@ -791,6 +804,7 @@ public class UIApplication extends UIResponder {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("shortcutItems")
     public native NSArray<? extends UIApplicationShortcutItem> shortcutItems();
@@ -859,7 +873,7 @@ public class UIApplication extends UIResponder {
     @Generated
     @Selector("supportedInterfaceOrientationsForWindow:")
     @NUInt
-    public native long supportedInterfaceOrientationsForWindow(UIWindow window);
+    public native long supportedInterfaceOrientationsForWindow(@Nullable UIWindow window);
 
     /**
      * API-Since: 3.0
@@ -881,6 +895,7 @@ public class UIApplication extends UIResponder {
      * Deprecated-Since: 15.0
      * Deprecated-Message: Use UIWindowScene.windows on a relevant window scene instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("windows")
@@ -919,6 +934,7 @@ public class UIApplication extends UIResponder {
      * 
      * API-Since: 10.3
      */
+    @Nullable
     @Generated
     @Selector("alternateIconName")
     public native String alternateIconName();
@@ -931,14 +947,14 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("setAlternateIconName:completionHandler:")
-    public native void setAlternateIconNameCompletionHandler(String alternateIconName,
-            @ObjCBlock(name = "call_setAlternateIconNameCompletionHandler") Block_setAlternateIconNameCompletionHandler completionHandler);
+    public native void setAlternateIconNameCompletionHandler(@Nullable String alternateIconName,
+            @Nullable @ObjCBlock(name = "call_setAlternateIconNameCompletionHandler") Block_setAlternateIconNameCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setAlternateIconNameCompletionHandler {
         @Generated
-        void call_setAlternateIconNameCompletionHandler(NSError error);
+        void call_setAlternateIconNameCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -955,6 +971,7 @@ public class UIApplication extends UIResponder {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("connectedScenes")
     public native NSSet<? extends UIScene> connectedScenes();
@@ -965,6 +982,7 @@ public class UIApplication extends UIResponder {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("openSessions")
     public native NSSet<? extends UISceneSession> openSessions();
@@ -981,15 +999,16 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("requestSceneSessionActivation:userActivity:options:errorHandler:")
-    public native void requestSceneSessionActivationUserActivityOptionsErrorHandler(UISceneSession sceneSession,
-            NSUserActivity userActivity, UISceneActivationRequestOptions options,
-            @ObjCBlock(name = "call_requestSceneSessionActivationUserActivityOptionsErrorHandler") Block_requestSceneSessionActivationUserActivityOptionsErrorHandler errorHandler);
+    public native void requestSceneSessionActivationUserActivityOptionsErrorHandler(
+            @Nullable UISceneSession sceneSession, @Nullable NSUserActivity userActivity,
+            @Nullable UISceneActivationRequestOptions options,
+            @Nullable @ObjCBlock(name = "call_requestSceneSessionActivationUserActivityOptionsErrorHandler") Block_requestSceneSessionActivationUserActivityOptionsErrorHandler errorHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestSceneSessionActivationUserActivityOptionsErrorHandler {
         @Generated
-        void call_requestSceneSessionActivationUserActivityOptionsErrorHandler(NSError error);
+        void call_requestSceneSessionActivationUserActivityOptionsErrorHandler(@NotNull NSError error);
     }
 
     /**
@@ -1000,15 +1019,15 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("requestSceneSessionDestruction:options:errorHandler:")
-    public native void requestSceneSessionDestructionOptionsErrorHandler(UISceneSession sceneSession,
-            UISceneDestructionRequestOptions options,
-            @ObjCBlock(name = "call_requestSceneSessionDestructionOptionsErrorHandler") Block_requestSceneSessionDestructionOptionsErrorHandler errorHandler);
+    public native void requestSceneSessionDestructionOptionsErrorHandler(@NotNull UISceneSession sceneSession,
+            @Nullable UISceneDestructionRequestOptions options,
+            @Nullable @ObjCBlock(name = "call_requestSceneSessionDestructionOptionsErrorHandler") Block_requestSceneSessionDestructionOptionsErrorHandler errorHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestSceneSessionDestructionOptionsErrorHandler {
         @Generated
-        void call_requestSceneSessionDestructionOptionsErrorHandler(NSError error);
+        void call_requestSceneSessionDestructionOptionsErrorHandler(@NotNull NSError error);
     }
 
     /**
@@ -1019,7 +1038,7 @@ public class UIApplication extends UIResponder {
      */
     @Generated
     @Selector("requestSceneSessionRefresh:")
-    public native void requestSceneSessionRefresh(UISceneSession sceneSession);
+    public native void requestSceneSessionRefresh(@NotNull UISceneSession sceneSession);
 
     /**
      * returns YES if the application both declares multiple scene support in its info.plist and the executing

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.arkit.ARSession;
 import apple.nearbyinteraction.protocol.NIDeviceCapability;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Nearby interaction session.
@@ -61,22 +63,25 @@ public class NISession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -84,6 +89,7 @@ public class NISession extends NSObject {
     /**
      * The nearby interaction configuration currently being used by the session.
      */
+    @Nullable
     @Generated
     @Selector("configuration")
     public native NIConfiguration configuration();
@@ -95,6 +101,7 @@ public class NISession extends NSObject {
     /**
      * A delegate for receiving NISession updates.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -105,6 +112,7 @@ public class NISession extends NSObject {
      * 
      * If not provided or nil, delegate calls will be performed on the main queue.
      */
+    @Nullable
     @Generated
     @Selector("delegateQueue")
     public native NSObject delegateQueue();
@@ -119,6 +127,7 @@ public class NISession extends NSObject {
      * Copy this discoveryToken and share it with a peer device.
      * The discoveryToken is unique to this device and this session.
      */
+    @Nullable
     @Generated
     @Selector("discoveryToken")
     public native NIDiscoveryToken discoveryToken();
@@ -172,9 +181,10 @@ public class NISession extends NSObject {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -207,20 +217,20 @@ public class NISession extends NSObject {
      */
     @Generated
     @Selector("runWithConfiguration:")
-    public native void runWithConfiguration(NIConfiguration configuration);
+    public native void runWithConfiguration(@NotNull NIConfiguration configuration);
 
     /**
      * A delegate for receiving NISession updates.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NISessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NISessionDelegate value);
 
     /**
      * A delegate for receiving NISession updates.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NISessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NISessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -238,7 +248,7 @@ public class NISession extends NSObject {
      */
     @Generated
     @Selector("setDelegateQueue:")
-    public native void setDelegateQueue(NSObject value);
+    public native void setDelegateQueue(@Nullable NSObject value);
 
     @Generated
     @Selector("setVersion:")
@@ -260,6 +270,7 @@ public class NISession extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("deviceCapabilities")
     @MappedReturn(ObjCObjectMapper.class)
@@ -285,5 +296,5 @@ public class NISession extends NSObject {
      */
     @Generated
     @Selector("setARSession:")
-    public native void setARSession(ARSession session);
+    public native void setARSession(@NotNull ARSession session);
 }

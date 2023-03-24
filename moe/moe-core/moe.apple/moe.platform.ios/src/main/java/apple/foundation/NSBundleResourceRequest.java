@@ -36,6 +36,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The NSBundleResourceRequest class is used to interact with the on demand resource loading system.
@@ -83,22 +85,25 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -192,13 +198,14 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Generated
     @Selector("beginAccessingResourcesWithCompletionHandler:")
     public native void beginAccessingResourcesWithCompletionHandler(
-            @ObjCBlock(name = "call_beginAccessingResourcesWithCompletionHandler") Block_beginAccessingResourcesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_beginAccessingResourcesWithCompletionHandler") Block_beginAccessingResourcesWithCompletionHandler completionHandler);
 
     /**
      * The bundle object that will hold the requested resources. After the
      * -beginAccessingResourcesWithCompletionHandler: callback is invoked, you may use the standard bundle lookup APIs
      * on this bundle object to find your resources.
      */
+    @NotNull
     @Generated
     @Selector("bundle")
     public native NSBundle bundle();
@@ -215,7 +222,7 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Generated
     @Selector("conditionallyBeginAccessingResourcesWithCompletionHandler:")
     public native void conditionallyBeginAccessingResourcesWithCompletionHandler(
-            @ObjCBlock(name = "call_conditionallyBeginAccessingResourcesWithCompletionHandler") Block_conditionallyBeginAccessingResourcesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_conditionallyBeginAccessingResourcesWithCompletionHandler") Block_conditionallyBeginAccessingResourcesWithCompletionHandler completionHandler);
 
     /**
      * Informs the system that you are finished with the resources that were part of the tag set in this request. Call
@@ -240,11 +247,11 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
      */
     @Generated
     @Selector("initWithTags:")
-    public native NSBundleResourceRequest initWithTags(NSSet<String> tags);
+    public native NSBundleResourceRequest initWithTags(@NotNull NSSet<String> tags);
 
     @Generated
     @Selector("initWithTags:bundle:")
-    public native NSBundleResourceRequest initWithTagsBundle(NSSet<String> tags, NSBundle bundle);
+    public native NSBundleResourceRequest initWithTagsBundle(@NotNull NSSet<String> tags, @NotNull NSBundle bundle);
 
     /**
      * Provides a hint to the resource loading system as to the loading priority of this request. Values are limited to
@@ -258,6 +265,7 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Selector("loadingPriority")
     public native double loadingPriority();
 
+    @NotNull
     @Generated
     @Selector("progress")
     public native NSProgress progress();
@@ -277,6 +285,7 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     /**
      * The tags this request will load.
      */
+    @NotNull
     @Generated
     @Selector("tags")
     public native NSSet<String> tags();
@@ -285,7 +294,7 @@ public class NSBundleResourceRequest extends NSObject implements NSProgressRepor
     @Generated
     public interface Block_beginAccessingResourcesWithCompletionHandler {
         @Generated
-        void call_beginAccessingResourcesWithCompletionHandler(NSError error);
+        void call_beginAccessingResourcesWithCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)

@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureInputPort
@@ -83,22 +85,25 @@ public class AVCaptureInputPort extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class AVCaptureInputPort extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +178,7 @@ public class AVCaptureInputPort extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("clock")
     public native CMClockRef clock();
@@ -185,6 +192,7 @@ public class AVCaptureInputPort extends NSObject {
      * provided by the receiver. Clients can be notified of changes to the format by observing the
      * AVCaptureInputPortFormatDescriptionDidChangeNotification.
      */
+    @Nullable
     @Generated
     @Selector("formatDescription")
     public native CMFormatDescriptionRef formatDescription();
@@ -200,6 +208,7 @@ public class AVCaptureInputPort extends NSObject {
      * 
      * The value of this property is an AVCaptureInput instance that owns the receiver.
      */
+    @NotNull
     @Generated
     @Selector("input")
     public native AVCaptureInput input();
@@ -238,6 +247,7 @@ public class AVCaptureInputPort extends NSObject {
      * The value of this property is a constant describing the type of media, such as AVMediaTypeVideo or
      * AVMediaTypeAudio, provided by the receiver. Media type constants are defined in AVMediaFormat.h.
      */
+    @NotNull
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -293,6 +303,7 @@ public class AVCaptureInputPort extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("sourceDeviceType")
     public native String sourceDeviceType();

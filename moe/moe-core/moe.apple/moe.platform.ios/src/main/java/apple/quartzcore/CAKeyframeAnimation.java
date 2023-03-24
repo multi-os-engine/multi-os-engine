@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * General keyframe animation class. *
@@ -83,26 +85,29 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("animationWithKeyPath:")
-    public static native CAKeyframeAnimation animationWithKeyPath(String path);
+    public static native CAKeyframeAnimation animationWithKeyPath(@Nullable String path);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,10 +116,11 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -142,9 +148,10 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,6 +179,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("biasValues")
     public native NSArray<? extends NSNumber> biasValues();
@@ -182,10 +190,12 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * `paced' or `cubicPaced' the `keyTimes' and `timingFunctions'
      * properties of the animation are ignored and calculated implicitly.
      */
+    @NotNull
     @Generated
     @Selector("calculationMode")
     public native String calculationMode();
 
+    @Nullable
     @Generated
     @Selector("continuityValues")
     public native NSArray<? extends NSNumber> continuityValues();
@@ -196,7 +206,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CAKeyframeAnimation initWithCoder(NSCoder coder);
+    public native CAKeyframeAnimation initWithCoder(@NotNull NSCoder coder);
 
     /**
      * An optional array of `NSNumber' objects defining the pacing of the
@@ -205,6 +215,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * Each value in the array is a floating point number in the range
      * [0,1].
      */
+    @Nullable
     @Generated
     @Selector("keyTimes")
     public native NSArray<? extends NSNumber> keyTimes();
@@ -217,6 +228,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * constant velocity animation along the path, `calculationMode' should
      * be set to `paced'. Upon assignment the path is copied.
      */
+    @Nullable
     @Generated
     @Selector("path")
     public native CGPathRef path();
@@ -228,13 +240,14 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * no path object is supplied is undefined. `autoReverse' rotates to
      * match the tangent plus 180 degrees.
      */
+    @Nullable
     @Generated
     @Selector("rotationMode")
     public native String rotationMode();
 
     @Generated
     @Selector("setBiasValues:")
-    public native void setBiasValues(NSArray<? extends NSNumber> value);
+    public native void setBiasValues(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * The "calculation mode". Possible values are `discrete', `linear',
@@ -244,11 +257,11 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setCalculationMode:")
-    public native void setCalculationMode(String value);
+    public native void setCalculationMode(@NotNull String value);
 
     @Generated
     @Selector("setContinuityValues:")
-    public native void setContinuityValues(NSArray<? extends NSNumber> value);
+    public native void setContinuityValues(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * An optional array of `NSNumber' objects defining the pacing of the
@@ -259,7 +272,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setKeyTimes:")
-    public native void setKeyTimes(NSArray<? extends NSNumber> value);
+    public native void setKeyTimes(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * An optional path object defining the behavior of the animation
@@ -271,7 +284,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setPath:")
-    public native void setPath(CGPathRef value);
+    public native void setPath(@Nullable CGPathRef value);
 
     /**
      * Defines whether or objects animating along paths rotate to match the
@@ -282,7 +295,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setRotationMode:")
-    public native void setRotationMode(String value);
+    public native void setRotationMode(@Nullable String value);
 
     /**
      * For animations with the cubic calculation modes, these properties
@@ -305,7 +318,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setTensionValues:")
-    public native void setTensionValues(NSArray<? extends NSNumber> value);
+    public native void setTensionValues(@Nullable NSArray<? extends NSNumber> value);
 
     /**
      * An optional array of CAMediaTimingFunction objects. If the `values' array
@@ -315,7 +328,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setTimingFunctions:")
-    public native void setTimingFunctions(NSArray<? extends CAMediaTimingFunction> value);
+    public native void setTimingFunctions(@Nullable NSArray<? extends CAMediaTimingFunction> value);
 
     /**
      * An array of objects providing the value of the animation function for
@@ -323,7 +336,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      */
     @Generated
     @Selector("setValues:")
-    public native void setValues(NSArray<?> value);
+    public native void setValues(@Nullable NSArray<?> value);
 
     /**
      * For animations with the cubic calculation modes, these properties
@@ -344,6 +357,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * point's tangents, and so on. Any unspecified values default to zero
      * (giving a Catmull-Rom spline if all are unspecified).
      */
+    @Nullable
     @Generated
     @Selector("tensionValues")
     public native NSArray<? extends NSNumber> tensionValues();
@@ -354,6 +368,7 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * `timingFunctions' array. Each function describes the pacing of one
      * keyframe to keyframe segment.
      */
+    @Nullable
     @Generated
     @Selector("timingFunctions")
     public native NSArray<? extends CAMediaTimingFunction> timingFunctions();
@@ -362,13 +377,15 @@ public class CAKeyframeAnimation extends CAPropertyAnimation {
      * An array of objects providing the value of the animation function for
      * each keyframe.
      */
+    @Nullable
     @Generated
     @Selector("values")
     public native NSArray<?> values();
 
+    @NotNull
     @Generated
     @Selector("animationWithSCNAnimation:")
-    public static native CAAnimation animationWithSCNAnimation(SCNAnimation animation);
+    public static native CAAnimation animationWithSCNAnimation(@NotNull SCNAnimation animation);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPListSection models a single section of items appearing in a @c CPListTemplate.
@@ -63,22 +65,25 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,7 +98,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -103,6 +108,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     /**
      * Optional string to use for a simple header in this section.
      */
+    @Nullable
     @Generated
     @Selector("header")
     public native String header();
@@ -113,16 +119,16 @@ public class CPListSection extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPListSection initWithCoder(NSCoder coder);
+    public native CPListSection initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")
-    public native CPListSection initWithItems(NSArray<?> items);
+    public native CPListSection initWithItems(@NotNull NSArray<?> items);
 
     @Generated
     @Selector("initWithItems:header:sectionIndexTitle:")
-    public native CPListSection initWithItemsHeaderSectionIndexTitle(NSArray<?> items, String header,
-            String sectionIndexTitle);
+    public native CPListSection initWithItemsHeaderSectionIndexTitle(@NotNull NSArray<?> items, @Nullable String header,
+            @Nullable String sectionIndexTitle);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -144,13 +150,15 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     /**
      * Items appearing in this section.
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<?> items();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +178,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
      * The system will enforce a maximum length of 1 for each section index title - in other words,
      * you must choose single-character section index titles.
      */
+    @Nullable
     @Generated
     @Selector("sectionIndexTitle")
     public native String sectionIndexTitle();
@@ -204,11 +213,12 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("indexOfItem:")
     @NUInt
-    public native long indexOfItem(@Mapped(ObjCObjectMapper.class) CPListTemplateItem item);
+    public native long indexOfItem(@NotNull @Mapped(ObjCObjectMapper.class) CPListTemplateItem item);
 
     /**
      * Convenience access to the item in this section at the specified index.
      */
+    @NotNull
     @Generated
     @Selector("itemAtIndex:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -217,6 +227,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("headerButton")
     public native CPButton headerButton();
@@ -224,6 +235,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     /**
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("headerImage")
     public native UIImage headerImage();
@@ -233,6 +245,7 @@ public class CPListSection extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("headerSubtitle")
     public native String headerSubtitle();
@@ -259,13 +272,13 @@ public class CPListSection extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithItems:header:headerSubtitle:headerImage:headerButton:sectionIndexTitle:")
     public native CPListSection initWithItemsHeaderHeaderSubtitleHeaderImageHeaderButtonSectionIndexTitle(
-            NSArray<?> items, String header, String headerSubtitle, UIImage headerImage, CPButton headerButton,
-            String sectionIndexTitle);
+            @NotNull NSArray<?> items, @NotNull String header, @Nullable String headerSubtitle,
+            @Nullable UIImage headerImage, @Nullable CPButton headerButton, @Nullable String sectionIndexTitle);
 
     /**
      * API-Since: 15.0
      */
     @Generated
     @Selector("setHeaderImage:")
-    public native void setHeaderImage(UIImage value);
+    public native void setHeaderImage(@Nullable UIImage value);
 }

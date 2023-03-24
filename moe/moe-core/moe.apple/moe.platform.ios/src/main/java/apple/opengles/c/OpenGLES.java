@@ -41,6 +41,7 @@ import org.moe.natj.general.ptr.LongPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("OpenGLES")
@@ -4547,7 +4548,7 @@ public final class OpenGLES {
     @Deprecated
     @Generated
     @CFunction
-    public static native void EAGLGetVersion(IntPtr major, IntPtr minor);
+    public static native void EAGLGetVersion(@NotNull IntPtr major, @NotNull IntPtr minor);
 
     /**
      * Keys for EAGLDrawable drawableProperties dictionary
@@ -4567,6 +4568,7 @@ public final class OpenGLES {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4578,6 +4580,7 @@ public final class OpenGLES {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4591,6 +4594,7 @@ public final class OpenGLES {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4602,6 +4606,7 @@ public final class OpenGLES {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4613,6 +4618,7 @@ public final class OpenGLES {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()

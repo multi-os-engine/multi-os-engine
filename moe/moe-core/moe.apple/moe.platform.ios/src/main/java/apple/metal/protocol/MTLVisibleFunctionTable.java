@@ -15,6 +15,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.struct.MTLResourceID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -26,11 +28,11 @@ import apple.metal.struct.MTLResourceID;
 public interface MTLVisibleFunctionTable extends MTLResource {
     @Generated
     @Selector("setFunction:atIndex:")
-    void setFunctionAtIndex(@Mapped(ObjCObjectMapper.class) MTLFunctionHandle function, @NUInt long index);
+    void setFunctionAtIndex(@Nullable @Mapped(ObjCObjectMapper.class) MTLFunctionHandle function, @NUInt long index);
 
     @Generated
     @Selector("setFunctions:withRange:")
-    void setFunctionsWithRange(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functions,
+    void setFunctionsWithRange(@NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> functions,
             @ByValue NSRange range);
 
     /**

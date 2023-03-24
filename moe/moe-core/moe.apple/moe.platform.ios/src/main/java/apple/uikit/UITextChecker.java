@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A UITextChecker object is used by a client (e.g. a document in an application) to check a given NSString. Generally
@@ -77,30 +79,34 @@ public class UITextChecker extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Entries in the availableLanguages list are all available spellchecking languages in user preference order,
      * usually language abbreviations such as en_US.
      */
+    @NotNull
     @Generated
     @Selector("availableLanguages")
     public static native NSArray<String> availableLanguages();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,7 +121,7 @@ public class UITextChecker extends NSObject {
 
     @Generated
     @Selector("hasLearnedWord:")
-    public static native boolean hasLearnedWord(String word);
+    public static native boolean hasLearnedWord(@NotNull String word);
 
     @Generated
     @Selector("hash")
@@ -139,9 +145,10 @@ public class UITextChecker extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * These allow clients to programmatically instruct the checker to learn and unlearn words, and to determine whether
@@ -149,7 +156,7 @@ public class UITextChecker extends NSObject {
      */
     @Generated
     @Selector("learnWord:")
-    public static native void learnWord(String word);
+    public static native void learnWord(@NotNull String word);
 
     @Generated
     @Owned
@@ -174,7 +181,7 @@ public class UITextChecker extends NSObject {
 
     @Generated
     @Selector("unlearnWord:")
-    public static native void unlearnWord(String word);
+    public static native void unlearnWord(@NotNull String word);
 
     @Generated
     @Selector("version")
@@ -185,27 +192,30 @@ public class UITextChecker extends NSObject {
      * Returns an array of strings, in the order in which they should be presented, representing complete words that the
      * user might be trying to type when starting by typing the partial word at the given range in the given string.
      */
+    @Nullable
     @Generated
     @Selector("completionsForPartialWordRange:inString:language:")
-    public native NSArray<String> completionsForPartialWordRangeInStringLanguage(@ByValue NSRange range, String string,
-            String language);
+    public native NSArray<String> completionsForPartialWordRangeInStringLanguage(@ByValue NSRange range,
+            @NotNull String string, @NotNull String language);
 
     /**
      * Returns an array of strings, in the order in which they should be presented, representing guesses for words that
      * might have been intended in place of the misspelled word at the given range in the given string.
      */
+    @Nullable
     @Generated
     @Selector("guessesForWordRange:inString:language:")
-    public native NSArray<String> guessesForWordRangeInStringLanguage(@ByValue NSRange range, String string,
-            String language);
+    public native NSArray<String> guessesForWordRangeInStringLanguage(@ByValue NSRange range, @NotNull String string,
+            @NotNull String language);
 
     /**
      * Methods for dealing with ignored words.
      */
     @Generated
     @Selector("ignoreWord:")
-    public native void ignoreWord(String wordToIgnore);
+    public native void ignoreWord(@NotNull String wordToIgnore);
 
+    @Nullable
     @Generated
     @Selector("ignoredWords")
     public native NSArray<String> ignoredWords();
@@ -223,10 +233,10 @@ public class UITextChecker extends NSObject {
     @Generated
     @Selector("rangeOfMisspelledWordInString:range:startingAt:wrap:language:")
     @ByValue
-    public native NSRange rangeOfMisspelledWordInStringRangeStartingAtWrapLanguage(String stringToCheck,
-            @ByValue NSRange range, @NInt long startingOffset, boolean wrapFlag, String language);
+    public native NSRange rangeOfMisspelledWordInStringRangeStartingAtWrapLanguage(@NotNull String stringToCheck,
+            @ByValue NSRange range, @NInt long startingOffset, boolean wrapFlag, @NotNull String language);
 
     @Generated
     @Selector("setIgnoredWords:")
-    public native void setIgnoredWords(NSArray<String> value);
+    public native void setIgnoredWords(@Nullable NSArray<String> value);
 }

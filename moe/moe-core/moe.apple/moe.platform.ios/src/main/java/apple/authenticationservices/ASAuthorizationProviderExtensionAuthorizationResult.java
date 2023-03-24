@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -58,22 +60,25 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +99,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     /**
      * HTTP extra headers for addition with credentials.
      */
+    @Nullable
     @Generated
     @Selector("httpAuthorizationHeaders")
     public native NSDictionary<String, String> httpAuthorizationHeaders();
@@ -101,6 +107,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     /**
      * HTTP response body for OAUth and SAML based authentications.
      */
+    @Nullable
     @Generated
     @Selector("httpBody")
     public native NSData httpBody();
@@ -108,6 +115,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     /**
      * HTTP response for OAUth and SAML based authentications.
      */
+    @Nullable
     @Generated
     @Selector("httpResponse")
     public native NSHTTPURLResponse httpResponse();
@@ -122,7 +130,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     @Generated
     @Selector("initWithHTTPAuthorizationHeaders:")
     public native ASAuthorizationProviderExtensionAuthorizationResult initWithHTTPAuthorizationHeaders(
-            NSDictionary<String, String> httpAuthorizationHeaders);
+            @NotNull NSDictionary<String, String> httpAuthorizationHeaders);
 
     /**
      * Authorization succeeded with a HTTP response.
@@ -130,7 +138,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     @Generated
     @Selector("initWithHTTPResponse:httpBody:")
     public native ASAuthorizationProviderExtensionAuthorizationResult initWithHTTPResponseHttpBody(
-            NSHTTPURLResponse httpResponse, NSData httpBody);
+            @NotNull NSHTTPURLResponse httpResponse, @Nullable NSData httpBody);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -149,9 +157,10 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +170,7 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
     /**
      * Private SecKeys.
      */
+    @NotNull
     @Generated
     @Selector("privateKeys")
     public native NSArray<?> privateKeys();
@@ -178,28 +188,28 @@ public class ASAuthorizationProviderExtensionAuthorizationResult extends NSObjec
      */
     @Generated
     @Selector("setHttpAuthorizationHeaders:")
-    public native void setHttpAuthorizationHeaders(NSDictionary<String, String> value);
+    public native void setHttpAuthorizationHeaders(@Nullable NSDictionary<String, String> value);
 
     /**
      * HTTP response body for OAUth and SAML based authentications.
      */
     @Generated
     @Selector("setHttpBody:")
-    public native void setHttpBody(NSData value);
+    public native void setHttpBody(@Nullable NSData value);
 
     /**
      * HTTP response for OAUth and SAML based authentications.
      */
     @Generated
     @Selector("setHttpResponse:")
-    public native void setHttpResponse(NSHTTPURLResponse value);
+    public native void setHttpResponse(@Nullable NSHTTPURLResponse value);
 
     /**
      * Private SecKeys.
      */
     @Generated
     @Selector("setPrivateKeys:")
-    public native void setPrivateKeys(NSArray<?> value);
+    public native void setPrivateKeys(@NotNull NSArray<?> value);
 
     @Generated
     @Selector("setVersion:")

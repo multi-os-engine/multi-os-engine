@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNSceneSource
@@ -85,22 +87,25 @@ public class SCNSceneSource extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class SCNSceneSource extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,7 +168,8 @@ public class SCNSceneSource extends NSObject {
      */
     @Generated
     @Selector("sceneSourceWithData:options:")
-    public static native SCNSceneSource sceneSourceWithDataOptions(NSData data, NSDictionary<String, ?> options);
+    public static native SCNSceneSource sceneSourceWithDataOptions(@NotNull NSData data,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * sceneSourceWithURL:options:
@@ -174,7 +181,8 @@ public class SCNSceneSource extends NSObject {
      */
     @Generated
     @Selector("sceneSourceWithURL:options:")
-    public static native SCNSceneSource sceneSourceWithURLOptions(NSURL url, NSDictionary<String, ?> options);
+    public static native SCNSceneSource sceneSourceWithURLOptions(@NotNull NSURL url,
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("setVersion:")
@@ -194,6 +202,7 @@ public class SCNSceneSource extends NSObject {
      * 
      * The receiver's data (if any).
      */
+    @Nullable
     @Generated
     @Selector("data")
     public native NSData data();
@@ -212,10 +221,11 @@ public class SCNSceneSource extends NSObject {
      *                  stop argument is an out-only argument. You should only ever set this Boolean to YES within the
      *                  Block. The Block returns a Boolean value that indicates whether "entry" passed the test.
      */
+    @NotNull
     @Generated
     @Selector("entriesPassingTest:")
     public native NSArray<?> entriesPassingTest(
-            @ObjCBlock(name = "call_entriesPassingTest") Block_entriesPassingTest predicate);
+            @NotNull @ObjCBlock(name = "call_entriesPassingTest") Block_entriesPassingTest predicate);
 
     /**
      * entryWithIdentifier:classType:
@@ -229,10 +239,11 @@ public class SCNSceneSource extends NSObject {
      *                   SCNMaterial, SCNGeometry, SCNScene, SCNNode, CAAnimation, SCNLight, SCNCamera, SCNSkinner,
      *                   SCNMorpher, NSImage
      */
+    @Nullable
     @Generated
     @Selector("entryWithIdentifier:withClass:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object entryWithIdentifierWithClass(String uid, Class entryClass);
+    public native Object entryWithIdentifierWithClass(@NotNull String uid, @NotNull Class entryClass);
 
     /**
      * identifiersOfEntriesWithClass:
@@ -243,9 +254,10 @@ public class SCNSceneSource extends NSObject {
      *                   classes: SCNMaterial, SCNScene, SCNGeometry, SCNNode, CAAnimation, SCNLight, SCNCamera,
      *                   SCNSkinner, SCNMorpher, NSImage
      */
+    @NotNull
     @Generated
     @Selector("identifiersOfEntriesWithClass:")
-    public native NSArray<String> identifiersOfEntriesWithClass(Class entryClass);
+    public native NSArray<String> identifiersOfEntriesWithClass(@NotNull Class entryClass);
 
     @Generated
     @Selector("init")
@@ -261,7 +273,7 @@ public class SCNSceneSource extends NSObject {
      */
     @Generated
     @Selector("initWithData:options:")
-    public native SCNSceneSource initWithDataOptions(NSData data, NSDictionary<String, ?> options);
+    public native SCNSceneSource initWithDataOptions(@NotNull NSData data, @Nullable NSDictionary<String, ?> options);
 
     /**
      * initWithURL:options:
@@ -273,7 +285,7 @@ public class SCNSceneSource extends NSObject {
      */
     @Generated
     @Selector("initWithURL:options:")
-    public native SCNSceneSource initWithURLOptions(NSURL url, NSDictionary<String, ?> options);
+    public native SCNSceneSource initWithURLOptions(@NotNull NSURL url, @Nullable NSDictionary<String, ?> options);
 
     /**
      * propertyForKey:
@@ -282,10 +294,11 @@ public class SCNSceneSource extends NSObject {
      * 
      * @param key The key for which to return the corresponding property.
      */
+    @Nullable
     @Generated
     @Selector("propertyForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object propertyForKey(String key);
+    public native Object propertyForKey(@NotNull String key);
 
     /**
      * sceneWithOptions:error:
@@ -299,10 +312,11 @@ public class SCNSceneSource extends NSObject {
      * @param options A dictionary of options. The valid keys are described in the "Scene loading options" section.
      * @param error   If this method returns nil, an error providing more information is returned by reference.
      */
+    @Nullable
     @Generated
     @Selector("sceneWithOptions:error:")
-    public native SCNScene sceneWithOptionsError(NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native SCNScene sceneWithOptionsError(@Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * sceneWithOptions:statusHandler:
@@ -323,16 +337,18 @@ public class SCNSceneSource extends NSObject {
      *                      be nil.
      *                      - Set *stop to YES if you want the source to abort the loading operation.
      */
+    @Nullable
     @Generated
     @Selector("sceneWithOptions:statusHandler:")
-    public native SCNScene sceneWithOptionsStatusHandler(NSDictionary<String, ?> options,
-            @ObjCBlock(name = "call_sceneWithOptionsStatusHandler") Block_sceneWithOptionsStatusHandler statusHandler);
+    public native SCNScene sceneWithOptionsStatusHandler(@Nullable NSDictionary<String, ?> options,
+            @Nullable @ObjCBlock(name = "call_sceneWithOptionsStatusHandler") Block_sceneWithOptionsStatusHandler statusHandler);
 
     /**
      * [@property] url
      * 
      * The receiver's URL (if any).
      */
+    @Nullable
     @Generated
     @Selector("url")
     public native NSURL url();
@@ -341,13 +357,15 @@ public class SCNSceneSource extends NSObject {
     @Generated
     public interface Block_entriesPassingTest {
         @Generated
-        boolean call_entriesPassingTest(@Mapped(ObjCObjectMapper.class) Object entry, String identifier, BoolPtr stop);
+        boolean call_entriesPassingTest(@NotNull @Mapped(ObjCObjectMapper.class) Object entry,
+                @NotNull String identifier, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sceneWithOptionsStatusHandler {
         @Generated
-        void call_sceneWithOptionsStatusHandler(float totalProgress, @NInt long status, NSError error, BoolPtr stop);
+        void call_sceneWithOptionsStatusHandler(float totalProgress, @NInt long status, @Nullable NSError error,
+                @NotNull BoolPtr stop);
     }
 }

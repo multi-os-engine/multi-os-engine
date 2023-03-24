@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -27,7 +28,7 @@ public interface PKToolPickerObserver {
     @Generated
     @IsOptional
     @Selector("toolPickerFramesObscuredDidChange:")
-    default void toolPickerFramesObscuredDidChange(PKToolPicker toolPicker) {
+    default void toolPickerFramesObscuredDidChange(@NotNull PKToolPicker toolPicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,7 +40,7 @@ public interface PKToolPickerObserver {
     @Generated
     @IsOptional
     @Selector("toolPickerIsRulerActiveDidChange:")
-    default void toolPickerIsRulerActiveDidChange(PKToolPicker toolPicker) {
+    default void toolPickerIsRulerActiveDidChange(@NotNull PKToolPicker toolPicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,7 +52,7 @@ public interface PKToolPickerObserver {
     @Generated
     @IsOptional
     @Selector("toolPickerSelectedToolDidChange:")
-    default void toolPickerSelectedToolDidChange(PKToolPicker toolPicker) {
+    default void toolPickerSelectedToolDidChange(@NotNull PKToolPicker toolPicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,7 +64,7 @@ public interface PKToolPickerObserver {
     @Generated
     @IsOptional
     @Selector("toolPickerVisibilityDidChange:")
-    default void toolPickerVisibilityDidChange(PKToolPicker toolPicker) {
+    default void toolPickerVisibilityDidChange(@NotNull PKToolPicker toolPicker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

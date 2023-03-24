@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -53,6 +55,7 @@ public class PTChannelManager extends NSObject {
      * This being nonnull reflects whether the user can see this channel is active in the user interface
      * The ephemeral push token is only usable when this is nonnull.
      */
+    @Nullable
     @Generated
     @Selector("activeChannelUUID")
     public native NSUUID activeChannelUUID();
@@ -69,17 +72,18 @@ public class PTChannelManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * You must instantiate a channel manager upon launching your app, otherwise the system will tear down channels and
@@ -90,22 +94,24 @@ public class PTChannelManager extends NSObject {
     @Generated
     @Selector("channelManagerWithDelegate:restorationDelegate:completionHandler:")
     public static native void channelManagerWithDelegateRestorationDelegateCompletionHandler(
-            @Mapped(ObjCObjectMapper.class) PTChannelManagerDelegate delegate,
-            @Mapped(ObjCObjectMapper.class) PTChannelRestorationDelegate restorationDelegate,
-            @ObjCBlock(name = "call_channelManagerWithDelegateRestorationDelegateCompletionHandler") Block_channelManagerWithDelegateRestorationDelegateCompletionHandler completionHandler);
+            @NotNull @Mapped(ObjCObjectMapper.class) PTChannelManagerDelegate delegate,
+            @NotNull @Mapped(ObjCObjectMapper.class) PTChannelRestorationDelegate restorationDelegate,
+            @NotNull @ObjCBlock(name = "call_channelManagerWithDelegateRestorationDelegateCompletionHandler") Block_channelManagerWithDelegateRestorationDelegateCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_channelManagerWithDelegateRestorationDelegateCompletionHandler {
         @Generated
-        void call_channelManagerWithDelegateRestorationDelegateCompletionHandler(PTChannelManager manager,
-                NSError error);
+        void call_channelManagerWithDelegateRestorationDelegateCompletionHandler(@Nullable PTChannelManager manager,
+                @Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -144,9 +150,10 @@ public class PTChannelManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * If successful, you will receive the delegate callback channelManager:channelUUID:didLeaveChannelWithUUID:reason:
@@ -156,7 +163,7 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("leaveChannelWithUUID:")
-    public native void leaveChannelWithUUID(NSUUID channelUUID);
+    public native void leaveChannelWithUUID(@NotNull NSUUID channelUUID);
 
     @Generated
     @Owned
@@ -170,7 +177,7 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("requestBeginTransmittingWithChannelUUID:")
-    public native void requestBeginTransmittingWithChannelUUID(NSUUID channelUUID);
+    public native void requestBeginTransmittingWithChannelUUID(@NotNull NSUUID channelUUID);
 
     /**
      * You may only join a channel in the foreground. If successful, you will receive the delegate callback
@@ -179,7 +186,8 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("requestJoinChannelWithUUID:descriptor:")
-    public native void requestJoinChannelWithUUIDDescriptor(NSUUID channelUUID, PTChannelDescriptor descriptor);
+    public native void requestJoinChannelWithUUIDDescriptor(@NotNull NSUUID channelUUID,
+            @NotNull PTChannelDescriptor descriptor);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,15 +204,15 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("setActiveRemoteParticipant:forChannelUUID:completionHandler:")
-    public native void setActiveRemoteParticipantForChannelUUIDCompletionHandler(PTParticipant participant,
-            NSUUID channelUUID,
-            @ObjCBlock(name = "call_setActiveRemoteParticipantForChannelUUIDCompletionHandler") Block_setActiveRemoteParticipantForChannelUUIDCompletionHandler completionHandler);
+    public native void setActiveRemoteParticipantForChannelUUIDCompletionHandler(@Nullable PTParticipant participant,
+            @NotNull NSUUID channelUUID,
+            @Nullable @ObjCBlock(name = "call_setActiveRemoteParticipantForChannelUUIDCompletionHandler") Block_setActiveRemoteParticipantForChannelUUIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setActiveRemoteParticipantForChannelUUIDCompletionHandler {
         @Generated
-        void call_setActiveRemoteParticipantForChannelUUIDCompletionHandler(NSError error);
+        void call_setActiveRemoteParticipantForChannelUUIDCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -212,15 +220,15 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("setChannelDescriptor:forChannelUUID:completionHandler:")
-    public native void setChannelDescriptorForChannelUUIDCompletionHandler(PTChannelDescriptor channelDescriptor,
-            NSUUID channelUUID,
-            @ObjCBlock(name = "call_setChannelDescriptorForChannelUUIDCompletionHandler") Block_setChannelDescriptorForChannelUUIDCompletionHandler completionHandler);
+    public native void setChannelDescriptorForChannelUUIDCompletionHandler(
+            @NotNull PTChannelDescriptor channelDescriptor, @NotNull NSUUID channelUUID,
+            @Nullable @ObjCBlock(name = "call_setChannelDescriptorForChannelUUIDCompletionHandler") Block_setChannelDescriptorForChannelUUIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setChannelDescriptorForChannelUUIDCompletionHandler {
         @Generated
-        void call_setChannelDescriptorForChannelUUIDCompletionHandler(NSError error);
+        void call_setChannelDescriptorForChannelUUIDCompletionHandler(@Nullable NSError error);
     }
 
     /**
@@ -230,14 +238,14 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("setServiceStatus:forChannelUUID:completionHandler:")
-    public native void setServiceStatusForChannelUUIDCompletionHandler(@NInt long status, NSUUID channelUUID,
-            @ObjCBlock(name = "call_setServiceStatusForChannelUUIDCompletionHandler") Block_setServiceStatusForChannelUUIDCompletionHandler completionHandler);
+    public native void setServiceStatusForChannelUUIDCompletionHandler(@NInt long status, @NotNull NSUUID channelUUID,
+            @Nullable @ObjCBlock(name = "call_setServiceStatusForChannelUUIDCompletionHandler") Block_setServiceStatusForChannelUUIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setServiceStatusForChannelUUIDCompletionHandler {
         @Generated
-        void call_setServiceStatusForChannelUUIDCompletionHandler(NSError arg0);
+        void call_setServiceStatusForChannelUUIDCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -248,14 +256,14 @@ public class PTChannelManager extends NSObject {
     @Generated
     @Selector("setTransmissionMode:forChannelUUID:completionHandler:")
     public native void setTransmissionModeForChannelUUIDCompletionHandler(@NInt long transmissionMode,
-            NSUUID channelUUID,
-            @ObjCBlock(name = "call_setTransmissionModeForChannelUUIDCompletionHandler") Block_setTransmissionModeForChannelUUIDCompletionHandler completionHandler);
+            @NotNull NSUUID channelUUID,
+            @Nullable @ObjCBlock(name = "call_setTransmissionModeForChannelUUIDCompletionHandler") Block_setTransmissionModeForChannelUUIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setTransmissionModeForChannelUUIDCompletionHandler {
         @Generated
-        void call_setTransmissionModeForChannelUUIDCompletionHandler(NSError arg0);
+        void call_setTransmissionModeForChannelUUIDCompletionHandler(@Nullable NSError arg0);
     }
 
     @Generated
@@ -270,7 +278,7 @@ public class PTChannelManager extends NSObject {
      */
     @Generated
     @Selector("stopTransmittingWithChannelUUID:")
-    public native void stopTransmittingWithChannelUUID(NSUUID channelUUID);
+    public native void stopTransmittingWithChannelUUID(@NotNull NSUUID channelUUID);
 
     @Generated
     @Selector("superclass")

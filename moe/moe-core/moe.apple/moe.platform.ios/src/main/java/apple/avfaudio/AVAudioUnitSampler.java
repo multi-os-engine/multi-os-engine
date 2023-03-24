@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitSampler
@@ -72,22 +74,25 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,15 +146,16 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
     @Selector("instantiateWithComponentDescription:options:completionHandler:")
     public static native void instantiateWithComponentDescriptionOptionsCompletionHandler(
             @ByValue AudioComponentDescription audioComponentDescription, int options,
-            @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_instantiateWithComponentDescriptionOptionsCompletionHandler") AVAudioUnit.Block_instantiateWithComponentDescriptionOptionsCompletionHandler completionHandler);
 
     @Generated
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * loadAudioFilesAtURLs:error:
@@ -168,8 +174,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      */
     @Generated
     @Selector("loadAudioFilesAtURLs:error:")
-    public native boolean loadAudioFilesAtURLsError(NSArray<? extends NSURL> audioFiles,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadAudioFilesAtURLsError(@NotNull NSArray<? extends NSURL> audioFiles,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * loadInstrumentAtURL:error:
@@ -191,8 +197,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      */
     @Generated
     @Selector("loadInstrumentAtURL:error:")
-    public native boolean loadInstrumentAtURLError(NSURL instrumentURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadInstrumentAtURLError(@NotNull NSURL instrumentURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:
@@ -216,8 +222,8 @@ public class AVAudioUnitSampler extends AVAudioUnitMIDIInstrument {
      */
     @Generated
     @Selector("loadSoundBankInstrumentAtURL:program:bankMSB:bankLSB:error:")
-    public native boolean loadSoundBankInstrumentAtURLProgramBankMSBBankLSBError(NSURL bankURL, byte program,
-            byte bankMSB, byte bankLSB, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean loadSoundBankInstrumentAtURLProgramBankMSBBankLSBError(@NotNull NSURL bankURL, byte program,
+            byte bankMSB, byte bankLSB, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] masterGain

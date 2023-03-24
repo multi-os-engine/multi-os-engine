@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -61,22 +63,25 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,10 +100,12 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      * [@note] The maximum number of images shown is @c CPMaximumNumberOfGridImages.
      * If you supply more images, only the first @c CPMaximumNumberOfGridImages will be used.
      */
+    @NotNull
     @Generated
     @Selector("gridImages")
     public native NSArray<? extends UIImage> gridImages();
 
+    @Nullable
     @Generated
     @Selector("handler")
     @ObjCBlock(name = "call_handler_ret")
@@ -133,7 +140,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      */
     @Generated
     @Selector("initWithText:images:")
-    public native CPListImageRowItem initWithTextImages(String text, NSArray<? extends UIImage> images);
+    public native CPListImageRowItem initWithTextImages(@NotNull String text,
+            @NotNull NSArray<? extends UIImage> images);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -152,13 +160,15 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The image row item that the user selected.
      */
+    @Nullable
     @Generated
     @Selector("listImageRowHandler")
     @ObjCBlock(name = "call_listImageRowHandler_ret")
@@ -175,8 +185,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
         }
 
         @Generated
-        void call_listImageRowHandler_ret(CPListImageRowItem arg0, @NInt long arg1,
-                @ObjCBlock(name = "call_Block_listImageRowHandler_ret") Block_Block_listImageRowHandler_ret arg2);
+        void call_listImageRowHandler_ret(@NotNull CPListImageRowItem arg0, @NInt long arg1,
+                @NotNull @ObjCBlock(name = "call_Block_listImageRowHandler_ret") Block_Block_listImageRowHandler_ret arg2);
     }
 
     /**
@@ -206,7 +216,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
 
     @Generated
     @Selector("setHandler:")
-    public native void setHandler(@ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
+    public native void setHandler(
+            @Nullable @ObjCBlock(name = "call_setHandler") CPSelectableListItem.Block_setHandler value);
 
     /**
      * The image row item that the user selected.
@@ -214,7 +225,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Generated
     @Selector("setListImageRowHandler:")
     public native void setListImageRowHandler(
-            @ObjCBlock(name = "call_setListImageRowHandler") Block_setListImageRowHandler value);
+            @Nullable @ObjCBlock(name = "call_setListImageRowHandler") Block_setListImageRowHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -227,8 +238,8 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
         }
 
         @Generated
-        void call_setListImageRowHandler(CPListImageRowItem arg0, @NInt long arg1,
-                @ObjCBlock(name = "call_Block_setListImageRowHandler") Block_Block_setListImageRowHandler arg2);
+        void call_setListImageRowHandler(@NotNull CPListImageRowItem arg0, @NInt long arg1,
+                @NotNull @ObjCBlock(name = "call_Block_setListImageRowHandler") Block_Block_setListImageRowHandler arg2);
     }
 
     /**
@@ -236,11 +247,11 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      */
     @Generated
     @Selector("setText:")
-    public native void setText(String value);
+    public native void setText(@Nullable String value);
 
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
     @Selector("setVersion:")
@@ -250,6 +261,7 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @Nullable
     @Generated
     @Selector("text")
     public native String text();
@@ -272,8 +284,9 @@ public class CPListImageRowItem extends NSObject implements CPSelectableListItem
      */
     @Generated
     @Selector("updateImages:")
-    public native void updateImages(NSArray<? extends UIImage> gridImages);
+    public native void updateImages(@NotNull NSArray<? extends UIImage> gridImages);
 
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

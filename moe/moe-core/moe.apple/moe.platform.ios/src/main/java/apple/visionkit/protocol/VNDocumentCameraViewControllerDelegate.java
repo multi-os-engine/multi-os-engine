@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 13.0
@@ -25,8 +26,8 @@ public interface VNDocumentCameraViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentCameraViewController:didFailWithError:")
-    default void documentCameraViewControllerDidFailWithError(VNDocumentCameraViewController controller,
-            NSError error) {
+    default void documentCameraViewControllerDidFailWithError(@NotNull VNDocumentCameraViewController controller,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,8 +39,8 @@ public interface VNDocumentCameraViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentCameraViewController:didFinishWithScan:")
-    default void documentCameraViewControllerDidFinishWithScan(VNDocumentCameraViewController controller,
-            VNDocumentCameraScan scan) {
+    default void documentCameraViewControllerDidFinishWithScan(@NotNull VNDocumentCameraViewController controller,
+            @NotNull VNDocumentCameraScan scan) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,7 +50,7 @@ public interface VNDocumentCameraViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentCameraViewControllerDidCancel:")
-    default void documentCameraViewControllerDidCancel(VNDocumentCameraViewController controller) {
+    default void documentCameraViewControllerDidCancel(@NotNull VNDocumentCameraViewController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

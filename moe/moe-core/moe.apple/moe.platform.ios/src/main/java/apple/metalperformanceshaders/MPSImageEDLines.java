@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSImageEDLines
@@ -87,22 +89,25 @@ public class MPSImageEDLines extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -167,9 +172,10 @@ public class MPSImageEDLines extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceTexture:destinationTexture:endpointBuffer:endpointOffset:")
     public native void encodeToCommandBufferSourceTextureDestinationTextureEndpointBufferEndpointOffset(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture source, @Mapped(ObjCObjectMapper.class) MTLTexture dest,
-            @Mapped(ObjCObjectMapper.class) MTLBuffer endpointBuffer, @NUInt long endpointOffset);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture source,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture dest,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer endpointBuffer, @NUInt long endpointOffset);
 
     /**
      * [@property] sigma
@@ -202,7 +208,7 @@ public class MPSImageEDLines extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSImageEDLines initWithCoder(NSCoder aDecoder);
+    public native MPSImageEDLines initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -219,11 +225,12 @@ public class MPSImageEDLines extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSImageEDLines initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageEDLines initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSImageEDLines initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSImageEDLines initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize an EDLines kernel on a given device with specified parameters.
@@ -258,7 +265,7 @@ public class MPSImageEDLines extends MPSKernel {
     @Generated
     @Selector("initWithDevice:gaussianSigma:minLineLength:maxLines:detailRatio:gradientThreshold:lineErrorThreshold:mergeLocalityThreshold:")
     public native MPSImageEDLines initWithDeviceGaussianSigmaMinLineLengthMaxLinesDetailRatioGradientThresholdLineErrorThresholdMergeLocalityThreshold(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, float gaussianSigma, char minLineLength,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, float gaussianSigma, char minLineLength,
             @NUInt long maxLines, char detailRatio, float gradientThreshold, float lineErrorThreshold,
             float mergeLocalityThreshold);
 
@@ -279,9 +286,10 @@ public class MPSImageEDLines extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lineErrorThreshold

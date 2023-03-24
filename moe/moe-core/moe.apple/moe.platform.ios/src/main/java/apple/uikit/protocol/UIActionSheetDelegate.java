@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -42,7 +43,7 @@ public interface UIActionSheetDelegate {
     @IsOptional
     @Deprecated
     @Selector("actionSheet:clickedButtonAtIndex:")
-    default void actionSheetClickedButtonAtIndex(UIActionSheet actionSheet, @NInt long buttonIndex) {
+    default void actionSheetClickedButtonAtIndex(@NotNull UIActionSheet actionSheet, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,7 @@ public interface UIActionSheetDelegate {
     @IsOptional
     @Deprecated
     @Selector("actionSheet:didDismissWithButtonIndex:")
-    default void actionSheetDidDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex) {
+    default void actionSheetDidDismissWithButtonIndex(@NotNull UIActionSheet actionSheet, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +73,7 @@ public interface UIActionSheetDelegate {
     @IsOptional
     @Deprecated
     @Selector("actionSheet:willDismissWithButtonIndex:")
-    default void actionSheetWillDismissWithButtonIndex(UIActionSheet actionSheet, @NInt long buttonIndex) {
+    default void actionSheetWillDismissWithButtonIndex(@NotNull UIActionSheet actionSheet, @NInt long buttonIndex) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,7 +90,7 @@ public interface UIActionSheetDelegate {
     @IsOptional
     @Deprecated
     @Selector("actionSheetCancel:")
-    default void actionSheetCancel(UIActionSheet actionSheet) {
+    default void actionSheetCancel(@NotNull UIActionSheet actionSheet) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,7 +105,7 @@ public interface UIActionSheetDelegate {
     @IsOptional
     @Deprecated
     @Selector("didPresentActionSheet:")
-    default void didPresentActionSheet(UIActionSheet actionSheet) {
+    default void didPresentActionSheet(@NotNull UIActionSheet actionSheet) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,7 +120,7 @@ public interface UIActionSheetDelegate {
     @IsOptional
     @Deprecated
     @Selector("willPresentActionSheet:")
-    default void willPresentActionSheet(UIActionSheet actionSheet) {
+    default void willPresentActionSheet(@NotNull UIActionSheet actionSheet) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

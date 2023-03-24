@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreImage")
@@ -20,6 +21,7 @@ public interface CIFilter {
      * CIFilter subclasses can implement 'customAttributes' to return a dictionary
      * containing key/value pairs describing the filter. (see description of keys below)
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("customAttributes")
@@ -28,6 +30,7 @@ public interface CIFilter {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @Selector("outputImage")
     CIImage outputImage();

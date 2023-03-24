@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -82,29 +84,32 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -136,9 +141,10 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,25 +178,26 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKTurnBasedMatchmakerViewController initWithCoder(NSCoder coder);
+    public native GKTurnBasedMatchmakerViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithMatchRequest:")
-    public native GKTurnBasedMatchmakerViewController initWithMatchRequest(GKMatchRequest request);
+    public native GKTurnBasedMatchmakerViewController initWithMatchRequest(@NotNull GKMatchRequest request);
 
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native GKTurnBasedMatchmakerViewController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native GKTurnBasedMatchmakerViewController initWithNavigationBarClassToolbarClass(
+            @Nullable Class navigationBarClass, @Nullable Class toolbarClass);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native GKTurnBasedMatchmakerViewController initWithNibNameBundle(String nibNameOrNil,
-            NSBundle nibBundleOrNil);
+    public native GKTurnBasedMatchmakerViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("initWithRootViewController:")
-    public native GKTurnBasedMatchmakerViewController initWithRootViewController(UIViewController rootViewController);
+    public native GKTurnBasedMatchmakerViewController initWithRootViewController(
+            @NotNull UIViewController rootViewController);
 
     @Generated
     @Selector("setShowExistingMatches:")
@@ -199,11 +206,11 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Generated
     @Selector("setTurnBasedMatchmakerDelegate:")
     public native void setTurnBasedMatchmakerDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value);
 
     @Generated
     public void setTurnBasedMatchmakerDelegate(
-            @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value) {
+            @Nullable @Mapped(ObjCObjectMapper.class) GKTurnBasedMatchmakerViewControllerDelegate value) {
         Object __old = turnBasedMatchmakerDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -218,6 +225,7 @@ public class GKTurnBasedMatchmakerViewController extends UINavigationController 
     @Selector("showExistingMatches")
     public native boolean showExistingMatches();
 
+    @Nullable
     @Generated
     @Selector("turnBasedMatchmakerDelegate")
     @MappedReturn(ObjCObjectMapper.class)

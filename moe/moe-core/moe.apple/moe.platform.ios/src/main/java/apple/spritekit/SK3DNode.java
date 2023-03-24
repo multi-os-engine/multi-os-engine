@@ -50,6 +50,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -84,29 +86,32 @@ public class SK3DNode extends SKNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -138,9 +143,10 @@ public class SK3DNode extends SKNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,7 +159,7 @@ public class SK3DNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SK3DNode nodeWithFileNamed(String filename);
+    public static native SK3DNode nodeWithFileNamed(@NotNull String filename);
 
     /**
      * Create a 3D Node with the viewport size the 3D content will be rendered with.
@@ -162,19 +168,23 @@ public class SK3DNode extends SKNode {
     @Selector("nodeWithViewportSize:")
     public static native SK3DNode nodeWithViewportSize(@ByValue CGSize viewportSize);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -217,10 +227,11 @@ public class SK3DNode extends SKNode {
      * @param point   A point in the coordinate system of the receiver.
      * @param options Optional parameters (see the "Hit test options" group for the available options).
      */
+    @NotNull
     @Generated
     @Selector("hitTest:options:")
     public native NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
-            NSDictionary<String, ?> options);
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("init")
@@ -231,7 +242,7 @@ public class SK3DNode extends SKNode {
      */
     @Generated
     @Selector("initWithCoder:")
-    public native SK3DNode initWithCoder(NSCoder aDecoder);
+    public native SK3DNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Designated initializer.
@@ -277,6 +288,7 @@ public class SK3DNode extends SKNode {
      * 
      * A point of view must have either a camera or a spot light attached.
      */
+    @Nullable
     @Generated
     @Selector("pointOfView")
     public native SCNNode pointOfView();
@@ -293,6 +305,7 @@ public class SK3DNode extends SKNode {
     /**
      * A SceneKit scene
      */
+    @Nullable
     @Generated
     @Selector("scnScene")
     public native SCNScene scnScene();
@@ -329,7 +342,7 @@ public class SK3DNode extends SKNode {
      */
     @Generated
     @Selector("setPointOfView:")
-    public native void setPointOfView(SCNNode value);
+    public native void setPointOfView(@Nullable SCNNode value);
 
     /**
      * [@property] sceneTime
@@ -345,7 +358,7 @@ public class SK3DNode extends SKNode {
      */
     @Generated
     @Selector("setScnScene:")
-    public native void setScnScene(SCNScene value);
+    public native void setScnScene(@Nullable SCNScene value);
 
     /**
      * The viewport size that the 3D content will be rendered with
@@ -364,8 +377,8 @@ public class SK3DNode extends SKNode {
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SK3DNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SK3DNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -71,22 +73,25 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,13 +126,15 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("localizedStringFromDateComponents:unitsStyle:")
-    public static native String localizedStringFromDateComponentsUnitsStyle(NSDateComponents components,
+    public static native String localizedStringFromDateComponentsUnitsStyle(@NotNull NSDateComponents components,
             @NInt long unitsStyle);
 
     @Generated
@@ -193,6 +200,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Defaults to NSAutoupdatingCurrentCalendar. If set to nil, uses the gregorian calendar with the en_US_POSIX
      * locale.
      */
+    @Nullable
     @Generated
     @Selector("calendar")
     public native NSCalendar calendar();
@@ -220,8 +228,8 @@ public class NSDateComponentsFormatter extends NSFormatter {
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, String string,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, @NotNull String string,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     /**
      * Choose whether to indicate that the allowed units/insignificant units choices lead to inexact results. In some
@@ -245,7 +253,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateComponentsFormatter initWithCoder(NSCoder coder);
+    public native NSDateComponentsFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Choose whether or not, and at which point, to round small units in large values to zero.
@@ -300,7 +308,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      */
     @Generated
     @Selector("setCalendar:")
-    public native void setCalendar(NSCalendar value);
+    public native void setCalendar(@Nullable NSCalendar value);
 
     /**
      * Choose whether to express largest units just above the threshold for the next lowest unit as a larger quantity of
@@ -370,9 +378,10 @@ public class NSDateComponentsFormatter extends NSFormatter {
     /**
      * 'obj' must be an instance of NSDateComponents.
      */
+    @Nullable
     @Generated
     @Selector("stringForObjectValue:")
-    public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public native String stringForObjectValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 
     /**
      * Normally, NSDateComponentsFormatter will calculate as though counting from referenceDate (e.g. in February, 1
@@ -384,23 +393,26 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * Note that this is still formatting the quantity of time between the dates, not the pair of dates itself. For
      * strings like "Feb 22nd - Feb 28th", use NSDateIntervalFormatter.
      */
+    @Nullable
     @Generated
     @Selector("stringFromDate:toDate:")
-    public native String stringFromDateToDate(NSDate startDate, NSDate endDate);
+    public native String stringFromDateToDate(@NotNull NSDate startDate, @NotNull NSDate endDate);
 
     /**
      * Convenience method for formatting an NSDateComponents object. This calculates the count of the unit(s) starting
      * from referenceDate.
      */
+    @Nullable
     @Generated
     @Selector("stringFromDateComponents:")
-    public native String stringFromDateComponents(NSDateComponents components);
+    public native String stringFromDateComponents(@NotNull NSDateComponents components);
 
     /**
      * Convenience method for formatting a number of seconds. See 'allowedUnits' for how the default set of allowed
      * units differs from -stringFromDateComponents:. This calculates the count of the unit(s) from referenceDate to the
      * passed-in time interval.
      */
+    @Nullable
     @Generated
     @Selector("stringFromTimeInterval:")
     public native String stringFromTimeInterval(double ti);
@@ -435,6 +447,7 @@ public class NSDateComponentsFormatter extends NSFormatter {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("referenceDate")
     public native NSDate referenceDate();
@@ -449,5 +462,5 @@ public class NSDateComponentsFormatter extends NSFormatter {
      */
     @Generated
     @Selector("setReferenceDate:")
-    public native void setReferenceDate(NSDate value);
+    public native void setReferenceDate(@Nullable NSDate value);
 }

@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MSMessage
@@ -83,22 +85,25 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,6 +182,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * on the recipient's device(s). When no app exists on the receiving device that
      * can consume the message, if this URL is a HTTP(S) url, it will be loaded in a web browser.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -189,19 +196,21 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * will be used by the Accessibility Speech feature when speaking the message for users
      * with disabilities.
      */
+    @Nullable
     @Generated
     @Selector("accessibilityLabel")
     public native String accessibilityLabel();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] error
@@ -211,6 +220,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * This value is nil if the message is has not yet been sent, is still
      * sending or has been sent successfully.
      */
+    @Nullable
     @Generated
     @Selector("error")
     public native NSError error();
@@ -226,7 +236,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MSMessage initWithCoder(NSCoder coder);
+    public native MSMessage initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithSession:
@@ -242,7 +252,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithSession:")
-    public native MSMessage initWithSession(MSSession session);
+    public native MSMessage initWithSession(@NotNull MSSession session);
 
     /**
      * [@property] layout
@@ -252,6 +262,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * The MSMessageLayout subclass will be used to construct UI
      * representing the message in the conversation transcript.
      */
+    @Nullable
     @Generated
     @Selector("layout")
     public native MSMessageLayout layout();
@@ -265,6 +276,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * the current device and will be different on all devices that participate in the
      * conversation.
      */
+    @NotNull
     @Generated
     @Selector("senderParticipantIdentifier")
     public native NSUUID senderParticipantIdentifier();
@@ -274,6 +286,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * An MSSession that identifies the session that message belongs to.
      */
+    @Nullable
     @Generated
     @Selector("session")
     public native MSSession session();
@@ -289,7 +302,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setAccessibilityLabel:")
-    public native void setAccessibilityLabel(String value);
+    public native void setAccessibilityLabel(@Nullable String value);
 
     /**
      * [@property] error
@@ -301,7 +314,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setError:")
-    public native void setError(NSError value);
+    public native void setError(@Nullable NSError value);
 
     /**
      * [@property] layout
@@ -313,7 +326,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setLayout:")
-    public native void setLayout(MSMessageLayout value);
+    public native void setLayout(@Nullable MSMessageLayout value);
 
     /**
      * [@property] shouldExpire
@@ -338,7 +351,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setSummaryText:")
-    public native void setSummaryText(String value);
+    public native void setSummaryText(@Nullable String value);
 
     /**
      * [@property] URL
@@ -351,7 +364,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * [@property] shouldExpire
@@ -374,6 +387,7 @@ public class MSMessage extends NSObject implements NSCopying, NSSecureCoding {
      * This string should provide a succinct description of the message. This
      * will be used to provide a summary of the message in the UI.
      */
+    @Nullable
     @Generated
     @Selector("summaryText")
     public native String summaryText();

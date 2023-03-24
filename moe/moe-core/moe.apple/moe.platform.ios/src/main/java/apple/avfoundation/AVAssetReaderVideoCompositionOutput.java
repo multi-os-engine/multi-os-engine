@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetReaderVideoCompositionOutput
@@ -114,26 +116,29 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("assetReaderVideoCompositionOutputWithVideoTracks:videoSettings:")
     public static native AVAssetReaderVideoCompositionOutput assetReaderVideoCompositionOutputWithVideoTracksVideoSettings(
-            NSArray<? extends AVAssetTrack> videoTracks, NSDictionary<String, ?> videoSettings);
+            @NotNull NSArray<? extends AVAssetTrack> videoTracks, @Nullable NSDictionary<String, ?> videoSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -168,9 +173,10 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -207,6 +213,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("customVideoCompositor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -254,7 +261,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
     @Generated
     @Selector("initWithVideoTracks:videoSettings:")
     public native AVAssetReaderVideoCompositionOutput initWithVideoTracksVideoSettings(
-            NSArray<? extends AVAssetTrack> videoTracks, NSDictionary<String, ?> videoSettings);
+            @NotNull NSArray<? extends AVAssetTrack> videoTracks, @Nullable NSDictionary<String, ?> videoSettings);
 
     /**
      * [@property] videoComposition
@@ -268,7 +275,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      */
     @Generated
     @Selector("setVideoComposition:")
-    public native void setVideoComposition(AVVideoComposition value);
+    public native void setVideoComposition(@Nullable AVVideoComposition value);
 
     /**
      * [@property] videoComposition
@@ -280,6 +287,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * 
      * This property throws an exception if a value is set after reading has started.
      */
+    @Nullable
     @Generated
     @Selector("videoComposition")
     public native AVVideoComposition videoComposition();
@@ -293,6 +301,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * value of nil indicates that the receiver will return video frames in a convenient uncompressed format, with
      * properties determined according to the properties of the receiver's video tracks.
      */
+    @Nullable
     @Generated
     @Selector("videoSettings")
     public native NSDictionary<String, ?> videoSettings();
@@ -304,6 +313,7 @@ public class AVAssetReaderVideoCompositionOutput extends AVAssetReaderOutput {
      * 
      * The value of this property is an NSArray of AVAssetTracks owned by the target AVAssetReader's asset.
      */
+    @NotNull
     @Generated
     @Selector("videoTracks")
     public native NSArray<? extends AVAssetTrack> videoTracks();

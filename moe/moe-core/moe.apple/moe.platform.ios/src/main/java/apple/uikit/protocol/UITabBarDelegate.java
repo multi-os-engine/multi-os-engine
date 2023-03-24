@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * ___________________________________________________________________________________________________
@@ -41,7 +42,8 @@ public interface UITabBarDelegate {
     @Generated
     @IsOptional
     @Selector("tabBar:didBeginCustomizingItems:")
-    default void tabBarDidBeginCustomizingItems(UITabBar tabBar, NSArray<? extends UITabBarItem> items) {
+    default void tabBarDidBeginCustomizingItems(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,8 +53,8 @@ public interface UITabBarDelegate {
     @Generated
     @IsOptional
     @Selector("tabBar:didEndCustomizingItems:changed:")
-    default void tabBarDidEndCustomizingItemsChanged(UITabBar tabBar, NSArray<? extends UITabBarItem> items,
-            boolean changed) {
+    default void tabBarDidEndCustomizingItemsChanged(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items, boolean changed) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +64,7 @@ public interface UITabBarDelegate {
     @Generated
     @IsOptional
     @Selector("tabBar:didSelectItem:")
-    default void tabBarDidSelectItem(UITabBar tabBar, UITabBarItem item) {
+    default void tabBarDidSelectItem(@NotNull UITabBar tabBar, @NotNull UITabBarItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +74,8 @@ public interface UITabBarDelegate {
     @Generated
     @IsOptional
     @Selector("tabBar:willBeginCustomizingItems:")
-    default void tabBarWillBeginCustomizingItems(UITabBar tabBar, NSArray<? extends UITabBarItem> items) {
+    default void tabBarWillBeginCustomizingItems(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +85,8 @@ public interface UITabBarDelegate {
     @Generated
     @IsOptional
     @Selector("tabBar:willEndCustomizingItems:changed:")
-    default void tabBarWillEndCustomizingItemsChanged(UITabBar tabBar, NSArray<? extends UITabBarItem> items,
-            boolean changed) {
+    default void tabBarWillEndCustomizingItemsChanged(@NotNull UITabBar tabBar,
+            @NotNull NSArray<? extends UITabBarItem> items, boolean changed) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

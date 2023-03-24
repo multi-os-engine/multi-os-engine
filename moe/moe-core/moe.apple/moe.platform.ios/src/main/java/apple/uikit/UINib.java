@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -74,22 +76,25 @@ public class UINib extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class UINib extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -136,18 +142,20 @@ public class UINib extends NSObject {
     /**
      * If the bundle parameter is nil, the main bundle is used.
      */
+    @NotNull
     @Generated
     @Selector("nibWithData:bundle:")
-    public static native UINib nibWithDataBundle(NSData data, NSBundle bundleOrNil);
+    public static native UINib nibWithDataBundle(@NotNull NSData data, @Nullable NSBundle bundleOrNil);
 
     /**
      * If the bundle parameter is nil, the main bundle is used.
      * Releases resources in response to memory pressure (e.g. memory warning), reloading from the bundle when
      * necessary.
      */
+    @NotNull
     @Generated
     @Selector("nibWithNibName:bundle:")
-    public static native UINib nibWithNibNameBundle(String name, NSBundle bundleOrNil);
+    public static native UINib nibWithNibNameBundle(@NotNull String name, @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -180,8 +188,9 @@ public class UINib extends NSObject {
      * If the owner parameter is nil, connections to File's Owner are not permitted.
      * Options are identical to the options specified with -[NSBundle loadNibNamed:owner:options:]
      */
+    @NotNull
     @Generated
     @Selector("instantiateWithOwner:options:")
-    public native NSArray<?> instantiateWithOwnerOptions(@Mapped(ObjCObjectMapper.class) Object ownerOrNil,
-            NSDictionary<String, ?> optionsOrNil);
+    public native NSArray<?> instantiateWithOwnerOptions(@Nullable @Mapped(ObjCObjectMapper.class) Object ownerOrNil,
+            @Nullable NSDictionary<String, ?> optionsOrNil);
 }

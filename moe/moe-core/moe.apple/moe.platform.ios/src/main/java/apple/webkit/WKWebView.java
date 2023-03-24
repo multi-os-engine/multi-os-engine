@@ -63,6 +63,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.UIFindInteraction;
 import apple.uikit.struct.UIEdgeInsets;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -89,7 +91,7 @@ public class WKWebView extends UIView {
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -105,64 +107,70 @@ public class WKWebView extends UIView {
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native WKWebView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native WKWebView appearanceForTraitCollection(UITraitCollection trait);
+    public static native WKWebView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native WKWebView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native WKWebView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native WKWebView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native WKWebView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native WKWebView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native WKWebView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -170,34 +178,37 @@ public class WKWebView extends UIView {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -238,10 +249,12 @@ public class WKWebView extends UIView {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -254,14 +267,14 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -293,12 +306,12 @@ public class WKWebView extends UIView {
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -318,17 +331,18 @@ public class WKWebView extends UIView {
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -344,16 +358,16 @@ public class WKWebView extends UIView {
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -374,6 +388,7 @@ public class WKWebView extends UIView {
     /**
      * The web view's user interface delegate.
      */
+    @Nullable
     @Generated
     @Selector("UIDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -387,6 +402,7 @@ public class WKWebView extends UIView {
      * [@link] WKWebView @/link is key-value observing (KVO) compliant for this
      * property.
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -413,50 +429,57 @@ public class WKWebView extends UIView {
     @Selector("allowsLinkPreview")
     public native boolean allowsLinkPreview();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public WKWebView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public WKWebView _appearanceForTraitCollection(UITraitCollection trait) {
+    public WKWebView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public WKWebView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public WKWebView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public WKWebView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public WKWebView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public WKWebView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public WKWebView _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public WKWebView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public WKWebView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     /**
      * The web view's back-forward list.
      */
+    @NotNull
     @Generated
     @Selector("backForwardList")
     public native WKBackForwardList backForwardList();
@@ -491,6 +514,7 @@ public class WKWebView extends UIView {
      * API-Since: 9.0
      * Deprecated-Since: 10.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("certificateChain")
@@ -500,6 +524,7 @@ public class WKWebView extends UIView {
      * A copy of the configuration with which the web view was
      * initialized.
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native WKWebViewConfiguration configuration();
@@ -509,6 +534,7 @@ public class WKWebView extends UIView {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("customUserAgent")
     public native String customUserAgent();
@@ -540,8 +566,8 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("evaluateJavaScript:completionHandler:")
-    public native void evaluateJavaScriptCompletionHandler(String javaScriptString,
-            @ObjCBlock(name = "call_evaluateJavaScriptCompletionHandler") Block_evaluateJavaScriptCompletionHandler completionHandler);
+    public native void evaluateJavaScriptCompletionHandler(@NotNull String javaScriptString,
+            @Nullable @ObjCBlock(name = "call_evaluateJavaScriptCompletionHandler") Block_evaluateJavaScriptCompletionHandler completionHandler);
 
     /**
      * Navigates to the back item in the back-forward list.
@@ -549,6 +575,7 @@ public class WKWebView extends UIView {
      * @return A new navigation to the requested item, or nil if there is no back
      *         item in the back-forward list.
      */
+    @Nullable
     @Generated
     @Selector("goBack")
     public native WKNavigation goBack();
@@ -559,6 +586,7 @@ public class WKWebView extends UIView {
      * @return A new navigation to the requested item, or nil if there is no
      *         forward item in the back-forward list.
      */
+    @Nullable
     @Generated
     @Selector("goForward")
     public native WKNavigation goForward();
@@ -573,9 +601,10 @@ public class WKWebView extends UIView {
      *         the current item or is not part of the web view's back-forward list.
      * @see backForwardList
      */
+    @Nullable
     @Generated
     @Selector("goToBackForwardListItem:")
-    public native WKNavigation goToBackForwardListItem(WKBackForwardListItem item);
+    public native WKNavigation goToBackForwardListItem(@NotNull WKBackForwardListItem item);
 
     /**
      * A Boolean value indicating whether all resources on the page
@@ -594,7 +623,7 @@ public class WKWebView extends UIView {
 
     @Generated
     @Selector("initWithCoder:")
-    public native WKWebView initWithCoder(NSCoder coder);
+    public native WKWebView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -617,7 +646,8 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("initWithFrame:configuration:")
-    public native WKWebView initWithFrameConfiguration(@ByValue CGRect frame, WKWebViewConfiguration configuration);
+    public native WKWebView initWithFrameConfiguration(@ByValue CGRect frame,
+            @NotNull WKWebViewConfiguration configuration);
 
     /**
      * A Boolean value indicating whether the view is currently
@@ -641,10 +671,11 @@ public class WKWebView extends UIView {
      * 
      *         API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("loadData:MIMEType:characterEncodingName:baseURL:")
-    public native WKNavigation loadDataMIMETypeCharacterEncodingNameBaseURL(NSData data, String MIMEType,
-            String characterEncodingName, NSURL baseURL);
+    public native WKNavigation loadDataMIMETypeCharacterEncodingNameBaseURL(@NotNull NSData data,
+            @NotNull String MIMEType, @NotNull String characterEncodingName, @NotNull NSURL baseURL);
 
     /**
      * Navigates to the requested file URL on the filesystem.
@@ -658,9 +689,10 @@ public class WKWebView extends UIView {
      * 
      *         API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("loadFileURL:allowingReadAccessToURL:")
-    public native WKNavigation loadFileURLAllowingReadAccessToURL(NSURL URL, NSURL readAccessURL);
+    public native WKNavigation loadFileURLAllowingReadAccessToURL(@NotNull NSURL URL, @NotNull NSURL readAccessURL);
 
     /**
      * Sets the webpage contents and base URL.
@@ -669,9 +701,10 @@ public class WKWebView extends UIView {
      * @param baseURL A URL that is used to resolve relative URLs within the document.
      * @return A new navigation.
      */
+    @Nullable
     @Generated
     @Selector("loadHTMLString:baseURL:")
-    public native WKNavigation loadHTMLStringBaseURL(String string, NSURL baseURL);
+    public native WKNavigation loadHTMLStringBaseURL(@NotNull String string, @Nullable NSURL baseURL);
 
     /**
      * Navigates to a requested URL.
@@ -679,13 +712,15 @@ public class WKWebView extends UIView {
      * @param request The request specifying the URL to which to navigate.
      * @return A new navigation for the given request.
      */
+    @Nullable
     @Generated
     @Selector("loadRequest:")
-    public native WKNavigation loadRequest(NSURLRequest request);
+    public native WKNavigation loadRequest(@NotNull NSURLRequest request);
 
     /**
      * The web view's navigation delegate.
      */
+    @Nullable
     @Generated
     @Selector("navigationDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -696,6 +731,7 @@ public class WKWebView extends UIView {
      * 
      * @return A new navigation representing the reload.
      */
+    @Nullable
     @Generated
     @Selector("reload")
     public native WKNavigation reload();
@@ -706,6 +742,7 @@ public class WKWebView extends UIView {
      * 
      * @return A new navigation representing the reload.
      */
+    @Nullable
     @Generated
     @Selector("reloadFromOrigin")
     public native WKNavigation reloadFromOrigin();
@@ -713,6 +750,7 @@ public class WKWebView extends UIView {
     /**
      * The scroll view associated with the web view.
      */
+    @NotNull
     @Generated
     @Selector("scrollView")
     public native UIScrollView scrollView();
@@ -725,6 +763,7 @@ public class WKWebView extends UIView {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("serverTrust")
     public native SecTrustRef serverTrust();
@@ -758,20 +797,21 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("setCustomUserAgent:")
-    public native void setCustomUserAgent(String value);
+    public native void setCustomUserAgent(@Nullable String value);
 
     /**
      * The web view's navigation delegate.
      */
     @Generated
     @Selector("setNavigationDelegate:")
-    public native void setNavigationDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value);
+    public native void setNavigationDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) WKNavigationDelegate value);
 
     /**
      * The web view's navigation delegate.
      */
     @Generated
-    public void setNavigationDelegate(@Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
+    public void setNavigationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WKNavigationDelegate value) {
         Object __old = navigationDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -787,13 +827,13 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("setUIDelegate:")
-    public native void setUIDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WKUIDelegate value);
+    public native void setUIDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) WKUIDelegate value);
 
     /**
      * The web view's user interface delegate.
      */
     @Generated
-    public void setUIDelegate(@Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
+    public void setUIDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WKUIDelegate value) {
         Object __old = UIDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -817,6 +857,7 @@ public class WKWebView extends UIView {
      * [@link] WKWebView @/link is key-value observing (KVO) compliant
      * for this property.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -825,7 +866,8 @@ public class WKWebView extends UIView {
     @Generated
     public interface Block_evaluateJavaScriptCompletionHandler {
         @Generated
-        void call_evaluateJavaScriptCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
+        void call_evaluateJavaScriptCompletionHandler(@Nullable @Mapped(ObjCObjectMapper.class) Object arg0,
+                @Nullable NSError error);
     }
 
     /**
@@ -837,27 +879,29 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("handlesURLScheme:")
-    public static native boolean handlesURLScheme(String urlScheme);
+    public static native boolean handlesURLScheme(@NotNull String urlScheme);
 
     @Generated
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @Selector("takeSnapshotWithConfiguration:completionHandler:")
-    public native void takeSnapshotWithConfigurationCompletionHandler(WKSnapshotConfiguration snapshotConfiguration,
-            @ObjCBlock(name = "call_takeSnapshotWithConfigurationCompletionHandler") Block_takeSnapshotWithConfigurationCompletionHandler completionHandler);
+    public native void takeSnapshotWithConfigurationCompletionHandler(
+            @Nullable WKSnapshotConfiguration snapshotConfiguration,
+            @NotNull @ObjCBlock(name = "call_takeSnapshotWithConfigurationCompletionHandler") Block_takeSnapshotWithConfigurationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_takeSnapshotWithConfigurationCompletionHandler {
         @Generated
-        void call_takeSnapshotWithConfigurationCompletionHandler(UIImage snapshotImage, NSError error);
+        void call_takeSnapshotWithConfigurationCompletionHandler(@Nullable UIImage snapshotImage,
+                @Nullable NSError error);
     }
 
     /**
@@ -865,16 +909,17 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("callAsyncJavaScript:arguments:inFrame:inContentWorld:completionHandler:")
-    public native void callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(String functionBody,
-            NSDictionary<String, ?> arguments, WKFrameInfo frame, WKContentWorld contentWorld,
-            @ObjCBlock(name = "call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler") Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler completionHandler);
+    public native void callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(@NotNull String functionBody,
+            @Nullable NSDictionary<String, ?> arguments, @Nullable WKFrameInfo frame,
+            @NotNull WKContentWorld contentWorld,
+            @Nullable @ObjCBlock(name = "call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler") Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler {
         @Generated
         void call_callAsyncJavaScriptArgumentsInFrameInContentWorldCompletionHandler(
-                @Mapped(ObjCObjectMapper.class) Object arg0, NSError error);
+                @Nullable @Mapped(ObjCObjectMapper.class) Object arg0, @Nullable NSError error);
     }
 
     /**
@@ -893,14 +938,15 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("createPDFWithConfiguration:completionHandler:")
-    public native void createPDFWithConfigurationCompletionHandler(WKPDFConfiguration pdfConfiguration,
-            @ObjCBlock(name = "call_createPDFWithConfigurationCompletionHandler") Block_createPDFWithConfigurationCompletionHandler completionHandler);
+    public native void createPDFWithConfigurationCompletionHandler(@Nullable WKPDFConfiguration pdfConfiguration,
+            @NotNull @ObjCBlock(name = "call_createPDFWithConfigurationCompletionHandler") Block_createPDFWithConfigurationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_createPDFWithConfigurationCompletionHandler {
         @Generated
-        void call_createPDFWithConfigurationCompletionHandler(NSData pdfDocumentData, NSError error);
+        void call_createPDFWithConfigurationCompletionHandler(@Nullable NSData pdfDocumentData,
+                @Nullable NSError error);
     }
 
     /**
@@ -918,13 +964,13 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("createWebArchiveDataWithCompletionHandler:")
     public native void createWebArchiveDataWithCompletionHandler(
-            @ObjCBlock(name = "call_createWebArchiveDataWithCompletionHandler") Block_createWebArchiveDataWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_createWebArchiveDataWithCompletionHandler") Block_createWebArchiveDataWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_createWebArchiveDataWithCompletionHandler {
         @Generated
-        void call_createWebArchiveDataWithCompletionHandler(NSData arg0, NSError arg1);
+        void call_createWebArchiveDataWithCompletionHandler(@NotNull NSData arg0, @NotNull NSError arg1);
     }
 
     /**
@@ -959,16 +1005,16 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("evaluateJavaScript:inFrame:inContentWorld:completionHandler:")
-    public native void evaluateJavaScriptInFrameInContentWorldCompletionHandler(String javaScriptString,
-            WKFrameInfo frame, WKContentWorld contentWorld,
-            @ObjCBlock(name = "call_evaluateJavaScriptInFrameInContentWorldCompletionHandler") Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler completionHandler);
+    public native void evaluateJavaScriptInFrameInContentWorldCompletionHandler(@NotNull String javaScriptString,
+            @Nullable WKFrameInfo frame, @NotNull WKContentWorld contentWorld,
+            @Nullable @ObjCBlock(name = "call_evaluateJavaScriptInFrameInContentWorldCompletionHandler") Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_evaluateJavaScriptInFrameInContentWorldCompletionHandler {
         @Generated
-        void call_evaluateJavaScriptInFrameInContentWorldCompletionHandler(@Mapped(ObjCObjectMapper.class) Object arg0,
-                NSError error);
+        void call_evaluateJavaScriptInFrameInContentWorldCompletionHandler(
+                @Nullable @Mapped(ObjCObjectMapper.class) Object arg0, @Nullable NSError error);
     }
 
     /**
@@ -986,14 +1032,15 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("findString:withConfiguration:completionHandler:")
-    public native void findStringWithConfigurationCompletionHandler(String string, WKFindConfiguration configuration,
-            @ObjCBlock(name = "call_findStringWithConfigurationCompletionHandler") Block_findStringWithConfigurationCompletionHandler completionHandler);
+    public native void findStringWithConfigurationCompletionHandler(@NotNull String string,
+            @Nullable WKFindConfiguration configuration,
+            @NotNull @ObjCBlock(name = "call_findStringWithConfigurationCompletionHandler") Block_findStringWithConfigurationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_findStringWithConfigurationCompletionHandler {
         @Generated
-        void call_findStringWithConfigurationCompletionHandler(WKFindResult result);
+        void call_findStringWithConfigurationCompletionHandler(@NotNull WKFindResult result);
     }
 
     /**
@@ -1005,6 +1052,7 @@ public class WKWebView extends UIView {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -1034,7 +1082,7 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("setMediaType:")
-    public native void setMediaType(String value);
+    public native void setMediaType(@Nullable String value);
 
     /**
      * The factor by which page content is scaled relative to the viewport.
@@ -1081,7 +1129,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("closeAllMediaPresentationsWithCompletionHandler:")
     public native void closeAllMediaPresentationsWithCompletionHandler(
-            @ObjCBlock(name = "call_closeAllMediaPresentationsWithCompletionHandler") Block_closeAllMediaPresentationsWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_closeAllMediaPresentationsWithCompletionHandler") Block_closeAllMediaPresentationsWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1099,6 +1147,7 @@ public class WKWebView extends UIView {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("interactionState")
     @MappedReturn(ObjCObjectMapper.class)
@@ -1117,9 +1166,11 @@ public class WKWebView extends UIView {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("loadFileRequest:allowingReadAccessToURL:")
-    public native WKNavigation loadFileRequestAllowingReadAccessToURL(NSURLRequest request, NSURL readAccessURL);
+    public native WKNavigation loadFileRequestAllowingReadAccessToURL(@NotNull NSURLRequest request,
+            @NotNull NSURL readAccessURL);
 
     /**
      * Sets the webpage contents from the passed data as if it was the
@@ -1135,10 +1186,11 @@ public class WKWebView extends UIView {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("loadSimulatedRequest:response:responseData:")
-    public native WKNavigation loadSimulatedRequestResponseResponseData(NSURLRequest request, NSURLResponse response,
-            NSData data);
+    public native WKNavigation loadSimulatedRequestResponseResponseData(@NotNull NSURLRequest request,
+            @NotNull NSURLResponse response, @NotNull NSData data);
 
     /**
      * Sets the webpage contents from the passed HTML string as if it was
@@ -1153,28 +1205,33 @@ public class WKWebView extends UIView {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("loadSimulatedRequest:responseHTMLString:")
-    public native WKNavigation loadSimulatedRequestResponseHTMLString(NSURLRequest request, String string);
+    public native WKNavigation loadSimulatedRequestResponseHTMLString(@NotNull NSURLRequest request,
+            @NotNull String string);
 
     /**
      * API-Since: 15.0
      * Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("loadSimulatedRequest:withResponse:responseData:")
-    public native WKNavigation loadSimulatedRequestWithResponseResponseData(NSURLRequest request,
-            NSURLResponse response, NSData data);
+    public native WKNavigation loadSimulatedRequestWithResponseResponseData(@NotNull NSURLRequest request,
+            @NotNull NSURLResponse response, @NotNull NSData data);
 
     /**
      * API-Since: 15.0
      * Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("loadSimulatedRequest:withResponseHTMLString:")
-    public native WKNavigation loadSimulatedRequestWithResponseHTMLString(NSURLRequest request, String string);
+    public native WKNavigation loadSimulatedRequestWithResponseHTMLString(@NotNull NSURLRequest request,
+            @NotNull String string);
 
     /**
      * The state of microphone capture on a web page.
@@ -1197,7 +1254,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("pauseAllMediaPlayback:")
     public native void pauseAllMediaPlayback(
-            @ObjCBlock(name = "call_pauseAllMediaPlayback") Block_pauseAllMediaPlayback completionHandler);
+            @Nullable @ObjCBlock(name = "call_pauseAllMediaPlayback") Block_pauseAllMediaPlayback completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1217,7 +1274,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("pauseAllMediaPlaybackWithCompletionHandler:")
     public native void pauseAllMediaPlaybackWithCompletionHandler(
-            @ObjCBlock(name = "call_pauseAllMediaPlaybackWithCompletionHandler") Block_pauseAllMediaPlaybackWithCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_pauseAllMediaPlaybackWithCompletionHandler") Block_pauseAllMediaPlaybackWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1234,7 +1291,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("requestMediaPlaybackState:")
     public native void requestMediaPlaybackState(
-            @ObjCBlock(name = "call_requestMediaPlaybackState") Block_requestMediaPlaybackState completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestMediaPlaybackState") Block_requestMediaPlaybackState completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1258,7 +1315,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("requestMediaPlaybackStateWithCompletionHandler:")
     public native void requestMediaPlaybackStateWithCompletionHandler(
-            @ObjCBlock(name = "call_requestMediaPlaybackStateWithCompletionHandler") Block_requestMediaPlaybackStateWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestMediaPlaybackStateWithCompletionHandler") Block_requestMediaPlaybackStateWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1275,7 +1332,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("resumeAllMediaPlayback:")
     public native void resumeAllMediaPlayback(
-            @ObjCBlock(name = "call_resumeAllMediaPlayback") Block_resumeAllMediaPlayback completionHandler);
+            @Nullable @ObjCBlock(name = "call_resumeAllMediaPlayback") Block_resumeAllMediaPlayback completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1297,14 +1354,14 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("resumeDownloadFromResumeData:completionHandler:")
-    public native void resumeDownloadFromResumeDataCompletionHandler(NSData resumeData,
-            @ObjCBlock(name = "call_resumeDownloadFromResumeDataCompletionHandler") Block_resumeDownloadFromResumeDataCompletionHandler completionHandler);
+    public native void resumeDownloadFromResumeDataCompletionHandler(@NotNull NSData resumeData,
+            @NotNull @ObjCBlock(name = "call_resumeDownloadFromResumeDataCompletionHandler") Block_resumeDownloadFromResumeDataCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resumeDownloadFromResumeDataCompletionHandler {
         @Generated
-        void call_resumeDownloadFromResumeDataCompletionHandler(WKDownload arg0);
+        void call_resumeDownloadFromResumeDataCompletionHandler(@NotNull WKDownload arg0);
     }
 
     /**
@@ -1321,7 +1378,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("setAllMediaPlaybackSuspended:completionHandler:")
     public native void setAllMediaPlaybackSuspendedCompletionHandler(boolean suspended,
-            @ObjCBlock(name = "call_setAllMediaPlaybackSuspendedCompletionHandler") Block_setAllMediaPlaybackSuspendedCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_setAllMediaPlaybackSuspendedCompletionHandler") Block_setAllMediaPlaybackSuspendedCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1345,7 +1402,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("setCameraCaptureState:completionHandler:")
     public native void setCameraCaptureStateCompletionHandler(@NInt long state,
-            @ObjCBlock(name = "call_setCameraCaptureStateCompletionHandler") Block_setCameraCaptureStateCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_setCameraCaptureStateCompletionHandler") Block_setCameraCaptureStateCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1365,7 +1422,7 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("setInteractionState:")
-    public native void setInteractionState(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setInteractionState(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * Set microphone capture state of a WKWebView.
@@ -1382,7 +1439,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("setMicrophoneCaptureState:completionHandler:")
     public native void setMicrophoneCaptureStateCompletionHandler(@NInt long state,
-            @ObjCBlock(name = "call_setMicrophoneCaptureStateCompletionHandler") Block_setMicrophoneCaptureStateCompletionHandler completionHandler);
+            @Nullable @ObjCBlock(name = "call_setMicrophoneCaptureStateCompletionHandler") Block_setMicrophoneCaptureStateCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1411,14 +1468,14 @@ public class WKWebView extends UIView {
      */
     @Generated
     @Selector("startDownloadUsingRequest:completionHandler:")
-    public native void startDownloadUsingRequestCompletionHandler(NSURLRequest request,
-            @ObjCBlock(name = "call_startDownloadUsingRequestCompletionHandler") Block_startDownloadUsingRequestCompletionHandler completionHandler);
+    public native void startDownloadUsingRequestCompletionHandler(@NotNull NSURLRequest request,
+            @NotNull @ObjCBlock(name = "call_startDownloadUsingRequestCompletionHandler") Block_startDownloadUsingRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startDownloadUsingRequestCompletionHandler {
         @Generated
-        void call_startDownloadUsingRequestCompletionHandler(WKDownload arg0);
+        void call_startDownloadUsingRequestCompletionHandler(@NotNull WKDownload arg0);
     }
 
     /**
@@ -1429,7 +1486,7 @@ public class WKWebView extends UIView {
     @Generated
     @Selector("suspendAllMediaPlayback:")
     public native void suspendAllMediaPlayback(
-            @ObjCBlock(name = "call_suspendAllMediaPlayback") Block_suspendAllMediaPlayback completionHandler);
+            @Nullable @ObjCBlock(name = "call_suspendAllMediaPlayback") Block_suspendAllMediaPlayback completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -1441,6 +1498,7 @@ public class WKWebView extends UIView {
     /**
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("themeColor")
     public native UIColor themeColor();
@@ -1458,6 +1516,7 @@ public class WKWebView extends UIView {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("findInteraction")
     public native UIFindInteraction findInteraction();

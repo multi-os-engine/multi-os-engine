@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSDictionary;
 import apple.uikit.UIImage;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioUnitComponent
@@ -58,6 +60,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * represent the tags from the current user and the system tags defined by AudioComponent.
      */
+    @NotNull
     @Generated
     @Selector("allTagNames")
     public native NSArray<String> allTagNames();
@@ -77,6 +80,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * the audioComponent that can be used in AudioComponent APIs.
      */
+    @NotNull
     @Generated
     @Selector("audioComponent")
     public native AudioComponent audioComponent();
@@ -93,22 +97,25 @@ public class AVAudioUnitComponent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -175,15 +182,17 @@ public class AVAudioUnitComponent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] localizedTypeName
      * 
      * localized string of typeName for display
      */
+    @NotNull
     @Generated
     @Selector("localizedTypeName")
     public native String localizedTypeName();
@@ -193,6 +202,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * the manufacturer name, extracted from the manufacturer key defined in Info.plist dictionary
      */
+    @NotNull
     @Generated
     @Selector("manufacturerName")
     public native String manufacturerName();
@@ -202,6 +212,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * the name of an audio component
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -232,6 +243,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * standard audio component types returned as strings
      */
+    @NotNull
     @Generated
     @Selector("typeName")
     public native String typeName();
@@ -251,6 +263,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * version number as string
      */
+    @NotNull
     @Generated
     @Selector("versionString")
     public native String versionString();
@@ -263,6 +276,7 @@ public class AVAudioUnitComponent extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("configurationDictionary")
     public native NSDictionary<String, ?> configurationDictionary();
@@ -270,6 +284,7 @@ public class AVAudioUnitComponent extends NSObject {
     /**
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("icon")
     public native UIImage icon();

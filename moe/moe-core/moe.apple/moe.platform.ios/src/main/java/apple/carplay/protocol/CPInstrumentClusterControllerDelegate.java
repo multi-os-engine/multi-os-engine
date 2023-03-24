@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 15.4
@@ -23,7 +24,7 @@ public interface CPInstrumentClusterControllerDelegate {
     @IsOptional
     @Selector("instrumentClusterController:didChangeCompassSetting:")
     default void instrumentClusterControllerDidChangeCompassSetting(
-            CPInstrumentClusterController instrumentClusterController, @NUInt long compassSetting) {
+            @NotNull CPInstrumentClusterController instrumentClusterController, @NUInt long compassSetting) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -31,29 +32,31 @@ public interface CPInstrumentClusterControllerDelegate {
     @IsOptional
     @Selector("instrumentClusterController:didChangeSpeedLimitSetting:")
     default void instrumentClusterControllerDidChangeSpeedLimitSetting(
-            CPInstrumentClusterController instrumentClusterController, @NUInt long speedLimitSetting) {
+            @NotNull CPInstrumentClusterController instrumentClusterController, @NUInt long speedLimitSetting) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @Selector("instrumentClusterControllerDidConnectWindow:")
-    void instrumentClusterControllerDidConnectWindow(UIWindow instrumentClusterWindow);
+    void instrumentClusterControllerDidConnectWindow(@NotNull UIWindow instrumentClusterWindow);
 
     @Generated
     @Selector("instrumentClusterControllerDidDisconnectWindow:")
-    void instrumentClusterControllerDidDisconnectWindow(UIWindow instrumentClusterWindow);
+    void instrumentClusterControllerDidDisconnectWindow(@NotNull UIWindow instrumentClusterWindow);
 
     @Generated
     @IsOptional
     @Selector("instrumentClusterControllerDidZoomIn:")
-    default void instrumentClusterControllerDidZoomIn(CPInstrumentClusterController instrumentClusterController) {
+    default void instrumentClusterControllerDidZoomIn(
+            @NotNull CPInstrumentClusterController instrumentClusterController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("instrumentClusterControllerDidZoomOut:")
-    default void instrumentClusterControllerDidZoomOut(CPInstrumentClusterController instrumentClusterController) {
+    default void instrumentClusterControllerDidZoomOut(
+            @NotNull CPInstrumentClusterController instrumentClusterController) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

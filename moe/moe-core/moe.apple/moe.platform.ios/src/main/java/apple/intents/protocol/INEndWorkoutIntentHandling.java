@@ -27,6 +27,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INEndWorkoutIntent. By implementing this protocol, a class can provide
@@ -60,8 +61,8 @@ public interface INEndWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmEndWorkout:completion:")
-    default void confirmEndWorkoutCompletion(INEndWorkoutIntent intent,
-            @ObjCBlock(name = "call_confirmEndWorkoutCompletion") Block_confirmEndWorkoutCompletion completion) {
+    default void confirmEndWorkoutCompletion(@NotNull INEndWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmEndWorkoutCompletion") Block_confirmEndWorkoutCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,8 +79,8 @@ public interface INEndWorkoutIntentHandling {
      */
     @Generated
     @Selector("handleEndWorkout:completion:")
-    void handleEndWorkoutCompletion(INEndWorkoutIntent intent,
-            @ObjCBlock(name = "call_handleEndWorkoutCompletion") Block_handleEndWorkoutCompletion completion);
+    void handleEndWorkoutCompletion(@NotNull INEndWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleEndWorkoutCompletion") Block_handleEndWorkoutCompletion completion);
 
     /**
      * Resolution methods - Determine if this intent is ready for the next step (confirmation)
@@ -95,8 +96,8 @@ public interface INEndWorkoutIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveWorkoutNameForEndWorkout:withCompletion:")
-    default void resolveWorkoutNameForEndWorkoutWithCompletion(INEndWorkoutIntent intent,
-            @ObjCBlock(name = "call_resolveWorkoutNameForEndWorkoutWithCompletion") Block_resolveWorkoutNameForEndWorkoutWithCompletion completion) {
+    default void resolveWorkoutNameForEndWorkoutWithCompletion(@NotNull INEndWorkoutIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveWorkoutNameForEndWorkoutWithCompletion") Block_resolveWorkoutNameForEndWorkoutWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,20 +105,21 @@ public interface INEndWorkoutIntentHandling {
     @Generated
     public interface Block_confirmEndWorkoutCompletion {
         @Generated
-        void call_confirmEndWorkoutCompletion(INEndWorkoutIntentResponse response);
+        void call_confirmEndWorkoutCompletion(@NotNull INEndWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleEndWorkoutCompletion {
         @Generated
-        void call_handleEndWorkoutCompletion(INEndWorkoutIntentResponse response);
+        void call_handleEndWorkoutCompletion(@NotNull INEndWorkoutIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveWorkoutNameForEndWorkoutWithCompletion {
         @Generated
-        void call_resolveWorkoutNameForEndWorkoutWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveWorkoutNameForEndWorkoutWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 }

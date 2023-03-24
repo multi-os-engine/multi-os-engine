@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -58,11 +60,12 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The color to use for the badge background
      */
+    @Nullable
     @Generated
     @Selector("badgeBackgroundColor")
     public native UIColor badgeBackgroundColor();
@@ -79,6 +82,7 @@ public class UITabBarItemStateAppearance extends NSObject {
      * Text attributes to be used for rendering badge text. If the font and color are unspecified, appropriate defaults
      * are supplied.
      */
+    @NotNull
     @Generated
     @Selector("badgeTextAttributes")
     public native NSDictionary<String, ?> badgeTextAttributes();
@@ -93,18 +97,21 @@ public class UITabBarItemStateAppearance extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,6 +132,7 @@ public class UITabBarItemStateAppearance extends NSObject {
     /**
      * The color to use for item icons. If not specified, a suitable color will be derived.
      */
+    @Nullable
     @Generated
     @Selector("iconColor")
     public native UIColor iconColor();
@@ -150,9 +158,10 @@ public class UITabBarItemStateAppearance extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,7 +181,7 @@ public class UITabBarItemStateAppearance extends NSObject {
      */
     @Generated
     @Selector("setBadgeBackgroundColor:")
-    public native void setBadgeBackgroundColor(UIColor value);
+    public native void setBadgeBackgroundColor(@Nullable UIColor value);
 
     /**
      * An offset to apply to the badge's position
@@ -187,7 +196,7 @@ public class UITabBarItemStateAppearance extends NSObject {
      */
     @Generated
     @Selector("setBadgeTextAttributes:")
-    public native void setBadgeTextAttributes(NSDictionary<String, ?> value);
+    public native void setBadgeTextAttributes(@NotNull NSDictionary<String, ?> value);
 
     /**
      * An offset to apply to the badge's title position
@@ -201,7 +210,7 @@ public class UITabBarItemStateAppearance extends NSObject {
      */
     @Generated
     @Selector("setIconColor:")
-    public native void setIconColor(UIColor value);
+    public native void setIconColor(@Nullable UIColor value);
 
     /**
      * An offset to apply to the UITabBarItem's title position
@@ -216,7 +225,7 @@ public class UITabBarItemStateAppearance extends NSObject {
      */
     @Generated
     @Selector("setTitleTextAttributes:")
-    public native void setTitleTextAttributes(NSDictionary<String, ?> value);
+    public native void setTitleTextAttributes(@NotNull NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setVersion:")
@@ -238,6 +247,7 @@ public class UITabBarItemStateAppearance extends NSObject {
      * Text attributes to be used for rendering title text. If the font or color are unspecified, appropriate defaults
      * are supplied.
      */
+    @NotNull
     @Generated
     @Selector("titleTextAttributes")
     public native NSDictionary<String, ?> titleTextAttributes();

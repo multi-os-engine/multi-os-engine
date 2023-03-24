@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INRequestRideIntent. By implementing this protocol, a class can provide
@@ -63,8 +64,8 @@ public interface INRequestRideIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmRequestRide:completion:")
-    default void confirmRequestRideCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_confirmRequestRideCompletion") Block_confirmRequestRideCompletion completion) {
+    default void confirmRequestRideCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmRequestRideCompletion") Block_confirmRequestRideCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,22 +82,22 @@ public interface INRequestRideIntentHandling {
      */
     @Generated
     @Selector("handleRequestRide:completion:")
-    void handleRequestRideCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_handleRequestRideCompletion") Block_handleRequestRideCompletion completion);
+    void handleRequestRideCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleRequestRideCompletion") Block_handleRequestRideCompletion completion);
 
     @Generated
     @IsOptional
     @Selector("resolveDropOffLocationForRequestRide:withCompletion:")
-    default void resolveDropOffLocationForRequestRideWithCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_resolveDropOffLocationForRequestRideWithCompletion") Block_resolveDropOffLocationForRequestRideWithCompletion completion) {
+    default void resolveDropOffLocationForRequestRideWithCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveDropOffLocationForRequestRideWithCompletion") Block_resolveDropOffLocationForRequestRideWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolvePartySizeForRequestRide:withCompletion:")
-    default void resolvePartySizeForRequestRideWithCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_resolvePartySizeForRequestRideWithCompletion") Block_resolvePartySizeForRequestRideWithCompletion completion) {
+    default void resolvePartySizeForRequestRideWithCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePartySizeForRequestRideWithCompletion") Block_resolvePartySizeForRequestRideWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,16 +115,16 @@ public interface INRequestRideIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePickupLocationForRequestRide:withCompletion:")
-    default void resolvePickupLocationForRequestRideWithCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_resolvePickupLocationForRequestRideWithCompletion") Block_resolvePickupLocationForRequestRideWithCompletion completion) {
+    default void resolvePickupLocationForRequestRideWithCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePickupLocationForRequestRideWithCompletion") Block_resolvePickupLocationForRequestRideWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveRideOptionNameForRequestRide:withCompletion:")
-    default void resolveRideOptionNameForRequestRideWithCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_resolveRideOptionNameForRequestRideWithCompletion") Block_resolveRideOptionNameForRequestRideWithCompletion completion) {
+    default void resolveRideOptionNameForRequestRideWithCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRideOptionNameForRequestRideWithCompletion") Block_resolveRideOptionNameForRequestRideWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -131,42 +132,45 @@ public interface INRequestRideIntentHandling {
     @Generated
     public interface Block_confirmRequestRideCompletion {
         @Generated
-        void call_confirmRequestRideCompletion(INRequestRideIntentResponse response);
+        void call_confirmRequestRideCompletion(@NotNull INRequestRideIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleRequestRideCompletion {
         @Generated
-        void call_handleRequestRideCompletion(INRequestRideIntentResponse response);
+        void call_handleRequestRideCompletion(@NotNull INRequestRideIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveDropOffLocationForRequestRideWithCompletion {
         @Generated
-        void call_resolveDropOffLocationForRequestRideWithCompletion(INPlacemarkResolutionResult resolutionResult);
+        void call_resolveDropOffLocationForRequestRideWithCompletion(
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePartySizeForRequestRideWithCompletion {
         @Generated
-        void call_resolvePartySizeForRequestRideWithCompletion(INIntegerResolutionResult resolutionResult);
+        void call_resolvePartySizeForRequestRideWithCompletion(@NotNull INIntegerResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePickupLocationForRequestRideWithCompletion {
         @Generated
-        void call_resolvePickupLocationForRequestRideWithCompletion(INPlacemarkResolutionResult resolutionResult);
+        void call_resolvePickupLocationForRequestRideWithCompletion(
+                @NotNull INPlacemarkResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveRideOptionNameForRequestRideWithCompletion {
         @Generated
-        void call_resolveRideOptionNameForRequestRideWithCompletion(INSpeakableStringResolutionResult resolutionResult);
+        void call_resolveRideOptionNameForRequestRideWithCompletion(
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     /**
@@ -175,8 +179,8 @@ public interface INRequestRideIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveScheduledPickupTimeForRequestRide:withCompletion:")
-    default void resolveScheduledPickupTimeForRequestRideWithCompletion(INRequestRideIntent intent,
-            @ObjCBlock(name = "call_resolveScheduledPickupTimeForRequestRideWithCompletion") Block_resolveScheduledPickupTimeForRequestRideWithCompletion completion) {
+    default void resolveScheduledPickupTimeForRequestRideWithCompletion(@NotNull INRequestRideIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveScheduledPickupTimeForRequestRideWithCompletion") Block_resolveScheduledPickupTimeForRequestRideWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -185,6 +189,6 @@ public interface INRequestRideIntentHandling {
     public interface Block_resolveScheduledPickupTimeForRequestRideWithCompletion {
         @Generated
         void call_resolveScheduledPickupTimeForRequestRideWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 }

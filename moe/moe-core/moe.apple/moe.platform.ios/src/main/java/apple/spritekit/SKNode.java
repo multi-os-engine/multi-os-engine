@@ -65,6 +65,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("SpriteKit")
@@ -96,29 +98,32 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -150,9 +155,10 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,36 +171,40 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKNode nodeWithFileNamed(String filename);
+    public static native SKNode nodeWithFileNamed(@NotNull String filename);
 
     /**
      * Returns an array of GKPolygonObstacles from a group of SKNode's transformed bounds in scene space.
      * 
      * @see GKObstacleGraph
      */
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
     /**
      * Returns an array of GKPolygonObstacles from a group of SKNode's physics bodies in scene space.
      * 
      * @see GKObstacleGraph
      */
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
     /**
      * Returns an array of GKPolygonObstacles from a group of SKSpriteNode's textures in scene space.
      * 
      * @see GKObstacleGraph
      */
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -217,9 +227,10 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("actionForKey:")
-    public native SKAction actionForKey(String key);
+    public native SKAction actionForKey(@NotNull String key);
 
     /**
      * Adds a node as a child node of this node
@@ -230,7 +241,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("addChild:")
-    public native void addChild(SKNode node);
+    public native void addChild(@NotNull SKNode node);
 
     /**
      * Alpha of this node (multiplied by the output color to give the final result)
@@ -252,13 +263,15 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Selector("canBecomeFocused")
     public native boolean canBecomeFocused();
 
+    @Nullable
     @Generated
     @Selector("childNodeWithName:")
-    public native SKNode childNodeWithName(String name);
+    public native SKNode childNodeWithName(@NotNull String name);
 
     /**
      * The children of this node.
      */
+    @NotNull
     @Generated
     @Selector("children")
     public native NSArray<? extends SKNode> children();
@@ -268,6 +281,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      * Constraints are evaluated each frame after actions and physics.
      * The node's transform will be changed to satisfy the constraint.
      */
+    @Nullable
     @Generated
     @Selector("constraints")
     public native NSArray<? extends SKConstraint> constraints();
@@ -279,27 +293,28 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Generated
     @Selector("convertPoint:fromNode:")
     @ByValue
-    public native CGPoint convertPointFromNode(@ByValue CGPoint point, SKNode node);
+    public native CGPoint convertPointFromNode(@ByValue CGPoint point, @NotNull SKNode node);
 
     @Generated
     @Selector("convertPoint:toNode:")
     @ByValue
-    public native CGPoint convertPointToNode(@ByValue CGPoint point, SKNode node);
+    public native CGPoint convertPointToNode(@ByValue CGPoint point, @NotNull SKNode node);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    public native void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The GKEntity associated with the node via a GKSKNodeComponent.
@@ -308,14 +323,15 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      * 
      *      API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("entity")
     public native GKEntity entity();
 
     @Generated
     @Selector("enumerateChildNodesWithName:usingBlock:")
-    public native void enumerateChildNodesWithNameUsingBlock(String name,
-            @ObjCBlock(name = "call_enumerateChildNodesWithNameUsingBlock") Block_enumerateChildNodesWithNameUsingBlock block);
+    public native void enumerateChildNodesWithNameUsingBlock(@NotNull String name,
+            @NotNull @ObjCBlock(name = "call_enumerateChildNodesWithNameUsingBlock") Block_enumerateChildNodesWithNameUsingBlock block);
 
     @Generated
     @Selector("frame")
@@ -331,7 +347,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("inParentHierarchy:")
-    public native boolean inParentHierarchy(SKNode parent);
+    public native boolean inParentHierarchy(@NotNull SKNode parent);
 
     @Generated
     @Selector("init")
@@ -339,25 +355,25 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKNode initWithCoder(NSCoder aDecoder);
+    public native SKNode initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("insertChild:atIndex:")
-    public native void insertChildAtIndex(SKNode node, @NInt long index);
+    public native void insertChildAtIndex(@NotNull SKNode node, @NInt long index);
 
     /**
      * Returns true if the bounds of this node intersects with the transformed bounds of the other node, otherwise false
      */
     @Generated
     @Selector("intersectsNode:")
-    public native boolean intersectsNode(SKNode node);
+    public native boolean intersectsNode(@NotNull SKNode node);
 
     /**
      * Returns true if this node has equivalent content to the other object, otherwise false
      */
     @Generated
     @Selector("isEqualToNode:")
-    public native boolean isEqualToNode(SKNode node);
+    public native boolean isEqualToNode(@NotNull SKNode node);
 
     /**
      * Controls whether or not the node and its children are rendered.
@@ -406,13 +422,14 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("moveToParent:")
-    public native void moveToParent(SKNode parent);
+    public native void moveToParent(@NotNull SKNode parent);
 
     /**
      * The client assignable name.
      * 
      * In general, this should be unique among peers in the scene graph.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -423,10 +440,12 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      * 
      * @return a child node or self at the given location.
      */
+    @NotNull
     @Generated
     @Selector("nodeAtPoint:")
     public native SKNode nodeAtPoint(@ByValue CGPoint p);
 
+    @NotNull
     @Generated
     @Selector("nodesAtPoint:")
     public native NSArray<? extends SKNode> nodesAtPoint(@ByValue CGPoint p);
@@ -444,15 +463,17 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      * 
      *      API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("objectForKeyedSubscript:")
-    public native NSArray<? extends SKNode> objectForKeyedSubscript(String name);
+    public native NSArray<? extends SKNode> objectForKeyedSubscript(@NotNull String name);
 
     /**
      * The parent of the node.
      * 
      * If this is nil the node has not been added to another group and is thus the root node of its own graph.
      */
+    @Nullable
     @Generated
     @Selector("parent")
     public native SKNode parent();
@@ -460,6 +481,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     /**
      * Physics body attached to the node, with synchronized scale, rotation, and position
      */
+    @Nullable
     @Generated
     @Selector("physicsBody")
     public native SKPhysicsBody physicsBody();
@@ -472,10 +494,12 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @ByValue
     public native CGPoint position();
 
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
@@ -485,13 +509,14 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     /**
      * Kinematic constraints, used in IK solving
      */
+    @Nullable
     @Generated
     @Selector("reachConstraints")
     public native SKReachConstraints reachConstraints();
 
     @Generated
     @Selector("removeActionForKey:")
-    public native void removeActionForKey(String key);
+    public native void removeActionForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllActions")
@@ -503,7 +528,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("removeChildrenInArray:")
-    public native void removeChildrenInArray(NSArray<? extends SKNode> nodes);
+    public native void removeChildrenInArray(@NotNull NSArray<? extends SKNode> nodes);
 
     @Generated
     @Selector("removeFromParent")
@@ -511,20 +536,21 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("runAction:")
-    public native void runAction(SKAction action);
+    public native void runAction(@NotNull SKAction action);
 
     @Generated
     @Selector("runAction:completion:")
-    public native void runActionCompletion(SKAction action,
-            @ObjCBlock(name = "call_runActionCompletion") Block_runActionCompletion block);
+    public native void runActionCompletion(@NotNull SKAction action,
+            @NotNull @ObjCBlock(name = "call_runActionCompletion") Block_runActionCompletion block);
 
     @Generated
     @Selector("runAction:withKey:")
-    public native void runActionWithKey(SKAction action, String key);
+    public native void runActionWithKey(@NotNull SKAction action, @NotNull String key);
 
     /**
      * The scene that the node is currently in.
      */
+    @Nullable
     @Generated
     @Selector("scene")
     public native SKScene scene();
@@ -543,7 +569,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("setConstraints:")
-    public native void setConstraints(NSArray<? extends SKConstraint> value);
+    public native void setConstraints(@Nullable NSArray<? extends SKConstraint> value);
 
     /**
      * The GKEntity associated with the node via a GKSKNodeComponent.
@@ -554,7 +580,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("setEntity:")
-    public native void setEntity_unsafe(GKEntity value);
+    public native void setEntity_unsafe(@Nullable GKEntity value);
 
     /**
      * The GKEntity associated with the node via a GKSKNodeComponent.
@@ -564,7 +590,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      *      API-Since: 10.0
      */
     @Generated
-    public void setEntity(GKEntity value) {
+    public void setEntity(@Nullable GKEntity value) {
         Object __old = entity();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -582,7 +608,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setNeedsFocusUpdate")
@@ -593,7 +619,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("setPhysicsBody:")
-    public native void setPhysicsBody(SKPhysicsBody value);
+    public native void setPhysicsBody(@Nullable SKPhysicsBody value);
 
     /**
      * The position of the node in the parent's coordinate system
@@ -607,7 +633,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("setReachConstraints:")
-    public native void setReachConstraints(SKReachConstraints value);
+    public native void setReachConstraints(@Nullable SKReachConstraints value);
 
     /**
      * Sets both the x & y scale
@@ -630,7 +656,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("setUserData:")
-    public native void setUserData(NSMutableDictionary<?, ?> value);
+    public native void setUserData(@Nullable NSMutableDictionary<?, ?> value);
 
     /**
      * The scaling in the X axis
@@ -663,7 +689,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
 
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    public native boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     /**
      * The speed multiplier applied to all actions run on this node. Inherited by its children.
@@ -680,6 +706,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     /**
      * An optional dictionary that can be used to store your own data in a node. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("userData")
     public native NSMutableDictionary<?, ?> userData();
@@ -721,7 +748,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Generated
     public interface Block_enumerateChildNodesWithNameUsingBlock {
         @Generated
-        void call_enumerateChildNodesWithNameUsingBlock(SKNode node, BoolPtr stop);
+        void call_enumerateChildNodesWithNameUsingBlock(@NotNull SKNode node, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -739,6 +766,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      * API-Since: 10.0
      * Deprecated-Since: 10.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("attributeValues")
@@ -765,7 +793,7 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Deprecated
     @Generated
     @Selector("setAttributeValues:")
-    public native void setAttributeValues(NSDictionary<String, ? extends SKAttributeValue> value);
+    public native void setAttributeValues(@NotNull NSDictionary<String, ? extends SKAttributeValue> value);
 
     /**
      * Determines how this node participates in the focus system. The default is SKNodeFocusBehaviorNone.
@@ -783,22 +811,24 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
     @Deprecated
     @Generated
     @Selector("setValue:forAttributeNamed:")
-    public native void setValueForAttributeNamed(SKAttributeValue value, String key);
+    public native void setValueForAttributeNamed(@NotNull SKAttributeValue value, @NotNull String key);
 
     /**
      * API-Since: 10.0
      * Deprecated-Since: 10.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("valueForAttributeNamed:")
-    public native SKAttributeValue valueForAttributeNamed(String key);
+    public native SKAttributeValue valueForAttributeNamed(@NotNull String key);
 
     @Generated
     @IsOptional
     @Selector("didHintFocusMovement:")
-    public native void didHintFocusMovement(UIFocusMovementHint hint);
+    public native void didHintFocusMovement(@NotNull UIFocusMovementHint hint);
 
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -809,9 +839,10 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
      */
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
@@ -827,11 +858,13 @@ public class SKNode extends UIResponder implements NSCopying, NSSecureCoding, UI
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusEffect")

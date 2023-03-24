@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object designed to generate either full resolution or half resolution matte given the ARFrame.
@@ -64,22 +66,25 @@ public class ARMatteGenerator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,11 +111,12 @@ public class ARMatteGenerator extends NSObject {
      * @return Dilated depth MTLTexture for the given ARFrame at the segmentation stencil resolution. The texture
      *         consists of a single channel and is of type float16.
      */
+    @NotNull
     @Generated
     @Selector("generateDilatedDepthFromFrame:commandBuffer:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture generateDilatedDepthFromFrameCommandBuffer(ARFrame frame,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native MTLTexture generateDilatedDepthFromFrameCommandBuffer(@NotNull ARFrame frame,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Generates alpha matte at either full resolution or half the resolution of the captured image.
@@ -122,11 +128,12 @@ public class ARMatteGenerator extends NSObject {
      * @return Alpha matte MTLTexture for the given ARFrame at full resolution or half resolution as chosen by the
      *         caller during initialization.
      */
+    @NotNull
     @Generated
     @Selector("generateMatteFromFrame:commandBuffer:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native MTLTexture generateMatteFromFrameCommandBuffer(ARFrame frame,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+    public native MTLTexture generateMatteFromFrameCommandBuffer(@NotNull ARFrame frame,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     @Generated
     @Selector("hash")
@@ -153,8 +160,8 @@ public class ARMatteGenerator extends NSObject {
      */
     @Generated
     @Selector("initWithDevice:matteResolution:")
-    public native ARMatteGenerator initWithDeviceMatteResolution(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NInt long matteResolution);
+    public native ARMatteGenerator initWithDeviceMatteResolution(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NInt long matteResolution);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -173,9 +180,10 @@ public class ARMatteGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

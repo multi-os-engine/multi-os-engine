@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -55,14 +57,14 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     @Selector("addRemovalHandler:forTokenID:")
     public native void addRemovalHandlerForTokenID(
-            @ObjCBlock(name = "call_addRemovalHandlerForTokenID") Block_addRemovalHandlerForTokenID removalHandler,
-            String tokenID);
+            @NotNull @ObjCBlock(name = "call_addRemovalHandlerForTokenID") Block_addRemovalHandlerForTokenID removalHandler,
+            @NotNull String tokenID);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addRemovalHandlerForTokenID {
         @Generated
-        void call_addRemovalHandlerForTokenID(String tokenID);
+        void call_addRemovalHandlerForTokenID(@NotNull String tokenID);
     }
 
     @Generated
@@ -77,22 +79,25 @@ public class TKTokenWatcher extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,13 +135,13 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     @Selector("initWithInsertionHandler:")
     public native TKTokenWatcher initWithInsertionHandler(
-            @ObjCBlock(name = "call_initWithInsertionHandler") Block_initWithInsertionHandler insertionHandler);
+            @NotNull @ObjCBlock(name = "call_initWithInsertionHandler") Block_initWithInsertionHandler insertionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithInsertionHandler {
         @Generated
-        void call_initWithInsertionHandler(String tokenID);
+        void call_initWithInsertionHandler(@NotNull String tokenID);
     }
 
     @Generated
@@ -156,9 +161,10 @@ public class TKTokenWatcher extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -186,13 +192,13 @@ public class TKTokenWatcher extends NSObject {
     @Generated
     @Selector("setInsertionHandler:")
     public native void setInsertionHandler(
-            @ObjCBlock(name = "call_setInsertionHandler") Block_setInsertionHandler insertionHandler);
+            @NotNull @ObjCBlock(name = "call_setInsertionHandler") Block_setInsertionHandler insertionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setInsertionHandler {
         @Generated
-        void call_setInsertionHandler(String tokenID);
+        void call_setInsertionHandler(@NotNull String tokenID);
     }
 
     @Generated
@@ -207,6 +213,7 @@ public class TKTokenWatcher extends NSObject {
      * Array of currently known TokenIDs in the system. Tokens are identified by instance's names. It is possible to use
      * KVO to be notified about token arrivals and removals.
      */
+    @NotNull
     @Generated
     @Selector("tokenIDs")
     public native NSArray<String> tokenIDs();
@@ -224,7 +231,8 @@ public class TKTokenWatcher extends NSObject {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("tokenInfoForTokenID:")
-    public native TKTokenWatcherTokenInfo tokenInfoForTokenID(String tokenID);
+    public native TKTokenWatcherTokenInfo tokenInfoForTokenID(@NotNull String tokenID);
 }

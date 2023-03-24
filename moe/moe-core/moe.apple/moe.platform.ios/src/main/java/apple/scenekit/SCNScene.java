@@ -54,6 +54,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNScene
@@ -90,22 +92,25 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -140,9 +145,10 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +179,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("sceneNamed:")
-    public static native SCNScene sceneNamed(String name);
+    public static native SCNScene sceneNamed(@NotNull String name);
 
     /**
      * sceneNamed:options:
@@ -189,15 +195,15 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("sceneNamed:inDirectory:options:")
-    public static native SCNScene sceneNamedInDirectoryOptions(String name, String directory,
-            NSDictionary<String, ?> options);
+    public static native SCNScene sceneNamedInDirectoryOptions(@NotNull String name, @Nullable String directory,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("sceneWithMDLAsset:")
-    public static native SCNScene sceneWithMDLAsset(MDLAsset mdlAsset);
+    public static native SCNScene sceneWithMDLAsset(@NotNull MDLAsset mdlAsset);
 
     /**
      * sceneWithURL:options:error:
@@ -214,8 +220,9 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("sceneWithURL:options:error:")
-    public static native SCNScene sceneWithURLOptionsError(NSURL url, NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SCNScene sceneWithURLOptionsError(@NotNull NSURL url,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("setVersion:")
@@ -239,7 +246,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("addParticleSystem:withTransform:")
-    public native void addParticleSystemWithTransform(SCNParticleSystem system, @ByValue SCNMatrix4 transform);
+    public native void addParticleSystemWithTransform(@NotNull SCNParticleSystem system, @ByValue SCNMatrix4 transform);
 
     /**
      * attributeForKey:
@@ -250,10 +257,11 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * 
      * @param key An NSString object that specifies the attribute to be read
      */
+    @Nullable
     @Generated
     @Selector("attributeForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object attributeForKey(String key);
+    public native Object attributeForKey(@NotNull String key);
 
     /**
      * [@property] background
@@ -265,13 +273,14 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * Colors are supported starting in macOS 10.12 and iOS 10. Prior to that you can use SCNView.backgroundColor.
      * MDLSkyCubeTexture is supported starting in macOS 10.13 and iOS 11.
      */
+    @NotNull
     @Generated
     @Selector("background")
     public native SCNMaterialProperty background();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] fogColor
@@ -280,6 +289,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * 
      * The initial value is a NSColor.
      */
+    @NotNull
     @Generated
     @Selector("fogColor")
     @MappedReturn(ObjCObjectMapper.class)
@@ -324,7 +334,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNScene initWithCoder(NSCoder coder);
+    public native SCNScene initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] paused
@@ -358,6 +368,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("lightingEnvironment")
     public native SCNMaterialProperty lightingEnvironment();
@@ -365,6 +376,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
     /**
      * The particle systems attached to the scene that are active.
      */
+    @Nullable
     @Generated
     @Selector("particleSystems")
     public native NSArray<? extends SCNParticleSystem> particleSystems();
@@ -378,6 +390,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * property to access the scene’s global physics properties, such as gravity. To add physics to a particular node,
      * see physicsBody.
      */
+    @NotNull
     @Generated
     @Selector("physicsWorld")
     public native SCNPhysicsWorld physicsWorld();
@@ -394,7 +407,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("removeParticleSystem:")
-    public native void removeParticleSystem(SCNParticleSystem system);
+    public native void removeParticleSystem(@NotNull SCNParticleSystem system);
 
     /**
      * [@property] root
@@ -405,6 +418,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      * at the root of their hierarchies. The root node(s) of the imported files will therefore be children
      * of the SCNScene's root node.
      */
+    @NotNull
     @Generated
     @Selector("rootNode")
     public native SCNNode rootNode();
@@ -421,7 +435,8 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("setAttribute:forKey:")
-    public native void setAttributeForKey(@Mapped(ObjCObjectMapper.class) Object attribute, String key);
+    public native void setAttributeForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object attribute,
+            @NotNull String key);
 
     /**
      * [@property] fogColor
@@ -432,7 +447,7 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("setFogColor:")
-    public native void setFogColor(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setFogColor(@NotNull @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] fogDensityExponent
@@ -491,15 +506,17 @@ public class SCNScene extends NSObject implements NSSecureCoding, GKSceneRootNod
      */
     @Generated
     @Selector("writeToURL:options:delegate:progressHandler:")
-    public native boolean writeToURLOptionsDelegateProgressHandler(NSURL url, NSDictionary<String, ?> options,
-            @Mapped(ObjCObjectMapper.class) SCNSceneExportDelegate delegate,
-            @ObjCBlock(name = "call_writeToURLOptionsDelegateProgressHandler") Block_writeToURLOptionsDelegateProgressHandler progressHandler);
+    public native boolean writeToURLOptionsDelegateProgressHandler(@NotNull NSURL url,
+            @Nullable NSDictionary<String, ?> options,
+            @Nullable @Mapped(ObjCObjectMapper.class) SCNSceneExportDelegate delegate,
+            @Nullable @ObjCBlock(name = "call_writeToURLOptionsDelegateProgressHandler") Block_writeToURLOptionsDelegateProgressHandler progressHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeToURLOptionsDelegateProgressHandler {
         @Generated
-        void call_writeToURLOptionsDelegateProgressHandler(float totalProgress, NSError error, BoolPtr stop);
+        void call_writeToURLOptionsDelegateProgressHandler(float totalProgress, @Nullable NSError error,
+                @NotNull BoolPtr stop);
     }
 
     /**

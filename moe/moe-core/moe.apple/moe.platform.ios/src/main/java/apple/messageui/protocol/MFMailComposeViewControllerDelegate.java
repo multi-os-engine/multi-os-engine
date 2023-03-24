@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MFMailComposeViewControllerDelegate
@@ -57,8 +59,8 @@ public interface MFMailComposeViewControllerDelegate {
     @Generated
     @IsOptional
     @Selector("mailComposeController:didFinishWithResult:error:")
-    default void mailComposeControllerDidFinishWithResultError(MFMailComposeViewController controller,
-            @NInt long result, NSError error) {
+    default void mailComposeControllerDidFinishWithResultError(@NotNull MFMailComposeViewController controller,
+            @NInt long result, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

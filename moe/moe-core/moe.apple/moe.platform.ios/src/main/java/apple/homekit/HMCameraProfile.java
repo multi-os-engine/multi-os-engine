@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a camera profile the accessory implements.
@@ -75,22 +77,25 @@ public class HMCameraProfile extends HMAccessoryProfile {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class HMCameraProfile extends HMAccessoryProfile {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -162,6 +168,7 @@ public class HMCameraProfile extends HMAccessoryProfile {
     /**
      * Object that can be used to control the microphone settings on the camera.
      */
+    @Nullable
     @Generated
     @Selector("microphoneControl")
     public native HMCameraAudioControl microphoneControl();
@@ -169,6 +176,7 @@ public class HMCameraProfile extends HMAccessoryProfile {
     /**
      * Object that can be used to control the settings on the camera.
      */
+    @Nullable
     @Generated
     @Selector("settingsControl")
     public native HMCameraSettingsControl settingsControl();
@@ -176,6 +184,7 @@ public class HMCameraProfile extends HMAccessoryProfile {
     /**
      * Object that can be used to take image snapshots from the camera.
      */
+    @Nullable
     @Generated
     @Selector("snapshotControl")
     public native HMCameraSnapshotControl snapshotControl();
@@ -183,6 +192,7 @@ public class HMCameraProfile extends HMAccessoryProfile {
     /**
      * Object that can be used to control the speaker settings on the camera.
      */
+    @Nullable
     @Generated
     @Selector("speakerControl")
     public native HMCameraAudioControl speakerControl();
@@ -190,6 +200,7 @@ public class HMCameraProfile extends HMAccessoryProfile {
     /**
      * Object that can be used to control the camera stream.
      */
+    @Nullable
     @Generated
     @Selector("streamControl")
     public native HMCameraStreamControl streamControl();

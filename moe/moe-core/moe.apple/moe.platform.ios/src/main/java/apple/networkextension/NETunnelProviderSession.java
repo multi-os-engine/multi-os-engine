@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@file] NETunnelProviderSession.h
@@ -84,22 +86,25 @@ public class NETunnelProviderSession extends NEVPNConnection {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,9 +191,9 @@ public class NETunnelProviderSession extends NEVPNConnection {
      */
     @Generated
     @Selector("sendProviderMessage:returnError:responseHandler:")
-    public native boolean sendProviderMessageReturnErrorResponseHandler(NSData messageData,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
-            @ObjCBlock(name = "call_sendProviderMessageReturnErrorResponseHandler") Block_sendProviderMessageReturnErrorResponseHandler responseHandler);
+    public native boolean sendProviderMessageReturnErrorResponseHandler(@NotNull NSData messageData,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            @Nullable @ObjCBlock(name = "call_sendProviderMessageReturnErrorResponseHandler") Block_sendProviderMessageReturnErrorResponseHandler responseHandler);
 
     /**
      * startTunnelWithOptions:andReturnError:
@@ -207,8 +213,8 @@ public class NETunnelProviderSession extends NEVPNConnection {
      */
     @Generated
     @Selector("startTunnelWithOptions:andReturnError:")
-    public native boolean startTunnelWithOptionsAndReturnError(NSDictionary<String, ?> options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startTunnelWithOptionsAndReturnError(@Nullable NSDictionary<String, ?> options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * stopTunnel
@@ -226,6 +232,6 @@ public class NETunnelProviderSession extends NEVPNConnection {
     @Generated
     public interface Block_sendProviderMessageReturnErrorResponseHandler {
         @Generated
-        void call_sendProviderMessageReturnErrorResponseHandler(NSData responseData);
+        void call_sendProviderMessageReturnErrorResponseHandler(@Nullable NSData responseData);
     }
 }

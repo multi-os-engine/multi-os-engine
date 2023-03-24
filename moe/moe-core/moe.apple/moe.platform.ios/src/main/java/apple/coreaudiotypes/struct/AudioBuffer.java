@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -28,7 +29,7 @@ public final class AudioBuffer extends StructObject {
     }
 
     @Generated
-    public AudioBuffer(int mNumberChannels, int mDataByteSize, VoidPtr mData) {
+    public AudioBuffer(int mNumberChannels, int mDataByteSize, @Nullable VoidPtr mData) {
         super(AudioBuffer.class);
         setMNumberChannels(mNumberChannels);
         setMDataByteSize(mDataByteSize);
@@ -51,11 +52,12 @@ public final class AudioBuffer extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMDataByteSize(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr mData();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setMData(VoidPtr value);
+    public native void setMData(@Nullable VoidPtr value);
 }

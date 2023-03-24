@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -27,11 +29,12 @@ public interface UICalendarViewDelegate {
      * 
      * @return A @c UICalendarViewDecoration to annotate the specific date. Return @c nil for no decoration.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("calendarView:decorationForDateComponents:")
-    default UICalendarViewDecoration calendarViewDecorationForDateComponents(UICalendarView calendarView,
-            NSDateComponents dateComponents) {
+    default UICalendarViewDecoration calendarViewDecorationForDateComponents(@NotNull UICalendarView calendarView,
+            @NotNull NSDateComponents dateComponents) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,8 +49,8 @@ public interface UICalendarViewDelegate {
     @Generated
     @IsOptional
     @Selector("calendarView:didChangeVisibleDateComponentsFrom:")
-    default void calendarViewDidChangeVisibleDateComponentsFrom(UICalendarView calendarView,
-            NSDateComponents previousDateComponents) {
+    default void calendarViewDidChangeVisibleDateComponentsFrom(@NotNull UICalendarView calendarView,
+            @NotNull NSDateComponents previousDateComponents) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -75,7 +77,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -91,64 +93,70 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UIToolbar appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UIToolbar appearanceForTraitCollection(UITraitCollection trait);
+    public static native UIToolbar appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UIToolbar appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIToolbar appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIToolbar appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UIToolbar appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIToolbar appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UIToolbar appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -156,34 +164,37 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -224,10 +235,12 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -240,14 +253,14 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -279,12 +292,12 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -304,17 +317,18 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -330,16 +344,16 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -357,50 +371,57 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UIToolbar _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UIToolbar _appearanceForTraitCollection(UITraitCollection trait) {
+    public UIToolbar _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UIToolbar _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIToolbar _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UIToolbar _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UIToolbar _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIToolbar _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UIToolbar _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIToolbar _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UIToolbar _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImageForToolbarPosition:barMetrics:")
     public native UIImage backgroundImageForToolbarPositionBarMetrics(@NInt long topOrBottom, @NInt long barMetrics);
@@ -423,6 +444,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
@@ -432,6 +454,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -443,7 +466,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIToolbar initWithCoder(NSCoder coder);
+    public native UIToolbar initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -470,6 +493,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     /**
      * get/set visible UIBarButtonItem. default is nil. changes not animated. shown in order
      */
+    @Nullable
     @Generated
     @Selector("items")
     public native NSArray<? extends UIBarButtonItem> items();
@@ -489,8 +513,8 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setBackgroundImage:forToolbarPosition:barMetrics:")
-    public native void setBackgroundImageForToolbarPositionBarMetrics(UIImage backgroundImage, @NInt long topOrBottom,
-            @NInt long barMetrics);
+    public native void setBackgroundImageForToolbarPositionBarMetrics(@Nullable UIImage backgroundImage,
+            @NInt long topOrBottom, @NInt long barMetrics);
 
     /**
      * default is UIBarStyleDefault
@@ -506,7 +530,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setBarTintColor:")
-    public native void setBarTintColor(UIColor value);
+    public native void setBarTintColor(@Nullable UIColor value);
 
     /**
      * You may not set the delegate when the toolbar is managed by a UINavigationController.
@@ -515,7 +539,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UIToolbarDelegate value);
 
     /**
      * You may not set the delegate when the toolbar is managed by a UINavigationController.
@@ -523,7 +547,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * API-Since: 7.0
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIToolbarDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIToolbarDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -539,14 +563,14 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setItems:")
-    public native void setItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setItems(@Nullable NSArray<? extends UIBarButtonItem> value);
 
     /**
      * will fade in or out or reorder and adjust spacing
      */
     @Generated
     @Selector("setItems:animated:")
-    public native void setItemsAnimated(NSArray<? extends UIBarButtonItem> items, boolean animated);
+    public native void setItemsAnimated(@Nullable NSArray<? extends UIBarButtonItem> items, boolean animated);
 
     /**
      * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom
@@ -558,7 +582,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setShadowImage:forToolbarPosition:")
-    public native void setShadowImageForToolbarPosition(UIImage shadowImage, @NInt long topOrBottom);
+    public native void setShadowImageForToolbarPosition(@Nullable UIImage shadowImage, @NInt long topOrBottom);
 
     /**
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
@@ -572,6 +596,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("shadowImageForToolbarPosition:")
     public native UIImage shadowImageForToolbarPosition(@NInt long topOrBottom);
@@ -591,6 +616,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("compactAppearance")
     public native UIToolbarAppearance compactAppearance();
@@ -599,7 +625,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its compact height. If not
@@ -609,7 +635,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setCompactAppearance:")
-    public native void setCompactAppearance(UIToolbarAppearance value);
+    public native void setCompactAppearance(@Nullable UIToolbarAppearance value);
 
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its standard height.
@@ -618,13 +644,14 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setStandardAppearance:")
-    public native void setStandardAppearance(UIToolbarAppearance value);
+    public native void setStandardAppearance(@NotNull UIToolbarAppearance value);
 
     /**
      * Describes the appearance attributes for the toolbar to use when it is displayed with its standard height.
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("standardAppearance")
     public native UIToolbarAppearance standardAppearance();
@@ -636,6 +663,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("compactScrollEdgeAppearance")
     public native UIToolbarAppearance compactScrollEdgeAppearance();
@@ -646,6 +674,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("scrollEdgeAppearance")
     public native UIToolbarAppearance scrollEdgeAppearance();
@@ -659,7 +688,7 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")
-    public native void setCompactScrollEdgeAppearance(UIToolbarAppearance value);
+    public native void setCompactScrollEdgeAppearance(@Nullable UIToolbarAppearance value);
 
     /**
      * Describes the appearance attributes for the toolbar to use at standard height when an observable scroll view is
@@ -669,5 +698,5 @@ public class UIToolbar extends UIView implements UIBarPositioning {
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")
-    public native void setScrollEdgeAppearance(UIToolbarAppearance value);
+    public native void setScrollEdgeAppearance(@Nullable UIToolbarAppearance value);
 }

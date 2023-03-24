@@ -11,6 +11,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NFCVASReaderSessionDelegate
@@ -37,7 +38,7 @@ public interface NFCVASReaderSessionDelegate {
      */
     @Generated
     @Selector("readerSession:didInvalidateWithError:")
-    void readerSessionDidInvalidateWithError(NFCVASReaderSession session, NSError error);
+    void readerSessionDidInvalidateWithError(@NotNull NFCVASReaderSession session, @NotNull NSError error);
 
     /**
      * readerSession:didReceiveVASResponses:
@@ -53,7 +54,8 @@ public interface NFCVASReaderSessionDelegate {
      */
     @Generated
     @Selector("readerSession:didReceiveVASResponses:")
-    void readerSessionDidReceiveVASResponses(NFCVASReaderSession session, NSArray<? extends NFCVASResponse> responses);
+    void readerSessionDidReceiveVASResponses(@NotNull NFCVASReaderSession session,
+            @NotNull NSArray<? extends NFCVASResponse> responses);
 
     /**
      * readerSessionDidBecomeActive:
@@ -68,7 +70,7 @@ public interface NFCVASReaderSessionDelegate {
     @Generated
     @IsOptional
     @Selector("readerSessionDidBecomeActive:")
-    default void readerSessionDidBecomeActive(NFCVASReaderSession session) {
+    default void readerSessionDidBecomeActive(@NotNull NFCVASReaderSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

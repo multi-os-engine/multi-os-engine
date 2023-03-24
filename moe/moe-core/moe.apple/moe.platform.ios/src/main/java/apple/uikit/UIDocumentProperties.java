@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -50,6 +52,7 @@ public class UIDocumentProperties extends NSObject {
      * To support sharing, assign a closure to return a UIActivityViewController configured to share the represented
      * document.
      */
+    @Nullable
     @Generated
     @Selector("activityViewControllerProvider")
     @ObjCBlock(name = "call_activityViewControllerProvider_ret")
@@ -58,6 +61,7 @@ public class UIDocumentProperties extends NSObject {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activityViewControllerProvider_ret {
+        @NotNull
         @Generated
         UIActivityViewController call_activityViewControllerProvider_ret();
     }
@@ -74,22 +78,25 @@ public class UIDocumentProperties extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,6 +113,7 @@ public class UIDocumentProperties extends NSObject {
      * To support drag & drop, assign a closure to return an array of drag items corresponding to the represented
      * document.
      */
+    @Nullable
     @Generated
     @Selector("dragItemsProvider")
     @ObjCBlock(name = "call_dragItemsProvider_ret")
@@ -114,8 +122,9 @@ public class UIDocumentProperties extends NSObject {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_dragItemsProvider_ret {
+        @NotNull
         @Generated
-        NSArray<? extends UIDragItem> call_dragItemsProvider_ret(@Mapped(ObjCObjectMapper.class) Object arg0);
+        NSArray<? extends UIDragItem> call_dragItemsProvider_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Generated
@@ -132,14 +141,14 @@ public class UIDocumentProperties extends NSObject {
      */
     @Generated
     @Selector("initWithMetadata:")
-    public native UIDocumentProperties initWithMetadata(LPLinkMetadata metadata);
+    public native UIDocumentProperties initWithMetadata(@NotNull LPLinkMetadata metadata);
 
     /**
      * When initializing with a url, UIKit will automatically lookup metadata based on the data at that url.
      */
     @Generated
     @Selector("initWithURL:")
-    public native UIDocumentProperties initWithURL(NSURL url);
+    public native UIDocumentProperties initWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -158,13 +167,15 @@ public class UIDocumentProperties extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The metadata to use. UIKit will generate this automatically if a url is given at initialization time.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native LPLinkMetadata metadata();
@@ -189,11 +200,12 @@ public class UIDocumentProperties extends NSObject {
     @Generated
     @Selector("setActivityViewControllerProvider:")
     public native void setActivityViewControllerProvider(
-            @ObjCBlock(name = "call_setActivityViewControllerProvider") Block_setActivityViewControllerProvider value);
+            @Nullable @ObjCBlock(name = "call_setActivityViewControllerProvider") Block_setActivityViewControllerProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setActivityViewControllerProvider {
+        @NotNull
         @Generated
         UIActivityViewController call_setActivityViewControllerProvider();
     }
@@ -205,13 +217,14 @@ public class UIDocumentProperties extends NSObject {
     @Generated
     @Selector("setDragItemsProvider:")
     public native void setDragItemsProvider(
-            @ObjCBlock(name = "call_setDragItemsProvider") Block_setDragItemsProvider value);
+            @Nullable @ObjCBlock(name = "call_setDragItemsProvider") Block_setDragItemsProvider value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDragItemsProvider {
+        @NotNull
         @Generated
-        NSArray<? extends UIDragItem> call_setDragItemsProvider(@Mapped(ObjCObjectMapper.class) Object arg0);
+        NSArray<? extends UIDragItem> call_setDragItemsProvider(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     /**
@@ -219,7 +232,7 @@ public class UIDocumentProperties extends NSObject {
      */
     @Generated
     @Selector("setMetadata:")
-    public native void setMetadata(LPLinkMetadata value);
+    public native void setMetadata(@NotNull LPLinkMetadata value);
 
     @Generated
     @Selector("setVersion:")

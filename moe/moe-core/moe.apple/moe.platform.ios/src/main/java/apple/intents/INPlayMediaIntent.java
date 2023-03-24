@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -58,22 +60,25 @@ public class INPlayMediaIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,7 +102,7 @@ public class INPlayMediaIntent extends INIntent {
 
     @Generated
     @Selector("initWithCoder:")
-    public native INPlayMediaIntent initWithCoder(NSCoder coder);
+    public native INPlayMediaIntent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 12.0
@@ -108,8 +113,8 @@ public class INPlayMediaIntent extends INIntent {
     @Generated
     @Selector("initWithMediaItems:mediaContainer:playShuffled:playbackRepeatMode:resumePlayback:")
     public native INPlayMediaIntent initWithMediaItemsMediaContainerPlayShuffledPlaybackRepeatModeResumePlayback(
-            NSArray<? extends INMediaItem> mediaItems, INMediaItem mediaContainer, NSNumber playShuffled,
-            @NInt long playbackRepeatMode, NSNumber resumePlayback);
+            @Nullable NSArray<? extends INMediaItem> mediaItems, @Nullable INMediaItem mediaContainer,
+            @Nullable NSNumber playShuffled, @NInt long playbackRepeatMode, @Nullable NSNumber resumePlayback);
 
     /**
      * API-Since: 13.0
@@ -117,9 +122,9 @@ public class INPlayMediaIntent extends INIntent {
     @Generated
     @Selector("initWithMediaItems:mediaContainer:playShuffled:playbackRepeatMode:resumePlayback:playbackQueueLocation:playbackSpeed:mediaSearch:")
     public native INPlayMediaIntent initWithMediaItemsMediaContainerPlayShuffledPlaybackRepeatModeResumePlaybackPlaybackQueueLocationPlaybackSpeedMediaSearch(
-            NSArray<? extends INMediaItem> mediaItems, INMediaItem mediaContainer, NSNumber playShuffled,
-            @NInt long playbackRepeatMode, NSNumber resumePlayback, @NInt long playbackQueueLocation,
-            NSNumber playbackSpeed, INMediaSearch mediaSearch);
+            @Nullable NSArray<? extends INMediaItem> mediaItems, @Nullable INMediaItem mediaContainer,
+            @Nullable NSNumber playShuffled, @NInt long playbackRepeatMode, @Nullable NSNumber resumePlayback,
+            @NInt long playbackQueueLocation, @Nullable NSNumber playbackSpeed, @Nullable INMediaSearch mediaSearch);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -138,14 +143,17 @@ public class INPlayMediaIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("mediaContainer")
     public native INMediaItem mediaContainer();
 
+    @Nullable
     @Generated
     @Selector("mediaItems")
     public native NSArray<? extends INMediaItem> mediaItems();
@@ -153,6 +161,7 @@ public class INPlayMediaIntent extends INIntent {
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("mediaSearch")
     public native INMediaSearch mediaSearch();
@@ -165,6 +174,7 @@ public class INPlayMediaIntent extends INIntent {
     /**
      * An NSNumber representing a boolean value where true indicates that the media should be shuffled.
      */
+    @Nullable
     @Generated
     @Selector("playShuffled")
     public native NSNumber playShuffled();
@@ -185,6 +195,7 @@ public class INPlayMediaIntent extends INIntent {
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("playbackSpeed")
     public native NSNumber playbackSpeed();
@@ -200,6 +211,7 @@ public class INPlayMediaIntent extends INIntent {
     /**
      * An NSNumber representing a boolean value where true indicates that the media should be resumed.
      */
+    @Nullable
     @Generated
     @Selector("resumePlayback")
     public native NSNumber resumePlayback();

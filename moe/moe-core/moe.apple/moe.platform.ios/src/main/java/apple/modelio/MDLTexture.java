@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLTexture
@@ -106,22 +108,25 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -156,9 +161,10 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,11 +205,12 @@ public class MDLTexture extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("textureCubeWithImagesNamed:")
-    public static native MDLTexture textureCubeWithImagesNamed(NSArray<String> names);
+    public static native MDLTexture textureCubeWithImagesNamed(@NotNull NSArray<String> names);
 
     @Generated
     @Selector("textureCubeWithImagesNamed:bundle:")
-    public static native MDLTexture textureCubeWithImagesNamedBundle(NSArray<String> names, NSBundle bundleOrNil);
+    public static native MDLTexture textureCubeWithImagesNamedBundle(@NotNull NSArray<String> names,
+            @Nullable NSBundle bundleOrNil);
 
     /**
      * Creates a texture from a source in the main bundle named in a manner matching
@@ -211,11 +218,11 @@ public class MDLTexture extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("textureNamed:")
-    public static native MDLTexture textureNamed(String name);
+    public static native MDLTexture textureNamed(@NotNull String name);
 
     @Generated
     @Selector("textureNamed:bundle:")
-    public static native MDLTexture textureNamedBundle(String name, NSBundle bundleOrNil);
+    public static native MDLTexture textureNamedBundle(@NotNull String name, @Nullable NSBundle bundleOrNil);
 
     @Generated
     @Selector("version")
@@ -243,6 +250,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @Selector("hasAlphaValues")
     public native boolean hasAlphaValues();
 
+    @Nullable
     @Generated
     @Selector("imageFromTexture")
     public native CGImageRef imageFromTexture();
@@ -260,6 +268,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
     @NUInt
     public native long mipLevelCount();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -286,20 +295,24 @@ public class MDLTexture extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
+    @Nullable
     @Generated
     @Selector("texelDataWithBottomLeftOrigin")
     public native NSData texelDataWithBottomLeftOrigin();
 
+    @Nullable
     @Generated
     @Selector("texelDataWithBottomLeftOriginAtMipLevel:create:")
     public native NSData texelDataWithBottomLeftOriginAtMipLevelCreate(@NInt long level, boolean create);
 
+    @Nullable
     @Generated
     @Selector("texelDataWithTopLeftOrigin")
     public native NSData texelDataWithTopLeftOrigin();
 
+    @Nullable
     @Generated
     @Selector("texelDataWithTopLeftOriginAtMipLevel:create:")
     public native NSData texelDataWithTopLeftOriginAtMipLevelCreate(@NInt long level, boolean create);
@@ -309,18 +322,19 @@ public class MDLTexture extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("writeToURL:")
-    public native boolean writeToURL(NSURL URL);
+    public native boolean writeToURL(@NotNull NSURL URL);
 
     /**
      * write a texture to URL, using a specific UT type
      */
     @Generated
     @Selector("writeToURL:type:")
-    public native boolean writeToURLType(NSURL nsurl, CFStringRef type);
+    public native boolean writeToURLType(@NotNull NSURL nsurl, @NotNull CFStringRef type);
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("imageFromTextureAtLevel:")
     public native CGImageRef imageFromTextureAtLevel(@NUInt long level);
@@ -332,7 +346,7 @@ public class MDLTexture extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("writeToURL:level:")
-    public native boolean writeToURLLevel(NSURL URL, @NUInt long level);
+    public native boolean writeToURLLevel(@NotNull NSURL URL, @NUInt long level);
 
     /**
      * write a particular level of a mipped texture to URL, using a specific UT type
@@ -341,13 +355,13 @@ public class MDLTexture extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("writeToURL:type:level:")
-    public native boolean writeToURLTypeLevel(NSURL nsurl, CFStringRef type, @NUInt long level);
+    public native boolean writeToURLTypeLevel(@NotNull NSURL nsurl, @NotNull CFStringRef type, @NUInt long level);
 
     /**
      * API-Since: 12.0
      */
     @Generated
     @Selector("textureNamed:assetResolver:")
-    public static native MDLTexture textureNamedAssetResolver(String name,
-            @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
+    public static native MDLTexture textureNamedAssetResolver(@NotNull String name,
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLAssetResolver resolver);
 }

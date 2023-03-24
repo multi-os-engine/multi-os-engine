@@ -45,6 +45,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -79,22 +81,25 @@ public class UIManagedDocument extends UIDocument {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class UIManagedDocument extends UIDocument {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,6 +149,7 @@ public class UIManagedDocument extends UIDocument {
      * this path component is appended to the document URL provided by the UIDocument APIs. The default name
      * is @"documentpersistentstore.db"
      */
+    @NotNull
     @Generated
     @Selector("persistentStoreName")
     public static native String persistentStoreName();
@@ -172,11 +179,12 @@ public class UIManagedDocument extends UIDocument {
      * An optional call out by contentsForType:error: to handle non-Core Data content in the document's file wrapper.
      * The returned object will be passed to -writeAdditionalContent: It is not necessary to call super.
      */
+    @Nullable
     @Generated
     @Selector("additionalContentForURL:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object additionalContentForURLError(NSURL absoluteURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native Object additionalContentForURLError(@NotNull NSURL absoluteURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Customize the loading or creation of a persistent store to the coordinator.
@@ -184,8 +192,9 @@ public class UIManagedDocument extends UIDocument {
     @Generated
     @Selector("configurePersistentStoreCoordinatorForURL:ofType:modelConfiguration:storeOptions:error:")
     public native boolean configurePersistentStoreCoordinatorForURLOfTypeModelConfigurationStoreOptionsError(
-            NSURL storeURL, String fileType, String configuration, NSDictionary<?, ?> storeOptions,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL storeURL, @NotNull String fileType, @Nullable String configuration,
+            @Nullable NSDictionary<?, ?> storeOptions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -193,7 +202,7 @@ public class UIManagedDocument extends UIDocument {
 
     @Generated
     @Selector("initWithFileURL:")
-    public native UIManagedDocument initWithFileURL(NSURL url);
+    public native UIManagedDocument initWithFileURL(@NotNull NSURL url);
 
     /**
      * Persistent documents always have a managed object context and a persistent store coordinator through that
@@ -201,6 +210,7 @@ public class UIManagedDocument extends UIDocument {
      * NSMainQueueConcurrencyType and it must have a parent context initialized with the concurrency type
      * NSPrivateQueueConcurrencyType.
      */
+    @NotNull
     @Generated
     @Selector("managedObjectContext")
     public native NSManagedObjectContext managedObjectContext();
@@ -209,6 +219,7 @@ public class UIManagedDocument extends UIDocument {
      * Persistent documents always have a managed object model. The default model is the union of all models in the main
      * bundle.
      */
+    @NotNull
     @Generated
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
@@ -216,6 +227,7 @@ public class UIManagedDocument extends UIDocument {
     /**
      * Optionally specify a model configuration name to be passed when configuring the persistent store
      */
+    @Nullable
     @Generated
     @Selector("modelConfiguration")
     public native String modelConfiguration();
@@ -223,6 +235,7 @@ public class UIManagedDocument extends UIDocument {
     /**
      * Optionally provide a collection of store options to be passed when configuring the persistent store
      */
+    @Nullable
     @Generated
     @Selector("persistentStoreOptions")
     public native NSDictionary<?, ?> persistentStoreOptions();
@@ -231,9 +244,10 @@ public class UIManagedDocument extends UIDocument {
      * Returns the Core Data store type string for the given document fileType. The default returns NSSQLiteStoreType.
      * See NSPersistentStoreCoordinator.h for store type information.
      */
+    @NotNull
     @Generated
     @Selector("persistentStoreTypeForFileType:")
-    public native String persistentStoreTypeForFileType(String fileType);
+    public native String persistentStoreTypeForFileType(@NotNull String fileType);
 
     /**
      * An optional call out by readFromURL:error: to handle non-Core Data content in the document's file wrapper. It is
@@ -241,22 +255,22 @@ public class UIManagedDocument extends UIDocument {
      */
     @Generated
     @Selector("readAdditionalContentFromURL:error:")
-    public native boolean readAdditionalContentFromURLError(NSURL absoluteURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean readAdditionalContentFromURLError(@NotNull NSURL absoluteURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Optionally specify a model configuration name to be passed when configuring the persistent store
      */
     @Generated
     @Selector("setModelConfiguration:")
-    public native void setModelConfiguration(String value);
+    public native void setModelConfiguration(@Nullable String value);
 
     /**
      * Optionally provide a collection of store options to be passed when configuring the persistent store
      */
     @Generated
     @Selector("setPersistentStoreOptions:")
-    public native void setPersistentStoreOptions(NSDictionary<?, ?> value);
+    public native void setPersistentStoreOptions(@Nullable NSDictionary<?, ?> value);
 
     /**
      * An optional call out by writeContents:andAttributes:safelyToURL:forSaveOperation:error: to handle non-Core Data
@@ -266,6 +280,7 @@ public class UIManagedDocument extends UIDocument {
     @Generated
     @Selector("writeAdditionalContent:toURL:originalContentsURL:error:")
     public native boolean writeAdditionalContentToURLOriginalContentsURLError(
-            @Mapped(ObjCObjectMapper.class) Object content, NSURL absoluteURL, NSURL absoluteOriginalContentsURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object content, @NotNull NSURL absoluteURL,
+            @Nullable NSURL absoluteOriginalContentsURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CHHapticDeviceCapability
@@ -37,11 +39,12 @@ public interface CHHapticDeviceCapability {
      * @param outError
      *                    If the operation fails, this will be set to a valid NSError describing the error.
      */
+    @Nullable
     @Generated
     @Selector("attributesForDynamicParameter:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    CHHapticParameterAttributes attributesForDynamicParameterError(String inParameter,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    CHHapticParameterAttributes attributesForDynamicParameterError(@NotNull String inParameter,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * attributesForEventParameter:
@@ -57,11 +60,12 @@ public interface CHHapticDeviceCapability {
      * @param outError
      *                    If the operation fails, this will be set to a valid NSError describing the error.
      */
+    @Nullable
     @Generated
     @Selector("attributesForEventParameter:eventType:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    CHHapticParameterAttributes attributesForEventParameterEventTypeError(String inParameter, String type,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    CHHapticParameterAttributes attributesForEventParameterEventTypeError(@NotNull String inParameter,
+            @NotNull String type, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] supportsAudio

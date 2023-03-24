@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreData")
@@ -40,17 +42,17 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:")
-    default void controllerDidChangeObjectAtIndexPathForChangeTypeNewIndexPath(NSFetchedResultsController<?> controller,
-            @Mapped(ObjCObjectMapper.class) Object anObject, NSIndexPath indexPath, @NUInt long type,
-            NSIndexPath newIndexPath) {
+    default void controllerDidChangeObjectAtIndexPathForChangeTypeNewIndexPath(
+            @NotNull NSFetchedResultsController<?> controller, @NotNull @Mapped(ObjCObjectMapper.class) Object anObject,
+            @Nullable NSIndexPath indexPath, @NUInt long type, @Nullable NSIndexPath newIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("controller:didChangeSection:atIndex:forChangeType:")
-    default void controllerDidChangeSectionAtIndexForChangeType(NSFetchedResultsController<?> controller,
-            @Mapped(ObjCObjectMapper.class) NSFetchedResultsSectionInfo sectionInfo, @NUInt long sectionIndex,
+    default void controllerDidChangeSectionAtIndexForChangeType(@NotNull NSFetchedResultsController<?> controller,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFetchedResultsSectionInfo sectionInfo, @NUInt long sectionIndex,
             @NUInt long type) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,25 +60,26 @@ public interface NSFetchedResultsControllerDelegate {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("controller:sectionIndexTitleForSectionName:")
-    default String controllerSectionIndexTitleForSectionName(NSFetchedResultsController<?> controller,
-            String sectionName) {
+    default String controllerSectionIndexTitleForSectionName(@NotNull NSFetchedResultsController<?> controller,
+            @NotNull String sectionName) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("controllerDidChangeContent:")
-    default void controllerDidChangeContent(NSFetchedResultsController<?> controller) {
+    default void controllerDidChangeContent(@NotNull NSFetchedResultsController<?> controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("controllerWillChangeContent:")
-    default void controllerWillChangeContent(NSFetchedResultsController<?> controller) {
+    default void controllerWillChangeContent(@NotNull NSFetchedResultsController<?> controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,8 +97,8 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controller:didChangeContentWithDifference:")
-    default void controllerDidChangeContentWithDifference(NSFetchedResultsController<?> controller,
-            NSOrderedCollectionDifference<NSManagedObjectID> diff) {
+    default void controllerDidChangeContentWithDifference(@NotNull NSFetchedResultsController<?> controller,
+            @NotNull NSOrderedCollectionDifference<NSManagedObjectID> diff) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,8 +111,8 @@ public interface NSFetchedResultsControllerDelegate {
     @Generated
     @IsOptional
     @Selector("controller:didChangeContentWithSnapshot:")
-    default void controllerDidChangeContentWithSnapshot(NSFetchedResultsController<?> controller,
-            NSDiffableDataSourceSnapshot<String, NSManagedObjectID> snapshot) {
+    default void controllerDidChangeContentWithSnapshot(@NotNull NSFetchedResultsController<?> controller,
+            @NotNull NSDiffableDataSourceSnapshot<String, NSManagedObjectID> snapshot) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

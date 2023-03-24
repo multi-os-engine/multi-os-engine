@@ -12,6 +12,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("MetalPerformanceShaders")
@@ -28,10 +30,11 @@ public interface MPSHeapProvider {
      * @return A new heap of size at least descriptor.size. If nil is returned, MPS
      *         will use the MPS internal heap cache instead to satisfy the allocation.
      */
+    @Nullable
     @Generated
     @Selector("newHeapWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLHeap newHeapWithDescriptor(MTLHeapDescriptor descriptor);
+    MTLHeap newHeapWithDescriptor(@NotNull MTLHeapDescriptor descriptor);
 
     /**
      * Retire a heap
@@ -45,7 +48,7 @@ public interface MPSHeapProvider {
     @Generated
     @IsOptional
     @Selector("retireHeap:cacheDelay:")
-    default void retireHeapCacheDelay(@Mapped(ObjCObjectMapper.class) MTLHeap heap, double seconds) {
+    default void retireHeapCacheDelay(@NotNull @Mapped(ObjCObjectMapper.class) MTLHeap heap, double seconds) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -73,22 +75,25 @@ public class CKDatabase extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CKDatabase extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,7 +161,7 @@ public class CKDatabase extends NSObject {
 
     @Generated
     @Selector("addOperation:")
-    public native void addOperation(CKDatabaseOperation operation);
+    public native void addOperation(@NotNull CKDatabaseOperation operation);
 
     /**
      * API-Since: 10.0
@@ -167,21 +173,21 @@ public class CKDatabase extends NSObject {
 
     @Generated
     @Selector("deleteRecordWithID:completionHandler:")
-    public native void deleteRecordWithIDCompletionHandler(CKRecordID recordID,
-            @ObjCBlock(name = "call_deleteRecordWithIDCompletionHandler") Block_deleteRecordWithIDCompletionHandler completionHandler);
+    public native void deleteRecordWithIDCompletionHandler(@NotNull CKRecordID recordID,
+            @NotNull @ObjCBlock(name = "call_deleteRecordWithIDCompletionHandler") Block_deleteRecordWithIDCompletionHandler completionHandler);
 
     @Generated
     @Selector("deleteRecordZoneWithID:completionHandler:")
-    public native void deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
-            @ObjCBlock(name = "call_deleteRecordZoneWithIDCompletionHandler") Block_deleteRecordZoneWithIDCompletionHandler completionHandler);
+    public native void deleteRecordZoneWithIDCompletionHandler(@NotNull CKRecordZoneID zoneID,
+            @NotNull @ObjCBlock(name = "call_deleteRecordZoneWithIDCompletionHandler") Block_deleteRecordZoneWithIDCompletionHandler completionHandler);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("deleteSubscriptionWithID:completionHandler:")
-    public native void deleteSubscriptionWithIDCompletionHandler(String subscriptionID,
-            @ObjCBlock(name = "call_deleteSubscriptionWithIDCompletionHandler") Block_deleteSubscriptionWithIDCompletionHandler completionHandler);
+    public native void deleteSubscriptionWithIDCompletionHandler(@NotNull String subscriptionID,
+            @NotNull @ObjCBlock(name = "call_deleteSubscriptionWithIDCompletionHandler") Block_deleteSubscriptionWithIDCompletionHandler completionHandler);
 
     /**
      * [@c] CKFetchRecordZonesOperation and @c CKModifyRecordZonesOperation are the more configurable, @c CKOperation
@@ -190,7 +196,7 @@ public class CKDatabase extends NSObject {
     @Generated
     @Selector("fetchAllRecordZonesWithCompletionHandler:")
     public native void fetchAllRecordZonesWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAllRecordZonesWithCompletionHandler") Block_fetchAllRecordZonesWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchAllRecordZonesWithCompletionHandler") Block_fetchAllRecordZonesWithCompletionHandler completionHandler);
 
     /**
      * API-Since: 8.0
@@ -198,7 +204,7 @@ public class CKDatabase extends NSObject {
     @Generated
     @Selector("fetchAllSubscriptionsWithCompletionHandler:")
     public native void fetchAllSubscriptionsWithCompletionHandler(
-            @ObjCBlock(name = "call_fetchAllSubscriptionsWithCompletionHandler") Block_fetchAllSubscriptionsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_fetchAllSubscriptionsWithCompletionHandler") Block_fetchAllSubscriptionsWithCompletionHandler completionHandler);
 
     /**
      * [@c] CKFetchRecordsOperation and @c CKModifyRecordsOperation are the more configurable, @c CKOperation -based
@@ -206,13 +212,13 @@ public class CKDatabase extends NSObject {
      */
     @Generated
     @Selector("fetchRecordWithID:completionHandler:")
-    public native void fetchRecordWithIDCompletionHandler(CKRecordID recordID,
-            @ObjCBlock(name = "call_fetchRecordWithIDCompletionHandler") Block_fetchRecordWithIDCompletionHandler completionHandler);
+    public native void fetchRecordWithIDCompletionHandler(@NotNull CKRecordID recordID,
+            @NotNull @ObjCBlock(name = "call_fetchRecordWithIDCompletionHandler") Block_fetchRecordWithIDCompletionHandler completionHandler);
 
     @Generated
     @Selector("fetchRecordZoneWithID:completionHandler:")
-    public native void fetchRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID,
-            @ObjCBlock(name = "call_fetchRecordZoneWithIDCompletionHandler") Block_fetchRecordZoneWithIDCompletionHandler completionHandler);
+    public native void fetchRecordZoneWithIDCompletionHandler(@NotNull CKRecordZoneID zoneID,
+            @NotNull @ObjCBlock(name = "call_fetchRecordZoneWithIDCompletionHandler") Block_fetchRecordZoneWithIDCompletionHandler completionHandler);
 
     /**
      * [@c] CKFetchSubscriptionsOperation and @c CKModifySubscriptionsOperation are the more configurable, @c
@@ -222,8 +228,8 @@ public class CKDatabase extends NSObject {
      */
     @Generated
     @Selector("fetchSubscriptionWithID:completionHandler:")
-    public native void fetchSubscriptionWithIDCompletionHandler(String subscriptionID,
-            @ObjCBlock(name = "call_fetchSubscriptionWithIDCompletionHandler") Block_fetchSubscriptionWithIDCompletionHandler completionHandler);
+    public native void fetchSubscriptionWithIDCompletionHandler(@NotNull String subscriptionID,
+            @NotNull @ObjCBlock(name = "call_fetchSubscriptionWithIDCompletionHandler") Block_fetchSubscriptionWithIDCompletionHandler completionHandler);
 
     @Generated
     @Selector("init")
@@ -241,109 +247,113 @@ public class CKDatabase extends NSObject {
      */
     @Generated
     @Selector("performQuery:inZoneWithID:completionHandler:")
-    public native void performQueryInZoneWithIDCompletionHandler(CKQuery query, CKRecordZoneID zoneID,
-            @ObjCBlock(name = "call_performQueryInZoneWithIDCompletionHandler") Block_performQueryInZoneWithIDCompletionHandler completionHandler);
+    public native void performQueryInZoneWithIDCompletionHandler(@NotNull CKQuery query,
+            @Nullable CKRecordZoneID zoneID,
+            @NotNull @ObjCBlock(name = "call_performQueryInZoneWithIDCompletionHandler") Block_performQueryInZoneWithIDCompletionHandler completionHandler);
 
     @Generated
     @Selector("saveRecord:completionHandler:")
-    public native void saveRecordCompletionHandler(CKRecord record,
-            @ObjCBlock(name = "call_saveRecordCompletionHandler") Block_saveRecordCompletionHandler completionHandler);
+    public native void saveRecordCompletionHandler(@NotNull CKRecord record,
+            @NotNull @ObjCBlock(name = "call_saveRecordCompletionHandler") Block_saveRecordCompletionHandler completionHandler);
 
     @Generated
     @Selector("saveRecordZone:completionHandler:")
-    public native void saveRecordZoneCompletionHandler(CKRecordZone zone,
-            @ObjCBlock(name = "call_saveRecordZoneCompletionHandler") Block_saveRecordZoneCompletionHandler completionHandler);
+    public native void saveRecordZoneCompletionHandler(@NotNull CKRecordZone zone,
+            @NotNull @ObjCBlock(name = "call_saveRecordZoneCompletionHandler") Block_saveRecordZoneCompletionHandler completionHandler);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("saveSubscription:completionHandler:")
-    public native void saveSubscriptionCompletionHandler(CKSubscription subscription,
-            @ObjCBlock(name = "call_saveSubscriptionCompletionHandler") Block_saveSubscriptionCompletionHandler completionHandler);
+    public native void saveSubscriptionCompletionHandler(@NotNull CKSubscription subscription,
+            @NotNull @ObjCBlock(name = "call_saveSubscriptionCompletionHandler") Block_saveSubscriptionCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteRecordWithIDCompletionHandler {
         @Generated
-        void call_deleteRecordWithIDCompletionHandler(CKRecordID recordID, NSError error);
+        void call_deleteRecordWithIDCompletionHandler(@Nullable CKRecordID recordID, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteRecordZoneWithIDCompletionHandler {
         @Generated
-        void call_deleteRecordZoneWithIDCompletionHandler(CKRecordZoneID zoneID, NSError error);
+        void call_deleteRecordZoneWithIDCompletionHandler(@Nullable CKRecordZoneID zoneID, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_deleteSubscriptionWithIDCompletionHandler {
         @Generated
-        void call_deleteSubscriptionWithIDCompletionHandler(String subscriptionID, NSError error);
+        void call_deleteSubscriptionWithIDCompletionHandler(@Nullable String subscriptionID, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAllRecordZonesWithCompletionHandler {
         @Generated
-        void call_fetchAllRecordZonesWithCompletionHandler(NSArray<? extends CKRecordZone> zones, NSError error);
+        void call_fetchAllRecordZonesWithCompletionHandler(@Nullable NSArray<? extends CKRecordZone> zones,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchAllSubscriptionsWithCompletionHandler {
         @Generated
-        void call_fetchAllSubscriptionsWithCompletionHandler(NSArray<? extends CKSubscription> subscriptions,
-                NSError error);
+        void call_fetchAllSubscriptionsWithCompletionHandler(@Nullable NSArray<? extends CKSubscription> subscriptions,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRecordWithIDCompletionHandler {
         @Generated
-        void call_fetchRecordWithIDCompletionHandler(CKRecord record, NSError error);
+        void call_fetchRecordWithIDCompletionHandler(@Nullable CKRecord record, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRecordZoneWithIDCompletionHandler {
         @Generated
-        void call_fetchRecordZoneWithIDCompletionHandler(CKRecordZone zone, NSError error);
+        void call_fetchRecordZoneWithIDCompletionHandler(@Nullable CKRecordZone zone, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchSubscriptionWithIDCompletionHandler {
         @Generated
-        void call_fetchSubscriptionWithIDCompletionHandler(CKSubscription subscription, NSError error);
+        void call_fetchSubscriptionWithIDCompletionHandler(@Nullable CKSubscription subscription,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_performQueryInZoneWithIDCompletionHandler {
         @Generated
-        void call_performQueryInZoneWithIDCompletionHandler(NSArray<? extends CKRecord> results, NSError error);
+        void call_performQueryInZoneWithIDCompletionHandler(@Nullable NSArray<? extends CKRecord> results,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveRecordCompletionHandler {
         @Generated
-        void call_saveRecordCompletionHandler(CKRecord record, NSError error);
+        void call_saveRecordCompletionHandler(@Nullable CKRecord record, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveRecordZoneCompletionHandler {
         @Generated
-        void call_saveRecordZoneCompletionHandler(CKRecordZone zone, NSError error);
+        void call_saveRecordZoneCompletionHandler(@Nullable CKRecordZone zone, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveSubscriptionCompletionHandler {
         @Generated
-        void call_saveSubscriptionCompletionHandler(CKSubscription subscription, NSError error);
+        void call_saveSubscriptionCompletionHandler(@Nullable CKSubscription subscription, @Nullable NSError error);
     }
 }

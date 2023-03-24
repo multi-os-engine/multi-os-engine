@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * UIDocumentBrowserViewController is a view controller to browse the files on the user's device or cloud services and
@@ -60,6 +62,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
      * bar
      */
+    @NotNull
     @Generated
     @Selector("additionalLeadingNavigationBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> additionalLeadingNavigationBarButtonItems();
@@ -68,6 +71,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
      * bar
      */
+    @NotNull
     @Generated
     @Selector("additionalTrailingNavigationBarButtonItems")
     public native NSArray<? extends UIBarButtonItem> additionalTrailingNavigationBarButtonItems();
@@ -87,6 +91,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * Deprecated-Since: 14.0
      * Deprecated-Message: allowedContentTypes is no longer supported
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("allowedContentTypes")
@@ -113,7 +118,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Allows clients to customize the look of the browser. Default: UIDocumentBrowserUserInterfaceStyleWhite
@@ -125,30 +130,34 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     /**
      * Allows clients to add custom actions in the menu and the navigation bar. These actions are contextual to the
      * document items.
      */
+    @NotNull
     @Generated
     @Selector("customActions")
     public native NSArray<? extends UIDocumentBrowserAction> customActions();
@@ -157,6 +166,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -168,7 +178,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -180,15 +190,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("importDocumentAtURL:nextToDocumentAtURL:mode:completionHandler:")
-    public native void importDocumentAtURLNextToDocumentAtURLModeCompletionHandler(NSURL documentURL,
-            NSURL neighbourURL, @NUInt long importMode,
-            @ObjCBlock(name = "call_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler") Block_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler completion);
+    public native void importDocumentAtURLNextToDocumentAtURLModeCompletionHandler(@NotNull NSURL documentURL,
+            @NotNull NSURL neighbourURL, @NUInt long importMode,
+            @NotNull @ObjCBlock(name = "call_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler") Block_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler {
         @Generated
-        void call_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler(NSURL arg0, NSError arg1);
+        void call_importDocumentAtURLNextToDocumentAtURLModeCompletionHandler(@Nullable NSURL arg0,
+                @Nullable NSError arg1);
     }
 
     @Generated
@@ -206,15 +217,16 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Generated
     @Selector("initForOpeningFilesWithContentTypes:")
     public native UIDocumentBrowserViewController initForOpeningFilesWithContentTypes(
-            NSArray<String> allowedContentTypes);
+            @Nullable NSArray<String> allowedContentTypes);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIDocumentBrowserViewController initWithCoder(NSCoder coder);
+    public native UIDocumentBrowserViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UIDocumentBrowserViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UIDocumentBrowserViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -233,9 +245,10 @@ public class UIDocumentBrowserViewController extends UIViewController implements
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -257,14 +270,15 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("revealDocumentAtURL:importIfNeeded:completion:")
-    public native void revealDocumentAtURLImportIfNeededCompletion(NSURL url, boolean importIfNeeded,
-            @ObjCBlock(name = "call_revealDocumentAtURLImportIfNeededCompletion") Block_revealDocumentAtURLImportIfNeededCompletion completion);
+    public native void revealDocumentAtURLImportIfNeededCompletion(@NotNull NSURL url, boolean importIfNeeded,
+            @Nullable @ObjCBlock(name = "call_revealDocumentAtURLImportIfNeededCompletion") Block_revealDocumentAtURLImportIfNeededCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_revealDocumentAtURLImportIfNeededCompletion {
         @Generated
-        void call_revealDocumentAtURLImportIfNeededCompletion(NSURL revealedDocumentURL, NSError error);
+        void call_revealDocumentAtURLImportIfNeededCompletion(@Nullable NSURL revealedDocumentURL,
+                @Nullable NSError error);
     }
 
     /**
@@ -273,7 +287,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("setAdditionalLeadingNavigationBarButtonItems:")
-    public native void setAdditionalLeadingNavigationBarButtonItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setAdditionalLeadingNavigationBarButtonItems(@NotNull NSArray<? extends UIBarButtonItem> value);
 
     /**
      * An array of buttons that will be added to the existing buttons in the UIDocumentBrowserViewController navigation
@@ -281,7 +295,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("setAdditionalTrailingNavigationBarButtonItems:")
-    public native void setAdditionalTrailingNavigationBarButtonItems(NSArray<? extends UIBarButtonItem> value);
+    public native void setAdditionalTrailingNavigationBarButtonItems(@NotNull NSArray<? extends UIBarButtonItem> value);
 
     /**
      * Defaults to YES
@@ -310,15 +324,15 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("setCustomActions:")
-    public native void setCustomActions(NSArray<? extends UIDocumentBrowserAction> value);
+    public native void setCustomActions(@NotNull NSArray<? extends UIDocumentBrowserAction> value);
 
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) UIDocumentBrowserViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIDocumentBrowserViewControllerDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UIDocumentBrowserViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UIDocumentBrowserViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -341,10 +355,11 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * API-Since: 11.0
      * Deprecated-Since: 12.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("transitionControllerForDocumentURL:")
-    public native UIDocumentBrowserTransitionController transitionControllerForDocumentURL(NSURL documentURL);
+    public native UIDocumentBrowserTransitionController transitionControllerForDocumentURL(@NotNull NSURL documentURL);
 
     @Generated
     @Selector("version")
@@ -366,6 +381,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("localizedCreateDocumentActionTitle")
     public native String localizedCreateDocumentActionTitle();
@@ -380,6 +396,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * API-Since: 11.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("recentDocumentsContentTypes")
@@ -401,7 +418,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("setLocalizedCreateDocumentActionTitle:")
-    public native void setLocalizedCreateDocumentActionTitle(String value);
+    public native void setLocalizedCreateDocumentActionTitle(@NotNull String value);
 
     /**
      * Force the display of file extensions (default: NO).
@@ -429,9 +446,11 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("transitionControllerForDocumentAtURL:")
-    public native UIDocumentBrowserTransitionController transitionControllerForDocumentAtURL(NSURL documentURL);
+    public native UIDocumentBrowserTransitionController transitionControllerForDocumentAtURL(
+            @NotNull NSURL documentURL);
 
     /**
      * Array of content types supported for Recents documents.
@@ -443,6 +462,7 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("contentTypesForRecentDocuments")
     public native NSArray<? extends UTType> contentTypesForRecentDocuments();
@@ -455,7 +475,8 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("initForOpeningContentTypes:")
-    public native UIDocumentBrowserViewController initForOpeningContentTypes(NSArray<? extends UTType> contentTypes);
+    public native UIDocumentBrowserViewController initForOpeningContentTypes(
+            @Nullable NSArray<? extends UTType> contentTypes);
 
     /**
      * Rename a document.
@@ -466,13 +487,14 @@ public class UIDocumentBrowserViewController extends UIViewController implements
      */
     @Generated
     @Selector("renameDocumentAtURL:proposedName:completionHandler:")
-    public native void renameDocumentAtURLProposedNameCompletionHandler(NSURL documentURL, String proposedName,
-            @ObjCBlock(name = "call_renameDocumentAtURLProposedNameCompletionHandler") Block_renameDocumentAtURLProposedNameCompletionHandler completionHandler);
+    public native void renameDocumentAtURLProposedNameCompletionHandler(@NotNull NSURL documentURL,
+            @NotNull String proposedName,
+            @NotNull @ObjCBlock(name = "call_renameDocumentAtURLProposedNameCompletionHandler") Block_renameDocumentAtURLProposedNameCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_renameDocumentAtURLProposedNameCompletionHandler {
         @Generated
-        void call_renameDocumentAtURLProposedNameCompletionHandler(NSURL finalURL, NSError error);
+        void call_renameDocumentAtURLProposedNameCompletionHandler(@Nullable NSURL finalURL, @Nullable NSError error);
     }
 }

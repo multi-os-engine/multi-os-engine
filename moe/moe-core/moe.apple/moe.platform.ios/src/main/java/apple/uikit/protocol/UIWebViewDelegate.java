@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -42,7 +43,7 @@ public interface UIWebViewDelegate {
     @Generated
     @IsOptional
     @Selector("webView:didFailLoadWithError:")
-    default void webViewDidFailLoadWithError(UIWebView webView, NSError error) {
+    default void webViewDidFailLoadWithError(@NotNull UIWebView webView, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,8 +56,8 @@ public interface UIWebViewDelegate {
     @Generated
     @IsOptional
     @Selector("webView:shouldStartLoadWithRequest:navigationType:")
-    default boolean webViewShouldStartLoadWithRequestNavigationType(UIWebView webView, NSURLRequest request,
-            @NInt long navigationType) {
+    default boolean webViewShouldStartLoadWithRequestNavigationType(@NotNull UIWebView webView,
+            @NotNull NSURLRequest request, @NInt long navigationType) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -69,7 +70,7 @@ public interface UIWebViewDelegate {
     @Generated
     @IsOptional
     @Selector("webViewDidFinishLoad:")
-    default void webViewDidFinishLoad(UIWebView webView) {
+    default void webViewDidFinishLoad(@NotNull UIWebView webView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,7 +83,7 @@ public interface UIWebViewDelegate {
     @Generated
     @IsOptional
     @Selector("webViewDidStartLoad:")
-    default void webViewDidStartLoad(UIWebView webView) {
+    default void webViewDidStartLoad(@NotNull UIWebView webView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

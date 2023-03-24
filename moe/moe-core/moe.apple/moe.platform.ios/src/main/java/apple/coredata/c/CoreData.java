@@ -26,6 +26,7 @@ import org.moe.natj.general.ann.NUInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("CoreData")
@@ -54,6 +55,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -64,6 +66,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -74,6 +77,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -84,6 +88,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -94,6 +99,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -104,6 +110,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -114,6 +121,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -124,6 +132,7 @@ public final class CoreData {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -134,6 +143,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -145,6 +155,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -153,6 +164,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -164,6 +176,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -175,6 +188,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -183,6 +197,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -191,6 +206,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -199,6 +215,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -207,6 +224,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -215,6 +233,7 @@ public final class CoreData {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -225,6 +244,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -236,6 +256,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCObjectMapper.class)
@@ -248,6 +269,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCObjectMapper.class)
@@ -260,6 +282,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCObjectMapper.class)
@@ -271,6 +294,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCObjectMapper.class)
@@ -282,6 +306,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCObjectMapper.class)
@@ -292,6 +317,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -300,6 +326,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -308,6 +335,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -318,6 +346,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -332,6 +361,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -344,6 +374,7 @@ public final class CoreData {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -354,6 +385,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -365,6 +397,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -376,6 +409,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -384,6 +418,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -395,6 +430,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -405,6 +441,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -417,6 +454,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -430,6 +468,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -441,6 +480,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -452,6 +492,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -466,6 +507,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -479,6 +521,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -490,6 +533,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -501,6 +545,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -512,6 +557,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -523,6 +569,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -537,6 +584,7 @@ public final class CoreData {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -548,6 +596,7 @@ public final class CoreData {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -561,6 +610,7 @@ public final class CoreData {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -574,6 +624,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -588,6 +639,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -602,6 +654,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -617,6 +670,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -633,6 +687,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -648,6 +703,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -662,6 +718,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -676,6 +733,7 @@ public final class CoreData {
      * Deprecated-Since: 10.0
      * Deprecated-Message: Please see the release notes and Core Data documentation.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -695,6 +753,7 @@ public final class CoreData {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -703,6 +762,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -711,6 +771,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -719,6 +780,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -727,6 +789,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -735,6 +798,7 @@ public final class CoreData {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -745,6 +809,7 @@ public final class CoreData {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -755,6 +820,7 @@ public final class CoreData {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -768,6 +834,7 @@ public final class CoreData {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -783,6 +850,7 @@ public final class CoreData {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -795,6 +863,7 @@ public final class CoreData {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -807,6 +876,7 @@ public final class CoreData {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -817,6 +887,7 @@ public final class CoreData {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -825,6 +896,7 @@ public final class CoreData {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -836,6 +908,7 @@ public final class CoreData {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -844,6 +917,7 @@ public final class CoreData {
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -855,6 +929,7 @@ public final class CoreData {
      * 
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -863,6 +938,7 @@ public final class CoreData {
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -871,6 +947,7 @@ public final class CoreData {
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -879,6 +956,7 @@ public final class CoreData {
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -887,6 +965,7 @@ public final class CoreData {
     /**
      * API-Since: 10.3
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -895,6 +974,7 @@ public final class CoreData {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -903,6 +983,7 @@ public final class CoreData {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -923,6 +1004,7 @@ public final class CoreData {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

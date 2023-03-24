@@ -43,6 +43,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MTLRenderPassDescriptor
@@ -81,22 +83,25 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -145,6 +151,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * 
      * Create an autoreleased default frame buffer descriptor
      */
+    @NotNull
     @Generated
     @Selector("renderPassDescriptor")
     public static native MTLRenderPassDescriptor renderPassDescriptor();
@@ -170,15 +177,17 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("colorAttachments")
     public native MTLRenderPassColorAttachmentDescriptorArray colorAttachments();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("depthAttachment")
@@ -203,7 +212,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVisibilityResultBuffer:")
-    public native void setVisibilityResultBuffer(@Mapped(ObjCObjectMapper.class) MTLBuffer value);
+    public native void setVisibilityResultBuffer(@Nullable @Mapped(ObjCObjectMapper.class) MTLBuffer value);
 
     @Generated
     @Selector("stencilAttachment")
@@ -214,6 +223,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * 
      * Buffer into which samples passing the depth and stencil tests are counted.
      */
+    @Nullable
     @Generated
     @Selector("visibilityResultBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -248,7 +258,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Selector("getSamplePositions:count:")
     @NUInt
     public native long getSamplePositionsCount(
-            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
             @NUInt long count);
 
     /**
@@ -353,7 +363,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("setSamplePositions:count:")
     public native void setSamplePositionsCount(
-            @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") MTLSamplePosition positions,
             @NUInt long count);
 
     /**
@@ -444,6 +454,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("rasterizationRateMap")
     @MappedReturn(ObjCObjectMapper.class)
@@ -474,7 +485,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setRasterizationRateMap:")
-    public native void setRasterizationRateMap(@Mapped(ObjCObjectMapper.class) MTLRasterizationRateMap value);
+    public native void setRasterizationRateMap(@Nullable @Mapped(ObjCObjectMapper.class) MTLRasterizationRateMap value);
 
     /**
      * [@property] renderTargetArrayLength:
@@ -494,6 +505,7 @@ public class MTLRenderPassDescriptor extends NSObject implements NSCopying {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("sampleBufferAttachments")
     public native MTLRenderPassSampleBufferAttachmentDescriptorArray sampleBufferAttachments();

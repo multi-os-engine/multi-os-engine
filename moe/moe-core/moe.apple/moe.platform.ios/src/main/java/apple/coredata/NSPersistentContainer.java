@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An instance of NSPersistentContainer includes all objects needed to represent a functioning Core Data stack, and
@@ -77,22 +79,25 @@ public class NSPersistentContainer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -101,6 +106,7 @@ public class NSPersistentContainer extends NSObject {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultDirectoryURL")
     public static native NSURL defaultDirectoryURL();
@@ -131,9 +137,10 @@ public class NSPersistentContainer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -142,12 +149,12 @@ public class NSPersistentContainer extends NSObject {
 
     @Generated
     @Selector("persistentContainerWithName:")
-    public static native NSPersistentContainer persistentContainerWithName(String name);
+    public static native NSPersistentContainer persistentContainerWithName(@NotNull String name);
 
     @Generated
     @Selector("persistentContainerWithName:managedObjectModel:")
-    public static native NSPersistentContainer persistentContainerWithNameManagedObjectModel(String name,
-            NSManagedObjectModel model);
+    public static native NSPersistentContainer persistentContainerWithNameManagedObjectModel(@NotNull String name,
+            @NotNull NSManagedObjectModel model);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -179,11 +186,12 @@ public class NSPersistentContainer extends NSObject {
      */
     @Generated
     @Selector("initWithName:")
-    public native NSPersistentContainer initWithName(String name);
+    public native NSPersistentContainer initWithName(@NotNull String name);
 
     @Generated
     @Selector("initWithName:managedObjectModel:")
-    public native NSPersistentContainer initWithNameManagedObjectModel(String name, NSManagedObjectModel model);
+    public native NSPersistentContainer initWithNameManagedObjectModel(@NotNull String name,
+            @NotNull NSManagedObjectModel model);
 
     /**
      * Load stores from the storeDescriptions property that have not already been successfully added to the container.
@@ -192,16 +200,19 @@ public class NSPersistentContainer extends NSObject {
     @Generated
     @Selector("loadPersistentStoresWithCompletionHandler:")
     public native void loadPersistentStoresWithCompletionHandler(
-            @ObjCBlock(name = "call_loadPersistentStoresWithCompletionHandler") Block_loadPersistentStoresWithCompletionHandler block);
+            @NotNull @ObjCBlock(name = "call_loadPersistentStoresWithCompletionHandler") Block_loadPersistentStoresWithCompletionHandler block);
 
+    @NotNull
     @Generated
     @Selector("managedObjectModel")
     public native NSManagedObjectModel managedObjectModel();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
 
+    @NotNull
     @Generated
     @Selector("newBackgroundContext")
     public native NSManagedObjectContext newBackgroundContext();
@@ -209,20 +220,23 @@ public class NSPersistentContainer extends NSObject {
     @Generated
     @Selector("performBackgroundTask:")
     public native void performBackgroundTask(
-            @ObjCBlock(name = "call_performBackgroundTask") Block_performBackgroundTask block);
+            @NotNull @ObjCBlock(name = "call_performBackgroundTask") Block_performBackgroundTask block);
 
+    @NotNull
     @Generated
     @Selector("persistentStoreCoordinator")
     public native NSPersistentStoreCoordinator persistentStoreCoordinator();
 
+    @NotNull
     @Generated
     @Selector("persistentStoreDescriptions")
     public native NSArray<? extends NSPersistentStoreDescription> persistentStoreDescriptions();
 
     @Generated
     @Selector("setPersistentStoreDescriptions:")
-    public native void setPersistentStoreDescriptions(NSArray<? extends NSPersistentStoreDescription> value);
+    public native void setPersistentStoreDescriptions(@NotNull NSArray<? extends NSPersistentStoreDescription> value);
 
+    @NotNull
     @Generated
     @Selector("viewContext")
     public native NSManagedObjectContext viewContext();
@@ -231,13 +245,14 @@ public class NSPersistentContainer extends NSObject {
     @Generated
     public interface Block_loadPersistentStoresWithCompletionHandler {
         @Generated
-        void call_loadPersistentStoresWithCompletionHandler(NSPersistentStoreDescription arg0, NSError arg1);
+        void call_loadPersistentStoresWithCompletionHandler(@NotNull NSPersistentStoreDescription arg0,
+                @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_performBackgroundTask {
         @Generated
-        void call_performBackgroundTask(NSManagedObjectContext arg0);
+        void call_performBackgroundTask(@NotNull NSManagedObjectContext arg0);
     }
 }

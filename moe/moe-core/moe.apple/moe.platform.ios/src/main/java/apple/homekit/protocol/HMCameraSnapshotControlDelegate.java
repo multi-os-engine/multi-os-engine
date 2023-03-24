@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This delegate receives updates on the camera snapshot.
@@ -49,8 +51,8 @@ public interface HMCameraSnapshotControlDelegate {
     @Generated
     @IsOptional
     @Selector("cameraSnapshotControl:didTakeSnapshot:error:")
-    default void cameraSnapshotControlDidTakeSnapshotError(HMCameraSnapshotControl cameraSnapshotControl,
-            HMCameraSnapshot snapshot, NSError error) {
+    default void cameraSnapshotControlDidTakeSnapshotError(@NotNull HMCameraSnapshotControl cameraSnapshotControl,
+            @Nullable HMCameraSnapshot snapshot, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +64,8 @@ public interface HMCameraSnapshotControlDelegate {
     @Generated
     @IsOptional
     @Selector("cameraSnapshotControlDidUpdateMostRecentSnapshot:")
-    default void cameraSnapshotControlDidUpdateMostRecentSnapshot(HMCameraSnapshotControl cameraSnapshotControl) {
+    default void cameraSnapshotControlDidUpdateMostRecentSnapshot(
+            @NotNull HMCameraSnapshotControl cameraSnapshotControl) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

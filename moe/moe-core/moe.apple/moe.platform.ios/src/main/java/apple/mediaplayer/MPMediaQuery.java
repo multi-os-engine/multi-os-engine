@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPMediaQuery represents a collection of items or playlists determined by a chain of MPMediaPredicate objects.
@@ -70,6 +72,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
      * Base queries which can be used directly or as the basis for custom queries.
      * The groupingType for these queries is preset to the appropriate type for the query.
      */
+    @NotNull
     @Generated
     @Selector("albumsQuery")
     public static native MPMediaQuery albumsQuery();
@@ -84,40 +87,47 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("allocWithZone:")
     public static native MPMediaQuery allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("artistsQuery")
     public static native MPMediaQuery artistsQuery();
 
+    @NotNull
     @Generated
     @Selector("audiobooksQuery")
     public static native MPMediaQuery audiobooksQuery();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("compilationsQuery")
     public static native MPMediaQuery compilationsQuery();
 
+    @NotNull
     @Generated
     @Selector("composersQuery")
     public static native MPMediaQuery composersQuery();
@@ -130,6 +140,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("genresQuery")
     public static native MPMediaQuery genresQuery();
@@ -156,19 +167,22 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native MPMediaQuery new_objc();
 
+    @NotNull
     @Generated
     @Selector("playlistsQuery")
     public static native MPMediaQuery playlistsQuery();
 
+    @NotNull
     @Generated
     @Selector("podcastsQuery")
     public static native MPMediaQuery podcastsQuery();
@@ -185,6 +199,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("songsQuery")
     public static native MPMediaQuery songsQuery();
@@ -204,11 +219,12 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("addFilterPredicate:")
-    public native void addFilterPredicate(MPMediaPredicate predicate);
+    public native void addFilterPredicate(@NotNull MPMediaPredicate predicate);
 
     /**
      * API-Since: 4.2
      */
+    @Nullable
     @Generated
     @Selector("collectionSections")
     public native NSArray<? extends MPMediaQuerySection> collectionSections();
@@ -217,20 +233,23 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
      * Returns an array of MPMediaItemCollections matching the query filter predicates. The collections are grouped by
      * the groupingType.
      */
+    @Nullable
     @Generated
     @Selector("collections")
     public native NSArray<? extends MPMediaItemCollection> collections();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("filterPredicates")
     public native NSSet<? extends MPMediaPredicate> filterPredicates();
@@ -249,11 +268,11 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPMediaQuery initWithCoder(NSCoder coder);
+    public native MPMediaQuery initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFilterPredicates:")
-    public native MPMediaQuery initWithFilterPredicates(NSSet<? extends MPMediaPredicate> filterPredicates);
+    public native MPMediaQuery initWithFilterPredicates(@Nullable NSSet<? extends MPMediaPredicate> filterPredicates);
 
     /**
      * Returns an array of MPMediaQuerySection instances representing the section grouping of the query's items or
@@ -262,6 +281,7 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * API-Since: 4.2
      */
+    @Nullable
     @Generated
     @Selector("itemSections")
     public native NSArray<? extends MPMediaQuerySection> itemSections();
@@ -271,17 +291,18 @@ public class MPMediaQuery extends NSObject implements NSSecureCoding, NSCopying 
      * If no items match this method returns an empty array, otherwise returns nil if an error prevents the items from
      * being fetched.
      */
+    @Nullable
     @Generated
     @Selector("items")
     public native NSArray<? extends MPMediaItem> items();
 
     @Generated
     @Selector("removeFilterPredicate:")
-    public native void removeFilterPredicate(MPMediaPredicate predicate);
+    public native void removeFilterPredicate(@NotNull MPMediaPredicate predicate);
 
     @Generated
     @Selector("setFilterPredicates:")
-    public native void setFilterPredicates(NSSet<? extends MPMediaPredicate> value);
+    public native void setFilterPredicates(@Nullable NSSet<? extends MPMediaPredicate> value);
 
     /**
      * The property used to group collections, defaults to MPMediaGroupingTitle.

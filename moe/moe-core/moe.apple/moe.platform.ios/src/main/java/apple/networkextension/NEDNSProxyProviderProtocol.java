@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEDNSProxyProviderProtocol
@@ -65,22 +67,25 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,7 +109,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEDNSProxyProviderProtocol initWithCoder(NSCoder coder);
+    public native NEDNSProxyProviderProtocol initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -123,9 +128,10 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,6 +145,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("providerBundleIdentifier")
     public native String providerBundleIdentifier();
@@ -151,6 +158,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("providerConfiguration")
     public native NSDictionary<String, ?> providerConfiguration();
@@ -172,7 +180,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
      */
     @Generated
     @Selector("setProviderBundleIdentifier:")
-    public native void setProviderBundleIdentifier(String value);
+    public native void setProviderBundleIdentifier(@Nullable String value);
 
     /**
      * [@property] providerConfiguration
@@ -184,7 +192,7 @@ public class NEDNSProxyProviderProtocol extends NEVPNProtocol {
      */
     @Generated
     @Selector("setProviderConfiguration:")
-    public native void setProviderConfiguration(NSDictionary<String, ?> value);
+    public native void setProviderConfiguration(@Nullable NSDictionary<String, ?> value);
 
     @Generated
     @Selector("setVersion:")

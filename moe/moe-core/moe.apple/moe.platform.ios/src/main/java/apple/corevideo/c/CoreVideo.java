@@ -49,6 +49,8 @@ import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreVideo")
@@ -75,9 +77,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CVBufferRef CVBufferRetain(CVBufferRef buffer);
+    public static native CVBufferRef CVBufferRetain(@Nullable CVBufferRef buffer);
 
     /**
      * [@function] CVBufferRelease
@@ -94,7 +97,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVBufferRelease(CVBufferRef buffer);
+    public static native void CVBufferRelease(@Nullable CVBufferRef buffer);
 
     /**
      * [@function] CVBufferSetAttachment
@@ -117,8 +120,8 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVBufferSetAttachment(CVBufferRef buffer, CFStringRef key, ConstVoidPtr value,
-            int attachmentMode);
+    public static native void CVBufferSetAttachment(@NotNull CVBufferRef buffer, @NotNull CFStringRef key,
+            @NotNull ConstVoidPtr value, int attachmentMode);
 
     /**
      * [@function] CVBufferGetAttachment
@@ -136,10 +139,12 @@ public final class CoreVideo {
      *         API-Since: 4.0
      *         Deprecated-Since: 15.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native ConstVoidPtr CVBufferGetAttachment(CVBufferRef buffer, CFStringRef key, IntPtr attachmentMode);
+    public static native ConstVoidPtr CVBufferGetAttachment(@NotNull CVBufferRef buffer, @NotNull CFStringRef key,
+            @Nullable IntPtr attachmentMode);
 
     /**
      * [@function] CVBufferRemoveAttachment
@@ -156,7 +161,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVBufferRemoveAttachment(CVBufferRef buffer, CFStringRef key);
+    public static native void CVBufferRemoveAttachment(@NotNull CVBufferRef buffer, @NotNull CFStringRef key);
 
     /**
      * [@function] CVBufferRemoveAllAttachments
@@ -172,7 +177,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVBufferRemoveAllAttachments(CVBufferRef buffer);
+    public static native void CVBufferRemoveAllAttachments(@NotNull CVBufferRef buffer);
 
     /**
      * [@function] CVBufferGetAttachments
@@ -190,10 +195,11 @@ public final class CoreVideo {
      *         API-Since: 4.0
      *         Deprecated-Since: 15.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDictionaryRef CVBufferGetAttachments(CVBufferRef buffer, int attachmentMode);
+    public static native CFDictionaryRef CVBufferGetAttachments(@NotNull CVBufferRef buffer, int attachmentMode);
 
     /**
      * [@function] CVBufferSetAttachments
@@ -209,8 +215,8 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVBufferSetAttachments(CVBufferRef buffer, CFDictionaryRef theAttachments,
-            int attachmentMode);
+    public static native void CVBufferSetAttachments(@NotNull CVBufferRef buffer,
+            @NotNull CFDictionaryRef theAttachments, int attachmentMode);
 
     /**
      * [@function] CVBufferPropagateAttachments
@@ -228,7 +234,8 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVBufferPropagateAttachments(CVBufferRef sourceBuffer, CVBufferRef destinationBuffer);
+    public static native void CVBufferPropagateAttachments(@NotNull CVBufferRef sourceBuffer,
+            @NotNull CVBufferRef destinationBuffer);
 
     /**
      * [@function] CVImageBufferGetEncodedSize
@@ -244,7 +251,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CVImageBufferGetEncodedSize(CVBufferRef imageBuffer);
+    public static native CGSize CVImageBufferGetEncodedSize(@NotNull CVBufferRef imageBuffer);
 
     /**
      * [@function] CVImageBufferGetDisplaySize
@@ -261,7 +268,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CVImageBufferGetDisplaySize(CVBufferRef imageBuffer);
+    public static native CGSize CVImageBufferGetDisplaySize(@NotNull CVBufferRef imageBuffer);
 
     /**
      * [@function] CVImageBufferGetCleanRect
@@ -281,7 +288,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CVImageBufferGetCleanRect(CVBufferRef imageBuffer);
+    public static native CGRect CVImageBufferGetCleanRect(@NotNull CVBufferRef imageBuffer);
 
     /**
      * [@function] CVImageBufferIsFlipped
@@ -295,7 +302,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native byte CVImageBufferIsFlipped(CVBufferRef imageBuffer);
+    public static native byte CVImageBufferIsFlipped(@NotNull CVBufferRef imageBuffer);
 
     /**
      * API-Since: 4.0
@@ -317,9 +324,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CVBufferRef CVPixelBufferRetain(CVBufferRef texture);
+    public static native CVBufferRef CVPixelBufferRetain(@Nullable CVBufferRef texture);
 
     /**
      * [@function] CVPixelBufferRelease
@@ -334,7 +342,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVPixelBufferRelease(CVBufferRef texture);
+    public static native void CVPixelBufferRelease(@Nullable CVBufferRef texture);
 
     /**
      * [@function] CVPixelBufferCreateResolvedAttributesDictionary
@@ -353,8 +361,8 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferCreateResolvedAttributesDictionary(CFAllocatorRef allocator,
-            CFArrayRef attributes, Ptr<CFDictionaryRef> resolvedDictionaryOut);
+    public static native int CVPixelBufferCreateResolvedAttributesDictionary(@Nullable CFAllocatorRef allocator,
+            @Nullable CFArrayRef attributes, @NotNull Ptr<CFDictionaryRef> resolvedDictionaryOut);
 
     /**
      * [@function] CVPixelBufferCreate
@@ -377,8 +385,9 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferCreate(CFAllocatorRef allocator, @NUInt long width, @NUInt long height,
-            int pixelFormatType, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
+    public static native int CVPixelBufferCreate(@Nullable CFAllocatorRef allocator, @NUInt long width,
+            @NUInt long height, int pixelFormatType, @Nullable CFDictionaryRef pixelBufferAttributes,
+            @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * [@function] CVPixelBufferCreateWithBytes
@@ -406,10 +415,11 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferCreateWithBytes(CFAllocatorRef allocator, @NUInt long width,
-            @NUInt long height, int pixelFormatType, VoidPtr baseAddress, @NUInt long bytesPerRow,
-            @FunctionPtr(name = "call_CVPixelBufferCreateWithBytes") Function_CVPixelBufferCreateWithBytes releaseCallback,
-            VoidPtr releaseRefCon, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
+    public static native int CVPixelBufferCreateWithBytes(@Nullable CFAllocatorRef allocator, @NUInt long width,
+            @NUInt long height, int pixelFormatType, @NotNull VoidPtr baseAddress, @NUInt long bytesPerRow,
+            @Nullable @FunctionPtr(name = "call_CVPixelBufferCreateWithBytes") Function_CVPixelBufferCreateWithBytes releaseCallback,
+            @Nullable VoidPtr releaseRefCon, @Nullable CFDictionaryRef pixelBufferAttributes,
+            @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * [@function] CVPixelBufferCreateWithPlanarBytes
@@ -443,11 +453,13 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferCreateWithPlanarBytes(CFAllocatorRef allocator, @NUInt long width,
-            @NUInt long height, int pixelFormatType, VoidPtr dataPtr, @NUInt long dataSize, @NUInt long numberOfPlanes,
-            Ptr<VoidPtr> planeBaseAddress, NUIntPtr planeWidth, NUIntPtr planeHeight, NUIntPtr planeBytesPerRow,
-            @FunctionPtr(name = "call_CVPixelBufferCreateWithPlanarBytes") Function_CVPixelBufferCreateWithPlanarBytes releaseCallback,
-            VoidPtr releaseRefCon, CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
+    public static native int CVPixelBufferCreateWithPlanarBytes(@Nullable CFAllocatorRef allocator, @NUInt long width,
+            @NUInt long height, int pixelFormatType, @Nullable VoidPtr dataPtr, @NUInt long dataSize,
+            @NUInt long numberOfPlanes, @NotNull Ptr<VoidPtr> planeBaseAddress, @NotNull NUIntPtr planeWidth,
+            @NotNull NUIntPtr planeHeight, @NotNull NUIntPtr planeBytesPerRow,
+            @Nullable @FunctionPtr(name = "call_CVPixelBufferCreateWithPlanarBytes") Function_CVPixelBufferCreateWithPlanarBytes releaseCallback,
+            @Nullable VoidPtr releaseRefCon, @Nullable CFDictionaryRef pixelBufferAttributes,
+            @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * [@function] CVPixelBufferLockBaseAddress
@@ -465,7 +477,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferLockBaseAddress(CVBufferRef pixelBuffer, long lockFlags);
+    public static native int CVPixelBufferLockBaseAddress(@NotNull CVBufferRef pixelBuffer, long lockFlags);
 
     /**
      * [@function] CVPixelBufferUnlockBaseAddress
@@ -480,7 +492,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferUnlockBaseAddress(CVBufferRef pixelBuffer, long unlockFlags);
+    public static native int CVPixelBufferUnlockBaseAddress(@NotNull CVBufferRef pixelBuffer, long unlockFlags);
 
     /**
      * [@function] CVPixelBufferGetWidth
@@ -495,7 +507,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetWidth(CVBufferRef pixelBuffer);
+    public static native long CVPixelBufferGetWidth(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetHeight
@@ -510,7 +522,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetHeight(CVBufferRef pixelBuffer);
+    public static native long CVPixelBufferGetHeight(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetPixelFormatType
@@ -524,7 +536,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferGetPixelFormatType(CVBufferRef pixelBuffer);
+    public static native int CVPixelBufferGetPixelFormatType(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetBaseAddress
@@ -541,9 +553,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr CVPixelBufferGetBaseAddress(CVBufferRef pixelBuffer);
+    public static native VoidPtr CVPixelBufferGetBaseAddress(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetBytesPerRow
@@ -560,7 +573,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetBytesPerRow(CVBufferRef pixelBuffer);
+    public static native long CVPixelBufferGetBytesPerRow(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetDataSize
@@ -575,7 +588,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetDataSize(CVBufferRef pixelBuffer);
+    public static native long CVPixelBufferGetDataSize(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferIsPlanar
@@ -589,7 +602,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native byte CVPixelBufferIsPlanar(CVBufferRef pixelBuffer);
+    public static native byte CVPixelBufferIsPlanar(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetPlaneCount
@@ -604,7 +617,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetPlaneCount(CVBufferRef pixelBuffer);
+    public static native long CVPixelBufferGetPlaneCount(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferGetWidthOfPlane
@@ -623,7 +636,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetWidthOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
+    public static native long CVPixelBufferGetWidthOfPlane(@NotNull CVBufferRef pixelBuffer, @NUInt long planeIndex);
 
     /**
      * [@function] CVPixelBufferGetHeightOfPlane
@@ -642,7 +655,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetHeightOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
+    public static native long CVPixelBufferGetHeightOfPlane(@NotNull CVBufferRef pixelBuffer, @NUInt long planeIndex);
 
     /**
      * [@function] CVPixelBufferGetBaseAddressOfPlane
@@ -659,9 +672,11 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native VoidPtr CVPixelBufferGetBaseAddressOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
+    public static native VoidPtr CVPixelBufferGetBaseAddressOfPlane(@NotNull CVBufferRef pixelBuffer,
+            @NUInt long planeIndex);
 
     /**
      * [@function] CVPixelBufferGetBytesPerRowOfPlane
@@ -680,7 +695,8 @@ public final class CoreVideo {
     @Generated
     @CFunction
     @NUInt
-    public static native long CVPixelBufferGetBytesPerRowOfPlane(CVBufferRef pixelBuffer, @NUInt long planeIndex);
+    public static native long CVPixelBufferGetBytesPerRowOfPlane(@NotNull CVBufferRef pixelBuffer,
+            @NUInt long planeIndex);
 
     /**
      * [@function] CVPixelBufferGetExtendedPixels
@@ -700,8 +716,9 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVPixelBufferGetExtendedPixels(CVBufferRef pixelBuffer, NUIntPtr extraColumnsOnLeft,
-            NUIntPtr extraColumnsOnRight, NUIntPtr extraRowsOnTop, NUIntPtr extraRowsOnBottom);
+    public static native void CVPixelBufferGetExtendedPixels(@NotNull CVBufferRef pixelBuffer,
+            @Nullable NUIntPtr extraColumnsOnLeft, @Nullable NUIntPtr extraColumnsOnRight,
+            @Nullable NUIntPtr extraRowsOnTop, @Nullable NUIntPtr extraRowsOnBottom);
 
     /**
      * [@function] CVPixelBufferFillExtendedPixels
@@ -715,7 +732,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferFillExtendedPixels(CVBufferRef pixelBuffer);
+    public static native int CVPixelBufferFillExtendedPixels(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * API-Since: 4.0
@@ -737,9 +754,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CVPixelBufferPoolRef CVPixelBufferPoolRetain(CVPixelBufferPoolRef pixelBufferPool);
+    public static native CVPixelBufferPoolRef CVPixelBufferPoolRetain(@Nullable CVPixelBufferPoolRef pixelBufferPool);
 
     /**
      * [@function] CVPixelBufferPoolRelease
@@ -754,7 +772,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVPixelBufferPoolRelease(CVPixelBufferPoolRef pixelBufferPool);
+    public static native void CVPixelBufferPoolRelease(@Nullable CVPixelBufferPoolRef pixelBufferPool);
 
     /**
      * [@function] CVPixelBufferPoolCreate
@@ -771,8 +789,9 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferPoolCreate(CFAllocatorRef allocator, CFDictionaryRef poolAttributes,
-            CFDictionaryRef pixelBufferAttributes, Ptr<CVPixelBufferPoolRef> poolOut);
+    public static native int CVPixelBufferPoolCreate(@Nullable CFAllocatorRef allocator,
+            @Nullable CFDictionaryRef poolAttributes, @Nullable CFDictionaryRef pixelBufferAttributes,
+            @NotNull Ptr<CVPixelBufferPoolRef> poolOut);
 
     /**
      * [@function] CVPixelBufferPoolGetAttributes
@@ -784,9 +803,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CVPixelBufferPoolGetAttributes(CVPixelBufferPoolRef pool);
+    public static native CFDictionaryRef CVPixelBufferPoolGetAttributes(@NotNull CVPixelBufferPoolRef pool);
 
     /**
      * [@function] CVPixelBufferPoolGetPixelBufferAttributes
@@ -801,9 +821,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CVPixelBufferPoolGetPixelBufferAttributes(CVPixelBufferPoolRef pool);
+    public static native CFDictionaryRef CVPixelBufferPoolGetPixelBufferAttributes(@NotNull CVPixelBufferPoolRef pool);
 
     /**
      * [@function] CVPixelBufferPoolCreatePixelBuffer
@@ -822,8 +843,8 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferPoolCreatePixelBuffer(CFAllocatorRef allocator,
-            CVPixelBufferPoolRef pixelBufferPool, Ptr<CVBufferRef> pixelBufferOut);
+    public static native int CVPixelBufferPoolCreatePixelBuffer(@Nullable CFAllocatorRef allocator,
+            @NotNull CVPixelBufferPoolRef pixelBufferPool, @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * [@function] CVPixelBufferPoolCreatePixelBufferWithAuxAttributes
@@ -843,8 +864,9 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferPoolCreatePixelBufferWithAuxAttributes(CFAllocatorRef allocator,
-            CVPixelBufferPoolRef pixelBufferPool, CFDictionaryRef auxAttributes, Ptr<CVBufferRef> pixelBufferOut);
+    public static native int CVPixelBufferPoolCreatePixelBufferWithAuxAttributes(@Nullable CFAllocatorRef allocator,
+            @NotNull CVPixelBufferPoolRef pixelBufferPool, @Nullable CFDictionaryRef auxAttributes,
+            @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * [@function] CVPixelBufferPoolFlush
@@ -861,7 +883,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVPixelBufferPoolFlush(CVPixelBufferPoolRef pool, long options);
+    public static native void CVPixelBufferPoolFlush(@NotNull CVPixelBufferPoolRef pool, long options);
 
     /**
      * API-Since: 5.0
@@ -891,7 +913,7 @@ public final class CoreVideo {
     @Deprecated
     @Generated
     @CFunction
-    public static native int CVOpenGLESTextureGetTarget(CVBufferRef image);
+    public static native int CVOpenGLESTextureGetTarget(@NotNull CVBufferRef image);
 
     /**
      * [@function] CVOpenGLESTextureGetName
@@ -909,7 +931,7 @@ public final class CoreVideo {
     @Deprecated
     @Generated
     @CFunction
-    public static native int CVOpenGLESTextureGetName(CVBufferRef image);
+    public static native int CVOpenGLESTextureGetName(@NotNull CVBufferRef image);
 
     /**
      * [@function] CVOpenGLESTextureIsFlipped
@@ -927,7 +949,7 @@ public final class CoreVideo {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CVOpenGLESTextureIsFlipped(CVBufferRef image);
+    public static native byte CVOpenGLESTextureIsFlipped(@NotNull CVBufferRef image);
 
     /**
      * textureAttributes - reserved for future use
@@ -965,8 +987,9 @@ public final class CoreVideo {
     @Deprecated
     @Generated
     @CFunction
-    public static native int CVOpenGLESTextureCacheCreate(CFAllocatorRef allocator, CFDictionaryRef cacheAttributes,
-            EAGLContext eaglContext, CFDictionaryRef textureAttributes, Ptr<CVOpenGLESTextureCacheRef> cacheOut);
+    public static native int CVOpenGLESTextureCacheCreate(@Nullable CFAllocatorRef allocator,
+            @Nullable CFDictionaryRef cacheAttributes, @NotNull EAGLContext eaglContext,
+            @Nullable CFDictionaryRef textureAttributes, @NotNull Ptr<CVOpenGLESTextureCacheRef> cacheOut);
 
     /**
      * [@function] CVOpenGLESTextureCacheCreateTextureFromImage
@@ -1030,10 +1053,10 @@ public final class CoreVideo {
     @Deprecated
     @Generated
     @CFunction
-    public static native int CVOpenGLESTextureCacheCreateTextureFromImage(CFAllocatorRef allocator,
-            CVOpenGLESTextureCacheRef textureCache, CVBufferRef sourceImage, CFDictionaryRef textureAttributes,
-            int target, int internalFormat, int width, int height, int format, int type, @NUInt long planeIndex,
-            Ptr<CVBufferRef> textureOut);
+    public static native int CVOpenGLESTextureCacheCreateTextureFromImage(@Nullable CFAllocatorRef allocator,
+            @NotNull CVOpenGLESTextureCacheRef textureCache, @NotNull CVBufferRef sourceImage,
+            @Nullable CFDictionaryRef textureAttributes, int target, int internalFormat, int width, int height,
+            int format, int type, @NUInt long planeIndex, @NotNull Ptr<CVBufferRef> textureOut);
 
     /**
      * [@function] CVOpenGLESTextureCacheFlush
@@ -1055,27 +1078,30 @@ public final class CoreVideo {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CVOpenGLESTextureCacheFlush(CVOpenGLESTextureCacheRef textureCache, long options);
+    public static native void CVOpenGLESTextureCacheFlush(@NotNull CVOpenGLESTextureCacheRef textureCache,
+            long options);
 
     /**
      * Create a description of a pixel format from a provided OSType
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CVPixelFormatDescriptionCreateWithPixelFormatType(CFAllocatorRef allocator,
-            int pixelFormat);
+    public static native CFDictionaryRef CVPixelFormatDescriptionCreateWithPixelFormatType(
+            @Nullable CFAllocatorRef allocator, int pixelFormat);
 
     /**
      * Get a CFArray of CFNumbers containing all known pixel formats as OSTypes
      * 
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFArrayRef CVPixelFormatDescriptionArrayCreateWithAllPixelFormatTypes(
-            CFAllocatorRef allocator);
+            @Nullable CFAllocatorRef allocator);
 
     /**
      * Register a new pixel format with CoreVideo
@@ -1085,7 +1111,7 @@ public final class CoreVideo {
     @Generated
     @CFunction
     public static native void CVPixelFormatDescriptionRegisterDescriptionWithPixelFormatType(
-            CFDictionaryRef description, int pixelFormat);
+            @NotNull CFDictionaryRef description, int pixelFormat);
 
     /**
      * API-Since: 8.0
@@ -1105,10 +1131,11 @@ public final class CoreVideo {
      * 
      *         API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object CVMetalTextureGetTexture(CVBufferRef image);
+    public static native Object CVMetalTextureGetTexture(@NotNull CVBufferRef image);
 
     /**
      * [@function] CVMetalTextureIsFlipped
@@ -1122,7 +1149,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native byte CVMetalTextureIsFlipped(CVBufferRef image);
+    public static native byte CVMetalTextureIsFlipped(@NotNull CVBufferRef image);
 
     /**
      * API-Since: 8.0
@@ -1149,9 +1176,9 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVMetalTextureCacheCreate(CFAllocatorRef allocator, CFDictionaryRef cacheAttributes,
-            @Mapped(ObjCObjectMapper.class) Object metalDevice, CFDictionaryRef textureAttributes,
-            Ptr<CVMetalTextureCacheRef> cacheOut);
+    public static native int CVMetalTextureCacheCreate(@Nullable CFAllocatorRef allocator,
+            @Nullable CFDictionaryRef cacheAttributes, @NotNull @Mapped(ObjCObjectMapper.class) Object metalDevice,
+            @Nullable CFDictionaryRef textureAttributes, @NotNull Ptr<CVMetalTextureCacheRef> cacheOut);
 
     /**
      * [@function] CVMetalTextureCacheCreateTextureFromImage
@@ -1207,10 +1234,10 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVMetalTextureCacheCreateTextureFromImage(CFAllocatorRef allocator,
-            CVMetalTextureCacheRef textureCache, CVBufferRef sourceImage, CFDictionaryRef textureAttributes,
-            @NUInt long pixelFormat, @NUInt long width, @NUInt long height, @NUInt long planeIndex,
-            Ptr<CVBufferRef> textureOut);
+    public static native int CVMetalTextureCacheCreateTextureFromImage(@Nullable CFAllocatorRef allocator,
+            @NotNull CVMetalTextureCacheRef textureCache, @NotNull CVBufferRef sourceImage,
+            @Nullable CFDictionaryRef textureAttributes, @NUInt long pixelFormat, @NUInt long width, @NUInt long height,
+            @NUInt long planeIndex, @NotNull Ptr<CVBufferRef> textureOut);
 
     /**
      * [@function] CVMetalTextureCacheFlush
@@ -1226,7 +1253,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native void CVMetalTextureCacheFlush(CVMetalTextureCacheRef textureCache, long options);
+    public static native void CVMetalTextureCacheFlush(@NotNull CVMetalTextureCacheRef textureCache, long options);
 
     @Generated
     @CVariable()
@@ -1244,6 +1271,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVBufferPropagatedAttachmentsKey();
@@ -1251,6 +1279,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVBufferNonPropagatedAttachmentsKey();
@@ -1260,6 +1289,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVBufferMovieTimeKey();
@@ -1267,6 +1297,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVBufferTimeValueKey();
@@ -1274,6 +1305,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVBufferTimeScaleKey();
@@ -1283,6 +1315,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferCGColorSpaceKey();
@@ -1292,6 +1325,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferCleanApertureKey();
@@ -1301,6 +1335,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferCleanApertureWidthKey();
@@ -1310,6 +1345,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferCleanApertureHeightKey();
@@ -1319,6 +1355,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferCleanApertureHorizontalOffsetKey();
@@ -1328,6 +1365,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferCleanApertureVerticalOffsetKey();
@@ -1337,6 +1375,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferPreferredCleanApertureKey();
@@ -1346,6 +1385,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferFieldCountKey();
@@ -1355,6 +1395,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferFieldDetailKey();
@@ -1364,6 +1405,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferFieldDetailTemporalTopFirst();
@@ -1373,6 +1415,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferFieldDetailTemporalBottomFirst();
@@ -1382,6 +1425,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferFieldDetailSpatialFirstLineEarly();
@@ -1391,6 +1435,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferFieldDetailSpatialFirstLineLate();
@@ -1400,6 +1445,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferPixelAspectRatioKey();
@@ -1409,6 +1455,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferPixelAspectRatioHorizontalSpacingKey();
@@ -1418,6 +1465,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferPixelAspectRatioVerticalSpacingKey();
@@ -1427,6 +1475,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferDisplayDimensionsKey();
@@ -1436,6 +1485,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferDisplayWidthKey();
@@ -1445,6 +1495,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferDisplayHeightKey();
@@ -1454,6 +1505,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferGammaLevelKey();
@@ -1463,6 +1515,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferICCProfileKey();
@@ -1472,6 +1525,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferYCbCrMatrixKey();
@@ -1481,6 +1535,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferYCbCrMatrix_ITU_R_709_2();
@@ -1490,6 +1545,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferYCbCrMatrix_ITU_R_601_4();
@@ -1499,6 +1555,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferYCbCrMatrix_SMPTE_240M_1995();
@@ -1510,6 +1567,7 @@ public final class CoreVideo {
      * Deprecated-Since: 14.0
      * Deprecated-Message: kCVImageBufferYCbCrMatrix_DCI_P3 no longer supported.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1522,6 +1580,7 @@ public final class CoreVideo {
      * Deprecated-Since: 14.0
      * Deprecated-Message: kCVImageBufferYCbCrMatrix_P3_D65 no longer supported.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1532,6 +1591,7 @@ public final class CoreVideo {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferYCbCrMatrix_ITU_R_2020();
@@ -1541,6 +1601,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimariesKey();
@@ -1548,6 +1609,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_ITU_R_709_2();
@@ -1555,6 +1617,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_EBU_3213();
@@ -1562,6 +1625,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_SMPTE_C();
@@ -1569,6 +1633,7 @@ public final class CoreVideo {
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_P22();
@@ -1576,6 +1641,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_DCI_P3();
@@ -1583,6 +1649,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_P3_D65();
@@ -1590,6 +1657,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferColorPrimaries_ITU_R_2020();
@@ -1599,6 +1667,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunctionKey();
@@ -1606,6 +1675,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_ITU_R_709_2();
@@ -1613,6 +1683,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_SMPTE_240M_1995();
@@ -1620,6 +1691,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_UseGamma();
@@ -1629,6 +1701,7 @@ public final class CoreVideo {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_ITU_R_2020();
@@ -1636,6 +1709,7 @@ public final class CoreVideo {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_SMPTE_ST_428_1();
@@ -1645,6 +1719,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocationTopFieldKey();
@@ -1654,6 +1729,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocationBottomFieldKey();
@@ -1663,6 +1739,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_Left();
@@ -1672,6 +1749,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_Center();
@@ -1681,6 +1759,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_TopLeft();
@@ -1690,6 +1769,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_Top();
@@ -1699,6 +1779,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_BottomLeft();
@@ -1708,6 +1789,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_Bottom();
@@ -1717,6 +1799,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaLocation_DV420();
@@ -1726,6 +1809,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaSubsamplingKey();
@@ -1733,6 +1817,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaSubsampling_420();
@@ -1740,6 +1825,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaSubsampling_422();
@@ -1747,6 +1833,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferChromaSubsampling_411();
@@ -1757,6 +1844,7 @@ public final class CoreVideo {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferAlphaChannelIsOpaque();
@@ -1766,6 +1854,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferPixelFormatTypeKey();
@@ -1775,6 +1864,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferMemoryAllocatorKey();
@@ -1784,6 +1874,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferWidthKey();
@@ -1793,6 +1884,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferHeightKey();
@@ -1802,6 +1894,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferExtendedPixelsLeftKey();
@@ -1811,6 +1904,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferExtendedPixelsTopKey();
@@ -1820,6 +1914,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferExtendedPixelsRightKey();
@@ -1829,6 +1924,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferExtendedPixelsBottomKey();
@@ -1838,6 +1934,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferBytesPerRowAlignmentKey();
@@ -1847,6 +1944,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferCGBitmapContextCompatibilityKey();
@@ -1856,6 +1954,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferCGImageCompatibilityKey();
@@ -1865,6 +1964,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferOpenGLCompatibilityKey();
@@ -1874,6 +1974,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferPlaneAlignmentKey();
@@ -1883,6 +1984,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferIOSurfacePropertiesKey();
@@ -1892,6 +1994,7 @@ public final class CoreVideo {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferOpenGLESCompatibilityKey();
@@ -1901,6 +2004,7 @@ public final class CoreVideo {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferMetalCompatibilityKey();
@@ -1908,6 +2012,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferOpenGLESTextureCacheCompatibilityKey();
@@ -1918,6 +2023,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferPoolMinimumBufferCountKey();
@@ -1925,6 +2031,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferPoolMaximumBufferAgeKey();
@@ -1934,6 +2041,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferPoolAllocationThresholdKey();
@@ -1946,6 +2054,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferPoolFreeBufferNotification();
@@ -1962,6 +2071,7 @@ public final class CoreVideo {
      * Deprecated-Message: OpenGL/OpenGLES is no longer supported. Use Metal APIs instead. (Define
      * COREVIDEO_SILENCE_GL_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1972,6 +2082,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatName();
@@ -1981,6 +2092,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatConstant();
@@ -1990,6 +2102,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatCodecType();
@@ -1999,6 +2112,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatFourCC();
@@ -2009,6 +2123,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsAlpha();
@@ -2018,6 +2133,7 @@ public final class CoreVideo {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsYCbCr();
@@ -2027,6 +2143,7 @@ public final class CoreVideo {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsRGB();
@@ -2034,6 +2151,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatComponentRange();
@@ -2041,6 +2159,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatComponentRange_VideoRange();
@@ -2048,6 +2167,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatComponentRange_FullRange();
@@ -2055,6 +2175,7 @@ public final class CoreVideo {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatComponentRange_WideRange();
@@ -2066,6 +2187,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatPlanes();
@@ -2086,6 +2208,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatBlockWidth();
@@ -2093,6 +2216,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatBlockHeight();
@@ -2103,6 +2227,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatBitsPerBlock();
@@ -2114,6 +2239,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatBlockHorizontalAlignment();
@@ -2121,6 +2247,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatBlockVerticalAlignment();
@@ -2132,6 +2259,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatBlackBlock();
@@ -2141,6 +2269,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatHorizontalSubsampling();
@@ -2148,6 +2277,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatVerticalSubsampling();
@@ -2158,6 +2288,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatOpenGLFormat();
@@ -2165,6 +2296,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatOpenGLType();
@@ -2172,6 +2304,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatOpenGLInternalFormat();
@@ -2181,6 +2314,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatCGBitmapInfo();
@@ -2190,6 +2324,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatQDCompatibility();
@@ -2197,6 +2332,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatCGBitmapContextCompatibility();
@@ -2204,6 +2340,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatCGImageCompatibility();
@@ -2211,6 +2348,7 @@ public final class CoreVideo {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatOpenGLCompatibility();
@@ -2218,6 +2356,7 @@ public final class CoreVideo {
     /**
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatOpenGLESCompatibility();
@@ -2227,6 +2366,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatFillExtendedPixelsCallback();
@@ -2240,6 +2380,7 @@ public final class CoreVideo {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVMetalTextureCacheMaximumTextureAgeKey();
@@ -2248,15 +2389,16 @@ public final class CoreVideo {
     @Generated
     public interface Function_CVPixelBufferCreateWithBytes {
         @Generated
-        void call_CVPixelBufferCreateWithBytes(VoidPtr arg0, ConstVoidPtr arg1);
+        void call_CVPixelBufferCreateWithBytes(@Nullable VoidPtr arg0, @Nullable ConstVoidPtr arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CVPixelBufferCreateWithPlanarBytes {
         @Generated
-        void call_CVPixelBufferCreateWithPlanarBytes(VoidPtr arg0, ConstVoidPtr arg1, @NUInt long arg2,
-                @NUInt long arg3, @ReferenceInfo(type = Void.class, depth = 2) Ptr<ConstVoidPtr> arg4);
+        void call_CVPixelBufferCreateWithPlanarBytes(@Nullable VoidPtr arg0, @Nullable ConstVoidPtr arg1,
+                @NUInt long arg2, @NUInt long arg3,
+                @Nullable @ReferenceInfo(type = Void.class, depth = 2) Ptr<ConstVoidPtr> arg4);
     }
 
     /**
@@ -2268,7 +2410,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVYCbCrMatrixGetIntegerCodePointForString(CFStringRef yCbCrMatrixString);
+    public static native int CVYCbCrMatrixGetIntegerCodePointForString(@Nullable CFStringRef yCbCrMatrixString);
 
     /**
      * Returns the standard integer code point corresponding to a given CoreVideo ColorPrimaries constant string (in the
@@ -2279,7 +2421,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVColorPrimariesGetIntegerCodePointForString(CFStringRef colorPrimariesString);
+    public static native int CVColorPrimariesGetIntegerCodePointForString(@Nullable CFStringRef colorPrimariesString);
 
     /**
      * Returns the standard integer code point corresponding to a given CoreVideo TransferFunction constant string (in
@@ -2290,7 +2432,8 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVTransferFunctionGetIntegerCodePointForString(CFStringRef transferFunctionString);
+    public static native int CVTransferFunctionGetIntegerCodePointForString(
+            @Nullable CFStringRef transferFunctionString);
 
     /**
      * Returns the CoreVideo YCbCrMatrix constant string (in the kCVImageBufferYCbCrMatrix_... family) corresponding to
@@ -2299,6 +2442,7 @@ public final class CoreVideo {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef CVYCbCrMatrixGetStringForIntegerCodePoint(int yCbCrMatrixCodePoint);
@@ -2310,6 +2454,7 @@ public final class CoreVideo {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef CVColorPrimariesGetStringForIntegerCodePoint(int colorPrimariesCodePoint);
@@ -2321,6 +2466,7 @@ public final class CoreVideo {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef CVTransferFunctionGetStringForIntegerCodePoint(int transferFunctionCodePoint);
@@ -2345,9 +2491,11 @@ public final class CoreVideo {
      *         Returns NULL if the attachments dictionary does not contain the information required to synthesize a
      *         CGColorSpace.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGColorSpaceRef CVImageBufferCreateColorSpaceFromAttachments(CFDictionaryRef attachments);
+    public static native CGColorSpaceRef CVImageBufferCreateColorSpaceFromAttachments(
+            @NotNull CFDictionaryRef attachments);
 
     /**
      * [@function] CVPixelBufferGetIOSurface
@@ -2358,9 +2506,10 @@ public final class CoreVideo {
      * 
      *                    API-Since: 4.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native IOSurfaceRef CVPixelBufferGetIOSurface(CVBufferRef pixelBuffer);
+    public static native IOSurfaceRef CVPixelBufferGetIOSurface(@Nullable CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVPixelBufferCreateWithIOSurface
@@ -2385,14 +2534,16 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native int CVPixelBufferCreateWithIOSurface(CFAllocatorRef allocator, IOSurfaceRef surface,
-            CFDictionaryRef pixelBufferAttributes, Ptr<CVBufferRef> pixelBufferOut);
+    public static native int CVPixelBufferCreateWithIOSurface(@Nullable CFAllocatorRef allocator,
+            @NotNull IOSurfaceRef surface, @Nullable CFDictionaryRef pixelBufferAttributes,
+            @NotNull Ptr<CVBufferRef> pixelBufferOut);
 
     /**
      * IEC 61966-2-1 sRGB or sYCC
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_sRGB();
@@ -2400,6 +2551,7 @@ public final class CoreVideo {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_SMPTE_ST_2084_PQ();
@@ -2407,6 +2559,7 @@ public final class CoreVideo {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_ITU_R_2100_HLG();
@@ -2417,6 +2570,7 @@ public final class CoreVideo {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferMasteringDisplayColorVolumeKey();
@@ -2426,6 +2580,7 @@ public final class CoreVideo {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferContentLightLevelInfoKey();
@@ -2435,6 +2590,7 @@ public final class CoreVideo {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferIOSurfaceCoreAnimationCompatibilityKey();
@@ -2444,6 +2600,7 @@ public final class CoreVideo {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferIOSurfaceOpenGLESTextureCompatibilityKey();
@@ -2453,6 +2610,7 @@ public final class CoreVideo {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferIOSurfaceOpenGLESFBOCompatibilityKey();
@@ -2463,6 +2621,7 @@ public final class CoreVideo {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVMetalTextureUsage();
@@ -2470,6 +2629,7 @@ public final class CoreVideo {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferTransferFunction_Linear();
@@ -2477,6 +2637,7 @@ public final class CoreVideo {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferAlphaChannelModeKey();
@@ -2484,6 +2645,7 @@ public final class CoreVideo {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferAlphaChannelMode_StraightAlpha();
@@ -2491,6 +2653,7 @@ public final class CoreVideo {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferAlphaChannelMode_PremultipliedAlpha();
@@ -2500,6 +2663,7 @@ public final class CoreVideo {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsGrayscale();
@@ -2510,6 +2674,7 @@ public final class CoreVideo {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVMetalTextureStorageMode();
@@ -2529,6 +2694,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferVersatileBayerKey_BayerPattern();
@@ -2550,6 +2716,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_SenselSitingOffsets();
@@ -2564,6 +2731,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_BlackLevel();
@@ -2579,6 +2747,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteLevel();
@@ -2595,6 +2764,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteBalanceCCT();
@@ -2609,6 +2779,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteBalanceRedFactor();
@@ -2623,6 +2794,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_WhiteBalanceBlueFactor();
@@ -2639,6 +2811,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_ColorMatrix();
@@ -2653,6 +2826,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_GainFactor();
@@ -2673,6 +2847,7 @@ public final class CoreVideo {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_RecommendedCrop();
@@ -2692,9 +2867,10 @@ public final class CoreVideo {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CVBufferCopyAttachments(CVBufferRef buffer, int attachmentMode);
+    public static native CFDictionaryRef CVBufferCopyAttachments(@NotNull CVBufferRef buffer, int attachmentMode);
 
     /**
      * [@function] CVBufferCopyAttachment
@@ -2712,10 +2888,11 @@ public final class CoreVideo {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CVBufferCopyAttachment(CVBufferRef buffer, CFStringRef key,
-            IntPtr attachmentMode);
+    public static native ConstVoidPtr CVBufferCopyAttachment(@NotNull CVBufferRef buffer, @NotNull CFStringRef key,
+            @Nullable IntPtr attachmentMode);
 
     /**
      * [@function] CVBufferHasAttachment
@@ -2730,7 +2907,7 @@ public final class CoreVideo {
      */
     @Generated
     @CFunction
-    public static native byte CVBufferHasAttachment(CVBufferRef buffer, CFStringRef key);
+    public static native byte CVBufferHasAttachment(@NotNull CVBufferRef buffer, @NotNull CFStringRef key);
 
     /**
      * [@function] CVPixelBufferCopyCreationAttributes
@@ -2743,9 +2920,10 @@ public final class CoreVideo {
      * 
      *                    API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDictionaryRef CVPixelBufferCopyCreationAttributes(CVBufferRef pixelBuffer);
+    public static native CFDictionaryRef CVPixelBufferCopyCreationAttributes(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * [@function] CVIsCompressedPixelFormatAvailable
@@ -2766,6 +2944,7 @@ public final class CoreVideo {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferAmbientViewingEnvironmentKey();
@@ -2781,6 +2960,7 @@ public final class CoreVideo {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVImageBufferRegionOfInterestKey();
@@ -2797,6 +2977,7 @@ public final class CoreVideo {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelBufferProResRAWKey_MetadataExtension();
@@ -2806,6 +2987,7 @@ public final class CoreVideo {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCVPixelFormatContainsSenselArray();

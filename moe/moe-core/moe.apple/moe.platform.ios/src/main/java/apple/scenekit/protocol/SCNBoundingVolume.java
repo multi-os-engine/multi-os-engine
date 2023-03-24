@@ -24,6 +24,7 @@ import org.moe.natj.general.ptr.NFloatPtr;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNBoundingVolume
@@ -49,7 +50,7 @@ public interface SCNBoundingVolume {
      */
     @Generated
     @Selector("getBoundingBoxMin:max:")
-    boolean getBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
+    boolean getBoundingBoxMinMax(@Nullable SCNVector3 min, @Nullable SCNVector3 max);
 
     /**
      * getBoundingSphereCenter:radius:
@@ -64,7 +65,7 @@ public interface SCNBoundingVolume {
      */
     @Generated
     @Selector("getBoundingSphereCenter:radius:")
-    boolean getBoundingSphereCenterRadius(SCNVector3 center, NFloatPtr radius);
+    boolean getBoundingSphereCenterRadius(@Nullable SCNVector3 center, @Nullable NFloatPtr radius);
 
     /**
      * setBoundingBoxMin:max:
@@ -78,5 +79,5 @@ public interface SCNBoundingVolume {
      */
     @Generated
     @Selector("setBoundingBoxMin:max:")
-    void setBoundingBoxMinMax(SCNVector3 min, SCNVector3 max);
+    void setBoundingBoxMinMax(@Nullable SCNVector3 min, @Nullable SCNVector3 max);
 }

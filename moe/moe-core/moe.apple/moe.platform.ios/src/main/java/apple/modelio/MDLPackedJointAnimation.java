@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -60,31 +62,35 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -105,7 +111,8 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
 
     @Generated
     @Selector("initWithName:jointPaths:")
-    public native MDLPackedJointAnimation initWithNameJointPaths(String name, NSArray<String> jointPaths);
+    public native MDLPackedJointAnimation initWithNameJointPaths(@NotNull String name,
+            @NotNull NSArray<String> jointPaths);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,13 +131,15 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("jointPaths")
     public native NSArray<String> jointPaths();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -139,12 +148,12 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLPackedJointAnimation objectWithSCNNode(SCNNode scnNode);
+    public static native MDLPackedJointAnimation objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLPackedJointAnimation objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLPackedJointAnimation objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -154,10 +163,12 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("rotations")
     public native MDLAnimatedQuaternionArray rotations();
 
+    @NotNull
     @Generated
     @Selector("scales")
     public native MDLAnimatedVector3Array scales();
@@ -170,6 +181,7 @@ public class MDLPackedJointAnimation extends MDLObject implements NSCopying, MDL
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("translations")
     public native MDLAnimatedVector3Array translations();

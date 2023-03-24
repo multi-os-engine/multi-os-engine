@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -73,22 +75,25 @@ public class CKNotification extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CKNotification extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -135,7 +141,7 @@ public class CKNotification extends NSObject {
     @Generated
     @Selector("notificationFromRemoteNotificationDictionary:")
     public static native CKNotification notificationFromRemoteNotificationDictionary(
-            NSDictionary<?, ?> notificationDictionary);
+            @NotNull NSDictionary<?, ?> notificationDictionary);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -161,6 +167,7 @@ public class CKNotification extends NSObject {
     /**
      * A key for a localized string to be used as the alert action in a modal style notification.
      */
+    @Nullable
     @Generated
     @Selector("alertActionLocalizationKey")
     public native String alertActionLocalizationKey();
@@ -168,6 +175,7 @@ public class CKNotification extends NSObject {
     /**
      * Optional alert string to display in a push notification.
      */
+    @Nullable
     @Generated
     @Selector("alertBody")
     public native String alertBody();
@@ -176,6 +184,7 @@ public class CKNotification extends NSObject {
      * The name of an image in your app bundle to be used as the launch image when launching in response to the
      * notification.
      */
+    @Nullable
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
@@ -184,6 +193,7 @@ public class CKNotification extends NSObject {
      * A list of field names to take from the matching record that is used as substitution variables in a formatted
      * alert string.
      */
+    @Nullable
     @Generated
     @Selector("alertLocalizationArgs")
     public native NSArray<String> alertLocalizationArgs();
@@ -192,6 +202,7 @@ public class CKNotification extends NSObject {
      * Instead of a raw alert string, you may optionally specify a key for a localized string in your app's
      * Localizable.strings file.
      */
+    @Nullable
     @Generated
     @Selector("alertLocalizationKey")
     public native String alertLocalizationKey();
@@ -199,6 +210,7 @@ public class CKNotification extends NSObject {
     /**
      * The number to display as the badge of the application icon
      */
+    @Nullable
     @Generated
     @Selector("badge")
     public native NSNumber badge();
@@ -208,10 +220,12 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("category")
     public native String category();
 
+    @Nullable
     @Generated
     @Selector("containerIdentifier")
     public native String containerIdentifier();
@@ -232,6 +246,7 @@ public class CKNotification extends NSObject {
     @Selector("isPruned")
     public native boolean isPruned();
 
+    @Nullable
     @Generated
     @Selector("notificationID")
     public native CKNotificationID notificationID();
@@ -248,6 +263,7 @@ public class CKNotification extends NSObject {
     /**
      * The name of a sound file in your app bundle to play upon receiving the notification.
      */
+    @Nullable
     @Generated
     @Selector("soundName")
     public native String soundName();
@@ -257,6 +273,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("subscriptionID")
     public native String subscriptionID();
@@ -266,6 +283,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("subtitle")
     public native String subtitle();
@@ -276,6 +294,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("subtitleLocalizationArgs")
     public native NSArray<String> subtitleLocalizationArgs();
@@ -286,6 +305,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("subtitleLocalizationKey")
     public native String subtitleLocalizationKey();
@@ -295,6 +315,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -305,6 +326,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("titleLocalizationArgs")
     public native NSArray<String> titleLocalizationArgs();
@@ -315,6 +337,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("titleLocalizationKey")
     public native String titleLocalizationKey();
@@ -324,6 +347,7 @@ public class CKNotification extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("subscriptionOwnerUserRecordID")
     public native CKRecordID subscriptionOwnerUserRecordID();

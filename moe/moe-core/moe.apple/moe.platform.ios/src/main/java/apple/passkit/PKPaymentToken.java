@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Contains the user's payment credentials, encrypted to the merchant.
@@ -74,22 +76,25 @@ public class PKPaymentToken extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class PKPaymentToken extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,6 +169,7 @@ public class PKPaymentToken extends NSObject {
      * merchant's e-commerce backend for decryption and submission to a payment processor's
      * gateway.
      */
+    @NotNull
     @Generated
     @Selector("paymentData")
     public native NSData paymentData();
@@ -175,6 +182,7 @@ public class PKPaymentToken extends NSObject {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use paymentMethod instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("paymentInstrumentName")
@@ -185,6 +193,7 @@ public class PKPaymentToken extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("paymentMethod")
     public native PKPaymentMethod paymentMethod();
@@ -196,6 +205,7 @@ public class PKPaymentToken extends NSObject {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use paymentMethod instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("paymentNetwork")
@@ -205,6 +215,7 @@ public class PKPaymentToken extends NSObject {
      * A string that describes a globally unique identifier for this transaction that can be used
      * for receipt purposes.
      */
+    @NotNull
     @Generated
     @Selector("transactionIdentifier")
     public native String transactionIdentifier();

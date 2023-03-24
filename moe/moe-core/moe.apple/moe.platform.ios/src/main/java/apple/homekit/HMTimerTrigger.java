@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Timer based trigger.
@@ -81,22 +83,25 @@ public class HMTimerTrigger extends HMTrigger {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class HMTimerTrigger extends HMTrigger {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,6 +176,7 @@ public class HMTimerTrigger extends HMTrigger {
      * 
      * [@note] Should be at least 1 minute ahead for reliable firing.
      */
+    @NotNull
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
@@ -207,8 +214,9 @@ public class HMTimerTrigger extends HMTrigger {
      */
     @Generated
     @Selector("initWithName:fireDate:timeZone:recurrence:recurrenceCalendar:")
-    public native HMTimerTrigger initWithNameFireDateTimeZoneRecurrenceRecurrenceCalendar(String name, NSDate fireDate,
-            NSTimeZone timeZone, NSDateComponents recurrence, NSCalendar recurrenceCalendar);
+    public native HMTimerTrigger initWithNameFireDateTimeZoneRecurrenceRecurrenceCalendar(@NotNull String name,
+            @NotNull NSDate fireDate, @Nullable NSTimeZone timeZone, @Nullable NSDateComponents recurrence,
+            @Nullable NSCalendar recurrenceCalendar);
 
     /**
      * The date components that specify how a trigger is to be repeated.
@@ -222,6 +230,7 @@ public class HMTimerTrigger extends HMTrigger {
      * interval is 5 weeks and the recurrence interval must be specified in multiples of
      * whole minutes. Examples are 5 minutes, 6 minutes, 1 day, 2 weeks.
      */
+    @Nullable
     @Generated
     @Selector("recurrence")
     public native NSDateComponents recurrence();
@@ -229,6 +238,7 @@ public class HMTimerTrigger extends HMTrigger {
     /**
      * The calendar corresponding to a recurring timer trigger.
      */
+    @Nullable
     @Generated
     @Selector("recurrenceCalendar")
     public native NSCalendar recurrenceCalendar();
@@ -240,6 +250,7 @@ public class HMTimerTrigger extends HMTrigger {
      * fired will be adjusted to account for the time zone change. If this value is
      * non-nil, the trigger will fire at the specified time in the specific time zone.
      */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
@@ -256,8 +267,8 @@ public class HMTimerTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updateFireDate:completionHandler:")
-    public native void updateFireDateCompletionHandler(NSDate fireDate,
-            @ObjCBlock(name = "call_updateFireDateCompletionHandler") Block_updateFireDateCompletionHandler completion);
+    public native void updateFireDateCompletionHandler(@NotNull NSDate fireDate,
+            @NotNull @ObjCBlock(name = "call_updateFireDateCompletionHandler") Block_updateFireDateCompletionHandler completion);
 
     /**
      * This method is used to change the recurrence interval for a timer trigger.
@@ -278,8 +289,8 @@ public class HMTimerTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updateRecurrence:completionHandler:")
-    public native void updateRecurrenceCompletionHandler(NSDateComponents recurrence,
-            @ObjCBlock(name = "call_updateRecurrenceCompletionHandler") Block_updateRecurrenceCompletionHandler completion);
+    public native void updateRecurrenceCompletionHandler(@Nullable NSDateComponents recurrence,
+            @NotNull @ObjCBlock(name = "call_updateRecurrenceCompletionHandler") Block_updateRecurrenceCompletionHandler completion);
 
     /**
      * This method is used to change the time zone of the fire date of a timer trigger.
@@ -293,27 +304,27 @@ public class HMTimerTrigger extends HMTrigger {
      */
     @Generated
     @Selector("updateTimeZone:completionHandler:")
-    public native void updateTimeZoneCompletionHandler(NSTimeZone timeZone,
-            @ObjCBlock(name = "call_updateTimeZoneCompletionHandler") Block_updateTimeZoneCompletionHandler completion);
+    public native void updateTimeZoneCompletionHandler(@Nullable NSTimeZone timeZone,
+            @NotNull @ObjCBlock(name = "call_updateTimeZoneCompletionHandler") Block_updateTimeZoneCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateFireDateCompletionHandler {
         @Generated
-        void call_updateFireDateCompletionHandler(NSError error);
+        void call_updateFireDateCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateRecurrenceCompletionHandler {
         @Generated
-        void call_updateRecurrenceCompletionHandler(NSError error);
+        void call_updateRecurrenceCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateTimeZoneCompletionHandler {
         @Generated
-        void call_updateTimeZoneCompletionHandler(NSError error);
+        void call_updateTimeZoneCompletionHandler(@Nullable NSError error);
     }
 }

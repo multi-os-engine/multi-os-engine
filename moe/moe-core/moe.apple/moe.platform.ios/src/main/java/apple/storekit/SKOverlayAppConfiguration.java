@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An overlay configuration that can be used to show any app from the App Store.
@@ -46,10 +48,11 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @Nullable
     @Generated
     @Selector("additionalValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object additionalValueForKey(String key);
+    public native Object additionalValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -64,35 +67,40 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     /**
      * The identifier of the app that will be shown.
      */
+    @NotNull
     @Generated
     @Selector("appIdentifier")
     public native String appIdentifier();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * A token representing an App Analytics campaign.
      */
+    @Nullable
     @Generated
     @Selector("campaignToken")
     public native String campaignToken();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,7 +130,8 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      */
     @Generated
     @Selector("initWithAppIdentifier:position:")
-    public native SKOverlayAppConfiguration initWithAppIdentifierPosition(String appIdentifier, @NInt long position);
+    public native SKOverlayAppConfiguration initWithAppIdentifierPosition(@NotNull String appIdentifier,
+            @NInt long position);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,9 +150,10 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +171,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
     /**
      * The provider token for the developer that created the app being presented.
      */
+    @Nullable
     @Generated
     @Selector("providerToken")
     public native String providerToken();
@@ -175,21 +186,22 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
 
     @Generated
     @Selector("setAdditionalValue:forKey:")
-    public native void setAdditionalValueForKey(@Mapped(ObjCObjectMapper.class) Object value, String key);
+    public native void setAdditionalValueForKey(@Nullable @Mapped(ObjCObjectMapper.class) Object value,
+            @NotNull String key);
 
     /**
      * The identifier of the app that will be shown.
      */
     @Generated
     @Selector("setAppIdentifier:")
-    public native void setAppIdentifier(String value);
+    public native void setAppIdentifier(@NotNull String value);
 
     /**
      * A token representing an App Analytics campaign.
      */
     @Generated
     @Selector("setCampaignToken:")
-    public native void setCampaignToken(String value);
+    public native void setCampaignToken(@Nullable String value);
 
     /**
      * The position an overlay will show at on screen.
@@ -203,7 +215,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      */
     @Generated
     @Selector("setProviderToken:")
-    public native void setProviderToken(String value);
+    public native void setProviderToken(@Nullable String value);
 
     /**
      * Allows the user to interactively dismiss an overlay.
@@ -237,6 +249,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("customProductPageIdentifier")
     public native String customProductPageIdentifier();
@@ -246,6 +259,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("latestReleaseID")
     public native String latestReleaseID();
@@ -257,7 +271,7 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      */
     @Generated
     @Selector("setCustomProductPageIdentifier:")
-    public native void setCustomProductPageIdentifier(String value);
+    public native void setCustomProductPageIdentifier(@Nullable String value);
 
     /**
      * An optional extra parameter for specifying the version of your app that will be shown to the user.
@@ -266,12 +280,12 @@ public class SKOverlayAppConfiguration extends SKOverlayConfiguration {
      */
     @Generated
     @Selector("setLatestReleaseID:")
-    public native void setLatestReleaseID(String value);
+    public native void setLatestReleaseID(@Nullable String value);
 
     /**
      * API-Since: 16.0
      */
     @Generated
     @Selector("setAdImpression:")
-    public native void setAdImpression(SKAdImpression impression);
+    public native void setAdImpression(@NotNull SKAdImpression impression);
 }

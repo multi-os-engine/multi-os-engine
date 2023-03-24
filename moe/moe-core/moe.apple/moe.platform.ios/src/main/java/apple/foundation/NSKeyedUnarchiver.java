@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -71,18 +73,20 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
@@ -91,10 +95,12 @@ public class NSKeyedUnarchiver extends NSCoder {
      * During decoding, the coder first checks with the coder's
      * own table, then if there was no mapping there, the class's.
      */
+    @Nullable
     @Generated
     @Selector("classForClassName:")
-    public static native Class classForClassName_static(String codedName);
+    public static native Class classForClassName_static(@NotNull String codedName);
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +135,10 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,7 +155,7 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     @Generated
     @Selector("setClass:forClassName:")
-    public static native void setClassForClassName_static(Class cls, String codedName);
+    public static native void setClassForClassName_static(@Nullable Class cls, @NotNull String codedName);
 
     @Generated
     @Selector("setVersion:")
@@ -163,86 +170,92 @@ public class NSKeyedUnarchiver extends NSCoder {
      * Deprecated-Since: 12.0
      * Deprecated-Message: Use +unarchivedObjectOfClass:fromData:error: instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("unarchiveObjectWithData:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveObjectWithData(NSData data);
+    public static native Object unarchiveObjectWithData(@NotNull NSData data);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 12.0
      * Deprecated-Message: Use +unarchivedObjectOfClass:fromData:error: instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("unarchiveObjectWithFile:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveObjectWithFile(String path);
+    public static native Object unarchiveObjectWithFile(@NotNull String path);
 
     /**
      * API-Since: 2.0
      * Deprecated-Since: 12.0
      * Deprecated-Message: Use +unarchivedObjectOfClass:fromData:error: instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("unarchiveTopLevelObjectWithData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchiveTopLevelObjectWithDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object unarchiveTopLevelObjectWithDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("classForClassName:")
-    public native Class classForClassName(String codedName);
+    public native Class classForClassName(@NotNull String codedName);
 
     @Generated
     @Selector("containsValueForKey:")
-    public native boolean containsValueForKey(String key);
+    public native boolean containsValueForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeBoolForKey:")
-    public native boolean decodeBoolForKey(String key);
+    public native boolean decodeBoolForKey(@NotNull String key);
 
     /**
      * returned bytes immutable, and they go away with the unarchiver, not the containing autorelease pool
      */
+    @Nullable
     @Generated
     @Selector("decodeBytesForKey:returnedLength:")
-    public native ConstBytePtr decodeBytesForKeyReturnedLength(String key, NUIntPtr lengthp);
+    public native ConstBytePtr decodeBytesForKeyReturnedLength(@NotNull String key, @Nullable NUIntPtr lengthp);
 
     @Generated
     @Selector("decodeDoubleForKey:")
-    public native double decodeDoubleForKey(String key);
+    public native double decodeDoubleForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeFloatForKey:")
-    public native float decodeFloatForKey(String key);
+    public native float decodeFloatForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeInt32ForKey:")
-    public native int decodeInt32ForKey(String key);
+    public native int decodeInt32ForKey(@NotNull String key);
 
     @Generated
     @Selector("decodeInt64ForKey:")
-    public native long decodeInt64ForKey(String key);
+    public native long decodeInt64ForKey(@NotNull String key);
 
     /**
      * may raise a range exception
      */
     @Generated
     @Selector("decodeIntForKey:")
-    public native int decodeIntForKey(String key);
+    public native int decodeIntForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("decodeObjectForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object decodeObjectForKey(String key);
+    public native Object decodeObjectForKey(@NotNull String key);
 
     /**
      * API-Since: 9.0
@@ -252,6 +265,7 @@ public class NSKeyedUnarchiver extends NSCoder {
     @NInt
     public native long decodingFailurePolicy();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -279,7 +293,7 @@ public class NSKeyedUnarchiver extends NSCoder {
     @Deprecated
     @Generated
     @Selector("initForReadingWithData:")
-    public native NSKeyedUnarchiver initForReadingWithData(NSData data);
+    public native NSKeyedUnarchiver initForReadingWithData(@NotNull NSData data);
 
     /**
      * Enables secure coding support on this keyed unarchiver. When enabled, unarchiving a disallowed class throws an
@@ -295,7 +309,7 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     @Generated
     @Selector("setClass:forClassName:")
-    public native void setClassForClassName(Class cls, String codedName);
+    public native void setClassForClassName(@Nullable Class cls, @NotNull String codedName);
 
     /**
      * API-Since: 9.0
@@ -306,10 +320,10 @@ public class NSKeyedUnarchiver extends NSCoder {
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSKeyedUnarchiverDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) NSKeyedUnarchiverDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSKeyedUnarchiverDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSKeyedUnarchiverDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -346,8 +360,8 @@ public class NSKeyedUnarchiver extends NSCoder {
      */
     @Generated
     @Selector("initForReadingFromData:error:")
-    public native NSKeyedUnarchiver initForReadingFromDataError(NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSKeyedUnarchiver initForReadingFromDataError(@NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Decodes the root object of the given class from the given archive, previously encoded by \c NSKeyedArchiver.
@@ -359,11 +373,12 @@ public class NSKeyedUnarchiver extends NSCoder {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("unarchivedObjectOfClass:fromData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchivedObjectOfClassFromDataError(Class cls, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object unarchivedObjectOfClassFromDataError(@NotNull Class cls, @NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Decodes the root object of one of the given classes from the given archive, previously encoded by \c
@@ -376,11 +391,12 @@ public class NSKeyedUnarchiver extends NSCoder {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("unarchivedObjectOfClasses:fromData:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object unarchivedObjectOfClassesFromDataError(NSSet<? extends Class> classes, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native Object unarchivedObjectOfClassesFromDataError(@NotNull NSSet<? extends Class> classes,
+            @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Decodes the \c NSArray root object from \c data which should be an \c NSArray<cls> containing the given
@@ -394,10 +410,11 @@ public class NSKeyedUnarchiver extends NSCoder {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("unarchivedArrayOfObjectsOfClass:fromData:error:")
-    public static native NSArray<?> unarchivedArrayOfObjectsOfClassFromDataError(Class cls, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<?> unarchivedArrayOfObjectsOfClassFromDataError(@NotNull Class cls,
+            @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Decodes the \c NSArray root object from \c data which should be an \c NSArray, containing the given
@@ -411,10 +428,12 @@ public class NSKeyedUnarchiver extends NSCoder {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("unarchivedArrayOfObjectsOfClasses:fromData:error:")
-    public static native NSArray<?> unarchivedArrayOfObjectsOfClassesFromDataError(NSSet<? extends Class> classes,
-            NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSArray<?> unarchivedArrayOfObjectsOfClassesFromDataError(
+            @NotNull NSSet<? extends Class> classes, @NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Decodes the \c NSDictionary root object from \c data which should be an \c NSDictionary<keyCls,objectCls> with
@@ -429,10 +448,12 @@ public class NSKeyedUnarchiver extends NSCoder {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("unarchivedDictionaryWithKeysOfClass:objectsOfClass:fromData:error:")
-    public static native NSDictionary<?, ?> unarchivedDictionaryWithKeysOfClassObjectsOfClassFromDataError(Class keyCls,
-            Class valueCls, NSData data, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSDictionary<?, ?> unarchivedDictionaryWithKeysOfClassObjectsOfClassFromDataError(
+            @NotNull Class keyCls, @NotNull Class valueCls, @NotNull NSData data,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Decodes the \c NSDictionary root object from \c data which should be an \c NSDictionary, with keys of the types
@@ -447,9 +468,10 @@ public class NSKeyedUnarchiver extends NSCoder {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("unarchivedDictionaryWithKeysOfClasses:objectsOfClasses:fromData:error:")
     public static native NSDictionary<?, ?> unarchivedDictionaryWithKeysOfClassesObjectsOfClassesFromDataError(
-            NSSet<? extends Class> keyClasses, NSSet<? extends Class> valueClasses, NSData data,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSSet<? extends Class> keyClasses, @NotNull NSSet<? extends Class> valueClasses,
+            @NotNull NSData data, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

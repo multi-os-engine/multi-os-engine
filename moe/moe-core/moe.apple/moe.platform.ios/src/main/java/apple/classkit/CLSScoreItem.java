@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CLSScoreItem represents user generated score information.
@@ -59,22 +61,25 @@ public class CLSScoreItem extends CLSActivityItem {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,7 +103,7 @@ public class CLSScoreItem extends CLSActivityItem {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CLSScoreItem initWithCoder(NSCoder coder);
+    public native CLSScoreItem initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Create a score item with identifiers, title, score and maximum score.
@@ -110,8 +115,8 @@ public class CLSScoreItem extends CLSActivityItem {
      */
     @Generated
     @Selector("initWithIdentifier:title:score:maxScore:")
-    public native CLSScoreItem initWithIdentifierTitleScoreMaxScore(String identifier, String title, double score,
-            double maxScore);
+    public native CLSScoreItem initWithIdentifierTitleScoreMaxScore(@NotNull String identifier, @NotNull String title,
+            double score, double maxScore);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +135,10 @@ public class CLSScoreItem extends CLSActivityItem {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Total score possible.

@@ -25,6 +25,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A tokenizer allows the text input system to evaluate text units of varying granularity.
@@ -40,7 +42,8 @@ public interface UITextInputTokenizer {
      */
     @Generated
     @Selector("isPosition:atBoundary:inDirection:")
-    boolean isPositionAtBoundaryInDirection(UITextPosition position, @NInt long granularity, @NInt long direction);
+    boolean isPositionAtBoundaryInDirection(@NotNull UITextPosition position, @NInt long granularity,
+            @NInt long direction);
 
     /**
      * Returns YES if position is within a text unit of the given granularity. If the position is at a boundary, returns
@@ -48,15 +51,17 @@ public interface UITextInputTokenizer {
      */
     @Generated
     @Selector("isPosition:withinTextUnit:inDirection:")
-    boolean isPositionWithinTextUnitInDirection(UITextPosition position, @NInt long granularity, @NInt long direction);
+    boolean isPositionWithinTextUnitInDirection(@NotNull UITextPosition position, @NInt long granularity,
+            @NInt long direction);
 
     /**
      * Returns the next boundary position of a text unit of the given granularity in the given direction, or nil if
      * there is no such position.
      */
+    @Nullable
     @Generated
     @Selector("positionFromPosition:toBoundary:inDirection:")
-    UITextPosition positionFromPositionToBoundaryInDirection(UITextPosition position, @NInt long granularity,
+    UITextPosition positionFromPositionToBoundaryInDirection(@NotNull UITextPosition position, @NInt long granularity,
             @NInt long direction);
 
     /**
@@ -64,8 +69,9 @@ public interface UITextInputTokenizer {
      * Whether a boundary position is enclosed depends on the given direction, using the same rule as
      * isPosition:withinTextUnit:inDirection:
      */
+    @Nullable
     @Generated
     @Selector("rangeEnclosingPosition:withGranularity:inDirection:")
-    UITextRange rangeEnclosingPositionWithGranularityInDirection(UITextPosition position, @NInt long granularity,
-            @NInt long direction);
+    UITextRange rangeEnclosingPositionWithGranularityInDirection(@NotNull UITextPosition position,
+            @NInt long granularity, @NInt long direction);
 }

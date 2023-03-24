@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -44,7 +45,7 @@ public final class AudioUnitParameterValueFromString extends StructObject {
     }
 
     @Generated
-    public AudioUnitParameterValueFromString(int inParamID, CFStringRef inString, float outValue) {
+    public AudioUnitParameterValueFromString(int inParamID, @NotNull CFStringRef inString, float outValue) {
         super(AudioUnitParameterValueFromString.class);
         setInParamID(inParamID);
         setInString(inString);
@@ -59,13 +60,14 @@ public final class AudioUnitParameterValueFromString extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setInParamID(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native CFStringRef inString();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setInString(CFStringRef value);
+    public native void setInString(@NotNull CFStringRef value);
 
     @Generated
     @StructureField(order = 2, isGetter = true)

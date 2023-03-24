@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMPedometer
@@ -89,22 +91,25 @@ public class CMPedometer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -209,9 +214,10 @@ public class CMPedometer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -254,8 +260,8 @@ public class CMPedometer extends NSObject {
      */
     @Generated
     @Selector("queryPedometerDataFromDate:toDate:withHandler:")
-    public native void queryPedometerDataFromDateToDateWithHandler(NSDate start, NSDate end,
-            @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
+    public native void queryPedometerDataFromDateToDateWithHandler(@NotNull NSDate start, @NotNull NSDate end,
+            @NotNull @ObjCBlock(name = "call_queryPedometerDataFromDateToDateWithHandler") Block_queryPedometerDataFromDateToDateWithHandler handler);
 
     /**
      * startPedometerEventUpdatesWithHandler:
@@ -269,7 +275,7 @@ public class CMPedometer extends NSObject {
     @Generated
     @Selector("startPedometerEventUpdatesWithHandler:")
     public native void startPedometerEventUpdatesWithHandler(
-            @ObjCBlock(name = "call_startPedometerEventUpdatesWithHandler") Block_startPedometerEventUpdatesWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_startPedometerEventUpdatesWithHandler") Block_startPedometerEventUpdatesWithHandler handler);
 
     /**
      * startPedometerUpdatesFromDate:withHandler:
@@ -286,8 +292,8 @@ public class CMPedometer extends NSObject {
      */
     @Generated
     @Selector("startPedometerUpdatesFromDate:withHandler:")
-    public native void startPedometerUpdatesFromDateWithHandler(NSDate start,
-            @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
+    public native void startPedometerUpdatesFromDateWithHandler(@NotNull NSDate start,
+            @NotNull @ObjCBlock(name = "call_startPedometerUpdatesFromDateWithHandler") Block_startPedometerUpdatesFromDateWithHandler handler);
 
     /**
      * stopPedometerEventUpdates
@@ -315,21 +321,24 @@ public class CMPedometer extends NSObject {
     @Generated
     public interface Block_queryPedometerDataFromDateToDateWithHandler {
         @Generated
-        void call_queryPedometerDataFromDateToDateWithHandler(CMPedometerData pedometerData, NSError error);
+        void call_queryPedometerDataFromDateToDateWithHandler(@Nullable CMPedometerData pedometerData,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startPedometerEventUpdatesWithHandler {
         @Generated
-        void call_startPedometerEventUpdatesWithHandler(CMPedometerEvent pedometerEvent, NSError error);
+        void call_startPedometerEventUpdatesWithHandler(@Nullable CMPedometerEvent pedometerEvent,
+                @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startPedometerUpdatesFromDateWithHandler {
         @Generated
-        void call_startPedometerUpdatesFromDateWithHandler(CMPedometerData pedometerData, NSError error);
+        void call_startPedometerUpdatesFromDateWithHandler(@Nullable CMPedometerData pedometerData,
+                @Nullable NSError error);
     }
 
     /**

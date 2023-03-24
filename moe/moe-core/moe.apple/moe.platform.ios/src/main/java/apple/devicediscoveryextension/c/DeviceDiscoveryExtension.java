@@ -10,6 +10,7 @@ import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("DeviceDiscoveryExtension")
@@ -28,6 +29,7 @@ public final class DeviceDiscoveryExtension {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -38,6 +40,7 @@ public final class DeviceDiscoveryExtension {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -48,6 +51,7 @@ public final class DeviceDiscoveryExtension {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -58,6 +62,7 @@ public final class DeviceDiscoveryExtension {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -68,6 +73,7 @@ public final class DeviceDiscoveryExtension {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -76,6 +82,7 @@ public final class DeviceDiscoveryExtension {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -84,6 +91,7 @@ public final class DeviceDiscoveryExtension {
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -94,6 +102,7 @@ public final class DeviceDiscoveryExtension {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

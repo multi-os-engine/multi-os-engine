@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GCVirtualController
@@ -60,22 +62,25 @@ public class GCVirtualController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -83,18 +88,19 @@ public class GCVirtualController extends NSObject {
     @Generated
     @Selector("connectWithReplyHandler:")
     public native void connectWithReplyHandler(
-            @ObjCBlock(name = "call_connectWithReplyHandler") Block_connectWithReplyHandler reply);
+            @Nullable @ObjCBlock(name = "call_connectWithReplyHandler") Block_connectWithReplyHandler reply);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_connectWithReplyHandler {
         @Generated
-        void call_connectWithReplyHandler(NSError error);
+        void call_connectWithReplyHandler(@Nullable NSError error);
     }
 
     /**
      * GCController is only available when GCVirtualController is connected
      */
+    @Nullable
     @Generated
     @Selector("controller")
     public native GCController controller();
@@ -122,7 +128,7 @@ public class GCVirtualController extends NSObject {
 
     @Generated
     @Selector("initWithConfiguration:")
-    public native GCVirtualController initWithConfiguration(GCVirtualControllerConfiguration configuration);
+    public native GCVirtualController initWithConfiguration(@NotNull GCVirtualControllerConfiguration configuration);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,9 +147,10 @@ public class GCVirtualController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,15 +175,16 @@ public class GCVirtualController extends NSObject {
 
     @Generated
     @Selector("updateConfigurationForElement:configuration:")
-    public native void updateConfigurationForElementConfiguration(String element,
-            @ObjCBlock(name = "call_updateConfigurationForElementConfiguration") Block_updateConfigurationForElementConfiguration config);
+    public native void updateConfigurationForElementConfiguration(@NotNull String element,
+            @NotNull @ObjCBlock(name = "call_updateConfigurationForElementConfiguration") Block_updateConfigurationForElementConfiguration config);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateConfigurationForElementConfiguration {
+        @NotNull
         @Generated
         GCVirtualControllerElementConfiguration call_updateConfigurationForElementConfiguration(
-                GCVirtualControllerElementConfiguration oldConfiguration);
+                @NotNull GCVirtualControllerElementConfiguration oldConfiguration);
     }
 
     @Generated
@@ -189,8 +197,9 @@ public class GCVirtualController extends NSObject {
      * 
      * @see GCVirtualControllerConfiguration
      */
+    @NotNull
     @Generated
     @Selector("virtualControllerWithConfiguration:")
     public static native GCVirtualController virtualControllerWithConfiguration(
-            GCVirtualControllerConfiguration configuration);
+            @NotNull GCVirtualControllerConfiguration configuration);
 }

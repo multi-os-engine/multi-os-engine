@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNCrossChannelNormalizationGradient
@@ -94,7 +96,7 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] beta
@@ -107,18 +109,21 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -151,7 +156,7 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNCrossChannelNormalizationGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNCrossChannelNormalizationGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -168,12 +173,13 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNCrossChannelNormalizationGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNCrossChannelNormalizationGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNCrossChannelNormalizationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNCrossChannelNormalizationGradient initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a cross channel normalization gradient filter
@@ -185,7 +191,7 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     @Generated
     @Selector("initWithDevice:kernelSize:")
     public native MPSCNNCrossChannelNormalizationGradient initWithDeviceKernelSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long kernelSize);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -214,9 +220,10 @@ public class MPSCNNCrossChannelNormalizationGradient extends MPSCNNGradientKerne
     @NUInt
     public native long kernelSize();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

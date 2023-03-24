@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class is used to represent an entry in an action set that writes a specific
@@ -77,22 +79,25 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,6 +166,7 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
     /**
      * The characteristic associated with the action.
      */
+    @NotNull
     @Generated
     @Selector("characteristic")
     public native HMCharacteristic characteristic();
@@ -179,12 +186,13 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
      */
     @Generated
     @Selector("initWithCharacteristic:targetValue:")
-    public native HMCharacteristicWriteAction<?> initWithCharacteristicTargetValue(HMCharacteristic characteristic,
-            @Mapped(ObjCObjectMapper.class) Object targetValue);
+    public native HMCharacteristicWriteAction<?> initWithCharacteristicTargetValue(
+            @NotNull HMCharacteristic characteristic, @NotNull @Mapped(ObjCObjectMapper.class) Object targetValue);
 
     /**
      * The target value for the action.
      */
+    @NotNull
     @Generated
     @Selector("targetValue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -201,13 +209,13 @@ public class HMCharacteristicWriteAction<_TargetValueType> extends HMAction {
      */
     @Generated
     @Selector("updateTargetValue:completionHandler:")
-    public native void updateTargetValueCompletionHandler(@Mapped(ObjCObjectMapper.class) Object targetValue,
-            @ObjCBlock(name = "call_updateTargetValueCompletionHandler") Block_updateTargetValueCompletionHandler completion);
+    public native void updateTargetValueCompletionHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object targetValue,
+            @NotNull @ObjCBlock(name = "call_updateTargetValueCompletionHandler") Block_updateTargetValueCompletionHandler completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateTargetValueCompletionHandler {
         @Generated
-        void call_updateTargetValueCompletionHandler(NSError error);
+        void call_updateTargetValueCompletionHandler(@Nullable NSError error);
     }
 }

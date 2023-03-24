@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -57,22 +59,25 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -86,18 +91,19 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Generated
     @Selector("configurationForPassMetadata:provisioningPolicyIdentifier:primaryAction:completion:")
     public static native void configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion(
-            NSArray<? extends PKShareablePassMetadata> passMetadata, String provisioningPolicyIdentifier,
-            @NUInt long action,
-            @ObjCBlock(name = "call_configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion") Block_configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion completion);
+            @NotNull NSArray<? extends PKShareablePassMetadata> passMetadata,
+            @NotNull String provisioningPolicyIdentifier, @NUInt long action,
+            @NotNull @ObjCBlock(name = "call_configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion") Block_configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion {
         @Generated
         void call_configurationForPassMetadataProvisioningPolicyIdentifierPrimaryActionCompletion(
-                PKAddShareablePassConfiguration shareableCredentialConfiguration, NSError error);
+                @Nullable PKAddShareablePassConfiguration shareableCredentialConfiguration, @Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Selector("credentialsMetadata")
     public native NSArray<? extends PKShareablePassMetadata> credentialsMetadata();
@@ -136,9 +142,10 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,6 +163,7 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
      * Deprecated-Message: provisioningPolicyIdentifier has been deprecated. You can stop setting this property in the
      * init with no repercussions.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("provisioningPolicyIdentifier")
@@ -188,14 +196,14 @@ public class PKAddShareablePassConfiguration extends PKAddSecureElementPassConfi
     @Generated
     @Selector("configurationForPassMetadata:primaryAction:completion:")
     public static native void configurationForPassMetadataPrimaryActionCompletion(
-            NSArray<? extends PKShareablePassMetadata> passMetadata, @NUInt long action,
-            @ObjCBlock(name = "call_configurationForPassMetadataPrimaryActionCompletion") Block_configurationForPassMetadataPrimaryActionCompletion completion);
+            @NotNull NSArray<? extends PKShareablePassMetadata> passMetadata, @NUInt long action,
+            @NotNull @ObjCBlock(name = "call_configurationForPassMetadataPrimaryActionCompletion") Block_configurationForPassMetadataPrimaryActionCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_configurationForPassMetadataPrimaryActionCompletion {
         @Generated
         void call_configurationForPassMetadataPrimaryActionCompletion(
-                PKAddShareablePassConfiguration shareableCredentialConfiguration, NSError error);
+                @Nullable PKAddShareablePassConfiguration shareableCredentialConfiguration, @Nullable NSError error);
     }
 }

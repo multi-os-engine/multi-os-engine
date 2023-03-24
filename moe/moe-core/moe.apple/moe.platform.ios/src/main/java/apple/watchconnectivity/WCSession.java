@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -------------------------------- WCSession --------------------------------
@@ -89,22 +91,25 @@ public class WCSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +121,7 @@ public class WCSession extends NSObject {
     /**
      * Use the default session for all transferring of content and state monitoring.
      */
+    @NotNull
     @Generated
     @Selector("defaultSession")
     public static native WCSession defaultSession();
@@ -153,9 +159,10 @@ public class WCSession extends NSObject {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -210,6 +217,7 @@ public class WCSession extends NSObject {
      * successfully arrived. If there is no app context, it should be updated with an empty dictionary. The
      * applicationContext dictionary can only accept the property list types.
      */
+    @NotNull
     @Generated
     @Selector("applicationContext")
     public native NSDictionary<String, ?> applicationContext();
@@ -217,6 +225,7 @@ public class WCSession extends NSObject {
     /**
      * A delegate must exist before the session will allow sends.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -267,6 +276,7 @@ public class WCSession extends NSObject {
      * Returns an array of file transfers that are still transferring (i.e. have not been cancelled, failed, or been
      * received by the counterpart app).
      */
+    @NotNull
     @Generated
     @Selector("outstandingFileTransfers")
     public native NSArray<? extends WCSessionFileTransfer> outstandingFileTransfers();
@@ -275,6 +285,7 @@ public class WCSession extends NSObject {
      * Returns an array of user info transfers that are still transferring (i.e. have not been cancelled, failed, or
      * been received by the counterpart app).
      */
+    @NotNull
     @Generated
     @Selector("outstandingUserInfoTransfers")
     public native NSArray<? extends WCSessionUserInfoTransfer> outstandingUserInfoTransfers();
@@ -282,6 +293,7 @@ public class WCSession extends NSObject {
     /**
      * Stores the most recently received applicationContext from the counterpart app.
      */
+    @NotNull
     @Generated
     @Selector("receivedApplicationContext")
     public native NSDictionary<String, ?> receivedApplicationContext();
@@ -309,9 +321,9 @@ public class WCSession extends NSObject {
      */
     @Generated
     @Selector("sendMessage:replyHandler:errorHandler:")
-    public native void sendMessageReplyHandlerErrorHandler(NSDictionary<String, ?> message,
-            @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_1") Block_sendMessageReplyHandlerErrorHandler_1 replyHandler,
-            @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_2") Block_sendMessageReplyHandlerErrorHandler_2 errorHandler);
+    public native void sendMessageReplyHandlerErrorHandler(@NotNull NSDictionary<String, ?> message,
+            @Nullable @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_1") Block_sendMessageReplyHandlerErrorHandler_1 replyHandler,
+            @Nullable @ObjCBlock(name = "call_sendMessageReplyHandlerErrorHandler_2") Block_sendMessageReplyHandlerErrorHandler_2 errorHandler);
 
     /**
      * Clients can use this method to send message data. All the policies of send message apply to send message data.
@@ -320,22 +332,22 @@ public class WCSession extends NSObject {
      */
     @Generated
     @Selector("sendMessageData:replyHandler:errorHandler:")
-    public native void sendMessageDataReplyHandlerErrorHandler(NSData data,
-            @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_1") Block_sendMessageDataReplyHandlerErrorHandler_1 replyHandler,
-            @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_2") Block_sendMessageDataReplyHandlerErrorHandler_2 errorHandler);
+    public native void sendMessageDataReplyHandlerErrorHandler(@NotNull NSData data,
+            @Nullable @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_1") Block_sendMessageDataReplyHandlerErrorHandler_1 replyHandler,
+            @Nullable @ObjCBlock(name = "call_sendMessageDataReplyHandlerErrorHandler_2") Block_sendMessageDataReplyHandlerErrorHandler_2 errorHandler);
 
     /**
      * A delegate must exist before the session will allow sends.
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) WCSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) WCSessionDelegate value);
 
     /**
      * A delegate must exist before the session will allow sends.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) WCSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) WCSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -357,18 +369,22 @@ public class WCSession extends NSObject {
      * again with new user info, the new user info will be tagged as current and the previously current user info will
      * be untagged. The previous user info will however stay in the queue of outstanding transfers.
      */
+    @NotNull
     @Generated
     @Selector("transferCurrentComplicationUserInfo:")
-    public native WCSessionUserInfoTransfer transferCurrentComplicationUserInfo(NSDictionary<String, ?> userInfo);
+    public native WCSessionUserInfoTransfer transferCurrentComplicationUserInfo(
+            @NotNull NSDictionary<String, ?> userInfo);
 
     /**
      * The system will enqueue the file and transfer it to the counterpart app at an opportune time. The transfer of a
      * file will continue after the sending app has exited. The counterpart app will receive a delegate callback on next
      * launch if the file has successfully arrived. The metadata dictionary can only accept the property list types.
      */
+    @NotNull
     @Generated
     @Selector("transferFile:metadata:")
-    public native WCSessionFileTransfer transferFileMetadata(NSURL file, NSDictionary<String, ?> metadata);
+    public native WCSessionFileTransfer transferFileMetadata(@NotNull NSURL file,
+            @Nullable NSDictionary<String, ?> metadata);
 
     /**
      * The system will enqueue the user info dictionary and transfer it to the counterpart app at an opportune time. The
@@ -376,14 +392,15 @@ public class WCSession extends NSObject {
      * callback on next launch if the file has successfully arrived. The userInfo dictionary can only accept the
      * property list types.
      */
+    @NotNull
     @Generated
     @Selector("transferUserInfo:")
-    public native WCSessionUserInfoTransfer transferUserInfo(NSDictionary<String, ?> userInfo);
+    public native WCSessionUserInfoTransfer transferUserInfo(@NotNull NSDictionary<String, ?> userInfo);
 
     @Generated
     @Selector("updateApplicationContext:error:")
-    public native boolean updateApplicationContextError(NSDictionary<String, ?> applicationContext,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean updateApplicationContextError(@NotNull NSDictionary<String, ?> applicationContext,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Use this directory to persist any data specific to the selected Watch. The location of the URL will change when
@@ -391,6 +408,7 @@ public class WCSession extends NSObject {
      * the selected Watch, or that Watch is unpaired. If the watch app is not installed for the selected Watch the value
      * will be nil.
      */
+    @Nullable
     @Generated
     @Selector("watchDirectoryURL")
     public native NSURL watchDirectoryURL();
@@ -399,27 +417,27 @@ public class WCSession extends NSObject {
     @Generated
     public interface Block_sendMessageReplyHandlerErrorHandler_1 {
         @Generated
-        void call_sendMessageReplyHandlerErrorHandler_1(NSDictionary<String, ?> replyMessage);
+        void call_sendMessageReplyHandlerErrorHandler_1(@NotNull NSDictionary<String, ?> replyMessage);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageReplyHandlerErrorHandler_2 {
         @Generated
-        void call_sendMessageReplyHandlerErrorHandler_2(NSError error);
+        void call_sendMessageReplyHandlerErrorHandler_2(@NotNull NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageDataReplyHandlerErrorHandler_1 {
         @Generated
-        void call_sendMessageDataReplyHandlerErrorHandler_1(NSData replyMessageData);
+        void call_sendMessageDataReplyHandlerErrorHandler_1(@NotNull NSData replyMessageData);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sendMessageDataReplyHandlerErrorHandler_2 {
         @Generated
-        void call_sendMessageDataReplyHandlerErrorHandler_2(NSError error);
+        void call_sendMessageDataReplyHandlerErrorHandler_2(@NotNull NSError error);
     }
 }

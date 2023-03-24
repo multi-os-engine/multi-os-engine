@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * The optional methods a delegate can receive from editing-related changes
@@ -31,7 +32,7 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("canvasViewDidBeginUsingTool:")
-    default void canvasViewDidBeginUsingTool(PKCanvasView canvasView) {
+    default void canvasViewDidBeginUsingTool(@NotNull PKCanvasView canvasView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +44,7 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("canvasViewDidEndUsingTool:")
-    default void canvasViewDidEndUsingTool(PKCanvasView canvasView) {
+    default void canvasViewDidEndUsingTool(@NotNull PKCanvasView canvasView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -61,7 +62,7 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("canvasViewDidFinishRendering:")
-    default void canvasViewDidFinishRendering(PKCanvasView canvasView) {
+    default void canvasViewDidFinishRendering(@NotNull PKCanvasView canvasView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,7 +82,7 @@ public interface PKCanvasViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("canvasViewDrawingDidChange:")
-    default void canvasViewDrawingDidChange(PKCanvasView canvasView) {
+    default void canvasViewDrawingDidChange(@NotNull PKCanvasView canvasView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

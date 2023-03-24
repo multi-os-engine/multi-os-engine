@@ -6,6 +6,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] OSLogEntryFromProcess
@@ -39,6 +40,7 @@ public interface OSLogEntryFromProcess {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("process")
     String process();
@@ -61,6 +63,7 @@ public interface OSLogEntryFromProcess {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("sender")
     String sender();

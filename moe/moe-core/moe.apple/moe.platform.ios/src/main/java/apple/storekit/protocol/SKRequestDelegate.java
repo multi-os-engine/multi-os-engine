@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -37,7 +38,7 @@ public interface SKRequestDelegate {
     @Generated
     @IsOptional
     @Selector("request:didFailWithError:")
-    default void requestDidFailWithError(SKRequest request, NSError error) {
+    default void requestDidFailWithError(@NotNull SKRequest request, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -47,7 +48,7 @@ public interface SKRequestDelegate {
     @Generated
     @IsOptional
     @Selector("requestDidFinish:")
-    default void requestDidFinish(SKRequest request) {
+    default void requestDidFinish(@NotNull SKRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

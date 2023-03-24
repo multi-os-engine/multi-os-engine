@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A reference object to track in the scene.
@@ -66,22 +68,25 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,7 +101,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Exports the object as an archive at the given URL.
@@ -111,8 +116,8 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("exportObjectToURL:previewImage:error:")
-    public native boolean exportObjectToURLPreviewImageError(NSURL url, UIImage previewImage,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean exportObjectToURLPreviewImageError(@NotNull NSURL url, @Nullable UIImage previewImage,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("hash")
@@ -131,12 +136,12 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithArchiveURL:error:")
-    public native ARReferenceObject initWithArchiveURLError(NSURL url,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native ARReferenceObject initWithArchiveURLError(@NotNull NSURL url,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithCoder:")
-    public native ARReferenceObject initWithCoder(NSCoder coder);
+    public native ARReferenceObject initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -155,13 +160,15 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * An optional name used to identify the object.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -174,6 +181,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
     /**
      * The feature points of the object.
      */
+    @NotNull
     @Generated
     @Selector("rawFeaturePoints")
     public native ARPointCloud rawFeaturePoints();
@@ -189,10 +197,11 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * @param error  The error to populate if the merge is not successful.
      * @return A new reference object combining features of both scans or nil if the merge was not successful.
      */
+    @Nullable
     @Generated
     @Selector("referenceObjectByMergingObject:error:")
-    public native ARReferenceObject referenceObjectByMergingObjectError(ARReferenceObject object,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native ARReferenceObject referenceObjectByMergingObjectError(@NotNull ARReferenceObject object,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the set of ARReferenceObjects in the specified resource group and bundle.
@@ -201,10 +210,11 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * @param bundle The bundle containing the image file or asset catalog. Specify nil to search the app’s main bundle.
      * @return The set of reference objects or nil on error.
      */
+    @Nullable
     @Generated
     @Selector("referenceObjectsInGroupNamed:bundle:")
-    public static native NSSet<? extends ARReferenceObject> referenceObjectsInGroupNamedBundle(String name,
-            NSBundle bundle);
+    public static native NSSet<? extends ARReferenceObject> referenceObjectsInGroupNamedBundle(@NotNull String name,
+            @Nullable NSBundle bundle);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -223,6 +233,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("resourceGroupName")
     public native String resourceGroupName();
@@ -232,7 +243,7 @@ public class ARReferenceObject extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")

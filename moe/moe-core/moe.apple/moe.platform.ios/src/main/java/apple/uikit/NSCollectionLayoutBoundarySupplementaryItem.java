@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -65,7 +67,7 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Specify the alignment of the supplementary relative the containing geometry's coordinate space to
@@ -100,37 +102,41 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Generated
     @Selector("boundarySupplementaryItemWithLayoutSize:elementKind:alignment:")
     public static native NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSizeElementKindAlignment(
-            NSCollectionLayoutSize layoutSize, String elementKind, @NInt long alignment);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind, @NInt long alignment);
 
     @Generated
     @Selector("boundarySupplementaryItemWithLayoutSize:elementKind:alignment:absoluteOffset:")
     public static native NSCollectionLayoutBoundarySupplementaryItem boundarySupplementaryItemWithLayoutSizeElementKindAlignmentAbsoluteOffset(
-            NSCollectionLayoutSize layoutSize, String elementKind, @NInt long alignment,
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind, @NInt long alignment,
             @ByValue CGPoint absoluteOffset);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -177,17 +183,18 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Generated
     @Selector("itemWithLayoutSize:")
     public static native NSCollectionLayoutBoundarySupplementaryItem itemWithLayoutSize(
-            NSCollectionLayoutSize layoutSize);
+            @NotNull NSCollectionLayoutSize layoutSize);
 
     @Generated
     @Selector("itemWithLayoutSize:supplementaryItems:")
     public static native NSCollectionLayoutBoundarySupplementaryItem itemWithLayoutSizeSupplementaryItems(
-            NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
+            @NotNull NSCollectionLayoutSize layoutSize,
+            @NotNull NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -246,13 +253,14 @@ public class NSCollectionLayoutBoundarySupplementaryItem extends NSCollectionLay
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:")
     public static native NSCollectionLayoutBoundarySupplementaryItem supplementaryItemWithLayoutSizeElementKindContainerAnchor(
-            NSCollectionLayoutSize layoutSize, String elementKind, NSCollectionLayoutAnchor containerAnchor);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind,
+            @NotNull NSCollectionLayoutAnchor containerAnchor);
 
     @Generated
     @Selector("supplementaryItemWithLayoutSize:elementKind:containerAnchor:itemAnchor:")
     public static native NSCollectionLayoutBoundarySupplementaryItem supplementaryItemWithLayoutSizeElementKindContainerAnchorItemAnchor(
-            NSCollectionLayoutSize layoutSize, String elementKind, NSCollectionLayoutAnchor containerAnchor,
-            NSCollectionLayoutAnchor itemAnchor);
+            @NotNull NSCollectionLayoutSize layoutSize, @NotNull String elementKind,
+            @NotNull NSCollectionLayoutAnchor containerAnchor, @NotNull NSCollectionLayoutAnchor itemAnchor);
 
     @Generated
     @Selector("version")

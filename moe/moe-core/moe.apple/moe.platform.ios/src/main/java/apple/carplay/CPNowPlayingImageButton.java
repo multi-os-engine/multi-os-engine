@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A now playing button that shows a custom image provided by your app
@@ -60,22 +62,25 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,6 +103,7 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
      * 
      * Animated images are not supported. If an animated image is assigned, only the first image will be used.
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -108,12 +114,12 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPNowPlayingImageButton initWithCoder(NSCoder coder);
+    public native CPNowPlayingImageButton initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithHandler:")
     public native CPNowPlayingImageButton initWithHandler(
-            @ObjCBlock(name = "call_initWithHandler") CPNowPlayingButton.Block_initWithHandler handler);
+            @Nullable @ObjCBlock(name = "call_initWithHandler") CPNowPlayingButton.Block_initWithHandler handler);
 
     /**
      * Initialize a button with a custom image.
@@ -125,14 +131,14 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
      */
     @Generated
     @Selector("initWithImage:handler:")
-    public native CPNowPlayingImageButton initWithImageHandler(UIImage image,
-            @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
+    public native CPNowPlayingImageButton initWithImageHandler(@NotNull UIImage image,
+            @Nullable @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithImageHandler {
         @Generated
-        void call_initWithImageHandler(CPNowPlayingButton arg0);
+        void call_initWithImageHandler(@NotNull CPNowPlayingButton arg0);
     }
 
     @Generated
@@ -152,9 +158,10 @@ public class CPNowPlayingImageButton extends CPNowPlayingButton {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

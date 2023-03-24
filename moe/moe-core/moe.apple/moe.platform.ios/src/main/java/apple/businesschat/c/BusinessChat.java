@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("BusinessChat")
@@ -28,6 +29,7 @@ public final class BusinessChat {
      * API-Since: 11.3
      * Deprecated-Since: 16.1
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -41,6 +43,7 @@ public final class BusinessChat {
      * API-Since: 11.3
      * Deprecated-Since: 16.1
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -54,6 +57,7 @@ public final class BusinessChat {
      * API-Since: 11.3
      * Deprecated-Since: 16.1
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()

@@ -47,6 +47,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLMesh
@@ -88,22 +90,25 @@ public class MDLMesh extends MDLObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,24 +143,25 @@ public class MDLMesh extends MDLObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 9.0
      */
     @Generated
     @Selector("meshWithSCNGeometry:")
-    public static native MDLMesh meshWithSCNGeometry(SCNGeometry scnGeometry);
+    public static native MDLMesh meshWithSCNGeometry(@NotNull SCNGeometry scnGeometry);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("meshWithSCNGeometry:bufferAllocator:")
-    public static native MDLMesh meshWithSCNGeometryBufferAllocator(SCNGeometry scnGeometry,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLMesh meshWithSCNGeometryBufferAllocator(@NotNull SCNGeometry scnGeometry,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Owned
@@ -166,7 +172,7 @@ public class MDLMesh extends MDLObject {
     @Owned
     @Selector("newIcosahedronWithRadius:inwardNormals:allocator:")
     public static native MDLMesh newIcosahedronWithRadiusInwardNormalsAllocator(float radius, boolean inwardNormals,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     /**
      * API-Since: 11.0
@@ -176,22 +182,22 @@ public class MDLMesh extends MDLObject {
     @Selector("newIcosahedronWithRadius:inwardNormals:geometryType:allocator:")
     public static native MDLMesh newIcosahedronWithRadiusInwardNormalsGeometryTypeAllocator(float radius,
             boolean inwardNormals, @NInt long geometryType,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     @Generated
     @Owned
     @Selector("newSubdividedMesh:submeshIndex:subdivisionLevels:")
-    public static native MDLMesh newSubdividedMeshSubmeshIndexSubdivisionLevels(MDLMesh mesh, @NUInt long submeshIndex,
-            @NUInt long subdivisionLevels);
+    public static native MDLMesh newSubdividedMeshSubmeshIndexSubdivisionLevels(@NotNull MDLMesh mesh,
+            @NUInt long submeshIndex, @NUInt long subdivisionLevels);
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLMesh objectWithSCNNode(SCNNode scnNode);
+    public static native MDLMesh objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLMesh objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLMesh objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -224,7 +230,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("addAttributeWithName:format:")
-    public native void addAttributeWithNameFormat(String name, @NUInt long format);
+    public native void addAttributeWithNameFormat(@NotNull String name, @NUInt long format);
 
     /**
      * addAttributeWithName:format:type:data:stride
@@ -241,8 +247,8 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("addAttributeWithName:format:type:data:stride:")
-    public native void addAttributeWithNameFormatTypeDataStride(String name, @NUInt long format, String type,
-            NSData data, @NInt long stride);
+    public native void addAttributeWithNameFormatTypeDataStride(@NotNull String name, @NUInt long format,
+            @NotNull String type, @NotNull NSData data, @NInt long stride);
 
     /**
      * addAttributeWithName:format:type:data:stride:time
@@ -265,8 +271,8 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("addAttributeWithName:format:type:data:stride:time:")
-    public native void addAttributeWithNameFormatTypeDataStrideTime(String name, @NUInt long format, String type,
-            NSData data, @NInt long stride, double time);
+    public native void addAttributeWithNameFormatTypeDataStrideTime(@NotNull String name, @NUInt long format,
+            @NotNull String type, @NotNull NSData data, @NInt long stride, double time);
 
     /**
      * addNormalsWithAttributeNamed:creaseThreshold:
@@ -287,7 +293,8 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("addNormalsWithAttributeNamed:creaseThreshold:")
-    public native void addNormalsWithAttributeNamedCreaseThreshold(String attributeName, float creaseThreshold);
+    public native void addNormalsWithAttributeNamedCreaseThreshold(@Nullable String attributeName,
+            float creaseThreshold);
 
     /**
      * addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed
@@ -308,7 +315,8 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("addTangentBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
     public native void addTangentBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
-            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
+            @NotNull String textureCoordinateAttributeName, @NotNull String normalAttributeName,
+            @NotNull String tangentAttributeName);
 
     /**
      * addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed
@@ -328,7 +336,8 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("addTangentBasisForTextureCoordinateAttributeNamed:tangentAttributeNamed:bitangentAttributeNamed:")
     public native void addTangentBasisForTextureCoordinateAttributeNamedTangentAttributeNamedBitangentAttributeNamed(
-            String textureCoordinateAttributeName, String tangentAttributeName, String bitangentAttributeName);
+            @NotNull String textureCoordinateAttributeName, @NotNull String tangentAttributeName,
+            @Nullable String bitangentAttributeName);
 
     /**
      * addTextureCoordinatesForAttributeNamed:textureCoordinateAttributeName
@@ -342,13 +351,14 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("addUnwrappedTextureCoordinatesForAttributeNamed:")
-    public native void addUnwrappedTextureCoordinatesForAttributeNamed(String textureCoordinateAttributeName);
+    public native void addUnwrappedTextureCoordinatesForAttributeNamed(@NotNull String textureCoordinateAttributeName);
 
     /**
      * [@property] allocator
      * 
      * allocator used to allocate contained mesh buffers
      */
+    @NotNull
     @Generated
     @Selector("allocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -378,32 +388,33 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("generateAmbientOcclusionTextureWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
     public native boolean generateAmbientOcclusionTextureWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
-            float bakeQuality, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName, String materialPropertyName);
+            float bakeQuality, float attenuationFactor, @NotNull NSArray<? extends MDLObject> objectsToConsider,
+            @NotNull String vertexAttributeName, @NotNull String materialPropertyName);
 
     @Generated
     @Selector("generateAmbientOcclusionVertexColorsWithQuality:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
     public native boolean generateAmbientOcclusionVertexColorsWithQualityAttenuationFactorObjectsToConsiderVertexAttributeNamed(
-            float bakeQuality, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName);
+            float bakeQuality, float attenuationFactor, @NotNull NSArray<? extends MDLObject> objectsToConsider,
+            @NotNull String vertexAttributeName);
 
     @Generated
     @Selector("generateAmbientOcclusionVertexColorsWithRaysPerSample:attenuationFactor:objectsToConsider:vertexAttributeNamed:")
     public native boolean generateAmbientOcclusionVertexColorsWithRaysPerSampleAttenuationFactorObjectsToConsiderVertexAttributeNamed(
-            @NInt long raysPerSample, float attenuationFactor, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName);
+            @NInt long raysPerSample, float attenuationFactor, @NotNull NSArray<? extends MDLObject> objectsToConsider,
+            @NotNull String vertexAttributeName);
 
     @Generated
     @Selector("generateLightMapTextureWithQuality:lightsToConsider:objectsToConsider:vertexAttributeNamed:materialPropertyNamed:")
     public native boolean generateLightMapTextureWithQualityLightsToConsiderObjectsToConsiderVertexAttributeNamedMaterialPropertyNamed(
-            float bakeQuality, NSArray<? extends MDLLight> lightsToConsider,
-            NSArray<? extends MDLObject> objectsToConsider, String vertexAttributeName, String materialPropertyName);
+            float bakeQuality, @NotNull NSArray<? extends MDLLight> lightsToConsider,
+            @NotNull NSArray<? extends MDLObject> objectsToConsider, @NotNull String vertexAttributeName,
+            @NotNull String materialPropertyName);
 
     @Generated
     @Selector("generateLightMapVertexColorsWithLightsToConsider:objectsToConsider:vertexAttributeNamed:")
     public native boolean generateLightMapVertexColorsWithLightsToConsiderObjectsToConsiderVertexAttributeNamed(
-            NSArray<? extends MDLLight> lightsToConsider, NSArray<? extends MDLObject> objectsToConsider,
-            String vertexAttributeName);
+            @NotNull NSArray<? extends MDLLight> lightsToConsider,
+            @NotNull NSArray<? extends MDLObject> objectsToConsider, @NotNull String vertexAttributeName);
 
     @Generated
     @Selector("init")
@@ -429,8 +440,9 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("initMeshBySubdividingMesh:submeshIndex:subdivisionLevels:allocator:")
-    public native MDLMesh initMeshBySubdividingMeshSubmeshIndexSubdivisionLevelsAllocator(MDLMesh mesh,
-            int submeshIndex, int subdivisionLevels, @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
+    public native MDLMesh initMeshBySubdividingMeshSubmeshIndexSubdivisionLevelsAllocator(@NotNull MDLMesh mesh,
+            int submeshIndex, int subdivisionLevels,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator allocator);
 
     /**
      * initWithAllocator:
@@ -442,7 +454,7 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("initWithBufferAllocator:")
     public native MDLMesh initWithBufferAllocator(
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     /**
      * initWithVertexBuffer:vertexCount:descriptor:submeshes:
@@ -460,8 +472,8 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("initWithVertexBuffer:vertexCount:descriptor:submeshes:")
     public native MDLMesh initWithVertexBufferVertexCountDescriptorSubmeshes(
-            @Mapped(ObjCObjectMapper.class) MDLMeshBuffer vertexBuffer, @NUInt long vertexCount,
-            MDLVertexDescriptor descriptor, NSArray<? extends MDLSubmesh> submeshes);
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLMeshBuffer vertexBuffer, @NUInt long vertexCount,
+            @NotNull MDLVertexDescriptor descriptor, @NotNull NSArray<? extends MDLSubmesh> submeshes);
 
     /**
      * initWithVertexBuffer:vertexCount:descriptor:submeshes:
@@ -481,8 +493,9 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("initWithVertexBuffers:vertexCount:descriptor:submeshes:")
-    public native MDLMesh initWithVertexBuffersVertexCountDescriptorSubmeshes(NSArray<?> vertexBuffers,
-            @NUInt long vertexCount, MDLVertexDescriptor descriptor, NSArray<? extends MDLSubmesh> submeshes);
+    public native MDLMesh initWithVertexBuffersVertexCountDescriptorSubmeshes(@NotNull NSArray<?> vertexBuffers,
+            @NUInt long vertexCount, @NotNull MDLVertexDescriptor descriptor,
+            @NotNull NSArray<? extends MDLSubmesh> submeshes);
 
     /**
      * makeVerticesUnique:
@@ -510,7 +523,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("removeAttributeNamed:")
-    public native void removeAttributeNamed(String name);
+    public native void removeAttributeNamed(@NotNull String name);
 
     /**
      * replaceAttributeNamed:withData
@@ -523,7 +536,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("replaceAttributeNamed:withData:")
-    public native void replaceAttributeNamedWithData(String name, MDLVertexAttributeData newData);
+    public native void replaceAttributeNamedWithData(@NotNull String name, @NotNull MDLVertexAttributeData newData);
 
     /**
      * [@property] submeshes
@@ -533,7 +546,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("setSubmeshes:")
-    public native void setSubmeshes(NSMutableArray<MDLSubmesh> value);
+    public native void setSubmeshes(@Nullable NSMutableArray<MDLSubmesh> value);
 
     /**
      * [@property] vertexBuffers
@@ -544,7 +557,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("setVertexBuffers:")
-    public native void setVertexBuffers(NSArray<?> value);
+    public native void setVertexBuffers(@NotNull NSArray<?> value);
 
     /**
      * [@property] vertexCount
@@ -578,7 +591,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("setVertexDescriptor:")
-    public native void setVertexDescriptor(MDLVertexDescriptor value);
+    public native void setVertexDescriptor(@NotNull MDLVertexDescriptor value);
 
     /**
      * [@property] submeshes
@@ -586,6 +599,7 @@ public class MDLMesh extends MDLObject {
      * Array of submeshes containing an indexbuffer referencing the vertex
      * data and material to be applied when the mesh is rendered
      */
+    @Nullable
     @Generated
     @Selector("submeshes")
     public native NSMutableArray<MDLSubmesh> submeshes();
@@ -601,7 +615,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("updateAttributeNamed:withData:")
-    public native void updateAttributeNamedWithData(String name, MDLVertexAttributeData newData);
+    public native void updateAttributeNamedWithData(@NotNull String name, @NotNull MDLVertexAttributeData newData);
 
     /**
      * vertexAttributeDataForAttributeNamed:
@@ -611,9 +625,10 @@ public class MDLMesh extends MDLObject {
      * the vertex buffer will remain mapped until the MDLVertexAttributeData
      * is freed.
      */
+    @Nullable
     @Generated
     @Selector("vertexAttributeDataForAttributeNamed:")
-    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamed(String name);
+    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamed(@NotNull String name);
 
     /**
      * vertexAttributeDataForAttributeNamed:asFormat
@@ -628,9 +643,11 @@ public class MDLMesh extends MDLObject {
      * The vertex buffer will remain mapped until the MDLVertexAttributeData
      * is freed.
      */
+    @Nullable
     @Generated
     @Selector("vertexAttributeDataForAttributeNamed:asFormat:")
-    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamedAsFormat(String name, @NUInt long format);
+    public native MDLVertexAttributeData vertexAttributeDataForAttributeNamedAsFormat(@NotNull String name,
+            @NUInt long format);
 
     /**
      * [@property] vertexBuffers
@@ -639,6 +656,7 @@ public class MDLMesh extends MDLObject {
      * 
      * The vertex buffers in this array are indexed by the vertex descriptor.
      */
+    @NotNull
     @Generated
     @Selector("vertexBuffers")
     public native NSArray<?> vertexBuffers();
@@ -674,6 +692,7 @@ public class MDLMesh extends MDLObject {
      * The allocator associated with each original meshbuffer is used to
      * reallocate the corresponding resultant meshbuffer.
      */
+    @NotNull
     @Generated
     @Selector("vertexDescriptor")
     public native MDLVertexDescriptor vertexDescriptor();
@@ -699,7 +718,8 @@ public class MDLMesh extends MDLObject {
     @Generated
     @Selector("addOrthTanBasisForTextureCoordinateAttributeNamed:normalAttributeNamed:tangentAttributeNamed:")
     public native void addOrthTanBasisForTextureCoordinateAttributeNamedNormalAttributeNamedTangentAttributeNamed(
-            String textureCoordinateAttributeName, String normalAttributeName, String tangentAttributeName);
+            @NotNull String textureCoordinateAttributeName, @NotNull String normalAttributeName,
+            @NotNull String tangentAttributeName);
 
     /**
      * flipTextureCoordinatesInAttributeNamed:
@@ -719,7 +739,7 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("flipTextureCoordinatesInAttributeNamed:")
-    public native void flipTextureCoordinatesInAttributeNamed(String textureCoordinateAttributeName);
+    public native void flipTextureCoordinatesInAttributeNamed(@NotNull String textureCoordinateAttributeName);
 
     /**
      * makeVerticesUniqueAndReturnError:
@@ -734,5 +754,6 @@ public class MDLMesh extends MDLObject {
      */
     @Generated
     @Selector("makeVerticesUniqueAndReturnError:")
-    public native boolean makeVerticesUniqueAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean makeVerticesUniqueAndReturnError(
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

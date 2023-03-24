@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 8.0
@@ -40,5 +41,5 @@ public interface PHPhotoLibraryChangeObserver {
      */
     @Generated
     @Selector("photoLibraryDidChange:")
-    void photoLibraryDidChange(PHChange changeInstance);
+    void photoLibraryDidChange(@NotNull PHChange changeInstance);
 }

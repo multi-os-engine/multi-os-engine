@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * __________________________________________________________________________________________________
@@ -78,22 +80,25 @@ public class MIDINetworkSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,6 +110,7 @@ public class MIDINetworkSession extends NSObject {
     /**
      * returns the singleton.
      */
+    @NotNull
     @Generated
     @Selector("defaultSession")
     public static native MIDINetworkSession defaultSession();
@@ -135,9 +141,10 @@ public class MIDINetworkSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,11 +174,11 @@ public class MIDINetworkSession extends NSObject {
 
     @Generated
     @Selector("addConnection:")
-    public native boolean addConnection(MIDINetworkConnection connection);
+    public native boolean addConnection(@NotNull MIDINetworkConnection connection);
 
     @Generated
     @Selector("addContact:")
-    public native boolean addContact(MIDINetworkHost contact);
+    public native boolean addContact(@NotNull MIDINetworkHost contact);
 
     /**
      * who can connect to this session? see constants above.
@@ -181,6 +188,7 @@ public class MIDINetworkSession extends NSObject {
     @NUInt
     public native long connectionPolicy();
 
+    @NotNull
     @Generated
     @Selector("connections")
     public native NSSet<? extends MIDINetworkConnection> connections();
@@ -189,6 +197,7 @@ public class MIDINetworkSession extends NSObject {
      * The driver maintains a directory of MIDINetworkHosts, "contacts," for user convenience in initiating
      * connections, and for controlling incoming connection requests.
      */
+    @NotNull
     @Generated
     @Selector("contacts")
     public native NSSet<? extends MIDINetworkHost> contacts();
@@ -220,6 +229,7 @@ public class MIDINetworkSession extends NSObject {
     /**
      * name of this session's CoreMIDI entity (inherited by its endpoints)
      */
+    @NotNull
     @Generated
     @Selector("localName")
     public native String localName();
@@ -227,6 +237,7 @@ public class MIDINetworkSession extends NSObject {
     /**
      * name by which this session is advertised via Bonjour
      */
+    @NotNull
     @Generated
     @Selector("networkName")
     public native String networkName();
@@ -241,11 +252,11 @@ public class MIDINetworkSession extends NSObject {
 
     @Generated
     @Selector("removeConnection:")
-    public native boolean removeConnection(MIDINetworkConnection connection);
+    public native boolean removeConnection(@NotNull MIDINetworkConnection connection);
 
     @Generated
     @Selector("removeContact:")
-    public native boolean removeContact(MIDINetworkHost contact);
+    public native boolean removeContact(@NotNull MIDINetworkHost contact);
 
     /**
      * who can connect to this session? see constants above.

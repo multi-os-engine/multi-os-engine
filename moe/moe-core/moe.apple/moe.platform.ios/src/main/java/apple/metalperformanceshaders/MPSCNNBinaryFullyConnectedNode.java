@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A MPSNNFilterNode representing a MPSCNNBinaryFullyConnected kernel
@@ -59,22 +61,25 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,8 +103,8 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     @Generated
     @Selector("initWithSource:weights:")
-    public native MPSCNNBinaryFullyConnectedNode initWithSourceWeights(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public native MPSCNNBinaryFullyConnectedNode initWithSourceWeights(@NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
      * Init a node representing a MPSCNNBinaryFullyConnected kernel
@@ -115,9 +120,10 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
      */
     @Generated
     @Selector("initWithSource:weights:scaleValue:type:flags:")
-    public native MPSCNNBinaryFullyConnectedNode initWithSourceWeightsScaleValueTypeFlags(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights, float scaleValue, @NUInt long type,
-            @NUInt long flags);
+    public native MPSCNNBinaryFullyConnectedNode initWithSourceWeightsScaleValueTypeFlags(
+            @NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights, float scaleValue,
+            @NUInt long type, @NUInt long flags);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +142,10 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,8 +154,8 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
 
     @Generated
     @Selector("nodeWithSource:weights:")
-    public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeights(MPSNNImageNode sourceNode,
-            @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
+    public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeights(@NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights);
 
     /**
      * Init an autoreleased node representing a MPSCNNBinaryFullyConnected kernel
@@ -165,8 +172,9 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     @Generated
     @Selector("nodeWithSource:weights:scaleValue:type:flags:")
     public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeightsScaleValueTypeFlags(
-            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
-            float scaleValue, @NUInt long type, @NUInt long flags);
+            @NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights, float scaleValue,
+            @NUInt long type, @NUInt long flags);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -213,9 +221,11 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     @Generated
     @Selector("initWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
     public native MPSCNNBinaryFullyConnectedNode initWithSourceWeightsOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
-            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
-            ConstFloatPtr outputBiasTerms, ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms,
-            ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
+            @NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
+            @Nullable ConstFloatPtr outputBiasTerms, @Nullable ConstFloatPtr outputScaleTerms,
+            @Nullable ConstFloatPtr inputBiasTerms, @Nullable ConstFloatPtr inputScaleTerms, @NUInt long type,
+            @NUInt long flags);
 
     /**
      * Init an autoreleased node representing a MPSCNNBinaryFullyConnected kernel
@@ -241,7 +251,9 @@ public class MPSCNNBinaryFullyConnectedNode extends MPSCNNBinaryConvolutionNode 
     @Generated
     @Selector("nodeWithSource:weights:outputBiasTerms:outputScaleTerms:inputBiasTerms:inputScaleTerms:type:flags:")
     public static native MPSCNNBinaryFullyConnectedNode nodeWithSourceWeightsOutputBiasTermsOutputScaleTermsInputBiasTermsInputScaleTermsTypeFlags(
-            MPSNNImageNode sourceNode, @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
-            ConstFloatPtr outputBiasTerms, ConstFloatPtr outputScaleTerms, ConstFloatPtr inputBiasTerms,
-            ConstFloatPtr inputScaleTerms, @NUInt long type, @NUInt long flags);
+            @NotNull MPSNNImageNode sourceNode,
+            @NotNull @Mapped(ObjCObjectMapper.class) MPSCNNConvolutionDataSource weights,
+            @Nullable ConstFloatPtr outputBiasTerms, @Nullable ConstFloatPtr outputScaleTerms,
+            @Nullable ConstFloatPtr inputBiasTerms, @Nullable ConstFloatPtr inputScaleTerms, @NUInt long type,
+            @NUInt long flags);
 }

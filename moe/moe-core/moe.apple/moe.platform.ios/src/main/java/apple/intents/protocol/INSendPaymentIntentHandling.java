@@ -31,6 +31,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSendPaymentIntent. By implementing this protocol, a class can provide
@@ -64,8 +65,8 @@ public interface INSendPaymentIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSendPayment:completion:")
-    default void confirmSendPaymentCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_confirmSendPaymentCompletion") Block_confirmSendPaymentCompletion completion) {
+    default void confirmSendPaymentCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSendPaymentCompletion") Block_confirmSendPaymentCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +83,8 @@ public interface INSendPaymentIntentHandling {
      */
     @Generated
     @Selector("handleSendPayment:completion:")
-    void handleSendPaymentCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_handleSendPaymentCompletion") Block_handleSendPaymentCompletion completion);
+    void handleSendPaymentCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSendPaymentCompletion") Block_handleSendPaymentCompletion completion);
 
     /**
      * API-Since: 10.0
@@ -95,16 +96,16 @@ public interface INSendPaymentIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCurrencyAmountForSendPayment:withCompletion:")
-    default void resolveCurrencyAmountForSendPaymentWithCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_resolveCurrencyAmountForSendPaymentWithCompletion") Block_resolveCurrencyAmountForSendPaymentWithCompletion completion) {
+    default void resolveCurrencyAmountForSendPaymentWithCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCurrencyAmountForSendPaymentWithCompletion") Block_resolveCurrencyAmountForSendPaymentWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("resolveNoteForSendPayment:withCompletion:")
-    default void resolveNoteForSendPaymentWithCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_resolveNoteForSendPaymentWithCompletion") Block_resolveNoteForSendPaymentWithCompletion completion) {
+    default void resolveNoteForSendPaymentWithCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveNoteForSendPaymentWithCompletion") Block_resolveNoteForSendPaymentWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,8 +129,8 @@ public interface INSendPaymentIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePayeeForSendPayment:withCompletion:")
-    default void resolvePayeeForSendPaymentWithCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_resolvePayeeForSendPaymentWithCompletion") Block_resolvePayeeForSendPaymentWithCompletion completion) {
+    default void resolvePayeeForSendPaymentWithCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePayeeForSendPaymentWithCompletion") Block_resolvePayeeForSendPaymentWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -137,35 +138,36 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_confirmSendPaymentCompletion {
         @Generated
-        void call_confirmSendPaymentCompletion(INSendPaymentIntentResponse response);
+        void call_confirmSendPaymentCompletion(@NotNull INSendPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSendPaymentCompletion {
         @Generated
-        void call_handleSendPaymentCompletion(INSendPaymentIntentResponse response);
+        void call_handleSendPaymentCompletion(@NotNull INSendPaymentIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveCurrencyAmountForSendPaymentWithCompletion {
         @Generated
-        void call_resolveCurrencyAmountForSendPaymentWithCompletion(INCurrencyAmountResolutionResult resolutionResult);
+        void call_resolveCurrencyAmountForSendPaymentWithCompletion(
+                @NotNull INCurrencyAmountResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveNoteForSendPaymentWithCompletion {
         @Generated
-        void call_resolveNoteForSendPaymentWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveNoteForSendPaymentWithCompletion(@NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolvePayeeForSendPaymentWithCompletion {
         @Generated
-        void call_resolvePayeeForSendPaymentWithCompletion(INPersonResolutionResult resolutionResult);
+        void call_resolvePayeeForSendPaymentWithCompletion(@NotNull INPersonResolutionResult resolutionResult);
     }
 
     /**
@@ -174,8 +176,8 @@ public interface INSendPaymentIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveCurrencyAmountForSendPayment:completion:")
-    default void resolveCurrencyAmountForSendPaymentCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_resolveCurrencyAmountForSendPaymentCompletion") Block_resolveCurrencyAmountForSendPaymentCompletion completion) {
+    default void resolveCurrencyAmountForSendPaymentCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveCurrencyAmountForSendPaymentCompletion") Block_resolveCurrencyAmountForSendPaymentCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,7 +186,7 @@ public interface INSendPaymentIntentHandling {
     public interface Block_resolveCurrencyAmountForSendPaymentCompletion {
         @Generated
         void call_resolveCurrencyAmountForSendPaymentCompletion(
-                INSendPaymentCurrencyAmountResolutionResult resolutionResult);
+                @NotNull INSendPaymentCurrencyAmountResolutionResult resolutionResult);
     }
 
     /**
@@ -193,8 +195,8 @@ public interface INSendPaymentIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolvePayeeForSendPayment:completion:")
-    default void resolvePayeeForSendPaymentCompletion(INSendPaymentIntent intent,
-            @ObjCBlock(name = "call_resolvePayeeForSendPaymentCompletion") Block_resolvePayeeForSendPaymentCompletion completion) {
+    default void resolvePayeeForSendPaymentCompletion(@NotNull INSendPaymentIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolvePayeeForSendPaymentCompletion") Block_resolvePayeeForSendPaymentCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -202,6 +204,6 @@ public interface INSendPaymentIntentHandling {
     @Generated
     public interface Block_resolvePayeeForSendPaymentCompletion {
         @Generated
-        void call_resolvePayeeForSendPaymentCompletion(INSendPaymentPayeeResolutionResult resolutionResult);
+        void call_resolvePayeeForSendPaymentCompletion(@NotNull INSendPaymentPayeeResolutionResult resolutionResult);
     }
 }

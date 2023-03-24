@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -44,8 +46,8 @@ public interface UIViewControllerPreviewingDelegate {
     @Generated
     @Selector("previewingContext:commitViewController:")
     void previewingContextCommitViewController(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
-            UIViewController viewControllerToCommit);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
+            @NotNull UIViewController viewControllerToCommit);
 
     /**
      * If you return nil, a preview presentation will not be performed
@@ -53,9 +55,11 @@ public interface UIViewControllerPreviewingDelegate {
      * API-Since: 9.0
      * Deprecated-Since: 13.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("previewingContext:viewControllerForLocation:")
     UIViewController previewingContextViewControllerForLocation(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext, @ByValue CGPoint location);
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerPreviewing previewingContext,
+            @ByValue CGPoint location);
 }

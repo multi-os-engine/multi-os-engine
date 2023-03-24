@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NFCReaderSession
@@ -36,7 +37,7 @@ public interface NFCReaderSessionDelegate {
     @Generated
     @IsOptional
     @Selector("readerSession:didDetectTags:")
-    default void readerSessionDidDetectTags(NFCReaderSession session, NSArray<?> tags) {
+    default void readerSessionDidDetectTags(@NotNull NFCReaderSession session, @NotNull NSArray<?> tags) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +54,7 @@ public interface NFCReaderSessionDelegate {
      */
     @Generated
     @Selector("readerSession:didInvalidateWithError:")
-    void readerSessionDidInvalidateWithError(NFCReaderSession session, NSError error);
+    void readerSessionDidInvalidateWithError(@NotNull NFCReaderSession session, @NotNull NSError error);
 
     /**
      * readerSessionDidBecomeActive:
@@ -67,5 +68,5 @@ public interface NFCReaderSessionDelegate {
      */
     @Generated
     @Selector("readerSessionDidBecomeActive:")
-    void readerSessionDidBecomeActive(NFCReaderSession session);
+    void readerSessionDidBecomeActive(@NotNull NFCReaderSession session);
 }

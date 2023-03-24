@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This object is vended to your application by UIKit when a UIScene connects to a session
@@ -47,6 +49,7 @@ public class UISceneConnectionOptions extends NSObject {
     /**
      * A set of UIOpenURLContexts to handle on connection
      */
+    @NotNull
     @Generated
     @Selector("URLContexts")
     public native NSSet<? extends UIOpenURLContext> URLContexts();
@@ -67,22 +70,25 @@ public class UISceneConnectionOptions extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,6 +96,7 @@ public class UISceneConnectionOptions extends NSObject {
     /**
      * A CloudKit share metadata item to handle on connection
      */
+    @Nullable
     @Generated
     @Selector("cloudKitShareMetadata")
     public native CKShareMetadata cloudKitShareMetadata();
@@ -106,6 +113,7 @@ public class UISceneConnectionOptions extends NSObject {
      * The type of a handoff user activity if one is pending on connect.
      * The delegate callbacks will be invoked for this activity when it is available.
      */
+    @Nullable
     @Generated
     @Selector("handoffUserActivityType")
     public native String handoffUserActivityType();
@@ -136,9 +144,10 @@ public class UISceneConnectionOptions extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +157,7 @@ public class UISceneConnectionOptions extends NSObject {
     /**
      * A notification response to handle on connection
      */
+    @Nullable
     @Generated
     @Selector("notificationResponse")
     public native UNNotificationResponse notificationResponse();
@@ -167,6 +177,7 @@ public class UISceneConnectionOptions extends NSObject {
     /**
      * A shortcut item to handle on connection
      */
+    @Nullable
     @Generated
     @Selector("shortcutItem")
     public native UIApplicationShortcutItem shortcutItem();
@@ -175,6 +186,7 @@ public class UISceneConnectionOptions extends NSObject {
      * A NSString containing the bundle ID of the originating application.
      * non-nil if the originating application and this application share the same team identifier.
      */
+    @Nullable
     @Generated
     @Selector("sourceApplication")
     public native String sourceApplication();
@@ -189,6 +201,7 @@ public class UISceneConnectionOptions extends NSObject {
      * a handoff user activity will instead be indicated via the handoffUserActivityType property
      * above, and the application will receive a callback on their UISceneDelegate when the activity is fully loaded.
      */
+    @NotNull
     @Generated
     @Selector("userActivities")
     public native NSSet<? extends NSUserActivity> userActivities();

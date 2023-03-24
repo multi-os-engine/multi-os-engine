@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * RPBroadcastActivityViewController
@@ -87,29 +89,32 @@ public class RPBroadcastActivityViewController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -141,9 +146,10 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Loads a RPBroadcastActivityViewController instance and returns it in the handler block.
@@ -165,7 +171,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithHandler:")
     public static native void loadBroadcastActivityViewControllerWithHandler(
-            @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithHandler") Block_loadBroadcastActivityViewControllerWithHandler handler);
+            @NotNull @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithHandler") Block_loadBroadcastActivityViewControllerWithHandler handler);
 
     @Generated
     @Owned
@@ -196,6 +202,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     /**
      * Delegate that is notified when the activity view controller is complete.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -207,11 +214,12 @@ public class RPBroadcastActivityViewController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native RPBroadcastActivityViewController initWithCoder(NSCoder coder);
+    public native RPBroadcastActivityViewController initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native RPBroadcastActivityViewController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native RPBroadcastActivityViewController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Delegate that is notified when the activity view controller is complete.
@@ -219,13 +227,13 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Generated
     @Selector("setDelegate:")
     public native void setDelegate_unsafe(
-            @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value);
+            @Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value);
 
     /**
      * Delegate that is notified when the activity view controller is complete.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) RPBroadcastActivityViewControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -241,7 +249,7 @@ public class RPBroadcastActivityViewController extends UIViewController {
     public interface Block_loadBroadcastActivityViewControllerWithHandler {
         @Generated
         void call_loadBroadcastActivityViewControllerWithHandler(
-                RPBroadcastActivityViewController broadcastActivityViewController, NSError error);
+                @Nullable RPBroadcastActivityViewController broadcastActivityViewController, @Nullable NSError error);
     }
 
     /**
@@ -269,14 +277,14 @@ public class RPBroadcastActivityViewController extends UIViewController {
     @Generated
     @Selector("loadBroadcastActivityViewControllerWithPreferredExtension:handler:")
     public static native void loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
-            String preferredExtension,
-            @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler") Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler handler);
+            @Nullable String preferredExtension,
+            @NotNull @ObjCBlock(name = "call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler") Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadBroadcastActivityViewControllerWithPreferredExtensionHandler {
         @Generated
         void call_loadBroadcastActivityViewControllerWithPreferredExtensionHandler(
-                RPBroadcastActivityViewController broadcastActivityViewController, NSError error);
+                @Nullable RPBroadcastActivityViewController broadcastActivityViewController, @Nullable NSError error);
     }
 }

@@ -28,6 +28,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSaveProfileInCarIntent. By implementing this protocol, a class can
@@ -64,8 +65,8 @@ public interface INSaveProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSaveProfileInCar:completion:")
-    default void confirmSaveProfileInCarCompletion(INSaveProfileInCarIntent intent,
-            @ObjCBlock(name = "call_confirmSaveProfileInCarCompletion") Block_confirmSaveProfileInCarCompletion completion) {
+    default void confirmSaveProfileInCarCompletion(@NotNull INSaveProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSaveProfileInCarCompletion") Block_confirmSaveProfileInCarCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -82,8 +83,8 @@ public interface INSaveProfileInCarIntentHandling {
      */
     @Generated
     @Selector("handleSaveProfileInCar:completion:")
-    void handleSaveProfileInCarCompletion(INSaveProfileInCarIntent intent,
-            @ObjCBlock(name = "call_handleSaveProfileInCarCompletion") Block_handleSaveProfileInCarCompletion completion);
+    void handleSaveProfileInCarCompletion(@NotNull INSaveProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSaveProfileInCarCompletion") Block_handleSaveProfileInCarCompletion completion);
 
     /**
      * API-Since: 10.2
@@ -91,8 +92,8 @@ public interface INSaveProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveProfileNameForSaveProfileInCar:withCompletion:")
-    default void resolveProfileNameForSaveProfileInCarWithCompletion(INSaveProfileInCarIntent intent,
-            @ObjCBlock(name = "call_resolveProfileNameForSaveProfileInCarWithCompletion") Block_resolveProfileNameForSaveProfileInCarWithCompletion completion) {
+    default void resolveProfileNameForSaveProfileInCarWithCompletion(@NotNull INSaveProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveProfileNameForSaveProfileInCarWithCompletion") Block_resolveProfileNameForSaveProfileInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -110,8 +111,8 @@ public interface INSaveProfileInCarIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveProfileNumberForSaveProfileInCar:withCompletion:")
-    default void resolveProfileNumberForSaveProfileInCarWithCompletion(INSaveProfileInCarIntent intent,
-            @ObjCBlock(name = "call_resolveProfileNumberForSaveProfileInCarWithCompletion") Block_resolveProfileNumberForSaveProfileInCarWithCompletion completion) {
+    default void resolveProfileNumberForSaveProfileInCarWithCompletion(@NotNull INSaveProfileInCarIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveProfileNumberForSaveProfileInCarWithCompletion") Block_resolveProfileNumberForSaveProfileInCarWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,27 +120,29 @@ public interface INSaveProfileInCarIntentHandling {
     @Generated
     public interface Block_confirmSaveProfileInCarCompletion {
         @Generated
-        void call_confirmSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse response);
+        void call_confirmSaveProfileInCarCompletion(@NotNull INSaveProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSaveProfileInCarCompletion {
         @Generated
-        void call_handleSaveProfileInCarCompletion(INSaveProfileInCarIntentResponse response);
+        void call_handleSaveProfileInCarCompletion(@NotNull INSaveProfileInCarIntentResponse response);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNameForSaveProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNameForSaveProfileInCarWithCompletion(INStringResolutionResult resolutionResult);
+        void call_resolveProfileNameForSaveProfileInCarWithCompletion(
+                @NotNull INStringResolutionResult resolutionResult);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resolveProfileNumberForSaveProfileInCarWithCompletion {
         @Generated
-        void call_resolveProfileNumberForSaveProfileInCarWithCompletion(INIntegerResolutionResult resolutionResult);
+        void call_resolveProfileNumberForSaveProfileInCarWithCompletion(
+                @NotNull INIntegerResolutionResult resolutionResult);
     }
 }

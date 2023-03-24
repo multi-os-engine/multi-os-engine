@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MKTileOverlay represents a data source for raster image tiles in the spherical mercator projection (EPSG:3857).
@@ -84,22 +86,25 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,10 +173,12 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     /**
      * default implementation fills out the URLTemplate
      */
+    @NotNull
     @Generated
     @Selector("URLForTilePath:")
     public native NSURL URLForTilePath(@ByValue MKTileOverlayPath path);
 
+    @Nullable
     @Generated
     @Selector("URLTemplate")
     public native String URLTemplate();
@@ -199,7 +207,7 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
      */
     @Generated
     @Selector("initWithURLTemplate:")
-    public native MKTileOverlay initWithURLTemplate(String URLTemplate);
+    public native MKTileOverlay initWithURLTemplate(@Nullable String URLTemplate);
 
     @Generated
     @IsOptional
@@ -227,7 +235,7 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Generated
     @Selector("loadTileAtPath:result:")
     public native void loadTileAtPathResult(@ByValue MKTileOverlayPath path,
-            @ObjCBlock(name = "call_loadTileAtPathResult") Block_loadTileAtPathResult result);
+            @NotNull @ObjCBlock(name = "call_loadTileAtPathResult") Block_loadTileAtPathResult result);
 
     @Generated
     @Selector("maximumZ")
@@ -271,6 +279,7 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Selector("setTileSize:")
     public native void setTileSize(@ByValue CGSize value);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("subtitle")
@@ -284,6 +293,7 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @ByValue
     public native CGSize tileSize();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("title")
@@ -293,6 +303,6 @@ public class MKTileOverlay extends NSObject implements MKOverlay {
     @Generated
     public interface Block_loadTileAtPathResult {
         @Generated
-        void call_loadTileAtPathResult(NSData tileData, NSError error);
+        void call_loadTileAtPathResult(@Nullable NSData tileData, @Nullable NSError error);
     }
 }

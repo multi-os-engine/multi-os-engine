@@ -37,6 +37,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -72,22 +74,25 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,15 +102,17 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * 
      * This identifier is unique across platforms and shares of the same item.
      */
+    @NotNull
     @Generated
     @Selector("collaborationIdentifier")
     public native String collaborationIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -114,6 +121,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
     /**
      * The collaboration options that this content supports (updated).
      */
+    @Nullable
     @Generated
     @Selector("defaultShareOptions")
     public native SWCollaborationShareOptions defaultShareOptions();
@@ -124,7 +132,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -137,15 +145,15 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWCollaborationMetadata initWithCoder(NSCoder coder);
+    public native SWCollaborationMetadata initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCollaborationIdentifier:")
-    public native SWCollaborationMetadata initWithCollaborationIdentifier(String collaborationIdentifier);
+    public native SWCollaborationMetadata initWithCollaborationIdentifier(@NotNull String collaborationIdentifier);
 
     @Generated
     @Selector("initWithLocalIdentifier:")
-    public native SWCollaborationMetadata initWithLocalIdentifier(String localIdentifier);
+    public native SWCollaborationMetadata initWithLocalIdentifier(@NotNull String localIdentifier);
 
     /**
      * The handle of the person initiating the collaboration, e.g. an email address or phone number.
@@ -153,6 +161,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * Set by the initiating application to allow the user to confirm the handle being used before beginning
      * collaboration. Value will not be transmitted to recipients, and will be nil when not initiating collaboration.
      */
+    @Nullable
     @Generated
     @Selector("initiatorHandle")
     public native String initiatorHandle();
@@ -163,6 +172,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * Set by the initiating application to allow the user to confirm the name being used before beginning
      * collaboration. Value will not be transmitted to recipients, and will be nil when not initiating collaboration.
      */
+    @Nullable
     @Generated
     @Selector("initiatorNameComponents")
     public native NSPersonNameComponents initiatorNameComponents();
@@ -188,13 +198,14 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -202,53 +213,61 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
     /**
      * Locally unique identifier for the item represented by this metadata.
      * 
      * Use this identifier to uniquely identify this metadata before a collaborationIdentifier can be created
      */
+    @NotNull
     @Generated
     @Selector("localIdentifier")
     public native String localIdentifier();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Owned
     @Selector("new")
     public static native SWCollaborationMetadata new_objc();
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native SWCollaborationMetadata objectWithItemProviderDataTypeIdentifierError(NSData data,
-            String typeIdentifier, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native SWCollaborationMetadata objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public SWCollaborationMetadata _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public SWCollaborationMetadata _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
@@ -268,7 +287,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      */
     @Generated
     @Selector("setDefaultShareOptions:")
-    public native void setDefaultShareOptions(SWCollaborationShareOptions value);
+    public native void setDefaultShareOptions(@Nullable SWCollaborationShareOptions value);
 
     /**
      * The handle of the person initiating the collaboration, e.g. an email address or phone number.
@@ -278,7 +297,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      */
     @Generated
     @Selector("setInitiatorHandle:")
-    public native void setInitiatorHandle(String value);
+    public native void setInitiatorHandle(@Nullable String value);
 
     /**
      * The name of the person initiating the collaboration.
@@ -288,7 +307,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      */
     @Generated
     @Selector("setInitiatorNameComponents:")
-    public native void setInitiatorNameComponents(NSPersonNameComponents value);
+    public native void setInitiatorNameComponents(@Nullable NSPersonNameComponents value);
 
     /**
      * Title of the content.
@@ -297,14 +316,14 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     /**
      * The collaboration options that the user selected when sending the invite (updated).
      */
     @Generated
     @Selector("setUserSelectedShareOptions:")
-    public native void setUserSelectedShareOptions(SWCollaborationShareOptions value);
+    public native void setUserSelectedShareOptions(@Nullable SWCollaborationShareOptions value);
 
     @Generated
     @Selector("setVersion:")
@@ -329,6 +348,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
      * 
      * Title of the collaboration if provided by the app which owns the collaboration item.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -336,6 +356,7 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
     /**
      * The collaboration options that the user selected when sending the invite (updated).
      */
+    @Nullable
     @Generated
     @Selector("userSelectedShareOptions")
     public native SWCollaborationShareOptions userSelectedShareOptions();
@@ -345,16 +366,19 @@ public class SWCollaborationMetadata extends NSObject implements NSSecureCoding,
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")

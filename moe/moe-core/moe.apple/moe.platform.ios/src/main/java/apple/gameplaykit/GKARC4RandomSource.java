@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A deterministic pseudo-random source that generates random numbers based on an arc4 algorithm.
@@ -80,22 +82,25 @@ public class GKARC4RandomSource extends GKRandomSource {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class GKARC4RandomSource extends GKRandomSource {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,6 +157,7 @@ public class GKARC4RandomSource extends GKRandomSource {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedRandom")
     public static native GKRandomSource sharedRandom();
@@ -186,19 +193,20 @@ public class GKARC4RandomSource extends GKRandomSource {
 
     @Generated
     @Selector("initWithCoder:")
-    public native GKARC4RandomSource initWithCoder(NSCoder aDecoder);
+    public native GKARC4RandomSource initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Initializes an arc4 random source with bits from the seed.
      */
     @Generated
     @Selector("initWithSeed:")
-    public native GKARC4RandomSource initWithSeed(NSData seed);
+    public native GKARC4RandomSource initWithSeed(@NotNull NSData seed);
 
     /**
      * The seed used to stir the arc4 random source.
      * The seed is not encoded through archiving, but the equivalent state buffers are encoded.
      */
+    @NotNull
     @Generated
     @Selector("seed")
     public native NSData seed();
@@ -209,7 +217,7 @@ public class GKARC4RandomSource extends GKRandomSource {
      */
     @Generated
     @Selector("setSeed:")
-    public native void setSeed(NSData value);
+    public native void setSeed(@NotNull NSData value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

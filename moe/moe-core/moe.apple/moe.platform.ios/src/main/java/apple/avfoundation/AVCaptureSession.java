@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureSession
@@ -81,22 +83,25 @@ public class AVCaptureSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class AVCaptureSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -178,7 +184,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("addConnection:")
-    public native void addConnection(AVCaptureConnection connection);
+    public native void addConnection(@NotNull AVCaptureConnection connection);
 
     /**
      * addInput:
@@ -193,7 +199,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("addInput:")
-    public native void addInput(AVCaptureInput input);
+    public native void addInput(@NotNull AVCaptureInput input);
 
     /**
      * addInputWithNoConnections:
@@ -211,7 +217,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("addInputWithNoConnections:")
-    public native void addInputWithNoConnections(AVCaptureInput input);
+    public native void addInputWithNoConnections(@NotNull AVCaptureInput input);
 
     /**
      * addOutput:
@@ -226,7 +232,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("addOutput:")
-    public native void addOutput(AVCaptureOutput output);
+    public native void addOutput(@NotNull AVCaptureOutput output);
 
     /**
      * addOutputWithNoConnections:
@@ -244,7 +250,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("addOutputWithNoConnections:")
-    public native void addOutputWithNoConnections(AVCaptureOutput output);
+    public native void addOutputWithNoConnections(@NotNull AVCaptureOutput output);
 
     /**
      * [@property] automaticallyConfiguresApplicationAudioSession
@@ -317,7 +323,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("canAddConnection:")
-    public native boolean canAddConnection(AVCaptureConnection connection);
+    public native boolean canAddConnection(@NotNull AVCaptureConnection connection);
 
     /**
      * canAddInput:
@@ -333,7 +339,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("canAddInput:")
-    public native boolean canAddInput(AVCaptureInput input);
+    public native boolean canAddInput(@NotNull AVCaptureInput input);
 
     /**
      * canAddOutput:
@@ -365,7 +371,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("canAddOutput:")
-    public native boolean canAddOutput(AVCaptureOutput output);
+    public native boolean canAddOutput(@NotNull AVCaptureOutput output);
 
     /**
      * canSetSessionPreset:
@@ -384,7 +390,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("canSetSessionPreset:")
-    public native boolean canSetSessionPreset(String preset);
+    public native boolean canSetSessionPreset(@NotNull String preset);
 
     /**
      * commitConfiguration
@@ -415,6 +421,7 @@ public class AVCaptureSession extends NSObject {
      * The value of this property is an NSArray of AVCaptureInputs currently added to the receiver. Clients can add
      * AVCaptureInputs to a session by calling -addInput:.
      */
+    @NotNull
     @Generated
     @Selector("inputs")
     public native NSArray<? extends AVCaptureInput> inputs();
@@ -456,6 +463,7 @@ public class AVCaptureSession extends NSObject {
      * API-Since: 7.0
      * Deprecated-Since: 15.4
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("masterClock")
@@ -469,6 +477,7 @@ public class AVCaptureSession extends NSObject {
      * The value of this property is an NSArray of AVCaptureOutputs currently added to the receiver. Clients can add
      * AVCaptureOutputs to a session by calling -addOutput:.
      */
+    @NotNull
     @Generated
     @Selector("outputs")
     public native NSArray<? extends AVCaptureOutput> outputs();
@@ -487,7 +496,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("removeConnection:")
-    public native void removeConnection(AVCaptureConnection connection);
+    public native void removeConnection(@NotNull AVCaptureConnection connection);
 
     /**
      * removeInput:
@@ -501,7 +510,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("removeInput:")
-    public native void removeInput(AVCaptureInput input);
+    public native void removeInput(@NotNull AVCaptureInput input);
 
     /**
      * removeOutput:
@@ -515,7 +524,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("removeOutput:")
-    public native void removeOutput(AVCaptureOutput output);
+    public native void removeOutput(@NotNull AVCaptureOutput output);
 
     /**
      * [@property] sessionPreset
@@ -525,6 +534,7 @@ public class AVCaptureSession extends NSObject {
      * The value of this property is an AVCaptureSessionPreset indicating the current session preset in use by the
      * receiver. The sessionPreset property may be set while the receiver is running.
      */
+    @NotNull
     @Generated
     @Selector("sessionPreset")
     public native String sessionPreset();
@@ -577,7 +587,7 @@ public class AVCaptureSession extends NSObject {
      */
     @Generated
     @Selector("setSessionPreset:")
-    public native void setSessionPreset(String value);
+    public native void setSessionPreset(@NotNull String value);
 
     /**
      * [@property] usesApplicationAudioSession
@@ -651,6 +661,7 @@ public class AVCaptureSession extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("connections")
     public native NSArray<? extends AVCaptureConnection> connections();
@@ -782,6 +793,7 @@ public class AVCaptureSession extends NSObject {
      * 
      * API-Since: 15.4
      */
+    @Nullable
     @Generated
     @Selector("synchronizationClock")
     public native CMClockRef synchronizationClock();

@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNYOLOLossDescriptor
@@ -84,6 +86,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter specifies the type of a loss filter.
      */
+    @NotNull
     @Generated
     @Selector("WHLossDescriptor")
     public native MPSCNNLossDescriptor WHLossDescriptor();
@@ -95,6 +98,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter specifies the type of a loss filter.
      */
+    @NotNull
     @Generated
     @Selector("XYLossDescriptor")
     public native MPSCNNLossDescriptor XYLossDescriptor();
@@ -134,28 +138,32 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * NSData* labelsInputData = [NSData dataWithBytes: gAnchorBoxes length: MAX_NUM_ANCHOR_BOXES * sizeof(anchorBox)];
      * [@endcode]
      */
+    @NotNull
     @Generated
     @Selector("anchorBoxes")
     public native NSData anchorBoxes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -167,6 +175,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter specifies the type of a loss filter.
      */
+    @NotNull
     @Generated
     @Selector("classesLossDescriptor")
     public native MPSCNNLossDescriptor classesLossDescriptor();
@@ -183,11 +192,12 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      *                           float height; };
      * @return A valid MPSCNNYOLOLossDescriptor object or nil, if failure.
      */
+    @NotNull
     @Generated
     @Selector("cnnLossDescriptorWithXYLossType:WHLossType:confidenceLossType:classesLossType:reductionType:anchorBoxes:numberOfAnchorBoxes:")
     public static native MPSCNNYOLOLossDescriptor cnnLossDescriptorWithXYLossTypeWHLossTypeConfidenceLossTypeClassesLossTypeReductionTypeAnchorBoxesNumberOfAnchorBoxes(
             int XYLossType, int WHLossType, int confidenceLossType, int classesLossType, int reductionType,
-            NSData anchorBoxes, @NUInt long numberOfAnchorBoxes);
+            @NotNull NSData anchorBoxes, @NUInt long numberOfAnchorBoxes);
 
     /**
      * [@property] confidenceLossDescriptor
@@ -196,15 +206,17 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      * 
      * This parameter specifies the type of a loss filter.
      */
+    @NotNull
     @Generated
     @Selector("confidenceLossDescriptor")
     public native MPSCNNLossDescriptor confidenceLossDescriptor();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -240,9 +252,10 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] neg_iou
@@ -374,7 +387,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAnchorBoxes:")
-    public native void setAnchorBoxes(NSData value);
+    public native void setAnchorBoxes(@NotNull NSData value);
 
     /**
      * [@property] classesLossDescriptor
@@ -385,7 +398,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setClassesLossDescriptor:")
-    public native void setClassesLossDescriptor(MPSCNNLossDescriptor value);
+    public native void setClassesLossDescriptor(@NotNull MPSCNNLossDescriptor value);
 
     /**
      * [@property] confidenceLossDescriptor
@@ -396,7 +409,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setConfidenceLossDescriptor:")
-    public native void setConfidenceLossDescriptor(MPSCNNLossDescriptor value);
+    public native void setConfidenceLossDescriptor(@NotNull MPSCNNLossDescriptor value);
 
     /**
      * [@property] neg_iou
@@ -504,7 +517,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setWHLossDescriptor:")
-    public native void setWHLossDescriptor(MPSCNNLossDescriptor value);
+    public native void setWHLossDescriptor(@NotNull MPSCNNLossDescriptor value);
 
     /**
      * [@property] XYLossDescriptor
@@ -515,7 +528,7 @@ public class MPSCNNYOLOLossDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setXYLossDescriptor:")
-    public native void setXYLossDescriptor(MPSCNNLossDescriptor value);
+    public native void setXYLossDescriptor(@NotNull MPSCNNLossDescriptor value);
 
     @Generated
     @Selector("superclass")

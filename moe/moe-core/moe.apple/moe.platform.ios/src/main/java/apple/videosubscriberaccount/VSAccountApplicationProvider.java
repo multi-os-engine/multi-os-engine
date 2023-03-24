@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object which provides an account provider to be added to the list of providers in your application.
@@ -57,22 +59,25 @@ public class VSAccountApplicationProvider extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -94,6 +99,7 @@ public class VSAccountApplicationProvider extends NSObject {
      * The identifier of the provider.
      * If selected, this value is returned to your application.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -108,8 +114,8 @@ public class VSAccountApplicationProvider extends NSObject {
      */
     @Generated
     @Selector("initWithLocalizedDisplayName:identifier:")
-    public native VSAccountApplicationProvider initWithLocalizedDisplayNameIdentifier(String localizedDisplayName,
-            String identifier);
+    public native VSAccountApplicationProvider initWithLocalizedDisplayNameIdentifier(
+            @NotNull String localizedDisplayName, @NotNull String identifier);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,13 +134,15 @@ public class VSAccountApplicationProvider extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The display name of the provider as it will appear in the list of providers.
      */
+    @NotNull
     @Generated
     @Selector("localizedDisplayName")
     public native String localizedDisplayName();

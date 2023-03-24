@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLParallelRenderCommandEncoder
@@ -45,6 +46,7 @@ public interface MTLParallelRenderCommandEncoder extends MTLCommandEncoder {
      * Return a new autoreleased object that conforms to <MTLRenderCommandEncoder> that may be used to encode on a
      * different thread.
      */
+    @Nullable
     @Generated
     @Selector("renderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)

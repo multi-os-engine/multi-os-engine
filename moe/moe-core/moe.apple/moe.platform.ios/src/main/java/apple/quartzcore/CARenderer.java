@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -68,7 +70,7 @@ public class CARenderer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Begin rendering a frame at time 't'. If 'ts' is non-null it defines
@@ -77,7 +79,7 @@ public class CARenderer extends NSObject {
     @Generated
     @Selector("beginFrameAtTime:timeStamp:")
     public native void beginFrameAtTimeTimeStamp(double t,
-            @UncertainArgument("Options: reference, array Fallback: reference") CVTimeStamp ts);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CVTimeStamp ts);
 
     /**
      * The bounds rect of the render target.
@@ -89,18 +91,21 @@ public class CARenderer extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -146,13 +151,15 @@ public class CARenderer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The root layer associated with the renderer.
      */
+    @Nullable
     @Generated
     @Selector("layer")
     public native CALayer layer();
@@ -185,10 +192,11 @@ public class CARenderer extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("rendererWithMTLTexture:options:")
-    public static native CARenderer rendererWithMTLTextureOptions(@Mapped(ObjCObjectMapper.class) MTLTexture tex,
-            NSDictionary<?, ?> dict);
+    public static native CARenderer rendererWithMTLTextureOptions(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture tex, @Nullable NSDictionary<?, ?> dict);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -210,14 +218,14 @@ public class CARenderer extends NSObject {
      */
     @Generated
     @Selector("setDestination:")
-    public native void setDestination(@Mapped(ObjCObjectMapper.class) MTLTexture tex);
+    public native void setDestination(@NotNull @Mapped(ObjCObjectMapper.class) MTLTexture tex);
 
     /**
      * The root layer associated with the renderer.
      */
     @Generated
     @Selector("setLayer:")
-    public native void setLayer(CALayer value);
+    public native void setLayer(@Nullable CALayer value);
 
     @Generated
     @Selector("setVersion:")

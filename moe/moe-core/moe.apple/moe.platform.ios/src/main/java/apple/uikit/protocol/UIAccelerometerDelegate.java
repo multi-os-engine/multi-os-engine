@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 2.0
@@ -45,7 +46,8 @@ public interface UIAccelerometerDelegate {
     @IsOptional
     @Deprecated
     @Selector("accelerometer:didAccelerate:")
-    default void accelerometerDidAccelerate(UIAccelerometer accelerometer, UIAcceleration acceleration) {
+    default void accelerometerDidAccelerate(@NotNull UIAccelerometer accelerometer,
+            @NotNull UIAcceleration acceleration) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

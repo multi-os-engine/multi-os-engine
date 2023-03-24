@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A rule system consists of 3 things:
@@ -91,22 +93,25 @@ public class GKRuleSystem extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -141,9 +146,10 @@ public class GKRuleSystem extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,14 +182,14 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("addRule:")
-    public native void addRule(GKRule rule);
+    public native void addRule(@NotNull GKRule rule);
 
     /**
      * Adds rules to the system. Also adds them to the agenda in salience order.
      */
     @Generated
     @Selector("addRulesFromArray:")
-    public native void addRulesFromArray(NSArray<? extends GKRule> rules);
+    public native void addRulesFromArray(@NotNull NSArray<? extends GKRule> rules);
 
     /**
      * The current set of rules to be evaluated, in salience order, where if the salience is equivalent
@@ -197,6 +203,7 @@ public class GKRuleSystem extends NSObject {
      * @see executed
      * @see reset
      */
+    @NotNull
     @Generated
     @Selector("agenda")
     public native NSArray<? extends GKRule> agenda();
@@ -215,7 +222,7 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("assertFact:")
-    public native void assertFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
+    public native void assertFact(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
     /**
      * Asserts a fact with the supplied membership grade.
@@ -227,7 +234,8 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("assertFact:grade:")
-    public native void assertFactGrade(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public native void assertFactGrade(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact,
+            float grade);
 
     /**
      * Explicitly evaluate the agenda of the rule system based on the current state and the current set of facts.
@@ -249,6 +257,7 @@ public class GKRuleSystem extends NSObject {
      * @see agenda
      * @see reset
      */
+    @NotNull
     @Generated
     @Selector("executed")
     public native NSArray<? extends GKRule> executed();
@@ -259,6 +268,7 @@ public class GKRuleSystem extends NSObject {
      * 
      * @see gradeForFact:
      */
+    @NotNull
     @Generated
     @Selector("facts")
     public native NSArray<?> facts();
@@ -271,7 +281,7 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("gradeForFact:")
-    public native float gradeForFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
+    public native float gradeForFact(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
     /**
      * Initializes a clean rule system with no state, rules or facts.
@@ -289,7 +299,7 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("maximumGradeForFacts:")
-    public native float maximumGradeForFacts(NSArray<?> facts);
+    public native float maximumGradeForFacts(@NotNull NSArray<?> facts);
 
     /**
      * Returns the combined membership grade for the all the given facts.
@@ -300,7 +310,7 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("minimumGradeForFacts:")
-    public native float minimumGradeForFacts(NSArray<?> facts);
+    public native float minimumGradeForFacts(@NotNull NSArray<?> facts);
 
     /**
      * Removes all rules from the system. This also removes them from the agenda and executed sets.
@@ -333,7 +343,7 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("retractFact:")
-    public native void retractFact(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
+    public native void retractFact(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact);
 
     /**
      * Retracts a fact, reducing its membership grade by the supplied grade. If this brings the grade to 0
@@ -346,7 +356,8 @@ public class GKRuleSystem extends NSObject {
      */
     @Generated
     @Selector("retractFact:grade:")
-    public native void retractFactGrade(@Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact, float grade);
+    public native void retractFactGrade(@NotNull @Mapped(ObjCObjectMapper.class) apple.protocol.NSObject fact,
+            float grade);
 
     /**
      * The current set of rules that will be used to set the agenda when rules are first added to the system.
@@ -357,6 +368,7 @@ public class GKRuleSystem extends NSObject {
      * @see agenda
      * @see executed
      */
+    @NotNull
     @Generated
     @Selector("rules")
     public native NSArray<? extends GKRule> rules();
@@ -367,6 +379,7 @@ public class GKRuleSystem extends NSObject {
      * 
      * @see evaluate
      */
+    @NotNull
     @Generated
     @Selector("state")
     public native NSMutableDictionary<?, ?> state();

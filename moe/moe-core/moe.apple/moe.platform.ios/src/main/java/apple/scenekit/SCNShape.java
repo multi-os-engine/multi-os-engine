@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNShape
@@ -78,22 +80,25 @@ public class SCNShape extends SCNGeometry {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -112,12 +117,12 @@ public class SCNShape extends SCNGeometry {
 
     @Generated
     @Selector("geometryWithMDLMesh:")
-    public static native SCNShape geometryWithMDLMesh(MDLMesh mdlMesh);
+    public static native SCNShape geometryWithMDLMesh(@NotNull MDLMesh mdlMesh);
 
     @Generated
     @Selector("geometryWithSources:elements:")
-    public static native SCNShape geometryWithSourcesElements(NSArray<? extends SCNGeometrySource> sources,
-            NSArray<? extends SCNGeometryElement> elements);
+    public static native SCNShape geometryWithSourcesElements(@NotNull NSArray<? extends SCNGeometrySource> sources,
+            @Nullable NSArray<? extends SCNGeometryElement> elements);
 
     @Generated
     @Selector("hash")
@@ -141,9 +146,10 @@ public class SCNShape extends SCNGeometry {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,7 +178,8 @@ public class SCNShape extends SCNGeometry {
      */
     @Generated
     @Selector("shapeWithPath:extrusionDepth:")
-    public static native SCNShape shapeWithPathExtrusionDepth(UIBezierPath path, @NFloat double extrusionDepth);
+    public static native SCNShape shapeWithPathExtrusionDepth(@Nullable UIBezierPath path,
+            @NFloat double extrusionDepth);
 
     @Generated
     @Selector("superclass")
@@ -208,6 +215,7 @@ public class SCNShape extends SCNGeometry {
      * The profile should be a 2D curve beginning at (0,1) and ending at (1,0). The "flatness" property is also used to
      * flatten this path. The default value is nil.
      */
+    @Nullable
     @Generated
     @Selector("chamferProfile")
     public native UIBezierPath chamferProfile();
@@ -242,7 +250,7 @@ public class SCNShape extends SCNGeometry {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNShape initWithCoder(NSCoder coder);
+    public native SCNShape initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] path
@@ -252,6 +260,7 @@ public class SCNShape extends SCNGeometry {
      * The path defines the outline of the shape. The path is filled using the even-odd rule. If the path is
      * self-intersecting, the behavior is undefined.
      */
+    @Nullable
     @Generated
     @Selector("path")
     public native UIBezierPath path();
@@ -278,7 +287,7 @@ public class SCNShape extends SCNGeometry {
      */
     @Generated
     @Selector("setChamferProfile:")
-    public native void setChamferProfile(UIBezierPath value);
+    public native void setChamferProfile(@Nullable UIBezierPath value);
 
     /**
      * [@property] chamferRadius
@@ -312,7 +321,7 @@ public class SCNShape extends SCNGeometry {
      */
     @Generated
     @Selector("setPath:")
-    public native void setPath(UIBezierPath value);
+    public native void setPath(@Nullable UIBezierPath value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

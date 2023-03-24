@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEPacketTunnelFlow
@@ -83,22 +85,25 @@ public class NEPacketTunnelFlow extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NEPacketTunnelFlow extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,7 +187,7 @@ public class NEPacketTunnelFlow extends NSObject {
     @Generated
     @Selector("readPacketObjectsWithCompletionHandler:")
     public native void readPacketObjectsWithCompletionHandler(
-            @ObjCBlock(name = "call_readPacketObjectsWithCompletionHandler") Block_readPacketObjectsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readPacketObjectsWithCompletionHandler") Block_readPacketObjectsWithCompletionHandler completionHandler);
 
     /**
      * readPacketsWithCompletionHandler:
@@ -198,7 +204,7 @@ public class NEPacketTunnelFlow extends NSObject {
     @Generated
     @Selector("readPacketsWithCompletionHandler:")
     public native void readPacketsWithCompletionHandler(
-            @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readPacketsWithCompletionHandler") Block_readPacketsWithCompletionHandler completionHandler);
 
     /**
      * writePacketObjects:
@@ -211,7 +217,7 @@ public class NEPacketTunnelFlow extends NSObject {
      */
     @Generated
     @Selector("writePacketObjects:")
-    public native boolean writePacketObjects(NSArray<? extends NEPacket> packets);
+    public native boolean writePacketObjects(@NotNull NSArray<? extends NEPacket> packets);
 
     /**
      * writePackets:completionHandler:
@@ -226,21 +232,21 @@ public class NEPacketTunnelFlow extends NSObject {
      */
     @Generated
     @Selector("writePackets:withProtocols:")
-    public native boolean writePacketsWithProtocols(NSArray<? extends NSData> packets,
-            NSArray<? extends NSNumber> protocols);
+    public native boolean writePacketsWithProtocols(@NotNull NSArray<? extends NSData> packets,
+            @NotNull NSArray<? extends NSNumber> protocols);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readPacketObjectsWithCompletionHandler {
         @Generated
-        void call_readPacketObjectsWithCompletionHandler(NSArray<? extends NEPacket> packets);
+        void call_readPacketObjectsWithCompletionHandler(@NotNull NSArray<? extends NEPacket> packets);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readPacketsWithCompletionHandler {
         @Generated
-        void call_readPacketsWithCompletionHandler(NSArray<? extends NSData> packets,
-                NSArray<? extends NSNumber> protocols);
+        void call_readPacketsWithCompletionHandler(@NotNull NSArray<? extends NSData> packets,
+                @NotNull NSArray<? extends NSNumber> protocols);
     }
 }

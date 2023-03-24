@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] OSLogEntryWithPayload
@@ -29,6 +30,7 @@ public interface OSLogEntryWithPayload {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("category")
     String category();
@@ -40,6 +42,7 @@ public interface OSLogEntryWithPayload {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("components")
     NSArray<? extends OSLogMessageComponent> components();
@@ -51,6 +54,7 @@ public interface OSLogEntryWithPayload {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("formatString")
     String formatString();
@@ -62,6 +66,7 @@ public interface OSLogEntryWithPayload {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("subsystem")
     String subsystem();

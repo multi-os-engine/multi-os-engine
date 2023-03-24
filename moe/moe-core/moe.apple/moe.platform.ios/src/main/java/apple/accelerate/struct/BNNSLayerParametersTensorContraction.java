@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.ByValue;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ann.UncertainReturn;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -29,6 +30,7 @@ public final class BNNSLayerParametersTensorContraction extends StructObject {
         super(peer);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
@@ -37,7 +39,7 @@ public final class BNNSLayerParametersTensorContraction extends StructObject {
     @Generated
     @StructureField(order = 0, isGetter = false)
     public native void setOperation(
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)

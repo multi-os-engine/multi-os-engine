@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -53,6 +55,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
         super(peer);
     }
 
+    @NotNull
     @Generated
     @Selector("abbreviationDictionary")
     public static native NSDictionary<String, String> abbreviationDictionary();
@@ -73,22 +76,25 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +103,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultTimeZone")
     public static native NSTimeZone defaultTimeZone();
@@ -123,14 +130,17 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("knownTimeZoneNames")
     public static native NSArray<String> knownTimeZoneNames();
 
+    @NotNull
     @Generated
     @Selector("localTimeZone")
     public static native NSTimeZone localTimeZone();
@@ -157,11 +167,11 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setAbbreviationDictionary:")
-    public static native void setAbbreviationDictionary(NSDictionary<String, String> value);
+    public static native void setAbbreviationDictionary(@NotNull NSDictionary<String, String> value);
 
     @Generated
     @Selector("setDefaultTimeZone:")
-    public static native void setDefaultTimeZone(NSTimeZone value);
+    public static native void setDefaultTimeZone(@NotNull NSTimeZone value);
 
     @Generated
     @Selector("setVersion:")
@@ -175,6 +185,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("supportsSecureCoding")
     public static native boolean supportsSecureCoding();
 
+    @NotNull
     @Generated
     @Selector("systemTimeZone")
     public static native NSTimeZone systemTimeZone();
@@ -182,6 +193,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("timeZoneDataVersion")
     public static native String timeZoneDataVersion();
@@ -197,7 +209,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("timeZoneWithAbbreviation:")
-    public static native NSTimeZone timeZoneWithAbbreviation(String abbreviation);
+    public static native NSTimeZone timeZoneWithAbbreviation(@NotNull String abbreviation);
 
     /**
      * Primary creation method is +timeZoneWithName:; the
@@ -205,31 +217,35 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("timeZoneWithName:")
-    public static native NSTimeZone timeZoneWithName(String tzName);
+    public static native NSTimeZone timeZoneWithName(@NotNull String tzName);
 
     @Generated
     @Selector("timeZoneWithName:data:")
-    public static native NSTimeZone timeZoneWithNameData(String tzName, NSData aData);
+    public static native NSTimeZone timeZoneWithNameData(@NotNull String tzName, @Nullable NSData aData);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("abbreviation")
     public native String abbreviation();
 
+    @Nullable
     @Generated
     @Selector("abbreviationForDate:")
-    public native String abbreviationForDate(NSDate aDate);
+    public native String abbreviationForDate(@NotNull NSDate aDate);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
@@ -248,15 +264,16 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("daylightSavingTimeOffsetForDate:")
-    public native double daylightSavingTimeOffsetForDate(NSDate aDate);
+    public native double daylightSavingTimeOffsetForDate(@NotNull NSDate aDate);
 
+    @NotNull
     @Generated
     @Selector("description")
     public native String description();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -264,15 +281,15 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTimeZone initWithCoder(NSCoder coder);
+    public native NSTimeZone initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithName:")
-    public native NSTimeZone initWithName(String tzName);
+    public native NSTimeZone initWithName(@NotNull String tzName);
 
     @Generated
     @Selector("initWithName:data:")
-    public native NSTimeZone initWithNameData(String tzName, NSData aData);
+    public native NSTimeZone initWithNameData(@NotNull String tzName, @Nullable NSData aData);
 
     @Generated
     @Selector("isDaylightSavingTime")
@@ -280,19 +297,21 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("isDaylightSavingTimeForDate:")
-    public native boolean isDaylightSavingTimeForDate(NSDate aDate);
+    public native boolean isDaylightSavingTimeForDate(@NotNull NSDate aDate);
 
     @Generated
     @Selector("isEqualToTimeZone:")
-    public native boolean isEqualToTimeZone(NSTimeZone aTimeZone);
+    public native boolean isEqualToTimeZone(@NotNull NSTimeZone aTimeZone);
 
     /**
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("localizedName:locale:")
-    public native String localizedNameLocale(@NInt long style, NSLocale locale);
+    public native String localizedNameLocale(@NInt long style, @Nullable NSLocale locale);
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -302,6 +321,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("nextDaylightSavingTimeTransition")
     public native NSDate nextDaylightSavingTimeTransition();
@@ -309,9 +329,10 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("nextDaylightSavingTimeTransitionAfterDate:")
-    public native NSDate nextDaylightSavingTimeTransitionAfterDate(NSDate aDate);
+    public native NSDate nextDaylightSavingTimeTransitionAfterDate(@NotNull NSDate aDate);
 
     @Generated
     @Selector("secondsFromGMT")
@@ -321,7 +342,7 @@ public class NSTimeZone extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     @Selector("secondsFromGMTForDate:")
     @NInt
-    public native long secondsFromGMTForDate(NSDate aDate);
+    public native long secondsFromGMTForDate(@NotNull NSDate aDate);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

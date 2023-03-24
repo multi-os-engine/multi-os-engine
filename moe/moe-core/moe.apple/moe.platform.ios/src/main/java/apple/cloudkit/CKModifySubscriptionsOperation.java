@@ -39,6 +39,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -73,22 +75,25 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -160,7 +166,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("initWithSubscriptionsToSave:subscriptionIDsToDelete:")
     public native CKModifySubscriptionsOperation initWithSubscriptionsToSaveSubscriptionIDsToDelete(
-            NSArray<? extends CKSubscription> subscriptionsToSave, NSArray<String> subscriptionIDsToDelete);
+            @Nullable NSArray<? extends CKSubscription> subscriptionsToSave,
+            @Nullable NSArray<String> subscriptionIDsToDelete);
 
     /**
      * This block is called when the operation completes.
@@ -172,6 +179,7 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * the data sent back in previous @c perSubscriptionSaveBlock and @c perSubscriptionDeleteBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("modifySubscriptionsCompletionBlock")
     @ObjCBlock(name = "call_modifySubscriptionsCompletionBlock_ret")
@@ -190,20 +198,22 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setModifySubscriptionsCompletionBlock:")
     public native void setModifySubscriptionsCompletionBlock(
-            @ObjCBlock(name = "call_setModifySubscriptionsCompletionBlock") Block_setModifySubscriptionsCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setModifySubscriptionsCompletionBlock") Block_setModifySubscriptionsCompletionBlock value);
 
     @Generated
     @Selector("setSubscriptionIDsToDelete:")
-    public native void setSubscriptionIDsToDelete(NSArray<String> value);
+    public native void setSubscriptionIDsToDelete(@Nullable NSArray<String> value);
 
     @Generated
     @Selector("setSubscriptionsToSave:")
-    public native void setSubscriptionsToSave(NSArray<? extends CKSubscription> value);
+    public native void setSubscriptionsToSave(@Nullable NSArray<? extends CKSubscription> value);
 
+    @Nullable
     @Generated
     @Selector("subscriptionIDsToDelete")
     public native NSArray<String> subscriptionIDsToDelete();
 
+    @Nullable
     @Generated
     @Selector("subscriptionsToSave")
     public native NSArray<? extends CKSubscription> subscriptionsToSave();
@@ -212,16 +222,16 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_modifySubscriptionsCompletionBlock_ret {
         @Generated
-        void call_modifySubscriptionsCompletionBlock_ret(NSArray<? extends CKSubscription> arg0, NSArray<String> arg1,
-                NSError arg2);
+        void call_modifySubscriptionsCompletionBlock_ret(@Nullable NSArray<? extends CKSubscription> arg0,
+                @Nullable NSArray<String> arg1, @Nullable NSError arg2);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setModifySubscriptionsCompletionBlock {
         @Generated
-        void call_setModifySubscriptionsCompletionBlock(NSArray<? extends CKSubscription> arg0, NSArray<String> arg1,
-                NSError arg2);
+        void call_setModifySubscriptionsCompletionBlock(@Nullable NSArray<? extends CKSubscription> arg0,
+                @Nullable NSArray<String> arg1, @Nullable NSError arg2);
     }
 
     /**
@@ -231,6 +241,7 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("perSubscriptionDeleteBlock")
     @ObjCBlock(name = "call_perSubscriptionDeleteBlock_ret")
@@ -240,7 +251,7 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_perSubscriptionDeleteBlock_ret {
         @Generated
-        void call_perSubscriptionDeleteBlock_ret(String arg0, NSError arg1);
+        void call_perSubscriptionDeleteBlock_ret(@NotNull String arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -250,6 +261,7 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("perSubscriptionSaveBlock")
     @ObjCBlock(name = "call_perSubscriptionSaveBlock_ret")
@@ -259,7 +271,8 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_perSubscriptionSaveBlock_ret {
         @Generated
-        void call_perSubscriptionSaveBlock_ret(String arg0, CKSubscription arg1, NSError arg2);
+        void call_perSubscriptionSaveBlock_ret(@NotNull String arg0, @Nullable CKSubscription arg1,
+                @Nullable NSError arg2);
     }
 
     /**
@@ -272,13 +285,13 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerSubscriptionDeleteBlock:")
     public native void setPerSubscriptionDeleteBlock(
-            @ObjCBlock(name = "call_setPerSubscriptionDeleteBlock") Block_setPerSubscriptionDeleteBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerSubscriptionDeleteBlock") Block_setPerSubscriptionDeleteBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerSubscriptionDeleteBlock {
         @Generated
-        void call_setPerSubscriptionDeleteBlock(String arg0, NSError arg1);
+        void call_setPerSubscriptionDeleteBlock(@NotNull String arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -291,12 +304,13 @@ public class CKModifySubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerSubscriptionSaveBlock:")
     public native void setPerSubscriptionSaveBlock(
-            @ObjCBlock(name = "call_setPerSubscriptionSaveBlock") Block_setPerSubscriptionSaveBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerSubscriptionSaveBlock") Block_setPerSubscriptionSaveBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerSubscriptionSaveBlock {
         @Generated
-        void call_setPerSubscriptionSaveBlock(String arg0, CKSubscription arg1, NSError arg2);
+        void call_setPerSubscriptionSaveBlock(@NotNull String arg0, @Nullable CKSubscription arg1,
+                @Nullable NSError arg2);
     }
 }

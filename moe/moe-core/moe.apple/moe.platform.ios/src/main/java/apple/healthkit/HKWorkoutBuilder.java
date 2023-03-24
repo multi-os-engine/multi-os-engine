@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSUUID;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKWorkoutBuilder
@@ -71,14 +73,14 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("addMetadata:completion:")
-    public native void addMetadataCompletion(NSDictionary<String, ?> metadata,
-            @ObjCBlock(name = "call_addMetadataCompletion") Block_addMetadataCompletion completion);
+    public native void addMetadataCompletion(@NotNull NSDictionary<String, ?> metadata,
+            @NotNull @ObjCBlock(name = "call_addMetadataCompletion") Block_addMetadataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addMetadataCompletion {
         @Generated
-        void call_addMetadataCompletion(boolean success, NSError error);
+        void call_addMetadataCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -98,14 +100,14 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("addSamples:completion:")
-    public native void addSamplesCompletion(NSArray<? extends HKSample> samples,
-            @ObjCBlock(name = "call_addSamplesCompletion") Block_addSamplesCompletion completion);
+    public native void addSamplesCompletion(@NotNull NSArray<? extends HKSample> samples,
+            @NotNull @ObjCBlock(name = "call_addSamplesCompletion") Block_addSamplesCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addSamplesCompletion {
         @Generated
-        void call_addSamplesCompletion(boolean success, NSError error);
+        void call_addSamplesCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -123,14 +125,14 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("addWorkoutEvents:completion:")
-    public native void addWorkoutEventsCompletion(NSArray<? extends HKWorkoutEvent> workoutEvents,
-            @ObjCBlock(name = "call_addWorkoutEventsCompletion") Block_addWorkoutEventsCompletion completion);
+    public native void addWorkoutEventsCompletion(@NotNull NSArray<? extends HKWorkoutEvent> workoutEvents,
+            @NotNull @ObjCBlock(name = "call_addWorkoutEventsCompletion") Block_addWorkoutEventsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addWorkoutEventsCompletion {
         @Generated
-        void call_addWorkoutEventsCompletion(boolean success, NSError error);
+        void call_addWorkoutEventsCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
@@ -145,7 +147,7 @@ public class HKWorkoutBuilder extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * beginCollectionWithStartDate:error:
@@ -159,30 +161,33 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("beginCollectionWithStartDate:completion:")
-    public native void beginCollectionWithStartDateCompletion(NSDate startDate,
-            @ObjCBlock(name = "call_beginCollectionWithStartDateCompletion") Block_beginCollectionWithStartDateCompletion completion);
+    public native void beginCollectionWithStartDateCompletion(@NotNull NSDate startDate,
+            @NotNull @ObjCBlock(name = "call_beginCollectionWithStartDateCompletion") Block_beginCollectionWithStartDateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_beginCollectionWithStartDateCompletion {
         @Generated
-        void call_beginCollectionWithStartDateCompletion(boolean success, NSError error);
+        void call_beginCollectionWithStartDateCompletion(boolean success, @Nullable NSError error);
     }
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -200,6 +205,7 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * The HKDevice to be associated with the workout.
      */
+    @Nullable
     @Generated
     @Selector("device")
     public native HKDevice device();
@@ -223,7 +229,7 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("elapsedTimeAtDate:")
-    public native double elapsedTimeAtDate(NSDate date);
+    public native double elapsedTimeAtDate(@NotNull NSDate date);
 
     /**
      * endCollectionWithEndDate:error:
@@ -237,14 +243,14 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("endCollectionWithEndDate:completion:")
-    public native void endCollectionWithEndDateCompletion(NSDate endDate,
-            @ObjCBlock(name = "call_endCollectionWithEndDateCompletion") Block_endCollectionWithEndDateCompletion completion);
+    public native void endCollectionWithEndDateCompletion(@NotNull NSDate endDate,
+            @NotNull @ObjCBlock(name = "call_endCollectionWithEndDateCompletion") Block_endCollectionWithEndDateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_endCollectionWithEndDateCompletion {
         @Generated
-        void call_endCollectionWithEndDateCompletion(boolean success, NSError error);
+        void call_endCollectionWithEndDateCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -252,6 +258,7 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * The end date for the workout, as provided by endCollectionWithEndDate:completion:
      */
+    @Nullable
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -269,13 +276,13 @@ public class HKWorkoutBuilder extends NSObject {
     @Generated
     @Selector("finishWorkoutWithCompletion:")
     public native void finishWorkoutWithCompletion(
-            @ObjCBlock(name = "call_finishWorkoutWithCompletion") Block_finishWorkoutWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_finishWorkoutWithCompletion") Block_finishWorkoutWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_finishWorkoutWithCompletion {
         @Generated
-        void call_finishWorkoutWithCompletion(HKWorkout workout, NSError error);
+        void call_finishWorkoutWithCompletion(@Nullable HKWorkout workout, @Nullable NSError error);
     }
 
     @Generated
@@ -301,8 +308,8 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("initWithHealthStore:configuration:device:")
-    public native HKWorkoutBuilder initWithHealthStoreConfigurationDevice(HKHealthStore healthStore,
-            HKWorkoutConfiguration configuration, HKDevice device);
+    public native HKWorkoutBuilder initWithHealthStoreConfigurationDevice(@NotNull HKHealthStore healthStore,
+            @NotNull HKWorkoutConfiguration configuration, @Nullable HKDevice device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -321,15 +328,17 @@ public class HKWorkoutBuilder extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] metadata
      * 
      * The metadata that will be used when the workout is finished.
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSDictionary<String, ?> metadata();
@@ -357,9 +366,10 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * @param seriesType The series type for which the builder should be retrieved.
      */
+    @Nullable
     @Generated
     @Selector("seriesBuilderForType:")
-    public native HKSeriesBuilder seriesBuilderForType(HKSeriesType seriesType);
+    public native HKSeriesBuilder seriesBuilderForType(@NotNull HKSeriesType seriesType);
 
     @Generated
     @Selector("setVersion:")
@@ -370,6 +380,7 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * The start date for the workout, as provided by beginCollectionWithStartDate:completion:
      */
+    @Nullable
     @Generated
     @Selector("startDate")
     public native NSDate startDate();
@@ -382,9 +393,10 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * @param quantityType The quantity type to gather statistics about.
      */
+    @Nullable
     @Generated
     @Selector("statisticsForType:")
-    public native HKStatistics statisticsForType(HKQuantityType quantityType);
+    public native HKStatistics statisticsForType(@NotNull HKQuantityType quantityType);
 
     @Generated
     @Selector("superclass")
@@ -400,6 +412,7 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * The configuration for the workout being built.
      */
+    @NotNull
     @Generated
     @Selector("workoutConfiguration")
     public native HKWorkoutConfiguration workoutConfiguration();
@@ -412,6 +425,7 @@ public class HKWorkoutBuilder extends NSObject {
      * New events that are added using addWorkoutEvents:completion: will be appended to this array once the
      * completion is called.
      */
+    @NotNull
     @Generated
     @Selector("workoutEvents")
     public native NSArray<? extends HKWorkoutEvent> workoutEvents();
@@ -434,14 +448,14 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("addWorkoutActivity:completion:")
-    public native void addWorkoutActivityCompletion(HKWorkoutActivity workoutActivity,
-            @ObjCBlock(name = "call_addWorkoutActivityCompletion") Block_addWorkoutActivityCompletion completion);
+    public native void addWorkoutActivityCompletion(@NotNull HKWorkoutActivity workoutActivity,
+            @NotNull @ObjCBlock(name = "call_addWorkoutActivityCompletion") Block_addWorkoutActivityCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addWorkoutActivityCompletion {
         @Generated
-        void call_addWorkoutActivityCompletion(boolean success, NSError error);
+        void call_addWorkoutActivityCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -454,6 +468,7 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("allStatistics")
     public native NSDictionary<? extends HKQuantityType, ? extends HKStatistics> allStatistics();
@@ -478,14 +493,15 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("updateActivityWithUUID:addMedatata:completion:")
-    public native void updateActivityWithUUIDAddMedatataCompletion(NSUUID UUID, NSDictionary<String, ?> metadata,
-            @ObjCBlock(name = "call_updateActivityWithUUIDAddMedatataCompletion") Block_updateActivityWithUUIDAddMedatataCompletion completion);
+    public native void updateActivityWithUUIDAddMedatataCompletion(@NotNull NSUUID UUID,
+            @NotNull NSDictionary<String, ?> metadata,
+            @NotNull @ObjCBlock(name = "call_updateActivityWithUUIDAddMedatataCompletion") Block_updateActivityWithUUIDAddMedatataCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateActivityWithUUIDAddMedatataCompletion {
         @Generated
-        void call_updateActivityWithUUIDAddMedatataCompletion(boolean success, NSError error);
+        void call_updateActivityWithUUIDAddMedatataCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -505,14 +521,14 @@ public class HKWorkoutBuilder extends NSObject {
      */
     @Generated
     @Selector("updateActivityWithUUID:endDate:completion:")
-    public native void updateActivityWithUUIDEndDateCompletion(NSUUID UUID, NSDate endDate,
-            @ObjCBlock(name = "call_updateActivityWithUUIDEndDateCompletion") Block_updateActivityWithUUIDEndDateCompletion completion);
+    public native void updateActivityWithUUIDEndDateCompletion(@NotNull NSUUID UUID, @NotNull NSDate endDate,
+            @NotNull @ObjCBlock(name = "call_updateActivityWithUUIDEndDateCompletion") Block_updateActivityWithUUIDEndDateCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_updateActivityWithUUIDEndDateCompletion {
         @Generated
-        void call_updateActivityWithUUIDEndDateCompletion(boolean success, NSError error);
+        void call_updateActivityWithUUIDEndDateCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -525,6 +541,7 @@ public class HKWorkoutBuilder extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("workoutActivities")
     public native NSArray<? extends HKWorkoutActivity> workoutActivities();

@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An object that describes a piece of data and its associated name and uniform type identifier.
@@ -63,22 +65,25 @@ public class INFile extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,6 +92,7 @@ public class INFile extends NSObject implements NSSecureCoding {
      * The contents of the file.
      * If the file was created with a URL, accessing this property will memory map the file contents.
      */
+    @NotNull
     @Generated
     @Selector("data")
     public native NSData data();
@@ -106,22 +112,27 @@ public class INFile extends NSObject implements NSSecureCoding {
      * If the file was created elsewhere on the system, make sure to surround access to file contents
      * with `-[NSURL startAccessingSecurityScopedResource]` and `-[NSURL stopAccessingSecurityScopedResource]`.
      */
+    @Nullable
     @Generated
     @Selector("fileURL")
     public native NSURL fileURL();
 
+    @NotNull
     @Generated
     @Selector("fileWithData:filename:typeIdentifier:")
-    public static native INFile fileWithDataFilenameTypeIdentifier(NSData data, String filename, String typeIdentifier);
+    public static native INFile fileWithDataFilenameTypeIdentifier(@NotNull NSData data, @NotNull String filename,
+            @Nullable String typeIdentifier);
 
+    @NotNull
     @Generated
     @Selector("fileWithFileURL:filename:typeIdentifier:")
-    public static native INFile fileWithFileURLFilenameTypeIdentifier(NSURL fileURL, String filename,
-            String typeIdentifier);
+    public static native INFile fileWithFileURLFilenameTypeIdentifier(@NotNull NSURL fileURL, @Nullable String filename,
+            @Nullable String typeIdentifier);
 
     /**
      * The human-readable name of the file, which will be displayed to the user.
      */
+    @NotNull
     @Generated
     @Selector("filename")
     public native String filename();
@@ -152,9 +163,10 @@ public class INFile extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +186,7 @@ public class INFile extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setFilename:")
-    public native void setFilename(String value);
+    public native void setFilename(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -188,6 +200,7 @@ public class INFile extends NSObject implements NSSecureCoding {
      * The uniform type identifier of the file. (i.e. "public.json", "public.png", or any custom type)
      * More information about uniform type identifiers can be found in <CoreServices/UTCoreTypes.h>
      */
+    @Nullable
     @Generated
     @Selector("typeIdentifier")
     public native String typeIdentifier();
@@ -199,11 +212,11 @@ public class INFile extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INFile initWithCoder(NSCoder coder);
+    public native INFile initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("supportsSecureCoding")

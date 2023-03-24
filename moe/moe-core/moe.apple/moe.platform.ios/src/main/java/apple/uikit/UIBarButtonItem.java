@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.uikit.protocol.UIPopoverPresentationControllerSourceItem;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -81,55 +83,65 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("allocWithZone:")
     public static native UIBarButtonItem allocWithZone(VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UIBarButtonItem appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UIBarButtonItem appearanceForTraitCollection(UITraitCollection trait);
+    public static native UIBarButtonItem appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UIBarButtonItem appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIBarButtonItem appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UIBarButtonItem appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UIBarButtonItem appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIBarButtonItem appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UIBarButtonItem appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -164,9 +176,10 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -197,54 +210,62 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * default is NULL
      */
+    @Nullable
     @Generated
     @Selector("action")
     public native SEL action();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UIBarButtonItem _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UIBarButtonItem _appearanceForTraitCollection(UITraitCollection trait) {
+    public UIBarButtonItem _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UIBarButtonItem _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIBarButtonItem _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UIBarButtonItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UIBarButtonItem _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public UIBarButtonItem _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIBarButtonItem _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UIBarButtonItem _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("backButtonBackgroundImageForState:barMetrics:")
     public native UIImage backButtonBackgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
@@ -268,6 +289,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImageForState:barMetrics:")
     public native UIImage backgroundImageForStateBarMetrics(@NUInt long state, @NInt long barMetrics);
@@ -275,6 +297,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImageForState:style:barMetrics:")
     public native UIImage backgroundImageForStateStyleBarMetrics(@NUInt long state, @NInt long style,
@@ -294,6 +317,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("buttonGroup")
     public native UIBarButtonItemGroup buttonGroup();
@@ -301,13 +325,14 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("customView")
     public native UIView customView();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -316,15 +341,15 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Generated
     @Selector("initWithBarButtonSystemItem:target:action:")
     public native UIBarButtonItem initWithBarButtonSystemItemTargetAction(@NInt long systemItem,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarButtonItem initWithCoder(NSCoder coder);
+    public native UIBarButtonItem initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCustomView:")
-    public native UIBarButtonItem initWithCustomView(UIView customView);
+    public native UIBarButtonItem initWithCustomView(@NotNull UIView customView);
 
     /**
      * landscapeImagePhone will be used for the bar button image when the bar has Compact or Condensed bar metrics.
@@ -333,22 +358,24 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithImage:landscapeImagePhone:style:target:action:")
-    public native UIBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(UIImage image,
-            UIImage landscapeImagePhone, @NInt long style, @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native UIBarButtonItem initWithImageLandscapeImagePhoneStyleTargetAction(@Nullable UIImage image,
+            @Nullable UIImage landscapeImagePhone, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Generated
     @Selector("initWithImage:style:target:action:")
-    public native UIBarButtonItem initWithImageStyleTargetAction(UIImage image, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native UIBarButtonItem initWithImageStyleTargetAction(@Nullable UIImage image, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     @Generated
     @Selector("initWithTitle:style:target:action:")
-    public native UIBarButtonItem initWithTitleStyleTargetAction(String title, @NInt long style,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action);
+    public native UIBarButtonItem initWithTitleStyleTargetAction(@Nullable String title, @NInt long style,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action);
 
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("possibleTitles")
     public native NSSet<String> possibleTitles();
@@ -358,7 +385,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setAction:")
-    public native void setAction(SEL value);
+    public native void setAction(@Nullable SEL value);
 
     /**
      * The remaining appearance modifiers apply solely to UINavigationBar back buttons and are ignored by other buttons.
@@ -368,8 +395,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setBackButtonBackgroundImage:forState:barMetrics:")
-    public native void setBackButtonBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
-            @NInt long barMetrics);
+    public native void setBackButtonBackgroundImageForStateBarMetrics(@Nullable UIImage backgroundImage,
+            @NUInt long state, @NInt long barMetrics);
 
     /**
      * For adjusting the vertical centering of bordered bar buttons within the bar
@@ -402,7 +429,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setBackgroundImage:forState:barMetrics:")
-    public native void setBackgroundImageForStateBarMetrics(UIImage backgroundImage, @NUInt long state,
+    public native void setBackgroundImageForStateBarMetrics(@Nullable UIImage backgroundImage, @NUInt long state,
             @NInt long barMetrics);
 
     /**
@@ -414,7 +441,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setBackgroundImage:forState:style:barMetrics:")
-    public native void setBackgroundImageForStateStyleBarMetrics(UIImage backgroundImage, @NUInt long state,
+    public native void setBackgroundImageForStateStyleBarMetrics(@Nullable UIImage backgroundImage, @NUInt long state,
             @NInt long style, @NInt long barMetrics);
 
     /**
@@ -432,14 +459,14 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setCustomView:")
-    public native void setCustomView(UIView value);
+    public native void setCustomView(@Nullable UIView value);
 
     /**
      * default is nil
      */
     @Generated
     @Selector("setPossibleTitles:")
-    public native void setPossibleTitles(NSSet<String> value);
+    public native void setPossibleTitles(@Nullable NSSet<String> value);
 
     /**
      * default is UIBarButtonItemStylePlain
@@ -453,13 +480,13 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setTarget:")
-    public native void setTarget_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setTarget_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * default is nil
      */
     @Generated
-    public void setTarget(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = target();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -475,7 +502,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setTintColor:")
-    public native void setTintColor(UIColor value);
+    public native void setTintColor(@Nullable UIColor value);
 
     /**
      * For adjusting the position of a title (if any) within a bordered bar button
@@ -504,6 +531,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * default is nil
      */
+    @Nullable
     @Generated
     @Selector("target")
     @MappedReturn(ObjCObjectMapper.class)
@@ -512,6 +540,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("tintColor")
     public native UIColor tintColor();
@@ -545,6 +574,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("fixedSpaceItemOfWidth:")
     public static native UIBarButtonItem fixedSpaceItemOfWidth(@NFloat double width);
@@ -554,6 +584,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("flexibleSpaceItem")
     public static native UIBarButtonItem flexibleSpaceItem();
@@ -566,7 +597,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithBarButtonSystemItem:menu:")
-    public native UIBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, UIMenu menu);
+    public native UIBarButtonItem initWithBarButtonSystemItemMenu(@NInt long systemItem, @Nullable UIMenu menu);
 
     /**
      * Creates a bar button item for the given systemItem. The primaryAction is copied, and its title & image are
@@ -577,7 +608,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Generated
     @Selector("initWithBarButtonSystemItem:primaryAction:")
     public native UIBarButtonItem initWithBarButtonSystemItemPrimaryAction(@NInt long systemItem,
-            UIAction primaryAction);
+            @Nullable UIAction primaryAction);
 
     /**
      * Creates a plain-style bar button item with the given image. The constructed item will present the menu
@@ -587,7 +618,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithImage:menu:")
-    public native UIBarButtonItem initWithImageMenu(UIImage image, UIMenu menu);
+    public native UIBarButtonItem initWithImageMenu(@Nullable UIImage image, @Nullable UIMenu menu);
 
     /**
      * Creates a plain-style bar button item from the properties of primaryAction. primaryAction is copied.
@@ -596,7 +627,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithPrimaryAction:")
-    public native UIBarButtonItem initWithPrimaryAction(UIAction primaryAction);
+    public native UIBarButtonItem initWithPrimaryAction(@Nullable UIAction primaryAction);
 
     /**
      * Creates a plain-style bar button item with the given title. The constructed item will present the menu
@@ -606,7 +637,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithTitle:menu:")
-    public native UIBarButtonItem initWithTitleMenu(String title, UIMenu menu);
+    public native UIBarButtonItem initWithTitleMenu(@Nullable String title, @Nullable UIMenu menu);
 
     /**
      * When non-nil the menu is presented, the gesture used to trigger the menu is based on if the bar button item would
@@ -614,6 +645,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("menu")
     public native UIMenu menu();
@@ -625,6 +657,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("primaryAction")
     public native UIAction primaryAction();
@@ -637,7 +670,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setMenu:")
-    public native void setMenu(UIMenu value);
+    public native void setMenu(@Nullable UIMenu value);
 
     /**
      * Set the primaryAction on this item, updating the title & image of the item if appropriate (primaryAction is
@@ -648,7 +681,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setPrimaryAction:")
-    public native void setPrimaryAction(UIAction value);
+    public native void setPrimaryAction(@Nullable UIAction value);
 
     /**
      * Indicates if the button changes selection as its primary action.
@@ -694,6 +727,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("creatingFixedGroup")
     public native UIBarButtonItemGroup creatingFixedGroup();
@@ -704,9 +738,11 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("creatingMovableGroupWithCustomizationIdentifier:")
-    public native UIBarButtonItemGroup creatingMovableGroupWithCustomizationIdentifier(String customizationIdentifier);
+    public native UIBarButtonItemGroup creatingMovableGroupWithCustomizationIdentifier(
+            @NotNull String customizationIdentifier);
 
     /**
      * Create an optional group containing this bar button item. UIBarButtonItems may only be in a single
@@ -714,10 +750,11 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("creatingOptionalGroupWithCustomizationIdentifier:inDefaultCustomization:")
     public native UIBarButtonItemGroup creatingOptionalGroupWithCustomizationIdentifierInDefaultCustomization(
-            String customizationIdentifier, boolean inDefaultCustomization);
+            @NotNull String customizationIdentifier, boolean inDefaultCustomization);
 
     /**
      * Creates a bar button item for the given systemItem. The primaryAction is copied, and its title & image are
@@ -728,7 +765,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
     @Generated
     @Selector("initWithBarButtonSystemItem:primaryAction:menu:")
     public native UIBarButtonItem initWithBarButtonSystemItemPrimaryActionMenu(@NInt long systemItem,
-            UIAction primaryAction, UIMenu menu);
+            @Nullable UIAction primaryAction, @Nullable UIMenu menu);
 
     /**
      * Creates a plain-style bar button item from the properties of primaryAction. primaryAction is copied.
@@ -737,7 +774,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithPrimaryAction:menu:")
-    public native UIBarButtonItem initWithPrimaryActionMenu(UIAction primaryAction, UIMenu menu);
+    public native UIBarButtonItem initWithPrimaryActionMenu(@Nullable UIAction primaryAction, @Nullable UIMenu menu);
 
     /**
      * Creates a plain-style bar button item with the given title and image.
@@ -746,8 +783,8 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("initWithTitle:image:target:action:menu:")
-    public native UIBarButtonItem initWithTitleImageTargetActionMenu(String title, UIImage image,
-            @Mapped(ObjCObjectMapper.class) Object target, SEL action, UIMenu menu);
+    public native UIBarButtonItem initWithTitleImageTargetActionMenu(@Nullable String title, @Nullable UIImage image,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target, @Nullable SEL action, @Nullable UIMenu menu);
 
     /**
      * If the item should be hidden from display.
@@ -763,6 +800,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("menuRepresentation")
     public native UIMenuElement menuRepresentation();
@@ -793,7 +831,7 @@ public class UIBarButtonItem extends UIBarItem implements NSCoding, UISpringLoad
      */
     @Generated
     @Selector("setMenuRepresentation:")
-    public native void setMenuRepresentation(UIMenuElement value);
+    public native void setMenuRepresentation(@Nullable UIMenuElement value);
 
     /**
      * Preferred menu element ordering strategy for menus displayed by this button.

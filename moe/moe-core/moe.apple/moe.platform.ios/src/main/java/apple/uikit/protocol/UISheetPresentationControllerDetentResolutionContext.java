@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A context used for resolving custom UISheetPresentationControllerDetent values.
@@ -23,6 +24,7 @@ public interface UISheetPresentationControllerDetentResolutionContext {
      * The trait collection of the sheet's containerView. Effectively the same as the window's traitCollection, and does
      * not include overrides from the sheet's overrideTraitCollection.
      */
+    @NotNull
     @Generated
     @Selector("containerTraitCollection")
     UITraitCollection containerTraitCollection();

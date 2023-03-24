@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol for classes that act as a factory to find a restorable object during state restoration
@@ -37,9 +39,11 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIObjectRestoration")
 public interface UIObjectRestoration {
+    @Nullable
     @Generated
     @Selector("objectWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("objectWithRestorationIdentifierPathCoder")
     @MappedReturn(ObjCObjectMapper.class)
-    UIStateRestoring _objectWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents, NSCoder coder);
+    UIStateRestoring _objectWithRestorationIdentifierPathCoder(@NotNull NSArray<String> identifierComponents,
+            @NotNull NSCoder coder);
 }

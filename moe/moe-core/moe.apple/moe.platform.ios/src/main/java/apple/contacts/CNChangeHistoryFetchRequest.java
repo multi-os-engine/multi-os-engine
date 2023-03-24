@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Specifies the criteria to fetch change history.
@@ -63,6 +65,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * [@c] CNContactIdentifierKey will always be fetched, whether you
      * request it or not.
      */
+    @Nullable
     @Generated
     @Selector("additionalContactKeyDescriptors")
     public native NSArray<?> additionalContactKeyDescriptors();
@@ -79,22 +82,25 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -109,7 +115,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Exclude changes made by certain authors.
@@ -118,6 +124,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * from the results. Use this, in conjunction with @c CNSaveRequest.transactionAuthor,
      * to suppress processing of changes you already know about.
      */
+    @Nullable
     @Generated
     @Selector("excludedTransactionAuthors")
     public native NSArray<String> excludedTransactionAuthors();
@@ -140,7 +147,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNChangeHistoryFetchRequest initWithCoder(NSCoder coder);
+    public native CNChangeHistoryFetchRequest initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -159,9 +166,10 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * To return mutable contacts and groups.
@@ -197,7 +205,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      */
     @Generated
     @Selector("setAdditionalContactKeyDescriptors:")
-    public native void setAdditionalContactKeyDescriptors(NSArray<?> value);
+    public native void setAdditionalContactKeyDescriptors(@Nullable NSArray<?> value);
 
     /**
      * Exclude changes made by certain authors.
@@ -208,7 +216,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      */
     @Generated
     @Selector("setExcludedTransactionAuthors:")
-    public native void setExcludedTransactionAuthors(NSArray<String> value);
+    public native void setExcludedTransactionAuthors(@Nullable NSArray<String> value);
 
     /**
      * Set to @c YES to also fetch group changes. Default is @c NO.
@@ -248,7 +256,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      */
     @Generated
     @Selector("setStartingToken:")
-    public native void setStartingToken(NSData value);
+    public native void setStartingToken(@Nullable NSData value);
 
     @Generated
     @Selector("setVersion:")
@@ -274,6 +282,7 @@ public class CNChangeHistoryFetchRequest extends CNFetchRequest implements NSSec
      * If nil, a @c CNChangeHistoryDropEverythingEvent will be returned, followed by an add event
      * for every contact and group currently in the contacts database.
      */
+    @Nullable
     @Generated
     @Selector("startingToken")
     public native NSData startingToken();

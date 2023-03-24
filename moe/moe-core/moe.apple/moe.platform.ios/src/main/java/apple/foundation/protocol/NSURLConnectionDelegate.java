@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] NSURLConnectionDelegate
@@ -84,8 +85,8 @@ public interface NSURLConnectionDelegate {
     @IsOptional
     @Deprecated
     @Selector("connection:canAuthenticateAgainstProtectionSpace:")
-    default boolean connectionCanAuthenticateAgainstProtectionSpace(NSURLConnection connection,
-            NSURLProtectionSpace protectionSpace) {
+    default boolean connectionCanAuthenticateAgainstProtectionSpace(@NotNull NSURLConnection connection,
+            @NotNull NSURLProtectionSpace protectionSpace) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,15 +99,15 @@ public interface NSURLConnectionDelegate {
     @IsOptional
     @Deprecated
     @Selector("connection:didCancelAuthenticationChallenge:")
-    default void connectionDidCancelAuthenticationChallenge(NSURLConnection connection,
-            NSURLAuthenticationChallenge challenge) {
+    default void connectionDidCancelAuthenticationChallenge(@NotNull NSURLConnection connection,
+            @NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connection:didFailWithError:")
-    default void connectionDidFailWithError(NSURLConnection connection, NSError error) {
+    default void connectionDidFailWithError(@NotNull NSURLConnection connection, @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,23 +120,23 @@ public interface NSURLConnectionDelegate {
     @IsOptional
     @Deprecated
     @Selector("connection:didReceiveAuthenticationChallenge:")
-    default void connectionDidReceiveAuthenticationChallenge(NSURLConnection connection,
-            NSURLAuthenticationChallenge challenge) {
+    default void connectionDidReceiveAuthenticationChallenge(@NotNull NSURLConnection connection,
+            @NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connection:willSendRequestForAuthenticationChallenge:")
-    default void connectionWillSendRequestForAuthenticationChallenge(NSURLConnection connection,
-            NSURLAuthenticationChallenge challenge) {
+    default void connectionWillSendRequestForAuthenticationChallenge(@NotNull NSURLConnection connection,
+            @NotNull NSURLAuthenticationChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connectionShouldUseCredentialStorage:")
-    default boolean connectionShouldUseCredentialStorage(NSURLConnection connection) {
+    default boolean connectionShouldUseCredentialStorage(@NotNull NSURLConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

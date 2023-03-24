@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -30,7 +32,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:didAddNode:forAnchor:")
-    default void viewDidAddNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewDidAddNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -44,7 +46,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:didRemoveNode:forAnchor:")
-    default void viewDidRemoveNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewDidRemoveNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +60,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:didUpdateNode:forAnchor:")
-    default void viewDidUpdateNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewDidUpdateNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,10 +75,11 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
      * @param anchor The added anchor.
      * @return Node that will be mapped to the anchor or nil.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("view:nodeForAnchor:")
-    default SKNode viewNodeForAnchor(ARSKView view, ARAnchor anchor) {
+    default SKNode viewNodeForAnchor(@NotNull ARSKView view, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,7 +93,7 @@ public interface ARSKViewDelegate extends SKViewDelegate, ARSessionObserver {
     @Generated
     @IsOptional
     @Selector("view:willUpdateNode:forAnchor:")
-    default void viewWillUpdateNodeForAnchor(ARSKView view, SKNode node, ARAnchor anchor) {
+    default void viewWillUpdateNodeForAnchor(@NotNull ARSKView view, @NotNull SKNode node, @NotNull ARAnchor anchor) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

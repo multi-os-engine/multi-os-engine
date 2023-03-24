@@ -23,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.ConstIntPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -97,27 +98,30 @@ public final class BNNSActivation extends StructObject {
     @StructureField(order = 5, isGetter = false)
     public native void setIshift(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 6, isGetter = true)
     public native ConstIntPtr iscale_per_channel();
 
     @Generated
     @StructureField(order = 6, isGetter = false)
-    public native void setIscale_per_channel(ConstIntPtr value);
+    public native void setIscale_per_channel(@Nullable ConstIntPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 7, isGetter = true)
     public native ConstIntPtr ioffset_per_channel();
 
     @Generated
     @StructureField(order = 7, isGetter = false)
-    public native void setIoffset_per_channel(ConstIntPtr value);
+    public native void setIoffset_per_channel(@Nullable ConstIntPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 8, isGetter = true)
     public native ConstIntPtr ishift_per_channel();
 
     @Generated
     @StructureField(order = 8, isGetter = false)
-    public native void setIshift_per_channel(ConstIntPtr value);
+    public native void setIshift_per_channel(@Nullable ConstIntPtr value);
 }

@@ -48,6 +48,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNKernel
@@ -131,22 +133,25 @@ public class MPSCNNKernel extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -181,9 +186,10 @@ public class MPSCNNKernel extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -287,8 +293,8 @@ public class MPSCNNKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationImage:")
     public native void encodeToCommandBufferSourceImageDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSImage destinationImage);
 
     @Generated
     @Selector("init")
@@ -304,7 +310,7 @@ public class MPSCNNKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * [@property] offset
@@ -403,6 +409,7 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("destinationImageAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -432,14 +439,15 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:")
     public native MPSImage encodeToCommandBufferSourceImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage);
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNKernel initWithCoder(NSCoder aDecoder);
+    public native MPSCNNKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -458,7 +466,8 @@ public class MPSCNNKernel extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNKernel initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNKernel initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * [@property] isBackwards
@@ -526,6 +535,7 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("padding")
     @MappedReturn(ObjCObjectMapper.class)
@@ -540,7 +550,7 @@ public class MPSCNNKernel extends MPSKernel {
      */
     @Generated
     @Selector("setDestinationImageAllocator:")
-    public native void setDestinationImageAllocator(@Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
+    public native void setDestinationImageAllocator(@NotNull @Mapped(ObjCObjectMapper.class) MPSImageAllocator value);
 
     /**
      * [@property] padding
@@ -555,7 +565,7 @@ public class MPSCNNKernel extends MPSKernel {
      */
     @Generated
     @Selector("setPadding:")
-    public native void setPadding(@Mapped(ObjCObjectMapper.class) MPSNNPadding value);
+    public native void setPadding(@NotNull @Mapped(ObjCObjectMapper.class) MPSNNPadding value);
 
     /**
      * [@property] strideInPixelsX
@@ -715,10 +725,11 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("destinationImageDescriptorForSourceImages:sourceStates:")
     public native MPSImageDescriptor destinationImageDescriptorForSourceImagesSourceStates(
-            NSArray<? extends MPSImage> sourceImages, NSArray<? extends MPSState> sourceStates);
+            @NotNull NSArray<? extends MPSImage> sourceImages, @Nullable NSArray<? extends MPSState> sourceStates);
 
     /**
      * [@property] dilationRateX
@@ -757,8 +768,8 @@ public class MPSCNNKernel extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationImage:")
     public native void encodeToCommandBufferSourceImageDestinationStateDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            MPSState destinationState, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull MPSState destinationState, @NotNull MPSImage destinationImage);
 
     /**
      * Encode a MPSCNNKernel into a command Buffer. Create a texture and state to hold the results and return them.
@@ -785,11 +796,12 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      *         API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceImage:destinationState:destinationStateIsTemporary:")
     public native MPSImage encodeToCommandBufferSourceImageDestinationStateDestinationStateIsTemporary(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outState, boolean isTemporary);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @NotNull @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outState, boolean isTemporary);
 
     /**
      * The size of extra MPS heap storage allocated while the kernel is encoding
@@ -804,8 +816,8 @@ public class MPSCNNKernel extends MPSKernel {
     @Generated
     @Selector("encodingStorageSizeForSourceImage:sourceStates:destinationImage:")
     @NUInt
-    public native long encodingStorageSizeForSourceImageSourceStatesDestinationImage(MPSImage sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+    public native long encodingStorageSizeForSourceImageSourceStatesDestinationImage(@NotNull MPSImage sourceImage,
+            @Nullable NSArray<? extends MPSState> sourceStates, @Nullable MPSImage destinationImage);
 
     /**
      * Returns YES if the same state is used for every operation in a batch
@@ -896,10 +908,11 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      *         API-Since: 11.3
      */
+    @Nullable
     @Generated
     @Selector("resultStateForSourceImage:sourceStates:destinationImage:")
-    public native MPSState resultStateForSourceImageSourceStatesDestinationImage(MPSImage sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+    public native MPSState resultStateForSourceImageSourceStatesDestinationImage(@NotNull MPSImage sourceImage,
+            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
 
     /**
      * [@property] sourceFeatureChannelMaxCount
@@ -1045,9 +1058,10 @@ public class MPSCNNKernel extends MPSKernel {
      * 
      *         API-Since: 11.3
      */
+    @Nullable
     @Generated
     @Selector("temporaryResultStateForCommandBuffer:sourceImage:sourceStates:destinationImage:")
     public native MPSState temporaryResultStateForCommandBufferSourceImageSourceStatesDestinationImage(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceImage,
-            NSArray<? extends MPSState> sourceStates, MPSImage destinationImage);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceImage,
+            @Nullable NSArray<? extends MPSState> sourceStates, @NotNull MPSImage destinationImage);
 }

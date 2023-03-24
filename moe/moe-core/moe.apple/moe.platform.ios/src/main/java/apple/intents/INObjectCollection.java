@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -48,6 +50,7 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("accessInstanceVariablesDirectly")
     public static native boolean accessInstanceVariablesDirectly();
 
+    @NotNull
     @Generated
     @Selector("allItems")
     public native NSArray<_ObjectType> allItems();
@@ -64,31 +67,35 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -100,7 +107,7 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -113,15 +120,16 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native INObjectCollection<?> initWithCoder(NSCoder coder);
+    public native INObjectCollection<?> initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithItems:")
-    public native INObjectCollection<?> initWithItems(NSArray<_ObjectType> items);
+    public native INObjectCollection<?> initWithItems(@NotNull NSArray<_ObjectType> items);
 
     @Generated
     @Selector("initWithSections:")
-    public native INObjectCollection<?> initWithSections(NSArray<? extends INObjectSection<_ObjectType>> sections);
+    public native INObjectCollection<?> initWithSections(
+            @NotNull NSArray<? extends INObjectSection<_ObjectType>> sections);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -140,9 +148,10 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +166,7 @@ public class INObjectCollection<_ObjectType> extends NSObject implements NSCopyi
     @Selector("resolveInstanceMethod:")
     public static native boolean resolveInstanceMethod(SEL sel);
 
+    @NotNull
     @Generated
     @Selector("sections")
     public native NSArray<? extends INObjectSection<_ObjectType>> sections();

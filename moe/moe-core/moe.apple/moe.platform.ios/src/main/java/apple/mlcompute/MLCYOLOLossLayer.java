@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCYOLOLossLayer
@@ -59,44 +61,51 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
     public static native MLCYOLOLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
             int reductionType, float labelSmoothing, @NUInt long classCount, float weight);
 
+    @NotNull
     @Generated
     @Selector("categoricalCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
     public static native MLCYOLOLossLayer categoricalCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
-            int reductionType, float labelSmoothing, @NUInt long classCount, MLCTensor weights);
+            int reductionType, float labelSmoothing, @NUInt long classCount, @Nullable MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer cosineDistanceLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @NotNull
     @Generated
     @Selector("cosineDistanceLossWithReductionType:weights:")
     public static native MLCYOLOLossLayer cosineDistanceLossWithReductionTypeWeights(int reductionType,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     @Generated
     @Selector("debugDescription")
@@ -111,23 +120,28 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer hingeLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @NotNull
     @Generated
     @Selector("hingeLossWithReductionType:weights:")
-    public static native MLCYOLOLossLayer hingeLossWithReductionTypeWeights(int reductionType, MLCTensor weights);
+    public static native MLCYOLOLossLayer hingeLossWithReductionTypeWeights(int reductionType,
+            @Nullable MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weight:")
     public static native MLCYOLOLossLayer huberLossWithReductionTypeDeltaWeight(int reductionType, float delta,
             float weight);
 
+    @NotNull
     @Generated
     @Selector("huberLossWithReductionType:delta:weights:")
     public static native MLCYOLOLossLayer huberLossWithReductionTypeDeltaWeights(int reductionType, float delta,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     @Generated
     @Selector("init")
@@ -150,9 +164,10 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Create a YOLO loss layer
@@ -162,40 +177,46 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
      */
     @Generated
     @Selector("layerWithDescriptor:")
-    public static native MLCYOLOLossLayer layerWithDescriptor(MLCYOLOLossDescriptor lossDescriptor);
+    public static native MLCYOLOLossLayer layerWithDescriptor(@NotNull MLCYOLOLossDescriptor lossDescriptor);
 
     @Generated
     @Selector("layerWithDescriptor:weights:")
-    public static native MLCYOLOLossLayer layerWithDescriptorWeights(MLCLossDescriptor lossDescriptor,
-            MLCTensor weights);
+    public static native MLCYOLOLossLayer layerWithDescriptorWeights(@NotNull MLCLossDescriptor lossDescriptor,
+            @NotNull MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weight:")
     public static native MLCYOLOLossLayer logLossWithReductionTypeEpsilonWeight(int reductionType, float epsilon,
             float weight);
 
+    @NotNull
     @Generated
     @Selector("logLossWithReductionType:epsilon:weights:")
     public static native MLCYOLOLossLayer logLossWithReductionTypeEpsilonWeights(int reductionType, float epsilon,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer meanAbsoluteErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @NotNull
     @Generated
     @Selector("meanAbsoluteErrorLossWithReductionType:weights:")
     public static native MLCYOLOLossLayer meanAbsoluteErrorLossWithReductionTypeWeights(int reductionType,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weight:")
     public static native MLCYOLOLossLayer meanSquaredErrorLossWithReductionTypeWeight(int reductionType, float weight);
 
+    @NotNull
     @Generated
     @Selector("meanSquaredErrorLossWithReductionType:weights:")
     public static native MLCYOLOLossLayer meanSquaredErrorLossWithReductionTypeWeights(int reductionType,
-            MLCTensor weights);
+            @Nullable MLCTensor weights);
 
     @Generated
     @Owned
@@ -214,25 +235,29 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weight:")
     public static native MLCYOLOLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeight(
             int reductionType, float labelSmoothing, float weight);
 
+    @NotNull
     @Generated
     @Selector("sigmoidCrossEntropyLossWithReductionType:labelSmoothing:weights:")
     public static native MLCYOLOLossLayer sigmoidCrossEntropyLossWithReductionTypeLabelSmoothingWeights(
-            int reductionType, float labelSmoothing, MLCTensor weights);
+            int reductionType, float labelSmoothing, @Nullable MLCTensor weights);
 
+    @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weight:")
     public static native MLCYOLOLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeight(
             int reductionType, float labelSmoothing, @NUInt long classCount, float weight);
 
+    @NotNull
     @Generated
     @Selector("softmaxCrossEntropyLossWithReductionType:labelSmoothing:classCount:weights:")
     public static native MLCYOLOLossLayer softmaxCrossEntropyLossWithReductionTypeLabelSmoothingClassCountWeights(
-            int reductionType, float labelSmoothing, @NUInt long classCount, MLCTensor weights);
+            int reductionType, float labelSmoothing, @NUInt long classCount, @Nullable MLCTensor weights);
 
     @Generated
     @Selector("superclass")
@@ -240,7 +265,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")
@@ -252,6 +277,7 @@ public class MLCYOLOLossLayer extends MLCLossLayer {
      * 
      * The YOLO loss descriptor
      */
+    @NotNull
     @Generated
     @Selector("yoloLossDescriptor")
     public native MLCYOLOLossDescriptor yoloLossDescriptor();

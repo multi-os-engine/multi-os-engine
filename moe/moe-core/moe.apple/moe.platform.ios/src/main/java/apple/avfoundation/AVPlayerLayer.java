@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corevideo.opaque.CVBufferRef;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -81,22 +83,25 @@ public class AVPlayerLayer extends CALayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,15 +110,17 @@ public class AVPlayerLayer extends CALayer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @Nullable
     @Generated
     @Selector("defaultActionForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native CAAction defaultActionForKey(String event);
+    public static native CAAction defaultActionForKey(@NotNull String event);
 
+    @Nullable
     @Generated
     @Selector("defaultValueForKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public static native Object defaultValueForKey(String key);
+    public static native Object defaultValueForKey(@NotNull String key);
 
     @Generated
     @Selector("description")
@@ -141,9 +148,10 @@ public class AVPlayerLayer extends CALayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layer")
@@ -151,7 +159,7 @@ public class AVPlayerLayer extends CALayer {
 
     @Generated
     @Selector("needsDisplayForKey:")
-    public static native boolean needsDisplayForKey(String key);
+    public static native boolean needsDisplayForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,9 +173,10 @@ public class AVPlayerLayer extends CALayer {
      * 
      * @return An instance of AVPlayerLayer.
      */
+    @NotNull
     @Generated
     @Selector("playerLayerWithPlayer:")
-    public static native AVPlayerLayer playerLayerWithPlayer(AVPlayer player);
+    public static native AVPlayerLayer playerLayerWithPlayer(@Nullable AVPlayer player);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -196,11 +205,11 @@ public class AVPlayerLayer extends CALayer {
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVPlayerLayer initWithCoder(NSCoder coder);
+    public native AVPlayerLayer initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithLayer:")
-    public native AVPlayerLayer initWithLayer(@Mapped(ObjCObjectMapper.class) Object layer);
+    public native AVPlayerLayer initWithLayer(@NotNull @Mapped(ObjCObjectMapper.class) Object layer);
 
     /**
      * [@property] readyForDisplay
@@ -228,6 +237,7 @@ public class AVPlayerLayer extends CALayer {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("pixelBufferAttributes")
     public native NSDictionary<String, ?> pixelBufferAttributes();
@@ -237,6 +247,7 @@ public class AVPlayerLayer extends CALayer {
      * 
      * Indicates the instance of AVPlayer for which the AVPlayerLayer displays visual output
      */
+    @Nullable
     @Generated
     @Selector("player")
     public native AVPlayer player();
@@ -253,7 +264,7 @@ public class AVPlayerLayer extends CALayer {
      */
     @Generated
     @Selector("setPixelBufferAttributes:")
-    public native void setPixelBufferAttributes(NSDictionary<String, ?> value);
+    public native void setPixelBufferAttributes(@Nullable NSDictionary<String, ?> value);
 
     /**
      * [@property] player
@@ -262,7 +273,7 @@ public class AVPlayerLayer extends CALayer {
      */
     @Generated
     @Selector("setPlayer:")
-    public native void setPlayer(AVPlayer value);
+    public native void setPlayer(@Nullable AVPlayer value);
 
     /**
      * [@property] videoGravity
@@ -274,7 +285,7 @@ public class AVPlayerLayer extends CALayer {
      */
     @Generated
     @Selector("setVideoGravity:")
-    public native void setVideoGravity(String value);
+    public native void setVideoGravity(@NotNull String value);
 
     /**
      * [@property] videoGravity
@@ -284,6 +295,7 @@ public class AVPlayerLayer extends CALayer {
      * and AVLayerVideoGravityResize. AVLayerVideoGravityResizeAspect is default.
      * See <AVFoundation/AVAnimation.h> for a description of these options.
      */
+    @NotNull
     @Generated
     @Selector("videoGravity")
     public native String videoGravity();
@@ -313,7 +325,7 @@ public class AVPlayerLayer extends CALayer {
     @Generated
     @Selector("cornerCurveExpansionFactor:")
     @NFloat
-    public static native double cornerCurveExpansionFactor(String curve);
+    public static native double cornerCurveExpansionFactor(@NotNull String curve);
 
     /**
      * copyDisplayedPixelBuffer
@@ -329,6 +341,7 @@ public class AVPlayerLayer extends CALayer {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("copyDisplayedPixelBuffer")
     public native CVBufferRef copyDisplayedPixelBuffer();

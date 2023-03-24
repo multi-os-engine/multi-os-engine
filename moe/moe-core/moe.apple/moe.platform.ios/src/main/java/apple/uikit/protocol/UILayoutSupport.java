@@ -25,6 +25,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -34,6 +35,7 @@ public interface UILayoutSupport {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("bottomAnchor")
     NSLayoutYAxisAnchor bottomAnchor();
@@ -41,6 +43,7 @@ public interface UILayoutSupport {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("heightAnchor")
     NSLayoutDimension heightAnchor();
@@ -59,6 +62,7 @@ public interface UILayoutSupport {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("topAnchor")
     NSLayoutYAxisAnchor topAnchor();

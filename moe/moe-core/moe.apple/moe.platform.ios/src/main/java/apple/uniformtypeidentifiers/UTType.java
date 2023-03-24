@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * \brief A class representing a type in a type hierarchy.
@@ -76,22 +78,25 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,13 +118,14 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("conformsToType:")
-    public native boolean conformsToType(UTType type);
+    public native boolean conformsToType(@NotNull UTType type);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -131,7 +137,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * \brief Gets an active \c UTType corresponding to a type that is declared as
@@ -164,9 +170,10 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("exportedTypeWithIdentifier:")
-    public static native UTType exportedTypeWithIdentifier(String identifier);
+    public static native UTType exportedTypeWithIdentifier(@NotNull String identifier);
 
     /**
      * \brief Gets an active \c UTType corresponding to a type that is declared as
@@ -199,9 +206,11 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("exportedTypeWithIdentifier:conformingToType:")
-    public static native UTType exportedTypeWithIdentifierConformingToType(String identifier, UTType parentType);
+    public static native UTType exportedTypeWithIdentifierConformingToType(@NotNull String identifier,
+            @NotNull UTType parentType);
 
     @Generated
     @Selector("hash")
@@ -218,6 +227,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -253,9 +263,10 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("importedTypeWithIdentifier:")
-    public static native UTType importedTypeWithIdentifier(String identifier);
+    public static native UTType importedTypeWithIdentifier(@NotNull String identifier);
 
     /**
      * \brief Gets an active \c UTType corresponding to a type that is declared as
@@ -288,9 +299,11 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("importedTypeWithIdentifier:conformingToType:")
-    public static native UTType importedTypeWithIdentifierConformingToType(String identifier, UTType parentType);
+    public static native UTType importedTypeWithIdentifierConformingToType(@NotNull String identifier,
+            @NotNull UTType parentType);
 
     @Generated
     @Selector("init")
@@ -298,7 +311,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UTType initWithCoder(NSCoder coder);
+    public native UTType initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -371,7 +384,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("isSubtypeOfType:")
-    public native boolean isSubtypeOfType(UTType type);
+    public native boolean isSubtypeOfType(@NotNull UTType type);
 
     /**
      * \brief Tests if the receiver is a supertype of another type.
@@ -388,11 +401,12 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("isSupertypeOfType:")
-    public native boolean isSupertypeOfType(UTType type);
+    public native boolean isSupertypeOfType(@NotNull UTType type);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * \brief The localized description of the type.
@@ -403,6 +417,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("localizedDescription")
     public native String localizedDescription();
@@ -427,6 +442,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("preferredFilenameExtension")
     public native String preferredFilenameExtension();
@@ -445,6 +461,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("preferredMIMEType")
     public native String preferredMIMEType();
@@ -460,6 +477,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("referenceURL")
     public native NSURL referenceURL();
@@ -489,6 +507,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("supertypes")
     public native NSSet<? extends UTType> supertypes();
@@ -532,6 +551,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("tags")
     public native NSDictionary<String, ? extends NSArray<String>> tags();
@@ -561,7 +581,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("typeWithFilenameExtension:")
-    public static native UTType typeWithFilenameExtension(String filenameExtension);
+    public static native UTType typeWithFilenameExtension(@NotNull String filenameExtension);
 
     /**
      * \brief Create a type given a filename extension.
@@ -589,7 +609,8 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("typeWithFilenameExtension:conformingToType:")
-    public static native UTType typeWithFilenameExtensionConformingToType(String filenameExtension, UTType supertype);
+    public static native UTType typeWithFilenameExtensionConformingToType(@NotNull String filenameExtension,
+            @NotNull UTType supertype);
 
     /**
      * \brief Create a type given a type identifier.
@@ -602,7 +623,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("typeWithIdentifier:")
-    public static native UTType typeWithIdentifier(String identifier);
+    public static native UTType typeWithIdentifier(@NotNull String identifier);
 
     /**
      * \brief Create a type given a MIME type that conforms to \c UTTypeData.
@@ -623,7 +644,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("typeWithMIMEType:")
-    public static native UTType typeWithMIMEType(String mimeType);
+    public static native UTType typeWithMIMEType(@NotNull String mimeType);
 
     /**
      * \brief Create a type given a MIME type.
@@ -646,7 +667,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("typeWithMIMEType:conformingToType:")
-    public static native UTType typeWithMIMETypeConformingToType(String mimeType, UTType supertype);
+    public static native UTType typeWithMIMETypeConformingToType(@NotNull String mimeType, @NotNull UTType supertype);
 
     /**
      * \brief Create a type given a type tag.
@@ -664,7 +685,8 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("typeWithTag:tagClass:conformingToType:")
-    public static native UTType typeWithTagTagClassConformingToType(String tag, String tagClass, UTType supertype);
+    public static native UTType typeWithTagTagClassConformingToType(@NotNull String tag, @NotNull String tagClass,
+            @Nullable UTType supertype);
 
     /**
      * \brief Create an array of types given a type tag.
@@ -681,10 +703,11 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("typesWithTag:tagClass:conformingToType:")
-    public static native NSArray<? extends UTType> typesWithTagTagClassConformingToType(String tag, String tagClass,
-            UTType supertype);
+    public static native NSArray<? extends UTType> typesWithTagTagClassConformingToType(@NotNull String tag,
+            @NotNull String tagClass, @Nullable UTType supertype);
 
     /**
      * \brief The type's version.
@@ -693,6 +716,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("version")
     public native NSNumber version();
@@ -700,6 +724,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A type representing the @c SHCustomCatalog file format with the .shazamcatalog extension
      */
+    @NotNull
     @Generated
     @Selector("SHCustomCatalogContentType")
     public static native UTType SHCustomCatalogContentType();
@@ -707,6 +732,7 @@ public class UTType extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * A type representing the @c SHSignature file format with the .shazamsignature extension
      */
+    @NotNull
     @Generated
     @Selector("SHSignatureContentType")
     public static native UTType SHSignatureContentType();

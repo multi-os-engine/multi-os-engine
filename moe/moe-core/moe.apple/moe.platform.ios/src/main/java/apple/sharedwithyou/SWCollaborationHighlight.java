@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWCollaborationHighlight
@@ -66,22 +68,25 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -91,6 +96,7 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
      * 
      * This identifier is unique across platforms and shares
      */
+    @NotNull
     @Generated
     @Selector("collaborationIdentifier")
     public native String collaborationIdentifier();
@@ -98,19 +104,22 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
     /**
      * UTI type for this collaboration highlight
      */
+    @NotNull
     @Generated
     @Selector("contentType")
     public native UTType contentType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Date when the file was created
      */
+    @NotNull
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -125,7 +134,7 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -138,7 +147,7 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWCollaborationHighlight initWithCoder(NSCoder coder);
+    public native SWCollaborationHighlight initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -157,9 +166,10 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -197,6 +207,7 @@ public class SWCollaborationHighlight extends SWHighlight implements NSSecureCod
      * 
      * Title of the collaboration if provided by the app hosting the collaboration
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();

@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKObjectType
@@ -71,6 +73,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 9.3
      */
+    @NotNull
     @Generated
     @Selector("activitySummaryType")
     public static native HKActivitySummaryType activitySummaryType();
@@ -87,37 +90,43 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @Nullable
     @Generated
     @Selector("categoryTypeForIdentifier:")
-    public static native HKCategoryType categoryTypeForIdentifier(String identifier);
+    public static native HKCategoryType categoryTypeForIdentifier(@NotNull String identifier);
 
+    @Nullable
     @Generated
     @Selector("characteristicTypeForIdentifier:")
-    public static native HKCharacteristicType characteristicTypeForIdentifier(String identifier);
+    public static native HKCharacteristicType characteristicTypeForIdentifier(@NotNull String identifier);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @Nullable
     @Generated
     @Selector("correlationTypeForIdentifier:")
-    public static native HKCorrelationType correlationTypeForIdentifier(String identifier);
+    public static native HKCorrelationType correlationTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -130,9 +139,10 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("documentTypeForIdentifier:")
-    public static native HKDocumentType documentTypeForIdentifier(String identifier);
+    public static native HKDocumentType documentTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("hash")
@@ -156,18 +166,20 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native HKObjectType new_objc();
 
+    @Nullable
     @Generated
     @Selector("quantityTypeForIdentifier:")
-    public static native HKQuantityType quantityTypeForIdentifier(String identifier);
+    public static native HKQuantityType quantityTypeForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -194,19 +206,21 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("workoutType")
     public static native HKWorkoutType workoutType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] identifier
@@ -215,6 +229,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
      * 
      * See HKTypeIdentifiers.h for possible values.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -225,7 +240,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKObjectType initWithCoder(NSCoder coder);
+    public native HKObjectType initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -236,13 +251,15 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("seriesTypeForIdentifier:")
-    public static native HKSeriesType seriesTypeForIdentifier(String identifier);
+    public static native HKSeriesType seriesTypeForIdentifier(@NotNull String identifier);
 
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("audiogramSampleType")
     public static native HKAudiogramSampleType audiogramSampleType();
@@ -250,13 +267,15 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("clinicalTypeForIdentifier:")
-    public static native HKClinicalType clinicalTypeForIdentifier(String identifier);
+    public static native HKClinicalType clinicalTypeForIdentifier(@NotNull String identifier);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("electrocardiogramType")
     public static native HKElectrocardiogramType electrocardiogramType();
@@ -273,6 +292,7 @@ public class HKObjectType extends NSObject implements NSSecureCoding, NSCopying 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("visionPrescriptionType")
     public static native HKPrescriptionType visionPrescriptionType();

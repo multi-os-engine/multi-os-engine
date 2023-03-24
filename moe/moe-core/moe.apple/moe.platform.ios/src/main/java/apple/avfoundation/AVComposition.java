@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSLocale;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -80,26 +82,29 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
 
     @Generated
     @Selector("assetWithURL:")
-    public static native AVComposition assetWithURL(NSURL URL);
+    public static native AVComposition assetWithURL(@NotNull NSURL URL);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -181,6 +187,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("URLAssetInitializationOptions")
     public native NSDictionary<String, ?> URLAssetInitializationOptions();
@@ -189,11 +196,12 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Selector("init")
     public native AVComposition init();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] naturalSize
@@ -216,6 +224,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      *                The trackID of the requested AVCompositionTrack.
      * @return An instance of AVCompositionTrack; may be nil if no track of the specified trackID is available.
      */
+    @Nullable
     @Generated
     @Selector("trackWithTrackID:")
     public native AVCompositionTrack trackWithTrackID(int trackID);
@@ -225,6 +234,7 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * 
      * Provides the array of AVCompositionTracks contained by the composition.
      */
+    @NotNull
     @Generated
     @Selector("tracks")
     public native NSArray<? extends AVCompositionTrack> tracks();
@@ -242,9 +252,11 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      * @return An NSArray of AVCompositionTracks; may be empty if no tracks with the specified characteristic are
      *         available.
      */
+    @NotNull
     @Generated
     @Selector("tracksWithMediaCharacteristic:")
-    public native NSArray<? extends AVCompositionTrack> tracksWithMediaCharacteristic(String mediaCharacteristic);
+    public native NSArray<? extends AVCompositionTrack> tracksWithMediaCharacteristic(
+            @NotNull String mediaCharacteristic);
 
     /**
      * tracksWithMediaType:
@@ -258,9 +270,10 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      *                  defined in AVMediaFormat.h)
      * @return An NSArray of AVCompositionTracks; may be empty if no tracks of the specified media type are available.
      */
+    @NotNull
     @Generated
     @Selector("tracksWithMediaType:")
-    public native NSArray<? extends AVCompositionTrack> tracksWithMediaType(String mediaType);
+    public native NSArray<? extends AVCompositionTrack> tracksWithMediaType(@NotNull String mediaType);
 
     /**
      * loadTrackWithTrackID:completionHandler:
@@ -278,13 +291,13 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
     @Generated
     @Selector("loadTrackWithTrackID:completionHandler:")
     public native void loadTrackWithTrackIDCompletionHandler(int trackID,
-            @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadTrackWithTrackIDCompletionHandler") Block_loadTrackWithTrackIDCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTrackWithTrackIDCompletionHandler {
         @Generated
-        void call_loadTrackWithTrackIDCompletionHandler(AVCompositionTrack arg0, NSError arg1);
+        void call_loadTrackWithTrackIDCompletionHandler(@Nullable AVCompositionTrack arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -304,15 +317,15 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      */
     @Generated
     @Selector("loadTracksWithMediaCharacteristic:completionHandler:")
-    public native void loadTracksWithMediaCharacteristicCompletionHandler(String mediaCharacteristic,
-            @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
+    public native void loadTracksWithMediaCharacteristicCompletionHandler(@NotNull String mediaCharacteristic,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaCharacteristicCompletionHandler") Block_loadTracksWithMediaCharacteristicCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaCharacteristicCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaCharacteristicCompletionHandler(NSArray<? extends AVCompositionTrack> arg0,
-                NSError arg1);
+        void call_loadTracksWithMediaCharacteristicCompletionHandler(
+                @Nullable NSArray<? extends AVCompositionTrack> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -331,33 +344,38 @@ public class AVComposition extends AVAsset implements NSMutableCopying {
      */
     @Generated
     @Selector("loadTracksWithMediaType:completionHandler:")
-    public native void loadTracksWithMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
+    public native void loadTracksWithMediaTypeCompletionHandler(@NotNull String mediaType,
+            @NotNull @ObjCBlock(name = "call_loadTracksWithMediaTypeCompletionHandler") Block_loadTracksWithMediaTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadTracksWithMediaTypeCompletionHandler {
         @Generated
-        void call_loadTracksWithMediaTypeCompletionHandler(NSArray<? extends AVCompositionTrack> arg0, NSError arg1);
+        void call_loadTracksWithMediaTypeCompletionHandler(@Nullable NSArray<? extends AVCompositionTrack> arg0,
+                @Nullable NSError arg1);
     }
 
+    @NotNull
     @Generated
     @Selector("chapterMetadataGroupsBestMatchingPreferredLanguages:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsBestMatchingPreferredLanguages(
-            NSArray<String> preferredLanguages);
+            @NotNull NSArray<String> preferredLanguages);
 
+    @NotNull
     @Generated
     @Selector("chapterMetadataGroupsWithTitleLocale:containingItemsWithCommonKeys:")
     public native NSArray<? extends AVTimedMetadataGroup> chapterMetadataGroupsWithTitleLocaleContainingItemsWithCommonKeys(
-            NSLocale locale, NSArray<String> commonKeys);
+            @NotNull NSLocale locale, @Nullable NSArray<String> commonKeys);
 
+    @Nullable
     @Generated
     @Selector("mediaSelectionGroupForMediaCharacteristic:")
-    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(String mediaCharacteristic);
+    public native AVMediaSelectionGroup mediaSelectionGroupForMediaCharacteristic(@NotNull String mediaCharacteristic);
 
+    @NotNull
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     @Generated
     @Selector("unusedTrackID")

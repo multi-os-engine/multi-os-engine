@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.DoublePtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -28,7 +29,7 @@ public final class DenseVector_Double extends StructObject {
     }
 
     @Generated
-    public DenseVector_Double(int count, DoublePtr data) {
+    public DenseVector_Double(int count, @NotNull DoublePtr data) {
         super(DenseVector_Double.class);
         setCount(count);
         setData(data);
@@ -42,11 +43,12 @@ public final class DenseVector_Double extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setCount(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native DoublePtr data();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setData(DoublePtr value);
+    public native void setData(@NotNull DoublePtr value);
 }

@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -32,6 +34,7 @@ public interface UIMenuLeaf {
     /**
      * Elaborated title used in keyboard shortcut overlay.
      */
+    @Nullable
     @Generated
     @Selector("discoverabilityTitle")
     String discoverabilityTitle();
@@ -39,6 +42,7 @@ public interface UIMenuLeaf {
     /**
      * Image that can appear next to this element.
      */
+    @Nullable
     @Generated
     @Selector("image")
     UIImage image();
@@ -48,8 +52,8 @@ public interface UIMenuLeaf {
      */
     @Generated
     @Selector("performWithSender:target:")
-    void performWithSenderTarget(@Mapped(ObjCObjectMapper.class) Object sender,
-            @Mapped(ObjCObjectMapper.class) Object target);
+    void performWithSenderTarget(@Nullable @Mapped(ObjCObjectMapper.class) Object sender,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object target);
 
     /**
      * Source item for subsequent presentations. For example, an element displayed in a menu attached to a
@@ -59,6 +63,7 @@ public interface UIMenuLeaf {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("presentationSourceItem")
     @MappedReturn(ObjCObjectMapper.class)
@@ -69,6 +74,7 @@ public interface UIMenuLeaf {
      * This property is only populated during the execution of the element's
      * primary action (i.e. its handler or selector) if available.
      */
+    @Nullable
     @Generated
     @Selector("sender")
     @MappedReturn(ObjCObjectMapper.class)
@@ -86,14 +92,14 @@ public interface UIMenuLeaf {
      */
     @Generated
     @Selector("setDiscoverabilityTitle:")
-    void setDiscoverabilityTitle(String value);
+    void setDiscoverabilityTitle(@Nullable String value);
 
     /**
      * Image that can appear next to this element.
      */
     @Generated
     @Selector("setImage:")
-    void setImage(UIImage value);
+    void setImage(@Nullable UIImage value);
 
     /**
      * The element's selection state.
@@ -107,7 +113,7 @@ public interface UIMenuLeaf {
      */
     @Generated
     @Selector("setTitle:")
-    void setTitle(String value);
+    void setTitle(@NotNull String value);
 
     /**
      * The element's selection state.
@@ -120,6 +126,7 @@ public interface UIMenuLeaf {
     /**
      * Short display title.
      */
+    @NotNull
     @Generated
     @Selector("title")
     String title();

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This delegate receives updates on the camera stream.
@@ -46,7 +48,8 @@ public interface HMCameraStreamControlDelegate {
     @Generated
     @IsOptional
     @Selector("cameraStreamControl:didStopStreamWithError:")
-    default void cameraStreamControlDidStopStreamWithError(HMCameraStreamControl cameraStreamControl, NSError error) {
+    default void cameraStreamControlDidStopStreamWithError(@NotNull HMCameraStreamControl cameraStreamControl,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +61,7 @@ public interface HMCameraStreamControlDelegate {
     @Generated
     @IsOptional
     @Selector("cameraStreamControlDidStartStream:")
-    default void cameraStreamControlDidStartStream(HMCameraStreamControl cameraStreamControl) {
+    default void cameraStreamControlDidStartStream(@NotNull HMCameraStreamControl cameraStreamControl) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

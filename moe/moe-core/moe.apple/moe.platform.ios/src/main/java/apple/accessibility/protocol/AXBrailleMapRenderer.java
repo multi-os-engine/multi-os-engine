@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.ann.IsOptional;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Implement one of the following methods in order to provide data for a braille map to be rendered.
@@ -40,6 +41,7 @@ public interface AXBrailleMapRenderer {
      * 
      * API-Since: 15.2
      */
+    @NotNull
     @IsOptional
     @Generated
     @Selector("accessibilityBrailleMapRenderer")
@@ -52,7 +54,7 @@ public interface AXBrailleMapRenderer {
     @Generated
     public interface Block_accessibilityBrailleMapRenderer_ret {
         @Generated
-        void call_accessibilityBrailleMapRenderer_ret(AXBrailleMap arg0);
+        void call_accessibilityBrailleMapRenderer_ret(@NotNull AXBrailleMap arg0);
     }
 
     /**
@@ -78,7 +80,7 @@ public interface AXBrailleMapRenderer {
     @Generated
     @Selector("setAccessibilityBrailleMapRenderer:")
     default void setAccessibilityBrailleMapRenderer(
-            @ObjCBlock(name = "call_setAccessibilityBrailleMapRenderer") Block_setAccessibilityBrailleMapRenderer value) {
+            @NotNull @ObjCBlock(name = "call_setAccessibilityBrailleMapRenderer") Block_setAccessibilityBrailleMapRenderer value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,6 +88,6 @@ public interface AXBrailleMapRenderer {
     @Generated
     public interface Block_setAccessibilityBrailleMapRenderer {
         @Generated
-        void call_setAccessibilityBrailleMapRenderer(AXBrailleMap arg0);
+        void call_setAccessibilityBrailleMapRenderer(@NotNull AXBrailleMap arg0);
     }
 }

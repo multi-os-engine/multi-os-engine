@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLSubmesh
@@ -80,22 +82,25 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -156,15 +162,16 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("submeshWithSCNGeometryElement:")
-    public static native MDLSubmesh submeshWithSCNGeometryElement(SCNGeometryElement scnGeometryElement);
+    public static native MDLSubmesh submeshWithSCNGeometryElement(@NotNull SCNGeometryElement scnGeometryElement);
 
     /**
      * API-Since: 10.0
      */
     @Generated
     @Selector("submeshWithSCNGeometryElement:bufferAllocator:")
-    public static native MDLSubmesh submeshWithSCNGeometryElementBufferAllocator(SCNGeometryElement scnGeometryElement,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLSubmesh submeshWithSCNGeometryElementBufferAllocator(
+            @NotNull SCNGeometryElement scnGeometryElement,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("superclass")
@@ -191,11 +198,13 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * 
      * Index data referencing vertex data in parent mesh
      */
+    @NotNull
     @Generated
     @Selector("indexBuffer")
     @MappedReturn(ObjCObjectMapper.class)
     public native MDLMeshBuffer indexBuffer();
 
+    @NotNull
     @Generated
     @Selector("indexBufferAsIndexType:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -235,8 +244,8 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
     @Generated
     @Selector("initWithIndexBuffer:indexCount:indexType:geometryType:material:")
     public native MDLSubmesh initWithIndexBufferIndexCountIndexTypeGeometryTypeMaterial(
-            @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount, @NUInt long indexType,
-            @NInt long geometryType, MDLMaterial material);
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount,
+            @NUInt long indexType, @NInt long geometryType, @Nullable MDLMaterial material);
 
     /**
      * initWithMDLSubmesh:indexType:geometryType:
@@ -250,7 +259,7 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("initWithMDLSubmesh:indexType:geometryType:")
-    public native MDLSubmesh initWithMDLSubmeshIndexTypeGeometryType(MDLSubmesh submesh, @NUInt long indexType,
+    public native MDLSubmesh initWithMDLSubmeshIndexTypeGeometryType(@NotNull MDLSubmesh submesh, @NUInt long indexType,
             @NInt long geometryType);
 
     /**
@@ -260,9 +269,9 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:")
-    public native MDLSubmesh initWithNameIndexBufferIndexCountIndexTypeGeometryTypeMaterial(String name,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount, @NUInt long indexType,
-            @NInt long geometryType, MDLMaterial material);
+    public native MDLSubmesh initWithNameIndexBufferIndexCountIndexTypeGeometryTypeMaterial(@NotNull String name,
+            @NotNull @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount,
+            @NUInt long indexType, @NInt long geometryType, @Nullable MDLMaterial material);
 
     /**
      * initWithIndexBuffer:indexCount:indexType:faceTopologyBuffer:geometryType:material:
@@ -275,19 +284,22 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("initWithName:indexBuffer:indexCount:indexType:geometryType:material:topology:")
-    public native MDLSubmesh initWithNameIndexBufferIndexCountIndexTypeGeometryTypeMaterialTopology(String name,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer, @NUInt long indexCount, @NUInt long indexType,
-            @NInt long geometryType, MDLMaterial material, MDLSubmeshTopology topology);
+    public native MDLSubmesh initWithNameIndexBufferIndexCountIndexTypeGeometryTypeMaterialTopology(
+            @NotNull String name, @NotNull @Mapped(ObjCObjectMapper.class) MDLMeshBuffer indexBuffer,
+            @NUInt long indexCount, @NUInt long indexType, @NInt long geometryType, @Nullable MDLMaterial material,
+            @Nullable MDLSubmeshTopology topology);
 
     /**
      * [@property] material
      * 
      * Material to apply when rendering this object
      */
+    @Nullable
     @Generated
     @Selector("material")
     public native MDLMaterial material();
 
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -299,11 +311,11 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setMaterial:")
-    public native void setMaterial(MDLMaterial value);
+    public native void setMaterial(@Nullable MDLMaterial value);
 
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@NotNull String value);
 
     /**
      * [@property] topology
@@ -316,7 +328,7 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      */
     @Generated
     @Selector("setTopology:")
-    public native void setTopology(MDLSubmeshTopology value);
+    public native void setTopology(@Nullable MDLSubmeshTopology value);
 
     /**
      * [@property] topology
@@ -327,6 +339,7 @@ public class MDLSubmesh extends NSObject implements MDLNamed {
      * A submesh of type MDLGeometryTypeVariableTopology with no topology
      * data is an empty submesh.
      */
+    @Nullable
     @Generated
     @Selector("topology")
     public native MDLSubmeshTopology topology();

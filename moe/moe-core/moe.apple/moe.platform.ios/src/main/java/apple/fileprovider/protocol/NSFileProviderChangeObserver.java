@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.objc.ann.IsOptional;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -25,14 +26,14 @@ public interface NSFileProviderChangeObserver {
      */
     @Generated
     @Selector("didDeleteItemsWithIdentifiers:")
-    void didDeleteItemsWithIdentifiers(NSArray<String> deletedItemIdentifiers);
+    void didDeleteItemsWithIdentifiers(@NotNull NSArray<String> deletedItemIdentifiers);
 
     /**
      * Send updates to existing items, or insert new items.
      */
     @Generated
     @Selector("didUpdateItems:")
-    void didUpdateItems(NSArray<?> updatedItems);
+    void didUpdateItems(@NotNull NSArray<?> updatedItems);
 
     /**
      * This method is used to complete a batch of changes. Follow the advice
@@ -53,7 +54,7 @@ public interface NSFileProviderChangeObserver {
      */
     @Generated
     @Selector("finishEnumeratingChangesUpToSyncAnchor:moreComing:")
-    void finishEnumeratingChangesUpToSyncAnchorMoreComing(NSData anchor, boolean moreComing);
+    void finishEnumeratingChangesUpToSyncAnchorMoreComing(@NotNull NSData anchor, boolean moreComing);
 
     /**
      * If the enumeration fails with NSFileProviderErrorSyncAnchorExpired, we will
@@ -62,7 +63,7 @@ public interface NSFileProviderChangeObserver {
      */
     @Generated
     @Selector("finishEnumeratingWithError:")
-    void finishEnumeratingWithError(NSError error);
+    void finishEnumeratingWithError(@NotNull NSError error);
 
     /**
      * Size of the batch suggested by the system for better performance.

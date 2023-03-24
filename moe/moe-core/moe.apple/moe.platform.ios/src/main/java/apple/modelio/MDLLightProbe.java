@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -75,22 +77,25 @@ public class MDLLightProbe extends MDLLight {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,19 +130,23 @@ public class MDLLightProbe extends MDLLight {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @Selector("lightProbeWithTextureSize:forLocation:lightsToConsider:objectsToConsider:reflectiveCubemap:irradianceCubemap:")
     public static native MDLLightProbe lightProbeWithTextureSizeForLocationLightsToConsiderObjectsToConsiderReflectiveCubemapIrradianceCubemap(
-            @NInt long textureSize, MDLTransform transform, NSArray<? extends MDLLight> lightsToConsider,
-            NSArray<? extends MDLObject> objectsToConsider, MDLTexture reflectiveCubemap, MDLTexture irradianceCubemap);
+            @NInt long textureSize, @NotNull MDLTransform transform,
+            @NotNull NSArray<? extends MDLLight> lightsToConsider,
+            @NotNull NSArray<? extends MDLObject> objectsToConsider, @Nullable MDLTexture reflectiveCubemap,
+            @Nullable MDLTexture irradianceCubemap);
 
     @Generated
     @Selector("lightWithSCNLight:")
-    public static native MDLLightProbe lightWithSCNLight(SCNLight scnLight);
+    public static native MDLLightProbe lightWithSCNLight(@NotNull SCNLight scnLight);
 
     @Generated
     @Owned
@@ -146,12 +155,12 @@ public class MDLLightProbe extends MDLLight {
 
     @Generated
     @Selector("objectWithSCNNode:")
-    public static native MDLLightProbe objectWithSCNNode(SCNNode scnNode);
+    public static native MDLLightProbe objectWithSCNNode(@NotNull SCNNode scnNode);
 
     @Generated
     @Selector("objectWithSCNNode:bufferAllocator:")
-    public static native MDLLightProbe objectWithSCNNodeBufferAllocator(SCNNode scnNode,
-            @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
+    public static native MDLLightProbe objectWithSCNNodeBufferAllocator(@NotNull SCNNode scnNode,
+            @Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferAllocator bufferAllocator);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -184,17 +193,20 @@ public class MDLLightProbe extends MDLLight {
 
     @Generated
     @Selector("initWithReflectiveTexture:irradianceTexture:")
-    public native MDLLightProbe initWithReflectiveTextureIrradianceTexture(MDLTexture reflectiveTexture,
-            MDLTexture irradianceTexture);
+    public native MDLLightProbe initWithReflectiveTextureIrradianceTexture(@Nullable MDLTexture reflectiveTexture,
+            @Nullable MDLTexture irradianceTexture);
 
+    @Nullable
     @Generated
     @Selector("irradianceTexture")
     public native MDLTexture irradianceTexture();
 
+    @Nullable
     @Generated
     @Selector("reflectiveTexture")
     public native MDLTexture reflectiveTexture();
 
+    @Nullable
     @Generated
     @Selector("sphericalHarmonicsCoefficients")
     public native NSData sphericalHarmonicsCoefficients();

@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -75,22 +77,25 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -155,15 +161,17 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Image should be a square with side length of 40 points
      */
+    @Nullable
     @Generated
     @Selector("iconTemplateImageData")
     public native NSData iconTemplateImageData();
@@ -182,7 +190,7 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     @Deprecated
     @Generated
     @Selector("initWithLocalizedName:")
-    public native CXProviderConfiguration initWithLocalizedName(String localizedName);
+    public native CXProviderConfiguration initWithLocalizedName(@NotNull String localizedName);
 
     /**
      * Localized name of the provider
@@ -191,6 +199,7 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
      * Deprecated-Since: 14.0
      * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("localizedName")
@@ -215,6 +224,7 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     /**
      * Name of resource in app's bundle to play as ringtone for incoming call
      */
+    @Nullable
     @Generated
     @Selector("ringtoneSound")
     public native String ringtoneSound();
@@ -224,7 +234,7 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setIconTemplateImageData:")
-    public native void setIconTemplateImageData(NSData value);
+    public native void setIconTemplateImageData(@Nullable NSData value);
 
     /**
      * Default 2
@@ -245,14 +255,14 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setRingtoneSound:")
-    public native void setRingtoneSound(String value);
+    public native void setRingtoneSound(@Nullable String value);
 
     /**
      * Numbers are of type CXHandleType
      */
     @Generated
     @Selector("setSupportedHandleTypes:")
-    public native void setSupportedHandleTypes(NSSet<? extends NSNumber> value);
+    public native void setSupportedHandleTypes(@NotNull NSSet<? extends NSNumber> value);
 
     /**
      * Default NO
@@ -264,6 +274,7 @@ public class CXProviderConfiguration extends NSObject implements NSCopying {
     /**
      * Numbers are of type CXHandleType
      */
+    @NotNull
     @Generated
     @Selector("supportedHandleTypes")
     public native NSSet<? extends NSNumber> supportedHandleTypes();

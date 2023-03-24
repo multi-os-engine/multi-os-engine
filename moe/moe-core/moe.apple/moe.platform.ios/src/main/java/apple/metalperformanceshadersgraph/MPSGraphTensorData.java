@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSGraphTensorData
@@ -66,22 +68,25 @@ public class MPSGraphTensorData extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -108,6 +113,7 @@ public class MPSGraphTensorData extends NSObject {
      * 
      * device of the tensorData
      */
+    @NotNull
     @Generated
     @Selector("device")
     public native MPSGraphDevice device();
@@ -131,7 +137,7 @@ public class MPSGraphTensorData extends NSObject {
      */
     @Generated
     @Selector("initWithMPSMatrix:")
-    public native MPSGraphTensorData initWithMPSMatrix(MPSMatrix matrix);
+    public native MPSGraphTensorData initWithMPSMatrix(@NotNull MPSMatrix matrix);
 
     /**
      * Initialize an MPSGraphTensorData with an MPSMatrix enforcing rank of the result.
@@ -143,7 +149,7 @@ public class MPSGraphTensorData extends NSObject {
      */
     @Generated
     @Selector("initWithMPSMatrix:rank:")
-    public native MPSGraphTensorData initWithMPSMatrixRank(MPSMatrix matrix, @NUInt long rank);
+    public native MPSGraphTensorData initWithMPSMatrixRank(@NotNull MPSMatrix matrix, @NUInt long rank);
 
     /**
      * Initialize an MPSGraphTensorData with an MPSNDArray
@@ -154,7 +160,7 @@ public class MPSGraphTensorData extends NSObject {
      */
     @Generated
     @Selector("initWithMPSNDArray:")
-    public native MPSGraphTensorData initWithMPSNDArray(MPSNDArray ndarray);
+    public native MPSGraphTensorData initWithMPSNDArray(@NotNull MPSNDArray ndarray);
 
     /**
      * Initialize an MPSGraphTensorData with an MPSVector
@@ -166,7 +172,7 @@ public class MPSGraphTensorData extends NSObject {
      */
     @Generated
     @Selector("initWithMPSVector:")
-    public native MPSGraphTensorData initWithMPSVector(MPSVector vector);
+    public native MPSGraphTensorData initWithMPSVector(@NotNull MPSVector vector);
 
     /**
      * Initialize an MPSGraphTensorData with an MPSVector enforcing rank of the result.
@@ -179,7 +185,7 @@ public class MPSGraphTensorData extends NSObject {
      */
     @Generated
     @Selector("initWithMPSVector:rank:")
-    public native MPSGraphTensorData initWithMPSVectorRank(MPSVector vector, @NUInt long rank);
+    public native MPSGraphTensorData initWithMPSVectorRank(@NotNull MPSVector vector, @NUInt long rank);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -198,15 +204,17 @@ public class MPSGraphTensorData extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Return an mpsndarray object will copy contents if the contents are not stored in an MPSNDArray
      * 
      * @return A valid MPSNDArray, or nil if allocation fails.
      */
+    @NotNull
     @Generated
     @Selector("mpsndarray")
     public native MPSNDArray mpsndarray();

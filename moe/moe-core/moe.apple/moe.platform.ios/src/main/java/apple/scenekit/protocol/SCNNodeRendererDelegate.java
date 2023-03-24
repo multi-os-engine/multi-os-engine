@@ -26,6 +26,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@category] NSObject (SCNNodeRendererDelegate)
@@ -58,7 +59,8 @@ public interface SCNNodeRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderNode:renderer:arguments:")
-    default void renderNodeRendererArguments(SCNNode node, SCNRenderer renderer, NSDictionary<String, ?> arguments) {
+    default void renderNodeRendererArguments(@NotNull SCNNode node, @NotNull SCNRenderer renderer,
+            @NotNull NSDictionary<String, ?> arguments) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -74,6 +74,8 @@ import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CoreText")
@@ -130,10 +132,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CTParagraphStyleRef CTParagraphStyleCreate(
-            @UncertainArgument("Options: reference, array Fallback: reference") CTParagraphStyleSetting settings,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CTParagraphStyleSetting settings,
             @NUInt long settingCount);
 
     /**
@@ -151,9 +154,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTParagraphStyleRef CTParagraphStyleCreateCopy(CTParagraphStyleRef paragraphStyle);
+    public static native CTParagraphStyleRef CTParagraphStyleCreateCopy(@NotNull CTParagraphStyleRef paragraphStyle);
 
     /**
      * [@function] CTParagraphStyleGetValueForSpecifier
@@ -194,8 +198,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTParagraphStyleGetValueForSpecifier(CTParagraphStyleRef paragraphStyle, int spec,
-            @NUInt long valueBufferSize, VoidPtr valueBuffer);
+    public static native boolean CTParagraphStyleGetValueForSpecifier(@NotNull CTParagraphStyleRef paragraphStyle,
+            int spec, @NUInt long valueBufferSize, @NotNull VoidPtr valueBuffer);
 
     /**
      * [@function] CTFontDescriptorGetTypeID
@@ -232,9 +236,10 @@ public final class CoreText {
      * 
      * @return This function creates a new font descriptor reference with the given PostScript name and point size.
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateWithNameAndSize(CFStringRef name,
+    public static native CTFontDescriptorRef CTFontDescriptorCreateWithNameAndSize(@NotNull CFStringRef name,
             @NFloat double size);
 
     /**
@@ -251,9 +256,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateWithAttributes(CFDictionaryRef attributes);
+    public static native CTFontDescriptorRef CTFontDescriptorCreateWithAttributes(@NotNull CFDictionaryRef attributes);
 
     /**
      * [@function] CTFontDescriptorCreateCopyWithAttributes
@@ -280,10 +286,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithAttributes(CTFontDescriptorRef original,
-            CFDictionaryRef attributes);
+    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithAttributes(
+            @NotNull CTFontDescriptorRef original, @NotNull CFDictionaryRef attributes);
 
     /**
      * [@function] CTFontCreateCopyWithFamily
@@ -301,10 +308,11 @@ public final class CoreText {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithFamily(CTFontDescriptorRef original,
-            CFStringRef family);
+    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithFamily(@NotNull CTFontDescriptorRef original,
+            @NotNull CFStringRef family);
 
     /**
      * [@function] CTFontDescriptorCreateCopyWithSymbolicTraits
@@ -328,10 +336,11 @@ public final class CoreText {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithSymbolicTraits(CTFontDescriptorRef original,
-            int symTraitValue, int symTraitMask);
+    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithSymbolicTraits(
+            @NotNull CTFontDescriptorRef original, int symTraitValue, int symTraitMask);
 
     /**
      * [@function] CTFontDescriptorCreateCopyWithVariation
@@ -353,10 +362,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithVariation(CTFontDescriptorRef original,
-            CFNumberRef variationIdentifier, @NFloat double variationValue);
+    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithVariation(
+            @NotNull CTFontDescriptorRef original, @NotNull CFNumberRef variationIdentifier,
+            @NFloat double variationValue);
 
     /**
      * [@function] CTFontDescriptorCreateCopyWithFeature
@@ -378,10 +389,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithFeature(CTFontDescriptorRef original,
-            CFNumberRef featureTypeIdentifier, CFNumberRef featureSelectorIdentifier);
+    public static native CTFontDescriptorRef CTFontDescriptorCreateCopyWithFeature(
+            @NotNull CTFontDescriptorRef original, @NotNull CFNumberRef featureTypeIdentifier,
+            @NotNull CFNumberRef featureSelectorIdentifier);
 
     /**
      * [@function] CTFontDescriptorCreateMatchingFontDescriptors
@@ -401,10 +414,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontDescriptorCreateMatchingFontDescriptors(CTFontDescriptorRef descriptor,
-            CFSetRef mandatoryAttributes);
+    public static native CFArrayRef CTFontDescriptorCreateMatchingFontDescriptors(
+            @NotNull CTFontDescriptorRef descriptor, @Nullable CFSetRef mandatoryAttributes);
 
     /**
      * [@function] CTFontDescriptorCreateMatchingFontDescriptor
@@ -423,10 +437,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CTFontDescriptorRef CTFontDescriptorCreateMatchingFontDescriptor(
-            CTFontDescriptorRef descriptor, CFSetRef mandatoryAttributes);
+            @NotNull CTFontDescriptorRef descriptor, @Nullable CFSetRef mandatoryAttributes);
 
     /**
      * [@function] CTFontDescriptorMatchFontDescriptorsWithProgressHandler
@@ -449,9 +464,9 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTFontDescriptorMatchFontDescriptorsWithProgressHandler(CFArrayRef descriptors,
-            CFSetRef mandatoryAttributes,
-            @ObjCBlock(name = "call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler") Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler progressBlock);
+    public static native boolean CTFontDescriptorMatchFontDescriptorsWithProgressHandler(
+            @NotNull CFArrayRef descriptors, @Nullable CFSetRef mandatoryAttributes,
+            @NotNull @ObjCBlock(name = "call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler") Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler progressBlock);
 
     /**
      * [@function] CTFontDescriptorCopyAttributes
@@ -466,9 +481,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDictionaryRef CTFontDescriptorCopyAttributes(CTFontDescriptorRef descriptor);
+    public static native CFDictionaryRef CTFontDescriptorCopyAttributes(@NotNull CTFontDescriptorRef descriptor);
 
     /**
      * [@function] CTFontDescriptorCopyAttribute
@@ -486,10 +502,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CTFontDescriptorCopyAttribute(CTFontDescriptorRef descriptor,
-            CFStringRef attribute);
+    public static native ConstVoidPtr CTFontDescriptorCopyAttribute(@NotNull CTFontDescriptorRef descriptor,
+            @NotNull CFStringRef attribute);
 
     /**
      * function CTFontDescriptorCopyLocalizedAttribute
@@ -516,10 +533,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CTFontDescriptorCopyLocalizedAttribute(CTFontDescriptorRef descriptor,
-            CFStringRef attribute, Ptr<CFStringRef> language);
+    public static native ConstVoidPtr CTFontDescriptorCopyLocalizedAttribute(@NotNull CTFontDescriptorRef descriptor,
+            @NotNull CFStringRef attribute, @Nullable Ptr<CFStringRef> language);
 
     /**
      * [@function] CTFontGetTypeID
@@ -562,10 +580,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateWithName(CFStringRef name, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
+    public static native CTFontRef CTFontCreateWithName(@NotNull CFStringRef name, @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
 
     /**
      * [@function] CTFontCreateWithFontDescriptor
@@ -590,10 +609,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateWithFontDescriptor(CTFontDescriptorRef descriptor, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
+    public static native CTFontRef CTFontCreateWithFontDescriptor(@NotNull CTFontDescriptorRef descriptor,
+            @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
 
     /**
      * [@function] CTFontCreateWithNameAndOptions
@@ -626,10 +647,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateWithNameAndOptions(CFStringRef name, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+    public static native CTFontRef CTFontCreateWithNameAndOptions(@NotNull CFStringRef name, @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
             @NUInt long options);
 
     /**
@@ -658,11 +680,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateWithFontDescriptorAndOptions(CTFontDescriptorRef descriptor,
+    public static native CTFontRef CTFontCreateWithFontDescriptorAndOptions(@NotNull CTFontDescriptorRef descriptor,
             @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
             @NUInt long options);
 
     /**
@@ -686,9 +709,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateUIFontForLanguage(int uiType, @NFloat double size, CFStringRef language);
+    public static native CTFontRef CTFontCreateUIFontForLanguage(int uiType, @NFloat double size,
+            @Nullable CFStringRef language);
 
     /**
      * [@function] CTFontCreateCopyWithAttributes
@@ -716,11 +741,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateCopyWithAttributes(CTFontRef font, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
-            CTFontDescriptorRef attributes);
+    public static native CTFontRef CTFontCreateCopyWithAttributes(@NotNull CTFontRef font, @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+            @Nullable CTFontDescriptorRef attributes);
 
     /**
      * [@function] CTFontCreateCopyWithSymbolicTraits
@@ -752,10 +778,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateCopyWithSymbolicTraits(CTFontRef font, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+    public static native CTFontRef CTFontCreateCopyWithSymbolicTraits(@NotNull CTFontRef font, @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
             int symTraitValue, int symTraitMask);
 
     /**
@@ -782,11 +809,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateCopyWithFamily(CTFontRef font, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
-            CFStringRef family);
+    public static native CTFontRef CTFontCreateCopyWithFamily(@NotNull CTFontRef font, @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+            @NotNull CFStringRef family);
 
     /**
      * [@function] CTFontCreateForString
@@ -813,9 +841,10 @@ public final class CoreText {
      * 
      *      API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateForString(CTFontRef currentFont, CFStringRef string,
+    public static native CTFontRef CTFontCreateForString(@NotNull CTFontRef currentFont, @NotNull CFStringRef string,
             @ByValue CFRange range);
 
     /**
@@ -831,9 +860,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontCopyFontDescriptor(CTFontRef font);
+    public static native CTFontDescriptorRef CTFontCopyFontDescriptor(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyAttribute
@@ -852,9 +882,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstVoidPtr CTFontCopyAttribute(CTFontRef font, CFStringRef attribute);
+    public static native ConstVoidPtr CTFontCopyAttribute(@NotNull CTFontRef font, @NotNull CFStringRef attribute);
 
     /**
      * [@function] CTFontGetSize
@@ -872,7 +903,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetSize(CTFontRef font);
+    public static native double CTFontGetSize(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetMatrix
@@ -890,7 +921,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CTFontGetMatrix(CTFontRef font);
+    public static native CGAffineTransform CTFontGetMatrix(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetSymbolicTraits
@@ -907,7 +938,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native int CTFontGetSymbolicTraits(CTFontRef font);
+    public static native int CTFontGetSymbolicTraits(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyTraits
@@ -922,9 +953,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDictionaryRef CTFontCopyTraits(CTFontRef font);
+    public static native CFDictionaryRef CTFontCopyTraits(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyPostScriptName
@@ -938,9 +970,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyPostScriptName(CTFontRef font);
+    public static native CFStringRef CTFontCopyPostScriptName(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyFamilyName
@@ -954,9 +987,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyFamilyName(CTFontRef font);
+    public static native CFStringRef CTFontCopyFamilyName(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyFullName
@@ -970,9 +1004,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyFullName(CTFontRef font);
+    public static native CFStringRef CTFontCopyFullName(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyDisplayName
@@ -986,9 +1021,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyDisplayName(CTFontRef font);
+    public static native CFStringRef CTFontCopyDisplayName(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyName
@@ -1007,9 +1043,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyName(CTFontRef font, CFStringRef nameKey);
+    public static native CFStringRef CTFontCopyName(@NotNull CTFontRef font, @NotNull CFStringRef nameKey);
 
     /**
      * [@function] CTFontCopyLocalizedName
@@ -1034,10 +1071,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyLocalizedName(CTFontRef font, CFStringRef nameKey,
-            Ptr<CFStringRef> actualLanguage);
+    public static native CFStringRef CTFontCopyLocalizedName(@NotNull CTFontRef font, @NotNull CFStringRef nameKey,
+            @Nullable Ptr<CFStringRef> actualLanguage);
 
     /**
      * [@function] CTFontCopyCharacterSet
@@ -1052,9 +1090,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFCharacterSetRef CTFontCopyCharacterSet(CTFontRef font);
+    public static native CFCharacterSetRef CTFontCopyCharacterSet(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetStringEncoding
@@ -1070,7 +1109,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native int CTFontGetStringEncoding(CTFontRef font);
+    public static native int CTFontGetStringEncoding(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopySupportedLanguages
@@ -1086,9 +1125,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCopySupportedLanguages(CTFontRef font);
+    public static native CFArrayRef CTFontCopySupportedLanguages(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetGlyphsForCharacters
@@ -1124,8 +1164,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTFontGetGlyphsForCharacters(CTFontRef font, ConstCharPtr characters, CharPtr glyphs,
-            @NInt long count);
+    public static native boolean CTFontGetGlyphsForCharacters(@NotNull CTFontRef font, @NotNull ConstCharPtr characters,
+            @NotNull CharPtr glyphs, @NInt long count);
 
     /**
      * [@function] CTFontGetAscent
@@ -1143,7 +1183,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetAscent(CTFontRef font);
+    public static native double CTFontGetAscent(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetDescent
@@ -1161,7 +1201,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetDescent(CTFontRef font);
+    public static native double CTFontGetDescent(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetLeading
@@ -1179,7 +1219,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetLeading(CTFontRef font);
+    public static native double CTFontGetLeading(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetUnitsPerEm
@@ -1195,7 +1235,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native int CTFontGetUnitsPerEm(CTFontRef font);
+    public static native int CTFontGetUnitsPerEm(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetGlyphCount
@@ -1212,7 +1252,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTFontGetGlyphCount(CTFontRef font);
+    public static native long CTFontGetGlyphCount(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetBoundingBox
@@ -1230,7 +1270,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CTFontGetBoundingBox(CTFontRef font);
+    public static native CGRect CTFontGetBoundingBox(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetUnderlinePosition
@@ -1248,7 +1288,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetUnderlinePosition(CTFontRef font);
+    public static native double CTFontGetUnderlinePosition(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetUnderlineThickness
@@ -1266,7 +1306,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetUnderlineThickness(CTFontRef font);
+    public static native double CTFontGetUnderlineThickness(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetSlantAngle
@@ -1284,7 +1324,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetSlantAngle(CTFontRef font);
+    public static native double CTFontGetSlantAngle(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetCapHeight
@@ -1302,7 +1342,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetCapHeight(CTFontRef font);
+    public static native double CTFontGetCapHeight(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetXHeight
@@ -1320,7 +1360,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTFontGetXHeight(CTFontRef font);
+    public static native double CTFontGetXHeight(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontGetGlyphWithName
@@ -1340,7 +1380,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native char CTFontGetGlyphWithName(CTFontRef font, CFStringRef glyphName);
+    public static native char CTFontGetGlyphWithName(@NotNull CTFontRef font, @NotNull CFStringRef glyphName);
 
     /**
      * [@function] CTFontGetBoundingRectsForGlyphs
@@ -1373,8 +1413,10 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CTFontGetBoundingRectsForGlyphs(CTFontRef font, int orientation, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect boundingRects, @NInt long count);
+    public static native CGRect CTFontGetBoundingRectsForGlyphs(@NotNull CTFontRef font, int orientation,
+            @NotNull ConstCharPtr glyphs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect boundingRects,
+            @NInt long count);
 
     /**
      * [@function] CTFontGetOpticalBoundsForGlyphs
@@ -1412,9 +1454,9 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CTFontGetOpticalBoundsForGlyphs(CTFontRef font, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGRect boundingRects, @NInt long count,
-            @NUInt long options);
+    public static native CGRect CTFontGetOpticalBoundsForGlyphs(@NotNull CTFontRef font, @NotNull ConstCharPtr glyphs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGRect boundingRects,
+            @NInt long count, @NUInt long options);
 
     /**
      * [@function] CTFontGetAdvancesForGlyphs
@@ -1446,8 +1488,10 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native double CTFontGetAdvancesForGlyphs(CTFontRef font, int orientation, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGSize advances, @NInt long count);
+    public static native double CTFontGetAdvancesForGlyphs(@NotNull CTFontRef font, int orientation,
+            @NotNull ConstCharPtr glyphs,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGSize advances,
+            @NInt long count);
 
     /**
      * [@function] CTFontGetVerticalTranslationsForGlyphs
@@ -1470,8 +1514,10 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontGetVerticalTranslationsForGlyphs(CTFontRef font, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGSize translations, @NInt long count);
+    public static native void CTFontGetVerticalTranslationsForGlyphs(@NotNull CTFontRef font,
+            @NotNull ConstCharPtr glyphs,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGSize translations,
+            @NInt long count);
 
     /**
      * [@function] CTFontCreatePathForGlyph
@@ -1497,10 +1543,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CGPathRef CTFontCreatePathForGlyph(CTFontRef font, char glyph,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
+    public static native CGPathRef CTFontCreatePathForGlyph(@NotNull CTFontRef font, char glyph,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix);
 
     /**
      * [@function] CTFontCopyVariationAxes
@@ -1515,9 +1562,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCopyVariationAxes(CTFontRef font);
+    public static native CFArrayRef CTFontCopyVariationAxes(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyVariation
@@ -1538,9 +1586,10 @@ public final class CoreText {
      * 
      *      API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CTFontCopyVariation(CTFontRef font);
+    public static native CFDictionaryRef CTFontCopyVariation(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyFeatures
@@ -1554,9 +1603,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCopyFeatures(CTFontRef font);
+    public static native CFArrayRef CTFontCopyFeatures(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyFeatureSettings
@@ -1576,9 +1626,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCopyFeatureSettings(CTFontRef font);
+    public static native CFArrayRef CTFontCopyFeatureSettings(@NotNull CTFontRef font);
 
     /**
      * [@function] CTFontCopyGraphicsFont
@@ -1598,9 +1649,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGFontRef CTFontCopyGraphicsFont(CTFontRef font, Ptr<CTFontDescriptorRef> attributes);
+    public static native CGFontRef CTFontCopyGraphicsFont(@NotNull CTFontRef font,
+            @Nullable Ptr<CTFontDescriptorRef> attributes);
 
     /**
      * [@function] CTFontCreateWithGraphicsFont
@@ -1626,11 +1679,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateWithGraphicsFont(CGFontRef graphicsFont, @NFloat double size,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
-            CTFontDescriptorRef attributes);
+    public static native CTFontRef CTFontCreateWithGraphicsFont(@NotNull CGFontRef graphicsFont, @NFloat double size,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGAffineTransform matrix,
+            @Nullable CTFontDescriptorRef attributes);
 
     /**
      * [@function] CTFontCopyAvailableTables
@@ -1649,9 +1703,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCopyAvailableTables(CTFontRef font, int options);
+    public static native CFArrayRef CTFontCopyAvailableTables(@NotNull CTFontRef font, int options);
 
     /**
      * [@function] CTFontCopyTable
@@ -1672,9 +1727,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CTFontCopyTable(CTFontRef font, int table, int options);
+    public static native CFDataRef CTFontCopyTable(@NotNull CTFontRef font, int table, int options);
 
     /**
      * [@function] CTFontDrawGlyphs
@@ -1707,9 +1763,9 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontDrawGlyphs(CTFontRef font, ConstCharPtr glyphs,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint positions, @NUInt long count,
-            CGContextRef context);
+    public static native void CTFontDrawGlyphs(@NotNull CTFontRef font, @NotNull ConstCharPtr glyphs,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGPoint positions,
+            @NUInt long count, @NotNull CGContextRef context);
 
     /**
      * [@function] CTFontGetLigatureCaretPositions
@@ -1742,8 +1798,8 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTFontGetLigatureCaretPositions(CTFontRef font, char glyph, NFloatPtr positions,
-            @NInt long maxPositions);
+    public static native long CTFontGetLigatureCaretPositions(@NotNull CTFontRef font, char glyph,
+            @Nullable NFloatPtr positions, @NInt long maxPositions);
 
     /**
      * [@function] CTFontCopyDefaultCascadeListForLanguages
@@ -1762,10 +1818,11 @@ public final class CoreText {
      * 
      *         API-Since: 6.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCopyDefaultCascadeListForLanguages(CTFontRef font,
-            CFArrayRef languagePrefList);
+    public static native CFArrayRef CTFontCopyDefaultCascadeListForLanguages(@NotNull CTFontRef font,
+            @Nullable CFArrayRef languagePrefList);
 
     /**
      * [@function] CTFontCollectionGetTypeID
@@ -1793,9 +1850,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontCollectionRef CTFontCollectionCreateFromAvailableFonts(CFDictionaryRef options);
+    public static native CTFontCollectionRef CTFontCollectionCreateFromAvailableFonts(
+            @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CTFontCollectionCreateWithFontDescriptors
@@ -1814,10 +1873,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontCollectionRef CTFontCollectionCreateWithFontDescriptors(CFArrayRef queryDescriptors,
-            CFDictionaryRef options);
+    public static native CTFontCollectionRef CTFontCollectionCreateWithFontDescriptors(
+            @Nullable CFArrayRef queryDescriptors, @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CTFontCollectionCreateCopyWithFontDescriptors
@@ -1838,10 +1898,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontCollectionRef CTFontCollectionCreateCopyWithFontDescriptors(CTFontCollectionRef original,
-            CFArrayRef queryDescriptors, CFDictionaryRef options);
+    public static native CTFontCollectionRef CTFontCollectionCreateCopyWithFontDescriptors(
+            @NotNull CTFontCollectionRef original, @Nullable CFArrayRef queryDescriptors,
+            @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CTFontCollectionCreateMatchingFontDescriptors
@@ -1855,9 +1917,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCollectionCreateMatchingFontDescriptors(CTFontCollectionRef collection);
+    public static native CFArrayRef CTFontCollectionCreateMatchingFontDescriptors(
+            @NotNull CTFontCollectionRef collection);
 
     /**
      * [@function] CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback
@@ -1878,12 +1942,13 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(
-            CTFontCollectionRef collection,
-            @FunctionPtr(name = "call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback") Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback sortCallback,
-            VoidPtr refCon);
+            @NotNull CTFontCollectionRef collection,
+            @Nullable @FunctionPtr(name = "call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback") Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback sortCallback,
+            @Nullable VoidPtr refCon);
 
     /**
      * [@function] CTFontManagerCopyAvailablePostScriptNames
@@ -1894,6 +1959,7 @@ public final class CoreText {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCopyAvailablePostScriptNames();
@@ -1907,6 +1973,7 @@ public final class CoreText {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCopyAvailableFontFamilyNames();
@@ -1924,9 +1991,10 @@ public final class CoreText {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromURL(CFURLRef fileURL);
+    public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromURL(@NotNull CFURLRef fileURL);
 
     /**
      * [@function] CTFontManagerCreateFontDescriptorFromData
@@ -1943,9 +2011,10 @@ public final class CoreText {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTFontDescriptorRef CTFontManagerCreateFontDescriptorFromData(CFDataRef data);
+    public static native CTFontDescriptorRef CTFontManagerCreateFontDescriptorFromData(@NotNull CFDataRef data);
 
     /**
      * [@function] CTFontManagerRegisterFontsForURL
@@ -1970,7 +2039,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTFontManagerRegisterFontsForURL(CFURLRef fontURL, int scope, Ptr<CFErrorRef> error);
+    public static native boolean CTFontManagerRegisterFontsForURL(@NotNull CFURLRef fontURL, int scope,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] CTFontManagerUnregisterFontsForURL
@@ -1997,7 +2067,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTFontManagerUnregisterFontsForURL(CFURLRef fontURL, int scope, Ptr<CFErrorRef> error);
+    public static native boolean CTFontManagerUnregisterFontsForURL(@NotNull CFURLRef fontURL, int scope,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] CTFontManagerRegisterGraphicsFont
@@ -2023,7 +2094,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTFontManagerRegisterGraphicsFont(CGFontRef font, Ptr<CFErrorRef> error);
+    public static native boolean CTFontManagerRegisterGraphicsFont(@NotNull CGFontRef font,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] CTFontManagerUnregisterGraphicsFont
@@ -2043,7 +2115,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native boolean CTFontManagerUnregisterGraphicsFont(CGFontRef font, Ptr<CFErrorRef> error);
+    public static native boolean CTFontManagerUnregisterGraphicsFont(@NotNull CGFontRef font,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] CTFontManagerRegisterFontsForURLs
@@ -2073,8 +2146,8 @@ public final class CoreText {
     @Deprecated
     @Generated
     @CFunction
-    public static native boolean CTFontManagerRegisterFontsForURLs(CFArrayRef fontURLs, int scope,
-            Ptr<CFArrayRef> errors);
+    public static native boolean CTFontManagerRegisterFontsForURLs(@NotNull CFArrayRef fontURLs, int scope,
+            @Nullable Ptr<CFArrayRef> errors);
 
     /**
      * [@function] CTFontManagerUnregisterFontsForURLs
@@ -2105,8 +2178,8 @@ public final class CoreText {
     @Deprecated
     @Generated
     @CFunction
-    public static native boolean CTFontManagerUnregisterFontsForURLs(CFArrayRef fontURLs, int scope,
-            Ptr<CFArrayRef> errors);
+    public static native boolean CTFontManagerUnregisterFontsForURLs(@NotNull CFArrayRef fontURLs, int scope,
+            @Nullable Ptr<CFArrayRef> errors);
 
     /**
      * [@function] CTFrameGetTypeID
@@ -2139,7 +2212,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CFRange CTFrameGetStringRange(CTFrameRef frame);
+    public static native CFRange CTFrameGetStringRange(@NotNull CTFrameRef frame);
 
     /**
      * [@function] CTFrameGetVisibleStringRange
@@ -2165,7 +2238,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CFRange CTFrameGetVisibleStringRange(CTFrameRef frame);
+    public static native CFRange CTFrameGetVisibleStringRange(@NotNull CTFrameRef frame);
 
     /**
      * [@function] CTFrameGetPath
@@ -2177,9 +2250,10 @@ public final class CoreText {
      * 
      *              API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CGPathRef CTFrameGetPath(CTFrameRef frame);
+    public static native CGPathRef CTFrameGetPath(@NotNull CTFrameRef frame);
 
     /**
      * [@function] CTFrameGetFrameAttributes
@@ -2201,9 +2275,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CTFrameGetFrameAttributes(CTFrameRef frame);
+    public static native CFDictionaryRef CTFrameGetFrameAttributes(@NotNull CTFrameRef frame);
 
     /**
      * [@function] CTFrameGetLines
@@ -2225,9 +2300,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CTFrameGetLines(CTFrameRef frame);
+    public static native CFArrayRef CTFrameGetLines(@NotNull CTFrameRef frame);
 
     /**
      * [@function] CTFrameGetLineOrigins
@@ -2264,8 +2340,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFrameGetLineOrigins(CTFrameRef frame, @ByValue CFRange range,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint origins);
+    public static native void CTFrameGetLineOrigins(@NotNull CTFrameRef frame, @ByValue CFRange range,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGPoint origins);
 
     /**
      * [@function] CTFrameDraw
@@ -2289,7 +2365,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFrameDraw(CTFrameRef frame, CGContextRef context);
+    public static native void CTFrameDraw(@NotNull CTFrameRef frame, @NotNull CGContextRef context);
 
     /**
      * [@function] CTLineGetTypeID
@@ -2322,9 +2398,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTLineRef CTLineCreateWithAttributedString(CFAttributedStringRef attrString);
+    public static native CTLineRef CTLineCreateWithAttributedString(@NotNull CFAttributedStringRef attrString);
 
     /**
      * [@function] CTLineCreateTruncatedLine
@@ -2357,10 +2434,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTLineRef CTLineCreateTruncatedLine(CTLineRef line, double width, int truncationType,
-            CTLineRef truncationToken);
+    public static native CTLineRef CTLineCreateTruncatedLine(@NotNull CTLineRef line, double width, int truncationType,
+            @Nullable CTLineRef truncationToken);
 
     /**
      * [@function] CTLineCreateJustifiedLine
@@ -2388,10 +2466,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTLineRef CTLineCreateJustifiedLine(CTLineRef line, @NFloat double justificationFactor,
-            double justificationWidth);
+    public static native CTLineRef CTLineCreateJustifiedLine(@NotNull CTLineRef line,
+            @NFloat double justificationFactor, double justificationWidth);
 
     /**
      * [@function] CTLineGetGlyphCount
@@ -2411,7 +2490,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTLineGetGlyphCount(CTLineRef line);
+    public static native long CTLineGetGlyphCount(@NotNull CTLineRef line);
 
     /**
      * [@function] CTLineGetGlyphRuns
@@ -2425,9 +2504,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CTLineGetGlyphRuns(CTLineRef line);
+    public static native CFArrayRef CTLineGetGlyphRuns(@NotNull CTLineRef line);
 
     /**
      * [@function] CTLineGetStringRange
@@ -2447,7 +2527,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CFRange CTLineGetStringRange(CTLineRef line);
+    public static native CFRange CTLineGetStringRange(@NotNull CTLineRef line);
 
     /**
      * [@function] CTLineGetPenOffsetForFlush
@@ -2474,7 +2554,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native double CTLineGetPenOffsetForFlush(CTLineRef line, @NFloat double flushFactor,
+    public static native double CTLineGetPenOffsetForFlush(@NotNull CTLineRef line, @NFloat double flushFactor,
             double flushWidth);
 
     /**
@@ -2499,7 +2579,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTLineDraw(CTLineRef line, CGContextRef context);
+    public static native void CTLineDraw(@NotNull CTLineRef line, @NotNull CGContextRef context);
 
     /**
      * [@function] CTLineGetTypographicBounds
@@ -2534,8 +2614,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native double CTLineGetTypographicBounds(CTLineRef line, NFloatPtr ascent, NFloatPtr descent,
-            NFloatPtr leading);
+    public static native double CTLineGetTypographicBounds(@NotNull CTLineRef line, @Nullable NFloatPtr ascent,
+            @Nullable NFloatPtr descent, @Nullable NFloatPtr leading);
 
     /**
      * [@function] CTLineGetBoundsWithOptions
@@ -2558,7 +2638,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CTLineGetBoundsWithOptions(CTLineRef line, @NUInt long options);
+    public static native CGRect CTLineGetBoundsWithOptions(@NotNull CTLineRef line, @NUInt long options);
 
     /**
      * [@function] CTLineGetTrailingWhitespaceWidth
@@ -2580,7 +2660,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native double CTLineGetTrailingWhitespaceWidth(CTLineRef line);
+    public static native double CTLineGetTrailingWhitespaceWidth(@NotNull CTLineRef line);
 
     /**
      * [@function] CTLineGetImageBounds
@@ -2614,7 +2694,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CTLineGetImageBounds(CTLineRef line, CGContextRef context);
+    public static native CGRect CTLineGetImageBounds(@NotNull CTLineRef line, @Nullable CGContextRef context);
 
     /**
      * [@function] CTLineGetStringIndexForPosition
@@ -2644,7 +2724,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTLineGetStringIndexForPosition(CTLineRef line, @ByValue CGPoint position);
+    public static native long CTLineGetStringIndexForPosition(@NotNull CTLineRef line, @ByValue CGPoint position);
 
     /**
      * [@function] CTLineGetOffsetForStringIndex
@@ -2683,8 +2763,8 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTLineGetOffsetForStringIndex(CTLineRef line, @NInt long charIndex,
-            NFloatPtr secondaryOffset);
+    public static native double CTLineGetOffsetForStringIndex(@NotNull CTLineRef line, @NInt long charIndex,
+            @Nullable NFloatPtr secondaryOffset);
 
     /**
      * [@function] CTLineEnumerateCaretOffsets
@@ -2701,8 +2781,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTLineEnumerateCaretOffsets(CTLineRef line,
-            @ObjCBlock(name = "call_CTLineEnumerateCaretOffsets") Block_CTLineEnumerateCaretOffsets block);
+    public static native void CTLineEnumerateCaretOffsets(@NotNull CTLineRef line,
+            @NotNull @ObjCBlock(name = "call_CTLineEnumerateCaretOffsets") Block_CTLineEnumerateCaretOffsets block);
 
     /**
      * [@function] CTTypesetterGetTypeID
@@ -2734,9 +2814,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTTypesetterRef CTTypesetterCreateWithAttributedString(CFAttributedStringRef string);
+    public static native CTTypesetterRef CTTypesetterCreateWithAttributedString(@NotNull CFAttributedStringRef string);
 
     /**
      * [@function] CTTypesetterCreateWithAttributedStringAndOptions
@@ -2763,10 +2844,11 @@ public final class CoreText {
      * 
      *      API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTTypesetterRef CTTypesetterCreateWithAttributedStringAndOptions(CFAttributedStringRef string,
-            CFDictionaryRef options);
+    public static native CTTypesetterRef CTTypesetterCreateWithAttributedStringAndOptions(
+            @NotNull CFAttributedStringRef string, @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CTTypesetterCreateLineWithOffset
@@ -2793,9 +2875,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTLineRef CTTypesetterCreateLineWithOffset(CTTypesetterRef typesetter,
+    public static native CTLineRef CTTypesetterCreateLineWithOffset(@NotNull CTTypesetterRef typesetter,
             @ByValue CFRange stringRange, double offset);
 
     /**
@@ -2805,9 +2888,11 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTLineRef CTTypesetterCreateLine(CTTypesetterRef typesetter, @ByValue CFRange stringRange);
+    public static native CTLineRef CTTypesetterCreateLine(@NotNull CTTypesetterRef typesetter,
+            @ByValue CFRange stringRange);
 
     /**
      * [@function] CTTypesetterSuggestLineBreakWithOffset
@@ -2840,8 +2925,8 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTTypesetterSuggestLineBreakWithOffset(CTTypesetterRef typesetter, @NInt long startIndex,
-            double width, double offset);
+    public static native long CTTypesetterSuggestLineBreakWithOffset(@NotNull CTTypesetterRef typesetter,
+            @NInt long startIndex, double width, double offset);
 
     /**
      * [@function] CTTypesetterSuggestLineBreak
@@ -2853,7 +2938,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTTypesetterSuggestLineBreak(CTTypesetterRef typesetter, @NInt long startIndex,
+    public static native long CTTypesetterSuggestLineBreak(@NotNull CTTypesetterRef typesetter, @NInt long startIndex,
             double width);
 
     /**
@@ -2892,7 +2977,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTTypesetterSuggestClusterBreakWithOffset(CTTypesetterRef typesetter,
+    public static native long CTTypesetterSuggestClusterBreakWithOffset(@NotNull CTTypesetterRef typesetter,
             @NInt long startIndex, double width, double offset);
 
     /**
@@ -2905,8 +2990,8 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTTypesetterSuggestClusterBreak(CTTypesetterRef typesetter, @NInt long startIndex,
-            double width);
+    public static native long CTTypesetterSuggestClusterBreak(@NotNull CTTypesetterRef typesetter,
+            @NInt long startIndex, double width);
 
     /**
      * [@function] CTFramesetterGetTypeID
@@ -2936,9 +3021,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFramesetterRef CTFramesetterCreateWithAttributedString(CFAttributedStringRef attrString);
+    public static native CTFramesetterRef CTFramesetterCreateWithAttributedString(
+            @NotNull CFAttributedStringRef attrString);
 
     /**
      * [@function] CTFramesetterCreateFrame
@@ -2973,10 +3060,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFrameRef CTFramesetterCreateFrame(CTFramesetterRef framesetter, @ByValue CFRange stringRange,
-            CGPathRef path, CFDictionaryRef frameAttributes);
+    public static native CTFrameRef CTFramesetterCreateFrame(@NotNull CTFramesetterRef framesetter,
+            @ByValue CFRange stringRange, @NotNull CGPathRef path, @Nullable CFDictionaryRef frameAttributes);
 
     /**
      * [@function] CTFramesetterGetTypesetter
@@ -2997,9 +3085,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTTypesetterRef CTFramesetterGetTypesetter(CTFramesetterRef framesetter);
+    public static native CTTypesetterRef CTFramesetterGetTypesetter(@NotNull CTFramesetterRef framesetter);
 
     /**
      * [@function] CTFramesetterSuggestFrameSizeWithConstraints
@@ -3039,9 +3128,9 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGSize CTFramesetterSuggestFrameSizeWithConstraints(CTFramesetterRef framesetter,
-            @ByValue CFRange stringRange, CFDictionaryRef frameAttributes, @ByValue CGSize constraints,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFRange fitRange);
+    public static native CGSize CTFramesetterSuggestFrameSizeWithConstraints(@NotNull CTFramesetterRef framesetter,
+            @ByValue CFRange stringRange, @Nullable CFDictionaryRef frameAttributes, @ByValue CGSize constraints,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFRange fitRange);
 
     /**
      * [@function] CTGlyphInfoGetTypeID
@@ -3077,10 +3166,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTGlyphInfoRef CTGlyphInfoCreateWithGlyphName(CFStringRef glyphName, CTFontRef font,
-            CFStringRef baseString);
+    public static native CTGlyphInfoRef CTGlyphInfoCreateWithGlyphName(@NotNull CFStringRef glyphName,
+            @NotNull CTFontRef font, @NotNull CFStringRef baseString);
 
     /**
      * [@function] CTGlyphInfoCreateWithGlyph
@@ -3104,9 +3194,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CTGlyphInfoRef CTGlyphInfoCreateWithGlyph(char glyph, CTFontRef font, CFStringRef baseString);
+    public static native CTGlyphInfoRef CTGlyphInfoCreateWithGlyph(char glyph, @NotNull CTFontRef font,
+            @NotNull CFStringRef baseString);
 
     /**
      * [@function] CTGlyphInfoCreateWithCharacterIdentifier
@@ -3130,10 +3222,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CTGlyphInfoRef CTGlyphInfoCreateWithCharacterIdentifier(char cid, short collection,
-            CFStringRef baseString);
+            @NotNull CFStringRef baseString);
 
     /**
      * [@function] CTGlyphInfoGetGlyphName
@@ -3150,9 +3243,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CTGlyphInfoGetGlyphName(CTGlyphInfoRef glyphInfo);
+    public static native CFStringRef CTGlyphInfoGetGlyphName(@NotNull CTGlyphInfoRef glyphInfo);
 
     /**
      * [@function] CTGlyphInfoGetCharacterIdentifier
@@ -3171,7 +3265,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native char CTGlyphInfoGetCharacterIdentifier(CTGlyphInfoRef glyphInfo);
+    public static native char CTGlyphInfoGetCharacterIdentifier(@NotNull CTGlyphInfoRef glyphInfo);
 
     /**
      * [@function] CTGlyphInfoGetCharacterCollection
@@ -3193,7 +3287,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native short CTGlyphInfoGetCharacterCollection(CTGlyphInfoRef glyphInfo);
+    public static native short CTGlyphInfoGetCharacterCollection(@NotNull CTGlyphInfoRef glyphInfo);
 
     /**
      * [@function] CTRubyAnnotationGetTypeID
@@ -3237,10 +3331,11 @@ public final class CoreText {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CTRubyAnnotationRef CTRubyAnnotationCreateWithAttributes(byte alignment, byte overhang,
-            byte position, CFStringRef string, CFDictionaryRef attributes);
+            byte position, @NotNull CFStringRef string, @NotNull CFDictionaryRef attributes);
 
     /**
      * [@function] CTRubyAnnotationCreateCopy
@@ -3257,9 +3352,10 @@ public final class CoreText {
      * 
      *         API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTRubyAnnotationRef CTRubyAnnotationCreateCopy(CTRubyAnnotationRef rubyAnnotation);
+    public static native CTRubyAnnotationRef CTRubyAnnotationCreateCopy(@NotNull CTRubyAnnotationRef rubyAnnotation);
 
     /**
      * [@function] CTRubyAnnotationGetAlignment
@@ -3276,7 +3372,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native byte CTRubyAnnotationGetAlignment(CTRubyAnnotationRef rubyAnnotation);
+    public static native byte CTRubyAnnotationGetAlignment(@NotNull CTRubyAnnotationRef rubyAnnotation);
 
     /**
      * [@function] CTRubyAnnotationGetOverhang
@@ -3293,7 +3389,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native byte CTRubyAnnotationGetOverhang(CTRubyAnnotationRef rubyAnnotation);
+    public static native byte CTRubyAnnotationGetOverhang(@NotNull CTRubyAnnotationRef rubyAnnotation);
 
     /**
      * [@function] CTRubyAnnotationGetSizeFactor
@@ -3311,7 +3407,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NFloat
-    public static native double CTRubyAnnotationGetSizeFactor(CTRubyAnnotationRef rubyAnnotation);
+    public static native double CTRubyAnnotationGetSizeFactor(@NotNull CTRubyAnnotationRef rubyAnnotation);
 
     /**
      * [@function] CTRubyAnnotationGetTextForPosition
@@ -3329,9 +3425,10 @@ public final class CoreText {
      * 
      *         API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CTRubyAnnotationGetTextForPosition(CTRubyAnnotationRef rubyAnnotation,
+    public static native CFStringRef CTRubyAnnotationGetTextForPosition(@NotNull CTRubyAnnotationRef rubyAnnotation,
             byte position);
 
     /**
@@ -3363,7 +3460,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @NInt
-    public static native long CTRunGetGlyphCount(CTRunRef run);
+    public static native long CTRunGetGlyphCount(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetAttributes
@@ -3384,9 +3481,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDictionaryRef CTRunGetAttributes(CTRunRef run);
+    public static native CFDictionaryRef CTRunGetAttributes(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetStatus
@@ -3410,7 +3508,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native int CTRunGetStatus(CTRunRef run);
+    public static native int CTRunGetStatus(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetGlyphsPtr
@@ -3431,9 +3529,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstCharPtr CTRunGetGlyphsPtr(CTRunRef run);
+    public static native ConstCharPtr CTRunGetGlyphsPtr(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetGlyphs
@@ -3457,7 +3556,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTRunGetGlyphs(CTRunRef run, @ByValue CFRange range, CharPtr buffer);
+    public static native void CTRunGetGlyphs(@NotNull CTRunRef run, @ByValue CFRange range, @NotNull CharPtr buffer);
 
     /**
      * [@function] CTRunGetPositionsPtr
@@ -3480,10 +3579,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
-    public static native CGPoint CTRunGetPositionsPtr(CTRunRef run);
+    public static native CGPoint CTRunGetPositionsPtr(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetPositions
@@ -3511,8 +3611,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTRunGetPositions(CTRunRef run, @ByValue CFRange range,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint buffer);
+    public static native void CTRunGetPositions(@NotNull CTRunRef run, @ByValue CFRange range,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGPoint buffer);
 
     /**
      * [@function] CTRunGetAdvancesPtr
@@ -3537,10 +3637,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: reference, array Fallback: reference")
-    public static native CGSize CTRunGetAdvancesPtr(CTRunRef run);
+    public static native CGSize CTRunGetAdvancesPtr(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetAdvances
@@ -3565,8 +3666,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTRunGetAdvances(CTRunRef run, @ByValue CFRange range,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGSize buffer);
+    public static native void CTRunGetAdvances(@NotNull CTRunRef run, @ByValue CFRange range,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CGSize buffer);
 
     /**
      * [@function] CTRunGetStringIndicesPtr
@@ -3590,9 +3691,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native ConstNIntPtr CTRunGetStringIndicesPtr(CTRunRef run);
+    public static native ConstNIntPtr CTRunGetStringIndicesPtr(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetStringIndices
@@ -3621,7 +3723,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTRunGetStringIndices(CTRunRef run, @ByValue CFRange range, NIntPtr buffer);
+    public static native void CTRunGetStringIndices(@NotNull CTRunRef run, @ByValue CFRange range,
+            @NotNull NIntPtr buffer);
 
     /**
      * [@function] CTRunGetStringRange
@@ -3640,7 +3743,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CFRange CTRunGetStringRange(CTRunRef run);
+    public static native CFRange CTRunGetStringRange(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunGetTypographicBounds
@@ -3675,8 +3778,8 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native double CTRunGetTypographicBounds(CTRunRef run, @ByValue CFRange range, NFloatPtr ascent,
-            NFloatPtr descent, NFloatPtr leading);
+    public static native double CTRunGetTypographicBounds(@NotNull CTRunRef run, @ByValue CFRange range,
+            @Nullable NFloatPtr ascent, @Nullable NFloatPtr descent, @Nullable NFloatPtr leading);
 
     /**
      * [@function] CTRunGetImageBounds
@@ -3718,7 +3821,8 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGRect CTRunGetImageBounds(CTRunRef run, CGContextRef context, @ByValue CFRange range);
+    public static native CGRect CTRunGetImageBounds(@NotNull CTRunRef run, @Nullable CGContextRef context,
+            @ByValue CFRange range);
 
     /**
      * [@function] CTRunGetTextMatrix
@@ -3739,7 +3843,7 @@ public final class CoreText {
     @Generated
     @CFunction
     @ByValue
-    public static native CGAffineTransform CTRunGetTextMatrix(CTRunRef run);
+    public static native CGAffineTransform CTRunGetTextMatrix(@NotNull CTRunRef run);
 
     /**
      * [@function] CTRunDraw
@@ -3772,7 +3876,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTRunDraw(CTRunRef run, CGContextRef context, @ByValue CFRange range);
+    public static native void CTRunDraw(@NotNull CTRunRef run, @NotNull CGContextRef context, @ByValue CFRange range);
 
     /**
      * [@function] CTRunDelegateGetTypeID
@@ -3804,11 +3908,12 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CTRunDelegateRef CTRunDelegateCreate(
-            @UncertainArgument("Options: reference, array Fallback: reference") CTRunDelegateCallbacks callbacks,
-            VoidPtr refCon);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CTRunDelegateCallbacks callbacks,
+            @Nullable VoidPtr refCon);
 
     /**
      * [@function] CTRunDelegateGetRefCon
@@ -3825,9 +3930,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native VoidPtr CTRunDelegateGetRefCon(CTRunDelegateRef runDelegate);
+    public static native VoidPtr CTRunDelegateGetRefCon(@NotNull CTRunDelegateRef runDelegate);
 
     /**
      * [@function] CTTypesetterGetTypeID
@@ -3863,9 +3969,11 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTTextTabRef CTTextTabCreate(byte alignment, double location, CFDictionaryRef options);
+    public static native CTTextTabRef CTTextTabCreate(byte alignment, double location,
+            @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CTTextTabGetAlignment
@@ -3881,7 +3989,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native byte CTTextTabGetAlignment(CTTextTabRef tab);
+    public static native byte CTTextTabGetAlignment(@NotNull CTTextTabRef tab);
 
     /**
      * [@function] CTTextTabGetLocation
@@ -3897,7 +4005,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native double CTTextTabGetLocation(CTTextTabRef tab);
+    public static native double CTTextTabGetLocation(@NotNull CTTextTabRef tab);
 
     /**
      * [@function] CTTextTabGetOptions
@@ -3912,9 +4020,10 @@ public final class CoreText {
      * 
      *         API-Since: 3.2
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CTTextTabGetOptions(CTTextTabRef tab);
+    public static native CFDictionaryRef CTTextTabGetOptions(@NotNull CTTextTabRef tab);
 
     /**
      * [@function] CTGetCoreTextVersion
@@ -3955,6 +4064,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSymbolicTrait();
@@ -3970,6 +4080,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontWeightTrait();
@@ -3986,6 +4097,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontWidthTrait();
@@ -4002,6 +4114,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSlantTrait();
@@ -4016,6 +4129,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontURLAttribute();
@@ -4033,6 +4147,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontNameAttribute();
@@ -4047,6 +4162,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDisplayNameAttribute();
@@ -4061,6 +4177,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFamilyNameAttribute();
@@ -4075,6 +4192,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontStyleNameAttribute();
@@ -4089,6 +4207,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontTraitsAttribute();
@@ -4104,6 +4223,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAttribute();
@@ -4118,6 +4238,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSizeAttribute();
@@ -4133,6 +4254,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontMatrixAttribute();
@@ -4148,6 +4270,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCascadeListAttribute();
@@ -4162,6 +4285,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCharacterSetAttribute();
@@ -4177,6 +4301,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontLanguagesAttribute();
@@ -4191,6 +4316,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontBaselineAdjustAttribute();
@@ -4206,6 +4332,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontMacintoshEncodingsAttribute();
@@ -4221,6 +4348,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeaturesAttribute();
@@ -4249,6 +4377,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSettingsAttribute();
@@ -4267,6 +4396,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFixedAdvanceAttribute();
@@ -4282,6 +4412,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOrientationAttribute();
@@ -4296,6 +4427,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFormatAttribute();
@@ -4311,6 +4443,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontRegistrationScopeAttribute();
@@ -4326,6 +4459,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontPriorityAttribute();
@@ -4340,6 +4474,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontEnabledAttribute();
@@ -4354,6 +4489,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDownloadableAttribute();
@@ -4368,6 +4504,7 @@ public final class CoreText {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDownloadedAttribute();
@@ -4377,6 +4514,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingSourceDescriptor();
@@ -4387,6 +4525,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingDescriptors();
@@ -4397,6 +4536,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingResult();
@@ -4406,6 +4546,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingPercentage();
@@ -4415,6 +4556,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingCurrentAssetSize();
@@ -4424,6 +4566,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingTotalDownloadedSize();
@@ -4433,6 +4576,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingTotalAssetSize();
@@ -4442,6 +4586,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptorMatchingError();
@@ -4454,6 +4599,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCopyrightNameKey();
@@ -4465,6 +4611,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFamilyNameKey();
@@ -4476,6 +4623,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSubFamilyNameKey();
@@ -4487,6 +4635,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontStyleNameKey();
@@ -4501,6 +4650,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontUniqueNameKey();
@@ -4512,6 +4662,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFullNameKey();
@@ -4523,6 +4674,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVersionNameKey();
@@ -4534,6 +4686,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontPostScriptNameKey();
@@ -4545,6 +4698,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontTrademarkNameKey();
@@ -4556,6 +4710,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManufacturerNameKey();
@@ -4567,6 +4722,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDesignerNameKey();
@@ -4578,6 +4734,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDescriptionNameKey();
@@ -4589,6 +4746,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVendorURLNameKey();
@@ -4600,6 +4758,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontDesignerURLNameKey();
@@ -4611,6 +4770,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontLicenseNameKey();
@@ -4622,6 +4782,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontLicenseURLNameKey();
@@ -4633,6 +4794,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontSampleTextNameKey();
@@ -4644,6 +4806,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontPostScriptCIDNameKey();
@@ -4657,6 +4820,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisIdentifierKey();
@@ -4670,6 +4834,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisMinimumValueKey();
@@ -4683,6 +4848,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisMaximumValueKey();
@@ -4696,6 +4862,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisDefaultValueKey();
@@ -4709,6 +4876,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisNameKey();
@@ -4722,6 +4890,7 @@ public final class CoreText {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOpenTypeFeatureTag();
@@ -4735,6 +4904,7 @@ public final class CoreText {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOpenTypeFeatureValue();
@@ -4748,6 +4918,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeIdentifierKey();
@@ -4761,6 +4932,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeNameKey();
@@ -4776,6 +4948,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeExclusiveKey();
@@ -4790,6 +4963,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTypeSelectorsKey();
@@ -4804,6 +4978,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorIdentifierKey();
@@ -4817,6 +4992,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorNameKey();
@@ -4832,6 +5008,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorDefaultKey();
@@ -4847,6 +5024,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSelectorSettingKey();
@@ -4861,6 +5039,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassRoman();
@@ -4875,6 +5054,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassIdeographicCentered();
@@ -4889,6 +5069,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassIdeographicLow();
@@ -4903,6 +5084,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassIdeographicHigh();
@@ -4917,6 +5099,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassHanging();
@@ -4931,6 +5114,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassMath();
@@ -4945,6 +5129,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineReferenceFont();
@@ -4959,6 +5144,7 @@ public final class CoreText {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineOriginalFont();
@@ -4973,6 +5159,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontCollectionRemoveDuplicatesOption();
@@ -4986,6 +5173,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorDomain();
@@ -5000,6 +5188,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorFontURLsKey();
@@ -5018,6 +5207,7 @@ public final class CoreText {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerRegisteredFontsChangedNotification();
@@ -5036,6 +5226,7 @@ public final class CoreText {
      * 
      *      API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFrameProgressionAttributeName();
@@ -5054,6 +5245,7 @@ public final class CoreText {
      * 
      *      API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFramePathFillRuleAttributeName();
@@ -5072,6 +5264,7 @@ public final class CoreText {
      * 
      *      API-Since: 4.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFramePathWidthAttributeName();
@@ -5091,6 +5284,7 @@ public final class CoreText {
      * 
      *      API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFrameClippingPathsAttributeName();
@@ -5108,6 +5302,7 @@ public final class CoreText {
      * 
      *      API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFramePathClippingPathAttributeName();
@@ -5127,6 +5322,7 @@ public final class CoreText {
      * Deprecated-Since: 6.0
      * Deprecated-Message: Deprecated
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5144,6 +5340,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTTypesetterOptionForcedEmbeddingLevel();
@@ -5157,6 +5354,7 @@ public final class CoreText {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTRubyAnnotationSizeFactorAttributeName();
@@ -5173,6 +5371,7 @@ public final class CoreText {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTRubyAnnotationScaleToFitAttributeName();
@@ -5186,6 +5385,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontAttributeName();
@@ -5207,6 +5407,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTForegroundColorFromContextAttributeName();
@@ -5227,6 +5428,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTKernAttributeName();
@@ -5256,6 +5458,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTLigatureAttributeName();
@@ -5269,6 +5472,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTForegroundColorAttributeName();
@@ -5282,6 +5486,7 @@ public final class CoreText {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBackgroundColorAttributeName();
@@ -5301,6 +5506,7 @@ public final class CoreText {
      * 
      *      API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTParagraphStyleAttributeName();
@@ -5318,6 +5524,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTStrokeWidthAttributeName();
@@ -5331,6 +5538,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTStrokeColorAttributeName();
@@ -5350,6 +5558,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTUnderlineStyleAttributeName();
@@ -5365,6 +5574,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTSuperscriptAttributeName();
@@ -5378,6 +5588,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTUnderlineColorAttributeName();
@@ -5393,6 +5604,7 @@ public final class CoreText {
      * 
      * API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTVerticalFormsAttributeName();
@@ -5410,6 +5622,7 @@ public final class CoreText {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTHorizontalInVerticalFormsAttributeName();
@@ -5427,6 +5640,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTGlyphInfoAttributeName();
@@ -5445,6 +5659,7 @@ public final class CoreText {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use feature type kCharacterShapeType with the appropriate selector
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5462,6 +5677,7 @@ public final class CoreText {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTLanguageAttributeName();
@@ -5484,6 +5700,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTRunDelegateAttributeName();
@@ -5507,6 +5724,7 @@ public final class CoreText {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineClassAttributeName();
@@ -5532,6 +5750,7 @@ public final class CoreText {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineInfoAttributeName();
@@ -5559,6 +5778,7 @@ public final class CoreText {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineReferenceInfoAttributeName();
@@ -5592,6 +5812,7 @@ public final class CoreText {
      * 
      *      API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTWritingDirectionAttributeName();
@@ -5606,6 +5827,7 @@ public final class CoreText {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTRubyAnnotationAttributeName();
@@ -5624,6 +5846,7 @@ public final class CoreText {
      * 
      * API-Since: 3.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTTabColumnTerminatorsAttributeName();
@@ -5633,7 +5856,7 @@ public final class CoreText {
     public interface Block_CTFontDescriptorMatchFontDescriptorsWithProgressHandler {
         @Generated
         boolean call_CTFontDescriptorMatchFontDescriptorsWithProgressHandler(int state,
-                CFDictionaryRef progressParameter);
+                @NotNull CFDictionaryRef progressParameter);
     }
 
     @Runtime(CRuntime.class)
@@ -5641,15 +5864,15 @@ public final class CoreText {
     public interface Function_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback {
         @Generated
         @NInt
-        long call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(CTFontDescriptorRef arg0,
-                CTFontDescriptorRef arg1, VoidPtr arg2);
+        long call_CTFontCollectionCreateMatchingFontDescriptorsSortedWithCallback(@NotNull CTFontDescriptorRef arg0,
+                @NotNull CTFontDescriptorRef arg1, @NotNull VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTLineEnumerateCaretOffsets {
         @Generated
-        void call_CTLineEnumerateCaretOffsets(double arg0, @NInt long arg1, boolean arg2, BoolPtr arg3);
+        void call_CTLineEnumerateCaretOffsets(double arg0, @NInt long arg1, boolean arg2, @NotNull BoolPtr arg3);
     }
 
     /**
@@ -5662,6 +5885,7 @@ public final class CoreText {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxisHiddenKey();
@@ -5683,6 +5907,7 @@ public final class CoreText {
      * 
      *      API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTBaselineOffsetAttributeName();
@@ -5717,10 +5942,11 @@ public final class CoreText {
      * 
      *      API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFontRef CTFontCreateForStringWithLanguage(CTFontRef currentFont, CFStringRef string,
-            @ByValue CFRange range, CFStringRef language);
+    public static native CTFontRef CTFontCreateForStringWithLanguage(@NotNull CTFontRef currentFont,
+            @NotNull CFStringRef string, @ByValue CFRange range, @Nullable CFStringRef language);
 
     /**
      * [@function] CTFontCollectionCreateMatchingFontDescriptorsWithOptions
@@ -5739,10 +5965,11 @@ public final class CoreText {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFArrayRef CTFontCollectionCreateMatchingFontDescriptorsWithOptions(
-            CTFontCollectionRef collection, CFDictionaryRef options);
+            @NotNull CTFontCollectionRef collection, @Nullable CFDictionaryRef options);
 
     /**
      * [@function] CTFontManagerCreateFontDescriptorsFromData
@@ -5758,9 +5985,10 @@ public final class CoreText {
      * 
      *         API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromData(CFDataRef data);
+    public static native CFArrayRef CTFontManagerCreateFontDescriptorsFromData(@NotNull CFDataRef data);
 
     /**
      * [@function] CTFontManagerRegisterFontURLs
@@ -5797,14 +6025,14 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontManagerRegisterFontURLs(CFArrayRef fontURLs, int scope, boolean enabled,
-            @ObjCBlock(name = "call_CTFontManagerRegisterFontURLs") Block_CTFontManagerRegisterFontURLs registrationHandler);
+    public static native void CTFontManagerRegisterFontURLs(@NotNull CFArrayRef fontURLs, int scope, boolean enabled,
+            @Nullable @ObjCBlock(name = "call_CTFontManagerRegisterFontURLs") Block_CTFontManagerRegisterFontURLs registrationHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTFontManagerRegisterFontURLs {
         @Generated
-        boolean call_CTFontManagerRegisterFontURLs(CFArrayRef arg0, boolean arg1);
+        boolean call_CTFontManagerRegisterFontURLs(@NotNull CFArrayRef arg0, boolean arg1);
     }
 
     /**
@@ -5837,14 +6065,14 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontManagerUnregisterFontURLs(CFArrayRef fontURLs, int scope,
-            @ObjCBlock(name = "call_CTFontManagerUnregisterFontURLs") Block_CTFontManagerUnregisterFontURLs registrationHandler);
+    public static native void CTFontManagerUnregisterFontURLs(@NotNull CFArrayRef fontURLs, int scope,
+            @Nullable @ObjCBlock(name = "call_CTFontManagerUnregisterFontURLs") Block_CTFontManagerUnregisterFontURLs registrationHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTFontManagerUnregisterFontURLs {
         @Generated
-        boolean call_CTFontManagerUnregisterFontURLs(CFArrayRef arg0, boolean arg1);
+        boolean call_CTFontManagerUnregisterFontURLs(@NotNull CFArrayRef arg0, boolean arg1);
     }
 
     /**
@@ -5887,15 +6115,15 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontManagerRegisterFontDescriptors(CFArrayRef fontDescriptors, int scope,
+    public static native void CTFontManagerRegisterFontDescriptors(@NotNull CFArrayRef fontDescriptors, int scope,
             boolean enabled,
-            @ObjCBlock(name = "call_CTFontManagerRegisterFontDescriptors") Block_CTFontManagerRegisterFontDescriptors registrationHandler);
+            @Nullable @ObjCBlock(name = "call_CTFontManagerRegisterFontDescriptors") Block_CTFontManagerRegisterFontDescriptors registrationHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTFontManagerRegisterFontDescriptors {
         @Generated
-        boolean call_CTFontManagerRegisterFontDescriptors(CFArrayRef arg0, boolean arg1);
+        boolean call_CTFontManagerRegisterFontDescriptors(@NotNull CFArrayRef arg0, boolean arg1);
     }
 
     /**
@@ -5926,14 +6154,14 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontManagerUnregisterFontDescriptors(CFArrayRef fontDescriptors, int scope,
-            @ObjCBlock(name = "call_CTFontManagerUnregisterFontDescriptors") Block_CTFontManagerUnregisterFontDescriptors registrationHandler);
+    public static native void CTFontManagerUnregisterFontDescriptors(@NotNull CFArrayRef fontDescriptors, int scope,
+            @Nullable @ObjCBlock(name = "call_CTFontManagerUnregisterFontDescriptors") Block_CTFontManagerUnregisterFontDescriptors registrationHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTFontManagerUnregisterFontDescriptors {
         @Generated
-        boolean call_CTFontManagerUnregisterFontDescriptors(CFArrayRef arg0, boolean arg1);
+        boolean call_CTFontManagerUnregisterFontDescriptors(@NotNull CFArrayRef arg0, boolean arg1);
     }
 
     /**
@@ -5978,15 +6206,15 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontManagerRegisterFontsWithAssetNames(CFArrayRef fontAssetNames, CFBundleRef bundle,
-            int scope, boolean enabled,
-            @ObjCBlock(name = "call_CTFontManagerRegisterFontsWithAssetNames") Block_CTFontManagerRegisterFontsWithAssetNames registrationHandler);
+    public static native void CTFontManagerRegisterFontsWithAssetNames(@NotNull CFArrayRef fontAssetNames,
+            @Nullable CFBundleRef bundle, int scope, boolean enabled,
+            @Nullable @ObjCBlock(name = "call_CTFontManagerRegisterFontsWithAssetNames") Block_CTFontManagerRegisterFontsWithAssetNames registrationHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTFontManagerRegisterFontsWithAssetNames {
         @Generated
-        boolean call_CTFontManagerRegisterFontsWithAssetNames(CFArrayRef arg0, boolean arg1);
+        boolean call_CTFontManagerRegisterFontsWithAssetNames(@NotNull CFArrayRef arg0, boolean arg1);
     }
 
     /**
@@ -6009,6 +6237,7 @@ public final class CoreText {
      * 
      *         API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFArrayRef CTFontManagerCopyRegisteredFontDescriptors(int scope, boolean enabled);
@@ -6038,14 +6267,14 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTFontManagerRequestFonts(CFArrayRef fontDescriptors,
-            @ObjCBlock(name = "call_CTFontManagerRequestFonts") Block_CTFontManagerRequestFonts completionHandler);
+    public static native void CTFontManagerRequestFonts(@NotNull CFArrayRef fontDescriptors,
+            @NotNull @ObjCBlock(name = "call_CTFontManagerRequestFonts") Block_CTFontManagerRequestFonts completionHandler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_CTFontManagerRequestFonts {
         @Generated
-        void call_CTFontManagerRequestFonts(CFArrayRef arg0);
+        void call_CTFontManagerRequestFonts(@NotNull CFArrayRef arg0);
     }
 
     /**
@@ -6067,9 +6296,10 @@ public final class CoreText {
      * 
      *      API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CTFramesetterRef CTFramesetterCreateWithTypesetter(CTTypesetterRef typesetter);
+    public static native CTFramesetterRef CTFramesetterCreateWithTypesetter(@NotNull CTTypesetterRef typesetter);
 
     /**
      * [@function] CTGlyphInfoGetGlyph
@@ -6088,7 +6318,7 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native char CTGlyphInfoGetGlyph(CTGlyphInfoRef glyphInfo);
+    public static native char CTGlyphInfoGetGlyph(@NotNull CTGlyphInfoRef glyphInfo);
 
     /**
      * [@function] CTRunGetBaseAdvancesAndOrigins
@@ -6130,9 +6360,9 @@ public final class CoreText {
      */
     @Generated
     @CFunction
-    public static native void CTRunGetBaseAdvancesAndOrigins(CTRunRef runRef, @ByValue CFRange range,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGSize advancesBuffer,
-            @UncertainArgument("Options: reference, array Fallback: reference") CGPoint originsBuffer);
+    public static native void CTRunGetBaseAdvancesAndOrigins(@NotNull CTRunRef runRef, @ByValue CFRange range,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGSize advancesBuffer,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CGPoint originsBuffer);
 
     /**
      * [@defined] kCTFontFeatureSampleTextKey
@@ -6143,6 +6373,7 @@ public final class CoreText {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureSampleTextKey();
@@ -6156,6 +6387,7 @@ public final class CoreText {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontFeatureTooltipTextKey();
@@ -6170,6 +6402,7 @@ public final class CoreText {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorFontDescriptorsKey();
@@ -6184,6 +6417,7 @@ public final class CoreText {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontManagerErrorFontAssetNameKey();
@@ -6199,6 +6433,7 @@ public final class CoreText {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontRegistrationUserInfoAttribute();
@@ -6216,6 +6451,7 @@ public final class CoreText {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTTypesetterOptionAllowUnboundedLayout();
@@ -6242,6 +6478,7 @@ public final class CoreText {
      * 
      *      API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTTrackingAttributeName();
@@ -6263,9 +6500,10 @@ public final class CoreText {
      * 
      *      API-Since: 6.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CTFontCopyNameForGlyph(CTFontRef font, char glyph);
+    public static native CFStringRef CTFontCopyNameForGlyph(@NotNull CTFontRef font, char glyph);
 
     /**
      * [@defined] kCTFontVariationAxesAttribute
@@ -6279,6 +6517,7 @@ public final class CoreText {
      * 
      *      API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontVariationAxesAttribute();
@@ -6295,6 +6534,7 @@ public final class CoreText {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCTFontOpticalSizeAttribute();
@@ -6321,10 +6561,11 @@ public final class CoreText {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCollectionCopyFontAttribute(CTFontCollectionRef collection,
-            CFStringRef attributeName, int options);
+    public static native CFArrayRef CTFontCollectionCopyFontAttribute(@NotNull CTFontCollectionRef collection,
+            @NotNull CFStringRef attributeName, int options);
 
     /**
      * [@function] CTFontCollectionCopyFontAttributes
@@ -6348,10 +6589,11 @@ public final class CoreText {
      * 
      *         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CTFontCollectionCopyFontAttributes(CTFontCollectionRef collection,
-            CFSetRef attributeNames, int options);
+    public static native CFArrayRef CTFontCollectionCopyFontAttributes(@NotNull CTFontCollectionRef collection,
+            @NotNull CFSetRef attributeNames, int options);
 
     @Generated public static final double ATSFONTREF_DEFINED = 1.0;
     @Generated public static final double kCTVersionNumber10_5 = 131072.0;

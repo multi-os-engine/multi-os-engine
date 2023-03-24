@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Models a finite state machine that has a single current state.
@@ -73,22 +75,25 @@ public class GKStateMachine extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class GKStateMachine extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -151,7 +157,7 @@ public class GKStateMachine extends NSObject {
      */
     @Generated
     @Selector("stateMachineWithStates:")
-    public static native GKStateMachine stateMachineWithStates(NSArray<? extends GKState> states);
+    public static native GKStateMachine stateMachineWithStates(@NotNull NSArray<? extends GKState> states);
 
     @Generated
     @Selector("superclass")
@@ -169,12 +175,13 @@ public class GKStateMachine extends NSObject {
      */
     @Generated
     @Selector("canEnterState:")
-    public native boolean canEnterState(Class stateClass);
+    public native boolean canEnterState(@NotNull Class stateClass);
 
     /**
      * The current state that the state machine is in.
      * Prior to the first called to enterState this is equal to nil.
      */
+    @Nullable
     @Generated
     @Selector("currentState")
     public native GKState currentState();
@@ -189,7 +196,7 @@ public class GKStateMachine extends NSObject {
      */
     @Generated
     @Selector("enterState:")
-    public native boolean enterState(Class stateClass);
+    public native boolean enterState(@NotNull Class stateClass);
 
     @Generated
     @Selector("init")
@@ -197,7 +204,7 @@ public class GKStateMachine extends NSObject {
 
     @Generated
     @Selector("initWithStates:")
-    public native GKStateMachine initWithStates(NSArray<? extends GKState> states);
+    public native GKStateMachine initWithStates(@NotNull NSArray<? extends GKState> states);
 
     /**
      * Gets the instance of the indicated state class from this state machine.
@@ -205,9 +212,10 @@ public class GKStateMachine extends NSObject {
      * 
      * @param stateClass the class of the state to be retrieved
      */
+    @Nullable
     @Generated
     @Selector("stateForClass:")
-    public native GKState stateForClass(Class stateClass);
+    public native GKState stateForClass(@NotNull Class stateClass);
 
     /**
      * Updates the current state machine.

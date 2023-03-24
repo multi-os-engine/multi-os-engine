@@ -25,6 +25,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.NInt;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -34,14 +35,14 @@ public interface UISearchControllerDelegate {
     @Generated
     @IsOptional
     @Selector("didDismissSearchController:")
-    default void didDismissSearchController(UISearchController searchController) {
+    default void didDismissSearchController(@NotNull UISearchController searchController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("didPresentSearchController:")
-    default void didPresentSearchController(UISearchController searchController) {
+    default void didPresentSearchController(@NotNull UISearchController searchController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,14 +54,14 @@ public interface UISearchControllerDelegate {
     @Generated
     @IsOptional
     @Selector("presentSearchController:")
-    default void presentSearchController(UISearchController searchController) {
+    default void presentSearchController(@NotNull UISearchController searchController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("willDismissSearchController:")
-    default void willDismissSearchController(UISearchController searchController) {
+    default void willDismissSearchController(@NotNull UISearchController searchController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -71,7 +72,7 @@ public interface UISearchControllerDelegate {
     @Generated
     @IsOptional
     @Selector("willPresentSearchController:")
-    default void willPresentSearchController(UISearchController searchController) {
+    default void willPresentSearchController(@NotNull UISearchController searchController) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,7 +82,7 @@ public interface UISearchControllerDelegate {
     @Generated
     @IsOptional
     @Selector("searchController:didChangeFromSearchBarPlacement:")
-    default void searchControllerDidChangeFromSearchBarPlacement(UISearchController searchController,
+    default void searchControllerDidChangeFromSearchBarPlacement(@NotNull UISearchController searchController,
             @NInt long previousPlacement) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -92,7 +93,7 @@ public interface UISearchControllerDelegate {
     @Generated
     @IsOptional
     @Selector("searchController:willChangeToSearchBarPlacement:")
-    default void searchControllerWillChangeToSearchBarPlacement(UISearchController searchController,
+    default void searchControllerWillChangeToSearchBarPlacement(@NotNull UISearchController searchController,
             @NInt long newPlacement) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -14,6 +14,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -37,10 +39,11 @@ public interface UIContextMenuInteractionDelegate {
      *         actions to
      *         present at this particular time.
      */
+    @Nullable
     @Generated
     @Selector("contextMenuInteraction:configurationForMenuAtLocation:")
     UIContextMenuConfiguration contextMenuInteractionConfigurationForMenuAtLocation(
-            UIContextMenuInteraction interaction, @ByValue CGPoint location);
+            @NotNull UIContextMenuInteraction interaction, @ByValue CGPoint location);
 
     /**
      * Called when the interaction is about to dismiss. Return a UITargetedPreview describing the desired dismissal
@@ -56,12 +59,13 @@ public interface UIContextMenuInteractionDelegate {
      *         API-Since: 13.0
      *         Deprecated-Since: 16.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:previewForDismissingMenuWithConfiguration:")
     default UITargetedPreview contextMenuInteractionPreviewForDismissingMenuWithConfiguration(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration) {
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,12 +78,13 @@ public interface UIContextMenuInteractionDelegate {
      *                      API-Since: 13.0
      *                      Deprecated-Since: 16.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:previewForHighlightingMenuWithConfiguration:")
     default UITargetedPreview contextMenuInteractionPreviewForHighlightingMenuWithConfiguration(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration) {
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,9 +98,9 @@ public interface UIContextMenuInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:willDisplayMenuForConfiguration:animator:")
-    default void contextMenuInteractionWillDisplayMenuForConfigurationAnimator(UIContextMenuInteraction interaction,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void contextMenuInteractionWillDisplayMenuForConfigurationAnimator(
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,9 +114,9 @@ public interface UIContextMenuInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:willEndForConfiguration:animator:")
-    default void contextMenuInteractionWillEndForConfigurationAnimator(UIContextMenuInteraction interaction,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void contextMenuInteractionWillEndForConfigurationAnimator(@NotNull UIContextMenuInteraction interaction,
+            @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -126,8 +131,8 @@ public interface UIContextMenuInteractionDelegate {
     @IsOptional
     @Selector("contextMenuInteraction:willPerformPreviewActionForMenuWithConfiguration:animator:")
     default void contextMenuInteractionWillPerformPreviewActionForMenuWithConfigurationAnimator(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -141,12 +146,13 @@ public interface UIContextMenuInteractionDelegate {
      * 
      *                      API-Since: 16.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:configuration:dismissalPreviewForItemWithIdentifier:")
     default UITargetedPreview contextMenuInteractionConfigurationDismissalPreviewForItemWithIdentifier(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) Object identifier) {
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -160,12 +166,13 @@ public interface UIContextMenuInteractionDelegate {
      * 
      *                      API-Since: 16.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("contextMenuInteraction:configuration:highlightPreviewForItemWithIdentifier:")
     default UITargetedPreview contextMenuInteractionConfigurationHighlightPreviewForItemWithIdentifier(
-            UIContextMenuInteraction interaction, UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) Object identifier) {
+            @NotNull UIContextMenuInteraction interaction, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object identifier) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

@@ -17,6 +17,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 12.0
@@ -32,8 +33,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:didDismissNavigationAlert:dismissalContext:")
-    default void mapTemplateDidDismissNavigationAlertDismissalContext(CPMapTemplate mapTemplate,
-            CPNavigationAlert navigationAlert, @NUInt long dismissalContext) {
+    default void mapTemplateDidDismissNavigationAlertDismissalContext(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPNavigationAlert navigationAlert, @NUInt long dismissalContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -43,7 +44,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:didEndPanGestureWithVelocity:")
-    default void mapTemplateDidEndPanGestureWithVelocity(CPMapTemplate mapTemplate, @ByValue CGPoint velocity) {
+    default void mapTemplateDidEndPanGestureWithVelocity(@NotNull CPMapTemplate mapTemplate,
+            @ByValue CGPoint velocity) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +57,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:didShowNavigationAlert:")
-    default void mapTemplateDidShowNavigationAlert(CPMapTemplate mapTemplate, CPNavigationAlert navigationAlert) {
+    default void mapTemplateDidShowNavigationAlert(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPNavigationAlert navigationAlert) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,7 +68,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:didUpdatePanGestureWithTranslation:velocity:")
-    default void mapTemplateDidUpdatePanGestureWithTranslationVelocity(CPMapTemplate mapTemplate,
+    default void mapTemplateDidUpdatePanGestureWithTranslationVelocity(@NotNull CPMapTemplate mapTemplate,
             @ByValue CGPoint translation, @ByValue CGPoint velocity) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,7 +82,7 @@ public interface CPMapTemplateDelegate {
     @IsOptional
     @Selector("mapTemplate:displayStyleForManeuver:")
     @NInt
-    default long mapTemplateDisplayStyleForManeuver(CPMapTemplate mapTemplate, CPManeuver maneuver) {
+    default long mapTemplateDisplayStyleForManeuver(@NotNull CPMapTemplate mapTemplate, @NotNull CPManeuver maneuver) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -89,7 +92,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:panBeganWithDirection:")
-    default void mapTemplatePanBeganWithDirection(CPMapTemplate mapTemplate, @NInt long direction) {
+    default void mapTemplatePanBeganWithDirection(@NotNull CPMapTemplate mapTemplate, @NInt long direction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,7 +102,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:panEndedWithDirection:")
-    default void mapTemplatePanEndedWithDirection(CPMapTemplate mapTemplate, @NInt long direction) {
+    default void mapTemplatePanEndedWithDirection(@NotNull CPMapTemplate mapTemplate, @NInt long direction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,7 +112,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:panWithDirection:")
-    default void mapTemplatePanWithDirection(CPMapTemplate mapTemplate, @NInt long direction) {
+    default void mapTemplatePanWithDirection(@NotNull CPMapTemplate mapTemplate, @NInt long direction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,8 +122,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:selectedPreviewForTrip:usingRouteChoice:")
-    default void mapTemplateSelectedPreviewForTripUsingRouteChoice(CPMapTemplate mapTemplate, CPTrip trip,
-            CPRouteChoice routeChoice) {
+    default void mapTemplateSelectedPreviewForTripUsingRouteChoice(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPTrip trip, @NotNull CPRouteChoice routeChoice) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -132,7 +135,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:shouldShowNotificationForManeuver:")
-    default boolean mapTemplateShouldShowNotificationForManeuver(CPMapTemplate mapTemplate, CPManeuver maneuver) {
+    default boolean mapTemplateShouldShowNotificationForManeuver(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPManeuver maneuver) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,8 +148,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:shouldShowNotificationForNavigationAlert:")
-    default boolean mapTemplateShouldShowNotificationForNavigationAlert(CPMapTemplate mapTemplate,
-            CPNavigationAlert navigationAlert) {
+    default boolean mapTemplateShouldShowNotificationForNavigationAlert(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPNavigationAlert navigationAlert) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,8 +162,9 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:shouldUpdateNotificationForManeuver:withTravelEstimates:")
-    default boolean mapTemplateShouldUpdateNotificationForManeuverWithTravelEstimates(CPMapTemplate mapTemplate,
-            CPManeuver maneuver, CPTravelEstimates travelEstimates) {
+    default boolean mapTemplateShouldUpdateNotificationForManeuverWithTravelEstimates(
+            @NotNull CPMapTemplate mapTemplate, @NotNull CPManeuver maneuver,
+            @NotNull CPTravelEstimates travelEstimates) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,8 +174,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:startedTrip:usingRouteChoice:")
-    default void mapTemplateStartedTripUsingRouteChoice(CPMapTemplate mapTemplate, CPTrip trip,
-            CPRouteChoice routeChoice) {
+    default void mapTemplateStartedTripUsingRouteChoice(@NotNull CPMapTemplate mapTemplate, @NotNull CPTrip trip,
+            @NotNull CPRouteChoice routeChoice) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -180,8 +185,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:willDismissNavigationAlert:dismissalContext:")
-    default void mapTemplateWillDismissNavigationAlertDismissalContext(CPMapTemplate mapTemplate,
-            CPNavigationAlert navigationAlert, @NUInt long dismissalContext) {
+    default void mapTemplateWillDismissNavigationAlertDismissalContext(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPNavigationAlert navigationAlert, @NUInt long dismissalContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -191,7 +196,8 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplate:willShowNavigationAlert:")
-    default void mapTemplateWillShowNavigationAlert(CPMapTemplate mapTemplate, CPNavigationAlert navigationAlert) {
+    default void mapTemplateWillShowNavigationAlert(@NotNull CPMapTemplate mapTemplate,
+            @NotNull CPNavigationAlert navigationAlert) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -201,7 +207,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplateDidBeginPanGesture:")
-    default void mapTemplateDidBeginPanGesture(CPMapTemplate mapTemplate) {
+    default void mapTemplateDidBeginPanGesture(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -216,7 +222,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplateDidCancelNavigation:")
-    default void mapTemplateDidCancelNavigation(CPMapTemplate mapTemplate) {
+    default void mapTemplateDidCancelNavigation(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -226,7 +232,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplateDidDismissPanningInterface:")
-    default void mapTemplateDidDismissPanningInterface(CPMapTemplate mapTemplate) {
+    default void mapTemplateDidDismissPanningInterface(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -236,7 +242,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplateDidShowPanningInterface:")
-    default void mapTemplateDidShowPanningInterface(CPMapTemplate mapTemplate) {
+    default void mapTemplateDidShowPanningInterface(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -246,7 +252,7 @@ public interface CPMapTemplateDelegate {
     @Generated
     @IsOptional
     @Selector("mapTemplateWillDismissPanningInterface:")
-    default void mapTemplateWillDismissPanningInterface(CPMapTemplate mapTemplate) {
+    default void mapTemplateWillDismissPanningInterface(@NotNull CPMapTemplate mapTemplate) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

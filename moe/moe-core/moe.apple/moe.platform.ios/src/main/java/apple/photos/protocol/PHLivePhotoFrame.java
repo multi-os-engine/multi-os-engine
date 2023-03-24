@@ -27,6 +27,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol that describes a single frame of a live photo
@@ -43,6 +44,7 @@ public interface PHLivePhotoFrame {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("image")
     CIImage image();

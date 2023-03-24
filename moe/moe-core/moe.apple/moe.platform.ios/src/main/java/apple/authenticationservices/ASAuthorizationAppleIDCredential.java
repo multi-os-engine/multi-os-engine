@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -65,6 +67,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * request. The server component of the app can validate the code using Apple’s identity service endpoint provided
      * for this purpose.
      */
+    @Nullable
     @Generated
     @Selector("authorizationCode")
     public native NSData authorizationCode();
@@ -74,37 +77,42 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * the requested scopes on @see ASAuthorizationAppleIDRequest. The application should query this value to identify
      * which scopes were returned as it maybe different from ones requested.
      */
+    @NotNull
     @Generated
     @Selector("authorizedScopes")
     public native NSArray<String> authorizedScopes();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -117,17 +125,19 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     /**
      * An optional email shared by the user. This field is populated with a value that the user authorized.
      */
+    @Nullable
     @Generated
     @Selector("email")
     public native String email();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * An optional full name shared by the user. This field is populated with a value that the user authorized.
      */
+    @Nullable
     @Generated
     @Selector("fullName")
     public native NSPersonNameComponents fullName();
@@ -142,6 +152,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * The ID token will contain the following information: Issuer Identifier, Subject Identifier, Audience, Expiry Time
      * and Issuance Time signed by Apple's identity service.
      */
+    @Nullable
     @Generated
     @Selector("identityToken")
     public native NSData identityToken();
@@ -152,7 +163,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
 
     @Generated
     @Selector("initWithCoder:")
-    public native ASAuthorizationAppleIDCredential initWithCoder(NSCoder coder);
+    public native ASAuthorizationAppleIDCredential initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -171,9 +182,10 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -204,6 +216,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
     /**
      * A copy of the state value that was passed to ASAuthorizationRequest.
      */
+    @Nullable
     @Generated
     @Selector("state")
     public native String state();
@@ -230,6 +243,7 @@ public class ASAuthorizationAppleIDCredential extends NSObject implements ASAuth
      * The identifier will remain stable as long as the user is connected with the requesting client. The value may
      * change upon user disconnecting from the identity provider.
      */
+    @NotNull
     @Generated
     @Selector("user")
     public native String user();

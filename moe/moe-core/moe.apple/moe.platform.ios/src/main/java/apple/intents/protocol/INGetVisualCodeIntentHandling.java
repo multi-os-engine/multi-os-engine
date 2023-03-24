@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INGetVisualCodeIntent. By implementing this protocol, a class can provide
@@ -47,8 +48,8 @@ public interface INGetVisualCodeIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmGetVisualCode:completion:")
-    default void confirmGetVisualCodeCompletion(INGetVisualCodeIntent intent,
-            @ObjCBlock(name = "call_confirmGetVisualCodeCompletion") Block_confirmGetVisualCodeCompletion completion) {
+    default void confirmGetVisualCodeCompletion(@NotNull INGetVisualCodeIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmGetVisualCodeCompletion") Block_confirmGetVisualCodeCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -56,7 +57,7 @@ public interface INGetVisualCodeIntentHandling {
     @Generated
     public interface Block_confirmGetVisualCodeCompletion {
         @Generated
-        void call_confirmGetVisualCodeCompletion(INGetVisualCodeIntentResponse response);
+        void call_confirmGetVisualCodeCompletion(@NotNull INGetVisualCodeIntentResponse response);
     }
 
     /**
@@ -72,14 +73,14 @@ public interface INGetVisualCodeIntentHandling {
      */
     @Generated
     @Selector("handleGetVisualCode:completion:")
-    void handleGetVisualCodeCompletion(INGetVisualCodeIntent intent,
-            @ObjCBlock(name = "call_handleGetVisualCodeCompletion") Block_handleGetVisualCodeCompletion completion);
+    void handleGetVisualCodeCompletion(@NotNull INGetVisualCodeIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleGetVisualCodeCompletion") Block_handleGetVisualCodeCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleGetVisualCodeCompletion {
         @Generated
-        void call_handleGetVisualCodeCompletion(INGetVisualCodeIntentResponse response);
+        void call_handleGetVisualCodeCompletion(@NotNull INGetVisualCodeIntentResponse response);
     }
 
     /**
@@ -96,8 +97,8 @@ public interface INGetVisualCodeIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveVisualCodeTypeForGetVisualCode:withCompletion:")
-    default void resolveVisualCodeTypeForGetVisualCodeWithCompletion(INGetVisualCodeIntent intent,
-            @ObjCBlock(name = "call_resolveVisualCodeTypeForGetVisualCodeWithCompletion") Block_resolveVisualCodeTypeForGetVisualCodeWithCompletion completion) {
+    default void resolveVisualCodeTypeForGetVisualCodeWithCompletion(@NotNull INGetVisualCodeIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveVisualCodeTypeForGetVisualCodeWithCompletion") Block_resolveVisualCodeTypeForGetVisualCodeWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,6 +107,6 @@ public interface INGetVisualCodeIntentHandling {
     public interface Block_resolveVisualCodeTypeForGetVisualCodeWithCompletion {
         @Generated
         void call_resolveVisualCodeTypeForGetVisualCodeWithCompletion(
-                INVisualCodeTypeResolutionResult resolutionResult);
+                @NotNull INVisualCodeTypeResolutionResult resolutionResult);
     }
 }

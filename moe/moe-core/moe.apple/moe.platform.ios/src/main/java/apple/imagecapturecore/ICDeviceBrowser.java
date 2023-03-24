@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * --------------------------------------------------------------------------------------------------------------
@@ -67,22 +69,25 @@ public class ICDeviceBrowser extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +102,7 @@ public class ICDeviceBrowser extends NSObject {
      * The delegate. It must conform to ICDeviceBrowserDelegate protocol. The messages this delegate can expect to
      * receive are described by ICDeviceBrowserDelegate protocol.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -114,6 +120,7 @@ public class ICDeviceBrowser extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("devices")
     public native NSArray<? extends ICDevice> devices();
@@ -160,9 +167,10 @@ public class ICDeviceBrowser extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -185,7 +193,7 @@ public class ICDeviceBrowser extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) ICDeviceBrowserDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) ICDeviceBrowserDelegate value);
 
     /**
      * [@property] delegate
@@ -194,7 +202,7 @@ public class ICDeviceBrowser extends NSObject {
      * receive are described by ICDeviceBrowserDelegate protocol.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) ICDeviceBrowserDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) ICDeviceBrowserDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -255,6 +263,7 @@ public class ICDeviceBrowser extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("contentsAuthorizationStatus")
     public native String contentsAuthorizationStatus();
@@ -266,6 +275,7 @@ public class ICDeviceBrowser extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("controlAuthorizationStatus")
     public native String controlAuthorizationStatus();
@@ -291,13 +301,13 @@ public class ICDeviceBrowser extends NSObject {
     @Generated
     @Selector("requestContentsAuthorizationWithCompletion:")
     public native void requestContentsAuthorizationWithCompletion(
-            @ObjCBlock(name = "call_requestContentsAuthorizationWithCompletion") Block_requestContentsAuthorizationWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_requestContentsAuthorizationWithCompletion") Block_requestContentsAuthorizationWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestContentsAuthorizationWithCompletion {
         @Generated
-        void call_requestContentsAuthorizationWithCompletion(String status);
+        void call_requestContentsAuthorizationWithCompletion(@NotNull String status);
     }
 
     /**
@@ -310,13 +320,13 @@ public class ICDeviceBrowser extends NSObject {
     @Generated
     @Selector("requestControlAuthorizationWithCompletion:")
     public native void requestControlAuthorizationWithCompletion(
-            @ObjCBlock(name = "call_requestControlAuthorizationWithCompletion") Block_requestControlAuthorizationWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_requestControlAuthorizationWithCompletion") Block_requestControlAuthorizationWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestControlAuthorizationWithCompletion {
         @Generated
-        void call_requestControlAuthorizationWithCompletion(String status);
+        void call_requestControlAuthorizationWithCompletion(@NotNull String status);
     }
 
     /**
@@ -330,13 +340,13 @@ public class ICDeviceBrowser extends NSObject {
     @Generated
     @Selector("resetContentsAuthorizationWithCompletion:")
     public native void resetContentsAuthorizationWithCompletion(
-            @ObjCBlock(name = "call_resetContentsAuthorizationWithCompletion") Block_resetContentsAuthorizationWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_resetContentsAuthorizationWithCompletion") Block_resetContentsAuthorizationWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resetContentsAuthorizationWithCompletion {
         @Generated
-        void call_resetContentsAuthorizationWithCompletion(String status);
+        void call_resetContentsAuthorizationWithCompletion(@NotNull String status);
     }
 
     /**
@@ -352,13 +362,13 @@ public class ICDeviceBrowser extends NSObject {
     @Generated
     @Selector("resetControlAuthorizationWithCompletion:")
     public native void resetControlAuthorizationWithCompletion(
-            @ObjCBlock(name = "call_resetControlAuthorizationWithCompletion") Block_resetControlAuthorizationWithCompletion completion);
+            @NotNull @ObjCBlock(name = "call_resetControlAuthorizationWithCompletion") Block_resetControlAuthorizationWithCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_resetControlAuthorizationWithCompletion {
         @Generated
-        void call_resetControlAuthorizationWithCompletion(String status);
+        void call_resetControlAuthorizationWithCompletion(@NotNull String status);
     }
 
     /**

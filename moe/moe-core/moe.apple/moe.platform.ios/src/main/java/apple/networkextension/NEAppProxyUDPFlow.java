@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEAppProxyUDPFlow
@@ -83,22 +85,25 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,6 +180,7 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("localEndpoint")
     public native NWEndpoint localEndpoint();
@@ -193,7 +200,7 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
     @Generated
     @Selector("readDatagramsWithCompletionHandler:")
     public native void readDatagramsWithCompletionHandler(
-            @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_readDatagramsWithCompletionHandler") Block_readDatagramsWithCompletionHandler completionHandler);
 
     /**
      * writeDatagram:sentByEndpoint:completionHandler:
@@ -209,22 +216,22 @@ public class NEAppProxyUDPFlow extends NEAppProxyFlow {
      */
     @Generated
     @Selector("writeDatagrams:sentByEndpoints:completionHandler:")
-    public native void writeDatagramsSentByEndpointsCompletionHandler(NSArray<? extends NSData> datagrams,
-            NSArray<? extends NWEndpoint> remoteEndpoints,
-            @ObjCBlock(name = "call_writeDatagramsSentByEndpointsCompletionHandler") Block_writeDatagramsSentByEndpointsCompletionHandler completionHandler);
+    public native void writeDatagramsSentByEndpointsCompletionHandler(@NotNull NSArray<? extends NSData> datagrams,
+            @NotNull NSArray<? extends NWEndpoint> remoteEndpoints,
+            @NotNull @ObjCBlock(name = "call_writeDatagramsSentByEndpointsCompletionHandler") Block_writeDatagramsSentByEndpointsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_readDatagramsWithCompletionHandler {
         @Generated
-        void call_readDatagramsWithCompletionHandler(NSArray<? extends NSData> datagrams,
-                NSArray<? extends NWEndpoint> remoteEndpoints, NSError error);
+        void call_readDatagramsWithCompletionHandler(@Nullable NSArray<? extends NSData> datagrams,
+                @Nullable NSArray<? extends NWEndpoint> remoteEndpoints, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramsSentByEndpointsCompletionHandler {
         @Generated
-        void call_writeDatagramsSentByEndpointsCompletionHandler(NSError error);
+        void call_writeDatagramsSentByEndpointsCompletionHandler(@Nullable NSError error);
     }
 }

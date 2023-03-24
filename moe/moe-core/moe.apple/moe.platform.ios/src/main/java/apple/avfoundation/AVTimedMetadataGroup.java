@@ -44,6 +44,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVTimedMetadataGroup
@@ -84,22 +86,25 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -180,15 +186,17 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
      * @return An instance of CMMetadataFormatDescription sufficient to describe the contents of all the items
      *         referenced by the receiver.
      */
+    @Nullable
     @Generated
     @Selector("copyFormatDescription")
     public native CMFormatDescriptionRef copyFormatDescription();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -207,7 +215,7 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
      */
     @Generated
     @Selector("initWithItems:timeRange:")
-    public native AVTimedMetadataGroup initWithItemsTimeRange(NSArray<? extends AVMetadataItem> items,
+    public native AVTimedMetadataGroup initWithItemsTimeRange(@NotNull NSArray<? extends AVMetadataItem> items,
             @ByValue CMTimeRange timeRange);
 
     /**
@@ -223,20 +231,22 @@ public class AVTimedMetadataGroup extends AVMetadataGroup implements NSCopying, 
      */
     @Generated
     @Selector("initWithSampleBuffer:")
-    public native AVTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
+    public native AVTimedMetadataGroup initWithSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * an array of AVMetadataItems
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * indicates the time range of the timed metadata

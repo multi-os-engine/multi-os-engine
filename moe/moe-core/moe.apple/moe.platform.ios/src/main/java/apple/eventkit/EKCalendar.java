@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EKCalendar
@@ -76,7 +78,7 @@ public class EKCalendar extends EKObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * calendarForEntityType:
@@ -91,9 +93,11 @@ public class EKCalendar extends EKObject {
      * 
      *                   API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("calendarForEntityType:eventStore:")
-    public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType, EKEventStore eventStore);
+    public static native EKCalendar calendarForEntityTypeEventStore(@NUInt long entityType,
+            @NotNull EKEventStore eventStore);
 
     /**
      * Create a new calendar in the specified event store. You should use calendarForEntityType in iOS 6 or later.
@@ -101,25 +105,29 @@ public class EKCalendar extends EKObject {
      * API-Since: 4.0
      * Deprecated-Since: 6.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("calendarWithEventStore:")
-    public static native EKCalendar calendarWithEventStore(EKEventStore eventStore);
+    public static native EKCalendar calendarWithEventStore(@NotNull EKEventStore eventStore);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -154,9 +162,10 @@ public class EKCalendar extends EKObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -229,6 +238,7 @@ public class EKCalendar extends EKObject {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("calendarIdentifier")
     public native String calendarIdentifier();
@@ -295,7 +305,7 @@ public class EKCalendar extends EKObject {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * [@property] source
@@ -327,6 +337,7 @@ public class EKCalendar extends EKObject {
      * 
      * The title of the calendar.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();

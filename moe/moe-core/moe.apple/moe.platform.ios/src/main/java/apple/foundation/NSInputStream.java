@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSInputStream is an abstract class representing the base functionality of a read stream.
@@ -73,22 +75,25 @@ public class NSInputStream extends NSStream {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -104,15 +109,15 @@ public class NSInputStream extends NSStream {
     @Generated
     @Selector("getBoundStreamsWithBufferSize:inputStream:outputStream:")
     public static native void getBoundStreamsWithBufferSizeInputStreamOutputStream(@NUInt long bufferSize,
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+            @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Deprecated
     @Generated
     @Selector("getStreamsToHostWithName:port:inputStream:outputStream:")
-    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(String hostname, @NInt long port,
-            @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
-            @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
+    public static native void getStreamsToHostWithNamePortInputStreamOutputStream(@NotNull String hostname,
+            @NInt long port, @Nullable @ReferenceInfo(type = NSInputStream.class) Ptr<NSInputStream> inputStream,
+            @Nullable @ReferenceInfo(type = NSOutputStream.class) Ptr<NSOutputStream> outputStream);
 
     @Generated
     @Selector("hash")
@@ -121,18 +126,18 @@ public class NSInputStream extends NSStream {
 
     @Generated
     @Selector("inputStreamWithData:")
-    public static native NSInputStream inputStreamWithData(NSData data);
+    public static native NSInputStream inputStreamWithData(@NotNull NSData data);
 
     @Generated
     @Selector("inputStreamWithFileAtPath:")
-    public static native NSInputStream inputStreamWithFileAtPath(String path);
+    public static native NSInputStream inputStreamWithFileAtPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("inputStreamWithURL:")
-    public static native NSInputStream inputStreamWithURL(NSURL url);
+    public static native NSInputStream inputStreamWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -151,9 +156,10 @@ public class NSInputStream extends NSStream {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -187,8 +193,8 @@ public class NSInputStream extends NSStream {
      */
     @Generated
     @Selector("getBuffer:length:")
-    public native boolean getBufferLength(@ReferenceInfo(type = Byte.class, depth = 2) Ptr<BytePtr> buffer,
-            NUIntPtr len);
+    public native boolean getBufferLength(@NotNull @ReferenceInfo(type = Byte.class, depth = 2) Ptr<BytePtr> buffer,
+            @NotNull NUIntPtr len);
 
     /**
      * returns in O(1) a pointer to the buffer in 'buffer' and by reference in 'len' how many bytes are available. This
@@ -208,21 +214,21 @@ public class NSInputStream extends NSStream {
      */
     @Generated
     @Selector("initWithData:")
-    public native NSInputStream initWithData(NSData data);
+    public native NSInputStream initWithData(@NotNull NSData data);
 
     @Generated
     @Selector("initWithFileAtPath:")
-    public native NSInputStream initWithFileAtPath(String path);
+    public native NSInputStream initWithFileAtPath(@NotNull String path);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("initWithURL:")
-    public native NSInputStream initWithURL(NSURL url);
+    public native NSInputStream initWithURL(@NotNull NSURL url);
 
     @Generated
     @Selector("read:maxLength:")
     @NInt
-    public native long readMaxLength(BytePtr buffer, @NUInt long len);
+    public native long readMaxLength(@NotNull BytePtr buffer, @NUInt long len);
 }

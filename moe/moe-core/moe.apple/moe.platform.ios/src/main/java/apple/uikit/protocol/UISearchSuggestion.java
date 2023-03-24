@@ -12,6 +12,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -24,6 +25,7 @@ public interface UISearchSuggestion {
     /**
      * Icon that represents this search suggestion item
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("iconImage")
@@ -36,6 +38,7 @@ public interface UISearchSuggestion {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("localizedAttributedSuggestion")
     NSAttributedString localizedAttributedSuggestion();
@@ -43,6 +46,7 @@ public interface UISearchSuggestion {
     /**
      * The localized description used as accessibility string
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("localizedDescription")
@@ -53,6 +57,7 @@ public interface UISearchSuggestion {
     /**
      * The localized suggestion that will be displayed as the search string
      */
+    @Nullable
     @Generated
     @Selector("localizedSuggestion")
     String localizedSuggestion();
@@ -62,6 +67,7 @@ public interface UISearchSuggestion {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("representedObject")
     @MappedReturn(ObjCObjectMapper.class)
@@ -74,5 +80,5 @@ public interface UISearchSuggestion {
      */
     @Generated
     @Selector("setRepresentedObject:")
-    void setRepresentedObject(@Mapped(ObjCObjectMapper.class) Object value);
+    void setRepresentedObject(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 }

@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVSampleBufferRenderSynchronizer
@@ -78,12 +80,13 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      *         the time observer to be invoked by the synchronizer. Pass this object to -removeTimeObserver: to cancel
      *         time observation.
      */
+    @NotNull
     @Generated
     @Selector("addBoundaryTimeObserverForTimes:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object addBoundaryTimeObserverForTimesQueueUsingBlock(NSArray<? extends NSValue> times,
-            NSObject queue,
-            @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
+    public native Object addBoundaryTimeObserverForTimesQueueUsingBlock(@NotNull NSArray<? extends NSValue> times,
+            @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_addBoundaryTimeObserverForTimesQueueUsingBlock") Block_addBoundaryTimeObserverForTimesQueueUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -122,11 +125,13 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      *         the time observer to be invoked by the synchronizer. Pass this object to -removeTimeObserver: to cancel
      *         time observation.
      */
+    @NotNull
     @Generated
     @Selector("addPeriodicTimeObserverForInterval:queue:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval, NSObject queue,
-            @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
+    public native Object addPeriodicTimeObserverForIntervalQueueUsingBlock(@ByValue CMTime interval,
+            @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_addPeriodicTimeObserverForIntervalQueueUsingBlock") Block_addPeriodicTimeObserverForIntervalQueueUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -149,7 +154,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      */
     @Generated
     @Selector("addRenderer:")
-    public native void addRenderer(@Mapped(ObjCObjectMapper.class) AVQueuedSampleBufferRendering renderer);
+    public native void addRenderer(@NotNull @Mapped(ObjCObjectMapper.class) AVQueuedSampleBufferRendering renderer);
 
     @Generated
     @Owned
@@ -163,22 +168,25 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -217,9 +225,10 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -276,8 +285,8 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
     @Generated
     @Selector("removeRenderer:atTime:completionHandler:")
     public native void removeRendererAtTimeCompletionHandler(
-            @Mapped(ObjCObjectMapper.class) AVQueuedSampleBufferRendering renderer, @ByValue CMTime time,
-            @ObjCBlock(name = "call_removeRendererAtTimeCompletionHandler") Block_removeRendererAtTimeCompletionHandler completionHandler);
+            @NotNull @Mapped(ObjCObjectMapper.class) AVQueuedSampleBufferRendering renderer, @ByValue CMTime time,
+            @Nullable @ObjCBlock(name = "call_removeRendererAtTimeCompletionHandler") Block_removeRendererAtTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -311,7 +320,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      */
     @Generated
     @Selector("removeTimeObserver:")
-    public native void removeTimeObserver(@Mapped(ObjCObjectMapper.class) Object observer);
+    public native void removeTimeObserver(@NotNull @Mapped(ObjCObjectMapper.class) Object observer);
 
     /**
      * [@property] renderers
@@ -323,6 +332,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * 
      * This property is not KVO observable.
      */
+    @NotNull
     @Generated
     @Selector("renderers")
     public native NSArray<?> renderers();
@@ -386,6 +396,7 @@ public class AVSampleBufferRenderSynchronizer extends NSObject {
      * 
      * The timebase is a read-only timebase. Use the rate property and corresponding methods to adjust the timebase.
      */
+    @NotNull
     @Generated
     @Selector("timebase")
     public native CMTimebaseRef timebase();

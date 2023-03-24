@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This is a lightweight API to allow clients to specify all the
@@ -78,12 +80,13 @@ public class CIRenderDestination extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Allow client to specify a CIBlendKernel (e.g. CIBlendKernel.sourceOver)
      * to be used on the destination.
      */
+    @Nullable
     @Generated
     @Selector("blendKernel")
     public native CIBlendKernel blendKernel();
@@ -99,18 +102,21 @@ public class CIRenderDestination extends NSObject {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -122,6 +128,7 @@ public class CIRenderDestination extends NSObject {
      * This property can be set to nil to disable color matching
      * from the working space to the destination.
      */
+    @Nullable
     @Generated
     @Selector("colorSpace")
     public native CGColorSpaceRef colorSpace();
@@ -158,8 +165,8 @@ public class CIRenderDestination extends NSObject {
      */
     @Generated
     @Selector("initWithBitmapData:width:height:bytesPerRow:format:")
-    public native CIRenderDestination initWithBitmapDataWidthHeightBytesPerRowFormat(VoidPtr data, @NUInt long width,
-            @NUInt long height, @NUInt long bytesPerRow, int format);
+    public native CIRenderDestination initWithBitmapDataWidthHeightBytesPerRowFormat(@NotNull VoidPtr data,
+            @NUInt long width, @NUInt long height, @NUInt long bytesPerRow, int format);
 
     /**
      * Create a CIRenderDestination based on an OpenGL texture.
@@ -183,7 +190,7 @@ public class CIRenderDestination extends NSObject {
      */
     @Generated
     @Selector("initWithIOSurface:")
-    public native CIRenderDestination initWithIOSurface(IOSurface surface);
+    public native CIRenderDestination initWithIOSurface(@NotNull IOSurface surface);
 
     /**
      * A render to a MTLTexture-backed CIRenderDestination is only supported by MTLTexture-backed CIContexts.
@@ -203,8 +210,8 @@ public class CIRenderDestination extends NSObject {
     @Generated
     @Selector("initWithMTLTexture:commandBuffer:")
     public native CIRenderDestination initWithMTLTextureCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLTexture texture,
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer);
 
     /**
      * Create a CIRenderDestination based on a CVPixelBufferRef object.
@@ -214,7 +221,7 @@ public class CIRenderDestination extends NSObject {
      */
     @Generated
     @Selector("initWithPixelBuffer:")
-    public native CIRenderDestination initWithPixelBuffer(CVBufferRef pixelBuffer);
+    public native CIRenderDestination initWithPixelBuffer(@NotNull CVBufferRef pixelBuffer);
 
     /**
      * Create a CIRenderDestination based on a Metal texture.
@@ -239,12 +246,14 @@ public class CIRenderDestination extends NSObject {
     @Generated
     @Selector("initWithWidth:height:pixelFormat:commandBuffer:mtlTextureProvider:")
     public native CIRenderDestination initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider(@NUInt long width,
-            @NUInt long height, @NUInt long pixelFormat, @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @ObjCBlock(name = "call_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider") Block_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider block);
+            @NUInt long height, @NUInt long pixelFormat,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @Nullable @ObjCBlock(name = "call_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider") Block_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider {
+        @NotNull
         @Generated
         @MappedReturn(ObjCObjectMapper.class)
         Object call_initWithWidthHeightPixelFormatCommandBufferMtlTextureProvider();
@@ -304,9 +313,10 @@ public class CIRenderDestination extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -336,7 +346,7 @@ public class CIRenderDestination extends NSObject {
      */
     @Generated
     @Selector("setBlendKernel:")
-    public native void setBlendKernel(CIBlendKernel value);
+    public native void setBlendKernel(@Nullable CIBlendKernel value);
 
     /**
      * If true, then the blendKernel is applied in the destination's colorSpace.
@@ -365,7 +375,7 @@ public class CIRenderDestination extends NSObject {
      */
     @Generated
     @Selector("setColorSpace:")
-    public native void setColorSpace(CGColorSpaceRef value);
+    public native void setColorSpace(@Nullable CGColorSpaceRef value);
 
     /**
      * Instructs the render to add pseudo-random luma noise given the depth of the destination.

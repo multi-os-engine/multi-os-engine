@@ -30,6 +30,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -51,13 +53,14 @@ public final class AURenderCallbackStruct extends StructObject {
     }
 
     @Generated
-    public AURenderCallbackStruct(@FunctionPtr(name = "call_inputProc") Function_inputProc inputProc,
-            VoidPtr inputProcRefCon) {
+    public AURenderCallbackStruct(@FunctionPtr(name = "call_inputProc") @Nullable Function_inputProc inputProc,
+            @Nullable VoidPtr inputProcRefCon) {
         super(AURenderCallbackStruct.class);
         setInputProc(inputProc);
         setInputProcRefCon(inputProcRefCon);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_inputProc")
@@ -65,22 +68,24 @@ public final class AURenderCallbackStruct extends StructObject {
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setInputProc(@FunctionPtr(name = "call_inputProc") Function_inputProc value);
+    public native void setInputProc(@Nullable @FunctionPtr(name = "call_inputProc") Function_inputProc value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native VoidPtr inputProcRefCon();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setInputProcRefCon(VoidPtr value);
+    public native void setInputProcRefCon(@Nullable VoidPtr value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_inputProc {
         @Generated
-        int call_inputProc(VoidPtr arg0, IntPtr arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2, int arg3,
-                int arg4, @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
+        int call_inputProc(@NotNull VoidPtr arg0, @NotNull IntPtr arg1,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AudioTimeStamp arg2,
+                int arg3, int arg4,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") AudioBufferList arg5);
     }
 }

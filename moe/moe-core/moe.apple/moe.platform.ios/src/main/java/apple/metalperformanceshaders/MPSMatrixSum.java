@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSMatrixSum
@@ -85,22 +87,25 @@ public class MPSMatrixSum extends MPSKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -146,8 +151,9 @@ public class MPSMatrixSum extends MPSKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceMatrices:resultMatrix:scaleVector:offsetVector:biasVector:startIndex:")
     public native void encodeToCommandBufferSourceMatricesResultMatrixScaleVectorOffsetVectorBiasVectorStartIndex(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer buffer, NSArray<? extends MPSMatrix> sourceMatrices,
-            MPSMatrix resultMatrix, MPSVector scaleVector, MPSVector offsetVector, MPSVector biasVector,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer buffer,
+            @NotNull NSArray<? extends MPSMatrix> sourceMatrices, @NotNull MPSMatrix resultMatrix,
+            @Nullable MPSVector scaleVector, @Nullable MPSVector offsetVector, @Nullable MPSVector biasVector,
             @NUInt long startIndex);
 
     @Generated
@@ -161,7 +167,7 @@ public class MPSMatrixSum extends MPSKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSMatrixSum initWithCoder(NSCoder aDecoder);
+    public native MPSMatrixSum initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -174,11 +180,12 @@ public class MPSMatrixSum extends MPSKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSMatrixSum initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSum initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSMatrixSum initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSMatrixSum initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initialize a MPSMatrixSum kernel.
@@ -192,8 +199,9 @@ public class MPSMatrixSum extends MPSKernel {
      */
     @Generated
     @Selector("initWithDevice:count:rows:columns:transpose:")
-    public native MPSMatrixSum initWithDeviceCountRowsColumnsTranspose(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long count, @NUInt long rows, @NUInt long columns, boolean transpose);
+    public native MPSMatrixSum initWithDeviceCountRowsColumnsTranspose(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count, @NUInt long rows,
+            @NUInt long columns, boolean transpose);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -212,9 +220,10 @@ public class MPSMatrixSum extends MPSKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Neuron parameter A.

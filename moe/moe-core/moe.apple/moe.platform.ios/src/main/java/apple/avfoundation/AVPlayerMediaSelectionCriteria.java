@@ -37,6 +37,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 7.0
@@ -71,22 +73,25 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +126,10 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +179,7 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Generated
     @Selector("initWithPreferredLanguages:preferredMediaCharacteristics:")
     public native AVPlayerMediaSelectionCriteria initWithPreferredLanguagesPreferredMediaCharacteristics(
-            NSArray<String> preferredLanguages, NSArray<String> preferredMediaCharacteristics);
+            @Nullable NSArray<String> preferredLanguages, @Nullable NSArray<String> preferredMediaCharacteristics);
 
     /**
      * An NSArray of NSStrings containing language identifiers, in order of desirability, that are preferred for
@@ -184,6 +190,7 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
      * When making selections, AVPlayer treats language preferences as criteria that supersede preferred media
      * characteristics.
      */
+    @Nullable
     @Generated
     @Selector("preferredLanguages")
     public native NSArray<String> preferredLanguages();
@@ -199,6 +206,7 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
      * When making automatic selections, AVPlayer treats preferred media characteristics as criteria that are superseded
      * by language preferences.
      */
+    @Nullable
     @Generated
     @Selector("preferredMediaCharacteristics")
     public native NSArray<String> preferredMediaCharacteristics();
@@ -233,8 +241,8 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
     @Generated
     @Selector("initWithPrincipalMediaCharacteristics:preferredLanguages:preferredMediaCharacteristics:")
     public native AVPlayerMediaSelectionCriteria initWithPrincipalMediaCharacteristicsPreferredLanguagesPreferredMediaCharacteristics(
-            NSArray<String> principalMediaCharacteristics, NSArray<String> preferredLanguages,
-            NSArray<String> preferredMediaCharacteristics);
+            @Nullable NSArray<String> principalMediaCharacteristics, @Nullable NSArray<String> preferredLanguages,
+            @Nullable NSArray<String> preferredMediaCharacteristics);
 
     /**
      * An NSArray of AVMediaCharacteristics indicating media characteristics that are considered essential when
@@ -250,6 +258,7 @@ public class AVPlayerMediaSelectionCriteria extends NSObject {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("principalMediaCharacteristics")
     public native NSArray<String> principalMediaCharacteristics();

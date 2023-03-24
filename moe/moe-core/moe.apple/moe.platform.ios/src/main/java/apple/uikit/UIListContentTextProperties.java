@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -91,22 +93,25 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -114,6 +119,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     /**
      * The color of the text.
      */
+    @NotNull
     @Generated
     @Selector("color")
     public native UIColor color();
@@ -121,6 +127,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     /**
      * Optional color transformer that is used to resolve the color. A nil value means the `color` is used as-is.
      */
+    @Nullable
     @Generated
     @Selector("colorTransformer")
     @ObjCBlock(name = "call_colorTransformer_ret")
@@ -129,15 +136,17 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_colorTransformer_ret {
+        @NotNull
         @Generated
-        UIColor call_colorTransformer_ret(UIColor color);
+        UIColor call_colorTransformer_ret(@NotNull UIColor color);
     }
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -149,11 +158,12 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * The font used for the text.
      */
+    @NotNull
     @Generated
     @Selector("font")
     public native UIFont font();
@@ -169,7 +179,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIListContentTextProperties initWithCoder(NSCoder coder);
+    public native UIListContentTextProperties initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -188,9 +198,10 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The line break mode to use for the text.
@@ -232,6 +243,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     /**
      * Returns the resolved color, based on the `color` and `colorTransformer`.
      */
+    @NotNull
     @Generated
     @Selector("resolvedColor")
     public native UIColor resolvedColor();
@@ -269,7 +281,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
      */
     @Generated
     @Selector("setColor:")
-    public native void setColor(UIColor value);
+    public native void setColor(@NotNull UIColor value);
 
     /**
      * Optional color transformer that is used to resolve the color. A nil value means the `color` is used as-is.
@@ -277,13 +289,14 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
     @Generated
     @Selector("setColorTransformer:")
     public native void setColorTransformer(
-            @ObjCBlock(name = "call_setColorTransformer") Block_setColorTransformer value);
+            @Nullable @ObjCBlock(name = "call_setColorTransformer") Block_setColorTransformer value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setColorTransformer {
+        @NotNull
         @Generated
-        UIColor call_setColorTransformer(UIColor color);
+        UIColor call_setColorTransformer(@NotNull UIColor color);
     }
 
     /**
@@ -291,7 +304,7 @@ public class UIListContentTextProperties extends NSObject implements NSCopying, 
      */
     @Generated
     @Selector("setFont:")
-    public native void setFont(UIFont value);
+    public native void setFont(@NotNull UIFont value);
 
     /**
      * The line break mode to use for the text.

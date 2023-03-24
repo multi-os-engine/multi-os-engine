@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * -------------------------------------------------------------------------------------------------------------
@@ -37,7 +39,7 @@ public interface ICDeviceDelegate {
      */
     @Generated
     @Selector("device:didCloseSessionWithError:")
-    void deviceDidCloseSessionWithError(ICDevice device, NSError error);
+    void deviceDidCloseSessionWithError(@NotNull ICDevice device, @Nullable NSError error);
 
     /**
      * device:didEjectWithError:
@@ -50,7 +52,7 @@ public interface ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("device:didEjectWithError:")
-    default void deviceDidEjectWithError(ICDevice device, NSError error) {
+    default void deviceDidEjectWithError(@NotNull ICDevice device, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,7 +67,7 @@ public interface ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("device:didEncounterError:")
-    default void deviceDidEncounterError(ICDevice device, NSError error) {
+    default void deviceDidEncounterError(@NotNull ICDevice device, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,7 +83,7 @@ public interface ICDeviceDelegate {
      */
     @Generated
     @Selector("device:didOpenSessionWithError:")
-    void deviceDidOpenSessionWithError(ICDevice device, NSError error);
+    void deviceDidOpenSessionWithError(@NotNull ICDevice device, @Nullable NSError error);
 
     /**
      * device:didReceiveStatusInformation:
@@ -97,7 +99,7 @@ public interface ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("device:didReceiveStatusInformation:")
-    default void deviceDidReceiveStatusInformation(ICDevice device, NSDictionary<String, ?> status) {
+    default void deviceDidReceiveStatusInformation(@NotNull ICDevice device, @NotNull NSDictionary<String, ?> status) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -112,7 +114,7 @@ public interface ICDeviceDelegate {
     @Generated
     @IsOptional
     @Selector("deviceDidBecomeReady:")
-    default void deviceDidBecomeReady(ICDevice device) {
+    default void deviceDidBecomeReady(@NotNull ICDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -125,5 +127,5 @@ public interface ICDeviceDelegate {
      */
     @Generated
     @Selector("didRemoveDevice:")
-    void didRemoveDevice(ICDevice device);
+    void didRemoveDevice(@NotNull ICDevice device);
 }

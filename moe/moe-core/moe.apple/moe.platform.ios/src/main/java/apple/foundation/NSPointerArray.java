@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSPointerArray.h
@@ -87,22 +89,25 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -137,22 +142,25 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSPointerArray new_objc();
 
+    @NotNull
     @Generated
     @Selector("pointerArrayWithOptions:")
     public static native NSPointerArray pointerArrayWithOptions(@NUInt long options);
 
+    @NotNull
     @Generated
     @Selector("pointerArrayWithPointerFunctions:")
-    public static native NSPointerArray pointerArrayWithPointerFunctions(NSPointerFunctions functions);
+    public static native NSPointerArray pointerArrayWithPointerFunctions(@NotNull NSPointerFunctions functions);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -169,6 +177,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("strongObjectsPointerArray")
     public static native NSPointerArray strongObjectsPointerArray();
@@ -185,6 +194,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("weakObjectsPointerArray")
     public static native NSPointerArray weakObjectsPointerArray();
@@ -194,8 +204,9 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
      */
     @Generated
     @Selector("addPointer:")
-    public native void addPointer(VoidPtr pointer);
+    public native void addPointer(@Nullable VoidPtr pointer);
 
+    @NotNull
     @Generated
     @Selector("allObjects")
     public native NSArray<?> allObjects();
@@ -207,11 +218,12 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Selector("compact")
     public native void compact();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Getter: the number of elements in the array, including NULLs
@@ -225,12 +237,12 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -238,7 +250,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSPointerArray initWithCoder(NSCoder coder);
+    public native NSPointerArray initWithCoder(@NotNull NSCoder coder);
 
     /**
      * construction
@@ -249,15 +261,16 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
 
     @Generated
     @Selector("initWithPointerFunctions:")
-    public native NSPointerArray initWithPointerFunctions(NSPointerFunctions functions);
+    public native NSPointerArray initWithPointerFunctions(@NotNull NSPointerFunctions functions);
 
     /**
      * everything at & above index, including holes, slide higher
      */
     @Generated
     @Selector("insertPointer:atIndex:")
-    public native void insertPointerAtIndex(VoidPtr item, @NUInt long index);
+    public native void insertPointerAtIndex(@Nullable VoidPtr item, @NUInt long index);
 
+    @Nullable
     @Generated
     @Selector("pointerAtIndex:")
     public native VoidPtr pointerAtIndex(@NUInt long index);
@@ -266,6 +279,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
      * return an NSPointerFunctions object reflecting the functions in use. This is a new autoreleased object that can
      * be subsequently modified and/or used directly in the creation of other pointer "collections".
      */
+    @NotNull
     @Generated
     @Selector("pointerFunctions")
     public native NSPointerFunctions pointerFunctions();
@@ -282,7 +296,7 @@ public class NSPointerArray extends NSObject implements NSFastEnumeration, NSCop
      */
     @Generated
     @Selector("replacePointerAtIndex:withPointer:")
-    public native void replacePointerAtIndexWithPointer(@NUInt long index, VoidPtr item);
+    public native void replacePointerAtIndexWithPointer(@NUInt long index, @Nullable VoidPtr item);
 
     /**
      * Getter: the number of elements in the array, including NULLs

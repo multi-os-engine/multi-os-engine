@@ -9,6 +9,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AUMessageChannel
@@ -43,10 +45,11 @@ public interface AUMessageChannel {
      *         An NSDictionary with custom data. The allowed classes for key and value types are
      *         NSArray, NSDictionary, NSOrderedSet, NSSet, NSString, NSData, NSNull, NSNumber, NSDate
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("callAudioUnit:")
-    default NSDictionary<?, ?> callAudioUnit(NSDictionary<?, ?> message) {
+    default NSDictionary<?, ?> callAudioUnit(@NotNull NSDictionary<?, ?> message) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,6 +60,7 @@ public interface AUMessageChannel {
      * 
      * The host has to set a block on this property.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("callHostBlock")
@@ -68,8 +72,9 @@ public interface AUMessageChannel {
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_callHostBlock_ret {
+        @NotNull
         @Generated
-        NSDictionary<?, ?> call_callHostBlock_ret(NSDictionary<?, ?> message);
+        NSDictionary<?, ?> call_callHostBlock_ret(@NotNull NSDictionary<?, ?> message);
     }
 
     /**
@@ -82,14 +87,15 @@ public interface AUMessageChannel {
     @Generated
     @IsOptional
     @Selector("setCallHostBlock:")
-    default void setCallHostBlock(@ObjCBlock(name = "call_setCallHostBlock") Block_setCallHostBlock value) {
+    default void setCallHostBlock(@Nullable @ObjCBlock(name = "call_setCallHostBlock") Block_setCallHostBlock value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCallHostBlock {
+        @NotNull
         @Generated
-        NSDictionary<?, ?> call_setCallHostBlock(NSDictionary<?, ?> message);
+        NSDictionary<?, ?> call_setCallHostBlock(@NotNull NSDictionary<?, ?> message);
     }
 }

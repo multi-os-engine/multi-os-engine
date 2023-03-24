@@ -41,6 +41,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A component system is a homogeneous collection of components that are intended to be called at the same time.
@@ -78,22 +80,25 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,7 +173,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      */
     @Generated
     @Selector("addComponent:")
-    public native void addComponent(GKComponent component);
+    public native void addComponent(@NotNull GKComponent component);
 
     /**
      * Adds the supported component from the entity's component collection.
@@ -181,11 +187,12 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      */
     @Generated
     @Selector("addComponentWithEntity:")
-    public native void addComponentWithEntity(GKEntity entity);
+    public native void addComponentWithEntity(@NotNull GKEntity entity);
 
     /**
      * Returns the class of the specified generic index
      */
+    @NotNull
     @Generated
     @Selector("classForGenericArgumentAtIndex:")
     public native Class classForGenericArgumentAtIndex(@NUInt long index);
@@ -195,6 +202,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      * forwarded
      * to each of the components in the collection.
      */
+    @NotNull
     @Generated
     @Selector("componentClass")
     public native Class componentClass();
@@ -202,6 +210,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     /**
      * The array of components currently in the system.
      */
+    @NotNull
     @Generated
     @Selector("components")
     public native NSArray<? extends GKComponent> components();
@@ -209,8 +218,8 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
     @Generated
     @Selector("countByEnumeratingWithState:objects:count:")
     @NUInt
-    public native long countByEnumeratingWithStateObjectsCount(VoidPtr state,
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
+    public native long countByEnumeratingWithStateObjectsCount(@NotNull VoidPtr state,
+            @NotNull @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> buffer, @NUInt long len);
 
     @Generated
     @Selector("init")
@@ -222,11 +231,12 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      */
     @Generated
     @Selector("initWithComponentClass:")
-    public native GKComponentSystem<?> initWithComponentClass(Class cls);
+    public native GKComponentSystem<?> initWithComponentClass(@NotNull Class cls);
 
     /**
      * Supports getting components via a [] subscript.
      */
+    @NotNull
     @Generated
     @Selector("objectAtIndexedSubscript:")
     public native GKComponent objectAtIndexedSubscript(@NUInt long idx);
@@ -238,7 +248,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      */
     @Generated
     @Selector("removeComponent:")
-    public native void removeComponent(GKComponent component);
+    public native void removeComponent(@NotNull GKComponent component);
 
     /**
      * Removes the supported component from the entity's component collection
@@ -250,7 +260,7 @@ public class GKComponentSystem<_ComponentType> extends NSObject implements NSFas
      */
     @Generated
     @Selector("removeComponentWithEntity:")
-    public native void removeComponentWithEntity(GKEntity entity);
+    public native void removeComponentWithEntity(@NotNull GKEntity entity);
 
     /**
      * Updates each component with the given delta time since the last update. Each component thus performs its time

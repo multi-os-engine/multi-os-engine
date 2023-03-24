@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -36,7 +37,7 @@ public interface UIPickerViewDataSource {
     @Generated
     @Selector("numberOfComponentsInPickerView:")
     @NInt
-    long numberOfComponentsInPickerView(UIPickerView pickerView);
+    long numberOfComponentsInPickerView(@NotNull UIPickerView pickerView);
 
     /**
      * returns the # of rows in each component..
@@ -44,5 +45,5 @@ public interface UIPickerViewDataSource {
     @Generated
     @Selector("pickerView:numberOfRowsInComponent:")
     @NInt
-    long pickerViewNumberOfRowsInComponent(UIPickerView pickerView, @NInt long component);
+    long pickerViewNumberOfRowsInComponent(@NotNull UIPickerView pickerView, @NInt long component);
 }

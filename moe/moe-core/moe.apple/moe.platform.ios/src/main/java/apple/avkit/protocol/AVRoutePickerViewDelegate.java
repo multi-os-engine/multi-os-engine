@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVRoutePickerViewDelegate
@@ -27,7 +28,7 @@ public interface AVRoutePickerViewDelegate {
     @Generated
     @IsOptional
     @Selector("routePickerViewDidEndPresentingRoutes:")
-    default void routePickerViewDidEndPresentingRoutes(AVRoutePickerView routePickerView) {
+    default void routePickerViewDidEndPresentingRoutes(@NotNull AVRoutePickerView routePickerView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -39,7 +40,7 @@ public interface AVRoutePickerViewDelegate {
     @Generated
     @IsOptional
     @Selector("routePickerViewWillBeginPresentingRoutes:")
-    default void routePickerViewWillBeginPresentingRoutes(AVRoutePickerView routePickerView) {
+    default void routePickerViewWillBeginPresentingRoutes(@NotNull AVRoutePickerView routePickerView) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

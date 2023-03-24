@@ -36,6 +36,8 @@ import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -70,7 +72,7 @@ public class CIRAWFilter extends CIFilter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * A value for baseline exposure applied to the image. Default value can vary based on the image.
@@ -101,18 +103,21 @@ public class CIRAWFilter extends CIFilter {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,6 +140,7 @@ public class CIRAWFilter extends CIFilter {
      * maintain compatibility with older releases. Must be one of supportedDecoderVersions (above), otherwise a nil
      * output image will be generated.
      */
+    @NotNull
     @Generated
     @Selector("decoderVersion")
     public native String decoderVersion();
@@ -165,23 +171,27 @@ public class CIRAWFilter extends CIFilter {
     @Selector("extendedDynamicRangeAmount")
     public native float extendedDynamicRangeAmount();
 
+    @NotNull
     @Generated
     @Selector("filterArrayFromSerializedXMP:inputImageExtent:error:")
-    public static native NSArray<? extends CIFilter> filterArrayFromSerializedXMPInputImageExtentError(NSData xmpData,
-            @ByValue CGRect extent, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native NSArray<? extends CIFilter> filterArrayFromSerializedXMPInputImageExtentError(
+            @NotNull NSData xmpData, @ByValue CGRect extent,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @NotNull
     @Generated
     @Selector("filterNamesInCategories:")
-    public static native NSArray<String> filterNamesInCategories(NSArray<String> categories);
+    public static native NSArray<String> filterNamesInCategories(@Nullable NSArray<String> categories);
 
+    @NotNull
     @Generated
     @Selector("filterNamesInCategory:")
-    public static native NSArray<String> filterNamesInCategory(String category);
+    public static native NSArray<String> filterNamesInCategory(@Nullable String category);
 
     @Generated
     @Selector("filterWithCVPixelBuffer:properties:")
-    public static native CIRAWFilter filterWithCVPixelBufferProperties(CVBufferRef buffer,
-            NSDictionary<?, ?> properties);
+    public static native CIRAWFilter filterWithCVPixelBufferProperties(@NotNull CVBufferRef buffer,
+            @NotNull NSDictionary<?, ?> properties);
 
     @Deprecated
     @Generated
@@ -191,7 +201,8 @@ public class CIRAWFilter extends CIFilter {
 
     @Generated
     @Selector("filterWithImageData:identifierHint:")
-    public static native CIRAWFilter filterWithImageDataIdentifierHint(NSData data, String identifierHint);
+    public static native CIRAWFilter filterWithImageDataIdentifierHint(@NotNull NSData data,
+            @Nullable String identifierHint);
 
     @Deprecated
     @Generated
@@ -200,26 +211,30 @@ public class CIRAWFilter extends CIFilter {
 
     @Generated
     @Selector("filterWithImageURL:")
-    public static native CIRAWFilter filterWithImageURL(NSURL url);
+    public static native CIRAWFilter filterWithImageURL(@NotNull NSURL url);
 
     @Deprecated
     @Generated
     @Selector("filterWithImageURL:options:")
     public static native CIFilter filterWithImageURLOptions(NSURL url, NSDictionary<String, ?> options);
 
+    @Nullable
     @Generated
     @Selector("filterWithName:")
-    public static native CIFilter filterWithName(String name);
+    public static native CIFilter filterWithName(@NotNull String name);
 
+    @Nullable
     @Generated
     @Variadic()
     @Selector("filterWithName:keysAndValues:")
-    public static native CIFilter filterWithNameKeysAndValues(String name, @Mapped(ObjCObjectMapper.class) Object key0,
-            Object... varargs);
+    public static native CIFilter filterWithNameKeysAndValues(@NotNull String name,
+            @Mapped(ObjCObjectMapper.class) Object key0, Object... varargs);
 
+    @Nullable
     @Generated
     @Selector("filterWithName:withInputParameters:")
-    public static native CIFilter filterWithNameWithInputParameters(String name, NSDictionary<String, ?> params);
+    public static native CIFilter filterWithNameWithInputParameters(@NotNull String name,
+            @Nullable NSDictionary<String, ?> params);
 
     @Generated
     @Selector("hash")
@@ -232,7 +247,7 @@ public class CIRAWFilter extends CIFilter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIRAWFilter initWithCoder(NSCoder coder);
+    public native CIRAWFilter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -356,13 +371,15 @@ public class CIRAWFilter extends CIFilter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * An optional CIFilter to be applied to the RAW image while it is in linear space.
      */
+    @Nullable
     @Generated
     @Selector("linearSpaceFilter")
     public native CIFilter linearSpaceFilter();
@@ -371,21 +388,25 @@ public class CIRAWFilter extends CIFilter {
     @Selector("localToneMapAmount")
     public native float localToneMapAmount();
 
+    @Nullable
     @Generated
     @Selector("localizedDescriptionForFilterName:")
-    public static native String localizedDescriptionForFilterName(String filterName);
+    public static native String localizedDescriptionForFilterName(@NotNull String filterName);
 
+    @NotNull
     @Generated
     @Selector("localizedNameForCategory:")
-    public static native String localizedNameForCategory(String category);
+    public static native String localizedNameForCategory(@NotNull String category);
 
+    @Nullable
     @Generated
     @Selector("localizedNameForFilterName:")
-    public static native String localizedNameForFilterName(String filterName);
+    public static native String localizedNameForFilterName(@NotNull String filterName);
 
+    @Nullable
     @Generated
     @Selector("localizedReferenceDocumentationForFilterName:")
-    public static native NSURL localizedReferenceDocumentationForFilterName(String filterName);
+    public static native NSURL localizedReferenceDocumentationForFilterName(@NotNull String filterName);
 
     @Generated
     @Selector("luminanceNoiseReductionAmount")
@@ -441,6 +462,7 @@ public class CIRAWFilter extends CIFilter {
     @Selector("orientation")
     public native int orientation();
 
+    @Nullable
     @Generated
     @Selector("portraitEffectsMatte")
     public native CIImage portraitEffectsMatte();
@@ -448,6 +470,7 @@ public class CIRAWFilter extends CIFilter {
     /**
      * Properties for auxiliary images that may be present in the file
      */
+    @Nullable
     @Generated
     @Selector("previewImage")
     public native CIImage previewImage();
@@ -456,14 +479,16 @@ public class CIRAWFilter extends CIFilter {
      * Metadata properties CIRAWFilter instance
      * This is a dictionary with the same contents as CGImageSourceCopyProperties.
      */
+    @NotNull
     @Generated
     @Selector("properties")
     public native NSDictionary<?, ?> properties();
 
     @Generated
     @Selector("registerFilterName:constructor:classAttributes:")
-    public static native void registerFilterNameConstructorClassAttributes(String name,
-            @Mapped(ObjCObjectMapper.class) CIFilterConstructor anObject, NSDictionary<String, ?> attributes);
+    public static native void registerFilterNameConstructorClassAttributes(@NotNull String name,
+            @NotNull @Mapped(ObjCObjectMapper.class) CIFilterConstructor anObject,
+            @NotNull NSDictionary<String, ?> attributes);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -483,29 +508,35 @@ public class CIRAWFilter extends CIFilter {
     @Selector("scaleFactor")
     public native float scaleFactor();
 
+    @Nullable
     @Generated
     @Selector("semanticSegmentationGlassesMatte")
     public native CIImage semanticSegmentationGlassesMatte();
 
+    @Nullable
     @Generated
     @Selector("semanticSegmentationHairMatte")
     public native CIImage semanticSegmentationHairMatte();
 
+    @Nullable
     @Generated
     @Selector("semanticSegmentationSkinMatte")
     public native CIImage semanticSegmentationSkinMatte();
 
+    @Nullable
     @Generated
     @Selector("semanticSegmentationSkyMatte")
     public native CIImage semanticSegmentationSkyMatte();
 
+    @Nullable
     @Generated
     @Selector("semanticSegmentationTeethMatte")
     public native CIImage semanticSegmentationTeethMatte();
 
+    @Nullable
     @Generated
     @Selector("serializedXMPFromFilters:inputImageExtent:")
-    public static native NSData serializedXMPFromFiltersInputImageExtent(NSArray<? extends CIFilter> filters,
+    public static native NSData serializedXMPFromFiltersInputImageExtent(@NotNull NSArray<? extends CIFilter> filters,
             @ByValue CGRect extent);
 
     /**
@@ -551,7 +582,7 @@ public class CIRAWFilter extends CIFilter {
      */
     @Generated
     @Selector("setDecoderVersion:")
-    public native void setDecoderVersion(String value);
+    public native void setDecoderVersion(@NotNull String value);
 
     @Generated
     @Selector("setDetailAmount:")
@@ -599,7 +630,7 @@ public class CIRAWFilter extends CIFilter {
      */
     @Generated
     @Selector("setLinearSpaceFilter:")
-    public native void setLinearSpaceFilter(CIFilter value);
+    public native void setLinearSpaceFilter(@Nullable CIFilter value);
 
     @Generated
     @Selector("setLocalToneMapAmount:")
@@ -687,6 +718,7 @@ public class CIRAWFilter extends CIFilter {
     /**
      * Returns a NSArray containing the names of all supported camera models.
      */
+    @NotNull
     @Generated
     @Selector("supportedCameraModels")
     public static native NSArray<String> supportedCameraModels();
@@ -695,6 +727,7 @@ public class CIRAWFilter extends CIFilter {
      * Array of all supported decoder versions for the given image type, sorted in increasingly newer order. All entries
      * would represent a valid version identifier set to 'decoderVersion'.
      */
+    @NotNull
     @Generated
     @Selector("supportedDecoderVersions")
     public native NSArray<String> supportedDecoderVersions();

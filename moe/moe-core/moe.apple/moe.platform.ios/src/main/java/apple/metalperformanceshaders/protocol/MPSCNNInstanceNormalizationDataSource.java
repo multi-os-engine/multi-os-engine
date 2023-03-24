@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MPSCNNInstanceNormalizationDataSource
@@ -35,6 +37,7 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     /**
      * Return a pointer to an array containing the beta terms.
      */
+    @Nullable
     @Generated
     @Selector("beta")
     FloatPtr beta();
@@ -49,12 +52,13 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Owned
     @IsOptional
     @Selector("copyWithZone:device:")
-    default MPSCNNInstanceNormalizationDataSource copyWithZoneDevice(VoidPtr zone,
-            @Mapped(ObjCObjectMapper.class) MTLDevice device) {
+    default MPSCNNInstanceNormalizationDataSource copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +68,7 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     @Generated
     @IsOptional
     @Selector("encodeWithCoder:")
-    default void encodeWithCoder(NSCoder aCoder) {
+    default void encodeWithCoder(@NotNull NSCoder aCoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +88,7 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     /**
      * Return a pointer to an array containing the gamma terms.
      */
+    @Nullable
     @Generated
     @Selector("gamma")
     FloatPtr gamma();
@@ -91,10 +96,11 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
     /**
      * NS_DESIGNATED_INITIALIZER
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("initWithCoder:")
-    default MPSCNNInstanceNormalizationDataSource initWithCoder(NSCoder aDecoder) {
+    default MPSCNNInstanceNormalizationDataSource initWithCoder(@NotNull NSCoder aDecoder) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +109,7 @@ public interface MPSCNNInstanceNormalizationDataSource extends NSCopying {
      * 
      * Overridden by a MPSCNNInstanceNormalizationNode.label if it is non-nil.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();

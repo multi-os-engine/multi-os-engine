@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MPSNNGramMatrixCallback
@@ -31,5 +32,5 @@ public interface MPSNNGramMatrixCallback extends NSSecureCoding, NSCopying {
      */
     @Generated
     @Selector("alphaForSourceImage:destinationImage:")
-    float alphaForSourceImageDestinationImage(MPSImage sourceImage, MPSImage destinationImage);
+    float alphaForSourceImageDestinationImage(@NotNull MPSImage sourceImage, @NotNull MPSImage destinationImage);
 }

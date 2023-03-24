@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This operation causes the system to list the children of an item
@@ -21,6 +22,7 @@ public interface NSFileProviderTestingChildrenEnumeration extends NSFileProvider
     /**
      * The identifier of the item.
      */
+    @NotNull
     @Generated
     @Selector("itemIdentifier")
     String itemIdentifier();

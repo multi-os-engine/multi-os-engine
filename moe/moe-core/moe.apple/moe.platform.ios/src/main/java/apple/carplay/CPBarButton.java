@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A button for placement in a navigation bar.
@@ -62,7 +64,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * API-Since: 12.0
@@ -76,18 +78,21 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,7 +107,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -117,6 +122,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
      * [@note] If both an image and title are specified, the title will take precedence.
      * To use an image, ensure that the button's title is nil.
      */
+    @Nullable
     @Generated
     @Selector("image")
     public native UIImage image();
@@ -127,7 +133,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPBarButton initWithCoder(NSCoder coder);
+    public native CPBarButton initWithCoder(@NotNull NSCoder coder);
 
     /**
      * API-Since: 12.0
@@ -137,13 +143,13 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithType:handler:")
     public native CPBarButton initWithTypeHandler(@NUInt long type,
-            @ObjCBlock(name = "call_initWithTypeHandler") Block_initWithTypeHandler handler);
+            @Nullable @ObjCBlock(name = "call_initWithTypeHandler") Block_initWithTypeHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTypeHandler {
         @Generated
-        void call_initWithTypeHandler(CPBarButton arg0);
+        void call_initWithTypeHandler(@NotNull CPBarButton arg0);
     }
 
     @Generated
@@ -173,9 +179,10 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -210,7 +217,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setImage:")
-    public native void setImage(UIImage value);
+    public native void setImage(@Nullable UIImage value);
 
     /**
      * The title displayed on the button.
@@ -220,7 +227,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@Nullable String value);
 
     @Generated
     @Selector("setVersion:")
@@ -246,6 +253,7 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
      * [@note] If both an image and title are specified, the title will take precedence.
      * To use an image, ensure that the button's title is nil.
      */
+    @Nullable
     @Generated
     @Selector("title")
     public native String title();
@@ -274,14 +282,14 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithImage:handler:")
-    public native CPBarButton initWithImageHandler(UIImage image,
-            @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
+    public native CPBarButton initWithImageHandler(@NotNull UIImage image,
+            @Nullable @ObjCBlock(name = "call_initWithImageHandler") Block_initWithImageHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithImageHandler {
         @Generated
-        void call_initWithImageHandler(CPBarButton arg0);
+        void call_initWithImageHandler(@NotNull CPBarButton arg0);
     }
 
     /**
@@ -291,14 +299,14 @@ public class CPBarButton extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithTitle:handler:")
-    public native CPBarButton initWithTitleHandler(String title,
-            @ObjCBlock(name = "call_initWithTitleHandler") Block_initWithTitleHandler handler);
+    public native CPBarButton initWithTitleHandler(@NotNull String title,
+            @Nullable @ObjCBlock(name = "call_initWithTitleHandler") Block_initWithTitleHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithTitleHandler {
         @Generated
-        void call_initWithTitleHandler(CPBarButton arg0);
+        void call_initWithTitleHandler(@NotNull CPBarButton arg0);
     }
 
     /**

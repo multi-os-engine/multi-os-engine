@@ -10,6 +10,8 @@ import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -30,6 +32,7 @@ public final class SparseCGOptions extends StructObject {
         super(peer);
     }
 
+    @Nullable
     @Generated
     @StructureField(order = 0, isGetter = true)
     @FunctionPtr(name = "call_reportError")
@@ -40,12 +43,12 @@ public final class SparseCGOptions extends StructObject {
     public interface Function_reportError {
         @Generated
         void call_reportError(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
     }
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setReportError(@FunctionPtr(name = "call_reportError") Function_reportError value);
+    public native void setReportError(@Nullable @FunctionPtr(name = "call_reportError") Function_reportError value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -71,6 +74,7 @@ public final class SparseCGOptions extends StructObject {
     @StructureField(order = 3, isGetter = false)
     public native void setRtol(double value);
 
+    @Nullable
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_reportStatus")
@@ -81,10 +85,10 @@ public final class SparseCGOptions extends StructObject {
     public interface Function_reportStatus {
         @Generated
         void call_reportStatus(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
     }
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setReportStatus(@FunctionPtr(name = "call_reportStatus") Function_reportStatus value);
+    public native void setReportStatus(@Nullable @FunctionPtr(name = "call_reportStatus") Function_reportStatus value);
 }

@@ -52,6 +52,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNMaterial
@@ -89,22 +91,25 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -139,9 +144,10 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * material
@@ -157,7 +163,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      */
     @Generated
     @Selector("materialWithMDLMaterial:")
-    public static native SCNMaterial materialWithMDLMaterial(MDLMaterial mdlMaterial);
+    public static native SCNMaterial materialWithMDLMaterial(@NotNull MDLMaterial mdlMaterial);
 
     @Generated
     @Owned
@@ -191,7 +197,8 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
     /**
      * [@property] ambient
@@ -201,6 +208,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * The ambient property specifies the amount of ambient light to reflect. This property has no visual impact on
      * scenes that have no ambient light. Setting the ambient has no effect if locksAmbientWithDiffuse is set to YES.
      */
+    @NotNull
     @Generated
     @Selector("ambient")
     public native SCNMaterialProperty ambient();
@@ -214,15 +222,18 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("ambientOcclusion")
     public native SCNMaterialProperty ambientOcclusion();
 
+    @Nullable
     @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
@@ -239,11 +250,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @NInt
     public native long blendMode();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] cullMode
@@ -263,6 +275,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * The diffuse property specifies the amount of light diffusely reflected from the surface. The diffuse light is
      * reflected equally in all directions and is therefore independent of the point of view.
      */
+    @NotNull
     @Generated
     @Selector("diffuse")
     public native SCNMaterialProperty diffuse();
@@ -273,13 +286,14 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * The emission property specifies the amount of light the material emits. This emission does not light up other
      * surfaces in the scene.
      */
+    @NotNull
     @Generated
     @Selector("emission")
     public native SCNMaterialProperty emission();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] fresnelExponent
@@ -297,14 +311,14 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @IsOptional
     @Selector("handleBindingOfSymbol:usingBlock:")
-    public native void handleBindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") SCNShadable.Block_handleBindingOfSymbolUsingBlock block);
+    public native void handleBindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleBindingOfSymbolUsingBlock") SCNShadable.Block_handleBindingOfSymbolUsingBlock block);
 
     @Generated
     @IsOptional
     @Selector("handleUnbindingOfSymbol:usingBlock:")
-    public native void handleUnbindingOfSymbolUsingBlock(String symbol,
-            @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") SCNShadable.Block_handleUnbindingOfSymbolUsingBlock block);
+    public native void handleUnbindingOfSymbolUsingBlock(@NotNull String symbol,
+            @Nullable @ObjCBlock(name = "call_handleUnbindingOfSymbolUsingBlock") SCNShadable.Block_handleUnbindingOfSymbolUsingBlock block);
 
     @Generated
     @Selector("init")
@@ -312,12 +326,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNMaterial initWithCoder(NSCoder coder);
+    public native SCNMaterial initWithCoder(@NotNull NSCoder coder);
 
     @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     /**
      * [@property] doubleSided
@@ -361,6 +375,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * Determines the receiver's lighting model. See above for the list of lighting models. Defaults to
      * SCNLightingModelBlinn.
      */
+    @NotNull
     @Generated
     @Selector("lightingModelName")
     public native String lightingModelName();
@@ -383,6 +398,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("metalness")
     public native SCNMaterialProperty metalness();
@@ -394,6 +410,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * fragments are multiplied with the multiply value to produce the final fragments. This property may be used for
      * shadow maps, to fade out or tint 3d objects.
      */
+    @NotNull
     @Generated
     @Selector("multiply")
     public native SCNMaterialProperty multiply();
@@ -403,6 +420,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * Determines the name of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -415,6 +433,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * When an image is set on the normal property the material is automatically lit per pixel. Setting a color has no
      * effect.
      */
+    @NotNull
     @Generated
     @Selector("normal")
     public native SCNMaterialProperty normal();
@@ -422,8 +441,9 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("program")
@@ -444,6 +464,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * The reflective property specifies the reflectivity of the surface. The surface will not actually reflect other
      * objects in the scene. This property may be used as a sphere mapping to reflect a precomputed environment.
      */
+    @NotNull
     @Generated
     @Selector("reflective")
     public native SCNMaterialProperty reflective();
@@ -454,17 +475,17 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] roughness
@@ -476,6 +497,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("roughness")
     public native SCNMaterialProperty roughness();
@@ -488,6 +510,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("selfIllumination")
     public native SCNMaterialProperty selfIllumination();
@@ -532,7 +555,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      */
     @Generated
     @Selector("setLightingModelName:")
-    public native void setLightingModelName(String value);
+    public native void setLightingModelName(@NotNull String value);
 
     /**
      * [@property] locksAmbientWithDiffuse
@@ -550,12 +573,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     @Generated
     @IsOptional
     @Selector("setProgram:")
-    public native void setProgram(SCNProgram value);
+    public native void setProgram(@Nullable SCNProgram value);
 
     /**
      * [@property] readsFromDepthBuffer
@@ -569,7 +592,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @IsOptional
     @Selector("setShaderModifiers:")
-    public native void setShaderModifiers(NSDictionary<String, String> value);
+    public native void setShaderModifiers(@Nullable NSDictionary<String, String> value);
 
     /**
      * [@property] shininess
@@ -583,7 +606,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * [@property] transparency
@@ -616,6 +639,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Selector("setWritesToDepthBuffer:")
     public native void setWritesToDepthBuffer(boolean value);
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("shaderModifiers")
@@ -639,6 +663,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * The specular property specifies the amount of light to reflect in a mirror-like manner. The specular intensity
      * increases when the point of view lines up with the direction of the reflected light.
      */
+    @NotNull
     @Generated
     @Selector("specular")
     public native SCNMaterialProperty specular();
@@ -678,6 +703,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * The transparent property specifies the transparent areas of the material.
      */
+    @NotNull
     @Generated
     @Selector("transparent")
     public native SCNMaterialProperty transparent();
@@ -693,11 +719,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     /**
      * Determines whether the receiver writes to the color buffer when rendered. Defaults to SCNColorMaskAll.
@@ -718,6 +745,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("displacement")
     public native SCNMaterialProperty displacement();
@@ -736,7 +764,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * Determines whether the receiver writes to the color buffer when rendered. Defaults to SCNColorMaskAll.
@@ -765,6 +793,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("clearCoat")
     public native SCNMaterialProperty clearCoat();
@@ -776,6 +805,7 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("clearCoatNormal")
     public native SCNMaterialProperty clearCoatNormal();
@@ -787,10 +817,12 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("clearCoatRoughness")
     public native SCNMaterialProperty clearCoatRoughness();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("minimumLanguageVersion")
@@ -803,5 +835,5 @@ public class SCNMaterial extends NSObject implements SCNAnimatable, SCNShadable,
     @Generated
     @IsOptional
     @Selector("setMinimumLanguageVersion:")
-    public native void setMinimumLanguageVersion(NSNumber value);
+    public native void setMinimumLanguageVersion(@Nullable NSNumber value);
 }

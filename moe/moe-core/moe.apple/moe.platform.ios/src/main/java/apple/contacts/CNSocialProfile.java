@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An immutable value object representing a social profile.
@@ -80,22 +82,25 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,23 +135,26 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns a user displayable property name.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForKey:")
-    public static native String localizedStringForKey(String key);
+    public static native String localizedStringForKey(@NotNull String key);
 
     /**
      * Returns a user displayable service name.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForService:")
-    public static native String localizedStringForService(String service);
+    public static native String localizedStringForService(@NotNull String service);
 
     @Generated
     @Owned
@@ -178,15 +186,16 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -194,13 +203,14 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNSocialProfile initWithCoder(NSCoder coder);
+    public native CNSocialProfile initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithUrlString:username:userIdentifier:service:")
-    public native CNSocialProfile initWithUrlStringUsernameUserIdentifierService(String urlString, String username,
-            String userIdentifier, String service);
+    public native CNSocialProfile initWithUrlStringUsernameUserIdentifierService(@Nullable String urlString,
+            @Nullable String username, @Nullable String userIdentifier, @Nullable String service);
 
+    @NotNull
     @Generated
     @Selector("service")
     public native String service();
@@ -211,14 +221,17 @@ public class CNSocialProfile extends NSObject implements NSCopying, NSSecureCodi
         return supportsSecureCoding();
     }
 
+    @NotNull
     @Generated
     @Selector("urlString")
     public native String urlString();
 
+    @NotNull
     @Generated
     @Selector("userIdentifier")
     public native String userIdentifier();
 
+    @NotNull
     @Generated
     @Selector("username")
     public native String username();

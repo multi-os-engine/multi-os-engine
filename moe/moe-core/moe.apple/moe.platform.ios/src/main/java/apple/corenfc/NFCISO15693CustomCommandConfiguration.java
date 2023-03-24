@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NFCISO15693CustomCommandConfiguration
@@ -60,22 +62,25 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,7 +126,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     @Generated
     @Selector("initWithManufacturerCode:customCommandCode:requestParameters:")
     public native NFCISO15693CustomCommandConfiguration initWithManufacturerCodeCustomCommandCodeRequestParameters(
-            @NUInt long manufacturerCode, @NUInt long customCommandCode, NSData requestParameters);
+            @NUInt long manufacturerCode, @NUInt long customCommandCode, @Nullable NSData requestParameters);
 
     /**
      * initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:
@@ -137,7 +142,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     @Generated
     @Selector("initWithManufacturerCode:customCommandCode:requestParameters:maximumRetries:retryInterval:")
     public native NFCISO15693CustomCommandConfiguration initWithManufacturerCodeCustomCommandCodeRequestParametersMaximumRetriesRetryInterval(
-            @NUInt long manufacturerCode, @NUInt long customCommandCode, NSData requestParameters,
+            @NUInt long manufacturerCode, @NUInt long customCommandCode, @Nullable NSData requestParameters,
             @NUInt long maximumRetries, double retryInterval);
 
     @Generated
@@ -157,9 +162,10 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Manufacturer code. Valid range is 0x00 to 0xFF.
@@ -181,6 +187,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("requestParameters")
     public native NSData requestParameters();
@@ -218,7 +225,7 @@ public class NFCISO15693CustomCommandConfiguration extends NFCTagCommandConfigur
      */
     @Generated
     @Selector("setRequestParameters:")
-    public native void setRequestParameters(NSData value);
+    public native void setRequestParameters(@NotNull NSData value);
 
     @Generated
     @Selector("setVersion:")

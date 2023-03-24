@@ -29,6 +29,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MDLMeshBufferAllocator
@@ -54,6 +56,7 @@ public interface MDLMeshBufferAllocator {
      * @param length Size of buffer to be created in bytes
      * @param type   Type of data to be stored in this buffer
      */
+    @NotNull
     @Generated
     @Selector("newBuffer:type:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -76,11 +79,12 @@ public interface MDLMeshBufferAllocator {
      * @param data Values with which to fill the buffer
      * @param type Type of data to be stored in this buffer
      */
+    @Nullable
     @Generated
     @Selector("newBufferFromZone:data:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    MDLMeshBuffer newBufferFromZoneDataType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone, NSData data,
-            @NUInt long type);
+    MDLMeshBuffer newBufferFromZoneDataType(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
+            @NotNull NSData data, @NUInt long type);
 
     /**
      * newBufferFromZone:length:type:
@@ -97,10 +101,11 @@ public interface MDLMeshBufferAllocator {
      * @param zone Zone from which to allocate the memory
      * @param type Type of data to be stored in this buffer
      */
+    @Nullable
     @Generated
     @Selector("newBufferFromZone:length:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    MDLMeshBuffer newBufferFromZoneLengthType(@Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
+    MDLMeshBuffer newBufferFromZoneLengthType(@Nullable @Mapped(ObjCObjectMapper.class) MDLMeshBufferZone zone,
             @NUInt long length, @NUInt long type);
 
     /**
@@ -112,10 +117,11 @@ public interface MDLMeshBufferAllocator {
      * @param data Memory to fill the buffer with
      * @param type Type of data to be stored in this buffer
      */
+    @NotNull
     @Generated
     @Selector("newBufferWithData:type:")
     @MappedReturn(ObjCObjectMapper.class)
-    MDLMeshBuffer newBufferWithDataType(NSData data, @NUInt long type);
+    MDLMeshBuffer newBufferWithDataType(@NotNull NSData data, @NUInt long type);
 
     /**
      * newZone:
@@ -125,6 +131,7 @@ public interface MDLMeshBufferAllocator {
      * @param capacity Total size in bytes of all buffers which can be created from
      *                 this zone
      */
+    @NotNull
     @Generated
     @Selector("newZone:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -144,9 +151,10 @@ public interface MDLMeshBufferAllocator {
      * @param types Type of each buffer to be created in this zone. Values to be of
      *              MDLMeshBufferType
      */
+    @NotNull
     @Generated
     @Selector("newZoneForBuffersWithSize:andType:")
     @MappedReturn(ObjCObjectMapper.class)
-    MDLMeshBufferZone newZoneForBuffersWithSizeAndType(NSArray<? extends NSNumber> sizes,
-            NSArray<? extends NSNumber> types);
+    MDLMeshBufferZone newZoneForBuffersWithSizeAndType(@NotNull NSArray<? extends NSNumber> sizes,
+            @NotNull NSArray<? extends NSNumber> types);
 }

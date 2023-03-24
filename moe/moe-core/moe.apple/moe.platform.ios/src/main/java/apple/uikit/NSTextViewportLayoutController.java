@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -70,22 +72,25 @@ public class NSTextViewportLayoutController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -97,6 +102,7 @@ public class NSTextViewportLayoutController extends NSObject {
     /**
      * The viewport layout delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -117,7 +123,8 @@ public class NSTextViewportLayoutController extends NSObject {
 
     @Generated
     @Selector("initWithTextLayoutManager:")
-    public native NSTextViewportLayoutController initWithTextLayoutManager(NSTextLayoutManager textLayoutManager);
+    public native NSTextViewportLayoutController initWithTextLayoutManager(
+            @NotNull NSTextLayoutManager textLayoutManager);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +143,10 @@ public class NSTextViewportLayoutController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Performs layout in the viewport.
@@ -160,7 +168,8 @@ public class NSTextViewportLayoutController extends NSObject {
     @Generated
     @Selector("relocateViewportToTextLocation:")
     @NFloat
-    public native double relocateViewportToTextLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation textLocation);
+    public native double relocateViewportToTextLocation(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation textLocation);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,13 +184,14 @@ public class NSTextViewportLayoutController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) NSTextViewportLayoutControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) NSTextViewportLayoutControllerDelegate value);
 
     /**
      * The viewport layout delegate.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) NSTextViewportLayoutControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) NSTextViewportLayoutControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -203,6 +213,7 @@ public class NSTextViewportLayoutController extends NSObject {
     /**
      * The provider of viewport text layout fragments.
      */
+    @Nullable
     @Generated
     @Selector("textLayoutManager")
     public native NSTextLayoutManager textLayoutManager();
@@ -225,6 +236,7 @@ public class NSTextViewportLayoutController extends NSObject {
      * The text range of the current viewport layout.
      * Not KVO-compliant.
      */
+    @Nullable
     @Generated
     @Selector("viewportRange")
     public native NSTextRange viewportRange();

@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INListCarsIntent. By implementing this protocol, a class can provide
@@ -43,8 +44,8 @@ public interface INListCarsIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmListCars:completion:")
-    default void confirmListCarsCompletion(INListCarsIntent intent,
-            @ObjCBlock(name = "call_confirmListCarsCompletion") Block_confirmListCarsCompletion completion) {
+    default void confirmListCarsCompletion(@NotNull INListCarsIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmListCarsCompletion") Block_confirmListCarsCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -52,7 +53,7 @@ public interface INListCarsIntentHandling {
     @Generated
     public interface Block_confirmListCarsCompletion {
         @Generated
-        void call_confirmListCarsCompletion(INListCarsIntentResponse response);
+        void call_confirmListCarsCompletion(@NotNull INListCarsIntentResponse response);
     }
 
     /**
@@ -68,13 +69,13 @@ public interface INListCarsIntentHandling {
      */
     @Generated
     @Selector("handleListCars:completion:")
-    void handleListCarsCompletion(INListCarsIntent intent,
-            @ObjCBlock(name = "call_handleListCarsCompletion") Block_handleListCarsCompletion completion);
+    void handleListCarsCompletion(@NotNull INListCarsIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleListCarsCompletion") Block_handleListCarsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleListCarsCompletion {
         @Generated
-        void call_handleListCarsCompletion(INListCarsIntentResponse response);
+        void call_handleListCarsCompletion(@NotNull INListCarsIntentResponse response);
     }
 }

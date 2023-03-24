@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("WebKit")
@@ -41,15 +43,15 @@ public interface WKDownloadDelegate {
      */
     @Generated
     @Selector("download:decideDestinationUsingResponse:suggestedFilename:completionHandler:")
-    void downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler(WKDownload download,
-            NSURLResponse response, String suggestedFilename,
-            @ObjCBlock(name = "call_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler") Block_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler completionHandler);
+    void downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler(@NotNull WKDownload download,
+            @NotNull NSURLResponse response, @NotNull String suggestedFilename,
+            @NotNull @ObjCBlock(name = "call_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler") Block_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler {
         @Generated
-        void call_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler(NSURL destination);
+        void call_downloadDecideDestinationUsingResponseSuggestedFilenameCompletionHandler(@Nullable NSURL destination);
     }
 
     /**
@@ -63,7 +65,8 @@ public interface WKDownloadDelegate {
     @Generated
     @IsOptional
     @Selector("download:didFailWithError:resumeData:")
-    default void downloadDidFailWithErrorResumeData(WKDownload download, NSError error, NSData resumeData) {
+    default void downloadDidFailWithErrorResumeData(@NotNull WKDownload download, @NotNull NSError error,
+            @Nullable NSData resumeData) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,9 +89,9 @@ public interface WKDownloadDelegate {
     @Generated
     @IsOptional
     @Selector("download:didReceiveAuthenticationChallenge:completionHandler:")
-    default void downloadDidReceiveAuthenticationChallengeCompletionHandler(WKDownload download,
-            NSURLAuthenticationChallenge challenge,
-            @ObjCBlock(name = "call_downloadDidReceiveAuthenticationChallengeCompletionHandler") Block_downloadDidReceiveAuthenticationChallengeCompletionHandler completionHandler) {
+    default void downloadDidReceiveAuthenticationChallengeCompletionHandler(@NotNull WKDownload download,
+            @NotNull NSURLAuthenticationChallenge challenge,
+            @NotNull @ObjCBlock(name = "call_downloadDidReceiveAuthenticationChallengeCompletionHandler") Block_downloadDidReceiveAuthenticationChallengeCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,7 +99,8 @@ public interface WKDownloadDelegate {
     @Generated
     public interface Block_downloadDidReceiveAuthenticationChallengeCompletionHandler {
         @Generated
-        void call_downloadDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0, NSURLCredential arg1);
+        void call_downloadDidReceiveAuthenticationChallengeCompletionHandler(@NInt long arg0,
+                @Nullable NSURLCredential arg1);
     }
 
     /**
@@ -113,9 +117,9 @@ public interface WKDownloadDelegate {
     @Generated
     @IsOptional
     @Selector("download:willPerformHTTPRedirection:newRequest:decisionHandler:")
-    default void downloadWillPerformHTTPRedirectionNewRequestDecisionHandler(WKDownload download,
-            NSHTTPURLResponse response, NSURLRequest request,
-            @ObjCBlock(name = "call_downloadWillPerformHTTPRedirectionNewRequestDecisionHandler") Block_downloadWillPerformHTTPRedirectionNewRequestDecisionHandler decisionHandler) {
+    default void downloadWillPerformHTTPRedirectionNewRequestDecisionHandler(@NotNull WKDownload download,
+            @NotNull NSHTTPURLResponse response, @NotNull NSURLRequest request,
+            @NotNull @ObjCBlock(name = "call_downloadWillPerformHTTPRedirectionNewRequestDecisionHandler") Block_downloadWillPerformHTTPRedirectionNewRequestDecisionHandler decisionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,7 +138,7 @@ public interface WKDownloadDelegate {
     @Generated
     @IsOptional
     @Selector("downloadDidFinish:")
-    default void downloadDidFinish(WKDownload download) {
+    default void downloadDidFinish(@NotNull WKDownload download) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

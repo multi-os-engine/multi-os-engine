@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Holds configuration of one class of tokens
@@ -51,9 +53,10 @@ public class TKTokenDriverConfiguration extends NSObject {
      * dictionary. If configuration with specified instanceID already exists, it is replaced with new empty
      * configuration.
      */
+    @NotNull
     @Generated
     @Selector("addTokenConfigurationForTokenInstanceID:")
-    public native TKTokenConfiguration addTokenConfigurationForTokenInstanceID(String instanceID);
+    public native TKTokenConfiguration addTokenConfigurationForTokenInstanceID(@NotNull String instanceID);
 
     @Generated
     @Owned
@@ -67,22 +70,25 @@ public class TKTokenDriverConfiguration extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,6 +96,7 @@ public class TKTokenDriverConfiguration extends NSObject {
     /**
      * ClassID of the token configuration. ClassID is taken from @p com.apple.ctk.class-id token extension attribute.
      */
+    @NotNull
     @Generated
     @Selector("classID")
     public native String classID();
@@ -110,6 +117,7 @@ public class TKTokenDriverConfiguration extends NSObject {
      * token's configuration. Typically, hosting application will contain only one token extension, therefore this
      * dictionary will have one element.
      */
+    @NotNull
     @Generated
     @Selector("driverConfigurations")
     public static native NSDictionary<String, ? extends TKTokenDriverConfiguration> driverConfigurations();
@@ -140,9 +148,10 @@ public class TKTokenDriverConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -154,7 +163,7 @@ public class TKTokenDriverConfiguration extends NSObject {
      */
     @Generated
     @Selector("removeTokenConfigurationForTokenInstanceID:")
-    public native void removeTokenConfigurationForTokenInstanceID(String instanceID);
+    public native void removeTokenConfigurationForTokenInstanceID(@NotNull String instanceID);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -175,6 +184,7 @@ public class TKTokenDriverConfiguration extends NSObject {
     /**
      * Dictionary of all currently configured tokens for this token class, keyed by instanceID.
      */
+    @NotNull
     @Generated
     @Selector("tokenConfigurations")
     public native NSDictionary<String, ? extends TKTokenConfiguration> tokenConfigurations();

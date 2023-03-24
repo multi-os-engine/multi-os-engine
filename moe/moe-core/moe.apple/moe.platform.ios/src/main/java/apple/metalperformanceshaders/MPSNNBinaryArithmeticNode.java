@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * virtual base class for basic arithmetic nodes
@@ -57,22 +59,25 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,7 +107,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithLeftSource:rightSource:")
-    public native MPSNNBinaryArithmeticNode initWithLeftSourceRightSource(MPSNNImageNode left, MPSNNImageNode right);
+    public native MPSNNBinaryArithmeticNode initWithLeftSourceRightSource(@NotNull MPSNNImageNode left,
+            @NotNull MPSNNImageNode right);
 
     /**
      * init an arithemtic node with an array of sources
@@ -111,7 +117,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("initWithSources:")
-    public native MPSNNBinaryArithmeticNode initWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
+    public native MPSNNBinaryArithmeticNode initWithSources(@NotNull NSArray<? extends MPSNNImageNode> sourceNodes);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -130,9 +136,10 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -147,8 +154,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithLeftSource:rightSource:")
-    public static native MPSNNBinaryArithmeticNode nodeWithLeftSourceRightSource(MPSNNImageNode left,
-            MPSNNImageNode right);
+    public static native MPSNNBinaryArithmeticNode nodeWithLeftSourceRightSource(@NotNull MPSNNImageNode left,
+            @NotNull MPSNNImageNode right);
 
     /**
      * create an autoreleased arithemtic node with an array of sources
@@ -157,7 +164,8 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      */
     @Generated
     @Selector("nodeWithSources:")
-    public static native MPSNNBinaryArithmeticNode nodeWithSources(NSArray<? extends MPSNNImageNode> sourceNodes);
+    public static native MPSNNBinaryArithmeticNode nodeWithSources(
+            @NotNull NSArray<? extends MPSNNImageNode> sourceNodes);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -184,6 +192,7 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
     @Selector("bias")
     public native float bias();
 
+    @NotNull
     @Generated
     @Selector("gradientClass")
     public native Class gradientClass();
@@ -196,10 +205,11 @@ public class MPSNNBinaryArithmeticNode extends MPSNNFilterNode {
      * 
      * API-Since: 11.3
      */
+    @NotNull
     @Generated
     @Selector("gradientFiltersWithSources:")
     public native NSArray<? extends MPSNNGradientFilterNode> gradientFiltersWithSources(
-            NSArray<? extends MPSNNImageNode> gradientImages);
+            @NotNull NSArray<? extends MPSNNImageNode> gradientImages);
 
     @Generated
     @Selector("maximumValue")

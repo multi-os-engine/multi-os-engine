@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 9.0
@@ -44,23 +45,24 @@ public interface CNContactPickerDelegate {
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContact:")
-    default void contactPickerDidSelectContact(CNContactPickerViewController picker, CNContact contact) {
+    default void contactPickerDidSelectContact(@NotNull CNContactPickerViewController picker,
+            @NotNull CNContact contact) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperties:")
-    default void contactPickerDidSelectContactProperties(CNContactPickerViewController picker,
-            NSArray<? extends CNContactProperty> contactProperties) {
+    default void contactPickerDidSelectContactProperties(@NotNull CNContactPickerViewController picker,
+            @NotNull NSArray<? extends CNContactProperty> contactProperties) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContactProperty:")
-    default void contactPickerDidSelectContactProperty(CNContactPickerViewController picker,
-            CNContactProperty contactProperty) {
+    default void contactPickerDidSelectContactProperty(@NotNull CNContactPickerViewController picker,
+            @NotNull CNContactProperty contactProperty) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,8 +75,8 @@ public interface CNContactPickerDelegate {
     @Generated
     @IsOptional
     @Selector("contactPicker:didSelectContacts:")
-    default void contactPickerDidSelectContacts(CNContactPickerViewController picker,
-            NSArray<? extends CNContact> contacts) {
+    default void contactPickerDidSelectContacts(@NotNull CNContactPickerViewController picker,
+            @NotNull NSArray<? extends CNContact> contacts) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,7 +88,7 @@ public interface CNContactPickerDelegate {
     @Generated
     @IsOptional
     @Selector("contactPickerDidCancel:")
-    default void contactPickerDidCancel(CNContactPickerViewController picker) {
+    default void contactPickerDidCancel(@NotNull CNContactPickerViewController picker) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

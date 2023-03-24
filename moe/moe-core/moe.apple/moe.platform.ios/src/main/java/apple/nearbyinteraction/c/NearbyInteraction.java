@@ -10,6 +10,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import org.moe.natj.c.ann.CFunction;
 import org.moe.natj.general.ann.Mapped;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("NearbyInteraction")
@@ -26,6 +27,7 @@ public final class NearbyInteraction {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -45,17 +47,19 @@ public final class NearbyInteraction {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NIAlgorithmConvergenceStatusReasonDescription(
-            @Mapped(ObjCStringMapper.class) String reason);
+            @NotNull @Mapped(ObjCStringMapper.class) String reason);
 
     /**
      * Tell user to sweep device horizontally from side to side.
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -66,6 +70,7 @@ public final class NearbyInteraction {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -76,6 +81,7 @@ public final class NearbyInteraction {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -86,6 +92,7 @@ public final class NearbyInteraction {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

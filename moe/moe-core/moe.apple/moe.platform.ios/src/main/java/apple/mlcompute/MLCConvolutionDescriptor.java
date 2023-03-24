@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCConvolutionDescriptor
@@ -62,22 +64,25 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,12 +100,14 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor convolutionTransposeDescriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
@@ -113,12 +120,13 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes              The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor convolutionTransposeDescriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountStridesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, NSArray<? extends NSNumber> strides, int paddingPolicy,
-            NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NotNull NSArray<? extends NSNumber> strides, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for convolution transpose
@@ -129,6 +137,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param outputFeatureChannelCount The number of feature channels in the output tensor
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("convolutionTransposeDescriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:outputFeatureChannelCount:")
     public static native MLCConvolutionDescriptor convolutionTransposeDescriptorWithKernelWidthKernelHeightInputFeatureChannelCountOutputFeatureChannelCount(
@@ -144,11 +153,12 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Selector("convolutionType")
     public native int convolutionType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -166,12 +176,14 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes             The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelSizes:inputFeatureChannelCount:channelMultiplier:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor depthwiseConvolutionDescriptorWithKernelSizesInputFeatureChannelCountChannelMultiplierStridesDilationRatesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long channelMultiplier, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long channelMultiplier, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
@@ -184,12 +196,13 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param paddingSizes             The padding sizes in x and y if padding policy is MLCPaddingPolicyUsePaddingSIze
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelSizes:inputFeatureChannelCount:channelMultiplier:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor depthwiseConvolutionDescriptorWithKernelSizesInputFeatureChannelCountChannelMultiplierStridesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long channelMultiplier, NSArray<? extends NSNumber> strides, int paddingPolicy,
-            NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long channelMultiplier, @NotNull NSArray<? extends NSNumber> strides, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object for depthwise convolution
@@ -200,6 +213,7 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
      * @param channelMultiplier        The channel multiplier
      * @return A new MLCConvolutionDescriptor object.
      */
+    @NotNull
     @Generated
     @Selector("depthwiseConvolutionDescriptorWithKernelWidth:kernelHeight:inputFeatureChannelCount:channelMultiplier:")
     public static native MLCConvolutionDescriptor depthwiseConvolutionDescriptorWithKernelWidthKernelHeightInputFeatureChannelCountChannelMultiplier(
@@ -226,9 +240,10 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object
@@ -244,9 +259,9 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithKernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:strides:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithKernelSizesInputFeatureChannelCountOutputFeatureChannelCountStridesPaddingPolicyPaddingSizes(
-            NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, NSArray<? extends NSNumber> strides, int paddingPolicy,
-            NSArray<? extends NSNumber> paddingSizes);
+            @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NotNull NSArray<? extends NSNumber> strides, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * Create a MLCConvolutionDescriptor object
@@ -283,9 +298,10 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @Generated
     @Selector("descriptorWithType:kernelSizes:inputFeatureChannelCount:outputFeatureChannelCount:groupCount:strides:dilationRates:paddingPolicy:paddingSizes:")
     public static native MLCConvolutionDescriptor descriptorWithTypeKernelSizesInputFeatureChannelCountOutputFeatureChannelCountGroupCountStridesDilationRatesPaddingPolicyPaddingSizes(
-            int convolutionType, NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
-            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, NSArray<? extends NSNumber> strides,
-            NSArray<? extends NSNumber> dilationRates, int paddingPolicy, NSArray<? extends NSNumber> paddingSizes);
+            int convolutionType, @NotNull NSArray<? extends NSNumber> kernelSizes, @NUInt long inputFeatureChannelCount,
+            @NUInt long outputFeatureChannelCount, @NUInt long groupCount, @NotNull NSArray<? extends NSNumber> strides,
+            @NotNull NSArray<? extends NSNumber> dilationRates, int paddingPolicy,
+            @Nullable NSArray<? extends NSNumber> paddingSizes);
 
     /**
      * [@property] dilationRateInX
@@ -382,9 +398,10 @@ public class MLCConvolutionDescriptor extends NSObject implements NSCopying {
     @NUInt
     public native long kernelWidth();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

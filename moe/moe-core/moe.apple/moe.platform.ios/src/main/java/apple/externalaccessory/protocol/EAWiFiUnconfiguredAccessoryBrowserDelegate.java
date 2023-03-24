@@ -26,6 +26,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] EAWiFiUnconfiguredAccessoryBrowserDelegate
@@ -53,8 +54,8 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
      */
     @Generated
     @Selector("accessoryBrowser:didFindUnconfiguredAccessories:")
-    void accessoryBrowserDidFindUnconfiguredAccessories(EAWiFiUnconfiguredAccessoryBrowser browser,
-            NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
+    void accessoryBrowserDidFindUnconfiguredAccessories(@NotNull EAWiFiUnconfiguredAccessoryBrowser browser,
+            @NotNull NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
     /**
      * accessoryBrowser:didFinishConfiguringAccessory:withStatus:
@@ -71,8 +72,8 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
      */
     @Generated
     @Selector("accessoryBrowser:didFinishConfiguringAccessory:withStatus:")
-    void accessoryBrowserDidFinishConfiguringAccessoryWithStatus(EAWiFiUnconfiguredAccessoryBrowser browser,
-            EAWiFiUnconfiguredAccessory accessory, @NInt long status);
+    void accessoryBrowserDidFinishConfiguringAccessoryWithStatus(@NotNull EAWiFiUnconfiguredAccessoryBrowser browser,
+            @NotNull EAWiFiUnconfiguredAccessory accessory, @NInt long status);
 
     /**
      * accessoryBrowser:didRemoveUnconfiguredAccessories:
@@ -90,8 +91,8 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
      */
     @Generated
     @Selector("accessoryBrowser:didRemoveUnconfiguredAccessories:")
-    void accessoryBrowserDidRemoveUnconfiguredAccessories(EAWiFiUnconfiguredAccessoryBrowser browser,
-            NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
+    void accessoryBrowserDidRemoveUnconfiguredAccessories(@NotNull EAWiFiUnconfiguredAccessoryBrowser browser,
+            @NotNull NSSet<? extends EAWiFiUnconfiguredAccessory> accessories);
 
     /**
      * accessoryBrowser:didUpdateState:
@@ -106,5 +107,5 @@ public interface EAWiFiUnconfiguredAccessoryBrowserDelegate {
      */
     @Generated
     @Selector("accessoryBrowser:didUpdateState:")
-    void accessoryBrowserDidUpdateState(EAWiFiUnconfiguredAccessoryBrowser browser, @NInt long state);
+    void accessoryBrowserDidUpdateState(@NotNull EAWiFiUnconfiguredAccessoryBrowser browser, @NInt long state);
 }

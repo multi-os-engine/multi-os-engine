@@ -11,6 +11,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * All communication about matches is performed through this delegate.
@@ -31,7 +33,7 @@ public interface SHSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didFindMatch:")
-    default void sessionDidFindMatch(SHSession session, SHMatch match) {
+    default void sessionDidFindMatch(@NotNull SHSession session, @NotNull SHMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -46,7 +48,8 @@ public interface SHSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didNotFindMatchForSignature:error:")
-    default void sessionDidNotFindMatchForSignatureError(SHSession session, SHSignature signature, NSError error) {
+    default void sessionDidNotFindMatchForSignatureError(@NotNull SHSession session, @NotNull SHSignature signature,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

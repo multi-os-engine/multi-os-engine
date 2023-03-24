@@ -11,6 +11,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * CMWaterSubmersionManagerDelegate
@@ -34,7 +35,7 @@ public interface CMWaterSubmersionManagerDelegate {
      */
     @Generated
     @Selector("manager:didUpdateEvent:")
-    void managerDidUpdateEvent(CMWaterSubmersionManager manager, CMWaterSubmersionEvent event);
+    void managerDidUpdateEvent(@NotNull CMWaterSubmersionManager manager, @NotNull CMWaterSubmersionEvent event);
 
     /**
      * manager:didUpdateMeasurement:
@@ -46,7 +47,8 @@ public interface CMWaterSubmersionManagerDelegate {
      */
     @Generated
     @Selector("manager:didUpdateMeasurement:")
-    void managerDidUpdateMeasurement(CMWaterSubmersionManager manager, CMWaterSubmersionMeasurement measurement);
+    void managerDidUpdateMeasurement(@NotNull CMWaterSubmersionManager manager,
+            @NotNull CMWaterSubmersionMeasurement measurement);
 
     /**
      * manager:didUpdateTemperature:
@@ -57,7 +59,8 @@ public interface CMWaterSubmersionManagerDelegate {
      */
     @Generated
     @Selector("manager:didUpdateTemperature:")
-    void managerDidUpdateTemperature(CMWaterSubmersionManager manager, CMWaterTemperature measurement);
+    void managerDidUpdateTemperature(@NotNull CMWaterSubmersionManager manager,
+            @NotNull CMWaterTemperature measurement);
 
     /**
      * manager:errorOccurred:
@@ -66,5 +69,5 @@ public interface CMWaterSubmersionManagerDelegate {
      */
     @Generated
     @Selector("manager:errorOccurred:")
-    void managerErrorOccurred(CMWaterSubmersionManager manager, NSError error);
+    void managerErrorOccurred(@NotNull CMWaterSubmersionManager manager, @NotNull NSError error);
 }

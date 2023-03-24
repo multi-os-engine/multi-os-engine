@@ -54,6 +54,8 @@ import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("CFNetwork")
@@ -117,10 +119,12 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFHostRef CFHostCreateWithName(CFAllocatorRef allocator, CFStringRef hostname);
+    public static native CFHostRef CFHostCreateWithName(@Nullable CFAllocatorRef allocator,
+            @NotNull CFStringRef hostname);
 
     /**
      * CFHostCreateWithAddress()
@@ -152,10 +156,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFHostRef CFHostCreateWithAddress(CFAllocatorRef allocator, CFDataRef addr);
+    public static native CFHostRef CFHostCreateWithAddress(@Nullable CFAllocatorRef allocator, @NotNull CFDataRef addr);
 
     /**
      * CFHostCreateCopy()
@@ -188,10 +193,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFHostRef CFHostCreateCopy(CFAllocatorRef alloc, CFHostRef host);
+    public static native CFHostRef CFHostCreateCopy(@Nullable CFAllocatorRef alloc, @NotNull CFHostRef host);
 
     /**
      * CFHostStartInfoResolution()
@@ -234,8 +240,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFHostStartInfoResolution(CFHostRef theHost, int info,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFHostStartInfoResolution(@NotNull CFHostRef theHost, int info,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFHostGetAddressing()
@@ -270,10 +276,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFArrayRef CFHostGetAddressing(CFHostRef theHost, BytePtr hasBeenResolved);
+    public static native CFArrayRef CFHostGetAddressing(@NotNull CFHostRef theHost, @Nullable BytePtr hasBeenResolved);
 
     /**
      * CFHostGetNames()
@@ -307,10 +314,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFArrayRef CFHostGetNames(CFHostRef theHost, BytePtr hasBeenResolved);
+    public static native CFArrayRef CFHostGetNames(@NotNull CFHostRef theHost, @Nullable BytePtr hasBeenResolved);
 
     /**
      * CFHostGetReachability()
@@ -348,10 +356,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use Network framework instead, see deprecation notice in <CFNetwork/CFHost.h>
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDataRef CFHostGetReachability(CFHostRef theHost, BytePtr hasBeenResolved);
+    public static native CFDataRef CFHostGetReachability(@NotNull CFHostRef theHost, @Nullable BytePtr hasBeenResolved);
 
     /**
      * CFHostCancelInfoResolution()
@@ -381,7 +390,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFHostCancelInfoResolution(CFHostRef theHost, int info);
+    public static native void CFHostCancelInfoResolution(@NotNull CFHostRef theHost, int info);
 
     /**
      * CFHostSetClient()
@@ -424,9 +433,9 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFHostSetClient(CFHostRef theHost,
-            @FunctionPtr(name = "call_CFHostSetClient") Function_CFHostSetClient clientCB,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFHostClientContext clientContext);
+    public static native byte CFHostSetClient(@NotNull CFHostRef theHost,
+            @Nullable @FunctionPtr(name = "call_CFHostSetClient") Function_CFHostSetClient clientCB,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFHostClientContext clientContext);
 
     /**
      * CFHostScheduleWithRunLoop()
@@ -463,8 +472,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFHostScheduleWithRunLoop(CFHostRef theHost, CFRunLoopRef runLoop,
-            CFStringRef runLoopMode);
+    public static native void CFHostScheduleWithRunLoop(@NotNull CFHostRef theHost, @NotNull CFRunLoopRef runLoop,
+            @NotNull CFStringRef runLoopMode);
 
     /**
      * CFHostUnscheduleFromRunLoop()
@@ -501,8 +510,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFHostUnscheduleFromRunLoop(CFHostRef theHost, CFRunLoopRef runLoop,
-            CFStringRef runLoopMode);
+    public static native void CFHostUnscheduleFromRunLoop(@NotNull CFHostRef theHost, @NotNull CFRunLoopRef runLoop,
+            @NotNull CFStringRef runLoopMode);
 
     /**
      * CFNetServiceGetTypeID()
@@ -613,11 +622,12 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFNetServiceRef CFNetServiceCreate(CFAllocatorRef alloc, CFStringRef domain,
-            CFStringRef serviceType, CFStringRef name, int port);
+    public static native CFNetServiceRef CFNetServiceCreate(@Nullable CFAllocatorRef alloc, @NotNull CFStringRef domain,
+            @NotNull CFStringRef serviceType, @NotNull CFStringRef name, int port);
 
     /**
      * CFNetServiceCreateCopy()
@@ -650,10 +660,12 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFNetServiceRef CFNetServiceCreateCopy(CFAllocatorRef alloc, CFNetServiceRef service);
+    public static native CFNetServiceRef CFNetServiceCreateCopy(@Nullable CFAllocatorRef alloc,
+            @NotNull CFNetServiceRef service);
 
     /**
      * CFNetServiceGetDomain()
@@ -681,10 +693,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef CFNetServiceGetDomain(CFNetServiceRef theService);
+    public static native CFStringRef CFNetServiceGetDomain(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetType()
@@ -712,10 +725,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef CFNetServiceGetType(CFNetServiceRef theService);
+    public static native CFStringRef CFNetServiceGetType(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetName()
@@ -743,10 +757,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef CFNetServiceGetName(CFNetServiceRef theService);
+    public static native CFStringRef CFNetServiceGetName(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceRegisterWithOptions()
@@ -793,8 +808,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceRegisterWithOptions(CFNetServiceRef theService, @NUInt long options,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFNetServiceRegisterWithOptions(@NotNull CFNetServiceRef theService, @NUInt long options,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceResolveWithTimeout()
@@ -840,8 +855,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceResolveWithTimeout(CFNetServiceRef theService, double timeout,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFNetServiceResolveWithTimeout(@NotNull CFNetServiceRef theService, double timeout,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceCancel()
@@ -865,7 +880,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceCancel(CFNetServiceRef theService);
+    public static native void CFNetServiceCancel(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetTargetHost()
@@ -895,10 +910,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFStringRef CFNetServiceGetTargetHost(CFNetServiceRef theService);
+    public static native CFStringRef CFNetServiceGetTargetHost(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetPortNumber()
@@ -928,7 +944,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native int CFNetServiceGetPortNumber(CFNetServiceRef theService);
+    public static native int CFNetServiceGetPortNumber(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetAddressing()
@@ -959,10 +975,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFArrayRef CFNetServiceGetAddressing(CFNetServiceRef theService);
+    public static native CFArrayRef CFNetServiceGetAddressing(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceGetTXTData()
@@ -993,10 +1010,11 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDataRef CFNetServiceGetTXTData(CFNetServiceRef theService);
+    public static native CFDataRef CFNetServiceGetTXTData(@NotNull CFNetServiceRef theService);
 
     /**
      * CFNetServiceSetTXTData()
@@ -1027,7 +1045,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceSetTXTData(CFNetServiceRef theService, CFDataRef txtRecord);
+    public static native byte CFNetServiceSetTXTData(@NotNull CFNetServiceRef theService, @NotNull CFDataRef txtRecord);
 
     /**
      * CFNetServiceCreateDictionaryWithTXTData()
@@ -1061,11 +1079,12 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDictionaryRef CFNetServiceCreateDictionaryWithTXTData(CFAllocatorRef alloc,
-            CFDataRef txtRecord);
+    public static native CFDictionaryRef CFNetServiceCreateDictionaryWithTXTData(@Nullable CFAllocatorRef alloc,
+            @NotNull CFDataRef txtRecord);
 
     /**
      * CFNetServiceCreateTXTDataWithDictionary()
@@ -1107,11 +1126,12 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDataRef CFNetServiceCreateTXTDataWithDictionary(CFAllocatorRef alloc,
-            CFDictionaryRef keyValuePairs);
+    public static native CFDataRef CFNetServiceCreateTXTDataWithDictionary(@Nullable CFAllocatorRef alloc,
+            @NotNull CFDictionaryRef keyValuePairs);
 
     /**
      * CFNetServiceSetClient()
@@ -1159,9 +1179,9 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceSetClient(CFNetServiceRef theService,
-            @FunctionPtr(name = "call_CFNetServiceSetClient") Function_CFNetServiceSetClient clientCB,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
+    public static native byte CFNetServiceSetClient(@NotNull CFNetServiceRef theService,
+            @Nullable @FunctionPtr(name = "call_CFNetServiceSetClient") Function_CFNetServiceSetClient clientCB,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
     /**
      * CFNetServiceScheduleWithRunLoop()
@@ -1193,8 +1213,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceScheduleWithRunLoop(CFNetServiceRef theService, CFRunLoopRef runLoop,
-            CFStringRef runLoopMode);
+    public static native void CFNetServiceScheduleWithRunLoop(@NotNull CFNetServiceRef theService,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * CFNetServiceUnscheduleFromRunLoop()
@@ -1227,8 +1247,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceUnscheduleFromRunLoop(CFNetServiceRef theService, CFRunLoopRef runLoop,
-            CFStringRef runLoopMode);
+    public static native void CFNetServiceUnscheduleFromRunLoop(@NotNull CFNetServiceRef theService,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * CFNetServiceMonitorCreate()
@@ -1267,13 +1287,14 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFNetServiceMonitorRef CFNetServiceMonitorCreate(CFAllocatorRef alloc,
-            CFNetServiceRef theService,
-            @FunctionPtr(name = "call_CFNetServiceMonitorCreate") Function_CFNetServiceMonitorCreate clientCB,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
+    public static native CFNetServiceMonitorRef CFNetServiceMonitorCreate(@Nullable CFAllocatorRef alloc,
+            @NotNull CFNetServiceRef theService,
+            @NotNull @FunctionPtr(name = "call_CFNetServiceMonitorCreate") Function_CFNetServiceMonitorCreate clientCB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
     /**
      * CFNetServiceMonitorInvalidate()
@@ -1299,7 +1320,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceMonitorInvalidate(CFNetServiceMonitorRef monitor);
+    public static native void CFNetServiceMonitorInvalidate(@NotNull CFNetServiceMonitorRef monitor);
 
     /**
      * CFNetServiceMonitorStart()
@@ -1342,8 +1363,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceMonitorStart(CFNetServiceMonitorRef monitor, int recordType,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFNetServiceMonitorStart(@NotNull CFNetServiceMonitorRef monitor, int recordType,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceMonitorStop()
@@ -1375,8 +1396,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceMonitorStop(CFNetServiceMonitorRef monitor,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native void CFNetServiceMonitorStop(@NotNull CFNetServiceMonitorRef monitor,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceMonitorScheduleWithRunLoop()
@@ -1411,8 +1432,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceMonitorScheduleWithRunLoop(CFNetServiceMonitorRef monitor,
-            CFRunLoopRef runLoop, CFStringRef runLoopMode);
+    public static native void CFNetServiceMonitorScheduleWithRunLoop(@NotNull CFNetServiceMonitorRef monitor,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * CFNetServiceMonitorUnscheduleFromRunLoop()
@@ -1444,8 +1465,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceMonitorUnscheduleFromRunLoop(CFNetServiceMonitorRef monitor,
-            CFRunLoopRef runLoop, CFStringRef runLoopMode);
+    public static native void CFNetServiceMonitorUnscheduleFromRunLoop(@NotNull CFNetServiceMonitorRef monitor,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * CFNetServiceBrowserCreate()
@@ -1480,12 +1501,13 @@ public final class CFNetwork {
      * Deprecated-Since: 100000.0
      * Deprecated-Message: Use nw_browser_t or nw_listener_t in Network framework instead
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFNetServiceBrowserRef CFNetServiceBrowserCreate(CFAllocatorRef alloc,
-            @FunctionPtr(name = "call_CFNetServiceBrowserCreate") Function_CFNetServiceBrowserCreate clientCB,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
+    public static native CFNetServiceBrowserRef CFNetServiceBrowserCreate(@Nullable CFAllocatorRef alloc,
+            @NotNull @FunctionPtr(name = "call_CFNetServiceBrowserCreate") Function_CFNetServiceBrowserCreate clientCB,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CFNetServiceClientContext clientContext);
 
     /**
      * CFNetServiceBrowserInvalidate()
@@ -1508,7 +1530,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceBrowserInvalidate(CFNetServiceBrowserRef browser);
+    public static native void CFNetServiceBrowserInvalidate(@NotNull CFNetServiceBrowserRef browser);
 
     /**
      * CFNetServiceBrowserSearchForDomains()
@@ -1553,9 +1575,9 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceBrowserSearchForDomains(CFNetServiceBrowserRef browser,
+    public static native byte CFNetServiceBrowserSearchForDomains(@NotNull CFNetServiceBrowserRef browser,
             byte registrationDomains,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceBrowserSearchForServices()
@@ -1602,9 +1624,9 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native byte CFNetServiceBrowserSearchForServices(CFNetServiceBrowserRef browser, CFStringRef domain,
-            CFStringRef serviceType,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFNetServiceBrowserSearchForServices(@NotNull CFNetServiceBrowserRef browser,
+            @NotNull CFStringRef domain, @NotNull CFStringRef serviceType,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceBrowserStopSearch()
@@ -1638,8 +1660,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceBrowserStopSearch(CFNetServiceBrowserRef browser,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native void CFNetServiceBrowserStopSearch(@NotNull CFNetServiceBrowserRef browser,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFNetServiceBrowserScheduleWithRunLoop()
@@ -1674,8 +1696,8 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceBrowserScheduleWithRunLoop(CFNetServiceBrowserRef browser,
-            CFRunLoopRef runLoop, CFStringRef runLoopMode);
+    public static native void CFNetServiceBrowserScheduleWithRunLoop(@NotNull CFNetServiceBrowserRef browser,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     /**
      * CFNetServiceBrowserUnscheduleFromRunLoop()
@@ -1707,20 +1729,20 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetServiceBrowserUnscheduleFromRunLoop(CFNetServiceBrowserRef browser,
-            CFRunLoopRef runLoop, CFStringRef runLoopMode);
+    public static native void CFNetServiceBrowserUnscheduleFromRunLoop(@NotNull CFNetServiceBrowserRef browser,
+            @NotNull CFRunLoopRef runLoop, @NotNull CFStringRef runLoopMode);
 
     @Generated
     @Inline
     @CFunction
     public static native int CFSocketStreamSOCKSGetErrorSubdomain(
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     @Generated
     @Inline
     @CFunction
     public static native int CFSocketStreamSOCKSGetError(
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFStreamCreatePairWithSocketToCFHost()
@@ -1763,8 +1785,9 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFStreamCreatePairWithSocketToCFHost(CFAllocatorRef alloc, CFHostRef host, int port,
-            Ptr<CFReadStreamRef> readStream, Ptr<CFWriteStreamRef> writeStream);
+    public static native void CFStreamCreatePairWithSocketToCFHost(@Nullable CFAllocatorRef alloc,
+            @NotNull CFHostRef host, int port, @Nullable Ptr<CFReadStreamRef> readStream,
+            @Nullable Ptr<CFWriteStreamRef> writeStream);
 
     /**
      * CFStreamCreatePairWithSocketToNetService()
@@ -1805,8 +1828,9 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFStreamCreatePairWithSocketToNetService(CFAllocatorRef alloc, CFNetServiceRef service,
-            Ptr<CFReadStreamRef> readStream, Ptr<CFWriteStreamRef> writeStream);
+    public static native void CFStreamCreatePairWithSocketToNetService(@Nullable CFAllocatorRef alloc,
+            @NotNull CFNetServiceRef service, @Nullable Ptr<CFReadStreamRef> readStream,
+            @Nullable Ptr<CFWriteStreamRef> writeStream);
 
     /**
      * CFReadStreamCreateWithFTPURL()
@@ -1846,10 +1870,12 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
-    public static native CFReadStreamRef CFReadStreamCreateWithFTPURL(CFAllocatorRef alloc, CFURLRef ftpURL);
+    public static native CFReadStreamRef CFReadStreamCreateWithFTPURL(@Nullable CFAllocatorRef alloc,
+            @NotNull CFURLRef ftpURL);
 
     /**
      * CFFTPCreateParsedResourceListing()
@@ -1898,9 +1924,9 @@ public final class CFNetwork {
     @Deprecated
     @CFunction
     @NInt
-    public static native long CFFTPCreateParsedResourceListing(CFAllocatorRef alloc,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String buffer,
-            @NInt long bufferLength, Ptr<CFDictionaryRef> parsed);
+    public static native long CFFTPCreateParsedResourceListing(@Nullable CFAllocatorRef alloc,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String buffer,
+            @NInt long bufferLength, @Nullable Ptr<CFDictionaryRef> parsed);
 
     /**
      * CFWriteStreamCreateWithFTPURL()
@@ -1939,10 +1965,12 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
-    public static native CFWriteStreamRef CFWriteStreamCreateWithFTPURL(CFAllocatorRef alloc, CFURLRef ftpURL);
+    public static native CFWriteStreamRef CFWriteStreamCreateWithFTPURL(@Nullable CFAllocatorRef alloc,
+            @NotNull CFURLRef ftpURL);
 
     /**
      * CFHTTPMessageGetTypeID()
@@ -2001,10 +2029,11 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFHTTPMessageRef CFHTTPMessageCreateRequest(CFAllocatorRef alloc, CFStringRef requestMethod,
-            CFURLRef url, CFStringRef httpVersion);
+    public static native CFHTTPMessageRef CFHTTPMessageCreateRequest(@Nullable CFAllocatorRef alloc,
+            @NotNull CFStringRef requestMethod, @NotNull CFURLRef url, @NotNull CFStringRef httpVersion);
 
     /**
      * CFHTTPMessageCreateResponse()
@@ -2043,10 +2072,11 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFHTTPMessageRef CFHTTPMessageCreateResponse(CFAllocatorRef alloc, @NInt long statusCode,
-            CFStringRef statusDescription, CFStringRef httpVersion);
+    public static native CFHTTPMessageRef CFHTTPMessageCreateResponse(@Nullable CFAllocatorRef alloc,
+            @NInt long statusCode, @Nullable CFStringRef statusDescription, @NotNull CFStringRef httpVersion);
 
     /**
      * CFHTTPMessageCreateEmpty()
@@ -2078,9 +2108,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFHTTPMessageRef CFHTTPMessageCreateEmpty(CFAllocatorRef alloc, byte isRequest);
+    public static native CFHTTPMessageRef CFHTTPMessageCreateEmpty(@Nullable CFAllocatorRef alloc, byte isRequest);
 
     /**
      * CFHTTPMessageCreateCopy()
@@ -2111,9 +2142,11 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFHTTPMessageRef CFHTTPMessageCreateCopy(CFAllocatorRef alloc, CFHTTPMessageRef message);
+    public static native CFHTTPMessageRef CFHTTPMessageCreateCopy(@Nullable CFAllocatorRef alloc,
+            @NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageIsRequest()
@@ -2140,7 +2173,7 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPMessageIsRequest(CFHTTPMessageRef message);
+    public static native byte CFHTTPMessageIsRequest(@NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageCopyVersion()
@@ -2164,9 +2197,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CFHTTPMessageCopyVersion(CFHTTPMessageRef message);
+    public static native CFStringRef CFHTTPMessageCopyVersion(@NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageCopyBody()
@@ -2190,9 +2224,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CFHTTPMessageCopyBody(CFHTTPMessageRef message);
+    public static native CFDataRef CFHTTPMessageCopyBody(@NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageSetBody()
@@ -2218,7 +2253,7 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native void CFHTTPMessageSetBody(CFHTTPMessageRef message, CFDataRef bodyData);
+    public static native void CFHTTPMessageSetBody(@NotNull CFHTTPMessageRef message, @NotNull CFDataRef bodyData);
 
     /**
      * CFHTTPMessageCopyHeaderFieldValue()
@@ -2246,10 +2281,11 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CFHTTPMessageCopyHeaderFieldValue(CFHTTPMessageRef message,
-            CFStringRef headerField);
+    public static native CFStringRef CFHTTPMessageCopyHeaderFieldValue(@NotNull CFHTTPMessageRef message,
+            @NotNull CFStringRef headerField);
 
     /**
      * CFHTTPMessageCopyAllHeaderFields()
@@ -2273,9 +2309,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef CFHTTPMessageCopyAllHeaderFields(CFHTTPMessageRef message);
+    public static native CFDictionaryRef CFHTTPMessageCopyAllHeaderFields(@NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageSetHeaderFieldValue()
@@ -2305,8 +2342,8 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native void CFHTTPMessageSetHeaderFieldValue(CFHTTPMessageRef message, CFStringRef headerField,
-            CFStringRef value);
+    public static native void CFHTTPMessageSetHeaderFieldValue(@NotNull CFHTTPMessageRef message,
+            @NotNull CFStringRef headerField, @Nullable CFStringRef value);
 
     /**
      * CFHTTPMessageAppendBytes()
@@ -2340,8 +2377,8 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPMessageAppendBytes(CFHTTPMessageRef message,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String newBytes,
+    public static native byte CFHTTPMessageAppendBytes(@NotNull CFHTTPMessageRef message,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String newBytes,
             @NInt long numBytes);
 
     /**
@@ -2368,7 +2405,7 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPMessageIsHeaderComplete(CFHTTPMessageRef message);
+    public static native byte CFHTTPMessageIsHeaderComplete(@NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageCopySerializedMessage()
@@ -2393,9 +2430,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef CFHTTPMessageCopySerializedMessage(CFHTTPMessageRef message);
+    public static native CFDataRef CFHTTPMessageCopySerializedMessage(@NotNull CFHTTPMessageRef message);
 
     /**
      * CFHTTPMessageCopyRequestURL()
@@ -2418,9 +2456,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFURLRef CFHTTPMessageCopyRequestURL(CFHTTPMessageRef request);
+    public static native CFURLRef CFHTTPMessageCopyRequestURL(@NotNull CFHTTPMessageRef request);
 
     /**
      * CFHTTPMessageCopyRequestMethod()
@@ -2443,9 +2482,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CFHTTPMessageCopyRequestMethod(CFHTTPMessageRef request);
+    public static native CFStringRef CFHTTPMessageCopyRequestMethod(@NotNull CFHTTPMessageRef request);
 
     /**
      * CFHTTPMessageAddAuthentication()
@@ -2492,9 +2532,9 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPMessageAddAuthentication(CFHTTPMessageRef request,
-            CFHTTPMessageRef authenticationFailureResponse, CFStringRef username, CFStringRef password,
-            CFStringRef authenticationScheme, byte forProxy);
+    public static native byte CFHTTPMessageAddAuthentication(@NotNull CFHTTPMessageRef request,
+            @Nullable CFHTTPMessageRef authenticationFailureResponse, @NotNull CFStringRef username,
+            @NotNull CFStringRef password, @Nullable CFStringRef authenticationScheme, byte forProxy);
 
     /**
      * CFHTTPMessageGetResponseStatusCode()
@@ -2520,7 +2560,7 @@ public final class CFNetwork {
     @Generated
     @CFunction
     @NInt
-    public static native long CFHTTPMessageGetResponseStatusCode(CFHTTPMessageRef response);
+    public static native long CFHTTPMessageGetResponseStatusCode(@NotNull CFHTTPMessageRef response);
 
     /**
      * CFHTTPMessageCopyResponseStatusLine()
@@ -2545,9 +2585,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef CFHTTPMessageCopyResponseStatusLine(CFHTTPMessageRef response);
+    public static native CFStringRef CFHTTPMessageCopyResponseStatusLine(@NotNull CFHTTPMessageRef response);
 
     /**
      * Creation routines
@@ -2588,11 +2629,12 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
-    public static native CFReadStreamRef CFReadStreamCreateForHTTPRequest(CFAllocatorRef alloc,
-            CFHTTPMessageRef request);
+    public static native CFReadStreamRef CFReadStreamCreateForHTTPRequest(@Nullable CFAllocatorRef alloc,
+            @NotNull CFHTTPMessageRef request);
 
     /**
      * CFReadStreamCreateForStreamedHTTPRequest() *** DEPRECATED ***
@@ -2640,11 +2682,12 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Generated
     @Deprecated
     @CFunction
-    public static native CFReadStreamRef CFReadStreamCreateForStreamedHTTPRequest(CFAllocatorRef alloc,
-            CFHTTPMessageRef requestHeaders, CFReadStreamRef requestBody);
+    public static native CFReadStreamRef CFReadStreamCreateForStreamedHTTPRequest(@Nullable CFAllocatorRef alloc,
+            @NotNull CFHTTPMessageRef requestHeaders, @NotNull CFReadStreamRef requestBody);
 
     /**
      * CFHTTPAuthenticationGetTypeID()
@@ -2692,10 +2735,11 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFHTTPAuthenticationRef CFHTTPAuthenticationCreateFromResponse(CFAllocatorRef alloc,
-            CFHTTPMessageRef response);
+    public static native CFHTTPAuthenticationRef CFHTTPAuthenticationCreateFromResponse(@Nullable CFAllocatorRef alloc,
+            @NotNull CFHTTPMessageRef response);
 
     /**
      * CFHTTPAuthenticationIsValid()
@@ -2736,8 +2780,8 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPAuthenticationIsValid(CFHTTPAuthenticationRef auth,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFHTTPAuthenticationIsValid(@NotNull CFHTTPAuthenticationRef auth,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFHTTPAuthenticationAppliesToRequest()
@@ -2769,8 +2813,8 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPAuthenticationAppliesToRequest(CFHTTPAuthenticationRef auth,
-            CFHTTPMessageRef request);
+    public static native byte CFHTTPAuthenticationAppliesToRequest(@NotNull CFHTTPAuthenticationRef auth,
+            @NotNull CFHTTPMessageRef request);
 
     /**
      * CFHTTPAuthenticationRequiresOrderedRequests()
@@ -2800,7 +2844,7 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPAuthenticationRequiresOrderedRequests(CFHTTPAuthenticationRef auth);
+    public static native byte CFHTTPAuthenticationRequiresOrderedRequests(@NotNull CFHTTPAuthenticationRef auth);
 
     /**
      * CFHTTPMessageApplyCredentials()
@@ -2846,9 +2890,9 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPMessageApplyCredentials(CFHTTPMessageRef request, CFHTTPAuthenticationRef auth,
-            CFStringRef username, CFStringRef password,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFHTTPMessageApplyCredentials(@NotNull CFHTTPMessageRef request,
+            @NotNull CFHTTPAuthenticationRef auth, @Nullable CFStringRef username, @Nullable CFStringRef password,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFHTTPMessageApplyCredentialDictionary()
@@ -2892,9 +2936,9 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPMessageApplyCredentialDictionary(CFHTTPMessageRef request,
-            CFHTTPAuthenticationRef auth, CFDictionaryRef dict,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
+    public static native byte CFHTTPMessageApplyCredentialDictionary(@NotNull CFHTTPMessageRef request,
+            @NotNull CFHTTPAuthenticationRef auth, @NotNull CFDictionaryRef dict,
+            @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError error);
 
     /**
      * CFHTTPAuthenticationCopyRealm()
@@ -2924,9 +2968,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CFHTTPAuthenticationCopyRealm(CFHTTPAuthenticationRef auth);
+    public static native CFStringRef CFHTTPAuthenticationCopyRealm(@NotNull CFHTTPAuthenticationRef auth);
 
     /**
      * CFHTTPAuthenticationCopyDomains()
@@ -2956,9 +3001,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CFHTTPAuthenticationCopyDomains(CFHTTPAuthenticationRef auth);
+    public static native CFArrayRef CFHTTPAuthenticationCopyDomains(@NotNull CFHTTPAuthenticationRef auth);
 
     /**
      * CFHTTPAuthenticationCopyMethod()
@@ -2986,9 +3032,10 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFStringRef CFHTTPAuthenticationCopyMethod(CFHTTPAuthenticationRef auth);
+    public static native CFStringRef CFHTTPAuthenticationCopyMethod(@NotNull CFHTTPAuthenticationRef auth);
 
     /**
      * CFHTTPAuthenticationRequiresUserNameAndPassword()
@@ -3017,7 +3064,7 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPAuthenticationRequiresUserNameAndPassword(CFHTTPAuthenticationRef auth);
+    public static native byte CFHTTPAuthenticationRequiresUserNameAndPassword(@NotNull CFHTTPAuthenticationRef auth);
 
     /**
      * CFHTTPAuthenticationRequiresAccountDomain()
@@ -3047,7 +3094,7 @@ public final class CFNetwork {
      */
     @Generated
     @CFunction
-    public static native byte CFHTTPAuthenticationRequiresAccountDomain(CFHTTPAuthenticationRef auth);
+    public static native byte CFHTTPAuthenticationRequiresAccountDomain(@NotNull CFHTTPAuthenticationRef auth);
 
     /**
      * CFNetDiagnosticCreateWithStreams()
@@ -3076,11 +3123,12 @@ public final class CFNetwork {
      * API-Since: 2.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithStreams(CFAllocatorRef alloc,
-            CFReadStreamRef readStream, CFWriteStreamRef writeStream);
+    public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithStreams(@Nullable CFAllocatorRef alloc,
+            @Nullable CFReadStreamRef readStream, @Nullable CFWriteStreamRef writeStream);
 
     /**
      * CFNetDiagnosticCreateWithURL()
@@ -3104,10 +3152,12 @@ public final class CFNetwork {
      * API-Since: 2.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CFunction
-    public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithURL(CFAllocatorRef alloc, CFURLRef url);
+    public static native CFNetDiagnosticRef CFNetDiagnosticCreateWithURL(@NotNull CFAllocatorRef alloc,
+            @NotNull CFURLRef url);
 
     /**
      * CFNetDiagnosticSetName()
@@ -3135,7 +3185,7 @@ public final class CFNetwork {
     @Deprecated
     @Generated
     @CFunction
-    public static native void CFNetDiagnosticSetName(CFNetDiagnosticRef details, CFStringRef name);
+    public static native void CFNetDiagnosticSetName(@NotNull CFNetDiagnosticRef details, @NotNull CFStringRef name);
 
     /**
      * CFNetDiagnosticDiagnoseProblemInteractively()
@@ -3163,7 +3213,7 @@ public final class CFNetwork {
     @Generated
     @CFunction
     @NInt
-    public static native long CFNetDiagnosticDiagnoseProblemInteractively(CFNetDiagnosticRef details);
+    public static native long CFNetDiagnosticDiagnoseProblemInteractively(@NotNull CFNetDiagnosticRef details);
 
     /**
      * CFNetDiagnosticCopyNetworkStatusPassively()
@@ -3197,8 +3247,8 @@ public final class CFNetwork {
     @Generated
     @CFunction
     @NInt
-    public static native long CFNetDiagnosticCopyNetworkStatusPassively(CFNetDiagnosticRef details,
-            Ptr<CFStringRef> description);
+    public static native long CFNetDiagnosticCopyNetworkStatusPassively(@NotNull CFNetDiagnosticRef details,
+            @Nullable Ptr<CFStringRef> description);
 
     /**
      * [@function] CFNetworkCopySystemProxySettings
@@ -3214,6 +3264,7 @@ public final class CFNetwork {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFDictionaryRef CFNetworkCopySystemProxySettings();
@@ -3243,9 +3294,11 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFArrayRef CFNetworkCopyProxiesForURL(CFURLRef url, CFDictionaryRef proxySettings);
+    public static native CFArrayRef CFNetworkCopyProxiesForURL(@NotNull CFURLRef url,
+            @NotNull CFDictionaryRef proxySettings);
 
     /**
      * CFNetworkCopyProxiesForAutoConfigurationScript()
@@ -3274,10 +3327,12 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFArrayRef CFNetworkCopyProxiesForAutoConfigurationScript(
-            CFStringRef proxyAutoConfigurationScript, CFURLRef targetURL, Ptr<CFErrorRef> error);
+            @NotNull CFStringRef proxyAutoConfigurationScript, @NotNull CFURLRef targetURL,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * CFNetworkExecuteProxyAutoConfigurationScript()
@@ -3316,12 +3371,13 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native CFRunLoopSourceRef CFNetworkExecuteProxyAutoConfigurationScript(
-            CFStringRef proxyAutoConfigurationScript, CFURLRef targetURL,
-            @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationScript") Function_CFNetworkExecuteProxyAutoConfigurationScript cb,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
+            @NotNull CFStringRef proxyAutoConfigurationScript, @NotNull CFURLRef targetURL,
+            @NotNull @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationScript") Function_CFNetworkExecuteProxyAutoConfigurationScript cb,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
 
     /**
      * CFNetworkExecuteProxyAutoConfigurationURL()
@@ -3337,12 +3393,13 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFRunLoopSourceRef CFNetworkExecuteProxyAutoConfigurationURL(CFURLRef proxyAutoConfigURL,
-            CFURLRef targetURL,
-            @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationURL") Function_CFNetworkExecuteProxyAutoConfigurationURL cb,
-            @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
+    public static native CFRunLoopSourceRef CFNetworkExecuteProxyAutoConfigurationURL(
+            @NotNull CFURLRef proxyAutoConfigURL, @NotNull CFURLRef targetURL,
+            @NotNull @FunctionPtr(name = "call_CFNetworkExecuteProxyAutoConfigurationURL") Function_CFNetworkExecuteProxyAutoConfigurationURL cb,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") CFStreamClientContext clientContext);
 
     /**
      * kCFErrorDomainCFNetwork
@@ -3354,6 +3411,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorDomainCFNetwork();
@@ -3368,6 +3426,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFErrorDomainWinSock();
@@ -3383,6 +3442,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLErrorFailingURLErrorKey();
@@ -3398,6 +3458,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.2
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFURLErrorFailingURLStringErrorKey();
@@ -3413,6 +3474,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFGetAddrInfoFailureKey();
@@ -3427,6 +3489,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFSOCKSStatusCodeKey();
@@ -3442,6 +3505,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFSOCKSVersionKey();
@@ -3457,6 +3521,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFSOCKSNegotiationMethodKey();
@@ -3473,6 +3538,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFDNSServiceFailureKey();
@@ -3488,6 +3554,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFFTPStatusCodeKey();
@@ -3577,6 +3644,7 @@ public final class CFNetwork {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySSLContext();
@@ -3592,6 +3660,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySSLPeerTrust();
@@ -3608,6 +3677,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLValidatesCertificateChain();
@@ -3623,6 +3693,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySSLSettings();
@@ -3638,6 +3709,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLLevel();
@@ -3655,6 +3727,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLPeerName();
@@ -3671,6 +3744,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLCertificates();
@@ -3688,6 +3762,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamSSLIsServer();
@@ -3705,6 +3780,7 @@ public final class CFNetwork {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceType();
@@ -3714,6 +3790,7 @@ public final class CFNetwork {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeVideo();
@@ -3723,6 +3800,7 @@ public final class CFNetwork {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeVoice();
@@ -3732,6 +3810,7 @@ public final class CFNetwork {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeBackground();
@@ -3741,6 +3820,7 @@ public final class CFNetwork {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeCallSignaling();
@@ -3752,6 +3832,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: use PushKit for VoIP control purposes
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3770,6 +3851,7 @@ public final class CFNetwork {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyNoCellular();
@@ -3785,6 +3867,7 @@ public final class CFNetwork {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyConnectionIsCellular();
@@ -3818,6 +3901,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyProxyLocalBypass();
@@ -3832,6 +3916,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySocketRemoteHost();
@@ -3846,6 +3931,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySocketRemoteNetService();
@@ -3863,6 +3949,7 @@ public final class CFNetwork {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertySocketExtendedBackgroundIdleMode();
@@ -3883,6 +3970,7 @@ public final class CFNetwork {
      * API-Since: 2.0
      * Deprecated-Since: 4.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3892,6 +3980,7 @@ public final class CFNetwork {
      * API-Since: 2.0
      * Deprecated-Since: 4.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3901,6 +3990,7 @@ public final class CFNetwork {
      * API-Since: 2.0
      * Deprecated-Since: 4.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3910,6 +4000,7 @@ public final class CFNetwork {
      * API-Since: 2.0
      * Deprecated-Since: 4.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3941,6 +4032,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3959,6 +4051,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3977,6 +4070,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3994,6 +4088,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4014,6 +4109,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4031,6 +4127,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4049,6 +4146,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4068,6 +4166,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4088,6 +4187,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4108,6 +4208,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4121,6 +4222,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4134,6 +4236,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4151,6 +4254,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4168,6 +4272,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4185,6 +4290,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4202,6 +4308,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4220,6 +4327,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4237,6 +4345,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4254,6 +4363,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4271,6 +4381,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSessionAPI for ftp requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4285,6 +4396,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPVersion1_0();
@@ -4298,6 +4410,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPVersion1_1();
@@ -4311,6 +4424,7 @@ public final class CFNetwork {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPVersion2_0();
@@ -4324,6 +4438,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeBasic();
@@ -4337,6 +4452,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeDigest();
@@ -4350,6 +4466,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeNTLM();
@@ -4363,6 +4480,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeKerberos();
@@ -4376,6 +4494,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeNegotiate();
@@ -4389,6 +4508,7 @@ public final class CFNetwork {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeNegotiate2();
@@ -4402,6 +4522,7 @@ public final class CFNetwork {
      * 
      * API-Since: 4.3
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationSchemeXMobileMeAuthToken();
@@ -4431,6 +4552,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4450,6 +4572,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4469,6 +4592,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4492,6 +4616,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4509,6 +4634,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4525,6 +4651,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4541,6 +4668,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4557,6 +4685,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4574,6 +4703,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4594,6 +4724,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4613,6 +4744,7 @@ public final class CFNetwork {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use NSURLSession API for http requests
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4629,6 +4761,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationUsername();
@@ -4644,6 +4777,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationPassword();
@@ -4659,6 +4793,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPAuthenticationAccountDomain();
@@ -4673,6 +4808,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeKey();
@@ -4687,6 +4823,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyHostNameKey();
@@ -4701,6 +4838,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyPortNumberKey();
@@ -4717,6 +4855,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyAutoConfigurationURLKey();
@@ -4731,6 +4870,7 @@ public final class CFNetwork {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyAutoConfigurationJavaScriptKey();
@@ -4747,6 +4887,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyUsernameKey();
@@ -4763,6 +4904,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyPasswordKey();
@@ -4773,6 +4915,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeNone();
@@ -4783,6 +4926,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeHTTP();
@@ -4793,6 +4937,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeHTTPS();
@@ -4803,6 +4948,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeSOCKS();
@@ -4813,6 +4959,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeFTP();
@@ -4823,6 +4970,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeAutoConfigurationURL();
@@ -4833,6 +4981,7 @@ public final class CFNetwork {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyTypeAutoConfigurationJavaScript();
@@ -4843,6 +4992,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFProxyAutoConfigurationHTTPResponseKey();
@@ -4856,6 +5006,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesHTTPEnable();
@@ -4869,6 +5020,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesHTTPPort();
@@ -4882,6 +5034,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesHTTPProxy();
@@ -4895,6 +5048,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesProxyAutoConfigEnable();
@@ -4908,6 +5062,7 @@ public final class CFNetwork {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesProxyAutoConfigURLString();
@@ -4921,6 +5076,7 @@ public final class CFNetwork {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFNetworkProxiesProxyAutoConfigJavaScript();
@@ -4929,46 +5085,54 @@ public final class CFNetwork {
     @Generated
     public interface Function_CFHostSetClient {
         @Generated
-        void call_CFHostSetClient(CFHostRef arg0, int arg1,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg2, VoidPtr arg3);
+        void call_CFHostSetClient(@NotNull CFHostRef arg0, int arg1,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg2,
+                @Nullable VoidPtr arg3);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFNetServiceSetClient {
         @Generated
-        void call_CFNetServiceSetClient(CFNetServiceRef arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg1, VoidPtr arg2);
+        void call_CFNetServiceSetClient(@NotNull CFNetServiceRef arg0,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg1,
+                @Nullable VoidPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFNetServiceMonitorCreate {
         @Generated
-        void call_CFNetServiceMonitorCreate(CFNetServiceMonitorRef arg0, CFNetServiceRef arg1, int arg2, CFDataRef arg3,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg4, VoidPtr arg5);
+        void call_CFNetServiceMonitorCreate(@NotNull CFNetServiceMonitorRef arg0, @Nullable CFNetServiceRef arg1,
+                int arg2, @Nullable CFDataRef arg3,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg4,
+                @Nullable VoidPtr arg5);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFNetServiceBrowserCreate {
         @Generated
-        void call_CFNetServiceBrowserCreate(CFNetServiceBrowserRef arg0, @NUInt long arg1, ConstVoidPtr arg2,
-                @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg3, VoidPtr arg4);
+        void call_CFNetServiceBrowserCreate(@NotNull CFNetServiceBrowserRef arg0, @NUInt long arg1,
+                @Nullable ConstVoidPtr arg2,
+                @Nullable @UncertainArgument("Options: reference, array Fallback: reference") CFStreamError arg3,
+                @Nullable VoidPtr arg4);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFNetworkExecuteProxyAutoConfigurationScript {
         @Generated
-        void call_CFNetworkExecuteProxyAutoConfigurationScript(VoidPtr arg0, CFArrayRef arg1, CFErrorRef arg2);
+        void call_CFNetworkExecuteProxyAutoConfigurationScript(@NotNull VoidPtr arg0, @NotNull CFArrayRef arg1,
+                @Nullable CFErrorRef arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_CFNetworkExecuteProxyAutoConfigurationURL {
         @Generated
-        void call_CFNetworkExecuteProxyAutoConfigurationURL(VoidPtr arg0, CFArrayRef arg1, CFErrorRef arg2);
+        void call_CFNetworkExecuteProxyAutoConfigurationURL(@NotNull VoidPtr arg0, @NotNull CFArrayRef arg1,
+                @Nullable CFErrorRef arg2);
     }
 
     /**
@@ -4976,6 +5140,7 @@ public final class CFNetwork {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeResponsiveData();
@@ -4985,6 +5150,7 @@ public final class CFNetwork {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeAVStreaming();
@@ -4994,6 +5160,7 @@ public final class CFNetwork {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamNetworkServiceTypeResponsiveAV();
@@ -5011,6 +5178,7 @@ public final class CFNetwork {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyAllowExpensiveNetworkAccess();
@@ -5026,6 +5194,7 @@ public final class CFNetwork {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyConnectionIsExpensive();
@@ -5043,6 +5212,7 @@ public final class CFNetwork {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFStreamPropertyAllowConstrainedNetworkAccess();
@@ -5056,6 +5226,7 @@ public final class CFNetwork {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kCFHTTPVersion3_0();

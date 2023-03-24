@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -74,22 +76,25 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +107,7 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("fetchAllSubscriptionsOperation")
     public static native CKFetchSubscriptionsOperation fetchAllSubscriptionsOperation();
@@ -128,9 +134,10 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,6 +175,7 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * in previous @c perSubscriptionCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations.
      */
+    @Nullable
     @Generated
     @Selector("fetchSubscriptionCompletionBlock")
     @ObjCBlock(name = "call_fetchSubscriptionCompletionBlock_ret")
@@ -179,7 +187,7 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("initWithSubscriptionIDs:")
-    public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(NSArray<String> subscriptionIDs);
+    public native CKFetchSubscriptionsOperation initWithSubscriptionIDs(@NotNull NSArray<String> subscriptionIDs);
 
     /**
      * This block is called when the operation completes.
@@ -194,12 +202,13 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setFetchSubscriptionCompletionBlock:")
     public native void setFetchSubscriptionCompletionBlock(
-            @ObjCBlock(name = "call_setFetchSubscriptionCompletionBlock") Block_setFetchSubscriptionCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchSubscriptionCompletionBlock") Block_setFetchSubscriptionCompletionBlock value);
 
     @Generated
     @Selector("setSubscriptionIDs:")
-    public native void setSubscriptionIDs(NSArray<String> value);
+    public native void setSubscriptionIDs(@Nullable NSArray<String> value);
 
+    @Nullable
     @Generated
     @Selector("subscriptionIDs")
     public native NSArray<String> subscriptionIDs();
@@ -208,16 +217,16 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_fetchSubscriptionCompletionBlock_ret {
         @Generated
-        void call_fetchSubscriptionCompletionBlock_ret(NSDictionary<String, ? extends CKSubscription> arg0,
-                NSError arg1);
+        void call_fetchSubscriptionCompletionBlock_ret(@Nullable NSDictionary<String, ? extends CKSubscription> arg0,
+                @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setFetchSubscriptionCompletionBlock {
         @Generated
-        void call_setFetchSubscriptionCompletionBlock(NSDictionary<String, ? extends CKSubscription> arg0,
-                NSError arg1);
+        void call_setFetchSubscriptionCompletionBlock(@Nullable NSDictionary<String, ? extends CKSubscription> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -227,6 +236,7 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("perSubscriptionCompletionBlock")
     @ObjCBlock(name = "call_perSubscriptionCompletionBlock_ret")
@@ -236,7 +246,8 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_perSubscriptionCompletionBlock_ret {
         @Generated
-        void call_perSubscriptionCompletionBlock_ret(String arg0, CKSubscription arg1, NSError arg2);
+        void call_perSubscriptionCompletionBlock_ret(@NotNull String arg0, @Nullable CKSubscription arg1,
+                @Nullable NSError arg2);
     }
 
     /**
@@ -249,12 +260,13 @@ public class CKFetchSubscriptionsOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerSubscriptionCompletionBlock:")
     public native void setPerSubscriptionCompletionBlock(
-            @ObjCBlock(name = "call_setPerSubscriptionCompletionBlock") Block_setPerSubscriptionCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerSubscriptionCompletionBlock") Block_setPerSubscriptionCompletionBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerSubscriptionCompletionBlock {
         @Generated
-        void call_setPerSubscriptionCompletionBlock(String arg0, CKSubscription arg1, NSError arg2);
+        void call_setPerSubscriptionCompletionBlock(@NotNull String arg0, @Nullable CKSubscription arg1,
+                @Nullable NSError arg2);
     }
 }

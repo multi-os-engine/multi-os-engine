@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] AVVideoCompositing
@@ -90,7 +92,7 @@ public interface AVVideoCompositing {
      */
     @Generated
     @Selector("renderContextChanged:")
-    void renderContextChanged(AVVideoCompositionRenderContext newRenderContext);
+    void renderContextChanged(@NotNull AVVideoCompositionRenderContext newRenderContext);
 
     /**
      * Indicates the pixel buffer attributes required by the video compositor for new buffers that it creates
@@ -104,6 +106,7 @@ public interface AVVideoCompositing {
      * This property is queried once before any composition request is sent to the compositor. Changing
      * required buffer attributes afterwards is not supported.
      */
+    @NotNull
     @Generated
     @Selector("requiredPixelBufferAttributesForRenderContext")
     NSDictionary<String, ?> requiredPixelBufferAttributesForRenderContext();
@@ -121,6 +124,7 @@ public interface AVVideoCompositing {
      * This property is queried once before any composition request is sent to the compositor. Changing
      * source buffer attributes afterwards is not supported.
      */
+    @Nullable
     @Generated
     @Selector("sourcePixelBufferAttributes")
     NSDictionary<String, ?> sourcePixelBufferAttributes();
@@ -152,7 +156,7 @@ public interface AVVideoCompositing {
      */
     @Generated
     @Selector("startVideoCompositionRequest:")
-    void startVideoCompositionRequest(AVAsynchronousVideoCompositionRequest asyncVideoCompositionRequest);
+    void startVideoCompositionRequest(@NotNull AVAsynchronousVideoCompositionRequest asyncVideoCompositionRequest);
 
     /**
      * [@property] supportsWideColorSourceFrames
@@ -201,7 +205,7 @@ public interface AVVideoCompositing {
     @Generated
     @IsOptional
     @Selector("anticipateRenderingUsingHint:")
-    default void anticipateRenderingUsingHint(AVVideoCompositionRenderHint renderHint) {
+    default void anticipateRenderingUsingHint(@NotNull AVVideoCompositionRenderHint renderHint) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -228,7 +232,7 @@ public interface AVVideoCompositing {
     @Generated
     @IsOptional
     @Selector("prerollForRenderingUsingHint:")
-    default void prerollForRenderingUsingHint(AVVideoCompositionRenderHint renderHint) {
+    default void prerollForRenderingUsingHint(@NotNull AVVideoCompositionRenderHint renderHint) {
         throw new java.lang.UnsupportedOperationException();
     }
 

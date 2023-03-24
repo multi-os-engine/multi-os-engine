@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -44,6 +46,7 @@ public interface CIImageProcessorOutput {
     /**
      * The base address of the output buffer that the processor block can write output pixels to.
      */
+    @NotNull
     @Generated
     @Selector("baseAddress")
     VoidPtr baseAddress();
@@ -66,6 +69,7 @@ public interface CIImageProcessorOutput {
     /**
      * Returns a MTLCommandBuffer that can be used for encoding commands (if rendering using Metal).
      */
+    @Nullable
     @Generated
     @Selector("metalCommandBuffer")
     @MappedReturn(ObjCObjectMapper.class)
@@ -74,6 +78,7 @@ public interface CIImageProcessorOutput {
     /**
      * A MTLTexture object that can be bound as output (if processing using Metal).
      */
+    @Nullable
     @Generated
     @Selector("metalTexture")
     @MappedReturn(ObjCObjectMapper.class)
@@ -82,6 +87,7 @@ public interface CIImageProcessorOutput {
     /**
      * A output CVPixelBuffer that the processor block can write to.
      */
+    @Nullable
     @Generated
     @Selector("pixelBuffer")
     CVBufferRef pixelBuffer();
@@ -97,6 +103,7 @@ public interface CIImageProcessorOutput {
     /**
      * An output IOSurface that the processor block can write to.
      */
+    @NotNull
     @Generated
     @Selector("surface")
     IOSurfaceRef surface();

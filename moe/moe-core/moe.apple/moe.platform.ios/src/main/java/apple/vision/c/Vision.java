@@ -13,6 +13,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("Vision")
@@ -260,6 +261,7 @@ public final class Vision {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -283,6 +285,7 @@ public final class Vision {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -296,6 +299,7 @@ public final class Vision {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -431,6 +435,7 @@ public final class Vision {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -439,6 +444,7 @@ public final class Vision {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -506,6 +512,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -520,6 +527,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -530,6 +538,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -540,6 +549,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -550,6 +560,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -560,6 +571,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -570,6 +582,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -580,6 +593,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -590,6 +604,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -600,6 +615,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -610,6 +626,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -620,6 +637,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -630,6 +648,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -640,6 +659,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -650,6 +670,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -660,6 +681,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -670,6 +692,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -680,6 +703,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -690,6 +714,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -700,6 +725,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -710,6 +736,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -720,6 +747,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -730,6 +758,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -740,6 +769,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -750,6 +780,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -760,6 +791,7 @@ public final class Vision {
      * API-Since: 14.0
      * Deprecated-Since: 14.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -769,6 +801,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -777,6 +810,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -785,6 +819,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -793,6 +828,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -801,6 +837,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -809,6 +846,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -817,6 +855,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -825,6 +864,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -833,6 +873,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -841,6 +882,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -849,6 +891,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -857,6 +900,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -865,6 +909,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -873,6 +918,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -881,6 +927,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -889,6 +936,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -897,6 +945,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -905,6 +954,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -913,6 +963,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -923,6 +974,7 @@ public final class Vision {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -933,6 +985,7 @@ public final class Vision {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -943,6 +996,7 @@ public final class Vision {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -953,6 +1007,7 @@ public final class Vision {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -963,6 +1018,7 @@ public final class Vision {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -973,6 +1029,7 @@ public final class Vision {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -981,6 +1038,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -994,6 +1052,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1002,6 +1061,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1010,6 +1070,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1018,6 +1079,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1026,6 +1088,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1034,6 +1097,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1042,6 +1106,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1050,6 +1115,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1058,6 +1124,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1066,6 +1133,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1074,6 +1142,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1082,6 +1151,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1090,6 +1160,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1098,6 +1169,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1106,6 +1178,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1114,6 +1187,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1122,6 +1196,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1130,6 +1205,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1138,6 +1214,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1146,6 +1223,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1154,6 +1232,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1162,6 +1241,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1170,6 +1250,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1178,6 +1259,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1186,6 +1268,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1194,6 +1277,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1202,6 +1286,7 @@ public final class Vision {
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

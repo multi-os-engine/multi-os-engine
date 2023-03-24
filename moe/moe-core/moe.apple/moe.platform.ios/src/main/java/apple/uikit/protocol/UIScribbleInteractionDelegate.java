@@ -10,6 +10,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 14.0
@@ -35,7 +36,7 @@ public interface UIScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("scribbleInteraction:shouldBeginAtLocation:")
-    default boolean scribbleInteractionShouldBeginAtLocation(UIScribbleInteraction interaction,
+    default boolean scribbleInteractionShouldBeginAtLocation(@NotNull UIScribbleInteraction interaction,
             @ByValue CGPoint location) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,7 +50,7 @@ public interface UIScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("scribbleInteractionDidFinishWriting:")
-    default void scribbleInteractionDidFinishWriting(UIScribbleInteraction interaction) {
+    default void scribbleInteractionDidFinishWriting(@NotNull UIScribbleInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -67,7 +68,7 @@ public interface UIScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("scribbleInteractionShouldDelayFocus:")
-    default boolean scribbleInteractionShouldDelayFocus(UIScribbleInteraction interaction) {
+    default boolean scribbleInteractionShouldDelayFocus(@NotNull UIScribbleInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,7 +82,7 @@ public interface UIScribbleInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("scribbleInteractionWillBeginWriting:")
-    default void scribbleInteractionWillBeginWriting(UIScribbleInteraction interaction) {
+    default void scribbleInteractionWillBeginWriting(@NotNull UIScribbleInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

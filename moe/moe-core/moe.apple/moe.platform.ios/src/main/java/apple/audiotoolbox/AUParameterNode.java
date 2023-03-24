@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AUParameterNode
@@ -82,22 +84,25 @@ public class AUParameterNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class AUParameterNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,6 +173,7 @@ public class AUParameterNode extends NSObject {
      * 
      * A localized name to display for the parameter.
      */
+    @NotNull
     @Generated
     @Selector("displayName")
     public native String displayName();
@@ -178,6 +185,7 @@ public class AUParameterNode extends NSObject {
      * 
      * The default implementation simply returns displayName.
      */
+    @NotNull
     @Generated
     @Selector("displayNameWithLength:")
     public native String displayNameWithLength(@NInt long maximumLength);
@@ -191,6 +199,7 @@ public class AUParameterNode extends NSObject {
      * release, an audio unit must not change its parameters' identifiers; this will invalidate any
      * hosts' documents that refer to the parameters.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -198,6 +207,7 @@ public class AUParameterNode extends NSObject {
     /**
      * Called to obtain an abbreviated version of a parameter or group name.
      */
+    @NotNull
     @Generated
     @Selector("implementorDisplayNameWithLengthCallback")
     @ObjCBlock(name = "call_implementorDisplayNameWithLengthCallback_ret")
@@ -207,6 +217,7 @@ public class AUParameterNode extends NSObject {
      * Called to provide string representations of parameter values.
      * If value is nil, the callback uses the current value of the parameter.
      */
+    @NotNull
     @Generated
     @Selector("implementorStringFromValueCallback")
     @ObjCBlock(name = "call_implementorStringFromValueCallback_ret")
@@ -215,6 +226,7 @@ public class AUParameterNode extends NSObject {
     /**
      * Called to convert string to numeric representations of parameter values.
      */
+    @NotNull
     @Generated
     @Selector("implementorValueFromStringCallback")
     @ObjCBlock(name = "call_implementorValueFromStringCallback_ret")
@@ -227,6 +239,7 @@ public class AUParameterNode extends NSObject {
      * changes to parameter values. It should store the new value in its audio signal processing
      * state (assuming that that state is separate from the AUParameter object).
      */
+    @NotNull
     @Generated
     @Selector("implementorValueObserver")
     @ObjCBlock(name = "call_implementorValueObserver_ret")
@@ -239,6 +252,7 @@ public class AUParameterNode extends NSObject {
      * The audio unit should return the current value for this parameter; the AUParameterNode will
      * store the value.
      */
+    @NotNull
     @Generated
     @Selector("implementorValueProvider")
     @ObjCBlock(name = "call_implementorValueProvider_ret")
@@ -260,6 +274,7 @@ public class AUParameterNode extends NSObject {
      * 
      * Passing a node's keyPath to -[tree valueForKeyPath:] should return the same node.
      */
+    @NotNull
     @Generated
     @Selector("keyPath")
     public native String keyPath();
@@ -275,7 +290,7 @@ public class AUParameterNode extends NSObject {
      */
     @Generated
     @Selector("removeParameterObserver:")
-    public native void removeParameterObserver(VoidPtr token);
+    public native void removeParameterObserver(@NotNull VoidPtr token);
 
     /**
      * Called to obtain an abbreviated version of a parameter or group name.
@@ -283,7 +298,7 @@ public class AUParameterNode extends NSObject {
     @Generated
     @Selector("setImplementorDisplayNameWithLengthCallback:")
     public native void setImplementorDisplayNameWithLengthCallback(
-            @ObjCBlock(name = "call_setImplementorDisplayNameWithLengthCallback") Block_setImplementorDisplayNameWithLengthCallback value);
+            @NotNull @ObjCBlock(name = "call_setImplementorDisplayNameWithLengthCallback") Block_setImplementorDisplayNameWithLengthCallback value);
 
     /**
      * Called to provide string representations of parameter values.
@@ -292,7 +307,7 @@ public class AUParameterNode extends NSObject {
     @Generated
     @Selector("setImplementorStringFromValueCallback:")
     public native void setImplementorStringFromValueCallback(
-            @ObjCBlock(name = "call_setImplementorStringFromValueCallback") Block_setImplementorStringFromValueCallback value);
+            @NotNull @ObjCBlock(name = "call_setImplementorStringFromValueCallback") Block_setImplementorStringFromValueCallback value);
 
     /**
      * Called to convert string to numeric representations of parameter values.
@@ -300,7 +315,7 @@ public class AUParameterNode extends NSObject {
     @Generated
     @Selector("setImplementorValueFromStringCallback:")
     public native void setImplementorValueFromStringCallback(
-            @ObjCBlock(name = "call_setImplementorValueFromStringCallback") Block_setImplementorValueFromStringCallback value);
+            @NotNull @ObjCBlock(name = "call_setImplementorValueFromStringCallback") Block_setImplementorValueFromStringCallback value);
 
     /**
      * Called when a parameter changes value.
@@ -312,7 +327,7 @@ public class AUParameterNode extends NSObject {
     @Generated
     @Selector("setImplementorValueObserver:")
     public native void setImplementorValueObserver(
-            @ObjCBlock(name = "call_setImplementorValueObserver") Block_setImplementorValueObserver value);
+            @NotNull @ObjCBlock(name = "call_setImplementorValueObserver") Block_setImplementorValueObserver value);
 
     /**
      * Called when a value of a parameter in the tree is known to have a stale value
@@ -324,7 +339,7 @@ public class AUParameterNode extends NSObject {
     @Generated
     @Selector("setImplementorValueProvider:")
     public native void setImplementorValueProvider(
-            @ObjCBlock(name = "call_setImplementorValueProvider") Block_setImplementorValueProvider value);
+            @NotNull @ObjCBlock(name = "call_setImplementorValueProvider") Block_setImplementorValueProvider value);
 
     /**
      * tokenByAddingParameterAutomationObserver:
@@ -352,10 +367,11 @@ public class AUParameterNode extends NSObject {
      * 
      *         API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("tokenByAddingParameterAutomationObserver:")
     public native VoidPtr tokenByAddingParameterAutomationObserver(
-            @ObjCBlock(name = "call_tokenByAddingParameterAutomationObserver") Block_tokenByAddingParameterAutomationObserver observer);
+            @NotNull @ObjCBlock(name = "call_tokenByAddingParameterAutomationObserver") Block_tokenByAddingParameterAutomationObserver observer);
 
     /**
      * tokenByAddingParameterObserver:
@@ -385,10 +401,11 @@ public class AUParameterNode extends NSObject {
      * @return
      *         A token which can be passed to removeParameterObserver: or to -[AUParameter setValue:originator:]
      */
+    @NotNull
     @Generated
     @Selector("tokenByAddingParameterObserver:")
     public native VoidPtr tokenByAddingParameterObserver(
-            @ObjCBlock(name = "call_tokenByAddingParameterObserver") Block_tokenByAddingParameterObserver observer);
+            @NotNull @ObjCBlock(name = "call_tokenByAddingParameterObserver") Block_tokenByAddingParameterObserver observer);
 
     /**
      * tokenByAddingParameterRecordingObserver:
@@ -401,79 +418,86 @@ public class AUParameterNode extends NSObject {
      * This will be deprecated in favor of tokenByAddingParameterAutomationObserver in a future
      * release.
      */
+    @NotNull
     @Generated
     @Selector("tokenByAddingParameterRecordingObserver:")
     public native VoidPtr tokenByAddingParameterRecordingObserver(
-            @ObjCBlock(name = "call_tokenByAddingParameterRecordingObserver") Block_tokenByAddingParameterRecordingObserver observer);
+            @NotNull @ObjCBlock(name = "call_tokenByAddingParameterRecordingObserver") Block_tokenByAddingParameterRecordingObserver observer);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorDisplayNameWithLengthCallback_ret {
+        @NotNull
         @Generated
-        String call_implementorDisplayNameWithLengthCallback_ret(AUParameterNode node, @NInt long desiredLength);
+        String call_implementorDisplayNameWithLengthCallback_ret(@NotNull AUParameterNode node,
+                @NInt long desiredLength);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorStringFromValueCallback_ret {
+        @NotNull
         @Generated
-        String call_implementorStringFromValueCallback_ret(AUParameter param, ConstFloatPtr value);
+        String call_implementorStringFromValueCallback_ret(@NotNull AUParameter param, @Nullable ConstFloatPtr value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorValueFromStringCallback_ret {
         @Generated
-        float call_implementorValueFromStringCallback_ret(AUParameter param, String string);
+        float call_implementorValueFromStringCallback_ret(@NotNull AUParameter param, @NotNull String string);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorValueObserver_ret {
         @Generated
-        void call_implementorValueObserver_ret(AUParameter param, float value);
+        void call_implementorValueObserver_ret(@NotNull AUParameter param, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_implementorValueProvider_ret {
         @Generated
-        float call_implementorValueProvider_ret(AUParameter param);
+        float call_implementorValueProvider_ret(@NotNull AUParameter param);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorDisplayNameWithLengthCallback {
+        @NotNull
         @Generated
-        String call_setImplementorDisplayNameWithLengthCallback(AUParameterNode node, @NInt long desiredLength);
+        String call_setImplementorDisplayNameWithLengthCallback(@NotNull AUParameterNode node,
+                @NInt long desiredLength);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorStringFromValueCallback {
+        @NotNull
         @Generated
-        String call_setImplementorStringFromValueCallback(AUParameter param, ConstFloatPtr value);
+        String call_setImplementorStringFromValueCallback(@NotNull AUParameter param, @Nullable ConstFloatPtr value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorValueFromStringCallback {
         @Generated
-        float call_setImplementorValueFromStringCallback(AUParameter param, String string);
+        float call_setImplementorValueFromStringCallback(@NotNull AUParameter param, @NotNull String string);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorValueObserver {
         @Generated
-        void call_setImplementorValueObserver(AUParameter param, float value);
+        void call_setImplementorValueObserver(@NotNull AUParameter param, float value);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setImplementorValueProvider {
         @Generated
-        float call_setImplementorValueProvider(AUParameter param);
+        float call_setImplementorValueProvider(@NotNull AUParameter param);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -481,7 +505,7 @@ public class AUParameterNode extends NSObject {
     public interface Block_tokenByAddingParameterAutomationObserver {
         @Generated
         void call_tokenByAddingParameterAutomationObserver(@NInt long numberEvents,
-                @UncertainArgument("Options: reference, array Fallback: reference") AUParameterAutomationEvent events);
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") AUParameterAutomationEvent events);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -495,6 +519,7 @@ public class AUParameterNode extends NSObject {
     @Generated
     public interface Block_tokenByAddingParameterRecordingObserver {
         @Generated
-        void call_tokenByAddingParameterRecordingObserver(@NInt long numberEvents, AURecordedParameterEvent events);
+        void call_tokenByAddingParameterRecordingObserver(@NInt long numberEvents,
+                @NotNull AURecordedParameterEvent events);
     }
 }

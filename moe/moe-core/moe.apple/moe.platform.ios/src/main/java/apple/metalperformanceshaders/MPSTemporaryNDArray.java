@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSTemporaryNDArray
@@ -69,22 +71,25 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,6 +101,7 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     /**
      * Get a well known <MPSNDArrayAllocator> that makes temporary MTLBuffers
      */
+    @NotNull
     @Generated
     @Selector("defaultAllocator")
     @MappedReturn(ObjCObjectMapper.class)
@@ -116,12 +122,12 @@ public class MPSTemporaryNDArray extends MPSNDArray {
 
     @Generated
     @Selector("initWithDevice:descriptor:")
-    public native MPSTemporaryNDArray initWithDeviceDescriptor(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            MPSNDArrayDescriptor descriptor);
+    public native MPSTemporaryNDArray initWithDeviceDescriptor(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSNDArrayDescriptor descriptor);
 
     @Generated
     @Selector("initWithDevice:scalar:")
-    public native MPSTemporaryNDArray initWithDeviceScalar(@Mapped(ObjCObjectMapper.class) MTLDevice device,
+    public native MPSTemporaryNDArray initWithDeviceScalar(@NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
             double value);
 
     @Generated
@@ -141,9 +147,10 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -242,7 +249,8 @@ public class MPSTemporaryNDArray extends MPSNDArray {
     @Generated
     @Selector("temporaryNDArrayWithCommandBuffer:descriptor:")
     public static native MPSTemporaryNDArray temporaryNDArrayWithCommandBufferDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSNDArrayDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSNDArrayDescriptor descriptor);
 
     @Generated
     @Selector("version")

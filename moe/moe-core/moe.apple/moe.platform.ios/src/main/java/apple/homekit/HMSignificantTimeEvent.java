@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class is used to represent a significant time event.
@@ -61,31 +63,35 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -119,8 +125,8 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
      */
     @Generated
     @Selector("initWithSignificantEvent:offset:")
-    public native HMSignificantTimeEvent initWithSignificantEventOffset(String significantEvent,
-            NSDateComponents offset);
+    public native HMSignificantTimeEvent initWithSignificantEventOffset(@NotNull String significantEvent,
+            @Nullable NSDateComponents offset);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -141,17 +147,19 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Owned
@@ -163,6 +171,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
      * properties of the NSDateComponents must be negative value. e.g. To specify 30 mins before sunset, the
      * 'minute' property must be set to -30.
      */
+    @Nullable
     @Generated
     @Selector("offset")
     public native NSDateComponents offset();
@@ -182,6 +191,7 @@ public class HMSignificantTimeEvent extends HMTimeEvent implements NSCopying, NS
     /**
      * significantEvent The significant event for the trigger.
      */
+    @NotNull
     @Generated
     @Selector("significantEvent")
     public native String significantEvent();

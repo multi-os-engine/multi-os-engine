@@ -55,6 +55,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An immutable value object representing a contact.
@@ -98,22 +100,25 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,6 +126,7 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     /**
      * The contact comparator for a given sort order.
      */
+    @NotNull
     @Generated
     @Selector("comparatorForNameSortOrder:")
     @ObjCBlock(name = "call_comparatorForNameSortOrder_ret")
@@ -137,6 +143,7 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     /**
      * Use to fetch all contact keys required for the contact sort comparator.
      */
+    @NotNull
     @Generated
     @Selector("descriptorForAllComparatorKeys")
     @MappedReturn(ObjCObjectMapper.class)
@@ -164,45 +171,51 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns a user displayable property name.
      */
+    @NotNull
     @Generated
     @Selector("localizedStringForKey:")
-    public static native String localizedStringForKey(String key);
+    public static native String localizedStringForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native CNContact new_objc();
 
+    @NotNull
     @Generated
     @Selector("predicateForContactsInContainerWithIdentifier:")
-    public static native NSPredicate predicateForContactsInContainerWithIdentifier(String containerIdentifier);
+    public static native NSPredicate predicateForContactsInContainerWithIdentifier(@NotNull String containerIdentifier);
 
+    @NotNull
     @Generated
     @Selector("predicateForContactsInGroupWithIdentifier:")
-    public static native NSPredicate predicateForContactsInGroupWithIdentifier(String groupIdentifier);
+    public static native NSPredicate predicateForContactsInGroupWithIdentifier(@NotNull String groupIdentifier);
 
     /**
      * To fetch contacts matching a name.
      * 
      * The name can contain any number of words.
      */
+    @NotNull
     @Generated
     @Selector("predicateForContactsMatchingName:")
-    public static native NSPredicate predicateForContactsMatchingName(String name);
+    public static native NSPredicate predicateForContactsMatchingName(@NotNull String name);
 
     /**
      * To fetch contacts matching contact identifiers.
      */
+    @NotNull
     @Generated
     @Selector("predicateForContactsWithIdentifiers:")
-    public static native NSPredicate predicateForContactsWithIdentifiers(NSArray<String> identifiers);
+    public static native NSPredicate predicateForContactsWithIdentifiers(@NotNull NSArray<String> identifiers);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -234,15 +247,17 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
      */
     @Generated
     @Selector("areKeysAvailable:")
-    public native boolean areKeysAvailable(NSArray<?> keyDescriptors);
+    public native boolean areKeysAvailable(@NotNull NSArray<?> keyDescriptors);
 
     /**
      * The Gregorian birthday.
      */
+    @Nullable
     @Generated
     @Selector("birthday")
     public native NSDateComponents birthday();
 
+    @NotNull
     @Generated
     @Selector("contactRelations")
     public native NSArray<? extends CNLabeledValue<CNContactRelation>> contactRelations();
@@ -252,35 +267,41 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @NInt
     public native long contactType();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Other Gregorian dates (anniversaries, etc).
      */
+    @NotNull
     @Generated
     @Selector("dates")
     public native NSArray<? extends CNLabeledValue<NSDateComponents>> dates();
 
+    @NotNull
     @Generated
     @Selector("departmentName")
     public native String departmentName();
 
+    @NotNull
     @Generated
     @Selector("emailAddresses")
     public native NSArray<? extends CNLabeledValue<String>> emailAddresses();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("familyName")
     public native String familyName();
 
+    @NotNull
     @Generated
     @Selector("givenName")
     public native String givenName();
@@ -289,10 +310,12 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
      * The identifier is unique among contacts on the device. It can be saved and used for fetching contacts next
      * application launch.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
 
+    @Nullable
     @Generated
     @Selector("imageData")
     public native NSData imageData();
@@ -310,8 +333,9 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
 
     @Generated
     @Selector("initWithCoder:")
-    public native CNContact initWithCoder(NSCoder coder);
+    public native CNContact initWithCoder(@NotNull NSCoder coder);
 
+    @NotNull
     @Generated
     @Selector("instantMessageAddresses")
     public native NSArray<? extends CNLabeledValue<CNInstantMessageAddress>> instantMessageAddresses();
@@ -321,7 +345,7 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
      */
     @Generated
     @Selector("isKeyAvailable:")
-    public native boolean isKeyAvailable(String key);
+    public native boolean isKeyAvailable(@NotNull String key);
 
     /**
      * Unification
@@ -330,30 +354,36 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
      */
     @Generated
     @Selector("isUnifiedWithContactWithIdentifier:")
-    public native boolean isUnifiedWithContactWithIdentifier(String contactIdentifier);
+    public native boolean isUnifiedWithContactWithIdentifier(@NotNull String contactIdentifier);
 
+    @NotNull
     @Generated
     @Selector("jobTitle")
     public native String jobTitle();
 
+    @NotNull
     @Generated
     @Selector("middleName")
     public native String middleName();
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Selector("namePrefix")
     public native String namePrefix();
 
+    @NotNull
     @Generated
     @Selector("nameSuffix")
     public native String nameSuffix();
 
+    @NotNull
     @Generated
     @Selector("nickname")
     public native String nickname();
@@ -361,30 +391,37 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     /**
      * The alternate birthday (Lunisolar).
      */
+    @Nullable
     @Generated
     @Selector("nonGregorianBirthday")
     public native NSDateComponents nonGregorianBirthday();
 
+    @NotNull
     @Generated
     @Selector("note")
     public native String note();
 
+    @NotNull
     @Generated
     @Selector("organizationName")
     public native String organizationName();
 
+    @NotNull
     @Generated
     @Selector("phoneNumbers")
     public native NSArray<? extends CNLabeledValue<CNPhoneNumber>> phoneNumbers();
 
+    @NotNull
     @Generated
     @Selector("phoneticFamilyName")
     public native String phoneticFamilyName();
 
+    @NotNull
     @Generated
     @Selector("phoneticGivenName")
     public native String phoneticGivenName();
 
+    @NotNull
     @Generated
     @Selector("phoneticMiddleName")
     public native String phoneticMiddleName();
@@ -392,18 +429,22 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("phoneticOrganizationName")
     public native String phoneticOrganizationName();
 
+    @NotNull
     @Generated
     @Selector("postalAddresses")
     public native NSArray<? extends CNLabeledValue<CNPostalAddress>> postalAddresses();
 
+    @NotNull
     @Generated
     @Selector("previousFamilyName")
     public native String previousFamilyName();
 
+    @NotNull
     @Generated
     @Selector("socialProfiles")
     public native NSArray<? extends CNLabeledValue<CNSocialProfile>> socialProfiles();
@@ -414,10 +455,12 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
         return supportsSecureCoding();
     }
 
+    @Nullable
     @Generated
     @Selector("thumbnailImageData")
     public native NSData thumbnailImageData();
 
+    @NotNull
     @Generated
     @Selector("urlAddresses")
     public native NSArray<? extends CNLabeledValue<String>> urlAddresses();
@@ -427,21 +470,22 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     public interface Block_comparatorForNameSortOrder_ret {
         @Generated
         @NInt
-        long call_comparatorForNameSortOrder_ret(@Mapped(ObjCObjectMapper.class) Object obj1,
-                @Mapped(ObjCObjectMapper.class) Object obj2);
+        long call_comparatorForNameSortOrder_ret(@NotNull @Mapped(ObjCObjectMapper.class) Object obj1,
+                @NotNull @Mapped(ObjCObjectMapper.class) Object obj2);
     }
 
     @Generated
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier);
+    public static native long itemProviderVisibilityForRepresentationWithTypeIdentifier_static(
+            @NotNull String typeIdentifier);
 
     @Generated
     @IsOptional
     @ProtocolClassMethod("itemProviderVisibilityForRepresentationWithTypeIdentifier_static")
     @NInt
-    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(String typeIdentifier) {
+    public long _itemProviderVisibilityForRepresentationWithTypeIdentifier_static(@NotNull String typeIdentifier) {
         return itemProviderVisibilityForRepresentationWithTypeIdentifier_static(typeIdentifier);
     }
 
@@ -449,45 +493,53 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
     @IsOptional
     @Selector("itemProviderVisibilityForRepresentationWithTypeIdentifier:")
     @NInt
-    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(String typeIdentifier);
+    public native long itemProviderVisibilityForRepresentationWithTypeIdentifier(@NotNull String typeIdentifier);
 
+    @Nullable
     @Generated
     @Selector("loadDataWithTypeIdentifier:forItemProviderCompletionHandler:")
-    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(String typeIdentifier,
-            @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
+    public native NSProgress loadDataWithTypeIdentifierForItemProviderCompletionHandler(@NotNull String typeIdentifier,
+            @NotNull @ObjCBlock(name = "call_loadDataWithTypeIdentifierForItemProviderCompletionHandler") NSItemProviderWriting.Block_loadDataWithTypeIdentifierForItemProviderCompletionHandler completionHandler);
 
+    @Nullable
     @Generated
     @Selector("objectWithItemProviderData:typeIdentifier:error:")
-    public static native CNContact objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public static native CNContact objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
+    @Nullable
     @Generated
     @ProtocolClassMethod("objectWithItemProviderDataTypeIdentifierError")
-    public CNContact _objectWithItemProviderDataTypeIdentifierError(NSData data, String typeIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
+    public CNContact _objectWithItemProviderDataTypeIdentifierError(@NotNull NSData data,
+            @NotNull String typeIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError) {
         return objectWithItemProviderDataTypeIdentifierError(data, typeIdentifier, outError);
     }
 
+    @NotNull
     @Generated
     @Selector("readableTypeIdentifiersForItemProvider")
     public static native NSArray<String> readableTypeIdentifiersForItemProvider();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("readableTypeIdentifiersForItemProvider")
     public NSArray<String> _readableTypeIdentifiersForItemProvider() {
         return readableTypeIdentifiersForItemProvider();
     }
 
+    @NotNull
     @Generated
     @Selector("writableTypeIdentifiersForItemProvider")
     public static native NSArray<String> writableTypeIdentifiersForItemProvider_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("writableTypeIdentifiersForItemProvider_static")
     public NSArray<String> _writableTypeIdentifiersForItemProvider_static() {
         return writableTypeIdentifiersForItemProvider_static();
     }
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("writableTypeIdentifiersForItemProvider")
@@ -504,9 +556,10 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
      * 
      *                     API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForContactsMatchingEmailAddress:")
-    public static native NSPredicate predicateForContactsMatchingEmailAddress(String emailAddress);
+    public static native NSPredicate predicateForContactsMatchingEmailAddress(@NotNull String emailAddress);
 
     /**
      * Fetch contacts matching a phone number.
@@ -521,7 +574,8 @@ public class CNContact extends NSObject implements NSCopying, NSMutableCopying, 
      * 
      *                    API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("predicateForContactsMatchingPhoneNumber:")
-    public static native NSPredicate predicateForContactsMatchingPhoneNumber(CNPhoneNumber phoneNumber);
+    public static native NSPredicate predicateForContactsMatchingPhoneNumber(@NotNull CNPhoneNumber phoneNumber);
 }

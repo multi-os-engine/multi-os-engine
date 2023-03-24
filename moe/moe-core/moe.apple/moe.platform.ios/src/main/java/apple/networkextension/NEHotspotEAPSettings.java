@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotEAPSettings
@@ -67,31 +69,35 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -103,7 +109,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -116,7 +122,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotEAPSettings initWithCoder(NSCoder coder);
+    public native NEHotspotEAPSettings initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -148,9 +154,10 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
     @Selector("isTLSClientCertificateRequired")
     public native boolean isTLSClientCertificateRequired();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,6 +172,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("outerIdentity")
     public native String outerIdentity();
@@ -177,6 +185,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("password")
     public native String password();
@@ -221,7 +230,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setIdentity:")
-    public native boolean setIdentity(SecIdentityRef identity);
+    public native boolean setIdentity(@NotNull SecIdentityRef identity);
 
     /**
      * [@property] outerIdentity
@@ -233,7 +242,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setOuterIdentity:")
-    public native void setOuterIdentity(String value);
+    public native void setOuterIdentity(@NotNull String value);
 
     /**
      * [@property] password
@@ -245,7 +254,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setPassword:")
-    public native void setPassword(String value);
+    public native void setPassword(@NotNull String value);
 
     /**
      * [@property] preferredTLSVersion
@@ -269,7 +278,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setSupportedEAPTypes:")
-    public native void setSupportedEAPTypes(NSArray<? extends NSNumber> value);
+    public native void setSupportedEAPTypes(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * [@property] isTLSClientCertificateRequired
@@ -305,7 +314,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setTrustedServerCertificates:")
-    public native boolean setTrustedServerCertificates(NSArray<?> certificates);
+    public native boolean setTrustedServerCertificates(@NotNull NSArray<?> certificates);
 
     /**
      * [@property] trustedServerNames
@@ -318,7 +327,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setTrustedServerNames:")
-    public native void setTrustedServerNames(NSArray<String> value);
+    public native void setTrustedServerNames(@NotNull NSArray<String> value);
 
     /**
      * [@property] ttlsInnerAuthentication
@@ -342,7 +351,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      */
     @Generated
     @Selector("setUsername:")
-    public native void setUsername(String value);
+    public native void setUsername(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -360,6 +369,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("supportedEAPTypes")
     public native NSArray<? extends NSNumber> supportedEAPTypes();
@@ -383,6 +393,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("trustedServerNames")
     public native NSArray<String> trustedServerNames();
@@ -408,6 +419,7 @@ public class NEHotspotEAPSettings extends NSObject implements NSCopying, NSSecur
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("username")
     public native String username();

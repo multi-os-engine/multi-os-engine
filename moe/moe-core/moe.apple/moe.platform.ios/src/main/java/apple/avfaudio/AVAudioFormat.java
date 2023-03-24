@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioFormat
@@ -72,17 +74,18 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * [@property] channelCount
@@ -100,14 +103,17 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * Only formats with more than 2 channels are required to have channel layouts.
      */
+    @Nullable
     @Generated
     @Selector("channelLayout")
     public native AVAudioChannelLayout channelLayout();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,7 +138,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] formatDescription
@@ -141,6 +147,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("formatDescription")
     public native CMFormatDescriptionRef formatDescription();
@@ -167,7 +174,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initStandardFormatWithSampleRate:channelLayout:")
     public native AVAudioFormat initStandardFormatWithSampleRateChannelLayout(double sampleRate,
-            AVAudioChannelLayout layout);
+            @NotNull AVAudioChannelLayout layout);
 
     /**
      * initStandardFormatWithSampleRate:channels:
@@ -199,11 +206,11 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithCMAudioFormatDescription:")
-    public native AVAudioFormat initWithCMAudioFormatDescription(CMFormatDescriptionRef formatDescription);
+    public native AVAudioFormat initWithCMAudioFormatDescription(@NotNull CMFormatDescriptionRef formatDescription);
 
     @Generated
     @Selector("initWithCoder:")
-    public native AVAudioFormat initWithCoder(NSCoder coder);
+    public native AVAudioFormat initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithCommonFormat:sampleRate:channels:interleaved:
@@ -243,7 +250,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Generated
     @Selector("initWithCommonFormat:sampleRate:interleaved:channelLayout:")
     public native AVAudioFormat initWithCommonFormatSampleRateInterleavedChannelLayout(@NUInt long format,
-            double sampleRate, boolean interleaved, AVAudioChannelLayout layout);
+            double sampleRate, boolean interleaved, @NotNull AVAudioChannelLayout layout);
 
     /**
      * initWithSettings:
@@ -262,7 +269,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithSettings:")
-    public native AVAudioFormat initWithSettings(NSDictionary<String, ?> settings);
+    public native AVAudioFormat initWithSettings(@NotNull NSDictionary<String, ?> settings);
 
     /**
      * initWithStreamDescription:
@@ -276,7 +283,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithStreamDescription:")
-    public native AVAudioFormat initWithStreamDescription(AudioStreamBasicDescription asbd);
+    public native AVAudioFormat initWithStreamDescription(@NotNull AudioStreamBasicDescription asbd);
 
     /**
      * initWithStreamDescription:channelLayout:
@@ -293,8 +300,8 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithStreamDescription:channelLayout:")
-    public native AVAudioFormat initWithStreamDescriptionChannelLayout(AudioStreamBasicDescription asbd,
-            AVAudioChannelLayout layout);
+    public native AVAudioFormat initWithStreamDescriptionChannelLayout(@NotNull AudioStreamBasicDescription asbd,
+            @Nullable AVAudioChannelLayout layout);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -326,7 +333,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("isEqual:")
-    public native boolean isEqual(@Mapped(ObjCObjectMapper.class) Object object);
+    public native boolean isEqual(@NotNull @Mapped(ObjCObjectMapper.class) Object object);
 
     /**
      * [@property] interleaved
@@ -352,9 +359,10 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] magicCookie
@@ -366,6 +374,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("magicCookie")
     public native NSData magicCookie();
@@ -404,7 +413,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setMagicCookie:")
-    public native void setMagicCookie(NSData value);
+    public native void setMagicCookie(@Nullable NSData value);
 
     @Generated
     @Selector("setVersion:")
@@ -415,6 +424,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * Returns the format represented as a dictionary with keys from AVAudioSettings.h.
      */
+    @NotNull
     @Generated
     @Selector("settings")
     public native NSDictionary<String, ?> settings();
@@ -424,6 +434,7 @@ public class AVAudioFormat extends NSObject implements NSSecureCoding {
      * 
      * Returns the AudioStreamBasicDescription, for use with lower-level audio API's.
      */
+    @NotNull
     @Generated
     @Selector("streamDescription")
     public native AudioStreamBasicDescription streamDescription();

@@ -49,6 +49,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -83,22 +85,25 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,9 +138,10 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -166,6 +172,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * provides a reference to the AVAsset of which the AVAssetTrack is a part
      */
+    @Nullable
     @Generated
     @Selector("asset")
     public native AVAsset asset();
@@ -185,16 +192,18 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      *                             The type of track association for which associated tracks are requested.
      * @return An NSArray containing AVAssetTracks; may be empty if there is no associated tracks of the specified type.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("associatedTracksOfType:")
-    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(String trackAssociationType);
+    public native NSArray<? extends AVAssetTrack> associatedTracksOfType(@NotNull String trackAssociationType);
 
     /**
      * provides an NSArray of NSStrings, each representing a format of metadata that's available for the track (e.g.
      * QuickTime userdata, etc.)
      * Metadata formats are defined in AVMetadataItem.h.
      */
+    @NotNull
     @Generated
     @Selector("availableMetadataFormats")
     public native NSArray<String> availableMetadataFormats();
@@ -207,6 +216,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("availableTrackAssociationTypes")
     public native NSArray<String> availableTrackAssociationTypes();
@@ -214,15 +224,17 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     /**
      * provides access to an array of AVMetadataItems for each common metadata key for which a value is available
      */
+    @NotNull
     @Generated
     @Selector("commonMetadata")
     public native NSArray<? extends AVMetadataItem> commonMetadata();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * indicates the estimated data rate of the media data referenced by the track, in units of bits per second
@@ -235,6 +247,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * indicates the language tag associated with the track, as an IETF BCP 47 (RFC 4646) language identifier;
      * may be nil if no language tag is indicated
      */
+    @Nullable
     @Generated
     @Selector("extendedLanguageTag")
     public native String extendedLanguageTag();
@@ -245,6 +258,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * a track that presents uniform media, e.g. encoded according to the same encoding settings,
      * will provide an array with a count of 1
      */
+    @NotNull
     @Generated
     @Selector("formatDescriptions")
     public native NSArray<?> formatDescriptions();
@@ -262,7 +276,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      */
     @Generated
     @Selector("hasMediaCharacteristic:")
-    public native boolean hasMediaCharacteristic(String mediaCharacteristic);
+    public native boolean hasMediaCharacteristic(@NotNull String mediaCharacteristic);
 
     @Generated
     @Selector("init")
@@ -297,19 +311,21 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * indicates the language associated with the track, as an ISO 639-2/T language code;
      * may be nil if no language is indicated
      */
+    @Nullable
     @Generated
     @Selector("languageCode")
     public native String languageCode();
 
     @Generated
     @Selector("loadValuesAsynchronouslyForKeys:completionHandler:")
-    public native void loadValuesAsynchronouslyForKeysCompletionHandler(NSArray<String> keys,
-            @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
+    public native void loadValuesAsynchronouslyForKeysCompletionHandler(@NotNull NSArray<String> keys,
+            @Nullable @ObjCBlock(name = "call_loadValuesAsynchronouslyForKeysCompletionHandler") AVAsynchronousKeyValueLoading.Block_loadValuesAsynchronouslyForKeysCompletionHandler handler);
 
     /**
      * indicates the media type for this track, e.g. AVMediaTypeVideo, AVMediaTypeAudio, etc., as defined in
      * AVMediaFormat.h.
      */
+    @NotNull
     @Generated
     @Selector("mediaType")
     public native String mediaType();
@@ -322,6 +338,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("metadata")
     public native NSArray<? extends AVMetadataItem> metadata();
@@ -340,10 +357,11 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      *               The metadata format for which items are requested.
      * @return An NSArray containing AVMetadataItems.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("metadataForFormat:")
-    public native NSArray<? extends AVMetadataItem> metadataForFormat(String format);
+    public native NSArray<? extends AVMetadataItem> metadataForFormat(@NotNull String format);
 
     /**
      * indicates the minimum duration of the track's frames; the value will be kCMTimeInvalid if the minimum frame
@@ -448,6 +466,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      *                  The trackTime for which an AVAssetTrackSegment is requested.
      * @return An AVAssetTrackSegment.
      */
+    @Nullable
     @Deprecated
     @Generated
     @Selector("segmentForTrackTime:")
@@ -459,6 +478,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * Empty edits, i.e. timeRanges for which no media data is available to be presented, have a value of
      * AVAssetTrackSegment.empty equal to YES.
      */
+    @NotNull
     @Generated
     @Selector("segments")
     public native NSArray<? extends AVAssetTrackSegment> segments();
@@ -466,7 +486,8 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Selector("statusOfValueForKey:error:")
     @NInt
-    public native long statusOfValueForKeyError(String key, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native long statusOfValueForKeyError(@NotNull String key,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Indicates the timeRange of the track within the overall timeline of the asset;
@@ -527,14 +548,15 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      */
     @Generated
     @Selector("loadAssociatedTracksOfType:completionHandler:")
-    public native void loadAssociatedTracksOfTypeCompletionHandler(String trackAssociationType,
-            @ObjCBlock(name = "call_loadAssociatedTracksOfTypeCompletionHandler") Block_loadAssociatedTracksOfTypeCompletionHandler completionHandler);
+    public native void loadAssociatedTracksOfTypeCompletionHandler(@NotNull String trackAssociationType,
+            @NotNull @ObjCBlock(name = "call_loadAssociatedTracksOfTypeCompletionHandler") Block_loadAssociatedTracksOfTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadAssociatedTracksOfTypeCompletionHandler {
         @Generated
-        void call_loadAssociatedTracksOfTypeCompletionHandler(NSArray<? extends AVAssetTrack> arg0, NSError arg1);
+        void call_loadAssociatedTracksOfTypeCompletionHandler(@Nullable NSArray<? extends AVAssetTrack> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -552,14 +574,15 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      */
     @Generated
     @Selector("loadMetadataForFormat:completionHandler:")
-    public native void loadMetadataForFormatCompletionHandler(String format,
-            @ObjCBlock(name = "call_loadMetadataForFormatCompletionHandler") Block_loadMetadataForFormatCompletionHandler completionHandler);
+    public native void loadMetadataForFormatCompletionHandler(@NotNull String format,
+            @NotNull @ObjCBlock(name = "call_loadMetadataForFormatCompletionHandler") Block_loadMetadataForFormatCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadMetadataForFormatCompletionHandler {
         @Generated
-        void call_loadMetadataForFormatCompletionHandler(NSArray<? extends AVMetadataItem> arg0, NSError arg1);
+        void call_loadMetadataForFormatCompletionHandler(@Nullable NSArray<? extends AVMetadataItem> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -579,13 +602,13 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Selector("loadSamplePresentationTimeForTrackTime:completionHandler:")
     public native void loadSamplePresentationTimeForTrackTimeCompletionHandler(@ByValue CMTime trackTime,
-            @ObjCBlock(name = "call_loadSamplePresentationTimeForTrackTimeCompletionHandler") Block_loadSamplePresentationTimeForTrackTimeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadSamplePresentationTimeForTrackTimeCompletionHandler") Block_loadSamplePresentationTimeForTrackTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadSamplePresentationTimeForTrackTimeCompletionHandler {
         @Generated
-        void call_loadSamplePresentationTimeForTrackTimeCompletionHandler(@ByValue CMTime arg0, NSError arg1);
+        void call_loadSamplePresentationTimeForTrackTimeCompletionHandler(@ByValue CMTime arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -608,13 +631,13 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
     @Generated
     @Selector("loadSegmentForTrackTime:completionHandler:")
     public native void loadSegmentForTrackTimeCompletionHandler(@ByValue CMTime trackTime,
-            @ObjCBlock(name = "call_loadSegmentForTrackTimeCompletionHandler") Block_loadSegmentForTrackTimeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_loadSegmentForTrackTimeCompletionHandler") Block_loadSegmentForTrackTimeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_loadSegmentForTrackTimeCompletionHandler {
         @Generated
-        void call_loadSegmentForTrackTimeCompletionHandler(AVAssetTrackSegment arg0, NSError arg1);
+        void call_loadSegmentForTrackTimeCompletionHandler(@Nullable AVAssetTrackSegment arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -638,6 +661,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * 
      * @return An instance of AVSampleCursor.
      */
+    @Nullable
     @Generated
     @Selector("makeSampleCursorAtFirstSampleInDecodeOrder")
     public native AVSampleCursor makeSampleCursorAtFirstSampleInDecodeOrder();
@@ -653,6 +677,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      * 
      * @return An instance of AVSampleCursor.
      */
+    @Nullable
     @Generated
     @Selector("makeSampleCursorAtLastSampleInDecodeOrder")
     public native AVSampleCursor makeSampleCursorAtLastSampleInDecodeOrder();
@@ -675,6 +700,7 @@ public class AVAssetTrack extends NSObject implements NSCopying, AVAsynchronousK
      *                              The desired initial presentation timestamp of the returned AVSampleCursor.
      * @return An instance of AVSampleCursor.
      */
+    @Nullable
     @Generated
     @Selector("makeSampleCursorWithPresentationTimeStamp:")
     public native AVSampleCursor makeSampleCursorWithPresentationTimeStamp(@ByValue CMTime presentationTimeStamp);

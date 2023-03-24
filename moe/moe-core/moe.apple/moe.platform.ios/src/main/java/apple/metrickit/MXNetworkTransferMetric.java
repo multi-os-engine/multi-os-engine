@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXNetworkTransferMetric
@@ -63,22 +65,25 @@ public class MXNetworkTransferMetric extends MXMetric {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,6 +97,7 @@ public class MXNetworkTransferMetric extends MXMetric {
      * 
      * Dimensioned as NSUnitInformationStorage.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeCellularDownload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeCellularDownload();
@@ -105,6 +111,7 @@ public class MXNetworkTransferMetric extends MXMetric {
      * 
      * Dimensioned as NSUnitInformationStorage.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeCellularUpload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeCellularUpload();
@@ -116,6 +123,7 @@ public class MXNetworkTransferMetric extends MXMetric {
      * 
      * Dimensioned as NSUnitInformationStorage.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeWifiDownload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeWifiDownload();
@@ -127,6 +135,7 @@ public class MXNetworkTransferMetric extends MXMetric {
      * 
      * Dimensioned as NSUnitInformationStorage.
      */
+    @NotNull
     @Generated
     @Selector("cumulativeWifiUpload")
     public native NSMeasurement<NSUnitInformationStorage> cumulativeWifiUpload();
@@ -150,7 +159,7 @@ public class MXNetworkTransferMetric extends MXMetric {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXNetworkTransferMetric initWithCoder(NSCoder coder);
+    public native MXNetworkTransferMetric initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,9 +178,10 @@ public class MXNetworkTransferMetric extends MXMetric {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

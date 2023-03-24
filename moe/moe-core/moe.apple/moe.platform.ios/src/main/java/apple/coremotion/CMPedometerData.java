@@ -44,6 +44,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMPedometerData
@@ -85,22 +87,25 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,9 +140,10 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -189,15 +195,17 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("averageActivePace")
     public native NSNumber averageActivePace();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * currentCadence
@@ -214,6 +222,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentCadence")
     public native NSNumber currentCadence();
@@ -233,6 +242,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentPace")
     public native NSNumber currentPace();
@@ -244,13 +254,14 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Estimated distance in meters traveled by the user while walking and
      * running. Value is nil unsupported platforms.
      */
+    @Nullable
     @Generated
     @Selector("distance")
     public native NSNumber distance();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * endDate
@@ -261,6 +272,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * For updates this is the time for the most recent update. For historical
      * queries this is the end time requested.
      */
+    @NotNull
     @Generated
     @Selector("endDate")
     public native NSDate endDate();
@@ -272,6 +284,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Approximate number of floors ascended by way of stairs. Value is nil
      * on unsupported platforms.
      */
+    @Nullable
     @Generated
     @Selector("floorsAscended")
     public native NSNumber floorsAscended();
@@ -283,6 +296,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Approximate number of floors descended by way of stairs. Value is nil
      * on unsupported platforms.
      */
+    @Nullable
     @Generated
     @Selector("floorsDescended")
     public native NSNumber floorsDescended();
@@ -293,7 +307,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
 
     @Generated
     @Selector("initWithCoder:")
-    public native CMPedometerData initWithCoder(NSCoder coder);
+    public native CMPedometerData initWithCoder(@NotNull NSCoder coder);
 
     /**
      * numberOfSteps
@@ -301,6 +315,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * Discussion:
      * Number of steps taken by the user.
      */
+    @NotNull
     @Generated
     @Selector("numberOfSteps")
     public native NSNumber numberOfSteps();
@@ -313,6 +328,7 @@ public class CMPedometerData extends NSObject implements NSSecureCoding, NSCopyi
      * 
      * This is the start time requested for the session or historical query.
      */
+    @NotNull
     @Generated
     @Selector("startDate")
     public native NSDate startDate();

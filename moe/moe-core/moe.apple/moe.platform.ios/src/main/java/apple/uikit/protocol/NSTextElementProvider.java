@@ -17,6 +17,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextElementProvider is a protocol conformed by NSTextContentManager and its concrete subclasses. It defines the
@@ -35,10 +37,11 @@ public interface NSTextElementProvider {
      * the editing session. Returns nil, when no adjustment necessary. forEditingTextSelection indicates if textRange is
      * for the text selection associated with the edit session.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("adjustedRangeFromRange:forEditingTextSelection:")
-    default NSTextRange adjustedRangeFromRangeForEditingTextSelection(NSTextRange textRange,
+    default NSTextRange adjustedRangeFromRangeForEditingTextSelection(@NotNull NSTextRange textRange,
             boolean forEditingTextSelection) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -47,6 +50,7 @@ public interface NSTextElementProvider {
      * Declares the starting and ending locations for the document. The subclass could use its own implementation of a
      * location object conforming to NSTextRange.
      */
+    @NotNull
     @Generated
     @Selector("documentRange")
     NSTextRange documentRange();
@@ -60,30 +64,32 @@ public interface NSTextElementProvider {
      * can limit the maximum number of text elements enumerated for a single invocation or hide some elements from the
      * layout). Returning NO from block breaks out of the enumeration.
      */
+    @Nullable
     @Generated
     @Selector("enumerateTextElementsFromLocation:options:usingBlock:")
     @MappedReturn(ObjCObjectMapper.class)
     NSTextLocation enumerateTextElementsFromLocationOptionsUsingBlock(
-            @Mapped(ObjCObjectMapper.class) NSTextLocation textLocation, @NUInt long options,
-            @ObjCBlock(name = "call_enumerateTextElementsFromLocationOptionsUsingBlock") Block_enumerateTextElementsFromLocationOptionsUsingBlock block);
+            @Nullable @Mapped(ObjCObjectMapper.class) NSTextLocation textLocation, @NUInt long options,
+            @NotNull @ObjCBlock(name = "call_enumerateTextElementsFromLocationOptionsUsingBlock") Block_enumerateTextElementsFromLocationOptionsUsingBlock block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateTextElementsFromLocationOptionsUsingBlock {
         @Generated
-        boolean call_enumerateTextElementsFromLocationOptionsUsingBlock(NSTextElement element);
+        boolean call_enumerateTextElementsFromLocationOptionsUsingBlock(@NotNull NSTextElement element);
     }
 
     /**
      * Returns a new location from location with offset. The offset value could be positive or negative indicating the
      * logical direction. Could return nil when the inputs don't produce any legal location (i.e. out of bounds index).
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("locationFromLocation:withOffset:")
     @MappedReturn(ObjCObjectMapper.class)
-    default NSTextLocation locationFromLocationWithOffset(@Mapped(ObjCObjectMapper.class) NSTextLocation location,
-            @NInt long offset) {
+    default NSTextLocation locationFromLocationWithOffset(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation location, @NInt long offset) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,8 +101,8 @@ public interface NSTextElementProvider {
     @IsOptional
     @Selector("offsetFromLocation:toLocation:")
     @NInt
-    default long offsetFromLocationToLocation(@Mapped(ObjCObjectMapper.class) NSTextLocation from,
-            @Mapped(ObjCObjectMapper.class) NSTextLocation to) {
+    default long offsetFromLocationToLocation(@NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation from,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSTextLocation to) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,7 +113,8 @@ public interface NSTextElementProvider {
      */
     @Generated
     @Selector("replaceContentsInRange:withTextElements:")
-    void replaceContentsInRangeWithTextElements(NSTextRange range, NSArray<? extends NSTextElement> textElements);
+    void replaceContentsInRangeWithTextElements(@NotNull NSTextRange range,
+            @Nullable NSArray<? extends NSTextElement> textElements);
 
     /**
      * Synchronizes changes to the backing store. If completionHandler=nil, performs the operation synchronously.
@@ -117,12 +124,12 @@ public interface NSTextElementProvider {
     @Generated
     @Selector("synchronizeToBackingStore:")
     void synchronizeToBackingStore(
-            @ObjCBlock(name = "call_synchronizeToBackingStore") Block_synchronizeToBackingStore completionHandler);
+            @Nullable @ObjCBlock(name = "call_synchronizeToBackingStore") Block_synchronizeToBackingStore completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_synchronizeToBackingStore {
         @Generated
-        void call_synchronizeToBackingStore(NSError error);
+        void call_synchronizeToBackingStore(@Nullable NSError error);
     }
 }

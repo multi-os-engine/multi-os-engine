@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureConnection
@@ -92,22 +94,25 @@ public class AVCaptureConnection extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -135,8 +140,8 @@ public class AVCaptureConnection extends NSObject {
      */
     @Generated
     @Selector("connectionWithInputPort:videoPreviewLayer:")
-    public static native AVCaptureConnection connectionWithInputPortVideoPreviewLayer(AVCaptureInputPort port,
-            AVCaptureVideoPreviewLayer layer);
+    public static native AVCaptureConnection connectionWithInputPortVideoPreviewLayer(@NotNull AVCaptureInputPort port,
+            @NotNull AVCaptureVideoPreviewLayer layer);
 
     /**
      * connectionWithInputPorts:output:
@@ -161,8 +166,8 @@ public class AVCaptureConnection extends NSObject {
      */
     @Generated
     @Selector("connectionWithInputPorts:output:")
-    public static native AVCaptureConnection connectionWithInputPortsOutput(NSArray<? extends AVCaptureInputPort> ports,
-            AVCaptureOutput output);
+    public static native AVCaptureConnection connectionWithInputPortsOutput(
+            @NotNull NSArray<? extends AVCaptureInputPort> ports, @NotNull AVCaptureOutput output);
 
     @Generated
     @Selector("debugDescription")
@@ -194,9 +199,10 @@ public class AVCaptureConnection extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -252,6 +258,7 @@ public class AVCaptureConnection extends NSObject {
      * audioChannels array contains one AVCaptureAudioChannel object for each channel of audio data flowing through this
      * connection.
      */
+    @NotNull
     @Generated
     @Selector("audioChannels")
     public native NSArray<? extends AVCaptureAudioChannel> audioChannels();
@@ -322,8 +329,8 @@ public class AVCaptureConnection extends NSObject {
      */
     @Generated
     @Selector("initWithInputPort:videoPreviewLayer:")
-    public native AVCaptureConnection initWithInputPortVideoPreviewLayer(AVCaptureInputPort port,
-            AVCaptureVideoPreviewLayer layer);
+    public native AVCaptureConnection initWithInputPortVideoPreviewLayer(@NotNull AVCaptureInputPort port,
+            @NotNull AVCaptureVideoPreviewLayer layer);
 
     /**
      * initWithInputPorts:output:
@@ -348,8 +355,8 @@ public class AVCaptureConnection extends NSObject {
      */
     @Generated
     @Selector("initWithInputPorts:output:")
-    public native AVCaptureConnection initWithInputPortsOutput(NSArray<? extends AVCaptureInputPort> ports,
-            AVCaptureOutput output);
+    public native AVCaptureConnection initWithInputPortsOutput(@NotNull NSArray<? extends AVCaptureInputPort> ports,
+            @NotNull AVCaptureOutput output);
 
     /**
      * [@property] inputPorts
@@ -360,6 +367,7 @@ public class AVCaptureConnection extends NSObject {
      * AVCaptureOutput. This property is read-only. An AVCaptureConnection's inputPorts remain static for the life of
      * the object.
      */
+    @NotNull
     @Generated
     @Selector("inputPorts")
     public native NSArray<? extends AVCaptureInputPort> inputPorts();
@@ -548,6 +556,7 @@ public class AVCaptureConnection extends NSObject {
      * AVCaptureOutput. This property is read-only. An AVCaptureConnection's output remains static for the life of the
      * object. Note that a connection can either be to an output or a video preview layer, but never to both.
      */
+    @Nullable
     @Generated
     @Selector("output")
     public native AVCaptureOutput output();
@@ -819,6 +828,7 @@ public class AVCaptureConnection extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("videoPreviewLayer")
     public native AVCaptureVideoPreviewLayer videoPreviewLayer();

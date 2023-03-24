@@ -7,6 +7,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Chart or graph container elements may adopt this protocol to enable Audio Graph support.
@@ -18,11 +19,12 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("AXChart")
 public interface AXChart {
+    @Nullable
     @Generated
     @Selector("accessibilityChartDescriptor")
     AXChartDescriptor accessibilityChartDescriptor();
 
     @Generated
     @Selector("setAccessibilityChartDescriptor:")
-    void setAccessibilityChartDescriptor(AXChartDescriptor value);
+    void setAccessibilityChartDescriptor(@Nullable AXChartDescriptor value);
 }

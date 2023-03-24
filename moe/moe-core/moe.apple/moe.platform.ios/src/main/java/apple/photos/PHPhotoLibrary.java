@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -92,22 +94,25 @@ public class PHPhotoLibrary extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,9 +147,10 @@ public class PHPhotoLibrary extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,7 +165,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("requestAuthorization:")
     public static native void requestAuthorization(
-            @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorization") Block_requestAuthorization handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -176,6 +182,7 @@ public class PHPhotoLibrary extends NSObject {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("sharedPhotoLibrary")
     public static native PHPhotoLibrary sharedPhotoLibrary();
@@ -202,8 +209,8 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("performChanges:completionHandler:")
     public native void performChangesCompletionHandler(
-            @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
-            @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
+            @NotNull @ObjCBlock(name = "call_performChangesCompletionHandler_0") Block_performChangesCompletionHandler_0 changeBlock,
+            @Nullable @ObjCBlock(name = "call_performChangesCompletionHandler_1") Block_performChangesCompletionHandler_1 completionHandler);
 
     /**
      * API-Since: 8.0
@@ -211,22 +218,24 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("performChangesAndWait:error:")
     public native boolean performChangesAndWaitError(
-            @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull @ObjCBlock(name = "call_performChangesAndWaitError") Block_performChangesAndWaitError changeBlock,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("registerChangeObserver:")
-    public native void registerChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
+    public native void registerChangeObserver(
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("unregisterChangeObserver:")
-    public native void unregisterChangeObserver(@Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
+    public native void unregisterChangeObserver(
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryChangeObserver observer);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -239,7 +248,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     public interface Block_performChangesCompletionHandler_1 {
         @Generated
-        void call_performChangesCompletionHandler_1(boolean success, NSError error);
+        void call_performChangesCompletionHandler_1(boolean success, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -262,11 +271,12 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("registerAvailabilityObserver:")
     public native void registerAvailabilityObserver(
-            @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("unavailabilityReason")
     public native NSError unavailabilityReason();
@@ -277,7 +287,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("unregisterAvailabilityObserver:")
     public native void unregisterAvailabilityObserver(
-            @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
+            @NotNull @Mapped(ObjCObjectMapper.class) PHPhotoLibraryAvailabilityObserver observer);
 
     /**
      * Replaces \c +authorizationStatus to support add-only/read-write access level status
@@ -308,7 +318,7 @@ public class PHPhotoLibrary extends NSObject {
      */
     @Generated
     @Selector("presentLimitedLibraryPickerFromViewController:")
-    public native void presentLimitedLibraryPickerFromViewController(UIViewController controller);
+    public native void presentLimitedLibraryPickerFromViewController(@NotNull UIViewController controller);
 
     /**
      * API-Since: 14.0
@@ -316,7 +326,7 @@ public class PHPhotoLibrary extends NSObject {
     @Generated
     @Selector("requestAuthorizationForAccessLevel:handler:")
     public static native void requestAuthorizationForAccessLevelHandler(@NInt long accessLevel,
-            @ObjCBlock(name = "call_requestAuthorizationForAccessLevelHandler") Block_requestAuthorizationForAccessLevelHandler handler);
+            @NotNull @ObjCBlock(name = "call_requestAuthorizationForAccessLevelHandler") Block_requestAuthorizationForAccessLevelHandler handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -338,10 +348,11 @@ public class PHPhotoLibrary extends NSObject {
      * 
      *                         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("cloudIdentifierMappingsForLocalIdentifiers:")
     public native NSDictionary<String, ? extends PHCloudIdentifierMapping> cloudIdentifierMappingsForLocalIdentifiers(
-            NSArray<String> localIdentifiers);
+            @NotNull NSArray<String> localIdentifiers);
 
     /**
      * Returns a dictionary that maps each cloud identifier from the provided array to a PLLocalIdentifierMapping result
@@ -357,10 +368,11 @@ public class PHPhotoLibrary extends NSObject {
      * 
      *                         API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("localIdentifierMappingsForCloudIdentifiers:")
     public native NSDictionary<? extends PHCloudIdentifier, ? extends PHLocalIdentifierMapping> localIdentifierMappingsForCloudIdentifiers(
-            NSArray<? extends PHCloudIdentifier> cloudIdentifiers);
+            @NotNull NSArray<? extends PHCloudIdentifier> cloudIdentifiers);
 
     /**
      * Prompt the user to update their limited library selection by presenting the limited library image picker when the
@@ -384,19 +396,21 @@ public class PHPhotoLibrary extends NSObject {
      */
     @Generated
     @Selector("presentLimitedLibraryPickerFromViewController:completionHandler:")
-    public native void presentLimitedLibraryPickerFromViewControllerCompletionHandler(UIViewController controller,
-            @ObjCBlock(name = "call_presentLimitedLibraryPickerFromViewControllerCompletionHandler") Block_presentLimitedLibraryPickerFromViewControllerCompletionHandler completionHandler);
+    public native void presentLimitedLibraryPickerFromViewControllerCompletionHandler(
+            @NotNull UIViewController controller,
+            @NotNull @ObjCBlock(name = "call_presentLimitedLibraryPickerFromViewControllerCompletionHandler") Block_presentLimitedLibraryPickerFromViewControllerCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentLimitedLibraryPickerFromViewControllerCompletionHandler {
         @Generated
-        void call_presentLimitedLibraryPickerFromViewControllerCompletionHandler(NSArray<String> arg0);
+        void call_presentLimitedLibraryPickerFromViewControllerCompletionHandler(@NotNull NSArray<String> arg0);
     }
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("currentChangeToken")
     public native PHPersistentChangeToken currentChangeToken();
@@ -404,8 +418,9 @@ public class PHPhotoLibrary extends NSObject {
     /**
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("fetchPersistentChangesSinceToken:error:")
-    public native PHPersistentChangeFetchResult fetchPersistentChangesSinceTokenError(PHPersistentChangeToken token,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PHPersistentChangeFetchResult fetchPersistentChangesSinceTokenError(
+            @NotNull PHPersistentChangeToken token, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

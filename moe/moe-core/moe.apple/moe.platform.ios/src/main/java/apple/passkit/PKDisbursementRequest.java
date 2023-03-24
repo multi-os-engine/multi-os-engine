@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PKDisbursementRequest defines an application's request to disburse an amount
@@ -59,28 +61,32 @@ public class PKDisbursementRequest extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("amount")
     public native NSDecimalNumber amount();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -90,6 +96,7 @@ public class PKDisbursementRequest extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @NotNull
     @Generated
     @Selector("countryCode")
     public native String countryCode();
@@ -99,6 +106,7 @@ public class PKDisbursementRequest extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @Nullable
     @Generated
     @Selector("currencyCode")
     public native String currencyCode();
@@ -137,9 +145,10 @@ public class PKDisbursementRequest extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -171,7 +180,7 @@ public class PKDisbursementRequest extends NSObject {
      */
     @Generated
     @Selector("setAmount:")
-    public native void setAmount(NSDecimalNumber value);
+    public native void setAmount(@NotNull NSDecimalNumber value);
 
     /**
      * The merchant's ISO country code.
@@ -180,7 +189,7 @@ public class PKDisbursementRequest extends NSObject {
      */
     @Generated
     @Selector("setCountryCode:")
-    public native void setCountryCode(String value);
+    public native void setCountryCode(@NotNull String value);
 
     /**
      * Currency code for this disbursement. The currency code is required unless the requestType is future
@@ -189,7 +198,7 @@ public class PKDisbursementRequest extends NSObject {
      */
     @Generated
     @Selector("setCurrencyCode:")
-    public native void setCurrencyCode(String value);
+    public native void setCurrencyCode(@Nullable String value);
 
     /**
      * Specifies if the disbursement is a one time request or a future request
@@ -207,7 +216,7 @@ public class PKDisbursementRequest extends NSObject {
      */
     @Generated
     @Selector("setSummaryItems:")
-    public native void setSummaryItems(NSArray<? extends PKPaymentSummaryItem> value);
+    public native void setSummaryItems(@Nullable NSArray<? extends PKPaymentSummaryItem> value);
 
     @Generated
     @Selector("setVersion:")
@@ -218,6 +227,7 @@ public class PKDisbursementRequest extends NSObject {
      * 
      * API-Since: 12.2
      */
+    @Nullable
     @Generated
     @Selector("summaryItems")
     public native NSArray<? extends PKPaymentSummaryItem> summaryItems();

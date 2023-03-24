@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioNode
@@ -73,6 +75,7 @@ public class AVAudioNode extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("AUAudioUnit")
     public native AUAudioUnit AUAudioUnit();
@@ -93,22 +96,25 @@ public class AVAudioNode extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,6 +132,7 @@ public class AVAudioNode extends NSObject {
      * 
      * The engine to which the node is attached (or nil).
      */
+    @Nullable
     @Generated
     @Selector("engine")
     public native AVAudioEngine engine();
@@ -144,6 +151,7 @@ public class AVAudioNode extends NSObject {
      * 
      * Obtain an input bus's format.
      */
+    @NotNull
     @Generated
     @Selector("inputFormatForBus:")
     public native AVAudioFormat inputFormatForBus(@NUInt long bus);
@@ -188,14 +196,15 @@ public class AVAudioNode extends NSObject {
      */
     @Generated
     @Selector("installTapOnBus:bufferSize:format:block:")
-    public native void installTapOnBusBufferSizeFormatBlock(@NUInt long bus, int bufferSize, AVAudioFormat format,
-            @ObjCBlock(name = "call_installTapOnBusBufferSizeFormatBlock") Block_installTapOnBusBufferSizeFormatBlock tapBlock);
+    public native void installTapOnBusBufferSizeFormatBlock(@NUInt long bus, int bufferSize,
+            @Nullable AVAudioFormat format,
+            @NotNull @ObjCBlock(name = "call_installTapOnBusBufferSizeFormatBlock") Block_installTapOnBusBufferSizeFormatBlock tapBlock);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_installTapOnBusBufferSizeFormatBlock {
         @Generated
-        void call_installTapOnBusBufferSizeFormatBlock(AVAudioPCMBuffer buffer, AVAudioTime when);
+        void call_installTapOnBusBufferSizeFormatBlock(@NotNull AVAudioPCMBuffer buffer, @NotNull AVAudioTime when);
     }
 
     @Generated
@@ -215,9 +224,10 @@ public class AVAudioNode extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lastRenderTime
@@ -227,6 +237,7 @@ public class AVAudioNode extends NSObject {
      * Will return nil if the engine is not running or if the node is not connected to an input or
      * output node.
      */
+    @Nullable
     @Generated
     @Selector("lastRenderTime")
     public native AVAudioTime lastRenderTime();
@@ -252,6 +263,7 @@ public class AVAudioNode extends NSObject {
      * 
      * Return the name of an input bus.
      */
+    @Nullable
     @Generated
     @Selector("nameForInputBus:")
     public native String nameForInputBus(@NUInt long bus);
@@ -261,6 +273,7 @@ public class AVAudioNode extends NSObject {
      * 
      * Return the name of an output bus.
      */
+    @Nullable
     @Generated
     @Selector("nameForOutputBus:")
     public native String nameForOutputBus(@NUInt long bus);
@@ -295,6 +308,7 @@ public class AVAudioNode extends NSObject {
      * 
      * Obtain an output bus's format.
      */
+    @NotNull
     @Generated
     @Selector("outputFormatForBus:")
     public native AVAudioFormat outputFormatForBus(@NUInt long bus);

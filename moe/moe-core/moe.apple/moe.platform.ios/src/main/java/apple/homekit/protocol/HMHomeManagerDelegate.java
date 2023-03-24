@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This delegate receives updates on homes being managed via the home manager.
@@ -48,7 +49,7 @@ public interface HMHomeManagerDelegate {
     @Generated
     @IsOptional
     @Selector("homeManager:didAddHome:")
-    default void homeManagerDidAddHome(HMHomeManager manager, HMHome home) {
+    default void homeManagerDidAddHome(@NotNull HMHomeManager manager, @NotNull HMHome home) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -62,7 +63,7 @@ public interface HMHomeManagerDelegate {
     @Generated
     @IsOptional
     @Selector("homeManager:didRemoveHome:")
-    default void homeManagerDidRemoveHome(HMHomeManager manager, HMHome home) {
+    default void homeManagerDidRemoveHome(@NotNull HMHomeManager manager, @NotNull HMHome home) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +79,7 @@ public interface HMHomeManagerDelegate {
     @Generated
     @IsOptional
     @Selector("homeManagerDidUpdateHomes:")
-    default void homeManagerDidUpdateHomes(HMHomeManager manager) {
+    default void homeManagerDidUpdateHomes(@NotNull HMHomeManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,7 +91,7 @@ public interface HMHomeManagerDelegate {
     @Generated
     @IsOptional
     @Selector("homeManagerDidUpdatePrimaryHome:")
-    default void homeManagerDidUpdatePrimaryHome(HMHomeManager manager) {
+    default void homeManagerDidUpdatePrimaryHome(@NotNull HMHomeManager manager) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,7 +106,8 @@ public interface HMHomeManagerDelegate {
     @Generated
     @IsOptional
     @Selector("homeManager:didReceiveAddAccessoryRequest:")
-    default void homeManagerDidReceiveAddAccessoryRequest(HMHomeManager manager, HMAddAccessoryRequest request) {
+    default void homeManagerDidReceiveAddAccessoryRequest(@NotNull HMHomeManager manager,
+            @NotNull HMAddAccessoryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,7 +122,7 @@ public interface HMHomeManagerDelegate {
     @Generated
     @IsOptional
     @Selector("homeManager:didUpdateAuthorizationStatus:")
-    default void homeManagerDidUpdateAuthorizationStatus(HMHomeManager manager, @NUInt long status) {
+    default void homeManagerDidUpdateAuthorizationStatus(@NotNull HMHomeManager manager, @NUInt long status) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

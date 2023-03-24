@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -58,39 +60,44 @@ public class GKLeaderboardEntry extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("challengeComposeControllerWithMessage:players:completionHandler:")
-    public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(String message,
-            NSArray<? extends GKPlayer> players,
-            @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
+    public native UIViewController challengeComposeControllerWithMessagePlayersCompletionHandler(
+            @Nullable String message, @Nullable NSArray<? extends GKPlayer> players,
+            @Nullable @ObjCBlock(name = "call_challengeComposeControllerWithMessagePlayersCompletionHandler") Block_challengeComposeControllerWithMessagePlayersCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_challengeComposeControllerWithMessagePlayersCompletionHandler {
         @Generated
-        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(UIViewController composeController,
-                boolean didIssueChallenge, NSArray<String> sentPlayerIDs);
+        void call_challengeComposeControllerWithMessagePlayersCompletionHandler(
+                @NotNull UIViewController composeController, boolean didIssueChallenge,
+                @Nullable NSArray<String> sentPlayerIDs);
     }
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,6 +107,7 @@ public class GKLeaderboardEntry extends NSObject {
     @NUInt
     public native long context();
 
+    @NotNull
     @Generated
     @Selector("date")
     public native NSDate date();
@@ -112,6 +120,7 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("formattedScore")
     public native String formattedScore();
@@ -142,15 +151,17 @@ public class GKLeaderboardEntry extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native GKLeaderboardEntry new_objc();
 
+    @NotNull
     @Generated
     @Selector("player")
     public native GKPlayer player();

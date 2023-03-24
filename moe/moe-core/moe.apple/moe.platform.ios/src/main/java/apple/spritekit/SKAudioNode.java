@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A SpriteKit scene graph audio node that provides a way to link audio graphs to a SpriteKit scene.
@@ -89,29 +91,32 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -143,9 +148,10 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -158,21 +164,25 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
 
     @Generated
     @Selector("nodeWithFileNamed:")
-    public static native SKAudioNode nodeWithFileNamed(String filename);
+    public static native SKAudioNode nodeWithFileNamed(@NotNull String filename);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodeBounds:")
-    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(NSArray<? extends SKNode> nodes);
+    public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodeBounds(
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromNodePhysicsBodies:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromNodePhysicsBodies(
-            NSArray<? extends SKNode> nodes);
+            @NotNull NSArray<? extends SKNode> nodes);
 
+    @NotNull
     @Generated
     @Selector("obstaclesFromSpriteTextures:accuracy:")
     public static native NSArray<? extends GKPolygonObstacle> obstaclesFromSpriteTexturesAccuracy(
-            NSArray<? extends SKNode> sprites, float accuracy);
+            @NotNull NSArray<? extends SKNode> sprites, float accuracy);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -213,13 +223,14 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
     /**
      * Sets or gets the current AVAudioNode used by this instance.
      */
+    @Nullable
     @Generated
     @Selector("avAudioNode")
     public native AVAudioNode avAudioNode();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -232,11 +243,11 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithAVAudioNode:")
-    public native SKAudioNode initWithAVAudioNode(AVAudioNode node);
+    public native SKAudioNode initWithAVAudioNode(@Nullable AVAudioNode node);
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKAudioNode initWithCoder(NSCoder aDecoder);
+    public native SKAudioNode initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Convenience initializer that creates an AVAudioNode from the named audio asset in the main bundle.
@@ -245,7 +256,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithFileNamed:")
-    public native SKAudioNode initWithFileNamed(String name);
+    public native SKAudioNode initWithFileNamed(@NotNull String name);
 
     /**
      * Convenience initializer that creates an AVAudioNode from the URL that contain a audio asset.
@@ -254,7 +265,7 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("initWithURL:")
-    public native SKAudioNode initWithURL(NSURL url);
+    public native SKAudioNode initWithURL(@NotNull NSURL url);
 
     /**
      * Marks the audio source as positional so that the audio mix considers relative position and velocity
@@ -298,12 +309,12 @@ public class SKAudioNode extends SKNode implements NSSecureCoding {
      */
     @Generated
     @Selector("setAvAudioNode:")
-    public native void setAvAudioNode(AVAudioNode value);
+    public native void setAvAudioNode(@Nullable AVAudioNode value);
 
     @Generated
     @Selector("nodeWithFileNamed:securelyWithClasses:andError:")
-    public static native SKAudioNode nodeWithFileNamedSecurelyWithClassesAndError(String filename,
-            NSSet<? extends Class> classes, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native SKAudioNode nodeWithFileNamedSecurelyWithClassesAndError(@NotNull String filename,
+            @NotNull NSSet<? extends Class> classes, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("supportsSecureCoding")

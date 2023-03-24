@@ -33,6 +33,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.metal.MTLAccelerationStructurePassDescriptor;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLCommandBuffer
@@ -53,7 +55,7 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("addCompletedHandler:")
-    void addCompletedHandler(@ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
+    void addCompletedHandler(@NotNull @ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
 
     /**
      * addScheduledHandler:block:
@@ -62,13 +64,14 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("addScheduledHandler:")
-    void addScheduledHandler(@ObjCBlock(name = "call_addScheduledHandler") Block_addScheduledHandler block);
+    void addScheduledHandler(@NotNull @ObjCBlock(name = "call_addScheduledHandler") Block_addScheduledHandler block);
 
     /**
      * blitCommandEncoder
      * 
      * returns a blit command encoder to encode into this command buffer.
      */
+    @Nullable
     @Generated
     @Selector("blitCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -79,6 +82,7 @@ public interface MTLCommandBuffer {
      * 
      * The command queue this command buffer was created from.
      */
+    @NotNull
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -98,6 +102,7 @@ public interface MTLCommandBuffer {
      * 
      * returns a compute command encoder to encode into this command buffer.
      */
+    @Nullable
     @Generated
     @Selector("computeCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -108,6 +113,7 @@ public interface MTLCommandBuffer {
      * 
      * The device this resource was created against.
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -127,6 +133,7 @@ public interface MTLCommandBuffer {
      * 
      * If an error occurred during execution, the NSError may contain more details about the problem.
      */
+    @Nullable
     @Generated
     @Selector("error")
     NSError error();
@@ -136,6 +143,7 @@ public interface MTLCommandBuffer {
      * 
      * A string to help identify this object.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -145,11 +153,12 @@ public interface MTLCommandBuffer {
      * 
      * returns a parallel render pass encoder to encode into this command buffer.
      */
+    @Nullable
     @Generated
     @Selector("parallelRenderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLParallelRenderCommandEncoder parallelRenderCommandEncoderWithDescriptor(
-            MTLRenderPassDescriptor renderPassDescriptor);
+            @NotNull MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
      * presentDrawable:
@@ -160,7 +169,7 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("presentDrawable:")
-    void presentDrawable(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable);
+    void presentDrawable(@NotNull @Mapped(ObjCObjectMapper.class) MTLDrawable drawable);
 
     /**
      * presentDrawable:atTime:
@@ -172,17 +181,18 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("presentDrawable:atTime:")
-    void presentDrawableAtTime(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double presentationTime);
+    void presentDrawableAtTime(@NotNull @Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double presentationTime);
 
     /**
      * renderCommandEncoderWithDescriptor:
      * 
      * returns a render command endcoder to encode into this command buffer.
      */
+    @Nullable
     @Generated
     @Selector("renderCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLRenderCommandEncoder renderCommandEncoderWithDescriptor(MTLRenderPassDescriptor renderPassDescriptor);
+    MTLRenderCommandEncoder renderCommandEncoderWithDescriptor(@NotNull MTLRenderPassDescriptor renderPassDescriptor);
 
     /**
      * [@property] retainedReferences
@@ -200,7 +210,7 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * [@property] status
@@ -235,14 +245,14 @@ public interface MTLCommandBuffer {
     @Generated
     public interface Block_addCompletedHandler {
         @Generated
-        void call_addCompletedHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCompletedHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addScheduledHandler {
         @Generated
-        void call_addScheduledHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addScheduledHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     /**
@@ -313,7 +323,8 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("presentDrawable:afterMinimumDuration:")
-    void presentDrawableAfterMinimumDuration(@Mapped(ObjCObjectMapper.class) MTLDrawable drawable, double duration);
+    void presentDrawableAfterMinimumDuration(@NotNull @Mapped(ObjCObjectMapper.class) MTLDrawable drawable,
+            double duration);
 
     /**
      * pushDebugGroup:
@@ -324,7 +335,7 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("pushDebugGroup:")
-    void pushDebugGroup(String string);
+    void pushDebugGroup(@NotNull String string);
 
     /**
      * computeCommandEncoderWithDispatchType
@@ -336,6 +347,7 @@ public interface MTLCommandBuffer {
      * 
      * API-Since: 12.0
      */
+    @Nullable
     @Generated
     @Selector("computeCommandEncoderWithDispatchType:")
     @MappedReturn(ObjCObjectMapper.class)
@@ -352,7 +364,7 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("encodeSignalEvent:value:")
-    void encodeSignalEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
+    void encodeSignalEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     /**
      * encodeWaitForEvent:value:
@@ -365,11 +377,12 @@ public interface MTLCommandBuffer {
      */
     @Generated
     @Selector("encodeWaitForEvent:value:")
-    void encodeWaitForEventValue(@Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
+    void encodeWaitForEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLEvent event, long value);
 
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("resourceStateCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -378,6 +391,7 @@ public interface MTLCommandBuffer {
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("accelerationStructureCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -390,10 +404,11 @@ public interface MTLCommandBuffer {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("blitCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLBlitCommandEncoder blitCommandEncoderWithDescriptor(MTLBlitPassDescriptor blitPassDescriptor);
+    MTLBlitCommandEncoder blitCommandEncoderWithDescriptor(@NotNull MTLBlitPassDescriptor blitPassDescriptor);
 
     /**
      * computeCommandEncoderWithDescriptor:
@@ -402,10 +417,12 @@ public interface MTLCommandBuffer {
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("computeCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
-    MTLComputeCommandEncoder computeCommandEncoderWithDescriptor(MTLComputePassDescriptor computePassDescriptor);
+    MTLComputeCommandEncoder computeCommandEncoderWithDescriptor(
+            @NotNull MTLComputePassDescriptor computePassDescriptor);
 
     /**
      * The set of options configuring the error reporting of the created command buffer.
@@ -424,6 +441,7 @@ public interface MTLCommandBuffer {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("logs")
     @MappedReturn(ObjCObjectMapper.class)
@@ -432,18 +450,20 @@ public interface MTLCommandBuffer {
     /**
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("resourceStateCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLResourceStateCommandEncoder resourceStateCommandEncoderWithDescriptor(
-            MTLResourceStatePassDescriptor resourceStatePassDescriptor);
+            @NotNull MTLResourceStatePassDescriptor resourceStatePassDescriptor);
 
     /**
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @Selector("accelerationStructureCommandEncoderWithDescriptor:")
     @MappedReturn(ObjCObjectMapper.class)
     MTLAccelerationStructureCommandEncoder accelerationStructureCommandEncoderWithDescriptor(
-            MTLAccelerationStructurePassDescriptor descriptor);
+            @NotNull MTLAccelerationStructurePassDescriptor descriptor);
 }

@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 14.0
@@ -52,6 +54,7 @@ public class CPInformationTemplate extends CPTemplate {
      * 
      * [@note] The maximum number of actions is 3. If you specify more than 3, only the first 3 will be used.
      */
+    @NotNull
     @Generated
     @Selector("actions")
     public native NSArray<? extends CPTextButton> actions();
@@ -68,22 +71,25 @@ public class CPInformationTemplate extends CPTemplate {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -107,7 +113,7 @@ public class CPInformationTemplate extends CPTemplate {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CPInformationTemplate initWithCoder(NSCoder coder);
+    public native CPInformationTemplate initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initialize a CPInformationTemplate with a title, optional labels, and optional action buttons.
@@ -123,8 +129,8 @@ public class CPInformationTemplate extends CPTemplate {
      */
     @Generated
     @Selector("initWithTitle:layout:items:actions:")
-    public native CPInformationTemplate initWithTitleLayoutItemsActions(String title, @NInt long layout,
-            NSArray<? extends CPInformationItem> items, NSArray<? extends CPTextButton> actions);
+    public native CPInformationTemplate initWithTitleLayoutItemsActions(@NotNull String title, @NInt long layout,
+            @NotNull NSArray<? extends CPInformationItem> items, @NotNull NSArray<? extends CPTextButton> actions);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -150,13 +156,15 @@ public class CPInformationTemplate extends CPTemplate {
      * 
      * [@note] The maximum number of items is 10. If you specify more than 10 items, only the first 10 will be used.
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends CPInformationItem> items();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Information template layout, either leading aligned or two columns.
@@ -188,7 +196,7 @@ public class CPInformationTemplate extends CPTemplate {
      */
     @Generated
     @Selector("setActions:")
-    public native void setActions(NSArray<? extends CPTextButton> value);
+    public native void setActions(@NotNull NSArray<? extends CPTextButton> value);
 
     /**
      * An array of @c CPInformationItem.
@@ -199,14 +207,14 @@ public class CPInformationTemplate extends CPTemplate {
      */
     @Generated
     @Selector("setItems:")
-    public native void setItems(NSArray<? extends CPInformationItem> value);
+    public native void setItems(@NotNull NSArray<? extends CPInformationItem> value);
 
     /**
      * Title that will appear at the top of the template.
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     @Generated
     @Selector("setVersion:")
@@ -229,6 +237,7 @@ public class CPInformationTemplate extends CPTemplate {
     /**
      * Title that will appear at the top of the template.
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();

@@ -34,6 +34,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -68,22 +70,25 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -118,9 +123,10 @@ public class NSDateIntervalFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -176,7 +182,7 @@ public class NSDateIntervalFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateIntervalFormatter initWithCoder(NSCoder coder);
+    public native NSDateIntervalFormatter initWithCoder(@NotNull NSCoder coder);
 
     /**
      * default is [NSLocale currentLocale]
@@ -247,16 +253,18 @@ public class NSDateIntervalFormatter extends NSFormatter {
      * for en_US, "Mar 4-8"
      * for en_GB, "4-8 Mar"
      */
+    @NotNull
     @Generated
     @Selector("stringFromDate:toDate:")
-    public native String stringFromDateToDate(NSDate fromDate, NSDate toDate);
+    public native String stringFromDateToDate(@NotNull NSDate fromDate, @NotNull NSDate toDate);
 
     /**
      * API-Since: 10.0
      */
+    @Nullable
     @Generated
     @Selector("stringFromDateInterval:")
-    public native String stringFromDateInterval(NSDateInterval dateInterval);
+    public native String stringFromDateInterval(@NotNull NSDateInterval dateInterval);
 
     /**
      * default is NSDateIntervalFormatterNoStyle

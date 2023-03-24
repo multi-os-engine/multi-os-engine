@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -58,17 +60,18 @@ public class QLThumbnailGenerator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Cancels the given QLThumbnailGenerationRequest.
@@ -77,12 +80,14 @@ public class QLThumbnailGenerator extends NSObject {
      */
     @Generated
     @Selector("cancelRequest:")
-    public native void cancelRequest(QLThumbnailGenerationRequest request);
+    public native void cancelRequest(@NotNull QLThumbnailGenerationRequest request);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,15 +111,16 @@ public class QLThumbnailGenerator extends NSObject {
      */
     @Generated
     @Selector("generateBestRepresentationForRequest:completionHandler:")
-    public native void generateBestRepresentationForRequestCompletionHandler(QLThumbnailGenerationRequest request,
-            @ObjCBlock(name = "call_generateBestRepresentationForRequestCompletionHandler") Block_generateBestRepresentationForRequestCompletionHandler completionHandler);
+    public native void generateBestRepresentationForRequestCompletionHandler(
+            @NotNull QLThumbnailGenerationRequest request,
+            @NotNull @ObjCBlock(name = "call_generateBestRepresentationForRequestCompletionHandler") Block_generateBestRepresentationForRequestCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateBestRepresentationForRequestCompletionHandler {
         @Generated
-        void call_generateBestRepresentationForRequestCompletionHandler(QLThumbnailRepresentation thumbnail,
-                NSError error);
+        void call_generateBestRepresentationForRequestCompletionHandler(@Nullable QLThumbnailRepresentation thumbnail,
+                @Nullable NSError error);
     }
 
     /**
@@ -133,15 +139,15 @@ public class QLThumbnailGenerator extends NSObject {
      */
     @Generated
     @Selector("generateRepresentationsForRequest:updateHandler:")
-    public native void generateRepresentationsForRequestUpdateHandler(QLThumbnailGenerationRequest request,
-            @ObjCBlock(name = "call_generateRepresentationsForRequestUpdateHandler") Block_generateRepresentationsForRequestUpdateHandler updateHandler);
+    public native void generateRepresentationsForRequestUpdateHandler(@NotNull QLThumbnailGenerationRequest request,
+            @Nullable @ObjCBlock(name = "call_generateRepresentationsForRequestUpdateHandler") Block_generateRepresentationsForRequestUpdateHandler updateHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_generateRepresentationsForRequestUpdateHandler {
         @Generated
-        void call_generateRepresentationsForRequestUpdateHandler(QLThumbnailRepresentation thumbnail, @NInt long type,
-                NSError error);
+        void call_generateRepresentationsForRequestUpdateHandler(@Nullable QLThumbnailRepresentation thumbnail,
+                @NInt long type, @Nullable NSError error);
     }
 
     @Generated
@@ -170,9 +176,10 @@ public class QLThumbnailGenerator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -202,20 +209,21 @@ public class QLThumbnailGenerator extends NSObject {
     @Generated
     @Selector("saveBestRepresentationForRequest:toFileAtURL:withContentType:completionHandler:")
     public native void saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(
-            QLThumbnailGenerationRequest request, NSURL fileURL, String contentType,
-            @ObjCBlock(name = "call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler") Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler completionHandler);
+            @NotNull QLThumbnailGenerationRequest request, @NotNull NSURL fileURL, @NotNull String contentType,
+            @NotNull @ObjCBlock(name = "call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler") Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler {
         @Generated
-        void call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(NSError error);
+        void call_saveBestRepresentationForRequestToFileAtURLWithContentTypeCompletionHandler(@Nullable NSError error);
     }
 
     @Generated
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("sharedGenerator")
     public static native QLThumbnailGenerator sharedGenerator();

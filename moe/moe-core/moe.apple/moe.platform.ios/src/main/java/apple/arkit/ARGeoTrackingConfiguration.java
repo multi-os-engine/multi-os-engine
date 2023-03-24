@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.avfoundation.AVCaptureDevice;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A configuration for running geographical world tracking.
@@ -79,17 +81,18 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Determines the availability of geo tracking at the given location.
@@ -103,13 +106,13 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Generated
     @Selector("checkAvailabilityAtCoordinate:completionHandler:")
     public static native void checkAvailabilityAtCoordinateCompletionHandler(@ByValue CLLocationCoordinate2D coordinate,
-            @ObjCBlock(name = "call_checkAvailabilityAtCoordinateCompletionHandler") Block_checkAvailabilityAtCoordinateCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_checkAvailabilityAtCoordinateCompletionHandler") Block_checkAvailabilityAtCoordinateCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_checkAvailabilityAtCoordinateCompletionHandler {
         @Generated
-        void call_checkAvailabilityAtCoordinateCompletionHandler(boolean isAvailable, NSError error);
+        void call_checkAvailabilityAtCoordinateCompletionHandler(boolean isAvailable, @Nullable NSError error);
     }
 
     /**
@@ -127,19 +130,21 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Generated
     @Selector("checkAvailabilityWithCompletionHandler:")
     public static native void checkAvailabilityWithCompletionHandler(
-            @ObjCBlock(name = "call_checkAvailabilityWithCompletionHandler") Block_checkAvailabilityWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_checkAvailabilityWithCompletionHandler") Block_checkAvailabilityWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_checkAvailabilityWithCompletionHandler {
         @Generated
-        void call_checkAvailabilityWithCompletionHandler(boolean isAvailable, NSError error);
+        void call_checkAvailabilityWithCompletionHandler(boolean isAvailable, @Nullable NSError error);
     }
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -168,6 +173,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      * If set the session will attempt to detect the specified objects. When an object is detected an ARObjectAnchor
      * will be added to the session.
      */
+    @NotNull
     @Generated
     @Selector("detectionObjects")
     public native NSSet<? extends ARReferenceObject> detectionObjects();
@@ -214,9 +220,10 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("isSupported")
     public static native boolean isSupported();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Maximum number of images to track simultaneously.
@@ -290,7 +297,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
      */
     @Generated
     @Selector("setDetectionObjects:")
-    public native void setDetectionObjects(NSSet<? extends ARReferenceObject> value);
+    public native void setDetectionObjects(@NotNull NSSet<? extends ARReferenceObject> value);
 
     /**
      * The mode of environment texturing to run.
@@ -343,6 +350,7 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("supportedVideoFormats")
     public static native NSArray<? extends ARVideoFormat> supportedVideoFormats();
@@ -392,14 +400,17 @@ public class ARGeoTrackingConfiguration extends ARConfiguration {
     @Selector("supportsAppClipCodeTracking")
     public static native boolean supportsAppClipCodeTracking();
 
+    @Nullable
     @Generated
     @Selector("configurableCaptureDeviceForPrimaryCamera")
     public static native AVCaptureDevice configurableCaptureDeviceForPrimaryCamera();
 
+    @Nullable
     @Generated
     @Selector("recommendedVideoFormatFor4KResolution")
     public static native ARVideoFormat recommendedVideoFormatFor4KResolution();
 
+    @Nullable
     @Generated
     @Selector("recommendedVideoFormatForHighResolutionFrameCapturing")
     public static native ARVideoFormat recommendedVideoFormatForHighResolutionFrameCapturing();

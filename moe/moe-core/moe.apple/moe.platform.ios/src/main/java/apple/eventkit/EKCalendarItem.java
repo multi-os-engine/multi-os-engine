@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -74,22 +76,25 @@ public class EKCalendarItem extends EKObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class EKCalendarItem extends EKObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -157,6 +163,7 @@ public class EKCalendarItem extends EKObject {
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("URL")
     public native NSURL URL();
@@ -169,6 +176,7 @@ public class EKCalendarItem extends EKObject {
      * API-Since: 5.0
      * Deprecated-Since: 6.0
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("UUID")
@@ -185,15 +193,16 @@ public class EKCalendarItem extends EKObject {
      */
     @Generated
     @Selector("addAlarm:")
-    public native void addAlarm(EKAlarm alarm);
+    public native void addAlarm(@NotNull EKAlarm alarm);
 
     @Generated
     @Selector("addRecurrenceRule:")
-    public native void addRecurrenceRule(EKRecurrenceRule rule);
+    public native void addRecurrenceRule(@NotNull EKRecurrenceRule rule);
 
     /**
      * An array of EKAlarm objects
      */
+    @Nullable
     @Generated
     @Selector("alarms")
     public native NSArray<? extends EKAlarm> alarms();
@@ -201,6 +210,7 @@ public class EKCalendarItem extends EKObject {
     /**
      * An array of EKParticipant objects
      */
+    @Nullable
     @Generated
     @Selector("attendees")
     public native NSArray<? extends EKParticipant> attendees();
@@ -261,6 +271,7 @@ public class EKCalendarItem extends EKObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("calendarItemIdentifier")
     public native String calendarItemIdentifier();
@@ -268,6 +279,7 @@ public class EKCalendarItem extends EKObject {
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("creationDate")
     public native NSDate creationDate();
@@ -310,14 +322,17 @@ public class EKCalendarItem extends EKObject {
     @Selector("init")
     public native EKCalendarItem init();
 
+    @Nullable
     @Generated
     @Selector("lastModifiedDate")
     public native NSDate lastModifiedDate();
 
+    @Nullable
     @Generated
     @Selector("location")
     public native String location();
 
+    @Nullable
     @Generated
     @Selector("notes")
     public native String notes();
@@ -329,6 +344,7 @@ public class EKCalendarItem extends EKObject {
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("recurrenceRules")
     public native NSArray<? extends EKRecurrenceRule> recurrenceRules();
@@ -340,18 +356,18 @@ public class EKCalendarItem extends EKObject {
      */
     @Generated
     @Selector("removeAlarm:")
-    public native void removeAlarm(EKAlarm alarm);
+    public native void removeAlarm(@NotNull EKAlarm alarm);
 
     @Generated
     @Selector("removeRecurrenceRule:")
-    public native void removeRecurrenceRule(EKRecurrenceRule rule);
+    public native void removeRecurrenceRule(@NotNull EKRecurrenceRule rule);
 
     /**
      * An array of EKAlarm objects
      */
     @Generated
     @Selector("setAlarms:")
-    public native void setAlarms(NSArray<? extends EKAlarm> value);
+    public native void setAlarms(@Nullable NSArray<? extends EKAlarm> value);
 
     /**
      * [@property] calendar
@@ -366,11 +382,11 @@ public class EKCalendarItem extends EKObject {
 
     @Generated
     @Selector("setLocation:")
-    public native void setLocation(String value);
+    public native void setLocation(@Nullable String value);
 
     @Generated
     @Selector("setNotes:")
-    public native void setNotes(String value);
+    public native void setNotes(@Nullable String value);
 
     /**
      * [@property] recurrenceRules
@@ -381,14 +397,14 @@ public class EKCalendarItem extends EKObject {
      */
     @Generated
     @Selector("setRecurrenceRules:")
-    public native void setRecurrenceRules(NSArray<? extends EKRecurrenceRule> value);
+    public native void setRecurrenceRules(@Nullable NSArray<? extends EKRecurrenceRule> value);
 
     /**
      * API-Since: 5.0
      */
     @Generated
     @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
+    public native void setTimeZone(@Nullable NSTimeZone value);
 
     /**
      * [@property] title
@@ -406,11 +422,12 @@ public class EKCalendarItem extends EKObject {
      */
     @Generated
     @Selector("setURL:")
-    public native void setURL(NSURL value);
+    public native void setURL(@Nullable NSURL value);
 
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();

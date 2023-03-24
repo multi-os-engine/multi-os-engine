@@ -13,6 +13,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -49,22 +51,25 @@ public final class SparseSymbolicFactorOptions extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setOrderMethod(byte value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native IntPtr order();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setOrder(IntPtr value);
+    public native void setOrder(@Nullable IntPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native IntPtr ignoreRowsAndColumns();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setIgnoreRowsAndColumns(IntPtr value);
+    public native void setIgnoreRowsAndColumns(@Nullable IntPtr value);
 
+    @NotNull
     @Generated
     @StructureField(order = 4, isGetter = true)
     @FunctionPtr(name = "call_malloc")
@@ -73,14 +78,16 @@ public final class SparseSymbolicFactorOptions extends StructObject {
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_malloc {
+        @Nullable
         @Generated
         VoidPtr call_malloc(@NUInt long arg0);
     }
 
     @Generated
     @StructureField(order = 4, isGetter = false)
-    public native void setMalloc(@FunctionPtr(name = "call_malloc") Function_malloc value);
+    public native void setMalloc(@NotNull @FunctionPtr(name = "call_malloc") Function_malloc value);
 
+    @NotNull
     @Generated
     @StructureField(order = 5, isGetter = true)
     @FunctionPtr(name = "call_free")
@@ -90,13 +97,14 @@ public final class SparseSymbolicFactorOptions extends StructObject {
     @Generated
     public interface Function_free {
         @Generated
-        void call_free(VoidPtr arg0);
+        void call_free(@Nullable VoidPtr arg0);
     }
 
     @Generated
     @StructureField(order = 5, isGetter = false)
-    public native void setFree(@FunctionPtr(name = "call_free") Function_free value);
+    public native void setFree(@NotNull @FunctionPtr(name = "call_free") Function_free value);
 
+    @Nullable
     @Generated
     @StructureField(order = 6, isGetter = true)
     @FunctionPtr(name = "call_reportError")
@@ -107,10 +115,10 @@ public final class SparseSymbolicFactorOptions extends StructObject {
     public interface Function_reportError {
         @Generated
         void call_reportError(
-                @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
+                @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String arg0);
     }
 
     @Generated
     @StructureField(order = 6, isGetter = false)
-    public native void setReportError(@FunctionPtr(name = "call_reportError") Function_reportError value);
+    public native void setReportError(@Nullable @FunctionPtr(name = "call_reportError") Function_reportError value);
 }

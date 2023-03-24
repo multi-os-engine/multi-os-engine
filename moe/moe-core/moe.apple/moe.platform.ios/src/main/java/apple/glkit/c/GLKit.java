@@ -41,6 +41,8 @@ import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.BoolPtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("GLKit")
@@ -535,7 +537,7 @@ public final class GLKit {
     @Generated
     @CFunction
     public static native void GLKQuaternionRotateVector3Array(@ByValue GLKQuaternion quaternion,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
             @NUInt long vectorCount);
 
     /**
@@ -551,7 +553,7 @@ public final class GLKit {
     @Generated
     @CFunction
     public static native void GLKQuaternionRotateVector4Array(@ByValue GLKQuaternion quaternion,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector4 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector4 vectors,
             @NUInt long vectorCount);
 
     @Generated
@@ -765,7 +767,7 @@ public final class GLKit {
     @Inline
     @CFunction
     public static native void GLKMatrix3MultiplyVector3Array(@ByValue GLKMatrix3 matrix,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
             @NUInt long vectorCount);
 
     /**
@@ -965,12 +967,13 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix4 GLKMatrix4Invert(@ByValue GLKMatrix4 matrix, BoolPtr isInvertible);
+    public static native GLKMatrix4 GLKMatrix4Invert(@ByValue GLKMatrix4 matrix, @Nullable BoolPtr isInvertible);
 
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix4 GLKMatrix4InvertAndTranspose(@ByValue GLKMatrix4 matrix, BoolPtr isInvertible);
+    public static native GLKMatrix4 GLKMatrix4InvertAndTranspose(@ByValue GLKMatrix4 matrix,
+            @Nullable BoolPtr isInvertible);
 
     @Generated
     @Inline
@@ -1115,7 +1118,7 @@ public final class GLKit {
     @Inline
     @CFunction
     public static native void GLKMatrix4MultiplyVector3Array(@ByValue GLKMatrix4 matrix,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
             @NUInt long vectorCount);
 
     /**
@@ -1125,7 +1128,7 @@ public final class GLKit {
     @Inline
     @CFunction
     public static native void GLKMatrix4MultiplyVector3ArrayWithTranslation(@ByValue GLKMatrix4 matrix,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
             @NUInt long vectorCount);
 
     /**
@@ -1135,7 +1138,7 @@ public final class GLKit {
     @Inline
     @CFunction
     public static native void GLKMatrix4MultiplyAndProjectVector3Array(@ByValue GLKMatrix4 matrix,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector3 vectors,
             @NUInt long vectorCount);
 
     @Generated
@@ -1149,7 +1152,7 @@ public final class GLKit {
     @Inline
     @CFunction
     public static native void GLKMatrix4MultiplyVector4Array(@ByValue GLKMatrix4 matrix,
-            @UncertainArgument("Options: reference, array Fallback: reference") GLKVector4 vectors,
+            @NotNull @UncertainArgument("Options: reference, array Fallback: reference") GLKVector4 vectors,
             @NUInt long vectorCount);
 
     @Generated
@@ -1324,9 +1327,10 @@ public final class GLKit {
      * CFType GLKMatrixStack creation routine. Pass NULL or kCFAllocatorDefault to use the current default
      * allocator. A newly created stack is initialized with the identity matrix.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native GLKMatrixStackRef GLKMatrixStackCreate(CFAllocatorRef alloc);
+    public static native GLKMatrixStackRef GLKMatrixStackCreate(@Nullable CFAllocatorRef alloc);
 
     /**
      * Returns the type identifier for the GLKMatrixStack opaque type.
@@ -1341,28 +1345,28 @@ public final class GLKit {
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackPush(GLKMatrixStackRef stack);
+    public static native void GLKMatrixStackPush(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Pops the topmost matrix off of the stack, moving the rest of the matrices up one level.
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackPop(GLKMatrixStackRef stack);
+    public static native void GLKMatrixStackPop(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Returns the number of matrices currently on the stack.
      */
     @Generated
     @CFunction
-    public static native int GLKMatrixStackSize(GLKMatrixStackRef stack);
+    public static native int GLKMatrixStackSize(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Replaces the topmost matrix with the matrix provided.
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackLoadMatrix4(GLKMatrixStackRef stack, @ByValue GLKMatrix4 matrix);
+    public static native void GLKMatrixStackLoadMatrix4(@NotNull GLKMatrixStackRef stack, @ByValue GLKMatrix4 matrix);
 
     /**
      * Returns the 4x4 matrix currently residing on top of the stack.
@@ -1370,7 +1374,7 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix4 GLKMatrixStackGetMatrix4(GLKMatrixStackRef stack);
+    public static native GLKMatrix4 GLKMatrixStackGetMatrix4(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Returns the upper left 3x3 portion of the matrix currently residing on top of the stack.
@@ -1378,7 +1382,7 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix3 GLKMatrixStackGetMatrix3(GLKMatrixStackRef stack);
+    public static native GLKMatrix3 GLKMatrixStackGetMatrix3(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Returns the upper left 2x2 portion of the matrix currently residing on top of the stack.
@@ -1386,7 +1390,7 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix2 GLKMatrixStackGetMatrix2(GLKMatrixStackRef stack);
+    public static native GLKMatrix2 GLKMatrixStackGetMatrix2(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Calculate and return the inverse matrix from the matrix currently residing on top of stack.
@@ -1394,7 +1398,7 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix4 GLKMatrixStackGetMatrix4Inverse(GLKMatrixStackRef stack);
+    public static native GLKMatrix4 GLKMatrixStackGetMatrix4Inverse(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Calculate and return the inverse transpose matrix from the matrix currently residing on top of stack.
@@ -1402,7 +1406,7 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix4 GLKMatrixStackGetMatrix4InverseTranspose(GLKMatrixStackRef stack);
+    public static native GLKMatrix4 GLKMatrixStackGetMatrix4InverseTranspose(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Calculate and return the upper left 3x3 inverse matrix from the matrix currently residing on top of stack.
@@ -1410,7 +1414,7 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix3 GLKMatrixStackGetMatrix3Inverse(GLKMatrixStackRef stack);
+    public static native GLKMatrix3 GLKMatrixStackGetMatrix3Inverse(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Calculate and return the upper left 3x3 inverse transpose matrix from the matrix currently residing on top of
@@ -1419,38 +1423,39 @@ public final class GLKit {
     @Generated
     @CFunction
     @ByValue
-    public static native GLKMatrix3 GLKMatrixStackGetMatrix3InverseTranspose(GLKMatrixStackRef stack);
+    public static native GLKMatrix3 GLKMatrixStackGetMatrix3InverseTranspose(@NotNull GLKMatrixStackRef stack);
 
     /**
      * Multiply the topmost matrix with the matrix provided.
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackMultiplyMatrix4(GLKMatrixStackRef stack, @ByValue GLKMatrix4 matrix);
+    public static native void GLKMatrixStackMultiplyMatrix4(@NotNull GLKMatrixStackRef stack,
+            @ByValue GLKMatrix4 matrix);
 
     /**
      * Multiply the topmost matrix of the stackLeft with the topmost matrix of stackRight and store in stackLeft.
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackMultiplyMatrixStack(GLKMatrixStackRef stackLeft,
-            GLKMatrixStackRef stackRight);
+    public static native void GLKMatrixStackMultiplyMatrixStack(@NotNull GLKMatrixStackRef stackLeft,
+            @NotNull GLKMatrixStackRef stackRight);
 
     /**
      * Translate the topmost matrix.
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackTranslate(GLKMatrixStackRef stack, float tx, float ty, float tz);
+    public static native void GLKMatrixStackTranslate(@NotNull GLKMatrixStackRef stack, float tx, float ty, float tz);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackTranslateWithVector3(GLKMatrixStackRef stack,
+    public static native void GLKMatrixStackTranslateWithVector3(@NotNull GLKMatrixStackRef stack,
             @ByValue GLKVector3 translationVector);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackTranslateWithVector4(GLKMatrixStackRef stack,
+    public static native void GLKMatrixStackTranslateWithVector4(@NotNull GLKMatrixStackRef stack,
             @ByValue GLKVector4 translationVector);
 
     /**
@@ -1458,31 +1463,34 @@ public final class GLKit {
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackScale(GLKMatrixStackRef stack, float sx, float sy, float sz);
+    public static native void GLKMatrixStackScale(@NotNull GLKMatrixStackRef stack, float sx, float sy, float sz);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackScaleWithVector3(GLKMatrixStackRef stack, @ByValue GLKVector3 scaleVector);
+    public static native void GLKMatrixStackScaleWithVector3(@NotNull GLKMatrixStackRef stack,
+            @ByValue GLKVector3 scaleVector);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackScaleWithVector4(GLKMatrixStackRef stack, @ByValue GLKVector4 scaleVector);
+    public static native void GLKMatrixStackScaleWithVector4(@NotNull GLKMatrixStackRef stack,
+            @ByValue GLKVector4 scaleVector);
 
     /**
      * Rotate the topmost matrix about the specified axis.
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackRotate(GLKMatrixStackRef stack, float radians, float x, float y, float z);
+    public static native void GLKMatrixStackRotate(@NotNull GLKMatrixStackRef stack, float radians, float x, float y,
+            float z);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackRotateWithVector3(GLKMatrixStackRef stack, float radians,
+    public static native void GLKMatrixStackRotateWithVector3(@NotNull GLKMatrixStackRef stack, float radians,
             @ByValue GLKVector3 axisVector);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackRotateWithVector4(GLKMatrixStackRef stack, float radians,
+    public static native void GLKMatrixStackRotateWithVector4(@NotNull GLKMatrixStackRef stack, float radians,
             @ByValue GLKVector4 axisVector);
 
     /**
@@ -1490,15 +1498,15 @@ public final class GLKit {
      */
     @Generated
     @CFunction
-    public static native void GLKMatrixStackRotateX(GLKMatrixStackRef stack, float radians);
+    public static native void GLKMatrixStackRotateX(@NotNull GLKMatrixStackRef stack, float radians);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackRotateY(GLKMatrixStackRef stack, float radians);
+    public static native void GLKMatrixStackRotateY(@NotNull GLKMatrixStackRef stack, float radians);
 
     @Generated
     @CFunction
-    public static native void GLKMatrixStackRotateZ(GLKMatrixStackRef stack, float radians);
+    public static native void GLKMatrixStackRotateZ(@NotNull GLKMatrixStackRef stack, float radians);
 
     @Generated
     @Inline
@@ -1514,44 +1522,51 @@ public final class GLKit {
     @CFunction
     @ByValue
     public static native GLKVector3 GLKMathProject(@ByValue GLKVector3 object, @ByValue GLKMatrix4 model,
-            @ByValue GLKMatrix4 projection, IntPtr viewport);
+            @ByValue GLKMatrix4 projection, @NotNull IntPtr viewport);
 
     @Generated
     @CFunction
     @ByValue
     public static native GLKVector3 GLKMathUnproject(@ByValue GLKVector3 window, @ByValue GLKMatrix4 model,
-            @ByValue GLKMatrix4 projection, IntPtr viewport, BoolPtr success);
+            @ByValue GLKMatrix4 projection, @NotNull IntPtr viewport, @Nullable BoolPtr success);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromGLKMatrix2(@ByValue GLKMatrix2 matrix);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromGLKMatrix3(@ByValue GLKMatrix3 matrix);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromGLKMatrix4(@ByValue GLKMatrix4 matrix);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromGLKVector2(@ByValue GLKVector2 vector);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromGLKVector3(@ByValue GLKVector3 vector);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
     public static native String NSStringFromGLKVector4(@ByValue GLKVector4 vector);
 
+    @NotNull
     @Generated
     @CFunction
     @MappedReturn(ObjCStringMapper.class)
@@ -1589,6 +1604,7 @@ public final class GLKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1602,6 +1618,7 @@ public final class GLKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1617,6 +1634,7 @@ public final class GLKit {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1631,6 +1649,7 @@ public final class GLKit {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1643,6 +1662,7 @@ public final class GLKit {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1655,6 +1675,7 @@ public final class GLKit {
      * Has no effect on non-grayscale images and on OS X.
      * False by default.
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1665,6 +1686,7 @@ public final class GLKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1678,6 +1700,7 @@ public final class GLKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1691,6 +1714,7 @@ public final class GLKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -1702,6 +1726,7 @@ public final class GLKit {
      * Deprecated-Since: 12.0
      * Deprecated-Message: OpenGLES API deprecated. (Define GLES_SILENCE_DEPRECATION to silence these warnings)
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()

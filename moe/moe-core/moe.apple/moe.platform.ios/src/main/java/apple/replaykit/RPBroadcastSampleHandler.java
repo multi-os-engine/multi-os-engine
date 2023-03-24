@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * RPBroadcastSampleHandler
@@ -79,22 +81,25 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,7 +197,7 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      */
     @Generated
     @Selector("broadcastStartedWithSetupInfo:")
-    public native void broadcastStartedWithSetupInfo(NSDictionary<String, ? extends NSObject> setupInfo);
+    public native void broadcastStartedWithSetupInfo(@Nullable NSDictionary<String, ? extends NSObject> setupInfo);
 
     /**
      * Method that should be called when broadcasting can not proceed due to an error. Calling this method will stop the
@@ -202,7 +208,7 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      */
     @Generated
     @Selector("finishBroadcastWithError:")
-    public native void finishBroadcastWithError(NSError error);
+    public native void finishBroadcastWithError(@NotNull NSError error);
 
     @Generated
     @Selector("init")
@@ -217,7 +223,8 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      */
     @Generated
     @Selector("processSampleBuffer:withType:")
-    public native void processSampleBufferWithType(CMSampleBufferRef sampleBuffer, @NInt long sampleBufferType);
+    public native void processSampleBufferWithType(@NotNull CMSampleBufferRef sampleBuffer,
+            @NInt long sampleBufferType);
 
     /**
      * Method is called when broadcast is started from Control Center and provides extension information about the first
@@ -230,5 +237,5 @@ public class RPBroadcastSampleHandler extends RPBroadcastHandler {
      */
     @Generated
     @Selector("broadcastAnnotatedWithApplicationInfo:")
-    public native void broadcastAnnotatedWithApplicationInfo(NSDictionary<?, ?> applicationInfo);
+    public native void broadcastAnnotatedWithApplicationInfo(@NotNull NSDictionary<?, ?> applicationInfo);
 }

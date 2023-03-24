@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MDLVertexDescriptor
@@ -86,22 +88,25 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -174,7 +180,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("addOrReplaceAttribute:")
-    public native void addOrReplaceAttribute(MDLVertexAttribute attribute);
+    public native void addOrReplaceAttribute(@NotNull MDLVertexAttribute attribute);
 
     /**
      * attributeNamed:
@@ -184,9 +190,10 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      * @return The attribute with the supplied name or nil if attribute with the given
      *         name does not exist in the descriptor object
      */
+    @Nullable
     @Generated
     @Selector("attributeNamed:")
-    public native MDLVertexAttribute attributeNamed(String name);
+    public native MDLVertexAttribute attributeNamed(@NotNull String name);
 
     /**
      * [@property] attributes
@@ -196,15 +203,17 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      * ay describing the current attribute state of vertex buffers in an
      * MDLMesh mesh
      */
+    @NotNull
     @Generated
     @Selector("attributes")
     public native NSMutableArray<MDLVertexAttribute> attributes();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -219,7 +228,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithVertexDescriptor:")
-    public native MDLVertexDescriptor initWithVertexDescriptor(MDLVertexDescriptor vertexDescriptor);
+    public native MDLVertexDescriptor initWithVertexDescriptor(@NotNull MDLVertexDescriptor vertexDescriptor);
 
     /**
      * [@property] layouts
@@ -229,6 +238,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      * An array describing the current layout state of vertex buffers in an
      * MDLMesh mesh
      */
+    @NotNull
     @Generated
     @Selector("layouts")
     public native NSMutableArray<MDLVertexBufferLayout> layouts();
@@ -240,7 +250,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("removeAttributeNamed:")
-    public native void removeAttributeNamed(String name);
+    public native void removeAttributeNamed(@NotNull String name);
 
     /**
      * reset
@@ -261,7 +271,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setAttributes:")
-    public native void setAttributes(NSMutableArray<MDLVertexAttribute> value);
+    public native void setAttributes(@NotNull NSMutableArray<MDLVertexAttribute> value);
 
     /**
      * [@property] layouts
@@ -273,7 +283,7 @@ public class MDLVertexDescriptor extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setLayouts:")
-    public native void setLayouts(NSMutableArray<MDLVertexBufferLayout> value);
+    public native void setLayouts(@NotNull NSMutableArray<MDLVertexBufferLayout> value);
 
     /**
      * setPackedOffsets

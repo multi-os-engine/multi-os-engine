@@ -52,6 +52,8 @@ import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.2
@@ -86,7 +88,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("bezierPath")
@@ -99,7 +101,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("bezierPathWithCGPath:")
-    public static native UIBezierPath bezierPathWithCGPath(CGPathRef CGPath);
+    public static native UIBezierPath bezierPathWithCGPath(@NotNull CGPathRef CGPath);
 
     @Generated
     @Selector("bezierPathWithOvalInRect:")
@@ -124,18 +126,21 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -170,9 +175,10 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -200,6 +206,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("CGPath")
     public native CGPathRef CGPath();
@@ -234,7 +241,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
      */
     @Generated
     @Selector("appendPath:")
-    public native void appendPath(UIBezierPath bezierPath);
+    public native void appendPath(@NotNull UIBezierPath bezierPath);
 
     /**
      * Transforming paths
@@ -248,6 +255,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("bezierPathByReversingPath")
     public native UIBezierPath bezierPathByReversingPath();
@@ -265,11 +273,12 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
     @Selector("containsPoint:")
     public native boolean containsPoint(@ByValue CGPoint point);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("currentPoint")
@@ -278,7 +287,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * Path operations on the current graphics context
@@ -301,7 +310,8 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("getLineDash:count:phase:")
-    public native void getLineDashCountPhase(NFloatPtr pattern, NIntPtr count, NFloatPtr phase);
+    public native void getLineDashCountPhase(@Nullable NFloatPtr pattern, @Nullable NIntPtr count,
+            @Nullable NFloatPtr phase);
 
     @Generated
     @Selector("init")
@@ -309,7 +319,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBezierPath initWithCoder(NSCoder coder);
+    public native UIBezierPath initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Path info
@@ -360,7 +370,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
      */
     @Generated
     @Selector("setCGPath:")
-    public native void setCGPath(CGPathRef value);
+    public native void setCGPath(@NotNull CGPathRef value);
 
     @Generated
     @Selector("setFlatness:")
@@ -372,7 +382,7 @@ public class UIBezierPath extends NSObject implements NSCopying, NSSecureCoding 
 
     @Generated
     @Selector("setLineDash:count:phase:")
-    public native void setLineDashCountPhase(ConstNFloatPtr pattern, @NInt long count, @NFloat double phase);
+    public native void setLineDashCountPhase(@Nullable ConstNFloatPtr pattern, @NInt long count, @NFloat double phase);
 
     @Generated
     @Selector("setLineJoinStyle:")

@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * HKAudiogramSample
@@ -76,27 +78,30 @@ public class HKAudiogramSample extends HKSample {
     @Generated
     @Selector("audiogramSampleWithSensitivityPoints:startDate:endDate:metadata:")
     public static native HKAudiogramSample audiogramSampleWithSensitivityPointsStartDateEndDateMetadata(
-            NSArray<? extends HKAudiogramSensitivityPoint> sensitivityPoints, NSDate startDate, NSDate endDate,
-            NSDictionary<String, ?> metadata);
+            @NotNull NSArray<? extends HKAudiogramSensitivityPoint> sensitivityPoints, @NotNull NSDate startDate,
+            @NotNull NSDate endDate, @Nullable NSDictionary<String, ?> metadata);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,7 +125,7 @@ public class HKAudiogramSample extends HKSample {
 
     @Generated
     @Selector("initWithCoder:")
-    public native HKAudiogramSample initWithCoder(NSCoder coder);
+    public native HKAudiogramSample initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -139,9 +144,10 @@ public class HKAudiogramSample extends HKSample {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,6 +167,7 @@ public class HKAudiogramSample extends HKSample {
      * 
      * The hearing sensitivity readings associated with a hearing test.
      */
+    @NotNull
     @Generated
     @Selector("sensitivityPoints")
     public native NSArray<? extends HKAudiogramSensitivityPoint> sensitivityPoints();

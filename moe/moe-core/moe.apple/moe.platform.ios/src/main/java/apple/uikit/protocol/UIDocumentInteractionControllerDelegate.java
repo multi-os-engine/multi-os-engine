@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.2
@@ -49,16 +51,16 @@ public interface UIDocumentInteractionControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("documentInteractionController:canPerformAction:")
-    default boolean documentInteractionControllerCanPerformAction(UIDocumentInteractionController controller,
-            SEL action) {
+    default boolean documentInteractionControllerCanPerformAction(@NotNull UIDocumentInteractionController controller,
+            @Nullable SEL action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("documentInteractionController:didEndSendingToApplication:")
-    default void documentInteractionControllerDidEndSendingToApplication(UIDocumentInteractionController controller,
-            String application) {
+    default void documentInteractionControllerDidEndSendingToApplication(
+            @NotNull UIDocumentInteractionController controller, @Nullable String application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -70,7 +72,8 @@ public interface UIDocumentInteractionControllerDelegate {
     @IsOptional
     @Deprecated
     @Selector("documentInteractionController:performAction:")
-    default boolean documentInteractionControllerPerformAction(UIDocumentInteractionController controller, SEL action) {
+    default boolean documentInteractionControllerPerformAction(@NotNull UIDocumentInteractionController controller,
+            @Nullable SEL action) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,29 +83,31 @@ public interface UIDocumentInteractionControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentInteractionController:willBeginSendingToApplication:")
-    default void documentInteractionControllerWillBeginSendingToApplication(UIDocumentInteractionController controller,
-            String application) {
+    default void documentInteractionControllerWillBeginSendingToApplication(
+            @NotNull UIDocumentInteractionController controller, @Nullable String application) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidDismissOpenInMenu:")
-    default void documentInteractionControllerDidDismissOpenInMenu(UIDocumentInteractionController controller) {
+    default void documentInteractionControllerDidDismissOpenInMenu(
+            @NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidDismissOptionsMenu:")
-    default void documentInteractionControllerDidDismissOptionsMenu(UIDocumentInteractionController controller) {
+    default void documentInteractionControllerDidDismissOptionsMenu(
+            @NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerDidEndPreview:")
-    default void documentInteractionControllerDidEndPreview(UIDocumentInteractionController controller) {
+    default void documentInteractionControllerDidEndPreview(@NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,7 +123,7 @@ public interface UIDocumentInteractionControllerDelegate {
     @IsOptional
     @Selector("documentInteractionControllerRectForPreview:")
     @ByValue
-    default CGRect documentInteractionControllerRectForPreview(UIDocumentInteractionController controller) {
+    default CGRect documentInteractionControllerRectForPreview(@NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,18 +133,20 @@ public interface UIDocumentInteractionControllerDelegate {
      * If presenting atop a navigation stack, provide the navigation controller in order to animate in a manner
      * consistent with the rest of the platform.
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerViewControllerForPreview:")
     default UIViewController documentInteractionControllerViewControllerForPreview(
-            UIDocumentInteractionController controller) {
+            @NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerViewForPreview:")
-    default UIView documentInteractionControllerViewForPreview(UIDocumentInteractionController controller) {
+    default UIView documentInteractionControllerViewForPreview(@NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,7 +156,7 @@ public interface UIDocumentInteractionControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillBeginPreview:")
-    default void documentInteractionControllerWillBeginPreview(UIDocumentInteractionController controller) {
+    default void documentInteractionControllerWillBeginPreview(@NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -159,7 +166,8 @@ public interface UIDocumentInteractionControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillPresentOpenInMenu:")
-    default void documentInteractionControllerWillPresentOpenInMenu(UIDocumentInteractionController controller) {
+    default void documentInteractionControllerWillPresentOpenInMenu(
+            @NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,7 +177,8 @@ public interface UIDocumentInteractionControllerDelegate {
     @Generated
     @IsOptional
     @Selector("documentInteractionControllerWillPresentOptionsMenu:")
-    default void documentInteractionControllerWillPresentOptionsMenu(UIDocumentInteractionController controller) {
+    default void documentInteractionControllerWillPresentOptionsMenu(
+            @NotNull UIDocumentInteractionController controller) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

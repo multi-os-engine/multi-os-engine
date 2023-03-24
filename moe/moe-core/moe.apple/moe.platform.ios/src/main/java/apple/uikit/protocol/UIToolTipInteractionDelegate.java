@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 15.0
@@ -28,10 +30,11 @@ public interface UIToolTipInteractionDelegate {
      * @return The tool tip configuration containing the string and rectangle for this interaction. Return nil if the
      *         interaction is inactive or the hit test fails.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("toolTipInteraction:configurationAtPoint:")
-    default UIToolTipConfiguration toolTipInteractionConfigurationAtPoint(UIToolTipInteraction interaction,
+    default UIToolTipConfiguration toolTipInteractionConfigurationAtPoint(@NotNull UIToolTipInteraction interaction,
             @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }

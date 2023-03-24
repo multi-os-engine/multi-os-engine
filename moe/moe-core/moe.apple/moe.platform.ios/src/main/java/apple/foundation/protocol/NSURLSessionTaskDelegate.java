@@ -34,6 +34,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Messages related to the operation of a specific task.
@@ -52,7 +54,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:didCompleteWithError:")
-    default void URLSessionTaskDidCompleteWithError(NSURLSession session, NSURLSessionTask task, NSError error) {
+    default void URLSessionTaskDidCompleteWithError(@NotNull NSURLSession session, @NotNull NSURLSessionTask task,
+            @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,8 +67,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:didFinishCollectingMetrics:")
-    default void URLSessionTaskDidFinishCollectingMetrics(NSURLSession session, NSURLSessionTask task,
-            NSURLSessionTaskMetrics metrics) {
+    default void URLSessionTaskDidFinishCollectingMetrics(@NotNull NSURLSession session, @NotNull NSURLSessionTask task,
+            @NotNull NSURLSessionTaskMetrics metrics) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,9 +81,9 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:didReceiveChallenge:completionHandler:")
-    default void URLSessionTaskDidReceiveChallengeCompletionHandler(NSURLSession session, NSURLSessionTask task,
-            NSURLAuthenticationChallenge challenge,
-            @ObjCBlock(name = "call_URLSessionTaskDidReceiveChallengeCompletionHandler") Block_URLSessionTaskDidReceiveChallengeCompletionHandler completionHandler) {
+    default void URLSessionTaskDidReceiveChallengeCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionTask task, @NotNull NSURLAuthenticationChallenge challenge,
+            @NotNull @ObjCBlock(name = "call_URLSessionTaskDidReceiveChallengeCompletionHandler") Block_URLSessionTaskDidReceiveChallengeCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,8 +94,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:didSendBodyData:totalBytesSent:totalBytesExpectedToSend:")
-    default void URLSessionTaskDidSendBodyDataTotalBytesSentTotalBytesExpectedToSend(NSURLSession session,
-            NSURLSessionTask task, long bytesSent, long totalBytesSent, long totalBytesExpectedToSend) {
+    default void URLSessionTaskDidSendBodyDataTotalBytesSentTotalBytesExpectedToSend(@NotNull NSURLSession session,
+            @NotNull NSURLSessionTask task, long bytesSent, long totalBytesSent, long totalBytesExpectedToSend) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,8 +107,8 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:needNewBodyStream:")
-    default void URLSessionTaskNeedNewBodyStream(NSURLSession session, NSURLSessionTask task,
-            @ObjCBlock(name = "call_URLSessionTaskNeedNewBodyStream") Block_URLSessionTaskNeedNewBodyStream completionHandler) {
+    default void URLSessionTaskNeedNewBodyStream(@NotNull NSURLSession session, @NotNull NSURLSessionTask task,
+            @NotNull @ObjCBlock(name = "call_URLSessionTaskNeedNewBodyStream") Block_URLSessionTaskNeedNewBodyStream completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,9 +125,9 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:willPerformHTTPRedirection:newRequest:completionHandler:")
-    default void URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler(NSURLSession session,
-            NSURLSessionTask task, NSHTTPURLResponse response, NSURLRequest request,
-            @ObjCBlock(name = "call_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler") Block_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler completionHandler) {
+    default void URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionTask task, @NotNull NSHTTPURLResponse response, @NotNull NSURLRequest request,
+            @NotNull @ObjCBlock(name = "call_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler") Block_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,21 +136,21 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     public interface Block_URLSessionTaskDidReceiveChallengeCompletionHandler {
         @Generated
         void call_URLSessionTaskDidReceiveChallengeCompletionHandler(@NInt long disposition,
-                NSURLCredential credential);
+                @Nullable NSURLCredential credential);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_URLSessionTaskNeedNewBodyStream {
         @Generated
-        void call_URLSessionTaskNeedNewBodyStream(NSInputStream bodyStream);
+        void call_URLSessionTaskNeedNewBodyStream(@Nullable NSInputStream bodyStream);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler {
         @Generated
-        void call_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler(NSURLRequest arg0);
+        void call_URLSessionTaskWillPerformHTTPRedirectionNewRequestCompletionHandler(@Nullable NSURLRequest arg0);
     }
 
     /**
@@ -177,9 +180,9 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:task:willBeginDelayedRequest:completionHandler:")
-    default void URLSessionTaskWillBeginDelayedRequestCompletionHandler(NSURLSession session, NSURLSessionTask task,
-            NSURLRequest request,
-            @ObjCBlock(name = "call_URLSessionTaskWillBeginDelayedRequestCompletionHandler") Block_URLSessionTaskWillBeginDelayedRequestCompletionHandler completionHandler) {
+    default void URLSessionTaskWillBeginDelayedRequestCompletionHandler(@NotNull NSURLSession session,
+            @NotNull NSURLSessionTask task, @NotNull NSURLRequest request,
+            @NotNull @ObjCBlock(name = "call_URLSessionTaskWillBeginDelayedRequestCompletionHandler") Block_URLSessionTaskWillBeginDelayedRequestCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,7 +191,7 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     public interface Block_URLSessionTaskWillBeginDelayedRequestCompletionHandler {
         @Generated
         void call_URLSessionTaskWillBeginDelayedRequestCompletionHandler(@NInt long disposition,
-                NSURLRequest newRequest);
+                @Nullable NSURLRequest newRequest);
     }
 
     /**
@@ -207,7 +210,7 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:taskIsWaitingForConnectivity:")
-    default void URLSessionTaskIsWaitingForConnectivity(NSURLSession session, NSURLSessionTask task) {
+    default void URLSessionTaskIsWaitingForConnectivity(@NotNull NSURLSession session, @NotNull NSURLSessionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,7 +226,7 @@ public interface NSURLSessionTaskDelegate extends NSURLSessionDelegate {
     @Generated
     @IsOptional
     @Selector("URLSession:didCreateTask:")
-    default void URLSessionDidCreateTask(NSURLSession session, NSURLSessionTask task) {
+    default void URLSessionDidCreateTask(@NotNull NSURLSession session, @NotNull NSURLSessionTask task) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

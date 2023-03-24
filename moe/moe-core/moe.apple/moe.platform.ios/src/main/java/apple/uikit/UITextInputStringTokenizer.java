@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A recommended base implementation of the tokenizer protocol. Subclasses are responsible
@@ -75,22 +77,25 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -125,9 +130,10 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -161,25 +167,27 @@ public class UITextInputStringTokenizer extends NSObject implements UITextInputT
 
     @Generated
     @Selector("initWithTextInput:")
-    public native UITextInputStringTokenizer initWithTextInput(UIResponder textInput);
+    public native UITextInputStringTokenizer initWithTextInput(@NotNull UIResponder textInput);
 
     @Generated
     @Selector("isPosition:atBoundary:inDirection:")
-    public native boolean isPositionAtBoundaryInDirection(UITextPosition position, @NInt long granularity,
+    public native boolean isPositionAtBoundaryInDirection(@NotNull UITextPosition position, @NInt long granularity,
             @NInt long direction);
 
     @Generated
     @Selector("isPosition:withinTextUnit:inDirection:")
-    public native boolean isPositionWithinTextUnitInDirection(UITextPosition position, @NInt long granularity,
+    public native boolean isPositionWithinTextUnitInDirection(@NotNull UITextPosition position, @NInt long granularity,
             @NInt long direction);
 
+    @Nullable
     @Generated
     @Selector("positionFromPosition:toBoundary:inDirection:")
-    public native UITextPosition positionFromPositionToBoundaryInDirection(UITextPosition position,
+    public native UITextPosition positionFromPositionToBoundaryInDirection(@NotNull UITextPosition position,
             @NInt long granularity, @NInt long direction);
 
+    @Nullable
     @Generated
     @Selector("rangeEnclosingPosition:withGranularity:inDirection:")
-    public native UITextRange rangeEnclosingPositionWithGranularityInDirection(UITextPosition position,
+    public native UITextRange rangeEnclosingPositionWithGranularityInDirection(@NotNull UITextPosition position,
             @NInt long granularity, @NInt long direction);
 }

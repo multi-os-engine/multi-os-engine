@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * An object conforming to \c GCDirectionPadElement represents a four-way
@@ -28,6 +29,7 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The negative y-component of the dpad input.
      */
+    @NotNull
     @Generated
     @Selector("down")
     @MappedReturn(ObjCObjectMapper.class)
@@ -36,6 +38,7 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The negative x-component of the dpad input.
      */
+    @NotNull
     @Generated
     @Selector("left")
     @MappedReturn(ObjCObjectMapper.class)
@@ -44,6 +47,7 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The positive x-component of the dpad input.
      */
+    @NotNull
     @Generated
     @Selector("right")
     @MappedReturn(ObjCObjectMapper.class)
@@ -52,6 +56,7 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The positive y-component of the dpad input.
      */
+    @NotNull
     @Generated
     @Selector("up")
     @MappedReturn(ObjCObjectMapper.class)
@@ -60,6 +65,7 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The horizontal/x-component of the dpad input.
      */
+    @NotNull
     @Generated
     @Selector("xAxis")
     @MappedReturn(ObjCObjectMapper.class)
@@ -68,6 +74,7 @@ public interface GCDirectionPadElement extends GCPhysicalInputElement {
     /**
      * The vertical/y-component of the dpad input.
      */
+    @NotNull
     @Generated
     @Selector("yAxis")
     @MappedReturn(ObjCObjectMapper.class)

@@ -30,6 +30,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("AVFoundation")
@@ -52,7 +53,7 @@ public interface AVVideoCompositionValidationHandling {
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingEmptyTimeRange:")
     default boolean videoCompositionShouldContinueValidatingAfterFindingEmptyTimeRange(
-            AVVideoComposition videoComposition, @ByValue CMTimeRange timeRange) {
+            @NotNull AVVideoComposition videoComposition, @ByValue CMTimeRange timeRange) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -77,8 +78,8 @@ public interface AVVideoCompositionValidationHandling {
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction:")
     default boolean videoCompositionShouldContinueValidatingAfterFindingInvalidTimeRangeInInstruction(
-            AVVideoComposition videoComposition,
-            @Mapped(ObjCObjectMapper.class) AVVideoCompositionInstruction videoCompositionInstruction) {
+            @NotNull AVVideoComposition videoComposition,
+            @NotNull @Mapped(ObjCObjectMapper.class) AVVideoCompositionInstruction videoCompositionInstruction) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -100,9 +101,9 @@ public interface AVVideoCompositionValidationHandling {
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidTrackIDInInstruction:layerInstruction:asset:")
     default boolean videoCompositionShouldContinueValidatingAfterFindingInvalidTrackIDInInstructionLayerInstructionAsset(
-            AVVideoComposition videoComposition,
-            @Mapped(ObjCObjectMapper.class) AVVideoCompositionInstruction videoCompositionInstruction,
-            AVVideoCompositionLayerInstruction layerInstruction, AVAsset asset) {
+            @NotNull AVVideoComposition videoComposition,
+            @NotNull @Mapped(ObjCObjectMapper.class) AVVideoCompositionInstruction videoCompositionInstruction,
+            @NotNull AVVideoCompositionLayerInstruction layerInstruction, @NotNull AVAsset asset) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -122,7 +123,7 @@ public interface AVVideoCompositionValidationHandling {
     @IsOptional
     @Selector("videoComposition:shouldContinueValidatingAfterFindingInvalidValueForKey:")
     default boolean videoCompositionShouldContinueValidatingAfterFindingInvalidValueForKey(
-            AVVideoComposition videoComposition, String key) {
+            @NotNull AVVideoComposition videoComposition, @NotNull String key) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

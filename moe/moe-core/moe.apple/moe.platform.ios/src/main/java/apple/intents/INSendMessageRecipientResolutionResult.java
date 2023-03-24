@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -55,30 +57,34 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithPersonToConfirm:")
     public static native INSendMessageRecipientResolutionResult confirmationRequiredWithPersonToConfirm(
-            INPerson personToConfirm);
+            @Nullable INPerson personToConfirm);
 
     @Generated
     @Selector("debugDescription")
@@ -88,10 +94,11 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("disambiguationWithPeopleToDisambiguate:")
     public static native INSendMessageRecipientResolutionResult disambiguationWithPeopleToDisambiguate(
-            NSArray<? extends INPerson> peopleToDisambiguate);
+            @NotNull NSArray<? extends INPerson> peopleToDisambiguate);
 
     @Generated
     @Selector("hash")
@@ -105,7 +112,7 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Generated
     @Selector("initWithPersonResolutionResult:")
     public native INSendMessageRecipientResolutionResult initWithPersonResolutionResult(
-            INPersonResolutionResult personResolutionResult);
+            @NotNull INPersonResolutionResult personResolutionResult);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -124,10 +131,12 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INSendMessageRecipientResolutionResult needsValue();
@@ -137,6 +146,7 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("new")
     public static native INSendMessageRecipientResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INSendMessageRecipientResolutionResult notRequired();
@@ -153,18 +163,22 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @Selector("setVersion:")
     public static native void setVersion_static(@NInt long aVersion);
 
+    @NotNull
     @Generated
     @Selector("successWithResolvedPerson:")
-    public static native INSendMessageRecipientResolutionResult successWithResolvedPerson(INPerson resolvedPerson);
+    public static native INSendMessageRecipientResolutionResult successWithResolvedPerson(
+            @NotNull INPerson resolvedPerson);
 
     @Generated
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INSendMessageRecipientResolutionResult unsupported();
 
+    @NotNull
     @Generated
     @Selector("unsupportedForReason:")
     public static native INSendMessageRecipientResolutionResult unsupportedForReason(@NInt long reason);
@@ -174,11 +188,13 @@ public class INSendMessageRecipientResolutionResult extends INPersonResolutionRe
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INSendMessageRecipientResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INSendMessageRecipientResolutionResult unsupportedWithReason(@NInt long reason);

@@ -11,6 +11,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] AVCustomRoutingControllerDelegate
@@ -32,8 +33,8 @@ public interface AVCustomRoutingControllerDelegate {
     @Generated
     @IsOptional
     @Selector("customRoutingController:didSelectItem:")
-    default void customRoutingControllerDidSelectItem(AVCustomRoutingController controller,
-            AVCustomRoutingActionItem customActionItem) {
+    default void customRoutingControllerDidSelectItem(@NotNull AVCustomRoutingController controller,
+            @NotNull AVCustomRoutingActionItem customActionItem) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -51,8 +52,8 @@ public interface AVCustomRoutingControllerDelegate {
     @Generated
     @IsOptional
     @Selector("customRoutingController:eventDidTimeOut:")
-    default void customRoutingControllerEventDidTimeOut(AVCustomRoutingController controller,
-            AVCustomRoutingEvent event) {
+    default void customRoutingControllerEventDidTimeOut(@NotNull AVCustomRoutingController controller,
+            @NotNull AVCustomRoutingEvent event) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,9 +74,9 @@ public interface AVCustomRoutingControllerDelegate {
      */
     @Generated
     @Selector("customRoutingController:handleEvent:completionHandler:")
-    void customRoutingControllerHandleEventCompletionHandler(AVCustomRoutingController controller,
-            AVCustomRoutingEvent event,
-            @ObjCBlock(name = "call_customRoutingControllerHandleEventCompletionHandler") Block_customRoutingControllerHandleEventCompletionHandler completionHandler);
+    void customRoutingControllerHandleEventCompletionHandler(@NotNull AVCustomRoutingController controller,
+            @NotNull AVCustomRoutingEvent event,
+            @NotNull @ObjCBlock(name = "call_customRoutingControllerHandleEventCompletionHandler") Block_customRoutingControllerHandleEventCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

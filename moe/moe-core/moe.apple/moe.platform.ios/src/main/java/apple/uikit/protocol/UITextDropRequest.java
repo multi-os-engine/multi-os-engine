@@ -10,6 +10,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 11.0
@@ -22,6 +23,7 @@ public interface UITextDropRequest {
     /**
      * The text position that the drag is over.
      */
+    @NotNull
     @Generated
     @Selector("dropPosition")
     UITextPosition dropPosition();
@@ -30,6 +32,7 @@ public interface UITextDropRequest {
      * The current drop session. Use this to get the location of the
      * session in the view, for example.
      */
+    @NotNull
     @Generated
     @Selector("dropSession")
     @MappedReturn(ObjCObjectMapper.class)
@@ -46,6 +49,7 @@ public interface UITextDropRequest {
     /**
      * The suggested proposal by the text control.
      */
+    @NotNull
     @Generated
     @Selector("suggestedProposal")
     UITextDropProposal suggestedProposal();

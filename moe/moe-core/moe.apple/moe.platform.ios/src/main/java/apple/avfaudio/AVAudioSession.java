@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 3.0
@@ -79,7 +81,7 @@ public class AVAudioSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Get the list of categories available on the device. Certain categories may be unavailable on
@@ -88,6 +90,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("availableCategories")
     public native NSArray<String> availableCategories();
@@ -101,6 +104,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("availableInputs")
     public native NSArray<? extends AVAudioSessionPortDescription> availableInputs();
@@ -112,19 +116,21 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("availableModes")
     public native NSArray<String> availableModes();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * Get session category.
@@ -132,6 +138,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("category")
     public native String category();
@@ -146,10 +153,12 @@ public class AVAudioSession extends NSObject {
     @NUInt
     public native long categoryOptions();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -191,6 +200,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("currentRoute")
     public native AVAudioSessionRouteDescription currentRoute();
@@ -204,6 +214,7 @@ public class AVAudioSession extends NSObject {
      * Deprecated-Since: 6.0
      * Deprecated-Message: No longer supported
      */
+    @Nullable
     @Generated
     @Deprecated
     @Selector("delegate")
@@ -235,6 +246,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("inputDataSource")
     public native AVAudioSessionDataSourceDescription inputDataSource();
@@ -253,6 +265,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("inputDataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> inputDataSources();
@@ -359,9 +372,10 @@ public class AVAudioSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Returns the largest number of audio input channels available for the current route
@@ -388,6 +402,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("mode")
     public native String mode();
@@ -402,6 +417,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("outputDataSource")
     public native AVAudioSessionDataSourceDescription outputDataSource();
@@ -411,6 +427,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("outputDataSources")
     public native NSArray<? extends AVAudioSessionDataSourceDescription> outputDataSources();
@@ -457,7 +474,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("overrideOutputAudioPort:error:")
     public native boolean overrideOutputAudioPortError(@NUInt long portOverride,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * API-Since: 3.0
@@ -480,6 +497,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("preferredInput")
     public native AVAudioSessionPortDescription preferredInput();
@@ -540,7 +558,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("prepareRouteSelectionForPlaybackWithCompletionHandler:")
     public native void prepareRouteSelectionForPlaybackWithCompletionHandler(
-            @ObjCBlock(name = "call_prepareRouteSelectionForPlaybackWithCompletionHandler") Block_prepareRouteSelectionForPlaybackWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_prepareRouteSelectionForPlaybackWithCompletionHandler") Block_prepareRouteSelectionForPlaybackWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -586,7 +604,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("requestRecordPermission:")
     public native void requestRecordPermission(
-            @ObjCBlock(name = "call_requestRecordPermission") Block_requestRecordPermission response);
+            @NotNull @ObjCBlock(name = "call_requestRecordPermission") Block_requestRecordPermission response);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -662,7 +680,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setActive:error:")
-    public native boolean setActiveError(boolean active, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setActiveError(boolean active,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * API-Since: 4.0
@@ -672,7 +691,7 @@ public class AVAudioSession extends NSObject {
     @Deprecated
     @Selector("setActive:withFlags:error:")
     public native boolean setActiveWithFlagsError(boolean active, @NInt long flags,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * API-Since: 6.0
@@ -680,7 +699,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setActive:withOptions:error:")
     public native boolean setActiveWithOptionsError(boolean active, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Controls whether audio input and output are aggregated. Only valid in combination with
@@ -694,7 +713,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setAggregatedIOPreference:error:")
     public native boolean setAggregatedIOPreferenceError(@NUInt long inIOType,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set allowHapticsAndSystemSoundsDuringRecording to YES in order to allow system sounds and haptics to play while
@@ -706,7 +725,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setAllowHapticsAndSystemSoundsDuringRecording:error:")
     public native boolean setAllowHapticsAndSystemSoundsDuringRecordingError(boolean inValue,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set session category.
@@ -715,7 +734,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setCategory:error:")
-    public native boolean setCategoryError(String category, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setCategoryError(@NotNull String category,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set session category and mode with options.
@@ -724,8 +744,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setCategory:mode:options:error:")
-    public native boolean setCategoryModeOptionsError(String category, String mode, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setCategoryModeOptionsError(@NotNull String category, @NotNull String mode,
+            @NUInt long options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set session category, mode, routing sharing policy, and options.
@@ -745,8 +765,9 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setCategory:mode:routeSharingPolicy:options:error:")
-    public native boolean setCategoryModeRouteSharingPolicyOptionsError(String category, String mode,
-            @NUInt long policy, @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setCategoryModeRouteSharingPolicyOptionsError(@NotNull String category, @NotNull String mode,
+            @NUInt long policy, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set session category with options.
@@ -755,8 +776,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setCategory:withOptions:error:")
-    public native boolean setCategoryWithOptionsError(String category, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setCategoryWithOptionsError(@NotNull String category, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * API-Since: 4.0
@@ -766,7 +787,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Deprecated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) AVAudioSessionDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioSessionDelegate value);
 
     /**
      * API-Since: 4.0
@@ -775,7 +796,7 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Deprecated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) AVAudioSessionDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) AVAudioSessionDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -793,8 +814,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setInputDataSource:error:")
-    public native boolean setInputDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setInputDataSourceError(@Nullable AVAudioSessionDataSourceDescription dataSource,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * A value defined over the range [0.0, 1.0], with 0.0 corresponding to the lowest analog
@@ -811,7 +832,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setInputGain:error:")
-    public native boolean setInputGainError(float gain, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setInputGainError(float gain,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set the session's mode.
@@ -824,7 +846,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setMode:error:")
-    public native boolean setModeError(String mode, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setModeError(@NotNull String mode,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Select a new output data source. Setting a nil value will clear the data source preference.
@@ -833,8 +856,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setOutputDataSource:error:")
-    public native boolean setOutputDataSourceError(AVAudioSessionDataSourceDescription dataSource,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setOutputDataSourceError(@Nullable AVAudioSessionDataSourceDescription dataSource,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * API-Since: 3.0
@@ -844,7 +867,7 @@ public class AVAudioSession extends NSObject {
     @Deprecated
     @Selector("setPreferredHardwareSampleRate:error:")
     public native boolean setPreferredHardwareSampleRateError(double sampleRate,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The preferred hardware IO buffer duration in seconds. The actual IO buffer duration may be
@@ -855,7 +878,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPreferredIOBufferDuration:error:")
     public native boolean setPreferredIOBufferDurationError(double duration,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Select a preferred input port for audio routing.
@@ -868,8 +891,8 @@ public class AVAudioSession extends NSObject {
      */
     @Generated
     @Selector("setPreferredInput:error:")
-    public native boolean setPreferredInputError(AVAudioSessionPortDescription inPort,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean setPreferredInputError(@Nullable AVAudioSessionPortDescription inPort,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Sets the number of input channels that the app would prefer for the current route
@@ -879,7 +902,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPreferredInputNumberOfChannels:error:")
     public native boolean setPreferredInputNumberOfChannelsError(@NInt long count,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Sets the preferred input orientation.
@@ -895,7 +918,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPreferredInputOrientation:error:")
     public native boolean setPreferredInputOrientationError(@NInt long orientation,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Sets the number of output channels that the app would prefer for the current route
@@ -905,7 +928,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPreferredOutputNumberOfChannels:error:")
     public native boolean setPreferredOutputNumberOfChannelsError(@NInt long count,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * The preferred hardware sample rate for the session. The actual sample rate may be different.
@@ -915,7 +938,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPreferredSampleRate:error:")
     public native boolean setPreferredSampleRateError(double sampleRate,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set ringtone and alert interruption preference.
@@ -936,7 +959,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setPrefersNoInterruptionsFromSystemAlerts:error:")
     public native boolean setPrefersNoInterruptionsFromSystemAlertsError(boolean inValue,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * Set YES to inform the system if the app can supply multichannel audio content.
@@ -950,7 +973,7 @@ public class AVAudioSession extends NSObject {
     @Generated
     @Selector("setSupportsMultichannelContent:error:")
     public native boolean setSupportsMultichannelContentError(boolean inValue,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("setVersion:")
@@ -961,6 +984,7 @@ public class AVAudioSession extends NSObject {
      * 
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @Selector("sharedInstance")
     public static native AVAudioSession sharedInstance();

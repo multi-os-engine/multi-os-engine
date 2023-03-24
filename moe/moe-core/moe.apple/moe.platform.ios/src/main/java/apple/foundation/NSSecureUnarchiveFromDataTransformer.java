@@ -18,6 +18,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A value transformer which transforms values to and from \c NSData by archiving and unarchiving using secure coding.
@@ -60,6 +62,7 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
      * 
      * Can be overridden by subclasses to provide an expanded or different set of allowed transformation classes.
      */
+    @NotNull
     @Generated
     @Selector("allowedTopLevelClasses")
     public static native NSArray<? extends Class> allowedTopLevelClasses();
@@ -70,22 +73,25 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +130,10 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -143,7 +150,8 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
 
     @Generated
     @Selector("setValueTransformer:forName:")
-    public static native void setValueTransformerForName(NSValueTransformer transformer, String name);
+    public static native void setValueTransformerForName(@Nullable NSValueTransformer transformer,
+            @NotNull String name);
 
     @Generated
     @Selector("setVersion:")
@@ -153,14 +161,17 @@ public class NSSecureUnarchiveFromDataTransformer extends NSValueTransformer {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("transformedValueClass")
     public static native Class transformedValueClass();
 
+    @Nullable
     @Generated
     @Selector("valueTransformerForName:")
-    public static native NSValueTransformer valueTransformerForName(String name);
+    public static native NSValueTransformer valueTransformerForName(@NotNull String name);
 
+    @NotNull
     @Generated
     @Selector("valueTransformerNames")
     public static native NSArray<String> valueTransformerNames();

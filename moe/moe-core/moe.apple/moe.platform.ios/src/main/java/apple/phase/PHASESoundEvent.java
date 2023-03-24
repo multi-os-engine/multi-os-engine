@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASESoundEvent
@@ -64,22 +66,25 @@ public class PHASESoundEvent extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,8 +122,8 @@ public class PHASESoundEvent extends NSObject {
      */
     @Generated
     @Selector("initWithEngine:assetIdentifier:error:")
-    public native PHASESoundEvent initWithEngineAssetIdentifierError(PHASEEngine engine, String assetIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PHASESoundEvent initWithEngineAssetIdentifierError(@NotNull PHASEEngine engine,
+            @NotNull String assetIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * initWithEngine:assetIdentifier:mixerParameters:error
@@ -139,9 +144,9 @@ public class PHASESoundEvent extends NSObject {
      */
     @Generated
     @Selector("initWithEngine:assetIdentifier:mixerParameters:error:")
-    public native PHASESoundEvent initWithEngineAssetIdentifierMixerParametersError(PHASEEngine engine,
-            String assetIdentifier, PHASEMixerParameters mixerParameters,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PHASESoundEvent initWithEngineAssetIdentifierMixerParametersError(@NotNull PHASEEngine engine,
+            @NotNull String assetIdentifier, @NotNull PHASEMixerParameters mixerParameters,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -169,15 +174,17 @@ public class PHASESoundEvent extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] metaParameters
      * 
      * A Dictionary containing the MetaParameters associated with this sound event
      */
+    @NotNull
     @Generated
     @Selector("metaParameters")
     public native NSDictionary<String, ? extends PHASEMetaParameter> metaParameters();
@@ -187,6 +194,7 @@ public class PHASESoundEvent extends NSObject {
      * 
      * A Dictionary containing the mix nodes associated with this sound event
      */
+    @NotNull
     @Generated
     @Selector("mixers")
     public native NSDictionary<String, ? extends PHASEMixer> mixers();
@@ -232,7 +240,7 @@ public class PHASESoundEvent extends NSObject {
     @Generated
     @Selector("prepareWithCompletion:")
     public native void prepareWithCompletion(
-            @ObjCBlock(name = "call_prepareWithCompletion") Block_prepareWithCompletion handler);
+            @Nullable @ObjCBlock(name = "call_prepareWithCompletion") Block_prepareWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -246,6 +254,7 @@ public class PHASESoundEvent extends NSObject {
      * 
      * A Dictionary containing the push stream nodes associated with this sound event, for pushing buffers to.
      */
+    @NotNull
     @Generated
     @Selector("pushStreamNodes")
     public native NSDictionary<String, ? extends PHASEPushStreamNode> pushStreamNodes();
@@ -294,7 +303,7 @@ public class PHASESoundEvent extends NSObject {
     @Generated
     @Selector("seekToTime:completion:")
     public native void seekToTimeCompletion(double time,
-            @ObjCBlock(name = "call_seekToTimeCompletion") Block_seekToTimeCompletion handler);
+            @Nullable @ObjCBlock(name = "call_seekToTimeCompletion") Block_seekToTimeCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -323,7 +332,7 @@ public class PHASESoundEvent extends NSObject {
     @Generated
     @Selector("startWithCompletion:")
     public native void startWithCompletion(
-            @ObjCBlock(name = "call_startWithCompletion") Block_startWithCompletion handler);
+            @Nullable @ObjCBlock(name = "call_startWithCompletion") Block_startWithCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

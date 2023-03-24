@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.NInt;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("UIKit")
@@ -35,7 +36,7 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("navigationBar:didPopItem:")
-    default void navigationBarDidPopItem(UINavigationBar navigationBar, UINavigationItem item) {
+    default void navigationBarDidPopItem(@NotNull UINavigationBar navigationBar, @NotNull UINavigationItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -45,7 +46,7 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("navigationBar:didPushItem:")
-    default void navigationBarDidPushItem(UINavigationBar navigationBar, UINavigationItem item) {
+    default void navigationBarDidPushItem(@NotNull UINavigationBar navigationBar, @NotNull UINavigationItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +56,7 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("navigationBar:shouldPopItem:")
-    default boolean navigationBarShouldPopItem(UINavigationBar navigationBar, UINavigationItem item) {
+    default boolean navigationBarShouldPopItem(@NotNull UINavigationBar navigationBar, @NotNull UINavigationItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,7 +66,8 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
     @Generated
     @IsOptional
     @Selector("navigationBar:shouldPushItem:")
-    default boolean navigationBarShouldPushItem(UINavigationBar navigationBar, UINavigationItem item) {
+    default boolean navigationBarShouldPushItem(@NotNull UINavigationBar navigationBar,
+            @NotNull UINavigationItem item) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -78,7 +80,7 @@ public interface UINavigationBarDelegate extends UIBarPositioningDelegate {
     @IsOptional
     @Selector("navigationBarNSToolbarSection:")
     @NInt
-    default long navigationBarNSToolbarSection(UINavigationBar navigationBar) {
+    default long navigationBarNSToolbarSection(@NotNull UINavigationBar navigationBar) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

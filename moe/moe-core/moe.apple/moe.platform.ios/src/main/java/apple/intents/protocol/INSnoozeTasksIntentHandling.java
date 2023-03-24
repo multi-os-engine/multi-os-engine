@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSnoozeTasksIntent. By implementing this protocol, a class can provide
@@ -46,8 +47,8 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSnoozeTasks:completion:")
-    default void confirmSnoozeTasksCompletion(INSnoozeTasksIntent intent,
-            @ObjCBlock(name = "call_confirmSnoozeTasksCompletion") Block_confirmSnoozeTasksCompletion completion) {
+    default void confirmSnoozeTasksCompletion(@NotNull INSnoozeTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSnoozeTasksCompletion") Block_confirmSnoozeTasksCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +56,7 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     public interface Block_confirmSnoozeTasksCompletion {
         @Generated
-        void call_confirmSnoozeTasksCompletion(INSnoozeTasksIntentResponse response);
+        void call_confirmSnoozeTasksCompletion(@NotNull INSnoozeTasksIntentResponse response);
     }
 
     /**
@@ -71,21 +72,21 @@ public interface INSnoozeTasksIntentHandling {
      */
     @Generated
     @Selector("handleSnoozeTasks:completion:")
-    void handleSnoozeTasksCompletion(INSnoozeTasksIntent intent,
-            @ObjCBlock(name = "call_handleSnoozeTasksCompletion") Block_handleSnoozeTasksCompletion completion);
+    void handleSnoozeTasksCompletion(@NotNull INSnoozeTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSnoozeTasksCompletion") Block_handleSnoozeTasksCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSnoozeTasksCompletion {
         @Generated
-        void call_handleSnoozeTasksCompletion(INSnoozeTasksIntentResponse response);
+        void call_handleSnoozeTasksCompletion(@NotNull INSnoozeTasksIntentResponse response);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveNextTriggerTimeForSnoozeTasks:withCompletion:")
-    default void resolveNextTriggerTimeForSnoozeTasksWithCompletion(INSnoozeTasksIntent intent,
-            @ObjCBlock(name = "call_resolveNextTriggerTimeForSnoozeTasksWithCompletion") Block_resolveNextTriggerTimeForSnoozeTasksWithCompletion completion) {
+    default void resolveNextTriggerTimeForSnoozeTasksWithCompletion(@NotNull INSnoozeTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveNextTriggerTimeForSnoozeTasksWithCompletion") Block_resolveNextTriggerTimeForSnoozeTasksWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,7 +95,7 @@ public interface INSnoozeTasksIntentHandling {
     public interface Block_resolveNextTriggerTimeForSnoozeTasksWithCompletion {
         @Generated
         void call_resolveNextTriggerTimeForSnoozeTasksWithCompletion(
-                INDateComponentsRangeResolutionResult resolutionResult);
+                @NotNull INDateComponentsRangeResolutionResult resolutionResult);
     }
 
     /**
@@ -111,8 +112,8 @@ public interface INSnoozeTasksIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveTasksForSnoozeTasks:withCompletion:")
-    default void resolveTasksForSnoozeTasksWithCompletion(INSnoozeTasksIntent intent,
-            @ObjCBlock(name = "call_resolveTasksForSnoozeTasksWithCompletion") Block_resolveTasksForSnoozeTasksWithCompletion completion) {
+    default void resolveTasksForSnoozeTasksWithCompletion(@NotNull INSnoozeTasksIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveTasksForSnoozeTasksWithCompletion") Block_resolveTasksForSnoozeTasksWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,6 +122,6 @@ public interface INSnoozeTasksIntentHandling {
     public interface Block_resolveTasksForSnoozeTasksWithCompletion {
         @Generated
         void call_resolveTasksForSnoozeTasksWithCompletion(
-                NSArray<? extends INSnoozeTasksTaskResolutionResult> resolutionResults);
+                @NotNull NSArray<? extends INSnoozeTasksTaskResolutionResult> resolutionResults);
     }
 }

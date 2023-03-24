@@ -23,6 +23,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * EAGLDrawable Interface
@@ -40,6 +41,7 @@ public interface EAGLDrawable {
     /**
      * Contains keys from kEAGLDrawableProperty* above
      */
+    @Nullable
     @Generated
     @Selector("drawableProperties")
     NSDictionary<String, ?> drawableProperties();
@@ -49,5 +51,5 @@ public interface EAGLDrawable {
      */
     @Generated
     @Selector("setDrawableProperties:")
-    void setDrawableProperties(NSDictionary<String, ?> value);
+    void setDrawableProperties(@Nullable NSDictionary<String, ?> value);
 }

@@ -30,6 +30,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("StoreKit")
@@ -44,8 +45,8 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueue:removedTransactions:")
-    default void paymentQueueRemovedTransactions(SKPaymentQueue queue,
-            NSArray<? extends SKPaymentTransaction> transactions) {
+    default void paymentQueueRemovedTransactions(@NotNull SKPaymentQueue queue,
+            @NotNull NSArray<? extends SKPaymentTransaction> transactions) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -57,7 +58,8 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueue:restoreCompletedTransactionsFailedWithError:")
-    default void paymentQueueRestoreCompletedTransactionsFailedWithError(SKPaymentQueue queue, NSError error) {
+    default void paymentQueueRestoreCompletedTransactionsFailedWithError(@NotNull SKPaymentQueue queue,
+            @NotNull NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -72,7 +74,8 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueue:updatedDownloads:")
-    default void paymentQueueUpdatedDownloads(SKPaymentQueue queue, NSArray<? extends SKDownload> downloads) {
+    default void paymentQueueUpdatedDownloads(@NotNull SKPaymentQueue queue,
+            @NotNull NSArray<? extends SKDownload> downloads) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,7 +87,8 @@ public interface SKPaymentTransactionObserver {
      */
     @Generated
     @Selector("paymentQueue:updatedTransactions:")
-    void paymentQueueUpdatedTransactions(SKPaymentQueue queue, NSArray<? extends SKPaymentTransaction> transactions);
+    void paymentQueueUpdatedTransactions(@NotNull SKPaymentQueue queue,
+            @NotNull NSArray<? extends SKPaymentTransaction> transactions);
 
     /**
      * Sent when all transactions from the user's purchase history have successfully been added back to the queue.
@@ -94,7 +98,7 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueueRestoreCompletedTransactionsFinished:")
-    default void paymentQueueRestoreCompletedTransactionsFinished(SKPaymentQueue queue) {
+    default void paymentQueueRestoreCompletedTransactionsFinished(@NotNull SKPaymentQueue queue) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -106,8 +110,8 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueue:shouldAddStorePayment:forProduct:")
-    default boolean paymentQueueShouldAddStorePaymentForProduct(SKPaymentQueue queue, SKPayment payment,
-            SKProduct product) {
+    default boolean paymentQueueShouldAddStorePaymentForProduct(@NotNull SKPaymentQueue queue,
+            @NotNull SKPayment payment, @NotNull SKProduct product) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -117,7 +121,7 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueueDidChangeStorefront:")
-    default void paymentQueueDidChangeStorefront(SKPaymentQueue queue) {
+    default void paymentQueueDidChangeStorefront(@NotNull SKPaymentQueue queue) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,8 +133,8 @@ public interface SKPaymentTransactionObserver {
     @Generated
     @IsOptional
     @Selector("paymentQueue:didRevokeEntitlementsForProductIdentifiers:")
-    default void paymentQueueDidRevokeEntitlementsForProductIdentifiers(SKPaymentQueue queue,
-            NSArray<String> productIdentifiers) {
+    default void paymentQueueDidRevokeEntitlementsForProductIdentifiers(@NotNull SKPaymentQueue queue,
+            @NotNull NSArray<String> productIdentifiers) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

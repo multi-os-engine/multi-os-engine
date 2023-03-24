@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Protocol for specifying a custom model implementation.
@@ -35,30 +37,36 @@ public interface MLCustomModel {
      * We expect the implementation to return 'nil' and set an error in the event of failure
      * initializing the object.
      */
+    @Nullable
     @Generated
     @Selector("initWithModelDescription:parameterDictionary:error:")
-    MLCustomModel initWithModelDescriptionParameterDictionaryError(MLModelDescription modelDescription,
-            NSDictionary<String, ?> parameters, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MLCustomModel initWithModelDescriptionParameterDictionaryError(@NotNull MLModelDescription modelDescription,
+            @NotNull NSDictionary<String, ?> parameters,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Required implemenationat of a single sample input prediction.
      */
+    @Nullable
     @Generated
     @Selector("predictionFromFeatures:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    MLFeatureProvider predictionFromFeaturesOptionsError(@Mapped(ObjCObjectMapper.class) MLFeatureProvider input,
-            MLPredictionOptions options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    MLFeatureProvider predictionFromFeaturesOptionsError(
+            @NotNull @Mapped(ObjCObjectMapper.class) MLFeatureProvider input, @NotNull MLPredictionOptions options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Batch prediction with explicit options, if not implemented the single input predictionFromFeatures:options:error
      * will be used
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("predictionsFromBatch:options:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    default MLBatchProvider predictionsFromBatchOptionsError(@Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch,
-            MLPredictionOptions options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default MLBatchProvider predictionsFromBatchOptionsError(
+            @NotNull @Mapped(ObjCObjectMapper.class) MLBatchProvider inputBatch, @NotNull MLPredictionOptions options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

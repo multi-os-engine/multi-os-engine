@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 8.0
@@ -74,22 +76,25 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,6 +107,7 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("fetchAllRecordZonesOperation")
     public static native CKFetchRecordZonesOperation fetchAllRecordZonesOperation();
@@ -128,9 +134,10 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -168,6 +175,7 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * previous @c perRecordZoneCompletionBlock invocations
      * Each @c CKOperation instance has a private serial queue. This queue is used for all callback block invocations
      */
+    @Nullable
     @Generated
     @Selector("fetchRecordZonesCompletionBlock")
     @ObjCBlock(name = "call_fetchRecordZonesCompletionBlock_ret")
@@ -179,8 +187,9 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
 
     @Generated
     @Selector("initWithRecordZoneIDs:")
-    public native CKFetchRecordZonesOperation initWithRecordZoneIDs(NSArray<? extends CKRecordZoneID> zoneIDs);
+    public native CKFetchRecordZonesOperation initWithRecordZoneIDs(@NotNull NSArray<? extends CKRecordZoneID> zoneIDs);
 
+    @Nullable
     @Generated
     @Selector("recordZoneIDs")
     public native NSArray<? extends CKRecordZoneID> recordZoneIDs();
@@ -198,18 +207,18 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setFetchRecordZonesCompletionBlock:")
     public native void setFetchRecordZonesCompletionBlock(
-            @ObjCBlock(name = "call_setFetchRecordZonesCompletionBlock") Block_setFetchRecordZonesCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setFetchRecordZonesCompletionBlock") Block_setFetchRecordZonesCompletionBlock value);
 
     @Generated
     @Selector("setRecordZoneIDs:")
-    public native void setRecordZoneIDs(NSArray<? extends CKRecordZoneID> value);
+    public native void setRecordZoneIDs(@Nullable NSArray<? extends CKRecordZoneID> value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchRecordZonesCompletionBlock_ret {
         @Generated
         void call_fetchRecordZonesCompletionBlock_ret(
-                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
+                @Nullable NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, @Nullable NSError arg1);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -217,7 +226,7 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     public interface Block_setFetchRecordZonesCompletionBlock {
         @Generated
         void call_setFetchRecordZonesCompletionBlock(
-                NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, NSError arg1);
+                @Nullable NSDictionary<? extends CKRecordZoneID, ? extends CKRecordZone> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -227,6 +236,7 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("perRecordZoneCompletionBlock")
     @ObjCBlock(name = "call_perRecordZoneCompletionBlock_ret")
@@ -236,7 +246,8 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Generated
     public interface Block_perRecordZoneCompletionBlock_ret {
         @Generated
-        void call_perRecordZoneCompletionBlock_ret(CKRecordZoneID arg0, CKRecordZone arg1, NSError arg2);
+        void call_perRecordZoneCompletionBlock_ret(@NotNull CKRecordZoneID arg0, @Nullable CKRecordZone arg1,
+                @Nullable NSError arg2);
     }
 
     /**
@@ -249,12 +260,13 @@ public class CKFetchRecordZonesOperation extends CKDatabaseOperation {
     @Generated
     @Selector("setPerRecordZoneCompletionBlock:")
     public native void setPerRecordZoneCompletionBlock(
-            @ObjCBlock(name = "call_setPerRecordZoneCompletionBlock") Block_setPerRecordZoneCompletionBlock value);
+            @Nullable @ObjCBlock(name = "call_setPerRecordZoneCompletionBlock") Block_setPerRecordZoneCompletionBlock value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setPerRecordZoneCompletionBlock {
         @Generated
-        void call_setPerRecordZoneCompletionBlock(CKRecordZoneID arg0, CKRecordZone arg1, NSError arg2);
+        void call_setPerRecordZoneCompletionBlock(@NotNull CKRecordZoneID arg0, @Nullable CKRecordZone arg1,
+                @Nullable NSError arg2);
     }
 }

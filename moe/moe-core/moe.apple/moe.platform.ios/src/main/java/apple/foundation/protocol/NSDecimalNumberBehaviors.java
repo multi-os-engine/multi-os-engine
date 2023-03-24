@@ -25,6 +25,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -34,10 +36,11 @@ public interface NSDecimalNumberBehaviors {
     /**
      * The scale could return NO_SCALE for no defined scale.
      */
+    @Nullable
     @Generated
     @Selector("exceptionDuringOperation:error:leftOperand:rightOperand:")
-    NSDecimalNumber exceptionDuringOperationErrorLeftOperandRightOperand(SEL operation, @NUInt long error,
-            NSDecimalNumber leftOperand, NSDecimalNumber rightOperand);
+    NSDecimalNumber exceptionDuringOperationErrorLeftOperandRightOperand(@NotNull SEL operation, @NUInt long error,
+            @NotNull NSDecimalNumber leftOperand, @Nullable NSDecimalNumber rightOperand);
 
     @Generated
     @Selector("roundingMode")

@@ -46,6 +46,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * In iOS 8.0 and later, your application must register for user notifications using -[UIApplication
@@ -86,22 +88,25 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +175,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * used in UIAlert button or 'slide to unlock...' slider in place of unlock
      */
+    @Nullable
     @Generated
     @Selector("alertAction")
     public native String alertAction();
@@ -176,6 +183,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * defaults to nil. pass a string or localized string key to show an alert
      */
+    @Nullable
     @Generated
     @Selector("alertBody")
     public native String alertBody();
@@ -183,6 +191,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * used as the launch image (UILaunchImageFile) when launch button is tapped
      */
+    @Nullable
     @Generated
     @Selector("alertLaunchImage")
     public native String alertLaunchImage();
@@ -192,6 +201,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * 
      * API-Since: 8.2
      */
+    @Nullable
     @Generated
     @Selector("alertTitle")
     public native String alertTitle();
@@ -210,23 +220,26 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("category")
     public native String category();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * timer-based scheduling
      */
+    @Nullable
     @Generated
     @Selector("fireDate")
     public native NSDate fireDate();
@@ -244,7 +257,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native UILocalNotification initWithCoder(NSCoder coder);
+    public native UILocalNotification initWithCoder(@NotNull NSCoder coder);
 
     /**
      * set a CLRegion object to trigger the notification when the user enters or leaves a geographic region, depending
@@ -256,6 +269,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("region")
     public native CLRegion region();
@@ -270,6 +284,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     @Selector("regionTriggersOnce")
     public native boolean regionTriggersOnce();
 
+    @Nullable
     @Generated
     @Selector("repeatCalendar")
     public native NSCalendar repeatCalendar();
@@ -287,21 +302,21 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      */
     @Generated
     @Selector("setAlertAction:")
-    public native void setAlertAction(String value);
+    public native void setAlertAction(@Nullable String value);
 
     /**
      * defaults to nil. pass a string or localized string key to show an alert
      */
     @Generated
     @Selector("setAlertBody:")
-    public native void setAlertBody(String value);
+    public native void setAlertBody(@Nullable String value);
 
     /**
      * used as the launch image (UILaunchImageFile) when launch button is tapped
      */
     @Generated
     @Selector("setAlertLaunchImage:")
-    public native void setAlertLaunchImage(String value);
+    public native void setAlertLaunchImage(@Nullable String value);
 
     /**
      * defaults to nil. pass a string or localized string key
@@ -310,7 +325,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      */
     @Generated
     @Selector("setAlertTitle:")
-    public native void setAlertTitle(String value);
+    public native void setAlertTitle(@Nullable String value);
 
     /**
      * 0 means no change. defaults to 0
@@ -327,14 +342,14 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      */
     @Generated
     @Selector("setCategory:")
-    public native void setCategory(String value);
+    public native void setCategory(@Nullable String value);
 
     /**
      * timer-based scheduling
      */
     @Generated
     @Selector("setFireDate:")
-    public native void setFireDate(NSDate value);
+    public native void setFireDate(@Nullable NSDate value);
 
     /**
      * defaults to YES. pass NO to hide launching button/slider
@@ -355,7 +370,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      */
     @Generated
     @Selector("setRegion:")
-    public native void setRegion(CLRegion value);
+    public native void setRegion(@Nullable CLRegion value);
 
     /**
      * when YES, the notification will only fire one time. when NO, the notification will fire every time the region is
@@ -369,7 +384,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
 
     @Generated
     @Selector("setRepeatCalendar:")
-    public native void setRepeatCalendar(NSCalendar value);
+    public native void setRepeatCalendar(@Nullable NSCalendar value);
 
     /**
      * 0 means don't repeat
@@ -383,7 +398,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      */
     @Generated
     @Selector("setSoundName:")
-    public native void setSoundName(String value);
+    public native void setSoundName(@Nullable String value);
 
     /**
      * the time zone to interpret fireDate in. pass nil if fireDate is an absolute GMT time (e.g. for an egg timer).
@@ -392,18 +407,19 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      */
     @Generated
     @Selector("setTimeZone:")
-    public native void setTimeZone(NSTimeZone value);
+    public native void setTimeZone(@Nullable NSTimeZone value);
 
     /**
      * throws if contains non-property list types
      */
     @Generated
     @Selector("setUserInfo:")
-    public native void setUserInfo(NSDictionary<?, ?> value);
+    public native void setUserInfo(@Nullable NSDictionary<?, ?> value);
 
     /**
      * name of resource in app's bundle to play or UILocalNotificationDefaultSoundName
      */
+    @Nullable
     @Generated
     @Selector("soundName")
     public native String soundName();
@@ -413,6 +429,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
      * pass a time zone to interpret fireDate as a wall time to be adjusted automatically upon time zone changes (e.g.
      * for an alarm clock).
      */
+    @Nullable
     @Generated
     @Selector("timeZone")
     public native NSTimeZone timeZone();
@@ -420,6 +437,7 @@ public class UILocalNotification extends NSObject implements NSCopying, NSCoding
     /**
      * throws if contains non-property list types
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     public native NSDictionary<?, ?> userInfo();

@@ -37,6 +37,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 4.0
@@ -71,22 +73,25 @@ public class NSDataDetector extends NSRegularExpression {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,10 +103,11 @@ public class NSDataDetector extends NSRegularExpression {
      * NSTextCheckingTypeLink, NSTextCheckingTypePhoneNumber, and NSTextCheckingTypeTransitInformation. The
      * NSTextCheckingResult instances returned will be of the appropriate types from that list.
      */
+    @Nullable
     @Generated
     @Selector("dataDetectorWithTypes:error:")
     public static native NSDataDetector dataDetectorWithTypesError(long checkingTypes,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -111,13 +117,15 @@ public class NSDataDetector extends NSRegularExpression {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("escapedPatternForString:")
-    public static native String escapedPatternForString(String string);
+    public static native String escapedPatternForString(@NotNull String string);
 
+    @NotNull
     @Generated
     @Selector("escapedTemplateForString:")
-    public static native String escapedTemplateForString(String string);
+    public static native String escapedTemplateForString(@NotNull String string);
 
     @Generated
     @Selector("hash")
@@ -141,19 +149,21 @@ public class NSDataDetector extends NSRegularExpression {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
     @Selector("new")
     public static native NSDataDetector new_objc();
 
+    @Nullable
     @Generated
     @Selector("regularExpressionWithPattern:options:error:")
-    public static native NSRegularExpression regularExpressionWithPatternOptionsError(String pattern,
-            @NUInt long options, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public static native NSRegularExpression regularExpressionWithPatternOptionsError(@NotNull String pattern,
+            @NUInt long options, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -190,17 +200,17 @@ public class NSDataDetector extends NSRegularExpression {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDataDetector initWithCoder(NSCoder coder);
+    public native NSDataDetector initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithPattern:options:error:")
-    public native NSDataDetector initWithPatternOptionsError(String pattern, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSDataDetector initWithPatternOptionsError(@NotNull String pattern, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("initWithTypes:error:")
     public native NSDataDetector initWithTypesError(long checkingTypes,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")

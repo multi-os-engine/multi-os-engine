@@ -29,6 +29,8 @@ import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -58,6 +60,7 @@ public final class ScheduledAudioFileRegion extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setMTimeStamp(@ByValue AudioTimeStamp value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_mCompletionProc")
@@ -65,23 +68,26 @@ public final class ScheduledAudioFileRegion extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setMCompletionProc(@FunctionPtr(name = "call_mCompletionProc") Function_mCompletionProc value);
+    public native void setMCompletionProc(
+            @Nullable @FunctionPtr(name = "call_mCompletionProc") Function_mCompletionProc value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr mCompletionProcUserData();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setMCompletionProcUserData(VoidPtr value);
+    public native void setMCompletionProcUserData(@Nullable VoidPtr value);
 
+    @NotNull
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native VoidPtr mAudioFile();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setMAudioFile(VoidPtr value);
+    public native void setMAudioFile(@NotNull VoidPtr value);
 
     @Generated
     @StructureField(order = 4, isGetter = true)
@@ -111,8 +117,8 @@ public final class ScheduledAudioFileRegion extends StructObject {
     @Generated
     public interface Function_mCompletionProc {
         @Generated
-        void call_mCompletionProc(VoidPtr arg0,
-                @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioFileRegion arg1,
+        void call_mCompletionProc(@Nullable VoidPtr arg0,
+                @NotNull @UncertainArgument("Options: reference, array Fallback: reference") ScheduledAudioFileRegion arg1,
                 int arg2);
     }
 }

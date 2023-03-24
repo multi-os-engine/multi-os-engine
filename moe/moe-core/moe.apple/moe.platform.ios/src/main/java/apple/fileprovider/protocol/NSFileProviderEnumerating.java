@@ -12,6 +12,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -105,9 +107,10 @@ public interface NSFileProviderEnumerating {
      * The extension should set the NSUnderlyingErrorKey in the NSError's userInfo to the error which could not
      * be represented.
      */
+    @Nullable
     @Generated
     @Selector("enumeratorForContainerItemIdentifier:request:error:")
     @MappedReturn(ObjCObjectMapper.class)
-    NSFileProviderEnumerator enumeratorForContainerItemIdentifierRequestError(String containerItemIdentifier,
-            NSFileProviderRequest request, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    NSFileProviderEnumerator enumeratorForContainerItemIdentifierRequestError(@NotNull String containerItemIdentifier,
+            @NotNull NSFileProviderRequest request, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }

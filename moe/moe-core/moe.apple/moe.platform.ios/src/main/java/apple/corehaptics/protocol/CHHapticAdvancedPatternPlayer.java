@@ -10,6 +10,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] CHHapticAdvancedPatternPlayer
@@ -31,6 +33,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      * 
      * The block or enclosure that will be called when the player finishes.
      */
+    @NotNull
     @Generated
     @Selector("completionHandler")
     @ObjCBlock(name = "call_completionHandler_ret")
@@ -40,7 +43,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
     @Generated
     public interface Block_completionHandler_ret {
         @Generated
-        void call_completionHandler_ret(NSError error);
+        void call_completionHandler_ret(@Nullable NSError error);
     }
 
     /**
@@ -82,7 +85,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      */
     @Generated
     @Selector("pauseAtTime:error:")
-    boolean pauseAtTimeError(double time, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean pauseAtTimeError(double time, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] playbackRate
@@ -108,7 +111,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      */
     @Generated
     @Selector("resumeAtTime:error:")
-    boolean resumeAtTimeError(double time, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean resumeAtTimeError(double time, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * seekToOffset:error
@@ -122,7 +125,7 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      */
     @Generated
     @Selector("seekToOffset:error:")
-    boolean seekToOffsetError(double offsetTime, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    boolean seekToOffsetError(double offsetTime, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] completionHandler
@@ -131,13 +134,13 @@ public interface CHHapticAdvancedPatternPlayer extends CHHapticPatternPlayer {
      */
     @Generated
     @Selector("setCompletionHandler:")
-    void setCompletionHandler(@ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
+    void setCompletionHandler(@NotNull @ObjCBlock(name = "call_setCompletionHandler") Block_setCompletionHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setCompletionHandler {
         @Generated
-        void call_setCompletionHandler(NSError error);
+        void call_setCompletionHandler(@Nullable NSError error);
     }
 
     /**

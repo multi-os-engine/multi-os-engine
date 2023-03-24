@@ -16,6 +16,8 @@ import org.moe.natj.general.ptr.ConstVoidPtr;
 import org.moe.natj.general.ptr.IntPtr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("IOSurface")
@@ -42,9 +44,10 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native IOSurfaceRef IOSurfaceCreate(CFDictionaryRef properties);
+    public static native IOSurfaceRef IOSurfaceCreate(@NotNull CFDictionaryRef properties);
 
     /**
      * Perform an atomic lookup and retain of a IOSurface by its IOSurfaceID.
@@ -55,6 +58,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native IOSurfaceRef IOSurfaceLookup(int csid);
@@ -66,7 +70,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetID(IOSurfaceRef buffer);
+    public static native int IOSurfaceGetID(@NotNull IOSurfaceRef buffer);
 
     /**
      * "Lock" or "Unlock" a IOSurface for reading or writing.
@@ -93,14 +97,14 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceLock(IOSurfaceRef buffer, int options, IntPtr seed);
+    public static native int IOSurfaceLock(@NotNull IOSurfaceRef buffer, int options, @Nullable IntPtr seed);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceUnlock(IOSurfaceRef buffer, int options, IntPtr seed);
+    public static native int IOSurfaceUnlock(@NotNull IOSurfaceRef buffer, int options, @Nullable IntPtr seed);
 
     /**
      * These routines are all fairly self explanatory. 0 is returned if buffer is invalid or NULL
@@ -110,7 +114,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetAllocSize(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetAllocSize(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
@@ -118,7 +122,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetWidth(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetWidth(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
@@ -126,7 +130,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetHeight(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetHeight(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
@@ -134,7 +138,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetBytesPerElement(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetBytesPerElement(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
@@ -142,22 +146,15 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetBytesPerRow(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetBytesPerRow(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native VoidPtr IOSurfaceGetBaseAddress(IOSurfaceRef buffer);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long IOSurfaceGetElementWidth(IOSurfaceRef buffer);
+    public static native VoidPtr IOSurfaceGetBaseAddress(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
@@ -165,14 +162,22 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetElementHeight(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetElementWidth(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetPixelFormat(IOSurfaceRef buffer);
+    @NUInt
+    public static native long IOSurfaceGetElementHeight(@NotNull IOSurfaceRef buffer);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native int IOSurfaceGetPixelFormat(@NotNull IOSurfaceRef buffer);
 
     /**
      * This will return the current seed value of the buffer and is a cheap call to make to see
@@ -182,7 +187,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetSeed(IOSurfaceRef buffer);
+    public static native int IOSurfaceGetSeed(@NotNull IOSurfaceRef buffer);
 
     /**
      * Return the number of planes in this buffer. May be 0. Returns 0 for an invalid or NULL buffer pointer.
@@ -192,7 +197,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetPlaneCount(IOSurfaceRef buffer);
+    public static native long IOSurfaceGetPlaneCount(@NotNull IOSurfaceRef buffer);
 
     /**
      * These routines return information about a particular plane of a IOSurface.
@@ -207,7 +212,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetWidthOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native long IOSurfaceGetWidthOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
 
     /**
      * API-Since: 11.0
@@ -215,7 +220,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetHeightOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native long IOSurfaceGetHeightOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
 
     /**
      * API-Since: 11.0
@@ -223,7 +228,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetBytesPerElementOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native long IOSurfaceGetBytesPerElementOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
 
     /**
      * API-Since: 11.0
@@ -231,22 +236,15 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetBytesPerRowOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native long IOSurfaceGetBytesPerRowOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native VoidPtr IOSurfaceGetBaseAddressOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long IOSurfaceGetElementWidthOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native VoidPtr IOSurfaceGetBaseAddressOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
 
     /**
      * API-Since: 11.0
@@ -254,7 +252,15 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetElementHeightOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native long IOSurfaceGetElementWidthOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    @NUInt
+    public static native long IOSurfaceGetElementHeightOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex);
 
     /**
      * These routines return information about a particular component of a particular plane of a IOSurface.
@@ -265,14 +271,15 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetNumberOfComponentsOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex);
+    public static native long IOSurfaceGetNumberOfComponentsOfPlane(@NotNull IOSurfaceRef buffer,
+            @NUInt long planeIndex);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetNameOfComponentOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex,
+    public static native int IOSurfaceGetNameOfComponentOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex,
             @NUInt long componentIndex);
 
     /**
@@ -280,7 +287,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetTypeOfComponentOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex,
+    public static native int IOSurfaceGetTypeOfComponentOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex,
             @NUInt long componentIndex);
 
     /**
@@ -288,16 +295,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetRangeOfComponentOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex,
-            @NUInt long componentIndex);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    @NUInt
-    public static native long IOSurfaceGetBitDepthOfComponentOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex,
+    public static native int IOSurfaceGetRangeOfComponentOfPlane(@NotNull IOSurfaceRef buffer, @NUInt long planeIndex,
             @NUInt long componentIndex);
 
     /**
@@ -306,15 +304,24 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetBitOffsetOfComponentOfPlane(IOSurfaceRef buffer, @NUInt long planeIndex,
-            @NUInt long componentIndex);
+    public static native long IOSurfaceGetBitDepthOfComponentOfPlane(@NotNull IOSurfaceRef buffer,
+            @NUInt long planeIndex, @NUInt long componentIndex);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetSubsampling(IOSurfaceRef buffer);
+    @NUInt
+    public static native long IOSurfaceGetBitOffsetOfComponentOfPlane(@NotNull IOSurfaceRef buffer,
+            @NUInt long planeIndex, @NUInt long componentIndex);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Generated
+    @CFunction
+    public static native int IOSurfaceGetSubsampling(@NotNull IOSurfaceRef buffer);
 
     /**
      * These calls let you attach CF property list types to a IOSurface buffer. These calls are
@@ -325,21 +332,23 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native void IOSurfaceSetValue(IOSurfaceRef buffer, CFStringRef key, ConstVoidPtr value);
+    public static native void IOSurfaceSetValue(@NotNull IOSurfaceRef buffer, @NotNull CFStringRef key,
+            @NotNull ConstVoidPtr value);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
+    @Generated
+    @CFunction
+    public static native ConstVoidPtr IOSurfaceCopyValue(@NotNull IOSurfaceRef buffer, @NotNull CFStringRef key);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native ConstVoidPtr IOSurfaceCopyValue(IOSurfaceRef buffer, CFStringRef key);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void IOSurfaceRemoveValue(IOSurfaceRef buffer, CFStringRef key);
+    public static native void IOSurfaceRemoveValue(@NotNull IOSurfaceRef buffer, @NotNull CFStringRef key);
 
     /**
      * Bulk setters and getters for setting, retrieving or removing the entire
@@ -349,21 +358,22 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native void IOSurfaceSetValues(IOSurfaceRef buffer, CFDictionaryRef keysAndValues);
+    public static native void IOSurfaceSetValues(@NotNull IOSurfaceRef buffer, @NotNull CFDictionaryRef keysAndValues);
+
+    /**
+     * API-Since: 11.0
+     */
+    @Nullable
+    @Generated
+    @CFunction
+    public static native CFDictionaryRef IOSurfaceCopyAllValues(@NotNull IOSurfaceRef buffer);
 
     /**
      * API-Since: 11.0
      */
     @Generated
     @CFunction
-    public static native CFDictionaryRef IOSurfaceCopyAllValues(IOSurfaceRef buffer);
-
-    /**
-     * API-Since: 11.0
-     */
-    @Generated
-    @CFunction
-    public static native void IOSurfaceRemoveAllValues(IOSurfaceRef buffer);
+    public static native void IOSurfaceRemoveAllValues(@NotNull IOSurfaceRef buffer);
 
     /**
      * This call lets you get a mach_port_t that holds a reference to the IOSurface. This is useful
@@ -376,7 +386,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceCreateMachPort(IOSurfaceRef buffer);
+    public static native int IOSurfaceCreateMachPort(@NotNull IOSurfaceRef buffer);
 
     /**
      * This call lets you take a mach_port_t created via IOSurfaceCreatePort() and recreate an IOSurfaceRef from it.
@@ -384,6 +394,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native IOSurfaceRef IOSurfaceLookupFromMachPort(int port);
@@ -412,7 +423,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetPropertyMaximum(CFStringRef property);
+    public static native long IOSurfaceGetPropertyMaximum(@NotNull CFStringRef property);
 
     /**
      * If a property has a particular alignment requirement, then IOSurfaceGetPropertyAlignment() will return it.
@@ -432,7 +443,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceGetPropertyAlignment(CFStringRef property);
+    public static native long IOSurfaceGetPropertyAlignment(@NotNull CFStringRef property);
 
     /**
      * This is a convenience function to automatically align property values. For properties with no alignment
@@ -443,7 +454,7 @@ public final class IOSurface {
     @Generated
     @CFunction
     @NUInt
-    public static native long IOSurfaceAlignProperty(CFStringRef property, @NUInt long value);
+    public static native long IOSurfaceAlignProperty(@NotNull CFStringRef property, @NUInt long value);
 
     /**
      * Increment the per-process usage count for an IOSurface
@@ -452,7 +463,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native void IOSurfaceIncrementUseCount(IOSurfaceRef buffer);
+    public static native void IOSurfaceIncrementUseCount(@NotNull IOSurfaceRef buffer);
 
     /**
      * Decrement the per-process usage count for an IOSurface
@@ -461,7 +472,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native void IOSurfaceDecrementUseCount(IOSurfaceRef buffer);
+    public static native void IOSurfaceDecrementUseCount(@NotNull IOSurfaceRef buffer);
 
     /**
      * Return the per-process usage count for an IOSurface
@@ -470,7 +481,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceGetUseCount(IOSurfaceRef buffer);
+    public static native int IOSurfaceGetUseCount(@NotNull IOSurfaceRef buffer);
 
     /**
      * Returns true if an IOSurface is in use by any process in the system, otherwise false.
@@ -479,7 +490,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native byte IOSurfaceIsInUse(IOSurfaceRef buffer);
+    public static native byte IOSurfaceIsInUse(@NotNull IOSurfaceRef buffer);
 
     /**
      * Returns true if this IOSurface allows pixel size casting
@@ -488,7 +499,7 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native byte IOSurfaceAllowsPixelSizeCasting(IOSurfaceRef buffer);
+    public static native byte IOSurfaceAllowsPixelSizeCasting(@NotNull IOSurfaceRef buffer);
 
     /**
      * You should assume that if you mark an IOSurface as Purgeable/Empty and mark it
@@ -506,7 +517,8 @@ public final class IOSurface {
      */
     @Generated
     @CFunction
-    public static native int IOSurfaceSetPurgeable(IOSurfaceRef buffer, int newState, IntPtr oldState);
+    public static native int IOSurfaceSetPurgeable(@NotNull IOSurfaceRef buffer, int newState,
+            @Nullable IntPtr oldState);
 
     /**
      * kIOSurfaceAllocSize - CFNumber of the total allocation size of the buffer including all planes.
@@ -515,6 +527,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceAllocSize();
@@ -524,6 +537,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceWidth();
@@ -533,6 +547,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceHeight();
@@ -545,6 +560,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceBytesPerRow();
@@ -554,6 +570,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceBytesPerElement();
@@ -563,6 +580,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceElementWidth();
@@ -572,6 +590,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceElementHeight();
@@ -581,6 +600,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceOffset();
@@ -591,6 +611,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneInfo();
@@ -600,6 +621,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneWidth();
@@ -609,6 +631,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneHeight();
@@ -621,6 +644,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneBytesPerRow();
@@ -631,6 +655,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneOffset();
@@ -641,6 +666,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneSize();
@@ -651,6 +677,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneBase();
@@ -661,6 +688,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneBitsPerElement();
@@ -670,6 +698,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneBytesPerElement();
@@ -679,6 +708,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneElementWidth();
@@ -688,6 +718,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneElementHeight();
@@ -698,6 +729,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceCacheMode();
@@ -709,6 +741,7 @@ public final class IOSurface {
      * Deprecated-Since: 11.0
      * Deprecated-Message: Global surfaces are insecure
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -719,6 +752,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePixelFormat();
@@ -729,6 +763,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePixelSizeCastingAllowed();
@@ -738,6 +773,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneComponentBitDepths();
@@ -748,6 +784,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneComponentBitOffsets();
@@ -758,6 +795,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneComponentNames();
@@ -767,6 +805,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneComponentTypes();
@@ -776,6 +815,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfacePlaneComponentRanges();
@@ -785,6 +825,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceSubsampling();
@@ -795,6 +836,7 @@ public final class IOSurface {
      * API-Since: 11.0
      * Deprecated-Since: 12.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -807,6 +849,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -818,6 +861,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -832,6 +876,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -842,6 +887,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -852,6 +898,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -862,6 +909,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -872,6 +920,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -883,6 +932,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -893,6 +943,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -903,6 +954,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -917,6 +969,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -929,6 +982,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -940,6 +994,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -951,6 +1006,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -962,6 +1018,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -972,6 +1029,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -982,6 +1040,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -993,6 +1052,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1004,6 +1064,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1015,6 +1076,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1027,6 +1089,7 @@ public final class IOSurface {
      * 
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -1039,6 +1102,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceColorSpace();
@@ -1048,6 +1112,7 @@ public final class IOSurface {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceICCProfile();
@@ -1061,6 +1126,7 @@ public final class IOSurface {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kIOSurfaceName();
@@ -1070,6 +1136,7 @@ public final class IOSurface {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.foundation.NSArray;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -54,7 +56,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:canFocusItemAtIndexPath:")
-    default boolean collectionViewCanFocusItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewCanFocusItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -66,23 +69,25 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformAction:forItemAtIndexPath:withSender:")
-    default boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView,
-            SEL action, NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default boolean collectionViewCanPerformActionForItemAtIndexPathWithSender(@NotNull UICollectionView collectionView,
+            @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didDeselectItemAtIndexPath:")
-    default void collectionViewDidDeselectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidDeselectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didEndDisplayingCell:forItemAtIndexPath:")
-    default void collectionViewDidEndDisplayingCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath) {
+    default void collectionViewDidEndDisplayingCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewCell cell, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,28 +95,32 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("collectionView:didEndDisplayingSupplementaryView:forElementOfKind:atIndexPath:")
     default void collectionViewDidEndDisplayingSupplementaryViewForElementOfKindAtIndexPath(
-            UICollectionView collectionView, UICollectionReusableView view, String elementKind, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull UICollectionReusableView view,
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didHighlightItemAtIndexPath:")
-    default void collectionViewDidHighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidHighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didSelectItemAtIndexPath:")
-    default void collectionViewDidSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidSelectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:didUnhighlightItemAtIndexPath:")
-    default void collectionViewDidUnhighlightItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default void collectionViewDidUnhighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -121,8 +130,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:didUpdateFocusInContext:withAnimationCoordinator:")
-    default void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context, UIFocusAnimationCoordinator coordinator) {
+    default void collectionViewDidUpdateFocusInContextWithAnimationCoordinator(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewFocusUpdateContext context, @NotNull UIFocusAnimationCoordinator coordinator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,8 +143,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:performAction:forItemAtIndexPath:withSender:")
-    default void collectionViewPerformActionForItemAtIndexPathWithSender(UICollectionView collectionView, SEL action,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) Object sender) {
+    default void collectionViewPerformActionForItemAtIndexPathWithSender(@NotNull UICollectionView collectionView,
+            @NotNull SEL action, @NotNull NSIndexPath indexPath,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -145,8 +155,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldDeselectItemAtIndexPath:")
-    default boolean collectionViewShouldDeselectItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldDeselectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -166,15 +176,16 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldHighlightItemAtIndexPath:")
-    default boolean collectionViewShouldHighlightItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldHighlightItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSelectItemAtIndexPath:")
-    default boolean collectionViewShouldSelectItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewShouldSelectItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,8 +200,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldShowMenuForItemAtIndexPath:")
-    default boolean collectionViewShouldShowMenuForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldShowMenuForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -200,8 +211,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldUpdateFocusInContext:")
-    default boolean collectionViewShouldUpdateFocusInContext(UICollectionView collectionView,
-            UICollectionViewFocusUpdateContext context) {
+    default boolean collectionViewShouldUpdateFocusInContext(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewFocusUpdateContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,7 +225,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @IsOptional
     @Selector("collectionView:targetContentOffsetForProposedContentOffset:")
     @ByValue
-    default CGPoint collectionViewTargetContentOffsetForProposedContentOffset(UICollectionView collectionView,
+    default CGPoint collectionViewTargetContentOffsetForProposedContentOffset(@NotNull UICollectionView collectionView,
             @ByValue CGPoint proposedContentOffset) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,23 +234,27 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * API-Since: 9.0
      * Deprecated-Since: 15.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveFromItemAtIndexPath:toProposedIndexPath:")
     default NSIndexPath collectionViewTargetIndexPathForMoveFromItemAtIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath currentIndexPath, NSIndexPath proposedIndexPath) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath currentIndexPath,
+            @NotNull NSIndexPath proposedIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * support for custom transition layout
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:transitionLayoutForOldLayout:newLayout:")
     default UICollectionViewTransitionLayout collectionViewTransitionLayoutForOldLayoutNewLayout(
-            UICollectionView collectionView, UICollectionViewLayout fromLayout, UICollectionViewLayout toLayout) {
+            @NotNull UICollectionView collectionView, @NotNull UICollectionViewLayout fromLayout,
+            @NotNull UICollectionViewLayout toLayout) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -249,8 +264,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayCell:forItemAtIndexPath:")
-    default void collectionViewWillDisplayCellForItemAtIndexPath(UICollectionView collectionView,
-            UICollectionViewCell cell, NSIndexPath indexPath) {
+    default void collectionViewWillDisplayCellForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull UICollectionViewCell cell, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -260,18 +275,20 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplaySupplementaryView:forElementKind:atIndexPath:")
-    default void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(UICollectionView collectionView,
-            UICollectionReusableView view, String elementKind, NSIndexPath indexPath) {
+    default void collectionViewWillDisplaySupplementaryViewForElementKindAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull UICollectionReusableView view,
+            @NotNull String elementKind, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("indexPathForPreferredFocusedViewInCollectionView:")
-    default NSIndexPath indexPathForPreferredFocusedViewInCollectionView(UICollectionView collectionView) {
+    default NSIndexPath indexPathForPreferredFocusedViewInCollectionView(@NotNull UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -289,8 +306,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldSpringLoadItemAtIndexPath:withContext:")
-    default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(UICollectionView collectionView,
-            NSIndexPath indexPath, @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
+    default boolean collectionViewShouldSpringLoadItemAtIndexPathWithContext(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath,
+            @NotNull @Mapped(ObjCObjectMapper.class) UISpringLoadedInteractionContext context) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -313,12 +331,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      *         API-Since: 13.0
      *         Deprecated-Since: 16.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfigurationForItemAtIndexPath:point:")
     default UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemAtIndexPathPoint(
-            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -336,8 +355,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:didBeginMultipleSelectionInteractionAtIndexPath:")
-    default void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default void collectionViewDidBeginMultipleSelectionInteractionAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -354,12 +373,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      *                       API-Since: 13.0
      *                       Deprecated-Since: 16.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForDismissingContextMenuWithConfiguration:")
     default UITargetedPreview collectionViewPreviewForDismissingContextMenuWithConfiguration(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration) {
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -374,12 +394,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      *                       API-Since: 13.0
      *                       Deprecated-Since: 16.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
     @Selector("collectionView:previewForHighlightingContextMenuWithConfiguration:")
     default UITargetedPreview collectionViewPreviewForHighlightingContextMenuWithConfiguration(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration) {
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -404,8 +425,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:shouldBeginMultipleSelectionInteractionAtIndexPath:")
-    default boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewShouldBeginMultipleSelectionInteractionAtIndexPath(
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -421,9 +442,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:")
-    default void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
+    default void collectionViewWillPerformPreviewActionForMenuWithConfigurationAnimator(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionCommitAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -439,7 +460,7 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionViewDidEndMultipleSelectionInteraction:")
-    default void collectionViewDidEndMultipleSelectionInteraction(UICollectionView collectionView) {
+    default void collectionViewDidEndMultipleSelectionInteraction(@NotNull UICollectionView collectionView) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -457,7 +478,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:canEditItemAtIndexPath:")
-    default boolean collectionViewCanEditItemAtIndexPath(UICollectionView collectionView, NSIndexPath indexPath) {
+    default boolean collectionViewCanEditItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -473,9 +495,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:willDisplayContextMenuWithConfiguration:animator:")
-    default void collectionViewWillDisplayContextMenuWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void collectionViewWillDisplayContextMenuWithConfigurationAnimator(@NotNull UICollectionView collectionView,
+            @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -491,9 +513,9 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:willEndContextMenuInteractionWithConfiguration:animator:")
-    default void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(UICollectionView collectionView,
-            UIContextMenuConfiguration configuration,
-            @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
+    default void collectionViewWillEndContextMenuInteractionWithConfigurationAnimator(
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIContextMenuInteractionAnimating animator) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -507,11 +529,12 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * 
      *                       API-Since: 15.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:sceneActivationConfigurationForItemAtIndexPath:point:")
     default UIWindowSceneActivationConfiguration collectionViewSceneActivationConfigurationForItemAtIndexPathPoint(
-            UICollectionView collectionView, NSIndexPath indexPath, @ByValue CGPoint point) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath indexPath, @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -525,20 +548,21 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:selectionFollowsFocusForItemAtIndexPath:")
-    default boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewSelectionFollowsFocusForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collectionView:targetIndexPathForMoveOfItemFromOriginalIndexPath:atCurrentIndexPath:toProposedIndexPath:")
     default NSIndexPath collectionViewTargetIndexPathForMoveOfItemFromOriginalIndexPathAtCurrentIndexPathToProposedIndexPath(
-            UICollectionView collectionView, NSIndexPath originalIndexPath, NSIndexPath currentIndexPath,
-            NSIndexPath proposedIndexPath) {
+            @NotNull UICollectionView collectionView, @NotNull NSIndexPath originalIndexPath,
+            @NotNull NSIndexPath currentIndexPath, @NotNull NSIndexPath proposedIndexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -558,8 +582,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:canPerformPrimaryActionForItemAtIndexPath:")
-    default boolean collectionViewCanPerformPrimaryActionForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default boolean collectionViewCanPerformPrimaryActionForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -573,11 +597,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * 
      *                       API-Since: 16.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfiguration:dismissalPreviewForItemAtIndexPath:")
     default UITargetedPreview collectionViewContextMenuConfigurationDismissalPreviewForItemAtIndexPath(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -592,11 +618,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      * 
      *                       API-Since: 16.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfiguration:highlightPreviewForItemAtIndexPath:")
     default UITargetedPreview collectionViewContextMenuConfigurationHighlightPreviewForItemAtIndexPath(
-            UICollectionView collectionView, UIContextMenuConfiguration configuration, NSIndexPath indexPath) {
+            @NotNull UICollectionView collectionView, @NotNull UIContextMenuConfiguration configuration,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -622,11 +650,13 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
      *         no actions to
      *         present at this particular time.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("collectionView:contextMenuConfigurationForItemsAtIndexPaths:point:")
     default UIContextMenuConfiguration collectionViewContextMenuConfigurationForItemsAtIndexPathsPoint(
-            UICollectionView collectionView, NSArray<? extends NSIndexPath> indexPaths, @ByValue CGPoint point) {
+            @NotNull UICollectionView collectionView, @NotNull NSArray<? extends NSIndexPath> indexPaths,
+            @ByValue CGPoint point) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -652,8 +682,8 @@ public interface UICollectionViewDelegate extends UIScrollViewDelegate {
     @Generated
     @IsOptional
     @Selector("collectionView:performPrimaryActionForItemAtIndexPath:")
-    default void collectionViewPerformPrimaryActionForItemAtIndexPath(UICollectionView collectionView,
-            NSIndexPath indexPath) {
+    default void collectionViewPerformPrimaryActionForItemAtIndexPath(@NotNull UICollectionView collectionView,
+            @NotNull NSIndexPath indexPath) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

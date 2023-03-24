@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotConfiguration
@@ -57,6 +59,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("SSID")
     public native String SSID();
@@ -77,31 +80,35 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -113,7 +120,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -126,7 +133,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotConfiguration initWithCoder(NSCoder coder);
+    public native NEHotspotConfiguration initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithHS20Settings:eapSettings
@@ -141,8 +148,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("initWithHS20Settings:eapSettings:")
-    public native NEHotspotConfiguration initWithHS20SettingsEapSettings(NEHotspotHS20Settings hs20Settings,
-            NEHotspotEAPSettings eapSettings);
+    public native NEHotspotConfiguration initWithHS20SettingsEapSettings(@NotNull NEHotspotHS20Settings hs20Settings,
+            @NotNull NEHotspotEAPSettings eapSettings);
 
     /**
      * initWithSSID:
@@ -157,7 +164,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("initWithSSID:")
-    public native NEHotspotConfiguration initWithSSID(String SSID);
+    public native NEHotspotConfiguration initWithSSID(@NotNull String SSID);
 
     /**
      * initWithSSID:eapSettings
@@ -172,7 +179,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("initWithSSID:eapSettings:")
-    public native NEHotspotConfiguration initWithSSIDEapSettings(String SSID, NEHotspotEAPSettings eapSettings);
+    public native NEHotspotConfiguration initWithSSIDEapSettings(@NotNull String SSID,
+            @NotNull NEHotspotEAPSettings eapSettings);
 
     /**
      * initWithSSID:passphrase:isWEP
@@ -191,7 +199,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("initWithSSID:passphrase:isWEP:")
-    public native NEHotspotConfiguration initWithSSIDPassphraseIsWEP(String SSID, String passphrase, boolean isWEP);
+    public native NEHotspotConfiguration initWithSSIDPassphraseIsWEP(@NotNull String SSID, @NotNull String passphrase,
+            boolean isWEP);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -221,9 +230,10 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
     @Selector("joinOnce")
     public native boolean joinOnce();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] lifeTimeInDays
@@ -235,6 +245,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("lifeTimeInDays")
     public native NSNumber lifeTimeInDays();
@@ -275,7 +286,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("setLifeTimeInDays:")
-    public native void setLifeTimeInDays(NSNumber value);
+    public native void setLifeTimeInDays(@NotNull NSNumber value);
 
     @Generated
     @Selector("setVersion:")
@@ -307,6 +318,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("SSIDPrefix")
     public native String SSIDPrefix();
@@ -335,7 +347,7 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("initWithSSIDPrefix:")
-    public native NEHotspotConfiguration initWithSSIDPrefix(String SSIDPrefix);
+    public native NEHotspotConfiguration initWithSSIDPrefix(@NotNull String SSIDPrefix);
 
     /**
      * initWithSSIDPrefix:passphrase:isWEP
@@ -355,8 +367,8 @@ public class NEHotspotConfiguration extends NSObject implements NSCopying, NSSec
      */
     @Generated
     @Selector("initWithSSIDPrefix:passphrase:isWEP:")
-    public native NEHotspotConfiguration initWithSSIDPrefixPassphraseIsWEP(String SSIDPrefix, String passphrase,
-            boolean isWEP);
+    public native NEHotspotConfiguration initWithSSIDPrefixPassphraseIsWEP(@NotNull String SSIDPrefix,
+            @NotNull String passphrase, boolean isWEP);
 
     /**
      * [@property] hidden

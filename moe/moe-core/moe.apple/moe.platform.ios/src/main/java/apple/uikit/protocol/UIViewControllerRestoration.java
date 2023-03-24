@@ -26,6 +26,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A class must implement this protocol if it is specified as the restoration class of a UIViewController.
@@ -35,9 +37,10 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("UIViewControllerRestoration")
 public interface UIViewControllerRestoration {
+    @Nullable
     @Generated
     @Selector("viewControllerWithRestorationIdentifierPath:coder:")
     @ProtocolClassMethod("viewControllerWithRestorationIdentifierPathCoder")
-    UIViewController _viewControllerWithRestorationIdentifierPathCoder(NSArray<String> identifierComponents,
-            NSCoder coder);
+    UIViewController _viewControllerWithRestorationIdentifierPathCoder(@NotNull NSArray<String> identifierComponents,
+            @NotNull NSCoder coder);
 }

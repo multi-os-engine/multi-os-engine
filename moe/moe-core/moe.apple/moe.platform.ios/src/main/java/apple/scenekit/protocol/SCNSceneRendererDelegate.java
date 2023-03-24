@@ -26,6 +26,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] SCNSceneRendererDelegate
@@ -51,7 +52,7 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didApplyAnimationsAtTime:")
-    default void rendererDidApplyAnimationsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+    default void rendererDidApplyAnimationsAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -71,8 +72,8 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didRenderScene:atTime:")
-    default void rendererDidRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, SCNScene scene,
-            double time) {
+    default void rendererDidRenderSceneAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNScene scene, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -90,7 +91,7 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didSimulatePhysicsAtTime:")
-    default void rendererDidSimulatePhysicsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+    default void rendererDidSimulatePhysicsAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -110,7 +111,7 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:updateAtTime:")
-    default void rendererUpdateAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, double time) {
+    default void rendererUpdateAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -130,8 +131,8 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:willRenderScene:atTime:")
-    default void rendererWillRenderSceneAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
-            SCNScene scene, double time) {
+    default void rendererWillRenderSceneAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+            @NotNull SCNScene scene, double time) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -151,7 +152,7 @@ public interface SCNSceneRendererDelegate {
     @Generated
     @IsOptional
     @Selector("renderer:didApplyConstraintsAtTime:")
-    default void rendererDidApplyConstraintsAtTime(@Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
+    default void rendererDidApplyConstraintsAtTime(@NotNull @Mapped(ObjCObjectMapper.class) SCNSceneRenderer renderer,
             double time) {
         throw new java.lang.UnsupportedOperationException();
     }

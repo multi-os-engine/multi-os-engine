@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] SCNSceneRenderer
@@ -65,6 +67,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("audioEngine")
     AVAudioEngine audioEngine();
@@ -76,6 +79,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("audioEnvironmentNode")
     AVAudioEnvironmentNode audioEnvironmentNode();
@@ -88,6 +92,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("audioListener")
     SCNNode audioListener();
@@ -125,6 +130,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -135,6 +141,7 @@ public interface SCNSceneRenderer {
      * 
      * A Core OpenGL render context that is used as the render target (a CGLContextObj on macOS, an EAGLContext on iOS).
      */
+    @Nullable
     @Generated
     @Selector("context")
     VoidPtr context();
@@ -147,6 +154,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentRenderCommandEncoder")
     @MappedReturn(ObjCObjectMapper.class)
@@ -169,6 +177,7 @@ public interface SCNSceneRenderer {
      * 
      * Specifies the renderer delegate.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,6 +204,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -208,9 +218,11 @@ public interface SCNSceneRenderer {
      * @param point   A point in the coordinate system of the receiver.
      * @param options Optional parameters (see the "Hit test options" group for the available options).
      */
+    @NotNull
     @Generated
     @Selector("hitTest:options:")
-    NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point, NSDictionary<String, ?> options);
+    NSArray<? extends SCNHitTestResult> hitTestOptions(@ByValue CGPoint point,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] jitteringEnabled
@@ -249,7 +261,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("isNodeInsideFrustum:withPointOfView:")
-    boolean isNodeInsideFrustumWithPointOfView(SCNNode node, SCNNode pointOfView);
+    boolean isNodeInsideFrustumWithPointOfView(@NotNull SCNNode node, @NotNull SCNNode pointOfView);
 
     /**
      * [@property] playing
@@ -292,15 +304,17 @@ public interface SCNSceneRenderer {
      * 
      * @param pointOfView The point of view used to test the visibility.
      */
+    @NotNull
     @Generated
     @Selector("nodesInsideFrustumWithPointOfView:")
-    NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(SCNNode pointOfView);
+    NSArray<? extends SCNNode> nodesInsideFrustumWithPointOfView(@NotNull SCNNode pointOfView);
 
     /**
      * [@property] overlaySKScene
      * 
      * Specifies the overlay of the receiver as a SpriteKit scene instance. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("overlaySKScene")
     SKScene overlaySKScene();
@@ -312,6 +326,7 @@ public interface SCNSceneRenderer {
      * 
      * A point of view must have either a camera or a spot light attached.
      */
+    @Nullable
     @Generated
     @Selector("pointOfView")
     SCNNode pointOfView();
@@ -330,8 +345,8 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("prepareObject:shouldAbortBlock:")
-    boolean prepareObjectShouldAbortBlock(@Mapped(ObjCObjectMapper.class) Object object,
-            @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") Block_prepareObjectShouldAbortBlock block);
+    boolean prepareObjectShouldAbortBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object object,
+            @Nullable @ObjCBlock(name = "call_prepareObjectShouldAbortBlock") Block_prepareObjectShouldAbortBlock block);
 
     /**
      * prepareObjects:withCompletionHandler:
@@ -346,8 +361,8 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("prepareObjects:withCompletionHandler:")
-    void prepareObjectsWithCompletionHandler(NSArray<?> objects,
-            @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") Block_prepareObjectsWithCompletionHandler completionHandler);
+    void prepareObjectsWithCompletionHandler(@NotNull NSArray<?> objects,
+            @Nullable @ObjCBlock(name = "call_prepareObjectsWithCompletionHandler") Block_prepareObjectsWithCompletionHandler completionHandler);
 
     /**
      * presentScene:withTransition:incomingPointOfView:
@@ -363,9 +378,9 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("presentScene:withTransition:incomingPointOfView:completionHandler:")
-    void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(SCNScene scene, SKTransition transition,
-            SCNNode pointOfView,
-            @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
+    void presentSceneWithTransitionIncomingPointOfViewCompletionHandler(@NotNull SCNScene scene,
+            @NotNull SKTransition transition, @Nullable SCNNode pointOfView,
+            @Nullable @ObjCBlock(name = "call_presentSceneWithTransitionIncomingPointOfViewCompletionHandler") Block_presentSceneWithTransitionIncomingPointOfViewCompletionHandler completionHandler);
 
     /**
      * projectPoint
@@ -404,6 +419,7 @@ public interface SCNSceneRenderer {
      * 
      * Specifies the scene of the receiver.
      */
+    @Nullable
     @Generated
     @Selector("scene")
     SCNScene scene();
@@ -432,7 +448,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("setAudioListener:")
-    void setAudioListener(SCNNode value);
+    void setAudioListener(@Nullable SCNNode value);
 
     /**
      * [@property] autoenablesDefaultLighting
@@ -464,7 +480,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("setDelegate:")
-    void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * [@property] loops
@@ -484,7 +500,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("setOverlaySKScene:")
-    void setOverlaySKScene(SKScene value);
+    void setOverlaySKScene(@Nullable SKScene value);
 
     /**
      * [@property] pointOfView
@@ -495,7 +511,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("setPointOfView:")
-    void setPointOfView(SCNNode value);
+    void setPointOfView(@Nullable SCNNode value);
 
     /**
      * [@property] scene
@@ -504,7 +520,7 @@ public interface SCNSceneRenderer {
      */
     @Generated
     @Selector("setScene:")
-    void setScene(SCNScene value);
+    void setScene(@Nullable SCNScene value);
 
     /**
      * [@property] sceneTime
@@ -663,6 +679,7 @@ public interface SCNSceneRenderer {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("currentRenderPassDescriptor")
     MTLRenderPassDescriptor currentRenderPassDescriptor();

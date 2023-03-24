@@ -30,6 +30,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEAssetRegistry
@@ -76,28 +78,32 @@ public class PHASEAssetRegistry extends NSObject {
      * @return
      *         A PHASEAsset object, or nil if one could not be found.
      */
+    @Nullable
     @Generated
     @Selector("assetForIdentifier:")
-    public native PHASEAsset assetForIdentifier(String identifier);
+    public native PHASEAsset assetForIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +121,7 @@ public class PHASEAssetRegistry extends NSObject {
      * 
      * A dictionary of global metaparameters
      */
+    @NotNull
     @Generated
     @Selector("globalMetaParameters")
     public native NSDictionary<String, ? extends PHASEMetaParameter> globalMetaParameters();
@@ -145,9 +152,10 @@ public class PHASEAssetRegistry extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,11 +178,12 @@ public class PHASEAssetRegistry extends NSObject {
      * @return
      *         A PHASEGlobalMetaParameterAsset object.
      */
+    @Nullable
     @Generated
     @Selector("registerGlobalMetaParameter:error:")
     public native PHASEGlobalMetaParameterAsset registerGlobalMetaParameterError(
-            PHASEMetaParameterDefinition metaParameterDefinition,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull PHASEMetaParameterDefinition metaParameterDefinition,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * registerSoundAssetAtURL:identifier:assetType:channelLayout:normalizationMode:error
@@ -205,11 +214,13 @@ public class PHASEAssetRegistry extends NSObject {
      * @return
      *         A PHASESoundAsset object
      */
+    @Nullable
     @Generated
     @Selector("registerSoundAssetAtURL:identifier:assetType:channelLayout:normalizationMode:error:")
     public native PHASESoundAsset registerSoundAssetAtURLIdentifierAssetTypeChannelLayoutNormalizationModeError(
-            NSURL url, String identifier, @NInt long assetType, AVAudioChannelLayout channelLayout,
-            @NInt long normalizationMode, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSURL url, @Nullable String identifier, @NInt long assetType,
+            @Nullable AVAudioChannelLayout channelLayout, @NInt long normalizationMode,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * registerSoundAssetWithData:identifier:format:normalizationMode:error
@@ -234,11 +245,12 @@ public class PHASEAssetRegistry extends NSObject {
      * @return
      *         A PHASESoundAsset object.
      */
+    @Nullable
     @Generated
     @Selector("registerSoundAssetWithData:identifier:format:normalizationMode:error:")
-    public native PHASESoundAsset registerSoundAssetWithDataIdentifierFormatNormalizationModeError(NSData data,
-            String identifier, AVAudioFormat format, @NInt long normalizationMode,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native PHASESoundAsset registerSoundAssetWithDataIdentifierFormatNormalizationModeError(@NotNull NSData data,
+            @Nullable String identifier, @NotNull AVAudioFormat format, @NInt long normalizationMode,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * registerSoundEventAssetWithRootNode:identifier:error
@@ -258,11 +270,12 @@ public class PHASEAssetRegistry extends NSObject {
      * @return
      *         A PHASESoundEventNodeAsset object
      */
+    @Nullable
     @Generated
     @Selector("registerSoundEventAssetWithRootNode:identifier:error:")
     public native PHASESoundEventNodeAsset registerSoundEventAssetWithRootNodeIdentifierError(
-            PHASESoundEventNodeDefinition rootNode, String identifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull PHASESoundEventNodeDefinition rootNode, @Nullable String identifier,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -293,8 +306,8 @@ public class PHASEAssetRegistry extends NSObject {
      */
     @Generated
     @Selector("unregisterAssetWithIdentifier:completion:")
-    public native void unregisterAssetWithIdentifierCompletion(String identifier,
-            @ObjCBlock(name = "call_unregisterAssetWithIdentifierCompletion") Block_unregisterAssetWithIdentifierCompletion handler);
+    public native void unregisterAssetWithIdentifierCompletion(@NotNull String identifier,
+            @Nullable @ObjCBlock(name = "call_unregisterAssetWithIdentifierCompletion") Block_unregisterAssetWithIdentifierCompletion handler);
 
     @Runtime(ObjCRuntime.class)
     @Generated

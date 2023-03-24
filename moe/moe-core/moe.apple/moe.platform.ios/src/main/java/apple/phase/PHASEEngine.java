@@ -25,6 +25,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] PHASEEngine
@@ -59,6 +61,7 @@ public class PHASEEngine extends NSObject {
      * Returns nil if there are no active group presets in the engine. Activate or Deactivate the preset via
      * [PHASEGroupPreset activate] and [PHASEGroupPreset deactivate]
      */
+    @Nullable
     @Generated
     @Selector("activeGroupPreset")
     public native PHASEGroupPreset activeGroupPreset();
@@ -78,28 +81,32 @@ public class PHASEEngine extends NSObject {
      * 
      * A registry for assets available to the engine
      */
+    @NotNull
     @Generated
     @Selector("assetRegistry")
     public native PHASEAssetRegistry assetRegistry();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -115,6 +122,7 @@ public class PHASEEngine extends NSObject {
      * 
      * The default value is PHASEMediumPresetAir.
      */
+    @NotNull
     @Generated
     @Selector("defaultMedium")
     public native PHASEMedium defaultMedium();
@@ -142,6 +150,7 @@ public class PHASEEngine extends NSObject {
      * 
      * Returns a dictionary of the ducker objects at the time it is retrieved.
      */
+    @NotNull
     @Generated
     @Selector("duckers")
     public native NSArray<? extends PHASEDucker> duckers();
@@ -153,6 +162,7 @@ public class PHASEEngine extends NSObject {
      * 
      * Returns a dictionary of the groups at the time it is retrieved.
      */
+    @NotNull
     @Generated
     @Selector("groups")
     public native NSDictionary<String, ? extends PHASEGroup> groups();
@@ -195,9 +205,10 @@ public class PHASEEngine extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -256,6 +267,7 @@ public class PHASEEngine extends NSObject {
      * The rootObject's transform may not be changed. This will cause an error to be thrown.
      * The rootObject may not be copied. This will cause an error to be thrown.
      */
+    @NotNull
     @Generated
     @Selector("rootObject")
     public native PHASEObject rootObject();
@@ -269,7 +281,7 @@ public class PHASEEngine extends NSObject {
      */
     @Generated
     @Selector("setDefaultMedium:")
-    public native void setDefaultMedium(PHASEMedium value);
+    public native void setDefaultMedium(@NotNull PHASEMedium value);
 
     /**
      * [@property] defaultReverbPreset
@@ -332,6 +344,7 @@ public class PHASEEngine extends NSObject {
      * Returns a dictionary of the sound events at the time it is retrieved. This includes all sound events that are
      * registered with the engine, including those that are preparing, playing, paused or stopping.
      */
+    @NotNull
     @Generated
     @Selector("soundEvents")
     public native NSArray<? extends PHASESoundEvent> soundEvents();
@@ -346,7 +359,7 @@ public class PHASEEngine extends NSObject {
      */
     @Generated
     @Selector("startAndReturnError:")
-    public native boolean startAndReturnError(@ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean startAndReturnError(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * stop

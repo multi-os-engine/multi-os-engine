@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -76,22 +78,25 @@ public class CIFilterShape extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -126,9 +131,10 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -163,11 +169,12 @@ public class CIFilterShape extends NSObject implements NSCopying {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * Returns an integral rect that bounds the shape.
@@ -191,6 +198,7 @@ public class CIFilterShape extends NSObject implements NSCopying {
     /**
      * Create a shape representing the shape inset by 'delta'.
      */
+    @NotNull
     @Generated
     @Selector("insetByX:Y:")
     public native CIFilterShape insetByXY(int dx, int dy);
@@ -198,14 +206,16 @@ public class CIFilterShape extends NSObject implements NSCopying {
     /**
      * Create a shape representing the intersection of the shape and 's2'.
      */
+    @NotNull
     @Generated
     @Selector("intersectWith:")
-    public native CIFilterShape intersectWith(CIFilterShape s2);
+    public native CIFilterShape intersectWith(@NotNull CIFilterShape s2);
 
     /**
      * Create a shape representing the intersection of the shape and the smallest
      * integral rect containing 'r'.
      */
+    @NotNull
     @Generated
     @Selector("intersectWithRect:")
     public native CIFilterShape intersectWithRect(@ByValue CGRect r);
@@ -218,6 +228,7 @@ public class CIFilterShape extends NSObject implements NSCopying {
      * in the transformed shape (but none of those outside the transformed
      * shape).
      */
+    @NotNull
     @Generated
     @Selector("transformBy:interior:")
     public native CIFilterShape transformByInterior(@ByValue CGAffineTransform m, boolean flag);
@@ -225,14 +236,16 @@ public class CIFilterShape extends NSObject implements NSCopying {
     /**
      * Create a shape representing the union of the shape and 's2'.
      */
+    @NotNull
     @Generated
     @Selector("unionWith:")
-    public native CIFilterShape unionWith(CIFilterShape s2);
+    public native CIFilterShape unionWith(@NotNull CIFilterShape s2);
 
     /**
      * Create a shape representing the union of the shape and the smallest
      * integral rect containing 'r'.
      */
+    @NotNull
     @Generated
     @Selector("unionWithRect:")
     public native CIFilterShape unionWithRect(@ByValue CGRect r);

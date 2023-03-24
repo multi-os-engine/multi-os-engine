@@ -25,6 +25,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
@@ -43,8 +44,8 @@ public interface GKChallengeListener {
     @Generated
     @IsOptional
     @Selector("player:didCompleteChallenge:issuedByFriend:")
-    default void playerDidCompleteChallengeIssuedByFriend(GKPlayer player, GKChallenge challenge,
-            GKPlayer friendPlayer) {
+    default void playerDidCompleteChallengeIssuedByFriend(@NotNull GKPlayer player, @NotNull GKChallenge challenge,
+            @NotNull GKPlayer friendPlayer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -59,7 +60,7 @@ public interface GKChallengeListener {
     @Generated
     @IsOptional
     @Selector("player:didReceiveChallenge:")
-    default void playerDidReceiveChallenge(GKPlayer player, GKChallenge challenge) {
+    default void playerDidReceiveChallenge(@NotNull GKPlayer player, @NotNull GKChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -75,8 +76,8 @@ public interface GKChallengeListener {
     @Generated
     @IsOptional
     @Selector("player:issuedChallengeWasCompleted:byFriend:")
-    default void playerIssuedChallengeWasCompletedByFriend(GKPlayer player, GKChallenge challenge,
-            GKPlayer friendPlayer) {
+    default void playerIssuedChallengeWasCompletedByFriend(@NotNull GKPlayer player, @NotNull GKChallenge challenge,
+            @NotNull GKPlayer friendPlayer) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -91,7 +92,7 @@ public interface GKChallengeListener {
     @Generated
     @IsOptional
     @Selector("player:wantsToPlayChallenge:")
-    default void playerWantsToPlayChallenge(GKPlayer player, GKChallenge challenge) {
+    default void playerWantsToPlayChallenge(@NotNull GKPlayer player, @NotNull GKChallenge challenge) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

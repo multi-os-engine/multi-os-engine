@@ -9,6 +9,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@c] CPListTemplateItem describes common properties of list items that can be displayed
@@ -26,11 +27,12 @@ public interface CPListTemplateItem {
      */
     @Generated
     @Selector("setUserInfo:")
-    void setUserInfo(@Mapped(ObjCObjectMapper.class) Object value);
+    void setUserInfo(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     /**
      * The primary text shown in a cell displaying this list item.
      */
+    @Nullable
     @Generated
     @Selector("text")
     String text();
@@ -38,6 +40,7 @@ public interface CPListTemplateItem {
     /**
      * Any custom user info related to this item.
      */
+    @Nullable
     @Generated
     @Selector("userInfo")
     @MappedReturn(ObjCObjectMapper.class)

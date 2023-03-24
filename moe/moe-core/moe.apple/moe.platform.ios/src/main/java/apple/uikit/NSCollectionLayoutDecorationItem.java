@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -57,7 +59,7 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Useful for setting a background decoration view behind a section's content area.
@@ -86,33 +88,39 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
      * | |
      * +----------------------------------+
      */
+    @NotNull
     @Generated
     @Selector("backgroundDecorationItemWithElementKind:")
-    public static native NSCollectionLayoutDecorationItem backgroundDecorationItemWithElementKind(String elementKind);
+    public static native NSCollectionLayoutDecorationItem backgroundDecorationItemWithElementKind(
+            @NotNull String elementKind);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -122,6 +130,7 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("elementKind")
     public native String elementKind();
@@ -154,17 +163,19 @@ public class NSCollectionLayoutDecorationItem extends NSCollectionLayoutItem imp
 
     @Generated
     @Selector("itemWithLayoutSize:")
-    public static native NSCollectionLayoutDecorationItem itemWithLayoutSize(NSCollectionLayoutSize layoutSize);
+    public static native NSCollectionLayoutDecorationItem itemWithLayoutSize(
+            @NotNull NSCollectionLayoutSize layoutSize);
 
     @Generated
     @Selector("itemWithLayoutSize:supplementaryItems:")
     public static native NSCollectionLayoutDecorationItem itemWithLayoutSizeSupplementaryItems(
-            NSCollectionLayoutSize layoutSize,
-            NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
+            @NotNull NSCollectionLayoutSize layoutSize,
+            @NotNull NSArray<? extends NSCollectionLayoutSupplementaryItem> supplementaryItems);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

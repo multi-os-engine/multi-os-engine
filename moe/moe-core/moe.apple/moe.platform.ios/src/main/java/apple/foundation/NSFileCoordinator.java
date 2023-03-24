@@ -38,6 +38,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 5.0
@@ -74,7 +76,7 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("addFilePresenter:")
-    public static native void addFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
+    public static native void addFilePresenter(@NotNull @Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
 
     @Generated
     @Owned
@@ -88,22 +90,25 @@ public class NSFileCoordinator extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +121,7 @@ public class NSFileCoordinator extends NSObject {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("filePresenters")
     public static native NSArray<?> filePresenters();
@@ -142,9 +148,10 @@ public class NSFileCoordinator extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,7 +160,8 @@ public class NSFileCoordinator extends NSObject {
 
     @Generated
     @Selector("removeFilePresenter:")
-    public static native void removeFilePresenter(@Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
+    public static native void removeFilePresenter(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenter);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -277,9 +285,9 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("coordinateAccessWithIntents:queue:byAccessor:")
-    public native void coordinateAccessWithIntentsQueueByAccessor(NSArray<? extends NSFileAccessIntent> intents,
-            NSOperationQueue queue,
-            @ObjCBlock(name = "call_coordinateAccessWithIntentsQueueByAccessor") Block_coordinateAccessWithIntentsQueueByAccessor accessor);
+    public native void coordinateAccessWithIntentsQueueByAccessor(
+            @NotNull NSArray<? extends NSFileAccessIntent> intents, @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_coordinateAccessWithIntentsQueueByAccessor") Block_coordinateAccessWithIntentsQueueByAccessor accessor);
 
     /**
      * The next four methods behave similarly to -coordinateAccessWithIntents:queue:byAccessor: with one or two
@@ -305,29 +313,29 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("coordinateReadingItemAtURL:options:error:byAccessor:")
-    public native void coordinateReadingItemAtURLOptionsErrorByAccessor(NSURL url, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
-            @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsErrorByAccessor reader);
+    public native void coordinateReadingItemAtURLOptionsErrorByAccessor(@NotNull NSURL url, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @NotNull @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsErrorByAccessor reader);
 
     @Generated
     @Selector("coordinateReadingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
-    public native void coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL readingURL,
-            @NUInt long readingOptions, NSURL writingURL, @NUInt long writingOptions,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
-            @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor readerWriter);
+    public native void coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(
+            @NotNull NSURL readingURL, @NUInt long readingOptions, @NotNull NSURL writingURL,
+            @NUInt long writingOptions, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @NotNull @ObjCBlock(name = "call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor readerWriter);
 
     @Generated
     @Selector("coordinateWritingItemAtURL:options:error:byAccessor:")
-    public native void coordinateWritingItemAtURLOptionsErrorByAccessor(NSURL url, @NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
-            @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsErrorByAccessor writer);
+    public native void coordinateWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL url, @NUInt long options,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @NotNull @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsErrorByAccessor writer);
 
     @Generated
     @Selector("coordinateWritingItemAtURL:options:writingItemAtURL:options:error:byAccessor:")
-    public native void coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL url1,
-            @NUInt long options1, NSURL url2, @NUInt long options2,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
-            @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor writer);
+    public native void coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL url1,
+            @NUInt long options1, @NotNull NSURL url2, @NUInt long options2,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @NotNull @ObjCBlock(name = "call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor") Block_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor writer);
 
     @Generated
     @Selector("init")
@@ -376,7 +384,7 @@ public class NSFileCoordinator extends NSObject {
     @Generated
     @Selector("initWithFilePresenter:")
     public native NSFileCoordinator initWithFilePresenter(
-            @Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenterOrNil);
+            @Nullable @Mapped(ObjCObjectMapper.class) NSFilePresenter filePresenterOrNil);
 
     /**
      * Announce that the item located by a URL is now located by another URL.
@@ -399,7 +407,7 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("itemAtURL:didMoveToURL:")
-    public native void itemAtURLDidMoveToURL(NSURL oldURL, NSURL newURL);
+    public native void itemAtURLDidMoveToURL(@NotNull NSURL oldURL, @NotNull NSURL newURL);
 
     /**
      * Announce that the item located by a URL is going to be located by another URL.
@@ -419,7 +427,7 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("itemAtURL:willMoveToURL:")
-    public native void itemAtURLWillMoveToURL(NSURL oldURL, NSURL newURL);
+    public native void itemAtURLWillMoveToURL(@NotNull NSURL oldURL, @NotNull NSURL newURL);
 
     /**
      * A string that uniquely identifies the file access that will be done by this NSFileCoordinator. Every
@@ -446,6 +454,7 @@ public class NSFileCoordinator extends NSObject {
      * 
      * API-Since: 5.0
      */
+    @NotNull
     @Generated
     @Selector("purposeIdentifier")
     public native String purposeIdentifier();
@@ -477,42 +486,43 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("setPurposeIdentifier:")
-    public native void setPurposeIdentifier(String value);
+    public native void setPurposeIdentifier(@NotNull String value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateAccessWithIntentsQueueByAccessor {
         @Generated
-        void call_coordinateAccessWithIntentsQueueByAccessor(NSError error);
+        void call_coordinateAccessWithIntentsQueueByAccessor(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateReadingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateReadingItemAtURLOptionsErrorByAccessor(NSURL newURL);
+        void call_coordinateReadingItemAtURLOptionsErrorByAccessor(@NotNull NSURL newURL);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL newReadingURL,
-                NSURL newWritingURL);
+        void call_coordinateReadingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL newReadingURL,
+                @NotNull NSURL newWritingURL);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateWritingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateWritingItemAtURLOptionsErrorByAccessor(NSURL newURL);
+        void call_coordinateWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL newURL);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor {
         @Generated
-        void call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(NSURL newURL1, NSURL newURL2);
+        void call_coordinateWritingItemAtURLOptionsWritingItemAtURLOptionsErrorByAccessor(@NotNull NSURL newURL1,
+                @NotNull NSURL newURL2);
     }
 
     /**
@@ -526,7 +536,7 @@ public class NSFileCoordinator extends NSObject {
      */
     @Generated
     @Selector("itemAtURL:didChangeUbiquityAttributes:")
-    public native void itemAtURLDidChangeUbiquityAttributes(NSURL url, NSSet<String> attributes);
+    public native void itemAtURLDidChangeUbiquityAttributes(@NotNull NSURL url, @NotNull NSSet<String> attributes);
 
     /**
      * Prepare to more efficiently do a large number of invocations of -coordinate... methods, first synchronously
@@ -562,9 +572,10 @@ public class NSFileCoordinator extends NSObject {
     @Generated
     @Selector("prepareForReadingItemsAtURLs:options:writingItemsAtURLs:options:error:byAccessor:")
     public native void prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor(
-            NSArray<? extends NSURL> readingURLs, @NUInt long readingOptions, NSArray<? extends NSURL> writingURLs,
-            @NUInt long writingOptions, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
-            @ObjCBlock(name = "call_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor batchAccessor);
+            @NotNull NSArray<? extends NSURL> readingURLs, @NUInt long readingOptions,
+            @NotNull NSArray<? extends NSURL> writingURLs, @NUInt long writingOptions,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError,
+            @NotNull @ObjCBlock(name = "call_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor batchAccessor);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -578,6 +589,6 @@ public class NSFileCoordinator extends NSObject {
 
         @Generated
         void call_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor(
-                @ObjCBlock(name = "call_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor completionHandler);
+                @NotNull @ObjCBlock(name = "call_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor") Block_Block_prepareForReadingItemsAtURLsOptionsWritingItemsAtURLsOptionsErrorByAccessor completionHandler);
     }
 }

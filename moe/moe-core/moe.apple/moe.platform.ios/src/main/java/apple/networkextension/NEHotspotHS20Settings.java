@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEHotspotHS20Settings
@@ -58,6 +60,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("MCCAndMNCs")
     public native NSArray<String> MCCAndMNCs();
@@ -78,31 +81,35 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -120,13 +127,14 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("domainName")
     public native String domainName();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -139,7 +147,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEHotspotHS20Settings initWithCoder(NSCoder coder);
+    public native NEHotspotHS20Settings initWithCoder(@NotNull NSCoder coder);
 
     /**
      * initWithDomainName:roamingEnabled
@@ -154,7 +162,8 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("initWithDomainName:roamingEnabled:")
-    public native NEHotspotHS20Settings initWithDomainNameRoamingEnabled(String domainName, boolean roamingEnabled);
+    public native NEHotspotHS20Settings initWithDomainNameRoamingEnabled(@NotNull String domainName,
+            boolean roamingEnabled);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -185,9 +194,10 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] naiRealmNames
@@ -197,6 +207,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("naiRealmNames")
     public native NSArray<String> naiRealmNames();
@@ -222,6 +233,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("roamingConsortiumOIs")
     public native NSArray<String> roamingConsortiumOIs();
@@ -237,7 +249,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setMCCAndMNCs:")
-    public native void setMCCAndMNCs(NSArray<String> value);
+    public native void setMCCAndMNCs(@NotNull NSArray<String> value);
 
     /**
      * [@property] naiRealmNames
@@ -249,7 +261,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setNaiRealmNames:")
-    public native void setNaiRealmNames(NSArray<String> value);
+    public native void setNaiRealmNames(@NotNull NSArray<String> value);
 
     /**
      * [@property] roamingConsortiumOIs
@@ -261,7 +273,7 @@ public class NEHotspotHS20Settings extends NSObject implements NSCopying, NSSecu
      */
     @Generated
     @Selector("setRoamingConsortiumOIs:")
-    public native void setRoamingConsortiumOIs(NSArray<String> value);
+    public native void setRoamingConsortiumOIs(@NotNull NSArray<String> value);
 
     /**
      * [@property] roamingEnabled

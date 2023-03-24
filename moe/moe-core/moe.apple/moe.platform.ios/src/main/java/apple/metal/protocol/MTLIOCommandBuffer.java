@@ -16,6 +16,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] MTLIOCommandBuffer
@@ -46,13 +48,13 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("addCompletedHandler:")
-    void addCompletedHandler(@ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
+    void addCompletedHandler(@NotNull @ObjCBlock(name = "call_addCompletedHandler") Block_addCompletedHandler block);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_addCompletedHandler {
         @Generated
-        void call_addCompletedHandler(@Mapped(ObjCObjectMapper.class) Object arg0);
+        void call_addCompletedHandler(@NotNull @Mapped(ObjCObjectMapper.class) Object arg0);
     }
 
     /**
@@ -72,7 +74,7 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("copyStatusToBuffer:offset:")
-    void copyStatusToBufferOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
+    void copyStatusToBufferOffset(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer, @NUInt long offset);
 
     /**
      * enqueue
@@ -88,6 +90,7 @@ public interface MTLIOCommandBuffer {
      * 
      * If an error occurred during execution, the NSError may contain more details about the problem.
      */
+    @Nullable
     @Generated
     @Selector("error")
     NSError error();
@@ -97,6 +100,7 @@ public interface MTLIOCommandBuffer {
      * 
      * An optional label for this handle.
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -109,8 +113,8 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("loadBuffer:offset:size:sourceHandle:sourceHandleOffset:")
-    void loadBufferOffsetSizeSourceHandleSourceHandleOffset(@Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
-            @NUInt long offset, @NUInt long size, @Mapped(ObjCObjectMapper.class) MTLIOFileHandle sourceHandle,
+    void loadBufferOffsetSizeSourceHandleSourceHandleOffset(@NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer buffer,
+            @NUInt long offset, @NUInt long size, @NotNull @Mapped(ObjCObjectMapper.class) MTLIOFileHandle sourceHandle,
             @NUInt long sourceHandleOffset);
 
     /**
@@ -121,8 +125,8 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("loadBytes:size:sourceHandle:sourceHandleOffset:")
-    void loadBytesSizeSourceHandleSourceHandleOffset(VoidPtr pointer, @NUInt long size,
-            @Mapped(ObjCObjectMapper.class) MTLIOFileHandle sourceHandle, @NUInt long sourceHandleOffset);
+    void loadBytesSizeSourceHandleSourceHandleOffset(@NotNull VoidPtr pointer, @NUInt long size,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLIOFileHandle sourceHandle, @NUInt long sourceHandleOffset);
 
     /**
      * loadTexture:texture:slice:level:size:sourceBytesPerRow:sourceBytesPerImage:destinationOrigin:sourceHandle:sourceHandleOffset:
@@ -133,9 +137,9 @@ public interface MTLIOCommandBuffer {
     @Generated
     @Selector("loadTexture:slice:level:size:sourceBytesPerRow:sourceBytesPerImage:destinationOrigin:sourceHandle:sourceHandleOffset:")
     void loadTextureSliceLevelSizeSourceBytesPerRowSourceBytesPerImageDestinationOriginSourceHandleSourceHandleOffset(
-            @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long slice, @NUInt long level,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture texture, @NUInt long slice, @NUInt long level,
             @ByValue MTLSize size, @NUInt long sourceBytesPerRow, @NUInt long sourceBytesPerImage,
-            @ByValue MTLOrigin destinationOrigin, @Mapped(ObjCObjectMapper.class) MTLIOFileHandle sourceHandle,
+            @ByValue MTLOrigin destinationOrigin, @NotNull @Mapped(ObjCObjectMapper.class) MTLIOFileHandle sourceHandle,
             @NUInt long sourceHandleOffset);
 
     /**
@@ -154,7 +158,7 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("pushDebugGroup:")
-    void pushDebugGroup(String string);
+    void pushDebugGroup(@NotNull String string);
 
     /**
      * [@property] label
@@ -163,7 +167,7 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 
     /**
      * signalEvent:value:
@@ -172,7 +176,7 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("signalEvent:value:")
-    void signalEventValue(@Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
+    void signalEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
 
     /**
      * [@property] status
@@ -200,7 +204,7 @@ public interface MTLIOCommandBuffer {
      */
     @Generated
     @Selector("waitForEvent:value:")
-    void waitForEventValue(@Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
+    void waitForEventValue(@NotNull @Mapped(ObjCObjectMapper.class) MTLSharedEvent event, long value);
 
     /**
      * waitUntilCompleted

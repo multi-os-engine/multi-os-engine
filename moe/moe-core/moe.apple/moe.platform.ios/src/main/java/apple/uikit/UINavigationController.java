@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -79,29 +81,32 @@ public class UINavigationController extends UIViewController {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Generated
     @Selector("debugDescription")
@@ -133,9 +138,10 @@ public class UINavigationController extends UIViewController {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,6 +175,7 @@ public class UINavigationController extends UIViewController {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("barHideOnSwipeGestureRecognizer")
     public native UIPanGestureRecognizer barHideOnSwipeGestureRecognizer();
@@ -179,10 +186,12 @@ public class UINavigationController extends UIViewController {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("barHideOnTapGestureRecognizer")
     public native UITapGestureRecognizer barHideOnTapGestureRecognizer();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -234,7 +243,7 @@ public class UINavigationController extends UIViewController {
 
     @Generated
     @Selector("initWithCoder:")
-    public native UINavigationController initWithCoder(NSCoder aDecoder);
+    public native UINavigationController initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * Use this initializer to make the navigation controller use your custom bar class.
@@ -245,26 +254,28 @@ public class UINavigationController extends UIViewController {
      */
     @Generated
     @Selector("initWithNavigationBarClass:toolbarClass:")
-    public native UINavigationController initWithNavigationBarClassToolbarClass(Class navigationBarClass,
-            Class toolbarClass);
+    public native UINavigationController initWithNavigationBarClassToolbarClass(@Nullable Class navigationBarClass,
+            @Nullable Class toolbarClass);
 
     /**
      * Initializes the navigation controller with an empty stack
      */
     @Generated
     @Selector("initWithNibName:bundle:")
-    public native UINavigationController initWithNibNameBundle(String nibNameOrNil, NSBundle nibBundleOrNil);
+    public native UINavigationController initWithNibNameBundle(@Nullable String nibNameOrNil,
+            @Nullable NSBundle nibBundleOrNil);
 
     /**
      * Initializer that also pushes the root view controller without animation.
      */
     @Generated
     @Selector("initWithRootViewController:")
-    public native UINavigationController initWithRootViewController(UIViewController rootViewController);
+    public native UINavigationController initWithRootViewController(@NotNull UIViewController rootViewController);
 
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("interactivePopGestureRecognizer")
     public native UIGestureRecognizer interactivePopGestureRecognizer();
@@ -299,6 +310,7 @@ public class UINavigationController extends UIViewController {
      * The navigation bar managed by the controller. Pushing, popping or setting navigation items on a managed
      * navigation bar is not supported.
      */
+    @NotNull
     @Generated
     @Selector("navigationBar")
     public native UINavigationBar navigationBar();
@@ -306,6 +318,7 @@ public class UINavigationController extends UIViewController {
     /**
      * Pops until there's only a single view controller left on the stack. Returns the popped controllers.
      */
+    @Nullable
     @Generated
     @Selector("popToRootViewControllerAnimated:")
     public native NSArray<? extends UIViewController> popToRootViewControllerAnimated(boolean animated);
@@ -313,14 +326,16 @@ public class UINavigationController extends UIViewController {
     /**
      * Pops view controllers until the one specified is on top. Returns the popped controllers.
      */
+    @Nullable
     @Generated
     @Selector("popToViewController:animated:")
-    public native NSArray<? extends UIViewController> popToViewControllerAnimated(UIViewController viewController,
-            boolean animated);
+    public native NSArray<? extends UIViewController> popToViewControllerAnimated(
+            @NotNull UIViewController viewController, boolean animated);
 
     /**
      * Returns the popped controller.
      */
+    @Nullable
     @Generated
     @Selector("popViewControllerAnimated:")
     public native UIViewController popViewControllerAnimated(boolean animated);
@@ -330,14 +345,14 @@ public class UINavigationController extends UIViewController {
      */
     @Generated
     @Selector("pushViewController:animated:")
-    public native void pushViewControllerAnimated(UIViewController viewController, boolean animated);
+    public native void pushViewControllerAnimated(@NotNull UIViewController viewController, boolean animated);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) Object value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) Object value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) Object value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -411,7 +426,7 @@ public class UINavigationController extends UIViewController {
      */
     @Generated
     @Selector("setViewControllers:")
-    public native void setViewControllers(NSArray<? extends UIViewController> value);
+    public native void setViewControllers(@NotNull NSArray<? extends UIViewController> value);
 
     /**
      * If animated is YES, then simulate a push or pop depending on whether the new top view controller was previously
@@ -421,7 +436,7 @@ public class UINavigationController extends UIViewController {
      */
     @Generated
     @Selector("setViewControllers:animated:")
-    public native void setViewControllersAnimated(NSArray<? extends UIViewController> viewControllers,
+    public native void setViewControllersAnimated(@NotNull NSArray<? extends UIViewController> viewControllers,
             boolean animated);
 
     /**
@@ -431,7 +446,8 @@ public class UINavigationController extends UIViewController {
      */
     @Generated
     @Selector("showViewController:sender:")
-    public native void showViewControllerSender(UIViewController vc, @Mapped(ObjCObjectMapper.class) Object sender);
+    public native void showViewControllerSender(@NotNull UIViewController vc,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object sender);
 
     /**
      * For use when presenting an action sheet.
@@ -445,6 +461,7 @@ public class UINavigationController extends UIViewController {
     /**
      * The top view controller on the stack.
      */
+    @Nullable
     @Generated
     @Selector("topViewController")
     public native UIViewController topViewController();
@@ -452,6 +469,7 @@ public class UINavigationController extends UIViewController {
     /**
      * The current view controller stack.
      */
+    @NotNull
     @Generated
     @Selector("viewControllers")
     public native NSArray<? extends UIViewController> viewControllers();
@@ -459,6 +477,7 @@ public class UINavigationController extends UIViewController {
     /**
      * Return modal view controller if it exists. Otherwise the top view controller.
      */
+    @Nullable
     @Generated
     @Selector("visibleViewController")
     public native UIViewController visibleViewController();

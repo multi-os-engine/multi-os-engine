@@ -30,6 +30,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@protocol] NSURLConnectionDataDelegate
@@ -116,52 +118,57 @@ public interface NSURLConnectionDataDelegate extends NSURLConnectionDelegate {
     @Generated
     @IsOptional
     @Selector("connection:didReceiveData:")
-    default void connectionDidReceiveData(NSURLConnection connection, NSData data) {
+    default void connectionDidReceiveData(@NotNull NSURLConnection connection, @NotNull NSData data) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connection:didReceiveResponse:")
-    default void connectionDidReceiveResponse(NSURLConnection connection, NSURLResponse response) {
+    default void connectionDidReceiveResponse(@NotNull NSURLConnection connection, @NotNull NSURLResponse response) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:")
-    default void connectionDidSendBodyDataTotalBytesWrittenTotalBytesExpectedToWrite(NSURLConnection connection,
-            @NInt long bytesWritten, @NInt long totalBytesWritten, @NInt long totalBytesExpectedToWrite) {
+    default void connectionDidSendBodyDataTotalBytesWrittenTotalBytesExpectedToWrite(
+            @NotNull NSURLConnection connection, @NInt long bytesWritten, @NInt long totalBytesWritten,
+            @NInt long totalBytesExpectedToWrite) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("connection:needNewBodyStream:")
-    default NSInputStream connectionNeedNewBodyStream(NSURLConnection connection, NSURLRequest request) {
+    default NSInputStream connectionNeedNewBodyStream(@NotNull NSURLConnection connection,
+            @NotNull NSURLRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("connection:willCacheResponse:")
-    default NSCachedURLResponse connectionWillCacheResponse(NSURLConnection connection,
-            NSCachedURLResponse cachedResponse) {
+    default NSCachedURLResponse connectionWillCacheResponse(@NotNull NSURLConnection connection,
+            @NotNull NSCachedURLResponse cachedResponse) {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("connection:willSendRequest:redirectResponse:")
-    default NSURLRequest connectionWillSendRequestRedirectResponse(NSURLConnection connection, NSURLRequest request,
-            NSURLResponse response) {
+    default NSURLRequest connectionWillSendRequestRedirectResponse(@NotNull NSURLConnection connection,
+            @NotNull NSURLRequest request, @Nullable NSURLResponse response) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("connectionDidFinishLoading:")
-    default void connectionDidFinishLoading(NSURLConnection connection) {
+    default void connectionDidFinishLoading(@NotNull NSURLConnection connection) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

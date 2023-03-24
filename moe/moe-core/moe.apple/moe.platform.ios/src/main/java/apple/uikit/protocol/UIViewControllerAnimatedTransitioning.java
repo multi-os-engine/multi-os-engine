@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -37,7 +39,8 @@ public interface UIViewControllerAnimatedTransitioning {
      */
     @Generated
     @Selector("animateTransition:")
-    void animateTransition(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+    void animateTransition(
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 
     /**
      * This is a convenience and if implemented will be invoked by the system when the transition context's
@@ -58,12 +61,13 @@ public interface UIViewControllerAnimatedTransitioning {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @IsOptional
     @Selector("interruptibleAnimatorForTransition:")
     @MappedReturn(ObjCObjectMapper.class)
     default UIViewImplicitlyAnimating interruptibleAnimatorForTransition(
-            @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext) {
+            @NotNull @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,5 +78,6 @@ public interface UIViewControllerAnimatedTransitioning {
      */
     @Generated
     @Selector("transitionDuration:")
-    double transitionDuration(@Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
+    double transitionDuration(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIViewControllerContextTransitioning transitionContext);
 }

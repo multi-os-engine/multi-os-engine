@@ -23,6 +23,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -57,22 +59,25 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,6 +86,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
      * Setting this property will invalidate the layout immediately to affect any changes
      * Note: any changes made to properties directly will have no effect.
      */
+    @NotNull
     @Generated
     @Selector("configuration")
     public native UICollectionViewCompositionalLayoutConfiguration configuration();
@@ -104,42 +110,45 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
 
     @Generated
     @Selector("initWithCoder:")
-    public native UICollectionViewCompositionalLayout initWithCoder(NSCoder coder);
+    public native UICollectionViewCompositionalLayout initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithSection:")
-    public native UICollectionViewCompositionalLayout initWithSection(NSCollectionLayoutSection section);
+    public native UICollectionViewCompositionalLayout initWithSection(@NotNull NSCollectionLayoutSection section);
 
     @Generated
     @Selector("initWithSection:configuration:")
-    public native UICollectionViewCompositionalLayout initWithSectionConfiguration(NSCollectionLayoutSection section,
-            UICollectionViewCompositionalLayoutConfiguration configuration);
+    public native UICollectionViewCompositionalLayout initWithSectionConfiguration(
+            @NotNull NSCollectionLayoutSection section,
+            @NotNull UICollectionViewCompositionalLayoutConfiguration configuration);
 
     @Generated
     @Selector("initWithSectionProvider:")
     public native UICollectionViewCompositionalLayout initWithSectionProvider(
-            @ObjCBlock(name = "call_initWithSectionProvider") Block_initWithSectionProvider sectionProvider);
+            @NotNull @ObjCBlock(name = "call_initWithSectionProvider") Block_initWithSectionProvider sectionProvider);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithSectionProvider {
+        @Nullable
         @Generated
         NSCollectionLayoutSection call_initWithSectionProvider(@NInt long sectionIndex,
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
     @Selector("initWithSectionProvider:configuration:")
     public native UICollectionViewCompositionalLayout initWithSectionProviderConfiguration(
-            @ObjCBlock(name = "call_initWithSectionProviderConfiguration") Block_initWithSectionProviderConfiguration sectionProvider,
-            UICollectionViewCompositionalLayoutConfiguration configuration);
+            @NotNull @ObjCBlock(name = "call_initWithSectionProviderConfiguration") Block_initWithSectionProviderConfiguration sectionProvider,
+            @NotNull UICollectionViewCompositionalLayoutConfiguration configuration);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_initWithSectionProviderConfiguration {
+        @Nullable
         @Generated
         NSCollectionLayoutSection call_initWithSectionProviderConfiguration(@NInt long sectionIndex,
-                @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
+                @NotNull @Mapped(ObjCObjectMapper.class) Object layoutEnvironment);
     }
 
     @Generated
@@ -155,6 +164,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("instancesRespondToSelector:")
     public static native boolean instancesRespondToSelector(SEL aSelector);
 
+    @NotNull
     @Generated
     @Selector("invalidationContextClass")
     public static native Class invalidationContextClass();
@@ -163,10 +173,12 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layoutAttributesClass")
     public static native Class layoutAttributesClass();
@@ -190,7 +202,7 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
      */
     @Generated
     @Selector("setConfiguration:")
-    public native void setConfiguration(UICollectionViewCompositionalLayoutConfiguration value);
+    public native void setConfiguration(@NotNull UICollectionViewCompositionalLayoutConfiguration value);
 
     @Generated
     @Selector("setVersion:")
@@ -213,5 +225,5 @@ public class UICollectionViewCompositionalLayout extends UICollectionViewLayout 
     @Generated
     @Selector("layoutWithListConfiguration:")
     public static native UICollectionViewCompositionalLayout layoutWithListConfiguration(
-            UICollectionLayoutListConfiguration configuration);
+            @NotNull UICollectionLayoutListConfiguration configuration);
 }

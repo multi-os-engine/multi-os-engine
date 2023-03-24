@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * PHCollectionListChangeRequest can only be created or used within a -[PHPhotoLibrary performChanges:] or
@@ -76,17 +78,18 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * if the collection list does not allow the type of change requested, these methods will raise an exception, call
@@ -96,7 +99,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      */
     @Generated
     @Selector("changeRequestForCollectionList:")
-    public static native PHCollectionListChangeRequest changeRequestForCollectionList(PHCollectionList collectionList);
+    public static native PHCollectionListChangeRequest changeRequestForCollectionList(
+            @NotNull PHCollectionList collectionList);
 
     /**
      * to add, remove or rearrange child collections in a collection list, passing in the fetched collections in that
@@ -108,12 +112,14 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Generated
     @Selector("changeRequestForCollectionList:childCollections:")
     public static native PHCollectionListChangeRequest changeRequestForCollectionListChildCollections(
-            PHCollectionList collectionList, PHFetchResult<? extends PHCollection> childCollections);
+            @NotNull PHCollectionList collectionList, @NotNull PHFetchResult<? extends PHCollection> childCollections);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -121,9 +127,10 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("creationRequestForCollectionListWithTitle:")
-    public static native PHCollectionListChangeRequest creationRequestForCollectionListWithTitle(String title);
+    public static native PHCollectionListChangeRequest creationRequestForCollectionListWithTitle(@NotNull String title);
 
     @Generated
     @Selector("debugDescription")
@@ -136,7 +143,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      */
     @Generated
     @Selector("deleteCollectionLists:")
-    public static native void deleteCollectionLists(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collectionLists);
+    public static native void deleteCollectionLists(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration collectionLists);
 
     @Generated
     @Selector("description")
@@ -164,9 +172,10 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -201,7 +210,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      */
     @Generated
     @Selector("addChildCollections:")
-    public native void addChildCollections(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
+    public native void addChildCollections(@NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
     @Generated
     @Selector("init")
@@ -212,8 +221,8 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      */
     @Generated
     @Selector("insertChildCollections:atIndexes:")
-    public native void insertChildCollectionsAtIndexes(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections,
-            NSIndexSet indexes);
+    public native void insertChildCollectionsAtIndexes(
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections, @NotNull NSIndexSet indexes);
 
     /**
      * The move removes the child collections at fromIndexes first then inserts those collections at the toIndex, so
@@ -224,7 +233,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      */
     @Generated
     @Selector("moveChildCollectionsAtIndexes:toIndex:")
-    public native void moveChildCollectionsAtIndexesToIndex(NSIndexSet indexes, @NUInt long toIndex);
+    public native void moveChildCollectionsAtIndexesToIndex(@NotNull NSIndexSet indexes, @NUInt long toIndex);
 
     /**
      * This can be used to fetch the newly created collection list after the change block has completed by using
@@ -233,6 +242,7 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("placeholderForCreatedCollectionList")
     public native PHObjectPlaceholder placeholderForCreatedCollectionList();
@@ -242,33 +252,34 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
      */
     @Generated
     @Selector("removeChildCollections:")
-    public native void removeChildCollections(@Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
+    public native void removeChildCollections(@NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("removeChildCollectionsAtIndexes:")
-    public native void removeChildCollectionsAtIndexes(NSIndexSet indexes);
+    public native void removeChildCollectionsAtIndexes(@NotNull NSIndexSet indexes);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("replaceChildCollectionsAtIndexes:withChildCollections:")
-    public native void replaceChildCollectionsAtIndexesWithChildCollections(NSIndexSet indexes,
-            @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
+    public native void replaceChildCollectionsAtIndexesWithChildCollections(@NotNull NSIndexSet indexes,
+            @NotNull @Mapped(ObjCObjectMapper.class) NSFastEnumeration collections);
 
     /**
      * API-Since: 8.0
      */
     @Generated
     @Selector("setTitle:")
-    public native void setTitle(String value);
+    public native void setTitle(@NotNull String value);
 
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @Selector("title")
     public native String title();
@@ -283,5 +294,5 @@ public class PHCollectionListChangeRequest extends PHChangeRequest {
     @Generated
     @Selector("changeRequestForTopLevelCollectionListUserCollections:")
     public static native PHCollectionListChangeRequest changeRequestForTopLevelCollectionListUserCollections(
-            PHFetchResult<? extends PHCollection> childCollections);
+            @NotNull PHFetchResult<? extends PHCollection> childCollections);
 }

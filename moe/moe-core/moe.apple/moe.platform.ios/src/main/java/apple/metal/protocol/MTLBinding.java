@@ -8,6 +8,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 16.0
@@ -35,6 +36,7 @@ public interface MTLBinding {
     @Selector("isUsed")
     boolean isUsed();
 
+    @NotNull
     @Generated
     @Selector("name")
     String name();

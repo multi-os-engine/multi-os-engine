@@ -28,6 +28,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("GameKit")
@@ -43,7 +44,8 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:didRequestMatchWithOtherPlayers:")
-    default void playerDidRequestMatchWithOtherPlayers(GKPlayer player, NSArray<? extends GKPlayer> playersToInvite) {
+    default void playerDidRequestMatchWithOtherPlayers(@NotNull GKPlayer player,
+            @NotNull NSArray<? extends GKPlayer> playersToInvite) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,7 +60,8 @@ public interface GKTurnBasedEventListener {
     @IsOptional
     @Deprecated
     @Selector("player:didRequestMatchWithPlayers:")
-    default void playerDidRequestMatchWithPlayers(GKPlayer player, NSArray<String> playerIDsToInvite) {
+    default void playerDidRequestMatchWithPlayers(@NotNull GKPlayer player,
+            @NotNull NSArray<String> playerIDsToInvite) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,7 +71,7 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:matchEnded:")
-    default void playerMatchEnded(GKPlayer player, GKTurnBasedMatch match) {
+    default void playerMatchEnded(@NotNull GKPlayer player, @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -80,8 +83,8 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:receivedExchangeCancellation:forMatch:")
-    default void playerReceivedExchangeCancellationForMatch(GKPlayer player, GKTurnBasedExchange exchange,
-            GKTurnBasedMatch match) {
+    default void playerReceivedExchangeCancellationForMatch(@NotNull GKPlayer player,
+            @NotNull GKTurnBasedExchange exchange, @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -94,8 +97,9 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:receivedExchangeReplies:forCompletedExchange:forMatch:")
-    default void playerReceivedExchangeRepliesForCompletedExchangeForMatch(GKPlayer player,
-            NSArray<? extends GKTurnBasedExchangeReply> replies, GKTurnBasedExchange exchange, GKTurnBasedMatch match) {
+    default void playerReceivedExchangeRepliesForCompletedExchangeForMatch(@NotNull GKPlayer player,
+            @NotNull NSArray<? extends GKTurnBasedExchangeReply> replies, @NotNull GKTurnBasedExchange exchange,
+            @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,8 +111,8 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:receivedExchangeRequest:forMatch:")
-    default void playerReceivedExchangeRequestForMatch(GKPlayer player, GKTurnBasedExchange exchange,
-            GKTurnBasedMatch match) {
+    default void playerReceivedExchangeRequestForMatch(@NotNull GKPlayer player, @NotNull GKTurnBasedExchange exchange,
+            @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -127,8 +131,8 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:receivedTurnEventForMatch:didBecomeActive:")
-    default void playerReceivedTurnEventForMatchDidBecomeActive(GKPlayer player, GKTurnBasedMatch match,
-            boolean didBecomeActive) {
+    default void playerReceivedTurnEventForMatchDidBecomeActive(@NotNull GKPlayer player,
+            @NotNull GKTurnBasedMatch match, boolean didBecomeActive) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -142,7 +146,7 @@ public interface GKTurnBasedEventListener {
     @Generated
     @IsOptional
     @Selector("player:wantsToQuitMatch:")
-    default void playerWantsToQuitMatch(GKPlayer player, GKTurnBasedMatch match) {
+    default void playerWantsToQuitMatch(@NotNull GKPlayer player, @NotNull GKTurnBasedMatch match) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

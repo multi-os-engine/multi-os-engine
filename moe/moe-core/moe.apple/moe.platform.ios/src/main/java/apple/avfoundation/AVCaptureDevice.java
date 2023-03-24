@@ -50,6 +50,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureDevice
@@ -117,26 +119,29 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("authorizationStatusForMediaType:")
     @NInt
-    public static native long authorizationStatusForMediaType(String mediaType);
+    public static native long authorizationStatusForMediaType(@NotNull String mediaType);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -167,10 +172,11 @@ public class AVCaptureDevice extends NSObject {
      *         The default device with the given device type, media type and position or nil if no device with that
      *         media type exists and nil otherwise.
      */
+    @Nullable
     @Generated
     @Selector("defaultDeviceWithDeviceType:mediaType:position:")
-    public static native AVCaptureDevice defaultDeviceWithDeviceTypeMediaTypePosition(String deviceType,
-            String mediaType, @NInt long position);
+    public static native AVCaptureDevice defaultDeviceWithDeviceTypeMediaTypePosition(@NotNull String deviceType,
+            @Nullable String mediaType, @NInt long position);
 
     /**
      * defaultDeviceWithMediaType:
@@ -187,9 +193,10 @@ public class AVCaptureDevice extends NSObject {
      * @return
      *         The default device with the given media type, or nil if no device with that media type exists.
      */
+    @Nullable
     @Generated
     @Selector("defaultDeviceWithMediaType:")
-    public static native AVCaptureDevice defaultDeviceWithMediaType(String mediaType);
+    public static native AVCaptureDevice defaultDeviceWithMediaType(@NotNull String mediaType);
 
     @Generated
     @Selector("description")
@@ -210,9 +217,10 @@ public class AVCaptureDevice extends NSObject {
      *         An AVCaptureDevice instance with the given unique ID, or nil if no device with that unique ID is
      *         available.
      */
+    @Nullable
     @Generated
     @Selector("deviceWithUniqueID:")
-    public static native AVCaptureDevice deviceWithUniqueID(String deviceUniqueID);
+    public static native AVCaptureDevice deviceWithUniqueID(@NotNull String deviceUniqueID);
 
     /**
      * devices
@@ -231,6 +239,7 @@ public class AVCaptureDevice extends NSObject {
      * @return
      *         An NSArray of AVCaptureDevice instances for each available device.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("devices")
@@ -257,10 +266,11 @@ public class AVCaptureDevice extends NSObject {
      * @return
      *         An NSArray of AVCaptureDevice instances for each available device.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("devicesWithMediaType:")
-    public static native NSArray<? extends AVCaptureDevice> devicesWithMediaType(String mediaType);
+    public static native NSArray<? extends AVCaptureDevice> devicesWithMediaType(@NotNull String mediaType);
 
     @Generated
     @Selector("hash")
@@ -284,9 +294,10 @@ public class AVCaptureDevice extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -324,8 +335,8 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("requestAccessForMediaType:completionHandler:")
-    public static native void requestAccessForMediaTypeCompletionHandler(String mediaType,
-            @ObjCBlock(name = "call_requestAccessForMediaTypeCompletionHandler") Block_requestAccessForMediaTypeCompletionHandler handler);
+    public static native void requestAccessForMediaTypeCompletionHandler(@NotNull String mediaType,
+            @NotNull @ObjCBlock(name = "call_requestAccessForMediaTypeCompletionHandler") Block_requestAccessForMediaTypeCompletionHandler handler);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -424,6 +435,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("activeFormat")
     public native AVCaptureDeviceFormat activeFormat();
@@ -616,6 +628,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @Selector("deviceType")
     public native String deviceType();
@@ -850,6 +863,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("formats")
     public native NSArray<? extends AVCaptureDeviceFormat> formats();
@@ -900,7 +914,7 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("hasMediaType:")
-    public native boolean hasMediaType(String mediaType);
+    public native boolean hasMediaType(@NotNull String mediaType);
 
     /**
      * [@property] hasTorch
@@ -1411,6 +1425,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * This property can be used for displaying the name of a capture device in a user interface.
      */
+    @NotNull
     @Generated
     @Selector("localizedName")
     public native String localizedName();
@@ -1433,7 +1448,7 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("lockForConfiguration:")
-    public native boolean lockForConfiguration(@ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean lockForConfiguration(@Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] maxExposureTargetBias
@@ -1483,6 +1498,7 @@ public class AVCaptureDevice extends NSObject {
      * across device connections and disconnections, and across different systems. For example, the model ID of the
      * camera built in to two identical iPhone models will be the same even though they are different physical devices.
      */
+    @NotNull
     @Generated
     @Selector("modelID")
     public native String modelID();
@@ -1591,7 +1607,7 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("setActiveFormat:")
-    public native void setActiveFormat(AVCaptureDeviceFormat value);
+    public native void setActiveFormat(@NotNull AVCaptureDeviceFormat value);
 
     /**
      * [@property] activeVideoMaxFrameDuration
@@ -1794,7 +1810,7 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setExposureModeCustomWithDuration:ISO:completionHandler:")
     public native void setExposureModeCustomWithDurationISOCompletionHandler(@ByValue CMTime duration, float ISO,
-            @ObjCBlock(name = "call_setExposureModeCustomWithDurationISOCompletionHandler") Block_setExposureModeCustomWithDurationISOCompletionHandler handler);
+            @Nullable @ObjCBlock(name = "call_setExposureModeCustomWithDurationISOCompletionHandler") Block_setExposureModeCustomWithDurationISOCompletionHandler handler);
 
     /**
      * [@property] exposurePointOfInterest
@@ -1840,7 +1856,7 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setExposureTargetBias:completionHandler:")
     public native void setExposureTargetBiasCompletionHandler(float bias,
-            @ObjCBlock(name = "call_setExposureTargetBiasCompletionHandler") Block_setExposureTargetBiasCompletionHandler handler);
+            @Nullable @ObjCBlock(name = "call_setExposureTargetBiasCompletionHandler") Block_setExposureTargetBiasCompletionHandler handler);
 
     /**
      * [@property] flashMode
@@ -1908,7 +1924,7 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setFocusModeLockedWithLensPosition:completionHandler:")
     public native void setFocusModeLockedWithLensPositionCompletionHandler(float lensPosition,
-            @ObjCBlock(name = "call_setFocusModeLockedWithLensPositionCompletionHandler") Block_setFocusModeLockedWithLensPositionCompletionHandler handler);
+            @Nullable @ObjCBlock(name = "call_setFocusModeLockedWithLensPositionCompletionHandler") Block_setFocusModeLockedWithLensPositionCompletionHandler handler);
 
     /**
      * [@property] focusPointOfInterest
@@ -1961,7 +1977,7 @@ public class AVCaptureDevice extends NSObject {
     @Generated
     @Selector("setTorchModeOnWithLevel:error:")
     public native boolean setTorchModeOnWithLevelError(float torchLevel,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * [@property] videoZoomFactor
@@ -2039,7 +2055,7 @@ public class AVCaptureDevice extends NSObject {
     @Selector("setWhiteBalanceModeLockedWithDeviceWhiteBalanceGains:completionHandler:")
     public native void setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler(
             @ByValue AVCaptureWhiteBalanceGains whiteBalanceGains,
-            @ObjCBlock(name = "call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler") Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler handler);
+            @Nullable @ObjCBlock(name = "call_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler") Block_setWhiteBalanceModeLockedWithDeviceWhiteBalanceGainsCompletionHandler handler);
 
     /**
      * supportsAVCaptureSessionPreset:
@@ -2057,7 +2073,7 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("supportsAVCaptureSessionPreset:")
-    public native boolean supportsAVCaptureSessionPreset(String preset);
+    public native boolean supportsAVCaptureSessionPreset(@NotNull String preset);
 
     /**
      * temperatureAndTintValuesForDeviceWhiteBalanceGains:
@@ -2124,6 +2140,7 @@ public class AVCaptureDevice extends NSObject {
      * disconnections, application restarts, and reboots of the system itself. Applications can store the value returned
      * by this property to recall or track the status of a specific device in the future.
      */
+    @NotNull
     @Generated
     @Selector("uniqueID")
     public native String uniqueID();
@@ -2241,6 +2258,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("activeDepthDataFormat")
     public native AVCaptureDeviceFormat activeDepthDataFormat();
@@ -2334,7 +2352,7 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("setActiveDepthDataFormat:")
-    public native void setActiveDepthDataFormat(AVCaptureDeviceFormat value);
+    public native void setActiveDepthDataFormat(@Nullable AVCaptureDeviceFormat value);
 
     /**
      * [@property] activeDepthDataMinFrameDuration
@@ -2400,6 +2418,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("constituentDevices")
     public native NSArray<? extends AVCaptureDevice> constituentDevices();
@@ -2434,9 +2453,11 @@ public class AVCaptureDevice extends NSObject {
      *                   The AVCaptureDevice to use as the destination. Must be non nil or an NSInvalidArgumentException
      *                   is thrown.
      */
+    @Nullable
     @Generated
     @Selector("extrinsicMatrixFromDevice:toDevice:")
-    public static native NSData extrinsicMatrixFromDeviceToDevice(AVCaptureDevice fromDevice, AVCaptureDevice toDevice);
+    public static native NSData extrinsicMatrixFromDeviceToDevice(@NotNull AVCaptureDevice fromDevice,
+            @NotNull AVCaptureDevice toDevice);
 
     /**
      * [@property] geometricDistortionCorrectionEnabled
@@ -2643,6 +2664,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 11.1
      */
+    @NotNull
     @Generated
     @Selector("systemPressureState")
     public native AVCaptureSystemPressureState systemPressureState();
@@ -2660,6 +2682,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("virtualDeviceSwitchOverVideoZoomFactors")
     public native NSArray<? extends NSNumber> virtualDeviceSwitchOverVideoZoomFactors();
@@ -2691,6 +2714,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("manufacturer")
     public native String manufacturer();
@@ -2722,6 +2746,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("activePrimaryConstituentDevice")
     public native AVCaptureDevice activePrimaryConstituentDevice();
@@ -2803,6 +2828,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("fallbackPrimaryConstituentDevices")
     public native NSArray<? extends AVCaptureDevice> fallbackPrimaryConstituentDevices();
@@ -3011,7 +3037,7 @@ public class AVCaptureDevice extends NSObject {
      */
     @Generated
     @Selector("setFallbackPrimaryConstituentDevices:")
-    public native void setFallbackPrimaryConstituentDevices(NSArray<? extends AVCaptureDevice> value);
+    public native void setFallbackPrimaryConstituentDevices(@NotNull NSArray<? extends AVCaptureDevice> value);
 
     /**
      * setPrimaryConstituentDeviceSwitchingBehavior:restrictedSwitchingBehaviorConditions:
@@ -3071,6 +3097,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("supportedFallbackPrimaryConstituentDevices")
     public native NSArray<? extends AVCaptureDevice> supportedFallbackPrimaryConstituentDevices();
@@ -3125,6 +3152,7 @@ public class AVCaptureDevice extends NSObject {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("companionDeskViewCamera")
     public native AVCaptureDevice companionDeskViewCamera();

@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVCaptureDepthDataOutput
@@ -85,22 +87,25 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -117,6 +122,7 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * The value of this property is an object conforming to the AVCaptureDepthDataOutputDelegate protocol that receives
      * depth data as it is captured. The delegate is set using the setDelegate:callbackQueue: method.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -129,6 +135,7 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
      * 
      * The value of this property is a dispatch_queue_t. The queue is set using the setDelegate:queue: method.
      */
+    @Nullable
     @Generated
     @Selector("delegateCallbackQueue")
     public native NSObject delegateCallbackQueue();
@@ -178,9 +185,10 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -240,7 +248,8 @@ public class AVCaptureDepthDataOutput extends AVCaptureOutput {
     @Generated
     @Selector("setDelegate:callbackQueue:")
     public native void setDelegateCallbackQueue(
-            @Mapped(ObjCObjectMapper.class) AVCaptureDepthDataOutputDelegate delegate, NSObject callbackQueue);
+            @Nullable @Mapped(ObjCObjectMapper.class) AVCaptureDepthDataOutputDelegate delegate,
+            @Nullable NSObject callbackQueue);
 
     /**
      * [@property] filteringEnabled

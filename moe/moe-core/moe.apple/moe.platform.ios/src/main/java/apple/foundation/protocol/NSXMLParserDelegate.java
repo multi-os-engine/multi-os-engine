@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The parser's delegate is informed of events through the methods in the NSXMLParserDelegateEventAdditions category.
@@ -48,8 +50,8 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:didEndElement:namespaceURI:qualifiedName:")
-    default void parserDidEndElementNamespaceURIQualifiedName(NSXMLParser parser, String elementName,
-            String namespaceURI, String qName) {
+    default void parserDidEndElementNamespaceURIQualifiedName(@NotNull NSXMLParser parser, @NotNull String elementName,
+            @Nullable String namespaceURI, @Nullable String qName) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,15 +65,16 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:didEndMappingPrefix:")
-    default void parserDidEndMappingPrefix(NSXMLParser parser, String prefix) {
+    default void parserDidEndMappingPrefix(@NotNull NSXMLParser parser, @NotNull String prefix) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("parser:didStartElement:namespaceURI:qualifiedName:attributes:")
-    default void parserDidStartElementNamespaceURIQualifiedNameAttributes(NSXMLParser parser, String elementName,
-            String namespaceURI, String qName, NSDictionary<String, String> attributeDict) {
+    default void parserDidStartElementNamespaceURIQualifiedNameAttributes(@NotNull NSXMLParser parser,
+            @NotNull String elementName, @Nullable String namespaceURI, @Nullable String qName,
+            @NotNull NSDictionary<String, String> attributeDict) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,15 +84,17 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:didStartMappingPrefix:toURI:")
-    default void parserDidStartMappingPrefixToURI(NSXMLParser parser, String prefix, String namespaceURI) {
+    default void parserDidStartMappingPrefixToURI(@NotNull NSXMLParser parser, @NotNull String prefix,
+            @NotNull String namespaceURI) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("parser:foundAttributeDeclarationWithName:forElement:type:defaultValue:")
-    default void parserFoundAttributeDeclarationWithNameForElementTypeDefaultValue(NSXMLParser parser,
-            String attributeName, String elementName, String type, String defaultValue) {
+    default void parserFoundAttributeDeclarationWithNameForElementTypeDefaultValue(@NotNull NSXMLParser parser,
+            @NotNull String attributeName, @NotNull String elementName, @Nullable String type,
+            @Nullable String defaultValue) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,7 +104,7 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:foundCDATA:")
-    default void parserFoundCDATA(NSXMLParser parser, NSData CDATABlock) {
+    default void parserFoundCDATA(@NotNull NSXMLParser parser, @NotNull NSData CDATABlock) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,7 +114,7 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:foundCharacters:")
-    default void parserFoundCharacters(NSXMLParser parser, String string) {
+    default void parserFoundCharacters(@NotNull NSXMLParser parser, @NotNull String string) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,22 +125,23 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:foundComment:")
-    default void parserFoundComment(NSXMLParser parser, String comment) {
+    default void parserFoundComment(@NotNull NSXMLParser parser, @NotNull String comment) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("parser:foundElementDeclarationWithName:model:")
-    default void parserFoundElementDeclarationWithNameModel(NSXMLParser parser, String elementName, String model) {
+    default void parserFoundElementDeclarationWithNameModel(@NotNull NSXMLParser parser, @NotNull String elementName,
+            @NotNull String model) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("parser:foundExternalEntityDeclarationWithName:publicID:systemID:")
-    default void parserFoundExternalEntityDeclarationWithNamePublicIDSystemID(NSXMLParser parser, String name,
-            String publicID, String systemID) {
+    default void parserFoundExternalEntityDeclarationWithNamePublicIDSystemID(@NotNull NSXMLParser parser,
+            @NotNull String name, @Nullable String publicID, @Nullable String systemID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -147,14 +153,15 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:foundIgnorableWhitespace:")
-    default void parserFoundIgnorableWhitespace(NSXMLParser parser, String whitespaceString) {
+    default void parserFoundIgnorableWhitespace(@NotNull NSXMLParser parser, @NotNull String whitespaceString) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("parser:foundInternalEntityDeclarationWithName:value:")
-    default void parserFoundInternalEntityDeclarationWithNameValue(NSXMLParser parser, String name, String value) {
+    default void parserFoundInternalEntityDeclarationWithNameValue(@NotNull NSXMLParser parser, @NotNull String name,
+            @Nullable String value) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,8 +171,8 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:foundNotationDeclarationWithName:publicID:systemID:")
-    default void parserFoundNotationDeclarationWithNamePublicIDSystemID(NSXMLParser parser, String name,
-            String publicID, String systemID) {
+    default void parserFoundNotationDeclarationWithNamePublicIDSystemID(@NotNull NSXMLParser parser,
+            @NotNull String name, @Nullable String publicID, @Nullable String systemID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -175,15 +182,16 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:foundProcessingInstructionWithTarget:data:")
-    default void parserFoundProcessingInstructionWithTargetData(NSXMLParser parser, String target, String data) {
+    default void parserFoundProcessingInstructionWithTargetData(@NotNull NSXMLParser parser, @NotNull String target,
+            @Nullable String data) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("parser:foundUnparsedEntityDeclarationWithName:publicID:systemID:notationName:")
-    default void parserFoundUnparsedEntityDeclarationWithNamePublicIDSystemIDNotationName(NSXMLParser parser,
-            String name, String publicID, String systemID, String notationName) {
+    default void parserFoundUnparsedEntityDeclarationWithNamePublicIDSystemIDNotationName(@NotNull NSXMLParser parser,
+            @NotNull String name, @Nullable String publicID, @Nullable String systemID, @Nullable String notationName) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -193,17 +201,19 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:parseErrorOccurred:")
-    default void parserParseErrorOccurred(NSXMLParser parser, NSError parseError) {
+    default void parserParseErrorOccurred(@NotNull NSXMLParser parser, @NotNull NSError parseError) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     /**
      * this reports a CDATA block to the delegate as an NSData.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("parser:resolveExternalEntityName:systemID:")
-    default NSData parserResolveExternalEntityNameSystemID(NSXMLParser parser, String name, String systemID) {
+    default NSData parserResolveExternalEntityNameSystemID(@NotNull NSXMLParser parser, @NotNull String name,
+            @Nullable String systemID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -213,7 +223,7 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parser:validationErrorOccurred:")
-    default void parserValidationErrorOccurred(NSXMLParser parser, NSError validationError) {
+    default void parserValidationErrorOccurred(@NotNull NSXMLParser parser, @NotNull NSError validationError) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,7 +233,7 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parserDidEndDocument:")
-    default void parserDidEndDocument(NSXMLParser parser) {
+    default void parserDidEndDocument(@NotNull NSXMLParser parser) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -233,7 +243,7 @@ public interface NSXMLParserDelegate {
     @Generated
     @IsOptional
     @Selector("parserDidStartDocument:")
-    default void parserDidStartDocument(NSXMLParser parser) {
+    default void parserDidStartDocument(@NotNull NSXMLParser parser) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

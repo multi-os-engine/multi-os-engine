@@ -42,6 +42,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -73,22 +75,25 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -123,9 +128,10 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -153,30 +159,33 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("attributedStringForObjectValue:withDefaultAttributes:")
     public native NSAttributedString attributedStringForObjectValueWithDefaultAttributes(
-            @Mapped(ObjCObjectMapper.class) Object obj, NSDictionary<String, ?> attrs);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object obj, @Nullable NSDictionary<String, ?> attrs);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @Nullable
     @Generated
     @Selector("editingStringForObjectValue:")
-    public native String editingStringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public native String editingStringForObjectValue(@NotNull @Mapped(ObjCObjectMapper.class) Object obj);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("getObjectValue:forString:errorDescription:")
     public native boolean getObjectValueForStringErrorDescription(
-            @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, String string,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, @NotNull String string,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     @Generated
     @Selector("init")
@@ -184,13 +193,13 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSFormatter initWithCoder(NSCoder coder);
+    public native NSFormatter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("isPartialStringValid:newEditingString:errorDescription:")
-    public native boolean isPartialStringValidNewEditingStringErrorDescription(String partialString,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> newString,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
+    public native boolean isPartialStringValidNewEditingStringErrorDescription(@NotNull String partialString,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> newString,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
     /**
      * Compatibility method. If a subclass overrides this and does not override the new method below, this will be
@@ -200,11 +209,12 @@ public class NSFormatter extends NSObject implements NSCopying, NSCoding {
     @Generated
     @Selector("isPartialStringValid:proposedSelectedRange:originalString:originalSelectedRange:errorDescription:")
     public native boolean isPartialStringValidProposedSelectedRangeOriginalStringOriginalSelectedRangeErrorDescription(
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> partialStringPtr, NSRange proposedSelRangePtr,
-            String origString, @ByValue NSRange origSelRange,
-            @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
+            @NotNull @ReferenceInfo(type = NSString.class) Ptr<NSString> partialStringPtr,
+            @Nullable NSRange proposedSelRangePtr, @NotNull String origString, @ByValue NSRange origSelRange,
+            @Nullable @ReferenceInfo(type = NSString.class) Ptr<NSString> error);
 
+    @Nullable
     @Generated
     @Selector("stringForObjectValue:")
-    public native String stringForObjectValue(@Mapped(ObjCObjectMapper.class) Object obj);
+    public native String stringForObjectValue(@Nullable @Mapped(ObjCObjectMapper.class) Object obj);
 }

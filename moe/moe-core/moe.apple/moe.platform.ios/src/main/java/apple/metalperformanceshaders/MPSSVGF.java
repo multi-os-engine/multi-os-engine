@@ -29,6 +29,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Reduces noise in images rendered with Monte Carlo ray tracing methods
@@ -135,7 +137,7 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The radius of the bilateral filter. Defaults to 2 resulting in a 5x5 filter.
@@ -155,13 +157,14 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The number of channels to filter in the source image. Must be at least one and at most
@@ -181,24 +184,29 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @NUInt
     public native long channelCount2();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:device:")
-    public native MPSSVGF copyWithZoneDevice(VoidPtr zone, @Mapped(ObjCObjectMapper.class) MTLDevice device);
+    public native MPSSVGF copyWithZoneDevice(@Nullable VoidPtr zone,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLDevice device);
 
     @Generated
     @Selector("debugDescription")
@@ -265,10 +273,10 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeBilateralFilterToCommandBuffer:stepDistance:sourceTexture:destinationTexture:depthNormalTexture:")
     public native void encodeBilateralFilterToCommandBufferStepDistanceSourceTextureDestinationTextureDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     /**
      * Encode bilateral filter into a command buffer
@@ -320,12 +328,12 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeBilateralFilterToCommandBuffer:stepDistance:sourceTexture:destinationTexture:sourceTexture2:destinationTexture2:depthNormalTexture:")
     public native void encodeBilateralFilterToCommandBufferStepDistanceSourceTextureDestinationTextureSourceTexture2DestinationTexture2DepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long stepDistance,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     /**
      * Encode reprojection into a command buffer
@@ -396,17 +404,17 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeReprojectionToCommandBuffer:sourceTexture:previousTexture:destinationTexture:previousLuminanceMomentsTexture:destinationLuminanceMomentsTexture:previousFrameCountTexture:destinationFrameCountTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
     public native void encodeReprojectionToCommandBufferSourceTexturePreviousTextureDestinationTexturePreviousLuminanceMomentsTextureDestinationLuminanceMomentsTexturePreviousFrameCountTextureDestinationFrameCountTextureMotionVectorTextureDepthNormalTexturePreviousDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     /**
      * Encode reprojection into a command buffer
@@ -482,22 +490,22 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeReprojectionToCommandBuffer:sourceTexture:previousTexture:destinationTexture:previousLuminanceMomentsTexture:destinationLuminanceMomentsTexture:sourceTexture2:previousTexture2:destinationTexture2:previousLuminanceMomentsTexture2:destinationLuminanceMomentsTexture2:previousFrameCountTexture:destinationFrameCountTexture:motionVectorTexture:depthNormalTexture:previousDepthNormalTexture:")
     public native void encodeReprojectionToCommandBufferSourceTexturePreviousTextureDestinationTexturePreviousLuminanceMomentsTextureDestinationLuminanceMomentsTextureSourceTexture2PreviousTexture2DestinationTexture2PreviousLuminanceMomentsTexture2DestinationLuminanceMomentsTexture2PreviousFrameCountTextureDestinationFrameCountTextureMotionVectorTextureDepthNormalTexturePreviousDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousLuminanceMomentsTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationLuminanceMomentsTexture2,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture previousFrameCountTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationFrameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture motionVectorTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture previousDepthNormalTexture);
 
     /**
      * Encode variance estimation into a command buffer
@@ -548,12 +556,12 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeVarianceEstimationToCommandBuffer:sourceTexture:luminanceMomentsTexture:destinationTexture:frameCountTexture:depthNormalTexture:")
     public native void encodeVarianceEstimationToCommandBufferSourceTextureLuminanceMomentsTextureDestinationTextureFrameCountTextureDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     /**
      * Encode variance estimation into a command buffer
@@ -607,19 +615,19 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Generated
     @Selector("encodeVarianceEstimationToCommandBuffer:sourceTexture:luminanceMomentsTexture:destinationTexture:sourceTexture2:luminanceMomentsTexture2:destinationTexture2:frameCountTexture:depthNormalTexture:")
     public native void encodeVarianceEstimationToCommandBufferSourceTextureLuminanceMomentsTextureDestinationTextureSourceTexture2LuminanceMomentsTexture2DestinationTexture2FrameCountTextureDepthNormalTexture(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
-            @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
-            @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture sourceTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture luminanceMomentsTexture2,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture destinationTexture2,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLTexture frameCountTexture,
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLTexture depthNormalTexture);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -632,15 +640,16 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSSVGF initWithCoder(NSCoder coder);
+    public native MPSSVGF initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSSVGF initWithCoderDevice(NSCoder aDecoder, @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSSVGF initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSSVGF initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSSVGF initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -659,9 +668,10 @@ public class MPSSVGF extends MPSKernel implements NSSecureCoding, NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * Controls how samples' luminance values are compared during bilateral filtering. The final

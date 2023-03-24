@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 9.0
@@ -74,22 +76,25 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -124,9 +129,10 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -159,15 +165,17 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
      * 
      * The asset associated with the receiver.
      */
+    @Nullable
     @Generated
     @Selector("asset")
     public native AVAsset asset();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("init")
@@ -188,13 +196,14 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
     @Generated
     @Selector("mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup:")
     public native boolean mediaSelectionCriteriaCanBeAppliedAutomaticallyToMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 
+    @NotNull
     @Owned
     @Generated
     @Selector("mutableCopyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object mutableCopyWithZone(VoidPtr zone);
+    public native Object mutableCopyWithZone(@Nullable VoidPtr zone);
 
     /**
      * selectedMediaOptionInMediaSelectionGroup:
@@ -208,8 +217,9 @@ public class AVMediaSelection extends NSObject implements NSCopying, NSMutableCo
      *                            A media selection group obtained from the receiver's asset.
      * @return An instance of AVMediaSelectionOption that describes the currently selection option in the group.
      */
+    @Nullable
     @Generated
     @Selector("selectedMediaOptionInMediaSelectionGroup:")
     public native AVMediaSelectionOption selectedMediaOptionInMediaSelectionGroup(
-            AVMediaSelectionGroup mediaSelectionGroup);
+            @NotNull AVMediaSelectionGroup mediaSelectionGroup);
 }

@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -77,22 +79,25 @@ public class INSearchCallHistoryIntent extends INIntent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class INSearchCallHistoryIntent extends INIntent {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -182,6 +188,7 @@ public class INSearchCallHistoryIntent extends INIntent {
     /**
      * Date of the call to search for in the call history.
      */
+    @Nullable
     @Generated
     @Selector("dateCreated")
     public native INDateComponentsRange dateCreated();
@@ -199,12 +206,13 @@ public class INSearchCallHistoryIntent extends INIntent {
     @Generated
     @Selector("initWithCallType:dateCreated:recipient:callCapabilities:")
     public native INSearchCallHistoryIntent initWithCallTypeDateCreatedRecipientCallCapabilities(@NInt long callType,
-            INDateComponentsRange dateCreated, INPerson recipient, @NUInt long callCapabilities);
+            @Nullable INDateComponentsRange dateCreated, @Nullable INPerson recipient, @NUInt long callCapabilities);
 
     @Generated
     @Selector("initWithCoder:")
-    public native INSearchCallHistoryIntent initWithCoder(NSCoder coder);
+    public native INSearchCallHistoryIntent initWithCoder(@NotNull NSCoder coder);
 
+    @Nullable
     @Generated
     @Selector("recipient")
     public native INPerson recipient();
@@ -229,12 +237,13 @@ public class INSearchCallHistoryIntent extends INIntent {
     @Generated
     @Selector("initWithDateCreated:recipient:callCapabilities:callTypes:unseen:")
     public native INSearchCallHistoryIntent initWithDateCreatedRecipientCallCapabilitiesCallTypesUnseen(
-            INDateComponentsRange dateCreated, INPerson recipient, @NUInt long callCapabilities, @NUInt long callTypes,
-            NSNumber unseen);
+            @Nullable INDateComponentsRange dateCreated, @Nullable INPerson recipient, @NUInt long callCapabilities,
+            @NUInt long callTypes, @Nullable NSNumber unseen);
 
     /**
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("unseen")
     public native NSNumber unseen();

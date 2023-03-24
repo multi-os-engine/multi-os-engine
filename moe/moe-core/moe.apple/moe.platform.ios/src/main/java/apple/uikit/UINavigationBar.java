@@ -51,6 +51,8 @@ import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -77,7 +79,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") UIView.Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -93,64 +95,71 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") UIView.Block_animateWithDurationAnimations animations);
 
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") UIView.Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") UIView.Block_animateWithDurationAnimationsCompletion_2 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") UIView.Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") UIView.Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UINavigationBar appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UINavigationBar appearanceForTraitCollection(UITraitCollection trait);
+    public static native UINavigationBar appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UINavigationBar appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UINavigationBar appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
     public static native UINavigationBar appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
-            UITraitCollection trait, NSArray<?> containerTypes);
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UINavigationBar appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UINavigationBar appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UINavigationBar appearanceWhenContainedInInstancesOfClasses(
+            @NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -158,34 +167,37 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     @Deprecated
     @Generated
@@ -226,10 +238,12 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -242,14 +256,14 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") UIView.Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") UIView.Block_performWithoutAnimation actionsWithoutAnimation);
 
     @Generated
     @Selector("requiresConstraintBasedLayout")
@@ -281,12 +295,12 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     @Deprecated
     @Generated
@@ -306,17 +320,18 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     @Generated
     @Selector("setAnimationsEnabled:")
@@ -332,16 +347,16 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") UIView.Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") UIView.Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     @Generated
     @Selector("userInterfaceLayoutDirectionForSemanticContentAttribute:")
@@ -359,44 +374,50 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UINavigationBar _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UINavigationBar _appearanceForTraitCollection(UITraitCollection trait) {
+    public UINavigationBar _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UINavigationBar _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UINavigationBar _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UINavigationBar _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UINavigationBar _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
     public UINavigationBar _appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UINavigationBar _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UINavigationBar _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -407,6 +428,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("backIndicatorImage")
     public native UIImage backIndicatorImage();
@@ -414,10 +436,12 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("backIndicatorTransitionMaskImage")
     public native UIImage backIndicatorTransitionMaskImage();
 
+    @Nullable
     @Generated
     @Selector("backItem")
     public native UINavigationItem backItem();
@@ -425,6 +449,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     /**
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImageForBarMetrics:")
     public native UIImage backgroundImageForBarMetrics(@NInt long barMetrics);
@@ -432,6 +457,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     /**
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("backgroundImageForBarPosition:barMetrics:")
     public native UIImage backgroundImageForBarPositionBarMetrics(@NInt long barPosition, @NInt long barMetrics);
@@ -451,10 +477,12 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("barTintColor")
     public native UIColor barTintColor();
 
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -462,7 +490,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -470,7 +498,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("initWithCoder:")
-    public native UINavigationBar initWithCoder(NSCoder coder);
+    public native UINavigationBar initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -494,6 +522,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("setTranslucent:")
     public native void setTranslucent(boolean value);
 
+    @Nullable
     @Generated
     @Selector("items")
     public native NSArray<? extends UINavigationItem> items();
@@ -501,6 +530,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     /**
      * Returns the item that was popped.
      */
+    @Nullable
     @Generated
     @Selector("popNavigationItemAnimated:")
     public native UINavigationItem popNavigationItemAnimated(boolean animated);
@@ -511,7 +541,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("pushNavigationItem:animated:")
-    public native void pushNavigationItemAnimated(UINavigationItem item, boolean animated);
+    public native void pushNavigationItemAnimated(@NotNull UINavigationItem item, boolean animated);
 
     /**
      * The back indicator image is shown beside the back button.
@@ -522,14 +552,14 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setBackIndicatorImage:")
-    public native void setBackIndicatorImage(UIImage value);
+    public native void setBackIndicatorImage(@Nullable UIImage value);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("setBackIndicatorTransitionMaskImage:")
-    public native void setBackIndicatorTransitionMaskImage(UIImage value);
+    public native void setBackIndicatorTransitionMaskImage(@Nullable UIImage value);
 
     /**
      * Same as using UIBarPositionAny in -setBackgroundImage:forBarPosition:barMetrics. Resizable images will be
@@ -540,7 +570,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setBackgroundImage:forBarMetrics:")
-    public native void setBackgroundImageForBarMetrics(UIImage backgroundImage, @NInt long barMetrics);
+    public native void setBackgroundImageForBarMetrics(@Nullable UIImage backgroundImage, @NInt long barMetrics);
 
     /**
      * In general, you should specify a value for the normal state to be used by other states which don't have a custom
@@ -553,8 +583,8 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setBackgroundImage:forBarPosition:barMetrics:")
-    public native void setBackgroundImageForBarPositionBarMetrics(UIImage backgroundImage, @NInt long barPosition,
-            @NInt long barMetrics);
+    public native void setBackgroundImageForBarPositionBarMetrics(@Nullable UIImage backgroundImage,
+            @NInt long barPosition, @NInt long barMetrics);
 
     @Generated
     @Selector("setBarStyle:")
@@ -567,14 +597,14 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setBarTintColor:")
-    public native void setBarTintColor(UIColor value);
+    public native void setBarTintColor(@Nullable UIColor value);
 
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) UINavigationBarDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) UINavigationBarDelegate value);
 
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) UINavigationBarDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) UINavigationBarDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -587,7 +617,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
 
     @Generated
     @Selector("setItems:")
-    public native void setItems(NSArray<? extends UINavigationItem> value);
+    public native void setItems(@Nullable NSArray<? extends UINavigationItem> value);
 
     /**
      * If animated is YES, then simulate a push or pop depending on whether the new top item was previously in the
@@ -595,7 +625,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setItems:animated:")
-    public native void setItemsAnimated(NSArray<? extends UINavigationItem> items, boolean animated);
+    public native void setItemsAnimated(@Nullable NSArray<? extends UINavigationItem> items, boolean animated);
 
     /**
      * Default is nil. When non-nil, a custom shadow image to show instead of the default shadow image. For a custom
@@ -606,7 +636,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setShadowImage:")
-    public native void setShadowImage(UIImage value);
+    public native void setShadowImage(@Nullable UIImage value);
 
     /**
      * The behavior of tintColor for bars has changed on iOS 7.0. It no longer affects the bar's background
@@ -625,7 +655,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setTitleTextAttributes:")
-    public native void setTitleTextAttributes(NSDictionary<String, ?> value);
+    public native void setTitleTextAttributes(@Nullable NSDictionary<String, ?> value);
 
     /**
      * API-Since: 5.0
@@ -642,6 +672,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("shadowImage")
     public native UIImage shadowImage();
@@ -661,6 +692,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 5.0
      */
+    @Nullable
     @Generated
     @Selector("titleTextAttributes")
     public native NSDictionary<String, ?> titleTextAttributes();
@@ -673,6 +705,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @NFloat
     public native double titleVerticalPositionAdjustmentForBarMetrics(@NInt long barMetrics);
 
+    @Nullable
     @Generated
     @Selector("topItem")
     public native UINavigationItem topItem();
@@ -683,6 +716,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("largeTitleTextAttributes")
     public native NSDictionary<String, ?> largeTitleTextAttributes();
@@ -706,7 +740,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setLargeTitleTextAttributes:")
-    public native void setLargeTitleTextAttributes(NSDictionary<String, ?> value);
+    public native void setLargeTitleTextAttributes(@Nullable NSDictionary<String, ?> value);
 
     /**
      * When set to YES, the navigation bar will use a larger out-of-line title view when requested by the current
@@ -725,6 +759,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("compactAppearance")
     public native UINavigationBarAppearance compactAppearance();
@@ -733,7 +768,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") UIView.Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     /**
      * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the
@@ -742,6 +777,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("scrollEdgeAppearance")
     public native UINavigationBarAppearance scrollEdgeAppearance();
@@ -754,7 +790,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setCompactAppearance:")
-    public native void setCompactAppearance(UINavigationBarAppearance value);
+    public native void setCompactAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * Describes the appearance attributes for the navigation bar to use when an associated UIScrollView has reached the
@@ -765,7 +801,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setScrollEdgeAppearance:")
-    public native void setScrollEdgeAppearance(UINavigationBarAppearance value);
+    public native void setScrollEdgeAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * Describes the appearance attributes for the navigation bar to use when it is displayed with its standard height.
@@ -774,13 +810,14 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setStandardAppearance:")
-    public native void setStandardAppearance(UINavigationBarAppearance value);
+    public native void setStandardAppearance(@NotNull UINavigationBarAppearance value);
 
     /**
      * Describes the appearance attributes for the navigation bar to use when it is displayed with its standard height.
      * 
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @Selector("standardAppearance")
     public native UINavigationBarAppearance standardAppearance();
@@ -792,6 +829,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("compactScrollEdgeAppearance")
     public native UINavigationBarAppearance compactScrollEdgeAppearance();
@@ -805,7 +843,7 @@ public class UINavigationBar extends UIView implements NSCoding, UIBarPositionin
      */
     @Generated
     @Selector("setCompactScrollEdgeAppearance:")
-    public native void setCompactScrollEdgeAppearance(UINavigationBarAppearance value);
+    public native void setCompactScrollEdgeAppearance(@Nullable UINavigationBarAppearance value);
 
     /**
      * The concrete behavioral style chosen for the navigation bar. When this resolves to .mac, the navigation bar's

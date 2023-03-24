@@ -11,6 +11,8 @@ import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.general.ann.NInt;
 import org.moe.natj.objc.ann.IsOptional;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -22,7 +24,7 @@ import org.moe.natj.objc.ann.IsOptional;
 public interface NSFileProviderEnumerationObserver {
     @Generated
     @Selector("didEnumerateItems:")
-    void didEnumerateItems(NSArray<?> updatedItems);
+    void didEnumerateItems(@NotNull NSArray<?> updatedItems);
 
     /**
      * Call this method after enumerating a full page of items. If you set a non-nil
@@ -36,11 +38,11 @@ public interface NSFileProviderEnumerationObserver {
      */
     @Generated
     @Selector("finishEnumeratingUpToPage:")
-    void finishEnumeratingUpToPage(NSData nextPage);
+    void finishEnumeratingUpToPage(@Nullable NSData nextPage);
 
     @Generated
     @Selector("finishEnumeratingWithError:")
-    void finishEnumeratingWithError(NSError error);
+    void finishEnumeratingWithError(@NotNull NSError error);
 
     /**
      * Size of the page suggested by the system for better performance.

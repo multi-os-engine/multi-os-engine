@@ -70,6 +70,8 @@ import apple.corefoundation.struct.CGAffineTransform;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -104,7 +106,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("addKeyframeWithRelativeStartTime:relativeDuration:animations:")
     public static native void addKeyframeWithRelativeStartTimeRelativeDurationAnimations(double frameStartTime,
             double frameDuration,
-            @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_addKeyframeWithRelativeStartTimeRelativeDurationAnimations") Block_addKeyframeWithRelativeStartTimeRelativeDurationAnimations animations);
 
     @Generated
     @Owned
@@ -123,8 +125,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("animateKeyframesWithDuration:delay:options:animations:completion:")
     public static native void animateKeyframesWithDurationDelayOptionsAnimationsCompletion(double duration,
             double delay, @NUInt long options,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4") Block_animateKeyframesWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     /**
      * delay = 0.0, options = 0, completion = NULL
@@ -134,7 +136,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @Selector("animateWithDuration:animations:")
     public static native void animateWithDurationAnimations(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimations") Block_animateWithDurationAnimations animations);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimations") Block_animateWithDurationAnimations animations);
 
     /**
      * delay = 0.0, options = 0
@@ -144,8 +146,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @Selector("animateWithDuration:animations:completion:")
     public static native void animateWithDurationAnimationsCompletion(double duration,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") Block_animateWithDurationAnimationsCompletion_1 animations,
-            @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") Block_animateWithDurationAnimationsCompletion_2 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_1") Block_animateWithDurationAnimationsCompletion_1 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationAnimationsCompletion_2") Block_animateWithDurationAnimationsCompletion_2 completion);
 
     /**
      * API-Since: 4.0
@@ -154,8 +156,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("animateWithDuration:delay:options:animations:completion:")
     public static native void animateWithDurationDelayOptionsAnimationsCompletion(double duration, double delay,
             @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_3") Block_animateWithDurationDelayOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayOptionsAnimationsCompletion_4") Block_animateWithDurationDelayOptionsAnimationsCompletion_4 completion);
 
     /**
      * Performs `animations` using a timing curve described by the motion of a spring. When `dampingRatio` is 1, the
@@ -172,39 +174,45 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("animateWithDuration:delay:usingSpringWithDamping:initialSpringVelocity:options:animations:completion:")
     public static native void animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion(
             double duration, double delay, @NFloat double dampingRatio, @NFloat double velocity, @NUInt long options,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
-            @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
+            @NotNull @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_5 animations,
+            @Nullable @ObjCBlock(name = "call_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6") Block_animateWithDurationDelayUsingSpringWithDampingInitialSpringVelocityOptionsAnimationsCompletion_6 completion);
 
+    @NotNull
     @Generated
     @Selector("appearance")
     public static native UIView appearance();
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:")
-    public static native UIView appearanceForTraitCollection(UITraitCollection trait);
+    public static native UIView appearanceForTraitCollection(@NotNull UITraitCollection trait);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceForTraitCollection:whenContainedIn:")
-    public static native UIView appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+    public static native UIView appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceForTraitCollection:whenContainedInInstancesOfClasses:")
-    public static native UIView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes);
+    public static native UIView appearanceForTraitCollectionWhenContainedInInstancesOfClasses(
+            @NotNull UITraitCollection trait, @NotNull NSArray<?> containerTypes);
 
+    @NotNull
     @Generated
     @Variadic()
     @Deprecated
     @Selector("appearanceWhenContainedIn:")
     public static native UIView appearanceWhenContainedIn(
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs);
 
+    @NotNull
     @Generated
     @Selector("appearanceWhenContainedInInstancesOfClasses:")
-    public static native UIView appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes);
+    public static native UIView appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes);
 
     @Generated
     @Selector("areAnimationsEnabled")
@@ -212,7 +220,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * Deprecated in iOS 13.0. Please use the block-based animation API instead.
@@ -224,29 +232,32 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Generated
     @Selector("beginAnimations:context:")
-    public static native void beginAnimationsContext(String animationID, VoidPtr context);
+    public static native void beginAnimationsContext(@Nullable String animationID, @Nullable VoidPtr context);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
     @Generated
     @Selector("clearTextInputContextIdentifier:")
-    public static native void clearTextInputContextIdentifier(String identifier);
+    public static native void clearTextInputContextIdentifier(@NotNull String identifier);
 
     /**
      * API-Since: 2.0
@@ -295,13 +306,15 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * default is [CALayer class]. Used when creating the underlying layer for the view.
      */
+    @NotNull
     @Generated
     @Selector("layerClass")
     public static native Class layerClass();
@@ -323,9 +336,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @Selector("performSystemAnimation:onViews:options:animations:completion:")
     public static native void performSystemAnimationOnViewsOptionsAnimationsCompletion(@NUInt long animation,
-            NSArray<? extends UIView> views, @NUInt long options,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
-            @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
+            @NotNull NSArray<? extends UIView> views, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_3") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_3 parallelAnimations,
+            @Nullable @ObjCBlock(name = "call_performSystemAnimationOnViewsOptionsAnimationsCompletion_4") Block_performSystemAnimationOnViewsOptionsAnimationsCompletion_4 completion);
 
     /**
      * API-Since: 7.0
@@ -333,7 +346,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @Selector("performWithoutAnimation:")
     public static native void performWithoutAnimation(
-            @ObjCBlock(name = "call_performWithoutAnimation") Block_performWithoutAnimation actionsWithoutAnimation);
+            @NotNull @ObjCBlock(name = "call_performWithoutAnimation") Block_performWithoutAnimation actionsWithoutAnimation);
 
     /**
      * constraint-based layout engages lazily when someone tries to use it (e.g., adds a constraint to a view). If you
@@ -393,7 +406,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Generated
     @Selector("setAnimationDelegate:")
-    public static native void setAnimationDelegate(@Mapped(ObjCObjectMapper.class) Object delegate);
+    public static native void setAnimationDelegate(@Nullable @Mapped(ObjCObjectMapper.class) Object delegate);
 
     /**
      * API-Since: 2.0
@@ -403,7 +416,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Generated
     @Selector("setAnimationDidStopSelector:")
-    public static native void setAnimationDidStopSelector(SEL selector);
+    public static native void setAnimationDidStopSelector(@Nullable SEL selector);
 
     /**
      * API-Since: 2.0
@@ -443,7 +456,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Generated
     @Selector("setAnimationStartDate:")
-    public static native void setAnimationStartDate(NSDate startDate);
+    public static native void setAnimationStartDate(@NotNull NSDate startDate);
 
     /**
      * API-Since: 2.0
@@ -453,7 +466,8 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Generated
     @Selector("setAnimationTransition:forView:cache:")
-    public static native void setAnimationTransitionForViewCache(@NInt long transition, UIView view, boolean cache);
+    public static native void setAnimationTransitionForViewCache(@NInt long transition, @NotNull UIView view,
+            boolean cache);
 
     /**
      * API-Since: 2.0
@@ -463,7 +477,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Deprecated
     @Generated
     @Selector("setAnimationWillStartSelector:")
-    public static native void setAnimationWillStartSelector(SEL selector);
+    public static native void setAnimationWillStartSelector(@Nullable SEL selector);
 
     /**
      * ignore any attribute changes while set.
@@ -487,19 +501,19 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("transitionFromView:toView:duration:options:completion:")
-    public static native void transitionFromViewToViewDurationOptionsCompletion(UIView fromView, UIView toView,
-            double duration, @NUInt long options,
-            @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") Block_transitionFromViewToViewDurationOptionsCompletion completion);
+    public static native void transitionFromViewToViewDurationOptionsCompletion(@NotNull UIView fromView,
+            @NotNull UIView toView, double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionFromViewToViewDurationOptionsCompletion") Block_transitionFromViewToViewDurationOptionsCompletion completion);
 
     /**
      * API-Since: 4.0
      */
     @Generated
     @Selector("transitionWithView:duration:options:animations:completion:")
-    public static native void transitionWithViewDurationOptionsAnimationsCompletion(UIView view, double duration,
-            @NUInt long options,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
-            @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
+    public static native void transitionWithViewDurationOptionsAnimationsCompletion(@NotNull UIView view,
+            double duration, @NUInt long options,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_3") Block_transitionWithViewDurationOptionsAnimationsCompletion_3 animations,
+            @Nullable @ObjCBlock(name = "call_transitionWithViewDurationOptionsAnimationsCompletion_4") Block_transitionWithViewDurationOptionsAnimationsCompletion_4 completion);
 
     /**
      * This method returns the layout direction implied by the provided semantic content attribute relative to the
@@ -532,15 +546,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NInt
     public static native long version_static();
 
+    @Nullable
     @Generated
     @Selector("accessibilityIdentifier")
     public native String accessibilityIdentifier();
 
+    @Nullable
     @Generated
     @IsOptional
     @Selector("actionForLayer:forKey:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native CAAction actionForLayerForKey(CALayer layer, String event);
+    public native CAAction actionForLayerForKey(@NotNull CALayer layer, @NotNull String event);
 
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead, set NSLayoutConstraint's
@@ -550,7 +566,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("addConstraint:")
-    public native void addConstraint(NSLayoutConstraint constraint);
+    public native void addConstraint(@NotNull NSLayoutConstraint constraint);
 
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint
@@ -560,14 +576,14 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("addConstraints:")
-    public native void addConstraints(NSArray<? extends NSLayoutConstraint> constraints);
+    public native void addConstraints(@NotNull NSArray<? extends NSLayoutConstraint> constraints);
 
     /**
      * API-Since: 3.2
      */
     @Generated
     @Selector("addGestureRecognizer:")
-    public native void addGestureRecognizer(UIGestureRecognizer gestureRecognizer);
+    public native void addGestureRecognizer(@NotNull UIGestureRecognizer gestureRecognizer);
 
     /**
      * Adds layoutGuide to the receiver, passing the receiver in -setOwningView: to layoutGuide.
@@ -576,7 +592,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("addLayoutGuide:")
-    public native void addLayoutGuide(UILayoutGuide layoutGuide);
+    public native void addLayoutGuide(@NotNull UILayoutGuide layoutGuide);
 
     /**
      * Begins applying `effect` to the receiver. The effect's emitted keyPath/value pairs will be
@@ -589,11 +605,11 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("addMotionEffect:")
-    public native void addMotionEffect(UIMotionEffect effect);
+    public native void addMotionEffect(@NotNull UIMotionEffect effect);
 
     @Generated
     @Selector("addSubview:")
-    public native void addSubview(UIView view);
+    public native void addSubview(@NotNull UIView view);
 
     /**
      * These two methods should be inverses of each other. UIKit will call both as part of layout computation.
@@ -631,44 +647,50 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NFloat
     public native double alpha();
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearance")
     public UIView _appearance() {
         return appearance();
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollection")
-    public UIView _appearanceForTraitCollection(UITraitCollection trait) {
+    public UIView _appearanceForTraitCollection(@NotNull UITraitCollection trait) {
         return appearanceForTraitCollection(trait);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedIn")
-    public UIView _appearanceForTraitCollectionWhenContainedIn(UITraitCollection trait,
-            @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
+    public UIView _appearanceForTraitCollectionWhenContainedIn(@NotNull UITraitCollection trait,
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceForTraitCollectionWhenContainedIn(trait, ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceForTraitCollectionWhenContainedInInstancesOfClasses")
-    public UIView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(UITraitCollection trait,
-            NSArray<?> containerTypes) {
+    public UIView _appearanceForTraitCollectionWhenContainedInInstancesOfClasses(@NotNull UITraitCollection trait,
+            @NotNull NSArray<?> containerTypes) {
         return appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait, containerTypes);
     }
 
+    @NotNull
     @Generated
     @Deprecated
     @ProtocolClassMethod("appearanceWhenContainedIn")
-    public UIView _appearanceWhenContainedIn(@Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass,
-            Object... varargs) {
+    public UIView _appearanceWhenContainedIn(
+            @Nullable @Mapped(ObjCObjectMapper.class) UIAppearanceContainer ContainerClass, Object... varargs) {
         return appearanceWhenContainedIn(ContainerClass, varargs);
     }
 
+    @NotNull
     @Generated
     @ProtocolClassMethod("appearanceWhenContainedInInstancesOfClasses")
-    public UIView _appearanceWhenContainedInInstancesOfClasses(NSArray<?> containerTypes) {
+    public UIView _appearanceWhenContainedInInstancesOfClasses(@NotNull NSArray<?> containerTypes) {
         return appearanceWhenContainedInInstancesOfClasses(containerTypes);
     }
 
@@ -690,6 +712,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * default is nil. Can be useful with the appearance proxy on custom UIView subclasses.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -697,6 +720,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("bottomAnchor")
     public native NSLayoutYAxisAnchor bottomAnchor();
@@ -708,7 +732,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("bringSubviewToFront:")
-    public native void bringSubviewToFront(UIView view);
+    public native void bringSubviewToFront(@NotNull UIView view);
 
     @Generated
     @Selector("canBecomeFocused")
@@ -722,6 +746,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("centerXAnchor")
     public native NSLayoutXAxisAnchor centerXAnchor();
@@ -729,6 +754,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("centerYAnchor")
     public native NSLayoutYAxisAnchor centerYAnchor();
@@ -748,6 +774,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("clipsToBounds")
     public native boolean clipsToBounds();
 
+    @NotNull
     @Generated
     @IsOptional
     @Selector("collisionBoundingPath")
@@ -762,6 +789,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("constraints")
     public native NSArray<? extends NSLayoutConstraint> constraints();
@@ -775,6 +803,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 6.0
      */
+    @NotNull
     @Generated
     @Selector("constraintsAffectingLayoutForAxis:")
     public native NSArray<? extends NSLayoutConstraint> constraintsAffectingLayoutForAxis(@NInt long axis);
@@ -826,56 +855,56 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("convertPoint:fromCoordinateSpace:")
     @ByValue
     public native CGPoint convertPointFromCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertPoint:fromView:")
     @ByValue
-    public native CGPoint convertPointFromView(@ByValue CGPoint point, UIView view);
+    public native CGPoint convertPointFromView(@ByValue CGPoint point, @Nullable UIView view);
 
     @Generated
     @Selector("convertPoint:toCoordinateSpace:")
     @ByValue
     public native CGPoint convertPointToCoordinateSpace(@ByValue CGPoint point,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertPoint:toView:")
     @ByValue
-    public native CGPoint convertPointToView(@ByValue CGPoint point, UIView view);
+    public native CGPoint convertPointToView(@ByValue CGPoint point, @Nullable UIView view);
 
     @Generated
     @Selector("convertRect:fromCoordinateSpace:")
     @ByValue
     public native CGRect convertRectFromCoordinateSpace(@ByValue CGRect rect,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertRect:fromView:")
     @ByValue
-    public native CGRect convertRectFromView(@ByValue CGRect rect, UIView view);
+    public native CGRect convertRectFromView(@ByValue CGRect rect, @Nullable UIView view);
 
     @Generated
     @Selector("convertRect:toCoordinateSpace:")
     @ByValue
     public native CGRect convertRectToCoordinateSpace(@ByValue CGRect rect,
-            @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
+            @NotNull @Mapped(ObjCObjectMapper.class) UICoordinateSpace coordinateSpace);
 
     @Generated
     @Selector("convertRect:toView:")
     @ByValue
-    public native CGRect convertRectToView(@ByValue CGRect rect, UIView view);
+    public native CGRect convertRectToView(@ByValue CGRect rect, @Nullable UIView view);
 
     /**
      * API-Since: 6.0
      */
     @Generated
     @Selector("decodeRestorableStateWithCoder:")
-    public native void decodeRestorableStateWithCoder(NSCoder coder);
+    public native void decodeRestorableStateWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("didAddSubview:")
-    public native void didAddSubview(UIView subview);
+    public native void didAddSubview(@NotNull UIView subview);
 
     @Generated
     @Selector("didMoveToSuperview")
@@ -887,18 +916,18 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("didUpdateFocusInContext:withAnimationCoordinator:")
-    public native void didUpdateFocusInContextWithAnimationCoordinator(UIFocusUpdateContext context,
-            UIFocusAnimationCoordinator coordinator);
+    public native void didUpdateFocusInContextWithAnimationCoordinator(@NotNull UIFocusUpdateContext context,
+            @NotNull UIFocusAnimationCoordinator coordinator);
 
     @Generated
     @IsOptional
     @Selector("displayLayer:")
-    public native void displayLayer(CALayer layer);
+    public native void displayLayer(@NotNull CALayer layer);
 
     @Generated
     @IsOptional
     @Selector("drawLayer:inContext:")
-    public native void drawLayerInContext(CALayer layer, CGContextRef ctx);
+    public native void drawLayerInContext(@NotNull CALayer layer, @NotNull CGContextRef ctx);
 
     @Generated
     @Selector("drawRect:")
@@ -909,7 +938,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("drawRect:forViewPrintFormatter:")
-    public native void drawRectForViewPrintFormatter(@ByValue CGRect rect, UIViewPrintFormatter formatter);
+    public native void drawRectForViewPrintFormatter(@ByValue CGRect rect, @NotNull UIViewPrintFormatter formatter);
 
     /**
      * Use this method to render a snapshot of the view hierarchy into the current context. Returns NO if the snapshot
@@ -939,11 +968,11 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("encodeRestorableStateWithCoder:")
-    public native void encodeRestorableStateWithCoder(NSCoder coder);
+    public native void encodeRestorableStateWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * use to make the view or any subview that is the first responder resign (optionally force)
@@ -966,6 +995,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("firstBaselineAnchor")
     public native NSLayoutYAxisAnchor firstBaselineAnchor();
@@ -994,11 +1024,12 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("gestureRecognizerShouldBegin:")
-    public native boolean gestureRecognizerShouldBegin(UIGestureRecognizer gestureRecognizer);
+    public native boolean gestureRecognizerShouldBegin(@NotNull UIGestureRecognizer gestureRecognizer);
 
     /**
      * API-Since: 3.2
      */
+    @Nullable
     @Generated
     @Selector("gestureRecognizers")
     public native NSArray<? extends UIGestureRecognizer> gestureRecognizers();
@@ -1024,6 +1055,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("heightAnchor")
     public native NSLayoutDimension heightAnchor();
@@ -1031,9 +1063,10 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * recursively calls -pointInside:withEvent:. point is in the receiver's coordinate system
      */
+    @Nullable
     @Generated
     @Selector("hitTest:withEvent:")
-    public native UIView hitTestWithEvent(@ByValue CGPoint point, UIEvent event);
+    public native UIView hitTestWithEvent(@ByValue CGPoint point, @Nullable UIEvent event);
 
     @Generated
     @Selector("init")
@@ -1041,7 +1074,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIView initWithCoder(NSCoder coder);
+    public native UIView initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithFrame:")
@@ -1049,15 +1082,15 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("insertSubview:aboveSubview:")
-    public native void insertSubviewAboveSubview(UIView view, UIView siblingSubview);
+    public native void insertSubviewAboveSubview(@NotNull UIView view, @NotNull UIView siblingSubview);
 
     @Generated
     @Selector("insertSubview:atIndex:")
-    public native void insertSubviewAtIndex(UIView view, @NInt long index);
+    public native void insertSubviewAtIndex(@NotNull UIView view, @NInt long index);
 
     @Generated
     @Selector("insertSubview:belowSubview:")
-    public native void insertSubviewBelowSubview(UIView view, UIView siblingSubview);
+    public native void insertSubviewBelowSubview(@NotNull UIView view, @NotNull UIView siblingSubview);
 
     /**
      * API-Since: 6.0
@@ -1082,7 +1115,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("isDescendantOfView:")
-    public native boolean isDescendantOfView(UIView view);
+    public native boolean isDescendantOfView(@NotNull UIView view);
 
     /**
      * default is NO
@@ -1166,6 +1199,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("lastBaselineAnchor")
     public native NSLayoutYAxisAnchor lastBaselineAnchor();
@@ -1173,6 +1207,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * returns view's layer. Will always return a non-nil value. view is layer's delegate
      */
+    @NotNull
     @Generated
     @Selector("layer")
     public native CALayer layer();
@@ -1180,13 +1215,14 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @IsOptional
     @Selector("layerWillDraw:")
-    public native void layerWillDraw(CALayer layer);
+    public native void layerWillDraw(@NotNull CALayer layer);
 
     /**
      * UILayoutGuide objects owned by the receiver.
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("layoutGuides")
     public native NSArray<? extends UILayoutGuide> layoutGuides();
@@ -1231,6 +1267,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("layoutMarginsGuide")
     public native UILayoutGuide layoutMarginsGuide();
@@ -1238,7 +1275,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @IsOptional
     @Selector("layoutSublayersOfLayer:")
-    public native void layoutSublayersOfLayer(CALayer layer);
+    public native void layoutSublayersOfLayer(@NotNull CALayer layer);
 
     /**
      * override point. called by layoutIfNeeded automatically. As of iOS 6.0, when constraints-based layout is used the
@@ -1253,6 +1290,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("leadingAnchor")
     public native NSLayoutXAxisAnchor leadingAnchor();
@@ -1260,6 +1298,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("leftAnchor")
     public native NSLayoutXAxisAnchor leftAnchor();
@@ -1267,6 +1306,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("maskView")
     public native UIView maskView();
@@ -1274,6 +1314,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("motionEffects")
     public native NSArray<? extends UIMotionEffect> motionEffects();
@@ -1290,12 +1331,14 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("pointInside:withEvent:")
-    public native boolean pointInsideWithEvent(@ByValue CGPoint point, UIEvent event);
+    public native boolean pointInsideWithEvent(@ByValue CGPoint point, @Nullable UIEvent event);
 
+    @NotNull
     @Generated
     @Selector("preferredFocusEnvironments")
     public native NSArray<?> preferredFocusEnvironments();
 
+    @Nullable
     @Deprecated
     @Generated
     @IsOptional
@@ -1319,6 +1362,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("readableContentGuide")
     public native UILayoutGuide readableContentGuide();
@@ -1331,7 +1375,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("removeConstraint:")
-    public native void removeConstraint(NSLayoutConstraint constraint);
+    public native void removeConstraint(@NotNull NSLayoutConstraint constraint);
 
     /**
      * This method will be deprecated in a future release and should be avoided.  Instead use +[NSLayoutConstraint
@@ -1341,7 +1385,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("removeConstraints:")
-    public native void removeConstraints(NSArray<? extends NSLayoutConstraint> constraints);
+    public native void removeConstraints(@NotNull NSArray<? extends NSLayoutConstraint> constraints);
 
     @Generated
     @Selector("removeFromSuperview")
@@ -1352,7 +1396,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("removeGestureRecognizer:")
-    public native void removeGestureRecognizer(UIGestureRecognizer gestureRecognizer);
+    public native void removeGestureRecognizer(@NotNull UIGestureRecognizer gestureRecognizer);
 
     /**
      * Removes layoutGuide from the receiver, passing nil in -setOwningView: to layoutGuide.
@@ -1361,7 +1405,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("removeLayoutGuide:")
-    public native void removeLayoutGuide(UILayoutGuide layoutGuide);
+    public native void removeLayoutGuide(@NotNull UILayoutGuide layoutGuide);
 
     /**
      * Stops applying `effect` to the receiver. Any affected presentation values will animate to
@@ -1371,13 +1415,14 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("removeMotionEffect:")
-    public native void removeMotionEffect(UIMotionEffect effect);
+    public native void removeMotionEffect(@NotNull UIMotionEffect effect);
 
     /**
      * Resizable snapshots will default to stretching the center
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("resizableSnapshotViewFromRect:afterScreenUpdates:withCapInsets:")
     public native UIView resizableSnapshotViewFromRectAfterScreenUpdatesWithCapInsets(@ByValue CGRect rect,
@@ -1386,6 +1431,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("restorationIdentifier")
     public native String restorationIdentifier();
@@ -1393,6 +1439,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("rightAnchor")
     public native NSLayoutXAxisAnchor rightAnchor();
@@ -1407,11 +1454,11 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("sendSubviewToBack:")
-    public native void sendSubviewToBack(UIView view);
+    public native void sendSubviewToBack(@NotNull UIView view);
 
     @Generated
     @Selector("setAccessibilityIdentifier:")
-    public native void setAccessibilityIdentifier(String value);
+    public native void setAccessibilityIdentifier(@Nullable String value);
 
     /**
      * animatable. default is 1.0
@@ -1439,7 +1486,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     /**
      * default bounds is zero origin, frame size. animatable
@@ -1520,7 +1567,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setGestureRecognizers:")
-    public native void setGestureRecognizers(NSArray<? extends UIGestureRecognizer> value);
+    public native void setGestureRecognizers(@Nullable NSArray<? extends UIGestureRecognizer> value);
 
     /**
      * -layoutMargins returns a set of insets from the edge of the view's bounds that denote a default spacing for
@@ -1550,14 +1597,14 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setMaskView:")
-    public native void setMaskView(UIView value);
+    public native void setMaskView(@Nullable UIView value);
 
     /**
      * API-Since: 7.0
      */
     @Generated
     @Selector("setMotionEffects:")
-    public native void setMotionEffects(NSArray<? extends UIMotionEffect> value);
+    public native void setMotionEffects(@NotNull NSArray<? extends UIMotionEffect> value);
 
     @Generated
     @Selector("setNeedsDisplay")
@@ -1600,7 +1647,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setRestorationIdentifier:")
-    public native void setRestorationIdentifier(String value);
+    public native void setRestorationIdentifier(@Nullable String value);
 
     /**
      * API-Since: 9.0
@@ -1661,7 +1708,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
 
     @Generated
     @Selector("shouldUpdateFocusInContext:")
-    public native boolean shouldUpdateFocusInContext(UIFocusUpdateContext context);
+    public native boolean shouldUpdateFocusInContext(@NotNull UIFocusUpdateContext context);
 
     /**
      * return 'best' size to fit given size. does not actually resize view. Default is return existing view size
@@ -1700,14 +1747,17 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 7.0
      */
+    @Nullable
     @Generated
     @Selector("snapshotViewAfterScreenUpdates:")
     public native UIView snapshotViewAfterScreenUpdates(boolean afterUpdates);
 
+    @NotNull
     @Generated
     @Selector("subviews")
     public native NSArray<? extends UIView> subviews();
 
+    @Nullable
     @Generated
     @Selector("superview")
     public native UIView superview();
@@ -1785,6 +1835,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("topAnchor")
     public native NSLayoutYAxisAnchor topAnchor();
@@ -1792,17 +1843,19 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("trailingAnchor")
     public native NSLayoutXAxisAnchor trailingAnchor();
 
+    @NotNull
     @Generated
     @Selector("traitCollection")
     public native UITraitCollection traitCollection();
 
     @Generated
     @Selector("traitCollectionDidChange:")
-    public native void traitCollectionDidChange(UITraitCollection previousTraitCollection);
+    public native void traitCollectionDidChange(@Nullable UITraitCollection previousTraitCollection);
 
     @Generated
     @Selector("transform")
@@ -1846,6 +1899,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * Deprecated-Since: 9.0
      * Deprecated-Message: Override -viewForFirstBaselineLayout or -viewForLastBaselineLayout as appropriate, instead
      */
+    @NotNull
     @Generated
     @Deprecated
     @Selector("viewForBaselineLayout")
@@ -1863,6 +1917,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("viewForFirstBaselineLayout")
     public native UIView viewForFirstBaselineLayout();
@@ -1877,6 +1932,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("viewForLastBaselineLayout")
     public native UIView viewForLastBaselineLayout();
@@ -1884,6 +1940,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * returns a new print formatter each time
      */
+    @NotNull
     @Generated
     @Selector("viewPrintFormatter")
     public native UIViewPrintFormatter viewPrintFormatter();
@@ -1891,6 +1948,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * recursive search. includes self
      */
+    @Nullable
     @Generated
     @Selector("viewWithTag:")
     public native UIView viewWithTag(@NInt long tag);
@@ -1898,22 +1956,24 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("widthAnchor")
     public native NSLayoutDimension widthAnchor();
 
     @Generated
     @Selector("willMoveToSuperview:")
-    public native void willMoveToSuperview(UIView newSuperview);
+    public native void willMoveToSuperview(@Nullable UIView newSuperview);
 
     @Generated
     @Selector("willMoveToWindow:")
-    public native void willMoveToWindow(UIWindow newWindow);
+    public native void willMoveToWindow(@Nullable UIWindow newWindow);
 
     @Generated
     @Selector("willRemoveSubview:")
-    public native void willRemoveSubview(UIView subview);
+    public native void willRemoveSubview(@NotNull UIView subview);
 
+    @Nullable
     @Generated
     @Selector("window")
     public native UIWindow window();
@@ -2043,7 +2103,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("addInteraction:")
-    public native void addInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
+    public native void addInteraction(@NotNull @Mapped(ObjCObjectMapper.class) UIInteraction interaction);
 
     /**
      * directionalLayoutMargins.leading is used on the left when the user interface direction is LTR and on the right
@@ -2069,6 +2129,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("interactions")
     public native NSArray<?> interactions();
@@ -2078,7 +2139,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("removeInteraction:")
-    public native void removeInteraction(@Mapped(ObjCObjectMapper.class) UIInteraction interaction);
+    public native void removeInteraction(@NotNull @Mapped(ObjCObjectMapper.class) UIInteraction interaction);
 
     /**
      * API-Since: 11.0
@@ -2101,6 +2162,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("safeAreaLayoutGuide")
     public native UILayoutGuide safeAreaLayoutGuide();
@@ -2137,8 +2199,9 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setInteractions:")
-    public native void setInteractions(NSArray<?> value);
+    public native void setInteractions(@NotNull NSArray<?> value);
 
+    @NotNull
     @Generated
     @Selector("coordinateSpace")
     @MappedReturn(ObjCObjectMapper.class)
@@ -2147,17 +2210,20 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Generated
     @IsOptional
     @Selector("didHintFocusMovement:")
-    public native void didHintFocusMovement(UIFocusMovementHint hint);
+    public native void didHintFocusMovement(@NotNull UIFocusMovementHint hint);
 
+    @Nullable
     @Generated
     @Selector("focusItemContainer")
     @MappedReturn(ObjCObjectMapper.class)
     public native UIFocusItemContainer focusItemContainer();
 
+    @NotNull
     @Generated
     @Selector("focusItemsInRect:")
     public native NSArray<?> focusItemsInRect(@ByValue CGRect rect);
 
+    @Nullable
     @Generated
     @Selector("largeContentImage")
     public native UIImage largeContentImage();
@@ -2167,6 +2233,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @ByValue
     public native UIEdgeInsets largeContentImageInsets();
 
+    @Nullable
     @Generated
     @Selector("largeContentTitle")
     public native String largeContentTitle();
@@ -2181,7 +2248,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @Selector("modifyAnimationsWithRepeatCount:autoreverses:animations:")
     public static native void modifyAnimationsWithRepeatCountAutoreversesAnimations(@NFloat double count,
             boolean autoreverses,
-            @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
+            @NotNull @ObjCBlock(name = "call_modifyAnimationsWithRepeatCountAutoreversesAnimations") Block_modifyAnimationsWithRepeatCountAutoreversesAnimations animations);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -2220,6 +2287,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @NInt
     public native long overrideUserInterfaceStyle();
 
+    @Nullable
     @Generated
     @Selector("parentFocusEnvironment")
     @MappedReturn(ObjCObjectMapper.class)
@@ -2236,7 +2304,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setLargeContentImage:")
-    public native void setLargeContentImage(UIImage value);
+    public native void setLargeContentImage(@Nullable UIImage value);
 
     /**
      * Defaults to UIEdgeInsetsZero.
@@ -2254,7 +2322,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setLargeContentTitle:")
-    public native void setLargeContentTitle(String value);
+    public native void setLargeContentTitle(@Nullable String value);
 
     /**
      * Set `overrideUserInterfaceStyle` to cause this view and its subviews to have a specific `UIUserInterfaceStyle`.
@@ -2328,6 +2396,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     @ByValue
     public native CATransform3D transform3D();
 
+    @Nullable
     @Generated
     @Selector("focusGroupIdentifier")
     public native String focusGroupIdentifier();
@@ -2340,7 +2409,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setFocusGroupIdentifier:")
-    public native void setFocusGroupIdentifier(String value);
+    public native void setFocusGroupIdentifier(@Nullable String value);
 
     /**
      * Will return a string with a log of all the superviews of this view, alongside with what
@@ -2349,10 +2418,12 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("appliedContentSizeCategoryLimitsDescription")
     public native String appliedContentSizeCategoryLimitsDescription();
 
+    @Nullable
     @Generated
     @Selector("focusEffect")
     public native UIFocusEffect focusEffect();
@@ -2373,6 +2444,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 15.0
      */
+    @NotNull
     @Generated
     @Selector("keyboardLayoutGuide")
     public native UIKeyboardLayoutGuide keyboardLayoutGuide();
@@ -2380,6 +2452,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
     /**
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("maximumContentSizeCategory")
     public native String maximumContentSizeCategory();
@@ -2402,6 +2475,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("minimumContentSizeCategory")
     public native String minimumContentSizeCategory();
@@ -2414,7 +2488,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setFocusEffect:")
-    public native void setFocusEffect(UIFocusEffect value);
+    public native void setFocusEffect(@Nullable UIFocusEffect value);
 
     /**
      * The priority this item has in its focus group. The higher the priority, the more likely it is to get picked when
@@ -2434,7 +2508,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setMaximumContentSizeCategory:")
-    public native void setMaximumContentSizeCategory(String value);
+    public native void setMaximumContentSizeCategory(@Nullable String value);
 
     /**
      * Specify content size category limits. Setting one or both of these properties will limit the
@@ -2456,7 +2530,7 @@ public class UIView extends UIResponder implements NSCoding, UIAppearance, UIApp
      */
     @Generated
     @Selector("setMinimumContentSizeCategory:")
-    public native void setMinimumContentSizeCategory(String value);
+    public native void setMinimumContentSizeCategory(@Nullable String value);
 
     /**
      * Defines the anchor point of the layer's bounds rect, as a point in

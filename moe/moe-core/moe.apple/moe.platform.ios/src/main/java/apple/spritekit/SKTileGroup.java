@@ -42,6 +42,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * A tile group encapsulates a collection of related tile definitions that are designed to be pieced together within a
@@ -80,22 +82,25 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -111,6 +116,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * Create an empty tile group. Placing this in a tile map will erase the existing tile at that location.
      */
+    @NotNull
     @Generated
     @Selector("emptyTileGroup")
     public static native SKTileGroup emptyTileGroup();
@@ -137,9 +143,10 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -169,7 +176,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("tileGroupWithRules:")
-    public static native SKTileGroup tileGroupWithRules(NSArray<? extends SKTileGroupRule> rules);
+    public static native SKTileGroup tileGroupWithRules(@NotNull NSArray<? extends SKTileGroupRule> rules);
 
     /**
      * Create a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule
@@ -179,22 +186,23 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("tileGroupWithTileDefinition:")
-    public static native SKTileGroup tileGroupWithTileDefinition(SKTileDefinition tileDefinition);
+    public static native SKTileGroup tileGroupWithTileDefinition(@NotNull SKTileDefinition tileDefinition);
 
     @Generated
     @Selector("version")
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -202,7 +210,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SKTileGroup initWithCoder(NSCoder coder);
+    public native SKTileGroup initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initilize a tile group with the specified rules.
@@ -211,7 +219,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithRules:")
-    public native SKTileGroup initWithRules(NSArray<? extends SKTileGroupRule> rules);
+    public native SKTileGroup initWithRules(@NotNull NSArray<? extends SKTileGroupRule> rules);
 
     /**
      * Initilize a simple tile group for a single tile definition. This creates and initializes the SKTileGroupRule
@@ -221,11 +229,12 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("initWithTileDefinition:")
-    public native SKTileGroup initWithTileDefinition(SKTileDefinition tileDefinition);
+    public native SKTileGroup initWithTileDefinition(@NotNull SKTileDefinition tileDefinition);
 
     /**
      * Client-assignable name for the tile group. Defaults to nil.
      */
+    @Nullable
     @Generated
     @Selector("name")
     public native String name();
@@ -233,6 +242,7 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
     /**
      * The rules that govern which tiles are placed when this group is used, and where in the map they'll be placed.
      */
+    @NotNull
     @Generated
     @Selector("rules")
     public native NSArray<? extends SKTileGroupRule> rules();
@@ -242,14 +252,14 @@ public class SKTileGroup extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setName:")
-    public native void setName(String value);
+    public native void setName(@Nullable String value);
 
     /**
      * The rules that govern which tiles are placed when this group is used, and where in the map they'll be placed.
      */
     @Generated
     @Selector("setRules:")
-    public native void setRules(NSArray<? extends SKTileGroupRule> value);
+    public native void setRules(@NotNull NSArray<? extends SKTileGroupRule> value);
 
     @Generated
     @Selector("supportsSecureCoding")

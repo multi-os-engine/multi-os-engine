@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEPacketTunnelNetworkSettings
@@ -84,22 +86,25 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,6 +181,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("IPv4Settings")
     public native NEIPv4Settings IPv4Settings();
@@ -186,6 +193,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("IPv6Settings")
     public native NEIPv6Settings IPv6Settings();
@@ -198,6 +206,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("MTU")
     public native NSNumber MTU();
@@ -208,11 +217,11 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEPacketTunnelNetworkSettings initWithCoder(NSCoder coder);
+    public native NEPacketTunnelNetworkSettings initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("initWithTunnelRemoteAddress:")
-    public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(String address);
+    public native NEPacketTunnelNetworkSettings initWithTunnelRemoteAddress(@NotNull String address);
 
     /**
      * [@property] IPv4Settings
@@ -223,7 +232,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      */
     @Generated
     @Selector("setIPv4Settings:")
-    public native void setIPv4Settings(NEIPv4Settings value);
+    public native void setIPv4Settings(@Nullable NEIPv4Settings value);
 
     /**
      * [@property] IPv6Settings
@@ -234,7 +243,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      */
     @Generated
     @Selector("setIPv6Settings:")
-    public native void setIPv6Settings(NEIPv6Settings value);
+    public native void setIPv6Settings(@Nullable NEIPv6Settings value);
 
     /**
      * [@property] MTU
@@ -246,7 +255,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      */
     @Generated
     @Selector("setMTU:")
-    public native void setMTU(NSNumber value);
+    public native void setMTU(@Nullable NSNumber value);
 
     /**
      * [@property] tunnelOverheadBytes
@@ -259,7 +268,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      */
     @Generated
     @Selector("setTunnelOverheadBytes:")
-    public native void setTunnelOverheadBytes(NSNumber value);
+    public native void setTunnelOverheadBytes(@Nullable NSNumber value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -276,6 +285,7 @@ public class NEPacketTunnelNetworkSettings extends NETunnelNetworkSettings {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("tunnelOverheadBytes")
     public native NSNumber tunnelOverheadBytes();

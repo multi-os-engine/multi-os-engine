@@ -27,6 +27,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * CAMetalDrawable represents a displayable buffer that vends an object
@@ -46,6 +47,7 @@ public interface CAMetalDrawable extends MTLDrawable {
     /**
      * This is the CAMetalLayer responsible for displaying the drawable
      */
+    @NotNull
     @Generated
     @Selector("layer")
     CAMetalLayer layer();
@@ -54,6 +56,7 @@ public interface CAMetalDrawable extends MTLDrawable {
      * This is an object that conforms to the MTLTexture protocol and will
      * typically be used to create an MTLRenderTargetDescriptor.
      */
+    @NotNull
     @Generated
     @Selector("texture")
     @MappedReturn(ObjCObjectMapper.class)

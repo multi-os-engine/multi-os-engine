@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMutableTimedMetadataGroup
@@ -79,22 +81,25 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -129,9 +134,10 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,16 +171,17 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
 
     @Generated
     @Selector("initWithItems:timeRange:")
-    public native AVMutableTimedMetadataGroup initWithItemsTimeRange(NSArray<? extends AVMetadataItem> items,
+    public native AVMutableTimedMetadataGroup initWithItemsTimeRange(@NotNull NSArray<? extends AVMetadataItem> items,
             @ByValue CMTimeRange timeRange);
 
     @Generated
     @Selector("initWithSampleBuffer:")
-    public native AVMutableTimedMetadataGroup initWithSampleBuffer(CMSampleBufferRef sampleBuffer);
+    public native AVMutableTimedMetadataGroup initWithSampleBuffer(@NotNull CMSampleBufferRef sampleBuffer);
 
     /**
      * an array of AVMetadataItems
      */
+    @NotNull
     @Generated
     @Selector("items")
     public native NSArray<? extends AVMetadataItem> items();
@@ -184,7 +191,7 @@ public class AVMutableTimedMetadataGroup extends AVTimedMetadataGroup {
      */
     @Generated
     @Selector("setItems:")
-    public native void setItems(NSArray<? extends AVMetadataItem> value);
+    public native void setItems(@NotNull NSArray<? extends AVMetadataItem> value);
 
     /**
      * indicates the time range of the timed metadata

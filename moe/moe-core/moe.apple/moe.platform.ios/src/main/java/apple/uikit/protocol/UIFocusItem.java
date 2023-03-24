@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Objects conforming to UIFocusItem are considered capable of participating in focus. Only UIFocusItems can ever be
@@ -58,7 +60,7 @@ public interface UIFocusItem extends UIFocusEnvironment {
     @Generated
     @IsOptional
     @Selector("didHintFocusMovement:")
-    default void didHintFocusMovement(UIFocusMovementHint hint) {
+    default void didHintFocusMovement(@NotNull UIFocusMovementHint hint) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -81,6 +83,7 @@ public interface UIFocusItem extends UIFocusEnvironment {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("focusEffect")

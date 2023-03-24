@@ -26,6 +26,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAudioFile
@@ -72,22 +74,25 @@ public class AVAudioFile extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,6 +110,7 @@ public class AVAudioFile extends NSObject {
      * 
      * The on-disk format of the file.
      */
+    @NotNull
     @Generated
     @Selector("fileFormat")
     public native AVAudioFormat fileFormat();
@@ -146,8 +152,8 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("initForReading:commonFormat:interleaved:error:")
-    public native AVAudioFile initForReadingCommonFormatInterleavedError(NSURL fileURL, @NUInt long format,
-            boolean interleaved, @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioFile initForReadingCommonFormatInterleavedError(@NotNull NSURL fileURL, @NUInt long format,
+            boolean interleaved, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initForReading:error:
@@ -163,8 +169,8 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("initForReading:error:")
-    public native AVAudioFile initForReadingError(NSURL fileURL,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioFile initForReadingError(@NotNull NSURL fileURL,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initForWriting:settings:commonFormat:interleaved:error:
@@ -189,9 +195,9 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("initForWriting:settings:commonFormat:interleaved:error:")
-    public native AVAudioFile initForWritingSettingsCommonFormatInterleavedError(NSURL fileURL,
-            NSDictionary<String, ?> settings, @NUInt long format, boolean interleaved,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioFile initForWritingSettingsCommonFormatInterleavedError(@NotNull NSURL fileURL,
+            @NotNull NSDictionary<String, ?> settings, @NUInt long format, boolean interleaved,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * initForWriting:settings:error:
@@ -214,8 +220,9 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("initForWriting:settings:error:")
-    public native AVAudioFile initForWritingSettingsError(NSURL fileURL, NSDictionary<String, ?> settings,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native AVAudioFile initForWritingSettingsError(@NotNull NSURL fileURL,
+            @NotNull NSDictionary<String, ?> settings,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -234,9 +241,10 @@ public class AVAudioFile extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] length
@@ -259,6 +267,7 @@ public class AVAudioFile extends NSObject {
      * 
      * The processing format of the file.
      */
+    @NotNull
     @Generated
     @Selector("processingFormat")
     public native AVAudioFormat processingFormat();
@@ -281,8 +290,8 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("readIntoBuffer:error:")
-    public native boolean readIntoBufferError(AVAudioPCMBuffer buffer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean readIntoBufferError(@NotNull AVAudioPCMBuffer buffer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     /**
      * readIntoBuffer:frameCount:error:
@@ -303,8 +312,8 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("readIntoBuffer:frameCount:error:")
-    public native boolean readIntoBufferFrameCountError(AVAudioPCMBuffer buffer, int frames,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean readIntoBufferFrameCountError(@NotNull AVAudioPCMBuffer buffer, int frames,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -339,6 +348,7 @@ public class AVAudioFile extends NSObject {
      * 
      * The URL the file is reading or writing.
      */
+    @NotNull
     @Generated
     @Selector("url")
     public native NSURL url();
@@ -365,6 +375,6 @@ public class AVAudioFile extends NSObject {
      */
     @Generated
     @Selector("writeFromBuffer:error:")
-    public native boolean writeFromBufferError(AVAudioPCMBuffer buffer,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
+    public native boolean writeFromBufferError(@NotNull AVAudioPCMBuffer buffer,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> outError);
 }

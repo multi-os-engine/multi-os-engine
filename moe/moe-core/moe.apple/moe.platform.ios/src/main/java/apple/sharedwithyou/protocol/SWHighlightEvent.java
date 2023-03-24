@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] SWHighlightEvent
@@ -22,6 +23,7 @@ import org.moe.natj.objc.ann.Selector;
 @Runtime(ObjCRuntime.class)
 @ObjCProtocolName("SWHighlightEvent")
 public interface SWHighlightEvent extends NSSecureCoding, NSCopying {
+    @NotNull
     @Generated
     @Selector("highlightURL")
     NSURL highlightURL();

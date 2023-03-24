@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.3
@@ -58,22 +60,25 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -81,6 +86,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     /**
      * This resolution result is to ask Siri to confirm if this is the value with which the user wants to continue.
      */
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithBillTypeToConfirm:")
     public static native INBillTypeResolutionResult confirmationRequiredWithBillTypeToConfirm(
@@ -90,6 +96,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
      * API-Since: 10.3
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("confirmationRequiredWithValueToConfirm:")
@@ -129,10 +136,12 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("needsValue")
     public static native INBillTypeResolutionResult needsValue();
@@ -142,6 +151,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     @Selector("new")
     public static native INBillTypeResolutionResult new_objc();
 
+    @NotNull
     @Generated
     @Selector("notRequired")
     public static native INBillTypeResolutionResult notRequired();
@@ -164,6 +174,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
      * constraints.
      * Use +notRequired to continue with a 'nil' value.
      */
+    @NotNull
     @Generated
     @Selector("successWithResolvedBillType:")
     public static native INBillTypeResolutionResult successWithResolvedBillType(@NInt long resolvedBillType);
@@ -172,6 +183,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
      * API-Since: 10.3
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("successWithResolvedValue:")
@@ -181,6 +193,7 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("unsupported")
     public static native INBillTypeResolutionResult unsupported();
@@ -190,11 +203,13 @@ public class INBillTypeResolutionResult extends INIntentResolutionResult {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Selector("confirmationRequiredWithItemToConfirm:forReason:")
     public static native INBillTypeResolutionResult confirmationRequiredWithItemToConfirmForReason(
-            @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object itemToConfirm, @NInt long reason);
 
+    @NotNull
     @Generated
     @Selector("unsupportedWithReason:")
     public static native INBillTypeResolutionResult unsupportedWithReason(@NInt long reason);

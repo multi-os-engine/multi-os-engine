@@ -13,6 +13,7 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Protocol to declare support for handling an INSearchForAccountsIntent. By implementing this protocol, a class can
@@ -46,8 +47,8 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     @IsOptional
     @Selector("confirmSearchForAccounts:completion:")
-    default void confirmSearchForAccountsCompletion(INSearchForAccountsIntent intent,
-            @ObjCBlock(name = "call_confirmSearchForAccountsCompletion") Block_confirmSearchForAccountsCompletion completion) {
+    default void confirmSearchForAccountsCompletion(@NotNull INSearchForAccountsIntent intent,
+            @NotNull @ObjCBlock(name = "call_confirmSearchForAccountsCompletion") Block_confirmSearchForAccountsCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,7 +56,7 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_confirmSearchForAccountsCompletion {
         @Generated
-        void call_confirmSearchForAccountsCompletion(INSearchForAccountsIntentResponse response);
+        void call_confirmSearchForAccountsCompletion(@NotNull INSearchForAccountsIntentResponse response);
     }
 
     /**
@@ -71,14 +72,14 @@ public interface INSearchForAccountsIntentHandling {
      */
     @Generated
     @Selector("handleSearchForAccounts:completion:")
-    void handleSearchForAccountsCompletion(INSearchForAccountsIntent intent,
-            @ObjCBlock(name = "call_handleSearchForAccountsCompletion") Block_handleSearchForAccountsCompletion completion);
+    void handleSearchForAccountsCompletion(@NotNull INSearchForAccountsIntent intent,
+            @NotNull @ObjCBlock(name = "call_handleSearchForAccountsCompletion") Block_handleSearchForAccountsCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_handleSearchForAccountsCompletion {
         @Generated
-        void call_handleSearchForAccountsCompletion(INSearchForAccountsIntentResponse response);
+        void call_handleSearchForAccountsCompletion(@NotNull INSearchForAccountsIntentResponse response);
     }
 
     /**
@@ -95,8 +96,8 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     @IsOptional
     @Selector("resolveAccountNicknameForSearchForAccounts:withCompletion:")
-    default void resolveAccountNicknameForSearchForAccountsWithCompletion(INSearchForAccountsIntent intent,
-            @ObjCBlock(name = "call_resolveAccountNicknameForSearchForAccountsWithCompletion") Block_resolveAccountNicknameForSearchForAccountsWithCompletion completion) {
+    default void resolveAccountNicknameForSearchForAccountsWithCompletion(@NotNull INSearchForAccountsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAccountNicknameForSearchForAccountsWithCompletion") Block_resolveAccountNicknameForSearchForAccountsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -105,14 +106,14 @@ public interface INSearchForAccountsIntentHandling {
     public interface Block_resolveAccountNicknameForSearchForAccountsWithCompletion {
         @Generated
         void call_resolveAccountNicknameForSearchForAccountsWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveAccountTypeForSearchForAccounts:withCompletion:")
-    default void resolveAccountTypeForSearchForAccountsWithCompletion(INSearchForAccountsIntent intent,
-            @ObjCBlock(name = "call_resolveAccountTypeForSearchForAccountsWithCompletion") Block_resolveAccountTypeForSearchForAccountsWithCompletion completion) {
+    default void resolveAccountTypeForSearchForAccountsWithCompletion(@NotNull INSearchForAccountsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveAccountTypeForSearchForAccountsWithCompletion") Block_resolveAccountTypeForSearchForAccountsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,14 +121,15 @@ public interface INSearchForAccountsIntentHandling {
     @Generated
     public interface Block_resolveAccountTypeForSearchForAccountsWithCompletion {
         @Generated
-        void call_resolveAccountTypeForSearchForAccountsWithCompletion(INAccountTypeResolutionResult resolutionResult);
+        void call_resolveAccountTypeForSearchForAccountsWithCompletion(
+                @NotNull INAccountTypeResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveOrganizationNameForSearchForAccounts:withCompletion:")
-    default void resolveOrganizationNameForSearchForAccountsWithCompletion(INSearchForAccountsIntent intent,
-            @ObjCBlock(name = "call_resolveOrganizationNameForSearchForAccountsWithCompletion") Block_resolveOrganizationNameForSearchForAccountsWithCompletion completion) {
+    default void resolveOrganizationNameForSearchForAccountsWithCompletion(@NotNull INSearchForAccountsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveOrganizationNameForSearchForAccountsWithCompletion") Block_resolveOrganizationNameForSearchForAccountsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -136,14 +138,15 @@ public interface INSearchForAccountsIntentHandling {
     public interface Block_resolveOrganizationNameForSearchForAccountsWithCompletion {
         @Generated
         void call_resolveOrganizationNameForSearchForAccountsWithCompletion(
-                INSpeakableStringResolutionResult resolutionResult);
+                @NotNull INSpeakableStringResolutionResult resolutionResult);
     }
 
     @Generated
     @IsOptional
     @Selector("resolveRequestedBalanceTypeForSearchForAccounts:withCompletion:")
-    default void resolveRequestedBalanceTypeForSearchForAccountsWithCompletion(INSearchForAccountsIntent intent,
-            @ObjCBlock(name = "call_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion") Block_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion completion) {
+    default void resolveRequestedBalanceTypeForSearchForAccountsWithCompletion(
+            @NotNull INSearchForAccountsIntent intent,
+            @NotNull @ObjCBlock(name = "call_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion") Block_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion completion) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -152,6 +155,6 @@ public interface INSearchForAccountsIntentHandling {
     public interface Block_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion {
         @Generated
         void call_resolveRequestedBalanceTypeForSearchForAccountsWithCompletion(
-                INBalanceTypeResolutionResult resolutionResult);
+                @NotNull INBalanceTypeResolutionResult resolutionResult);
     }
 }

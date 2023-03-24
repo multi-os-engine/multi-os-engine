@@ -24,6 +24,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * [@protocol] MFMessageComposeViewControllerDelegate
@@ -54,5 +55,6 @@ public interface MFMessageComposeViewControllerDelegate {
      */
     @Generated
     @Selector("messageComposeViewController:didFinishWithResult:")
-    void messageComposeViewControllerDidFinishWithResult(MFMessageComposeViewController controller, @NInt long result);
+    void messageComposeViewControllerDidFinishWithResult(@NotNull MFMessageComposeViewController controller,
+            @NInt long result);
 }

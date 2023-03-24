@@ -39,6 +39,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVMetadataMachineReadableCodeObject
@@ -84,22 +86,25 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -134,9 +139,10 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +183,7 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
      * are arranged in counter-clockwise order (clockwise if the code or image is mirrored), starting with the top-left
      * of the code in its canonical orientation.
      */
+    @NotNull
     @Generated
     @Selector("corners")
     public native NSArray<? extends NSDictionary<?, ?>> corners();
@@ -193,6 +200,7 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
      * The value of this property is an NSString created by decoding the binary payload according to the format of the
      * machine readable code. Returns nil if a string representation cannot be created from the payload.
      */
+    @Nullable
     @Generated
     @Selector("stringValue")
     public native String stringValue();
@@ -207,6 +215,7 @@ public class AVMetadataMachineReadableCodeObject extends AVMetadataObject {
      * 
      * API-Since: 11.0
      */
+    @Nullable
     @Generated
     @Selector("descriptor")
     public native CIBarcodeDescriptor descriptor();

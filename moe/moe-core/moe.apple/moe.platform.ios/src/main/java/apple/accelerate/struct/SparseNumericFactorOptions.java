@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -43,13 +44,14 @@ public final class SparseNumericFactorOptions extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setScalingMethod(byte value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr scaling();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setScaling(VoidPtr value);
+    public native void setScaling(@Nullable VoidPtr value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)

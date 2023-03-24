@@ -8,6 +8,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -28,6 +30,7 @@ public interface MTLCaptureScope {
      * If set, this scope will only capture Metal commands from the associated command queue. Defaults to nil (all
      * command queues from the associated device are captured).
      */
+    @Nullable
     @Generated
     @Selector("commandQueue")
     @MappedReturn(ObjCObjectMapper.class)
@@ -36,6 +39,7 @@ public interface MTLCaptureScope {
     /**
      * Associated device: this scope will capture Metal commands from the associated device
      */
+    @NotNull
     @Generated
     @Selector("device")
     @MappedReturn(ObjCObjectMapper.class)
@@ -53,6 +57,7 @@ public interface MTLCaptureScope {
      * [@remarks] Created capture scopes are listed in Xcode when long-pressing the capture button, performing the
      * capture over the selected scope
      */
+    @Nullable
     @Generated
     @Selector("label")
     String label();
@@ -64,5 +69,5 @@ public interface MTLCaptureScope {
      */
     @Generated
     @Selector("setLabel:")
-    void setLabel(String value);
+    void setLabel(@Nullable String value);
 }

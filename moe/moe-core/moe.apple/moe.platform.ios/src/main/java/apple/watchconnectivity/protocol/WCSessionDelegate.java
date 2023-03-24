@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ----------------------------- WCSessionDelegate -----------------------------
@@ -53,7 +55,8 @@ public interface WCSessionDelegate {
      */
     @Generated
     @Selector("session:activationDidCompleteWithState:error:")
-    void sessionActivationDidCompleteWithStateError(WCSession session, @NInt long activationState, NSError error);
+    void sessionActivationDidCompleteWithStateError(@NotNull WCSession session, @NInt long activationState,
+            @Nullable NSError error);
 
     /**
      * Called on the sending side after the file transfer has successfully completed or failed with an error. Will be
@@ -62,8 +65,8 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didFinishFileTransfer:error:")
-    default void sessionDidFinishFileTransferError(WCSession session, WCSessionFileTransfer fileTransfer,
-            NSError error) {
+    default void sessionDidFinishFileTransferError(@NotNull WCSession session,
+            @NotNull WCSessionFileTransfer fileTransfer, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -74,8 +77,8 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didFinishUserInfoTransfer:error:")
-    default void sessionDidFinishUserInfoTransferError(WCSession session, WCSessionUserInfoTransfer userInfoTransfer,
-            NSError error) {
+    default void sessionDidFinishUserInfoTransferError(@NotNull WCSession session,
+            @NotNull WCSessionUserInfoTransfer userInfoTransfer, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,7 +88,8 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveApplicationContext:")
-    default void sessionDidReceiveApplicationContext(WCSession session, NSDictionary<String, ?> applicationContext) {
+    default void sessionDidReceiveApplicationContext(@NotNull WCSession session,
+            @NotNull NSDictionary<String, ?> applicationContext) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,7 +102,7 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveFile:")
-    default void sessionDidReceiveFile(WCSession session, WCSessionFile file) {
+    default void sessionDidReceiveFile(@NotNull WCSession session, @NotNull WCSessionFile file) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -109,7 +113,7 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:")
-    default void sessionDidReceiveMessage(WCSession session, NSDictionary<String, ?> message) {
+    default void sessionDidReceiveMessage(@NotNull WCSession session, @NotNull NSDictionary<String, ?> message) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -120,8 +124,9 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessage:replyHandler:")
-    default void sessionDidReceiveMessageReplyHandler(WCSession session, NSDictionary<String, ?> message,
-            @ObjCBlock(name = "call_sessionDidReceiveMessageReplyHandler") Block_sessionDidReceiveMessageReplyHandler replyHandler) {
+    default void sessionDidReceiveMessageReplyHandler(@NotNull WCSession session,
+            @NotNull NSDictionary<String, ?> message,
+            @NotNull @ObjCBlock(name = "call_sessionDidReceiveMessageReplyHandler") Block_sessionDidReceiveMessageReplyHandler replyHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -132,7 +137,7 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessageData:")
-    default void sessionDidReceiveMessageData(WCSession session, NSData messageData) {
+    default void sessionDidReceiveMessageData(@NotNull WCSession session, @NotNull NSData messageData) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,8 +148,8 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveMessageData:replyHandler:")
-    default void sessionDidReceiveMessageDataReplyHandler(WCSession session, NSData messageData,
-            @ObjCBlock(name = "call_sessionDidReceiveMessageDataReplyHandler") Block_sessionDidReceiveMessageDataReplyHandler replyHandler) {
+    default void sessionDidReceiveMessageDataReplyHandler(@NotNull WCSession session, @NotNull NSData messageData,
+            @NotNull @ObjCBlock(name = "call_sessionDidReceiveMessageDataReplyHandler") Block_sessionDidReceiveMessageDataReplyHandler replyHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -155,7 +160,7 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("session:didReceiveUserInfo:")
-    default void sessionDidReceiveUserInfo(WCSession session, NSDictionary<String, ?> userInfo) {
+    default void sessionDidReceiveUserInfo(@NotNull WCSession session, @NotNull NSDictionary<String, ?> userInfo) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,7 +173,7 @@ public interface WCSessionDelegate {
      */
     @Generated
     @Selector("sessionDidBecomeInactive:")
-    void sessionDidBecomeInactive(WCSession session);
+    void sessionDidBecomeInactive(@NotNull WCSession session);
 
     /**
      * Called when all delegate callbacks for the previously selected watch has occurred. The session can be
@@ -178,7 +183,7 @@ public interface WCSessionDelegate {
      */
     @Generated
     @Selector("sessionDidDeactivate:")
-    void sessionDidDeactivate(WCSession session);
+    void sessionDidDeactivate(@NotNull WCSession session);
 
     /**
      * Called when the reachable state of the counterpart app changes. The receiver should check the reachable property
@@ -187,7 +192,7 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("sessionReachabilityDidChange:")
-    default void sessionReachabilityDidChange(WCSession session) {
+    default void sessionReachabilityDidChange(@NotNull WCSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -197,7 +202,7 @@ public interface WCSessionDelegate {
     @Generated
     @IsOptional
     @Selector("sessionWatchStateDidChange:")
-    default void sessionWatchStateDidChange(WCSession session) {
+    default void sessionWatchStateDidChange(@NotNull WCSession session) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -205,13 +210,13 @@ public interface WCSessionDelegate {
     @Generated
     public interface Block_sessionDidReceiveMessageReplyHandler {
         @Generated
-        void call_sessionDidReceiveMessageReplyHandler(NSDictionary<String, ?> replyMessage);
+        void call_sessionDidReceiveMessageReplyHandler(@NotNull NSDictionary<String, ?> replyMessage);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_sessionDidReceiveMessageDataReplyHandler {
         @Generated
-        void call_sessionDidReceiveMessageDataReplyHandler(NSData replyMessageData);
+        void call_sessionDidReceiveMessageDataReplyHandler(@NotNull NSData replyMessageData);
     }
 }

@@ -24,6 +24,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -38,6 +40,7 @@ public interface INSpeakable {
      * Deprecated-Since: 11.0
      * Deprecated-Message: Please use vocabularyIdentifier
      */
+    @Nullable
     @Deprecated
     @IsOptional
     @Generated
@@ -46,18 +49,22 @@ public interface INSpeakable {
         throw new java.lang.UnsupportedOperationException();
     }
 
+    @Nullable
     @Generated
     @Selector("pronunciationHint")
     String pronunciationHint();
 
+    @NotNull
     @Generated
     @Selector("spokenPhrase")
     String spokenPhrase();
 
+    @Nullable
     @Generated
     @Selector("alternativeSpeakableMatches")
     NSArray<?> alternativeSpeakableMatches();
 
+    @Nullable
     @Generated
     @Selector("vocabularyIdentifier")
     String vocabularyIdentifier();

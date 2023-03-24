@@ -27,6 +27,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * All clients will need to implement this protocol
@@ -44,6 +46,7 @@ public interface GKVoiceChatClient {
     /**
      * must be sent within some reasonble period of time and should accept at least 512 bytes.
      */
+    @NotNull
     @Generated
     @Selector("participantID")
     String participantID();
@@ -51,31 +54,32 @@ public interface GKVoiceChatClient {
     @Generated
     @IsOptional
     @Selector("voiceChatService:didNotStartWithParticipantID:error:")
-    default void voiceChatServiceDidNotStartWithParticipantIDError(GKVoiceChatService voiceChatService,
-            String participantID, NSError error) {
+    default void voiceChatServiceDidNotStartWithParticipantIDError(@NotNull GKVoiceChatService voiceChatService,
+            @NotNull String participantID, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("voiceChatService:didReceiveInvitationFromParticipantID:callID:")
-    default void voiceChatServiceDidReceiveInvitationFromParticipantIDCallID(GKVoiceChatService voiceChatService,
-            String participantID, @NInt long callID) {
+    default void voiceChatServiceDidReceiveInvitationFromParticipantIDCallID(
+            @NotNull GKVoiceChatService voiceChatService, @NotNull String participantID, @NInt long callID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("voiceChatService:didStartWithParticipantID:")
-    default void voiceChatServiceDidStartWithParticipantID(GKVoiceChatService voiceChatService, String participantID) {
+    default void voiceChatServiceDidStartWithParticipantID(@NotNull GKVoiceChatService voiceChatService,
+            @NotNull String participantID) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Generated
     @IsOptional
     @Selector("voiceChatService:didStopWithParticipantID:error:")
-    default void voiceChatServiceDidStopWithParticipantIDError(GKVoiceChatService voiceChatService,
-            String participantID, NSError error) {
+    default void voiceChatServiceDidStopWithParticipantIDError(@NotNull GKVoiceChatService voiceChatService,
+            @NotNull String participantID, @Nullable NSError error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -85,8 +89,8 @@ public interface GKVoiceChatClient {
      */
     @Generated
     @Selector("voiceChatService:sendData:toParticipantID:")
-    void voiceChatServiceSendDataToParticipantID(GKVoiceChatService voiceChatService, NSData data,
-            String participantID);
+    void voiceChatServiceSendDataToParticipantID(@NotNull GKVoiceChatService voiceChatService, @NotNull NSData data,
+            @NotNull String participantID);
 
     /**
      * should be sent immediately with no delay on a UDP peer-to-peer connection.
@@ -96,8 +100,8 @@ public interface GKVoiceChatClient {
     @Generated
     @IsOptional
     @Selector("voiceChatService:sendRealTimeData:toParticipantID:")
-    default void voiceChatServiceSendRealTimeDataToParticipantID(GKVoiceChatService voiceChatService, NSData data,
-            String participantID) {
+    default void voiceChatServiceSendRealTimeDataToParticipantID(@NotNull GKVoiceChatService voiceChatService,
+            @NotNull NSData data, @NotNull String participantID) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

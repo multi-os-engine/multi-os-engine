@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.FloatPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -28,7 +29,7 @@ public final class DenseVector_Float extends StructObject {
     }
 
     @Generated
-    public DenseVector_Float(int count, FloatPtr data) {
+    public DenseVector_Float(int count, @NotNull FloatPtr data) {
         super(DenseVector_Float.class);
         setCount(count);
         setData(data);
@@ -42,11 +43,12 @@ public final class DenseVector_Float extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setCount(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 1, isGetter = true)
     public native FloatPtr data();
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setData(FloatPtr value);
+    public native void setData(@NotNull FloatPtr value);
 }

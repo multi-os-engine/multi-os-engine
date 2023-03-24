@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNBatchNormalizationGradient
@@ -72,22 +74,25 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -106,11 +111,12 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      * See encodeToCommandBuffer:sourceImage:sourceGradient:sourceImage:batchNormalizationState:destinationGradient
      * for further details.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:batchNormalizationState:")
     public native MPSImage encodeToCommandBufferSourceGradientSourceImageBatchNormalizationState(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceGradient,
-            MPSImage sourceImage, MPSCNNBatchNormalizationState batchNormalizationState);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceGradient,
+            @NotNull MPSImage sourceImage, @NotNull MPSCNNBatchNormalizationState batchNormalizationState);
 
     /**
      * Encode this operation to a command buffer for a single image.
@@ -129,8 +135,9 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     @Generated
     @Selector("encodeToCommandBuffer:sourceGradient:sourceImage:batchNormalizationState:destinationGradient:")
     public native void encodeToCommandBufferSourceGradientSourceImageBatchNormalizationStateDestinationGradient(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSImage sourceGradient,
-            MPSImage sourceImage, MPSCNNBatchNormalizationState batchNormalizationState, MPSImage destinationGradient);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NotNull MPSImage sourceGradient,
+            @NotNull MPSImage sourceImage, @NotNull MPSCNNBatchNormalizationState batchNormalizationState,
+            @NotNull MPSImage destinationGradient);
 
     @Generated
     @Selector("hash")
@@ -143,7 +150,7 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSCNNBatchNormalizationGradient initWithCoder(NSCoder aDecoder);
+    public native MPSCNNBatchNormalizationGradient initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding compatability
@@ -162,12 +169,13 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSCNNBatchNormalizationGradient initWithCoderDevice(NSCoder aDecoder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBatchNormalizationGradient initWithCoderDevice(@NotNull NSCoder aDecoder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSCNNBatchNormalizationGradient initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSCNNBatchNormalizationGradient initWithDevice(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     /**
      * Initializes a batch normalization gradient kernel using a device and neuron descriptor.
@@ -187,7 +195,8 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     @Generated
     @Selector("initWithDevice:fusedNeuronDescriptor:")
     public native MPSCNNBatchNormalizationGradient initWithDeviceFusedNeuronDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSNNNeuronDescriptor fusedNeuronDescriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device,
+            @Nullable MPSNNNeuronDescriptor fusedNeuronDescriptor);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -206,9 +215,10 @@ public class MPSCNNBatchNormalizationGradient extends MPSCNNGradientKernel {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -47,6 +47,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNPhysicsWorld
@@ -86,22 +88,25 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,8 +181,9 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("addBehavior:")
-    public native void addBehavior(SCNPhysicsBehavior behavior);
+    public native void addBehavior(@NotNull SCNPhysicsBehavior behavior);
 
+    @NotNull
     @Generated
     @Selector("allBehaviors")
     public native NSArray<? extends SCNPhysicsBehavior> allBehaviors();
@@ -187,6 +194,7 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
      * before deallocating the delegate.
      * Starting in iOS12, the property is weak
      */
+    @Nullable
     @Generated
     @Selector("contactDelegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -195,24 +203,28 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
     /**
      * The methods below perform contact tests.
      */
+    @NotNull
     @Generated
     @Selector("contactTestBetweenBody:andBody:options:")
-    public native NSArray<? extends SCNPhysicsContact> contactTestBetweenBodyAndBodyOptions(SCNPhysicsBody bodyA,
-            SCNPhysicsBody bodyB, NSDictionary<String, ?> options);
+    public native NSArray<? extends SCNPhysicsContact> contactTestBetweenBodyAndBodyOptions(
+            @NotNull SCNPhysicsBody bodyA, @NotNull SCNPhysicsBody bodyB, @Nullable NSDictionary<String, ?> options);
 
+    @NotNull
     @Generated
     @Selector("contactTestWithBody:options:")
-    public native NSArray<? extends SCNPhysicsContact> contactTestWithBodyOptions(SCNPhysicsBody body,
-            NSDictionary<String, ?> options);
+    public native NSArray<? extends SCNPhysicsContact> contactTestWithBodyOptions(@NotNull SCNPhysicsBody body,
+            @Nullable NSDictionary<String, ?> options);
 
+    @NotNull
     @Generated
     @Selector("convexSweepTestWithShape:fromTransform:toTransform:options:")
     public native NSArray<? extends SCNPhysicsContact> convexSweepTestWithShapeFromTransformToTransformOptions(
-            SCNPhysicsShape shape, @ByValue SCNMatrix4 from, @ByValue SCNMatrix4 to, NSDictionary<String, ?> options);
+            @NotNull SCNPhysicsShape shape, @ByValue SCNMatrix4 from, @ByValue SCNMatrix4 to,
+            @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * A global 3D vector specifying the field force acceleration due to gravity. The unit is meter per second. Default
@@ -229,15 +241,16 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNPhysicsWorld initWithCoder(NSCoder coder);
+    public native SCNPhysicsWorld initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Performs a ray test on the physics bodies and their physics shapes.
      */
+    @NotNull
     @Generated
     @Selector("rayTestWithSegmentFromPoint:toPoint:options:")
     public native NSArray<? extends SCNHitTestResult> rayTestWithSegmentFromPointToPointOptions(
-            @ByValue SCNVector3 origin, @ByValue SCNVector3 dest, NSDictionary<String, ?> options);
+            @ByValue SCNVector3 origin, @ByValue SCNVector3 dest, @Nullable NSDictionary<String, ?> options);
 
     @Generated
     @Selector("removeAllBehaviors")
@@ -245,7 +258,7 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("removeBehavior:")
-    public native void removeBehavior(SCNPhysicsBehavior behavior);
+    public native void removeBehavior(@NotNull SCNPhysicsBehavior behavior);
 
     /**
      * A delegate that is called when two physic bodies come in contact with each other.
@@ -255,7 +268,8 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("setContactDelegate:")
-    public native void setContactDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value);
+    public native void setContactDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value);
 
     /**
      * A delegate that is called when two physic bodies come in contact with each other.
@@ -264,7 +278,7 @@ public class SCNPhysicsWorld extends NSObject implements NSSecureCoding {
      * Starting in iOS12, the property is weak
      */
     @Generated
-    public void setContactDelegate(@Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value) {
+    public void setContactDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SCNPhysicsContactDelegate value) {
         Object __old = contactDelegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

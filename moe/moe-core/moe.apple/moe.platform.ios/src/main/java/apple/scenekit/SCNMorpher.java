@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNMorpher
@@ -81,22 +83,25 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -131,9 +136,10 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -167,13 +173,16 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("addAnimation:forKey:")
-    public native void addAnimationForKey(@Mapped(ObjCObjectMapper.class) SCNAnimation animation, String key);
+    public native void addAnimationForKey(@NotNull @Mapped(ObjCObjectMapper.class) SCNAnimation animation,
+            @Nullable String key);
 
+    @Nullable
     @Deprecated
     @Generated
     @Selector("animationForKey:")
-    public native CAAnimation animationForKey(String key);
+    public native CAAnimation animationForKey(@NotNull String key);
 
+    @NotNull
     @Generated
     @Selector("animationKeys")
     public native NSArray<String> animationKeys();
@@ -190,7 +199,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("init")
@@ -198,17 +207,17 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNMorpher initWithCoder(NSCoder coder);
+    public native SCNMorpher initWithCoder(@NotNull NSCoder coder);
 
     @Deprecated
     @Generated
     @Selector("isAnimationForKeyPaused:")
-    public native boolean isAnimationForKeyPaused(String key);
+    public native boolean isAnimationForKeyPaused(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("pauseAnimationForKey:")
-    public native void pauseAnimationForKey(String key);
+    public native void pauseAnimationForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAllAnimations")
@@ -216,17 +225,17 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("removeAnimationForKey:")
-    public native void removeAnimationForKey(String key);
+    public native void removeAnimationForKey(@NotNull String key);
 
     @Deprecated
     @Generated
     @Selector("removeAnimationForKey:fadeOutDuration:")
-    public native void removeAnimationForKeyFadeOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyFadeOutDuration(@NotNull String key, @NFloat double duration);
 
     @Deprecated
     @Generated
     @Selector("resumeAnimationForKey:")
-    public native void resumeAnimationForKey(String key);
+    public native void resumeAnimationForKey(@NotNull String key);
 
     /**
      * [@property] calculationMode
@@ -240,7 +249,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Deprecated
     @Generated
     @Selector("setSpeed:forAnimationKey:")
-    public native void setSpeedForAnimationKey(@NFloat double speed, String key);
+    public native void setSpeedForAnimationKey(@NFloat double speed, @NotNull String key);
 
     /**
      * [@property] targets
@@ -252,7 +261,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      */
     @Generated
     @Selector("setTargets:")
-    public native void setTargets(NSArray<? extends SCNGeometry> value);
+    public native void setTargets(@NotNull NSArray<? extends SCNGeometry> value);
 
     /**
      * setWeight:forTargetAtIndex:
@@ -278,6 +287,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      * The target geometries must have the same number of entries in their geometry sources and the same topology as the
      * base geometry.
      */
+    @NotNull
     @Generated
     @Selector("targets")
     public native NSArray<? extends SCNGeometry> targets();
@@ -294,15 +304,16 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
 
     @Generated
     @Selector("addAnimationPlayer:forKey:")
-    public native void addAnimationPlayerForKey(SCNAnimationPlayer player, String key);
+    public native void addAnimationPlayerForKey(@NotNull SCNAnimationPlayer player, @Nullable String key);
 
+    @Nullable
     @Generated
     @Selector("animationPlayerForKey:")
-    public native SCNAnimationPlayer animationPlayerForKey(String key);
+    public native SCNAnimationPlayer animationPlayerForKey(@NotNull String key);
 
     @Generated
     @Selector("removeAnimationForKey:blendOutDuration:")
-    public native void removeAnimationForKeyBlendOutDuration(String key, @NFloat double duration);
+    public native void removeAnimationForKeyBlendOutDuration(@NotNull String key, @NFloat double duration);
 
     /**
      * [@property] unifiesNormals
@@ -325,7 +336,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      */
     @Generated
     @Selector("setWeight:forTargetNamed:")
-    public native void setWeightForTargetNamed(@NFloat double weight, String targetName);
+    public native void setWeightForTargetNamed(@NFloat double weight, @NotNull String targetName);
 
     /**
      * [@property] weights
@@ -336,7 +347,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      */
     @Generated
     @Selector("setWeights:")
-    public native void setWeights(NSArray<? extends NSNumber> value);
+    public native void setWeights(@NotNull NSArray<? extends NSNumber> value);
 
     /**
      * [@property] unifiesNormals
@@ -360,7 +371,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
     @Generated
     @Selector("weightForTargetNamed:")
     @NFloat
-    public native double weightForTargetNamed(String targetName);
+    public native double weightForTargetNamed(@NotNull String targetName);
 
     /**
      * [@property] weights
@@ -369,6 +380,7 @@ public class SCNMorpher extends NSObject implements SCNAnimatable, NSSecureCodin
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("weights")
     public native NSArray<? extends NSNumber> weights();

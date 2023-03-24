@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 2.0
@@ -72,26 +74,30 @@ public class UIDevice extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Selector("currentDevice")
     public static native UIDevice currentDevice();
@@ -126,9 +132,10 @@ public class UIDevice extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -191,6 +198,7 @@ public class UIDevice extends NSObject {
      * 
      * API-Since: 6.0
      */
+    @Nullable
     @Generated
     @Selector("identifierForVendor")
     public native NSUUID identifierForVendor();
@@ -249,6 +257,7 @@ public class UIDevice extends NSObject {
     /**
      * localized version of model
      */
+    @NotNull
     @Generated
     @Selector("localizedModel")
     public native String localizedModel();
@@ -256,6 +265,7 @@ public class UIDevice extends NSObject {
     /**
      * e.g. @"iPhone", @"iPod touch"
      */
+    @NotNull
     @Generated
     @Selector("model")
     public native String model();
@@ -263,6 +273,7 @@ public class UIDevice extends NSObject {
     /**
      * Synonym for model. Prior to iOS 16, user-assigned device name (e.g. @"My iPhone").
      */
+    @NotNull
     @Generated
     @Selector("name")
     public native String name();
@@ -297,6 +308,7 @@ public class UIDevice extends NSObject {
     /**
      * e.g. @"iOS"
      */
+    @NotNull
     @Generated
     @Selector("systemName")
     public native String systemName();
@@ -304,6 +316,7 @@ public class UIDevice extends NSObject {
     /**
      * e.g. @"4.0"
      */
+    @NotNull
     @Generated
     @Selector("systemVersion")
     public native String systemVersion();

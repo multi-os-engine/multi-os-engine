@@ -22,6 +22,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * An abstract class that represents the background work for which the app was launched to handle.
@@ -60,22 +62,25 @@ public class BGTask extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -98,6 +103,7 @@ public class BGTask extends NSObject {
      * This property is cleared after it is called by the system or when setTaskCompletedWithSuccess: is called. This is
      * to mitigate the impact of a retain cycle created by referencing the BGTask instance inside this block.
      */
+    @Nullable
     @Generated
     @Selector("expirationHandler")
     @ObjCBlock(name = "call_expirationHandler_ret")
@@ -118,6 +124,7 @@ public class BGTask extends NSObject {
     /**
      * The identifier associated with the request used to schedule this background work.
      */
+    @NotNull
     @Generated
     @Selector("identifier")
     public native String identifier();
@@ -143,9 +150,10 @@ public class BGTask extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -173,7 +181,7 @@ public class BGTask extends NSObject {
     @Generated
     @Selector("setExpirationHandler:")
     public native void setExpirationHandler(
-            @ObjCBlock(name = "call_setExpirationHandler") Block_setExpirationHandler value);
+            @Nullable @ObjCBlock(name = "call_setExpirationHandler") Block_setExpirationHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

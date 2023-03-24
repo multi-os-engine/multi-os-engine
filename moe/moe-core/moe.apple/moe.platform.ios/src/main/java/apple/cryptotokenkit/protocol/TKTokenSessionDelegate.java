@@ -18,6 +18,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * TKTokenSessionDelegate contains operations with token objects provided by token implementors which should be
@@ -44,12 +46,13 @@ public interface TKTokenSessionDelegate {
      *         needed (typically because the session is already authenticated for requested constraint), return instance
      *         of TKTokenAuthOperation class instead of any specific subclass.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tokenSession:beginAuthForOperation:constraint:error:")
-    default TKTokenAuthOperation tokenSessionBeginAuthForOperationConstraintError(TKTokenSession session,
-            @NInt long operation, @Mapped(ObjCObjectMapper.class) Object constraint,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default TKTokenAuthOperation tokenSessionBeginAuthForOperationConstraintError(@NotNull TKTokenSession session,
+            @NInt long operation, @NotNull @Mapped(ObjCObjectMapper.class) Object constraint,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,12 +67,13 @@ public interface TKTokenSessionDelegate {
      *                    beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Resulting decrypted plaintext, or nil if an error happened.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tokenSession:decryptData:usingKey:algorithm:error:")
-    default NSData tokenSessionDecryptDataUsingKeyAlgorithmError(TKTokenSession session, NSData ciphertext,
-            @Mapped(ObjCObjectMapper.class) Object keyObjectID, TKTokenKeyAlgorithm algorithm,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default NSData tokenSessionDecryptDataUsingKeyAlgorithmError(@NotNull TKTokenSession session,
+            @NotNull NSData ciphertext, @NotNull @Mapped(ObjCObjectMapper.class) Object keyObjectID,
+            @NotNull TKTokenKeyAlgorithm algorithm, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -86,13 +90,15 @@ public interface TKTokenSessionDelegate {
      *                                beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Result of key exchange operation, or nil if the operation failed.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tokenSession:performKeyExchangeWithPublicKey:usingKey:algorithm:parameters:error:")
-    default NSData tokenSessionPerformKeyExchangeWithPublicKeyUsingKeyAlgorithmParametersError(TKTokenSession session,
-            NSData otherPartyPublicKeyData, @Mapped(ObjCObjectMapper.class) Object objectID,
-            TKTokenKeyAlgorithm algorithm, TKTokenKeyExchangeParameters parameters,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default NSData tokenSessionPerformKeyExchangeWithPublicKeyUsingKeyAlgorithmParametersError(
+            @NotNull TKTokenSession session, @NotNull NSData otherPartyPublicKeyData,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object objectID, @NotNull TKTokenKeyAlgorithm algorithm,
+            @NotNull TKTokenKeyExchangeParameters parameters,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -107,12 +113,13 @@ public interface TKTokenSessionDelegate {
      *                    beginAuthForOperation:), @c TKErrorCodeAuthenticationNeeded should be used.
      * @return Resulting signature, or nil if an error happened.
      */
+    @Nullable
     @Generated
     @IsOptional
     @Selector("tokenSession:signData:usingKey:algorithm:error:")
-    default NSData tokenSessionSignDataUsingKeyAlgorithmError(TKTokenSession session, NSData dataToSign,
-            @Mapped(ObjCObjectMapper.class) Object keyObjectID, TKTokenKeyAlgorithm algorithm,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
+    default NSData tokenSessionSignDataUsingKeyAlgorithmError(@NotNull TKTokenSession session,
+            @NotNull NSData dataToSign, @NotNull @Mapped(ObjCObjectMapper.class) Object keyObjectID,
+            @NotNull TKTokenKeyAlgorithm algorithm, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,8 +136,9 @@ public interface TKTokenSessionDelegate {
     @Generated
     @IsOptional
     @Selector("tokenSession:supportsOperation:usingKey:algorithm:")
-    default boolean tokenSessionSupportsOperationUsingKeyAlgorithm(TKTokenSession session, @NInt long operation,
-            @Mapped(ObjCObjectMapper.class) Object keyObjectID, TKTokenKeyAlgorithm algorithm) {
+    default boolean tokenSessionSupportsOperationUsingKeyAlgorithm(@NotNull TKTokenSession session,
+            @NInt long operation, @NotNull @Mapped(ObjCObjectMapper.class) Object keyObjectID,
+            @NotNull TKTokenKeyAlgorithm algorithm) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

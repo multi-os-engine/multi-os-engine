@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -58,7 +60,7 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * The background color that the preview draws behind the specified view.
@@ -70,27 +72,31 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -117,7 +123,7 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("initWithTextLineRects:")
-    public native UIPreviewParameters initWithTextLineRects(NSArray<? extends NSValue> textLineRects);
+    public native UIPreviewParameters initWithTextLineRects(@NotNull NSArray<? extends NSValue> textLineRects);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -136,9 +142,10 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -172,7 +179,7 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setVisiblePath:")
-    public native void setVisiblePath(UIBezierPath value);
+    public native void setVisiblePath(@Nullable UIBezierPath value);
 
     @Generated
     @Selector("superclass")
@@ -188,6 +195,7 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
      * If `nil`, the whole view will be shown.
      * Specify a path in the coordinate space of the view.
      */
+    @Nullable
     @Generated
     @Selector("visiblePath")
     public native UIBezierPath visiblePath();
@@ -199,13 +207,14 @@ public class UIPreviewParameters extends NSObject implements NSCopying {
      */
     @Generated
     @Selector("setShadowPath:")
-    public native void setShadowPath(UIBezierPath value);
+    public native void setShadowPath(@Nullable UIBezierPath value);
 
     /**
      * Bezier path to be used to draw the preview's shadow. If nil, the visiblePath is used.
      * 
      * API-Since: 14.0
      */
+    @Nullable
     @Generated
     @Selector("shadowPath")
     public native UIBezierPath shadowPath();

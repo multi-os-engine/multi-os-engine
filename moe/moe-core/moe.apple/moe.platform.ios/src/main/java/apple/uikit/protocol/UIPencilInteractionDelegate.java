@@ -8,6 +8,7 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * API-Since: 12.1
@@ -26,7 +27,7 @@ public interface UIPencilInteractionDelegate {
     @Generated
     @IsOptional
     @Selector("pencilInteractionDidTap:")
-    default void pencilInteractionDidTap(UIPencilInteraction interaction) {
+    default void pencilInteractionDidTap(@NotNull UIPencilInteraction interaction) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

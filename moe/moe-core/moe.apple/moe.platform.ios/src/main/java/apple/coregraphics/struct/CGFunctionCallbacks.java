@@ -28,6 +28,8 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ptr.ConstNFloatPtr;
 import org.moe.natj.general.ptr.NFloatPtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -49,8 +51,8 @@ public final class CGFunctionCallbacks extends StructObject {
     }
 
     @Generated
-    public CGFunctionCallbacks(int version, @FunctionPtr(name = "call_evaluate") Function_evaluate evaluate,
-            @FunctionPtr(name = "call_releaseInfo") Function_releaseInfo releaseInfo) {
+    public CGFunctionCallbacks(int version, @FunctionPtr(name = "call_evaluate") @Nullable Function_evaluate evaluate,
+            @FunctionPtr(name = "call_releaseInfo") @Nullable Function_releaseInfo releaseInfo) {
         super(CGFunctionCallbacks.class);
         setVersion(version);
         setEvaluate(evaluate);
@@ -65,6 +67,7 @@ public final class CGFunctionCallbacks extends StructObject {
     @StructureField(order = 0, isGetter = false)
     public native void setVersion(int value);
 
+    @Nullable
     @Generated
     @StructureField(order = 1, isGetter = true)
     @FunctionPtr(name = "call_evaluate")
@@ -72,8 +75,9 @@ public final class CGFunctionCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 1, isGetter = false)
-    public native void setEvaluate(@FunctionPtr(name = "call_evaluate") Function_evaluate value);
+    public native void setEvaluate(@Nullable @FunctionPtr(name = "call_evaluate") Function_evaluate value);
 
+    @Nullable
     @Generated
     @StructureField(order = 2, isGetter = true)
     @FunctionPtr(name = "call_releaseInfo")
@@ -81,19 +85,19 @@ public final class CGFunctionCallbacks extends StructObject {
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setReleaseInfo(@FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
+    public native void setReleaseInfo(@Nullable @FunctionPtr(name = "call_releaseInfo") Function_releaseInfo value);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_evaluate {
         @Generated
-        void call_evaluate(VoidPtr arg0, ConstNFloatPtr arg1, NFloatPtr arg2);
+        void call_evaluate(@Nullable VoidPtr arg0, @NotNull ConstNFloatPtr arg1, @NotNull NFloatPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_releaseInfo {
         @Generated
-        void call_releaseInfo(VoidPtr arg0);
+        void call_releaseInfo(@Nullable VoidPtr arg0);
     }
 }

@@ -46,6 +46,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SCNProgram
@@ -82,22 +84,25 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -132,9 +137,10 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -175,17 +181,19 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] delegate
      * 
      * Determines the receiver's delegate
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -193,7 +201,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] fragmentFunctionName
@@ -204,6 +212,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("fragmentFunctionName")
     public native String fragmentFunctionName();
@@ -213,6 +222,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Determines the receiver's fragment shader.
      */
+    @Nullable
     @Generated
     @Selector("fragmentShader")
     public native String fragmentShader();
@@ -233,8 +243,8 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("handleBindingOfBufferNamed:frequency:usingBlock:")
-    public native void handleBindingOfBufferNamedFrequencyUsingBlock(String name, @NInt long frequency,
-            @ObjCBlock(name = "call_handleBindingOfBufferNamedFrequencyUsingBlock") Block_handleBindingOfBufferNamedFrequencyUsingBlock block);
+    public native void handleBindingOfBufferNamedFrequencyUsingBlock(@NotNull String name, @NInt long frequency,
+            @NotNull @ObjCBlock(name = "call_handleBindingOfBufferNamedFrequencyUsingBlock") Block_handleBindingOfBufferNamedFrequencyUsingBlock block);
 
     @Generated
     @Selector("init")
@@ -242,7 +252,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native SCNProgram initWithCoder(NSCoder coder);
+    public native SCNProgram initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] opaque
@@ -271,6 +281,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("library")
     @MappedReturn(ObjCObjectMapper.class)
@@ -283,9 +294,10 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * @param symbol A symbol from the program source code.
      */
+    @Nullable
     @Generated
     @Selector("semanticForSymbol:")
-    public native String semanticForSymbol(String symbol);
+    public native String semanticForSymbol(@NotNull String symbol);
 
     /**
      * [@property] delegate
@@ -294,7 +306,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SCNProgramDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SCNProgramDelegate value);
 
     /**
      * [@property] delegate
@@ -302,7 +314,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * Determines the receiver's delegate
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SCNProgramDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SCNProgramDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -324,7 +336,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setFragmentFunctionName:")
-    public native void setFragmentFunctionName(String value);
+    public native void setFragmentFunctionName(@Nullable String value);
 
     /**
      * [@property] fragmentShader
@@ -333,7 +345,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setFragmentShader:")
-    public native void setFragmentShader(String value);
+    public native void setFragmentShader(@Nullable String value);
 
     /**
      * [@property] library
@@ -346,7 +358,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setLibrary:")
-    public native void setLibrary(@Mapped(ObjCObjectMapper.class) MTLLibrary value);
+    public native void setLibrary(@Nullable @Mapped(ObjCObjectMapper.class) MTLLibrary value);
 
     /**
      * setSemantic:forSymbol:options:
@@ -362,7 +374,8 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setSemantic:forSymbol:options:")
-    public native void setSemanticForSymbolOptions(String semantic, String symbol, NSDictionary<String, ?> options);
+    public native void setSemanticForSymbolOptions(@Nullable String semantic, @NotNull String symbol,
+            @Nullable NSDictionary<String, ?> options);
 
     /**
      * [@property] vertexFunctionName
@@ -375,7 +388,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setVertexFunctionName:")
-    public native void setVertexFunctionName(String value);
+    public native void setVertexFunctionName(@Nullable String value);
 
     /**
      * [@property] vertexShader
@@ -384,7 +397,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      */
     @Generated
     @Selector("setVertexShader:")
-    public native void setVertexShader(String value);
+    public native void setVertexShader(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -401,6 +414,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("vertexFunctionName")
     public native String vertexFunctionName();
@@ -410,6 +424,7 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
      * 
      * Determines the receiver's vertex shader.
      */
+    @Nullable
     @Generated
     @Selector("vertexShader")
     public native String vertexShader();
@@ -418,7 +433,8 @@ public class SCNProgram extends NSObject implements NSCopying, NSSecureCoding {
     @Generated
     public interface Block_handleBindingOfBufferNamedFrequencyUsingBlock {
         @Generated
-        void call_handleBindingOfBufferNamedFrequencyUsingBlock(@Mapped(ObjCObjectMapper.class) Object buffer,
-                SCNNode node, @Mapped(ObjCObjectMapper.class) Object shadable, SCNRenderer renderer);
+        void call_handleBindingOfBufferNamedFrequencyUsingBlock(@NotNull @Mapped(ObjCObjectMapper.class) Object buffer,
+                @NotNull SCNNode node, @NotNull @Mapped(ObjCObjectMapper.class) Object shadable,
+                @NotNull SCNRenderer renderer);
     }
 }

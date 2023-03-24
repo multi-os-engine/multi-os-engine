@@ -32,6 +32,8 @@ import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGPoint;
 import apple.corefoundation.struct.CGRect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * NSTextLineFragment represents a single textual layout and rendering unit inside NSTextLayoutFragment.
@@ -69,23 +71,25 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     /**
      * The source attributed string
      */
+    @NotNull
     @Generated
     @Selector("attributedString")
     public native NSAttributedString attributedString();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The character index for point inside the line fragment coordinate system. The fraction of distance is from the
@@ -104,10 +108,12 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     @ByValue
     public native NSRange characterRange();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,11 +133,11 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
      */
     @Generated
     @Selector("drawAtPoint:inContext:")
-    public native void drawAtPointInContext(@ByValue CGPoint point, CGContextRef context);
+    public native void drawAtPointInContext(@ByValue CGPoint point, @NotNull CGContextRef context);
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("fractionOfDistanceThroughGlyphForPoint:")
@@ -157,17 +163,17 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithAttributedString:range:")
-    public native NSTextLineFragment initWithAttributedStringRange(NSAttributedString attributedString,
+    public native NSTextLineFragment initWithAttributedStringRange(@NotNull NSAttributedString attributedString,
             @ByValue NSRange range);
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSTextLineFragment initWithCoder(NSCoder aDecoder);
+    public native NSTextLineFragment initWithCoder(@NotNull NSCoder aDecoder);
 
     @Generated
     @Selector("initWithString:attributes:range:")
-    public native NSTextLineFragment initWithStringAttributesRange(String string, NSDictionary<String, ?> attributes,
-            @ByValue NSRange range);
+    public native NSTextLineFragment initWithStringAttributesRange(@NotNull String string,
+            @NotNull NSDictionary<String, ?> attributes, @ByValue NSRange range);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -186,9 +192,10 @@ public class NSTextLineFragment extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * The location of the character at the specified index. It is on the upstream edge of the glyph. It is in the

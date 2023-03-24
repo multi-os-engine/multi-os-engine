@@ -7,6 +7,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -28,7 +29,8 @@ public final class AudioValueTranslation extends StructObject {
     }
 
     @Generated
-    public AudioValueTranslation(VoidPtr mInputData, int mInputDataSize, VoidPtr mOutputData, int mOutputDataSize) {
+    public AudioValueTranslation(@NotNull VoidPtr mInputData, int mInputDataSize, @NotNull VoidPtr mOutputData,
+            int mOutputDataSize) {
         super(AudioValueTranslation.class);
         setMInputData(mInputData);
         setMInputDataSize(mInputDataSize);
@@ -36,13 +38,14 @@ public final class AudioValueTranslation extends StructObject {
         setMOutputDataSize(mOutputDataSize);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native VoidPtr mInputData();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setMInputData(VoidPtr value);
+    public native void setMInputData(@NotNull VoidPtr value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)
@@ -52,13 +55,14 @@ public final class AudioValueTranslation extends StructObject {
     @StructureField(order = 1, isGetter = false)
     public native void setMInputDataSize(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 2, isGetter = true)
     public native VoidPtr mOutputData();
 
     @Generated
     @StructureField(order = 2, isGetter = false)
-    public native void setMOutputData(VoidPtr value);
+    public native void setMOutputData(@NotNull VoidPtr value);
 
     @Generated
     @StructureField(order = 3, isGetter = true)

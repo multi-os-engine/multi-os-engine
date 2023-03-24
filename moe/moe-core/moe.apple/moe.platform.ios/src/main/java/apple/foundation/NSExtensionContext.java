@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
 import apple.corefoundation.struct.CGSize;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Class representing the extension request's context
@@ -77,22 +79,25 @@ public class NSExtensionContext extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -127,9 +132,10 @@ public class NSExtensionContext extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -164,7 +170,7 @@ public class NSExtensionContext extends NSObject {
      */
     @Generated
     @Selector("cancelRequestWithError:")
-    public native void cancelRequestWithError(NSError error);
+    public native void cancelRequestWithError(@NotNull NSError error);
 
     /**
      * Signals the host to complete the app extension request with the supplied result items. The completion handler
@@ -175,8 +181,8 @@ public class NSExtensionContext extends NSObject {
      */
     @Generated
     @Selector("completeRequestReturningItems:completionHandler:")
-    public native void completeRequestReturningItemsCompletionHandler(NSArray<?> items,
-            @ObjCBlock(name = "call_completeRequestReturningItemsCompletionHandler") Block_completeRequestReturningItemsCompletionHandler completionHandler);
+    public native void completeRequestReturningItemsCompletionHandler(@Nullable NSArray<?> items,
+            @Nullable @ObjCBlock(name = "call_completeRequestReturningItemsCompletionHandler") Block_completeRequestReturningItemsCompletionHandler completionHandler);
 
     /**
      * API-Since: 10.0
@@ -186,8 +192,9 @@ public class NSExtensionContext extends NSObject {
     @Deprecated
     @Generated
     @Selector("completeRequestWithBroadcastURL:broadcastConfiguration:setupInfo:")
-    public native void completeRequestWithBroadcastURLBroadcastConfigurationSetupInfo(NSURL broadcastURL,
-            RPBroadcastConfiguration broadcastConfiguration, NSDictionary<String, ? extends NSObject> setupInfo);
+    public native void completeRequestWithBroadcastURLBroadcastConfigurationSetupInfo(@NotNull NSURL broadcastURL,
+            @NotNull RPBroadcastConfiguration broadcastConfiguration,
+            @Nullable NSDictionary<String, ? extends NSObject> setupInfo);
 
     /**
      * API-Since: 10.0
@@ -213,6 +220,7 @@ public class NSExtensionContext extends NSObject {
      * The list of input NSExtensionItems associated with the context. If the context has no input items, this array
      * will be empty.
      */
+    @NotNull
     @Generated
     @Selector("inputItems")
     public native NSArray<?> inputItems();
@@ -225,7 +233,7 @@ public class NSExtensionContext extends NSObject {
     @Generated
     @Selector("loadBroadcastingApplicationInfoWithCompletion:")
     public native void loadBroadcastingApplicationInfoWithCompletion(
-            @ObjCBlock(name = "call_loadBroadcastingApplicationInfoWithCompletion") Block_loadBroadcastingApplicationInfoWithCompletion handler);
+            @NotNull @ObjCBlock(name = "call_loadBroadcastingApplicationInfoWithCompletion") Block_loadBroadcastingApplicationInfoWithCompletion handler);
 
     /**
      * API-Since: 10.0
@@ -249,8 +257,8 @@ public class NSExtensionContext extends NSObject {
      */
     @Generated
     @Selector("openURL:completionHandler:")
-    public native void openURLCompletionHandler(NSURL URL,
-            @ObjCBlock(name = "call_openURLCompletionHandler") Block_openURLCompletionHandler completionHandler);
+    public native void openURLCompletionHandler(@NotNull NSURL URL,
+            @Nullable @ObjCBlock(name = "call_openURLCompletionHandler") Block_openURLCompletionHandler completionHandler);
 
     /**
      * Widgets can change the largest display mode they make available from the default 'NCWidgetDisplayModeCompact' by
@@ -316,7 +324,8 @@ public class NSExtensionContext extends NSObject {
     @Generated
     public interface Block_loadBroadcastingApplicationInfoWithCompletion {
         @Generated
-        void call_loadBroadcastingApplicationInfoWithCompletion(String bundleID, String displayName, UIImage appIcon);
+        void call_loadBroadcastingApplicationInfoWithCompletion(@NotNull String bundleID, @NotNull String displayName,
+                @Nullable UIImage appIcon);
     }
 
     @Runtime(ObjCRuntime.class)
@@ -331,12 +340,13 @@ public class NSExtensionContext extends NSObject {
      */
     @Generated
     @Selector("completeRequestWithBroadcastURL:setupInfo:")
-    public native void completeRequestWithBroadcastURLSetupInfo(NSURL broadcastURL,
-            NSDictionary<String, ? extends NSObject> setupInfo);
+    public native void completeRequestWithBroadcastURLSetupInfo(@NotNull NSURL broadcastURL,
+            @Nullable NSDictionary<String, ? extends NSObject> setupInfo);
 
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @Selector("interfaceParametersDescription")
     public native String interfaceParametersDescription();
@@ -351,6 +361,7 @@ public class NSExtensionContext extends NSObject {
     /**
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("intent")
     public native INIntent intent();
@@ -358,6 +369,7 @@ public class NSExtensionContext extends NSObject {
     /**
      * API-Since: 12.0
      */
+    @NotNull
     @Generated
     @Selector("notificationActions")
     public native NSArray<? extends UNNotificationAction> notificationActions();
@@ -376,5 +388,5 @@ public class NSExtensionContext extends NSObject {
      */
     @Generated
     @Selector("setNotificationActions:")
-    public native void setNotificationActions(NSArray<? extends UNNotificationAction> value);
+    public native void setNotificationActions(@NotNull NSArray<? extends UNNotificationAction> value);
 }

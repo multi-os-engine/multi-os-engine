@@ -40,6 +40,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NWUDPSession
@@ -78,22 +80,25 @@ public class NWUDPSession extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -128,9 +133,10 @@ public class NWUDPSession extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,6 +183,7 @@ public class NWUDPSession extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("currentPath")
     public native NWPath currentPath();
@@ -188,6 +195,7 @@ public class NWUDPSession extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @Selector("endpoint")
     public native NWEndpoint endpoint();
@@ -229,7 +237,7 @@ public class NWUDPSession extends NSObject {
      */
     @Generated
     @Selector("initWithUpgradeForSession:")
-    public native NWUDPSession initWithUpgradeForSession(NWUDPSession session);
+    public native NWUDPSession initWithUpgradeForSession(@NotNull NWUDPSession session);
 
     /**
      * [@property] viable
@@ -265,6 +273,7 @@ public class NWUDPSession extends NSObject {
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("resolvedEndpoint")
     public native NWEndpoint resolvedEndpoint();
@@ -283,7 +292,7 @@ public class NWUDPSession extends NSObject {
     @Generated
     @Selector("setReadHandler:maxDatagrams:")
     public native void setReadHandlerMaxDatagrams(
-            @ObjCBlock(name = "call_setReadHandlerMaxDatagrams") Block_setReadHandlerMaxDatagrams handler,
+            @NotNull @ObjCBlock(name = "call_setReadHandlerMaxDatagrams") Block_setReadHandlerMaxDatagrams handler,
             @NUInt long maxDatagrams);
 
     /**
@@ -328,8 +337,8 @@ public class NWUDPSession extends NSObject {
      */
     @Generated
     @Selector("writeDatagram:completionHandler:")
-    public native void writeDatagramCompletionHandler(NSData datagram,
-            @ObjCBlock(name = "call_writeDatagramCompletionHandler") Block_writeDatagramCompletionHandler completionHandler);
+    public native void writeDatagramCompletionHandler(@NotNull NSData datagram,
+            @NotNull @ObjCBlock(name = "call_writeDatagramCompletionHandler") Block_writeDatagramCompletionHandler completionHandler);
 
     /**
      * writeMultipleDatagrams:completionHandler
@@ -344,27 +353,27 @@ public class NWUDPSession extends NSObject {
      */
     @Generated
     @Selector("writeMultipleDatagrams:completionHandler:")
-    public native void writeMultipleDatagramsCompletionHandler(NSArray<? extends NSData> datagramArray,
-            @ObjCBlock(name = "call_writeMultipleDatagramsCompletionHandler") Block_writeMultipleDatagramsCompletionHandler completionHandler);
+    public native void writeMultipleDatagramsCompletionHandler(@NotNull NSArray<? extends NSData> datagramArray,
+            @NotNull @ObjCBlock(name = "call_writeMultipleDatagramsCompletionHandler") Block_writeMultipleDatagramsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setReadHandlerMaxDatagrams {
         @Generated
-        void call_setReadHandlerMaxDatagrams(NSArray<? extends NSData> datagrams, NSError error);
+        void call_setReadHandlerMaxDatagrams(@Nullable NSArray<? extends NSData> datagrams, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeDatagramCompletionHandler {
         @Generated
-        void call_writeDatagramCompletionHandler(NSError error);
+        void call_writeDatagramCompletionHandler(@Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_writeMultipleDatagramsCompletionHandler {
         @Generated
-        void call_writeMultipleDatagramsCompletionHandler(NSError error);
+        void call_writeMultipleDatagramsCompletionHandler(@Nullable NSError error);
     }
 }

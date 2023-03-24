@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MLCEmbeddingLayer
@@ -67,22 +69,25 @@ public class MLCEmbeddingLayer extends MLCLayer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -95,6 +100,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Selector("description")
     public static native String description_static();
 
+    @NotNull
     @Generated
     @Selector("descriptor")
     public native MLCEmbeddingDescriptor descriptor();
@@ -125,14 +131,15 @@ public class MLCEmbeddingLayer extends MLCLayer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("layerWithDescriptor:weights:")
-    public static native MLCEmbeddingLayer layerWithDescriptorWeights(MLCEmbeddingDescriptor descriptor,
-            MLCTensor weights);
+    public static native MLCEmbeddingLayer layerWithDescriptorWeights(@NotNull MLCEmbeddingDescriptor descriptor,
+            @NotNull MLCTensor weights);
 
     @Generated
     @Owned
@@ -157,7 +164,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
 
     @Generated
     @Selector("supportsDataType:onDevice:")
-    public static native boolean supportsDataTypeOnDevice(int dataType, MLCDevice device);
+    public static native boolean supportsDataTypeOnDevice(int dataType, @NotNull MLCDevice device);
 
     @Generated
     @Selector("version")
@@ -169,6 +176,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
      * 
      * The array of word embeddings
      */
+    @NotNull
     @Generated
     @Selector("weights")
     public native MLCTensor weights();
@@ -178,6 +186,7 @@ public class MLCEmbeddingLayer extends MLCLayer {
      * 
      * The weights tensor parameter used for optimizer update
      */
+    @NotNull
     @Generated
     @Selector("weightsParameter")
     public native MLCTensorParameter weightsParameter();

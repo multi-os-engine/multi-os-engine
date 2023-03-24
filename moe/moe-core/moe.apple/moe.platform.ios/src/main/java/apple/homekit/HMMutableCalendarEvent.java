@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class is used to represent a calendar event.
@@ -58,22 +60,25 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -89,6 +94,7 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
     /**
      * The date component that specifies the time when the event is fired
      */
+    @NotNull
     @Generated
     @Selector("fireDateComponents")
     public native NSDateComponents fireDateComponents();
@@ -104,7 +110,7 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
 
     @Generated
     @Selector("initWithFireDateComponents:")
-    public native HMMutableCalendarEvent initWithFireDateComponents(NSDateComponents fireDateComponents);
+    public native HMMutableCalendarEvent initWithFireDateComponents(@NotNull NSDateComponents fireDateComponents);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -125,11 +131,12 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -149,7 +156,7 @@ public class HMMutableCalendarEvent extends HMCalendarEvent {
      */
     @Generated
     @Selector("setFireDateComponents:")
-    public native void setFireDateComponents(NSDateComponents value);
+    public native void setFireDateComponents(@NotNull NSDateComponents value);
 
     @Generated
     @Selector("setVersion:")

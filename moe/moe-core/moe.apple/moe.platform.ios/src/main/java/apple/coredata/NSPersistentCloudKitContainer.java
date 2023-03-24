@@ -35,6 +35,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -69,22 +71,25 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -93,6 +98,7 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Selector("debugDescription")
     public static native String debugDescription_static();
 
+    @NotNull
     @Generated
     @Selector("defaultDirectoryURL")
     public static native NSURL defaultDirectoryURL();
@@ -112,11 +118,12 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
 
     @Generated
     @Selector("initWithName:")
-    public native NSPersistentCloudKitContainer initWithName(String name);
+    public native NSPersistentCloudKitContainer initWithName(@NotNull String name);
 
     @Generated
     @Selector("initWithName:managedObjectModel:")
-    public native NSPersistentCloudKitContainer initWithNameManagedObjectModel(String name, NSManagedObjectModel model);
+    public native NSPersistentCloudKitContainer initWithNameManagedObjectModel(@NotNull String name,
+            @NotNull NSManagedObjectModel model);
 
     /**
      * This method creates a set of representative CKRecord instances for all stores in the container
@@ -135,7 +142,7 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Generated
     @Selector("initializeCloudKitSchemaWithOptions:error:")
     public native boolean initializeCloudKitSchemaWithOptionsError(@NUInt long options,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,9 +161,10 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -165,30 +173,34 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
 
     @Generated
     @Selector("persistentContainerWithName:")
-    public static native NSPersistentCloudKitContainer persistentContainerWithName(String name);
+    public static native NSPersistentCloudKitContainer persistentContainerWithName(@NotNull String name);
 
     @Generated
     @Selector("persistentContainerWithName:managedObjectModel:")
-    public static native NSPersistentCloudKitContainer persistentContainerWithNameManagedObjectModel(String name,
-            NSManagedObjectModel model);
+    public static native NSPersistentCloudKitContainer persistentContainerWithNameManagedObjectModel(
+            @NotNull String name, @NotNull NSManagedObjectModel model);
 
+    @Nullable
     @Generated
     @Selector("recordForManagedObjectID:")
-    public native CKRecord recordForManagedObjectID(NSManagedObjectID managedObjectID);
+    public native CKRecord recordForManagedObjectID(@NotNull NSManagedObjectID managedObjectID);
 
+    @Nullable
     @Generated
     @Selector("recordIDForManagedObjectID:")
-    public native CKRecordID recordIDForManagedObjectID(NSManagedObjectID managedObjectID);
+    public native CKRecordID recordIDForManagedObjectID(@NotNull NSManagedObjectID managedObjectID);
 
+    @NotNull
     @Generated
     @Selector("recordIDsForManagedObjectIDs:")
     public native NSDictionary<? extends NSManagedObjectID, ? extends CKRecordID> recordIDsForManagedObjectIDs(
-            NSArray<? extends NSManagedObjectID> managedObjectIDs);
+            @NotNull NSArray<? extends NSManagedObjectID> managedObjectIDs);
 
+    @NotNull
     @Generated
     @Selector("recordsForManagedObjectIDs:")
     public native NSDictionary<? extends NSManagedObjectID, ? extends CKRecord> recordsForManagedObjectIDs(
-            NSArray<? extends NSManagedObjectID> managedObjectIDs);
+            @NotNull NSArray<? extends NSManagedObjectID> managedObjectIDs);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -216,7 +228,7 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      */
     @Generated
     @Selector("canDeleteRecordForManagedObjectWithID:")
-    public native boolean canDeleteRecordForManagedObjectWithID(NSManagedObjectID objectID);
+    public native boolean canDeleteRecordForManagedObjectWithID(@NotNull NSManagedObjectID objectID);
 
     /**
      * canModifyManagedObjectsInStore indicates whether or not a given store is mutable when used with CloudKit.
@@ -232,7 +244,7 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      */
     @Generated
     @Selector("canModifyManagedObjectsInStore:")
-    public native boolean canModifyManagedObjectsInStore(NSPersistentStore store);
+    public native boolean canModifyManagedObjectsInStore(@NotNull NSPersistentStore store);
 
     /**
      * canUpdateRecordForManagedObjectWithID / canDeleteRecordForManagedObjectWithID indicate whether or not a given
@@ -256,7 +268,7 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      */
     @Generated
     @Selector("canUpdateRecordForManagedObjectWithID:")
-    public native boolean canUpdateRecordForManagedObjectWithID(NSManagedObjectID objectID);
+    public native boolean canUpdateRecordForManagedObjectWithID(@NotNull NSManagedObjectID objectID);
 
     /**
      * Accept a sharing invitation with the given share metadata.
@@ -272,15 +284,16 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Generated
     @Selector("acceptShareInvitationsFromMetadata:intoPersistentStore:completion:")
     public native void acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion(
-            NSArray<? extends CKShareMetadata> metadata, NSPersistentStore persistentStore,
-            @ObjCBlock(name = "call_acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion") Block_acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion completion);
+            @NotNull NSArray<? extends CKShareMetadata> metadata, @NotNull NSPersistentStore persistentStore,
+            @Nullable @ObjCBlock(name = "call_acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion") Block_acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion {
         @Generated
         void call_acceptShareInvitationsFromMetadataIntoPersistentStoreCompletion(
-                NSArray<? extends CKShareMetadata> acceptedShareMetadatas, NSError acceptOperationError);
+                @Nullable NSArray<? extends CKShareMetadata> acceptedShareMetadatas,
+                @Nullable NSError acceptOperationError);
     }
 
     /**
@@ -294,15 +307,16 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
     @Generated
     @Selector("fetchParticipantsMatchingLookupInfos:intoPersistentStore:completion:")
     public native void fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion(
-            NSArray<? extends CKUserIdentityLookupInfo> lookupInfos, NSPersistentStore persistentStore,
-            @ObjCBlock(name = "call_fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion") Block_fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion completion);
+            @NotNull NSArray<? extends CKUserIdentityLookupInfo> lookupInfos,
+            @NotNull NSPersistentStore persistentStore,
+            @NotNull @ObjCBlock(name = "call_fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion") Block_fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion {
         @Generated
         void call_fetchParticipantsMatchingLookupInfosIntoPersistentStoreCompletion(
-                NSArray<? extends CKShareParticipant> fetchedParticipants, NSError fetchError);
+                @Nullable NSArray<? extends CKShareParticipant> fetchedParticipants, @Nullable NSError fetchError);
     }
 
     /**
@@ -314,10 +328,12 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("fetchSharesInPersistentStore:error:")
-    public native NSArray<? extends CKShare> fetchSharesInPersistentStoreError(NSPersistentStore persistentStore,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<? extends CKShare> fetchSharesInPersistentStoreError(
+            @Nullable NSPersistentStore persistentStore,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Returns the associated CKShare object for a given managed object. If the object's backing CKRecord resides in a
@@ -330,10 +346,12 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      * 
      * API-Since: 15.0
      */
+    @Nullable
     @Generated
     @Selector("fetchSharesMatchingObjectIDs:error:")
     public native NSDictionary<? extends NSManagedObjectID, ? extends CKShare> fetchSharesMatchingObjectIDsError(
-            NSArray<? extends NSManagedObjectID> objectIDs, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull NSArray<? extends NSManagedObjectID> objectIDs,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Saves the given CKShare object to the persistent cloud container's metadata in the provided persistent store.
@@ -346,14 +364,16 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      */
     @Generated
     @Selector("persistUpdatedShare:inPersistentStore:completion:")
-    public native void persistUpdatedShareInPersistentStoreCompletion(CKShare share, NSPersistentStore persistentStore,
-            @ObjCBlock(name = "call_persistUpdatedShareInPersistentStoreCompletion") Block_persistUpdatedShareInPersistentStoreCompletion completion);
+    public native void persistUpdatedShareInPersistentStoreCompletion(@NotNull CKShare share,
+            @NotNull NSPersistentStore persistentStore,
+            @Nullable @ObjCBlock(name = "call_persistUpdatedShareInPersistentStoreCompletion") Block_persistUpdatedShareInPersistentStoreCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_persistUpdatedShareInPersistentStoreCompletion {
         @Generated
-        void call_persistUpdatedShareInPersistentStoreCompletion(CKShare persistedShare, NSError persistedShareError);
+        void call_persistUpdatedShareInPersistentStoreCompletion(@Nullable CKShare persistedShare,
+                @Nullable NSError persistedShareError);
     }
 
     /**
@@ -366,16 +386,16 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      */
     @Generated
     @Selector("purgeObjectsAndRecordsInZoneWithID:inPersistentStore:completion:")
-    public native void purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion(CKRecordZoneID zoneID,
-            NSPersistentStore persistentStore,
-            @ObjCBlock(name = "call_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion") Block_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion completion);
+    public native void purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion(@NotNull CKRecordZoneID zoneID,
+            @Nullable NSPersistentStore persistentStore,
+            @Nullable @ObjCBlock(name = "call_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion") Block_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion {
         @Generated
-        void call_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion(CKRecordZoneID purgedZoneID,
-                NSError purgeError);
+        void call_purgeObjectsAndRecordsInZoneWithIDInPersistentStoreCompletion(@Nullable CKRecordZoneID purgedZoneID,
+                @Nullable NSError purgeError);
     }
 
     /**
@@ -403,15 +423,15 @@ public class NSPersistentCloudKitContainer extends NSPersistentContainer {
      */
     @Generated
     @Selector("shareManagedObjects:toShare:completion:")
-    public native void shareManagedObjectsToShareCompletion(NSArray<? extends NSManagedObject> managedObjects,
-            CKShare share,
-            @ObjCBlock(name = "call_shareManagedObjectsToShareCompletion") Block_shareManagedObjectsToShareCompletion completion);
+    public native void shareManagedObjectsToShareCompletion(@NotNull NSArray<? extends NSManagedObject> managedObjects,
+            @Nullable CKShare share,
+            @NotNull @ObjCBlock(name = "call_shareManagedObjectsToShareCompletion") Block_shareManagedObjectsToShareCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_shareManagedObjectsToShareCompletion {
         @Generated
-        void call_shareManagedObjectsToShareCompletion(NSSet<? extends NSManagedObjectID> sharedObjectIDs,
-                CKShare share, CKContainer cloudKitContainer, NSError sharingError);
+        void call_shareManagedObjectsToShareCompletion(@Nullable NSSet<? extends NSManagedObjectID> sharedObjectIDs,
+                @Nullable CKShare share, @Nullable CKContainer cloudKitContainer, @Nullable NSError sharingError);
     }
 }

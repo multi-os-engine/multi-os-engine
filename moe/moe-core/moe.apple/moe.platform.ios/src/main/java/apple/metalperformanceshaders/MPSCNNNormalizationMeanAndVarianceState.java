@@ -27,6 +27,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MPSCNNNormalizationMeanAndVarianceState
@@ -65,22 +67,25 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,17 +110,17 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     @Generated
     @Selector("initWithDevice:bufferSize:")
     public native MPSCNNNormalizationMeanAndVarianceState initWithDeviceBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long bufferSize);
 
     @Generated
     @Selector("initWithDevice:resourceList:")
     public native MPSCNNNormalizationMeanAndVarianceState initWithDeviceResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MPSStateResourceList resourceList);
 
     @Generated
     @Selector("initWithDevice:textureDescriptor:")
     public native MPSCNNNormalizationMeanAndVarianceState initWithDeviceTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLDevice device, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NotNull MTLTextureDescriptor descriptor);
 
     /**
      * Initialize a MPSCNNNormalizationMeanAndVarianceState object using values
@@ -128,16 +133,17 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     @Generated
     @Selector("initWithMean:variance:")
     public native MPSCNNNormalizationMeanAndVarianceState initWithMeanVariance(
-            @Mapped(ObjCObjectMapper.class) MTLBuffer mean, @Mapped(ObjCObjectMapper.class) MTLBuffer variance);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer mean,
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLBuffer variance);
 
     @Generated
     @Selector("initWithResource:")
     public native MPSCNNNormalizationMeanAndVarianceState initWithResource(
-            @Mapped(ObjCObjectMapper.class) MTLResource resource);
+            @Nullable @Mapped(ObjCObjectMapper.class) MTLResource resource);
 
     @Generated
     @Selector("initWithResources:")
-    public native MPSCNNNormalizationMeanAndVarianceState initWithResources(NSArray<?> resources);
+    public native MPSCNNNormalizationMeanAndVarianceState initWithResources(@Nullable NSArray<?> resources);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -156,15 +162,17 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * [@property] mean
      * 
      * A MTLBuffer containing the mean terms.
      */
+    @NotNull
     @Generated
     @Selector("mean")
     @MappedReturn(ObjCObjectMapper.class)
@@ -191,15 +199,17 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
     @Selector("superclass")
     public static native Class superclass_static();
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:")
     public static native MPSCNNNormalizationMeanAndVarianceState temporaryStateWithCommandBuffer(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:bufferSize:")
     public static native MPSCNNNormalizationMeanAndVarianceState temporaryStateWithCommandBufferBufferSize(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NUInt long bufferSize);
 
     /**
      * Create a temporary MPSCNNNormalizationMeanAndVarianceState suitable
@@ -212,26 +222,32 @@ public class MPSCNNNormalizationMeanAndVarianceState extends MPSState {
      * @param numberOfFeatureChannels The number of feature channels used to size the
      *                                state.
      */
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:numberOfFeatureChannels:")
     public static native MPSCNNNormalizationMeanAndVarianceState temporaryStateWithCommandBufferNumberOfFeatureChannels(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, @NUInt long numberOfFeatureChannels);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NUInt long numberOfFeatureChannels);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:resourceList:")
     public static native MPSCNNNormalizationMeanAndVarianceState temporaryStateWithCommandBufferResourceList(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer, MPSStateResourceList resourceList);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer commandBuffer,
+            @NotNull MPSStateResourceList resourceList);
 
+    @NotNull
     @Generated
     @Selector("temporaryStateWithCommandBuffer:textureDescriptor:")
     public static native MPSCNNNormalizationMeanAndVarianceState temporaryStateWithCommandBufferTextureDescriptor(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, MTLTextureDescriptor descriptor);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, @NotNull MTLTextureDescriptor descriptor);
 
     /**
      * [@property] variance
      * 
      * A MTLBuffer containing the variance terms.
      */
+    @NotNull
     @Generated
     @Selector("variance")
     @MappedReturn(ObjCObjectMapper.class)

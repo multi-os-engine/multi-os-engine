@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -61,22 +63,25 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -100,10 +105,12 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:")
-    public native MPSNDArray encodeToCommandBufferSourceArrays(@Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
-            NSArray<? extends MPSNDArray> sourceArrays);
+    public native MPSNDArray encodeToCommandBufferSourceArrays(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull NSArray<? extends MPSNDArray> sourceArrays);
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
@@ -116,8 +123,8 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:destinationArray:")
     public native void encodeToCommandBufferSourceArraysDestinationArray(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, NSArray<? extends MPSNDArray> sourceArrays,
-            MPSNDArray destination);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull NSArray<? extends MPSNDArray> sourceArrays, @NotNull MPSNDArray destination);
 
     /**
      * Encode a simple inference NDArray kernel and return a NDArray to hold the result
@@ -132,8 +139,9 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:resultState:destinationArray:")
     public native void encodeToCommandBufferSourceArraysResultStateDestinationArray(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, NSArray<? extends MPSNDArray> sourceArrays,
-            MPSState outGradientState, MPSNDArray destination);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull NSArray<? extends MPSNDArray> sourceArrays, @Nullable MPSState outGradientState,
+            @NotNull MPSNDArray destination);
 
     /**
      * Forward training encode calls
@@ -149,11 +157,14 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
      * @return A newly allocated MPSNDArray that will contain the result of the calculation
      *         when the command buffer completes successfully.
      */
+    @NotNull
     @Generated
     @Selector("encodeToCommandBuffer:sourceArrays:resultState:outputStateIsTemporary:")
     public native MPSNDArray encodeToCommandBufferSourceArraysResultStateOutputStateIsTemporary(
-            @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf, NSArray<? extends MPSNDArray> sourceArrays,
-            @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outGradientState, boolean outputStateIsTemporary);
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLCommandBuffer cmdBuf,
+            @NotNull NSArray<? extends MPSNDArray> sourceArrays,
+            @Nullable @ReferenceInfo(type = MPSState.class) Ptr<MPSState> outGradientState,
+            boolean outputStateIsTemporary);
 
     @Generated
     @Selector("hash")
@@ -166,24 +177,24 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MPSNDArrayMultiaryKernel initWithCoder(NSCoder aDecoder);
+    public native MPSNDArrayMultiaryKernel initWithCoder(@NotNull NSCoder aDecoder);
 
     /**
      * NSSecureCoding support
      */
     @Generated
     @Selector("initWithCoder:device:")
-    public native MPSNDArrayMultiaryKernel initWithCoderDevice(NSCoder coder,
-            @Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayMultiaryKernel initWithCoderDevice(@NotNull NSCoder coder,
+            @NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:")
-    public native MPSNDArrayMultiaryKernel initWithDevice(@Mapped(ObjCObjectMapper.class) Object device);
+    public native MPSNDArrayMultiaryKernel initWithDevice(@NotNull @Mapped(ObjCObjectMapper.class) Object device);
 
     @Generated
     @Selector("initWithDevice:sourceCount:")
-    public native MPSNDArrayMultiaryKernel initWithDeviceSourceCount(@Mapped(ObjCObjectMapper.class) MTLDevice device,
-            @NUInt long count);
+    public native MPSNDArrayMultiaryKernel initWithDeviceSourceCount(
+            @NotNull @Mapped(ObjCObjectMapper.class) MTLDevice device, @NUInt long count);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -202,9 +213,10 @@ public class MPSNDArrayMultiaryKernel extends MPSNDArrayMultiaryBase {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

@@ -27,6 +27,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * MXDiagnosticPayload
@@ -71,6 +73,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * @return An NSData object containing the JSON representation
      */
+    @NotNull
     @Generated
     @Selector("JSONRepresentation")
     public native NSData JSONRepresentation();
@@ -91,22 +94,25 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -116,6 +122,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * An array containing CPU exception diagnostics for this application.
      */
+    @Nullable
     @Generated
     @Selector("cpuExceptionDiagnostics")
     public native NSArray<? extends MXCPUExceptionDiagnostic> cpuExceptionDiagnostics();
@@ -125,6 +132,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * An array containing crash diagnostics for this application.
      */
+    @Nullable
     @Generated
     @Selector("crashDiagnostics")
     public native NSArray<? extends MXCrashDiagnostic> crashDiagnostics();
@@ -144,6 +152,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * @return An NSDictionary object containing the dictionary representation
      */
+    @NotNull
     @Generated
     @Selector("dictionaryRepresentation")
     public native NSDictionary<?, ?> dictionaryRepresentation();
@@ -153,19 +162,21 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * An array containing disk write exception diagnostics for this application.
      */
+    @Nullable
     @Generated
     @Selector("diskWriteExceptionDiagnostics")
     public native NSArray<? extends MXDiskWriteExceptionDiagnostic> diskWriteExceptionDiagnostics();
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] hangDiagnostics
      * 
      * An array containing hang diagnostics for this application.
      */
+    @Nullable
     @Generated
     @Selector("hangDiagnostics")
     public native NSArray<? extends MXHangDiagnostic> hangDiagnostics();
@@ -181,7 +192,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
 
     @Generated
     @Selector("initWithCoder:")
-    public native MXDiagnosticPayload initWithCoder(NSCoder coder);
+    public native MXDiagnosticPayload initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -200,9 +211,10 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -240,6 +252,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * An NSDate object that indicates the start time for which the payload was generated.
      */
+    @NotNull
     @Generated
     @Selector("timeStampBegin")
     public native NSDate timeStampBegin();
@@ -249,6 +262,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * An NSDate object that indicates the end time for which the payload was generated.
      */
+    @NotNull
     @Generated
     @Selector("timeStampEnd")
     public native NSDate timeStampEnd();
@@ -265,6 +279,7 @@ public class MXDiagnosticPayload extends NSObject implements NSSecureCoding {
      * 
      * API-Since: 16.0
      */
+    @Nullable
     @Generated
     @Selector("appLaunchDiagnostics")
     public native NSArray<? extends MXAppLaunchDiagnostic> appLaunchDiagnostics();

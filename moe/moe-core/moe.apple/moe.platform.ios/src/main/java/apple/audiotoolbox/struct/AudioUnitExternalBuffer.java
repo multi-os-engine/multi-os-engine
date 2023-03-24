@@ -23,6 +23,7 @@ import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
 import org.moe.natj.general.ptr.BytePtr;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -44,19 +45,20 @@ public final class AudioUnitExternalBuffer extends StructObject {
     }
 
     @Generated
-    public AudioUnitExternalBuffer(BytePtr buffer, int size) {
+    public AudioUnitExternalBuffer(@NotNull BytePtr buffer, int size) {
         super(AudioUnitExternalBuffer.class);
         setBuffer(buffer);
         setSize(size);
     }
 
+    @NotNull
     @Generated
     @StructureField(order = 0, isGetter = true)
     public native BytePtr buffer();
 
     @Generated
     @StructureField(order = 0, isGetter = false)
-    public native void setBuffer(BytePtr value);
+    public native void setBuffer(@NotNull BytePtr value);
 
     @Generated
     @StructureField(order = 1, isGetter = true)

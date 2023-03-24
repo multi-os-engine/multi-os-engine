@@ -28,6 +28,8 @@ import org.moe.natj.objc.ann.IsOptional;
 import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 10.0
@@ -48,8 +50,8 @@ public interface UNUserNotificationCenterDelegate {
     @IsOptional
     @Selector("userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:")
     default void userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler(
-            UNUserNotificationCenter center, UNNotificationResponse response,
-            @ObjCBlock(name = "call_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler") Block_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler completionHandler) {
+            @NotNull UNUserNotificationCenter center, @NotNull UNNotificationResponse response,
+            @NotNull @ObjCBlock(name = "call_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler") Block_userNotificationCenterDidReceiveNotificationResponseWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -65,9 +67,9 @@ public interface UNUserNotificationCenterDelegate {
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:willPresentNotification:withCompletionHandler:")
-    default void userNotificationCenterWillPresentNotificationWithCompletionHandler(UNUserNotificationCenter center,
-            UNNotification notification,
-            @ObjCBlock(name = "call_userNotificationCenterWillPresentNotificationWithCompletionHandler") Block_userNotificationCenterWillPresentNotificationWithCompletionHandler completionHandler) {
+    default void userNotificationCenterWillPresentNotificationWithCompletionHandler(
+            @NotNull UNUserNotificationCenter center, @NotNull UNNotification notification,
+            @NotNull @ObjCBlock(name = "call_userNotificationCenterWillPresentNotificationWithCompletionHandler") Block_userNotificationCenterWillPresentNotificationWithCompletionHandler completionHandler) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -96,8 +98,8 @@ public interface UNUserNotificationCenterDelegate {
     @Generated
     @IsOptional
     @Selector("userNotificationCenter:openSettingsForNotification:")
-    default void userNotificationCenterOpenSettingsForNotification(UNUserNotificationCenter center,
-            UNNotification notification) {
+    default void userNotificationCenterOpenSettingsForNotification(@NotNull UNUserNotificationCenter center,
+            @Nullable UNNotification notification) {
         throw new java.lang.UnsupportedOperationException();
     }
 }

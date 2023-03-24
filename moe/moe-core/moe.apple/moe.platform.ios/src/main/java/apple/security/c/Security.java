@@ -53,6 +53,8 @@ import org.moe.natj.general.ptr.NUIntPtr;
 import org.moe.natj.general.ptr.Ptr;
 import org.moe.natj.general.ptr.VoidPtr;
 import org.moe.natj.objc.ann.ObjCBlock;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Security")
@@ -92,9 +94,11 @@ public final class Security {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecCertificateRef SecCertificateCreateWithData(CFAllocatorRef allocator, CFDataRef data);
+    public static native SecCertificateRef SecCertificateCreateWithData(@Nullable CFAllocatorRef allocator,
+            @NotNull CFDataRef data);
 
     /**
      * [@function] SecCertificateCopyData
@@ -107,9 +111,10 @@ public final class Security {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native CFDataRef SecCertificateCopyData(SecCertificateRef certificate);
+    public static native CFDataRef SecCertificateCopyData(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SecCertificateCopySubjectSummary
@@ -127,9 +132,10 @@ public final class Security {
      * 
      *         API-Since: 2.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef SecCertificateCopySubjectSummary(SecCertificateRef certificate);
+    public static native CFStringRef SecCertificateCopySubjectSummary(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SecIdentityGetTypeID
@@ -161,8 +167,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecIdentityCopyCertificate(SecIdentityRef identityRef,
-            Ptr<SecCertificateRef> certificateRef);
+    public static native int SecIdentityCopyCertificate(@NotNull SecIdentityRef identityRef,
+            @NotNull Ptr<SecCertificateRef> certificateRef);
 
     /**
      * [@function] SecIdentityCopyPrivateKey
@@ -179,7 +185,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecIdentityCopyPrivateKey(SecIdentityRef identityRef, Ptr<SecKeyRef> privateKeyRef);
+    public static native int SecIdentityCopyPrivateKey(@NotNull SecIdentityRef identityRef,
+            @NotNull Ptr<SecKeyRef> privateKeyRef);
 
     /**
      * [@function] SecPKCS12Import
@@ -202,7 +209,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecPKCS12Import(CFDataRef pkcs12_data, CFDictionaryRef options, Ptr<CFArrayRef> items);
+    public static native int SecPKCS12Import(@NotNull CFDataRef pkcs12_data, @NotNull CFDictionaryRef options,
+            @NotNull Ptr<CFArrayRef> items);
 
     /**
      * [@function] SecAccessControlGetTypeID
@@ -241,10 +249,11 @@ public final class Security {
      * 
      *         API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecAccessControlRef SecAccessControlCreateWithFlags(CFAllocatorRef allocator,
-            ConstVoidPtr protection, @NUInt long flags, Ptr<CFErrorRef> error);
+    public static native SecAccessControlRef SecAccessControlCreateWithFlags(@Nullable CFAllocatorRef allocator,
+            @NotNull ConstVoidPtr protection, @NUInt long flags, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecItemCopyMatching
@@ -315,7 +324,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecItemCopyMatching(CFDictionaryRef query, Ptr<ConstVoidPtr> result);
+    public static native int SecItemCopyMatching(@NotNull CFDictionaryRef query, @Nullable Ptr<ConstVoidPtr> result);
 
     /**
      * [@function] SecItemAdd
@@ -362,7 +371,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecItemAdd(CFDictionaryRef attributes, Ptr<ConstVoidPtr> result);
+    public static native int SecItemAdd(@NotNull CFDictionaryRef attributes, @Nullable Ptr<ConstVoidPtr> result);
 
     /**
      * [@function] SecItemUpdate
@@ -387,7 +396,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecItemUpdate(CFDictionaryRef query, CFDictionaryRef attributesToUpdate);
+    public static native int SecItemUpdate(@NotNull CFDictionaryRef query, @NotNull CFDictionaryRef attributesToUpdate);
 
     /**
      * [@function] SecItemDelete
@@ -424,7 +433,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecItemDelete(CFDictionaryRef query);
+    public static native int SecItemDelete(@NotNull CFDictionaryRef query);
 
     /**
      * [@function] SecKeyGetTypeID
@@ -499,8 +508,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecKeyGeneratePair(CFDictionaryRef parameters, Ptr<SecKeyRef> publicKey,
-            Ptr<SecKeyRef> privateKey);
+    public static native int SecKeyGeneratePair(@NotNull CFDictionaryRef parameters, @Nullable Ptr<SecKeyRef> publicKey,
+            @Nullable Ptr<SecKeyRef> privateKey);
 
     /**
      * [@function] SecKeyRawSign
@@ -540,9 +549,9 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecKeyRawSign(SecKeyRef key, int padding,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String dataToSign,
-            @NUInt long dataToSignLen, BytePtr sig, NUIntPtr sigLen);
+    public static native int SecKeyRawSign(@NotNull SecKeyRef key, int padding,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String dataToSign,
+            @NUInt long dataToSignLen, @NotNull BytePtr sig, @NotNull NUIntPtr sigLen);
 
     /**
      * [@function] SecKeyRawVerify
@@ -574,10 +583,10 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecKeyRawVerify(SecKeyRef key, int padding,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String signedData,
+    public static native int SecKeyRawVerify(@NotNull SecKeyRef key, int padding,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String signedData,
             @NUInt long signedDataLen,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String sig,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String sig,
             @NUInt long sigLen);
 
     /**
@@ -614,9 +623,9 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecKeyEncrypt(SecKeyRef key, int padding,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plainText,
-            @NUInt long plainTextLen, BytePtr cipherText, NUIntPtr cipherTextLen);
+    public static native int SecKeyEncrypt(@NotNull SecKeyRef key, int padding,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String plainText,
+            @NUInt long plainTextLen, @NotNull BytePtr cipherText, @NotNull NUIntPtr cipherTextLen);
 
     /**
      * [@function] SecKeyDecrypt
@@ -647,9 +656,9 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecKeyDecrypt(SecKeyRef key, int padding,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String cipherText,
-            @NUInt long cipherTextLen, BytePtr plainText, NUIntPtr plainTextLen);
+    public static native int SecKeyDecrypt(@NotNull SecKeyRef key, int padding,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String cipherText,
+            @NUInt long cipherTextLen, @NotNull BytePtr plainText, @NotNull NUIntPtr plainTextLen);
 
     /**
      * [@function] SecKeyGetBlockSize
@@ -667,7 +676,7 @@ public final class Security {
     @Generated
     @CFunction
     @NUInt
-    public static native long SecKeyGetBlockSize(SecKeyRef key);
+    public static native long SecKeyGetBlockSize(@NotNull SecKeyRef key);
 
     /**
      * [@function] SecKeyCreateRandomKey
@@ -714,9 +723,11 @@ public final class Security {
      *                   See "Security Error Codes" (SecBase.h).
      * @return Newly generated private key. To get associated public key, use SecKeyCopyPublicKey().
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecKeyRef SecKeyCreateRandomKey(CFDictionaryRef parameters, Ptr<CFErrorRef> error);
+    public static native SecKeyRef SecKeyCreateRandomKey(@NotNull CFDictionaryRef parameters,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyCreateWithData
@@ -740,10 +751,11 @@ public final class Security {
      *                   See "Security Error Codes" (SecBase.h).
      * @return A SecKey object representing the key, or NULL on failure.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecKeyRef SecKeyCreateWithData(CFDataRef keyData, CFDictionaryRef attributes,
-            Ptr<CFErrorRef> error);
+    public static native SecKeyRef SecKeyCreateWithData(@NotNull CFDataRef keyData, @NotNull CFDictionaryRef attributes,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyCopyExternalRepresentation
@@ -762,9 +774,11 @@ public final class Security {
      *              See "Security Error Codes" (SecBase.h).
      * @return A CFData representing the key in a format suitable for that key type.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecKeyCopyExternalRepresentation(SecKeyRef key, Ptr<CFErrorRef> error);
+    public static native CFDataRef SecKeyCopyExternalRepresentation(@NotNull SecKeyRef key,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyCopyAttributes
@@ -790,9 +804,10 @@ public final class Security {
      * @return Dictionary containing attributes of the key. The keys that populate this dictionary are defined
      *         and discussed in SecItem.h.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef SecKeyCopyAttributes(SecKeyRef key);
+    public static native CFDictionaryRef SecKeyCopyAttributes(@NotNull SecKeyRef key);
 
     /**
      * [@function] SecKeyCopyPublicKey
@@ -806,9 +821,10 @@ public final class Security {
      * @param key The key from which to retrieve a public key.
      * @return The public key or NULL if public key is not available for specified key.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecKeyRef SecKeyCopyPublicKey(SecKeyRef key);
+    public static native SecKeyRef SecKeyCopyPublicKey(@NotNull SecKeyRef key);
 
     /**
      * [@function] SecKeyCreateSignature
@@ -827,10 +843,11 @@ public final class Security {
      *                   See "Security Error Codes" (SecBase.h).
      * @return The signature over dataToSign represented as a CFData, or NULL on failure.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecKeyCreateSignature(SecKeyRef key, CFStringRef algorithm, CFDataRef dataToSign,
-            Ptr<CFErrorRef> error);
+    public static native CFDataRef SecKeyCreateSignature(@NotNull SecKeyRef key, @NotNull CFStringRef algorithm,
+            @NotNull CFDataRef dataToSign, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyVerifySignature
@@ -852,8 +869,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native byte SecKeyVerifySignature(SecKeyRef key, CFStringRef algorithm, CFDataRef signedData,
-            CFDataRef signature, Ptr<CFErrorRef> error);
+    public static native byte SecKeyVerifySignature(@NotNull SecKeyRef key, @NotNull CFStringRef algorithm,
+            @NotNull CFDataRef signedData, @NotNull CFDataRef signature, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyCreateEncryptedData
@@ -873,10 +890,11 @@ public final class Security {
      *                  See "Security Error Codes" (SecBase.h).
      * @return The ciphertext represented as a CFData, or NULL on failure.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecKeyCreateEncryptedData(SecKeyRef key, CFStringRef algorithm, CFDataRef plaintext,
-            Ptr<CFErrorRef> error);
+    public static native CFDataRef SecKeyCreateEncryptedData(@NotNull SecKeyRef key, @NotNull CFStringRef algorithm,
+            @NotNull CFDataRef plaintext, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyCreateDecryptedData
@@ -896,10 +914,11 @@ public final class Security {
      *                   See "Security Error Codes" (SecBase.h).
      * @return The plaintext represented as a CFData, or NULL on failure.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecKeyCreateDecryptedData(SecKeyRef key, CFStringRef algorithm, CFDataRef ciphertext,
-            Ptr<CFErrorRef> error);
+    public static native CFDataRef SecKeyCreateDecryptedData(@NotNull SecKeyRef key, @NotNull CFStringRef algorithm,
+            @NotNull CFDataRef ciphertext, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyCopyKeyExchangeResult
@@ -916,10 +935,12 @@ public final class Security {
      * 
      *         API-Since: 10.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecKeyCopyKeyExchangeResult(SecKeyRef privateKey, CFStringRef algorithm,
-            SecKeyRef publicKey, CFDictionaryRef parameters, Ptr<CFErrorRef> error);
+    public static native CFDataRef SecKeyCopyKeyExchangeResult(@NotNull SecKeyRef privateKey,
+            @NotNull CFStringRef algorithm, @NotNull SecKeyRef publicKey, @NotNull CFDictionaryRef parameters,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecKeyIsAlgorithmSupported
@@ -935,7 +956,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native byte SecKeyIsAlgorithmSupported(SecKeyRef key, @NInt long operation, CFStringRef algorithm);
+    public static native byte SecKeyIsAlgorithmSupported(@NotNull SecKeyRef key, @NInt long operation,
+            @NotNull CFStringRef algorithm);
 
     /**
      * [@function] SecPolicyGetTypeID
@@ -967,9 +989,10 @@ public final class Security {
      *         CFRelease this reference when it is no longer needed.
      * @return A result code. See "Security Error Codes" (SecBase.h).
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef SecPolicyCopyProperties(SecPolicyRef policyRef);
+    public static native CFDictionaryRef SecPolicyCopyProperties(@NotNull SecPolicyRef policyRef);
 
     /**
      * [@function] SecPolicyCreateBasicX509
@@ -981,6 +1004,7 @@ public final class Security {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
     public static native SecPolicyRef SecPolicyCreateBasicX509();
@@ -999,9 +1023,10 @@ public final class Security {
      * 
      *         API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native SecPolicyRef SecPolicyCreateSSL(byte server, CFStringRef hostname);
+    public static native SecPolicyRef SecPolicyCreateSSL(byte server, @Nullable CFStringRef hostname);
 
     /**
      * [@function] SecPolicyCreateRevocation
@@ -1021,6 +1046,7 @@ public final class Security {
      *         on this when it is no longer needed.
      * @param revocationFlags Flags to specify revocation checking options.
      */
+    @Nullable
     @Generated
     @CFunction
     public static native SecPolicyRef SecPolicyCreateRevocation(@NUInt long revocationFlags);
@@ -1040,10 +1066,11 @@ public final class Security {
      * 
      *         API-Since: 7.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecPolicyRef SecPolicyCreateWithProperties(ConstVoidPtr policyIdentifier,
-            CFDictionaryRef properties);
+    public static native SecPolicyRef SecPolicyCreateWithProperties(@NotNull ConstVoidPtr policyIdentifier,
+            @Nullable CFDictionaryRef properties);
 
     /**
      * [@function] SecRandomCopyBytes
@@ -1069,7 +1096,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecRandomCopyBytes(SecRandomRef rnd, @NUInt long count, VoidPtr bytes);
+    public static native int SecRandomCopyBytes(@Nullable SecRandomRef rnd, @NUInt long count, @NotNull VoidPtr bytes);
 
     /**
      * [@function] SecAddSharedWebCredential
@@ -1098,8 +1125,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void SecAddSharedWebCredential(CFStringRef fqdn, CFStringRef account, CFStringRef password,
-            @ObjCBlock(name = "call_SecAddSharedWebCredential") Block_SecAddSharedWebCredential completionHandler);
+    public static native void SecAddSharedWebCredential(@NotNull CFStringRef fqdn, @NotNull CFStringRef account,
+            @Nullable CFStringRef password,
+            @NotNull @ObjCBlock(name = "call_SecAddSharedWebCredential") Block_SecAddSharedWebCredential completionHandler);
 
     /**
      * [@function] SecRequestSharedWebCredential
@@ -1146,8 +1174,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void SecRequestSharedWebCredential(CFStringRef fqdn, CFStringRef account,
-            @ObjCBlock(name = "call_SecRequestSharedWebCredential") Block_SecRequestSharedWebCredential completionHandler);
+    public static native void SecRequestSharedWebCredential(@Nullable CFStringRef fqdn, @Nullable CFStringRef account,
+            @NotNull @ObjCBlock(name = "call_SecRequestSharedWebCredential") Block_SecRequestSharedWebCredential completionHandler);
 
     /**
      * [@function] SecCreateSharedWebCredentialPassword
@@ -1159,6 +1187,7 @@ public final class Security {
      * 
      *         API-Since: 8.0
      */
+    @Nullable
     @Generated
     @CFunction
     public static native CFStringRef SecCreateSharedWebCredentialPassword();
@@ -1197,8 +1226,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustCreateWithCertificates(ConstVoidPtr certificates, ConstVoidPtr policies,
-            Ptr<SecTrustRef> trust);
+    public static native int SecTrustCreateWithCertificates(@NotNull ConstVoidPtr certificates,
+            @Nullable ConstVoidPtr policies, @NotNull Ptr<SecTrustRef> trust);
 
     /**
      * [@function] SecTrustSetPolicies
@@ -1217,7 +1246,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetPolicies(SecTrustRef trust, ConstVoidPtr policies);
+    public static native int SecTrustSetPolicies(@NotNull SecTrustRef trust, @NotNull ConstVoidPtr policies);
 
     /**
      * [@function] SecTrustCopyPolicies
@@ -1233,7 +1262,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustCopyPolicies(SecTrustRef trust, Ptr<CFArrayRef> policies);
+    public static native int SecTrustCopyPolicies(@NotNull SecTrustRef trust, @NotNull Ptr<CFArrayRef> policies);
 
     /**
      * [@function] SecTrustSetNetworkFetchAllowed
@@ -1255,7 +1284,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetNetworkFetchAllowed(SecTrustRef trust, byte allowFetch);
+    public static native int SecTrustSetNetworkFetchAllowed(@NotNull SecTrustRef trust, byte allowFetch);
 
     /**
      * [@function] SecTrustGetNetworkFetchAllowed
@@ -1275,7 +1304,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustGetNetworkFetchAllowed(SecTrustRef trust, BytePtr allowFetch);
+    public static native int SecTrustGetNetworkFetchAllowed(@NotNull SecTrustRef trust, @NotNull BytePtr allowFetch);
 
     /**
      * [@function] SecTrustSetAnchorCertificates
@@ -1295,7 +1324,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetAnchorCertificates(SecTrustRef trust, CFArrayRef anchorCertificates);
+    public static native int SecTrustSetAnchorCertificates(@NotNull SecTrustRef trust,
+            @Nullable CFArrayRef anchorCertificates);
 
     /**
      * [@function] SecTrustSetAnchorCertificatesOnly
@@ -1313,7 +1343,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetAnchorCertificatesOnly(SecTrustRef trust, byte anchorCertificatesOnly);
+    public static native int SecTrustSetAnchorCertificatesOnly(@NotNull SecTrustRef trust, byte anchorCertificatesOnly);
 
     /**
      * [@function] SecTrustCopyCustomAnchorCertificates
@@ -1332,7 +1362,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustCopyCustomAnchorCertificates(SecTrustRef trust, Ptr<CFArrayRef> anchors);
+    public static native int SecTrustCopyCustomAnchorCertificates(@NotNull SecTrustRef trust,
+            @NotNull Ptr<CFArrayRef> anchors);
 
     /**
      * [@function] SecTrustSetVerifyDate
@@ -1353,7 +1384,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetVerifyDate(SecTrustRef trust, CFDateRef verifyDate);
+    public static native int SecTrustSetVerifyDate(@NotNull SecTrustRef trust, @NotNull CFDateRef verifyDate);
 
     /**
      * [@function] SecTrustGetVerifyTime
@@ -1373,7 +1404,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native double SecTrustGetVerifyTime(SecTrustRef trust);
+    public static native double SecTrustGetVerifyTime(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustEvaluate
@@ -1397,7 +1428,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecTrustEvaluate(SecTrustRef trust, IntPtr result);
+    public static native int SecTrustEvaluate(@NotNull SecTrustRef trust, @NotNull IntPtr result);
 
     /**
      * [@function] SecTrustEvaluateAsync
@@ -1417,8 +1448,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SecTrustEvaluateAsync(SecTrustRef trust, NSObject queue,
-            @ObjCBlock(name = "call_SecTrustEvaluateAsync") Block_SecTrustEvaluateAsync result);
+    public static native int SecTrustEvaluateAsync(@NotNull SecTrustRef trust, @Nullable NSObject queue,
+            @NotNull @ObjCBlock(name = "call_SecTrustEvaluateAsync") Block_SecTrustEvaluateAsync result);
 
     /**
      * [@function] SecTrustGetTrustResult
@@ -1436,7 +1467,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustGetTrustResult(SecTrustRef trust, IntPtr result);
+    public static native int SecTrustGetTrustResult(@NotNull SecTrustRef trust, @NotNull IntPtr result);
 
     /**
      * [@function] SecTrustCopyPublicKey
@@ -1453,10 +1484,11 @@ public final class Security {
      *         API-Since: 2.0
      *         Deprecated-Since: 14.0
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native SecKeyRef SecTrustCopyPublicKey(SecTrustRef trust);
+    public static native SecKeyRef SecTrustCopyPublicKey(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustGetCertificateCount
@@ -1477,7 +1509,7 @@ public final class Security {
     @Generated
     @CFunction
     @NInt
-    public static native long SecTrustGetCertificateCount(SecTrustRef trust);
+    public static native long SecTrustGetCertificateCount(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustGetCertificateAtIndex
@@ -1499,10 +1531,11 @@ public final class Security {
      *              reference has been evaluated or not.
      * @return A SecCertificateRef for the requested certificate.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native SecCertificateRef SecTrustGetCertificateAtIndex(SecTrustRef trust, @NInt long ix);
+    public static native SecCertificateRef SecTrustGetCertificateAtIndex(@NotNull SecTrustRef trust, @NInt long ix);
 
     /**
      * [@function] SecTrustCopyExceptions
@@ -1525,9 +1558,10 @@ public final class Security {
      *         was returned from this function (for example, if the certificate expires
      *         then evaluation will start failing again until a new cookie is obtained.)
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecTrustCopyExceptions(SecTrustRef trust);
+    public static native CFDataRef SecTrustCopyExceptions(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustSetExceptions
@@ -1560,7 +1594,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean SecTrustSetExceptions(SecTrustRef trust, CFDataRef exceptions);
+    public static native boolean SecTrustSetExceptions(@NotNull SecTrustRef trust, @Nullable CFDataRef exceptions);
 
     /**
      * [@function] SecTrustCopyProperties
@@ -1583,10 +1617,11 @@ public final class Security {
      * @return A property array. It is the caller's responsibility to CFRelease
      *         the returned array when it is no longer needed.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFArrayRef SecTrustCopyProperties(SecTrustRef trust);
+    public static native CFArrayRef SecTrustCopyProperties(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustCopyResult
@@ -1605,9 +1640,10 @@ public final class Security {
      *         validated. The caller is responsible for calling CFRelease on the value
      *         returned when it is no longer needed.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDictionaryRef SecTrustCopyResult(SecTrustRef trust);
+    public static native CFDictionaryRef SecTrustCopyResult(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustSetOCSPResponse
@@ -1628,7 +1664,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetOCSPResponse(SecTrustRef trust, ConstVoidPtr responseData);
+    public static native int SecTrustSetOCSPResponse(@NotNull SecTrustRef trust, @Nullable ConstVoidPtr responseData);
 
     /**
      * [@function] SSLContextGetTypeID
@@ -1661,10 +1697,12 @@ public final class Security {
      *         Deprecated-Since: 13.0
      *         Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native SSLContextRef SSLCreateContext(CFAllocatorRef alloc, int protocolSide, int connectionType);
+    public static native SSLContextRef SSLCreateContext(@Nullable CFAllocatorRef alloc, int protocolSide,
+            int connectionType);
 
     /**
      * [@function] SSLGetSessionState
@@ -1682,7 +1720,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetSessionState(SSLContextRef context, IntPtr state);
+    public static native int SSLGetSessionState(@NotNull SSLContextRef context, @NotNull IntPtr state);
 
     /**
      * [@function] SSLSetSessionOption
@@ -1702,7 +1740,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetSessionOption(SSLContextRef context, int option, byte value);
+    public static native int SSLSetSessionOption(@NotNull SSLContextRef context, int option, byte value);
 
     /**
      * [@function] SSLGetSessionOption
@@ -1721,7 +1759,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetSessionOption(SSLContextRef context, int option, BytePtr value);
+    public static native int SSLGetSessionOption(@NotNull SSLContextRef context, int option, @NotNull BytePtr value);
 
     /**
      * [@function] SSLSetIOFuncs
@@ -1742,9 +1780,9 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetIOFuncs(SSLContextRef context,
-            @FunctionPtr(name = "call_SSLSetIOFuncs_1") Function_SSLSetIOFuncs_1 readFunc,
-            @FunctionPtr(name = "call_SSLSetIOFuncs_2") Function_SSLSetIOFuncs_2 writeFunc);
+    public static native int SSLSetIOFuncs(@NotNull SSLContextRef context,
+            @NotNull @FunctionPtr(name = "call_SSLSetIOFuncs_1") Function_SSLSetIOFuncs_1 readFunc,
+            @NotNull @FunctionPtr(name = "call_SSLSetIOFuncs_2") Function_SSLSetIOFuncs_2 writeFunc);
 
     /**
      * [@function] SSLSetSessionConfig
@@ -1764,7 +1802,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetSessionConfig(SSLContextRef context, CFStringRef config);
+    public static native int SSLSetSessionConfig(@NotNull SSLContextRef context, @NotNull CFStringRef config);
 
     /**
      * [@function] SSLSetProtocolVersionMin
@@ -1793,7 +1831,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetProtocolVersionMin(SSLContextRef context, int minVersion);
+    public static native int SSLSetProtocolVersionMin(@NotNull SSLContextRef context, int minVersion);
 
     /**
      * [@function] SSLGetProtocolVersionMin
@@ -1811,7 +1849,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetProtocolVersionMin(SSLContextRef context, IntPtr minVersion);
+    public static native int SSLGetProtocolVersionMin(@NotNull SSLContextRef context, @NotNull IntPtr minVersion);
 
     /**
      * [@function] SSLSetProtocolVersionMax
@@ -1841,7 +1879,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetProtocolVersionMax(SSLContextRef context, int maxVersion);
+    public static native int SSLSetProtocolVersionMax(@NotNull SSLContextRef context, int maxVersion);
 
     /**
      * [@function] SSLGetProtocolVersionMax
@@ -1859,7 +1897,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetProtocolVersionMax(SSLContextRef context, IntPtr maxVersion);
+    public static native int SSLGetProtocolVersionMax(@NotNull SSLContextRef context, @NotNull IntPtr maxVersion);
 
     /**
      * [@function] SSLSetCertificate
@@ -1901,7 +1939,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetCertificate(SSLContextRef context, CFArrayRef certRefs);
+    public static native int SSLSetCertificate(@NotNull SSLContextRef context, @Nullable CFArrayRef certRefs);
 
     /**
      * [@function] SSLSetConnection
@@ -1928,7 +1966,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetConnection(SSLContextRef context, ConstVoidPtr connection);
+    public static native int SSLSetConnection(@NotNull SSLContextRef context, @Nullable ConstVoidPtr connection);
 
     /**
      * [@function] SSLGetConnection
@@ -1946,7 +1984,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetConnection(SSLContextRef context, Ptr<ConstVoidPtr> connection);
+    public static native int SSLGetConnection(@NotNull SSLContextRef context, @NotNull Ptr<ConstVoidPtr> connection);
 
     /**
      * [@function] SSLSetPeerDomainName
@@ -1970,8 +2008,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetPeerDomainName(SSLContextRef context,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String peerName,
+    public static native int SSLSetPeerDomainName(@NotNull SSLContextRef context,
+            @Nullable @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String peerName,
             @NUInt long peerNameLen);
 
     /**
@@ -1990,7 +2028,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetPeerDomainNameLength(SSLContextRef context, NUIntPtr peerNameLen);
+    public static native int SSLGetPeerDomainNameLength(@NotNull SSLContextRef context, @NotNull NUIntPtr peerNameLen);
 
     /**
      * [@function] SSLGetPeerDomainName
@@ -2010,7 +2048,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetPeerDomainName(SSLContextRef context, BytePtr peerName, NUIntPtr peerNameLen);
+    public static native int SSLGetPeerDomainName(@NotNull SSLContextRef context, @NotNull BytePtr peerName,
+            @NotNull NUIntPtr peerNameLen);
 
     /**
      * [@function] SSLCopyRequestedPeerName
@@ -2030,7 +2069,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLCopyRequestedPeerName(SSLContextRef context, BytePtr peerName, NUIntPtr peerNameLen);
+    public static native int SSLCopyRequestedPeerName(@NotNull SSLContextRef context, @NotNull BytePtr peerName,
+            @NotNull NUIntPtr peerNameLen);
 
     /**
      * [@function] SSLCopyRequestedPeerNameLength
@@ -2049,7 +2089,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLCopyRequestedPeerNameLength(SSLContextRef ctx, NUIntPtr peerNameLen);
+    public static native int SSLCopyRequestedPeerNameLength(@NotNull SSLContextRef ctx, @NotNull NUIntPtr peerNameLen);
 
     /**
      * [@function] SSLSetDatagramHelloCookie
@@ -2071,8 +2111,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetDatagramHelloCookie(SSLContextRef dtlsContext, ConstVoidPtr cookie,
-            @NUInt long cookieLen);
+    public static native int SSLSetDatagramHelloCookie(@NotNull SSLContextRef dtlsContext,
+            @Nullable ConstVoidPtr cookie, @NUInt long cookieLen);
 
     /**
      * [@function] SSLSetMaxDatagramRecordSize
@@ -2095,7 +2135,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetMaxDatagramRecordSize(SSLContextRef dtlsContext, @NUInt long maxSize);
+    public static native int SSLSetMaxDatagramRecordSize(@NotNull SSLContextRef dtlsContext, @NUInt long maxSize);
 
     /**
      * [@function] SSLGetMaxDatagramRecordSize
@@ -2114,7 +2154,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetMaxDatagramRecordSize(SSLContextRef dtlsContext, NUIntPtr maxSize);
+    public static native int SSLGetMaxDatagramRecordSize(@NotNull SSLContextRef dtlsContext, @NotNull NUIntPtr maxSize);
 
     /**
      * [@function] SSLGetNegotiatedProtocolVersion
@@ -2135,7 +2175,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetNegotiatedProtocolVersion(SSLContextRef context, IntPtr protocol);
+    public static native int SSLGetNegotiatedProtocolVersion(@NotNull SSLContextRef context, @NotNull IntPtr protocol);
 
     /**
      * [@function] SSLGetNumberSupportedCiphers
@@ -2156,7 +2196,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetNumberSupportedCiphers(SSLContextRef context, NUIntPtr numCiphers);
+    public static native int SSLGetNumberSupportedCiphers(@NotNull SSLContextRef context, @NotNull NUIntPtr numCiphers);
 
     /**
      * [@function] SSLGetSupportedCiphers
@@ -2176,7 +2216,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetSupportedCiphers(SSLContextRef context, CharPtr ciphers, NUIntPtr numCiphers);
+    public static native int SSLGetSupportedCiphers(@NotNull SSLContextRef context, @NotNull CharPtr ciphers,
+            @NotNull NUIntPtr numCiphers);
 
     /**
      * [@function] SSLSetEnabledCiphers
@@ -2199,7 +2240,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetEnabledCiphers(SSLContextRef context, ConstCharPtr ciphers, @NUInt long numCiphers);
+    public static native int SSLSetEnabledCiphers(@NotNull SSLContextRef context, @NotNull ConstCharPtr ciphers,
+            @NUInt long numCiphers);
 
     /**
      * [@function] SSLGetNumberEnabledCiphers
@@ -2220,7 +2262,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetNumberEnabledCiphers(SSLContextRef context, NUIntPtr numCiphers);
+    public static native int SSLGetNumberEnabledCiphers(@NotNull SSLContextRef context, @NotNull NUIntPtr numCiphers);
 
     /**
      * [@function] SSLGetEnabledCiphers
@@ -2240,7 +2282,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetEnabledCiphers(SSLContextRef context, CharPtr ciphers, NUIntPtr numCiphers);
+    public static native int SSLGetEnabledCiphers(@NotNull SSLContextRef context, @NotNull CharPtr ciphers,
+            @NotNull NUIntPtr numCiphers);
 
     /**
      * [@function] SSLCopyPeerTrust
@@ -2273,7 +2316,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLCopyPeerTrust(SSLContextRef context, Ptr<SecTrustRef> trust);
+    public static native int SSLCopyPeerTrust(@NotNull SSLContextRef context, @NotNull Ptr<SecTrustRef> trust);
 
     /**
      * [@function] SSLSetPeerID
@@ -2303,7 +2346,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetPeerID(SSLContextRef context, ConstVoidPtr peerID, @NUInt long peerIDLen);
+    public static native int SSLSetPeerID(@NotNull SSLContextRef context, @Nullable ConstVoidPtr peerID,
+            @NUInt long peerIDLen);
 
     /**
      * [@function] SSLGetPeerID
@@ -2323,7 +2367,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetPeerID(SSLContextRef context, Ptr<ConstVoidPtr> peerID, NUIntPtr peerIDLen);
+    public static native int SSLGetPeerID(@NotNull SSLContextRef context, @NotNull Ptr<ConstVoidPtr> peerID,
+            @NotNull NUIntPtr peerIDLen);
 
     /**
      * [@function] SSLGetNegotiatedCipher
@@ -2342,7 +2387,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetNegotiatedCipher(SSLContextRef context, CharPtr cipherSuite);
+    public static native int SSLGetNegotiatedCipher(@NotNull SSLContextRef context, @NotNull CharPtr cipherSuite);
 
     /**
      * [@function] SSLSetEncryptionCertificate
@@ -2363,7 +2408,7 @@ public final class Security {
     @Generated
     @Deprecated
     @CFunction
-    public static native int SSLSetEncryptionCertificate(SSLContextRef context, CFArrayRef certRefs);
+    public static native int SSLSetEncryptionCertificate(@NotNull SSLContextRef context, @NotNull CFArrayRef certRefs);
 
     /**
      * [@function] SSLSetClientSideAuthenticate
@@ -2381,7 +2426,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetClientSideAuthenticate(SSLContextRef context, int auth);
+    public static native int SSLSetClientSideAuthenticate(@NotNull SSLContextRef context, int auth);
 
     /**
      * [@function] SSLAddDistinguishedName
@@ -2401,7 +2446,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLAddDistinguishedName(SSLContextRef context, ConstVoidPtr derDN, @NUInt long derDNLen);
+    public static native int SSLAddDistinguishedName(@NotNull SSLContextRef context, @Nullable ConstVoidPtr derDN,
+            @NUInt long derDNLen);
 
     /**
      * [@function] SSLCopyDistinguishedNames
@@ -2425,7 +2471,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLCopyDistinguishedNames(SSLContextRef context, Ptr<CFArrayRef> names);
+    public static native int SSLCopyDistinguishedNames(@NotNull SSLContextRef context, @NotNull Ptr<CFArrayRef> names);
 
     /**
      * [@function] SSLGetClientCertificateState
@@ -2448,7 +2494,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetClientCertificateState(SSLContextRef context, IntPtr clientState);
+    public static native int SSLGetClientCertificateState(@NotNull SSLContextRef context, @NotNull IntPtr clientState);
 
     /**
      * [@function] SSLHandshake
@@ -2499,7 +2545,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLHandshake(SSLContextRef context);
+    public static native int SSLHandshake(@NotNull SSLContextRef context);
 
     /**
      * [@function] SSLReHandshake
@@ -2520,7 +2566,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLReHandshake(SSLContextRef context);
+    public static native int SSLReHandshake(@NotNull SSLContextRef context);
 
     /**
      * [@function] SSLWrite
@@ -2543,8 +2589,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLWrite(SSLContextRef context, ConstVoidPtr data, @NUInt long dataLength,
-            NUIntPtr processed);
+    public static native int SSLWrite(@NotNull SSLContextRef context, @Nullable ConstVoidPtr data,
+            @NUInt long dataLength, @NotNull NUIntPtr processed);
 
     /**
      * [@function] SSLRead
@@ -2568,7 +2614,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLRead(SSLContextRef context, VoidPtr data, @NUInt long dataLength, NUIntPtr processed);
+    public static native int SSLRead(@NotNull SSLContextRef context, @NotNull VoidPtr data, @NUInt long dataLength,
+            @NotNull NUIntPtr processed);
 
     /**
      * [@function] SSLGetBufferedReadSize
@@ -2588,7 +2635,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetBufferedReadSize(SSLContextRef context, NUIntPtr bufferSize);
+    public static native int SSLGetBufferedReadSize(@NotNull SSLContextRef context, @NotNull NUIntPtr bufferSize);
 
     /**
      * [@function] SSLGetDatagramWriteSize
@@ -2609,7 +2656,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLGetDatagramWriteSize(SSLContextRef dtlsContext, NUIntPtr bufSize);
+    public static native int SSLGetDatagramWriteSize(@NotNull SSLContextRef dtlsContext, @NotNull NUIntPtr bufSize);
 
     /**
      * [@function] SSLClose
@@ -2626,7 +2673,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLClose(SSLContextRef context);
+    public static native int SSLClose(@NotNull SSLContextRef context);
 
     /**
      * [@enum] Import/Export options
@@ -2641,6 +2688,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecImportExportPassphrase();
@@ -2664,6 +2712,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecImportItemLabel();
@@ -2671,6 +2720,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecImportItemKeyID();
@@ -2678,6 +2728,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecImportItemTrust();
@@ -2685,6 +2736,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecImportItemCertChain();
@@ -2692,6 +2744,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecImportItemIdentity();
@@ -2708,6 +2761,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecClass();
@@ -2715,6 +2769,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecClassGenericPassword();
@@ -2734,6 +2789,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecClassInternetPassword();
@@ -2741,6 +2797,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecClassCertificate();
@@ -2748,6 +2805,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecClassKey();
@@ -2755,6 +2813,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecClassIdentity();
@@ -3132,6 +3191,7 @@ public final class Security {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessible();
@@ -3139,6 +3199,7 @@ public final class Security {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessControl();
@@ -3146,6 +3207,7 @@ public final class Security {
     /**
      * API-Since: 3.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessGroup();
@@ -3153,6 +3215,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSynchronizable();
@@ -3160,6 +3223,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCreationDate();
@@ -3167,6 +3231,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrModificationDate();
@@ -3174,6 +3239,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrDescription();
@@ -3181,6 +3247,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrComment();
@@ -3188,6 +3255,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCreator();
@@ -3195,6 +3263,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrType();
@@ -3202,6 +3271,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrLabel();
@@ -3209,6 +3279,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrIsInvisible();
@@ -3216,6 +3287,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrIsNegative();
@@ -3223,6 +3295,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccount();
@@ -3230,6 +3303,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrService();
@@ -3237,6 +3311,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrGeneric();
@@ -3244,6 +3319,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSecurityDomain();
@@ -3251,6 +3327,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrServer();
@@ -3258,6 +3335,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocol();
@@ -3265,6 +3343,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationType();
@@ -3272,6 +3351,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrPort();
@@ -3279,6 +3359,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrPath();
@@ -3286,6 +3367,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSubject();
@@ -3293,6 +3375,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrIssuer();
@@ -3300,6 +3383,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSerialNumber();
@@ -3307,6 +3391,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSubjectKeyID();
@@ -3314,6 +3399,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrPublicKeyHash();
@@ -3321,6 +3407,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCertificateType();
@@ -3328,6 +3415,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCertificateEncoding();
@@ -3335,6 +3423,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyClass();
@@ -3342,6 +3431,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrApplicationLabel();
@@ -3349,6 +3439,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrIsPermanent();
@@ -3356,6 +3447,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrApplicationTag();
@@ -3363,6 +3455,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyType();
@@ -3370,6 +3463,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeySizeInBits();
@@ -3377,6 +3471,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrEffectiveKeySize();
@@ -3384,6 +3479,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanEncrypt();
@@ -3391,6 +3487,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanDecrypt();
@@ -3398,6 +3495,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanDerive();
@@ -3405,6 +3503,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanSign();
@@ -3412,6 +3511,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanVerify();
@@ -3419,6 +3519,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanWrap();
@@ -3426,6 +3527,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrCanUnwrap();
@@ -3433,6 +3535,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSyncViewHint();
@@ -3440,6 +3543,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrTokenID();
@@ -3495,6 +3599,7 @@ public final class Security {
      * 
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessibleWhenUnlocked();
@@ -3502,6 +3607,7 @@ public final class Security {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessibleAfterFirstUnlock();
@@ -3512,6 +3618,7 @@ public final class Security {
      * Deprecated-Message: Use an accessibility level that provides some user protection, such as
      * kSecAttrAccessibleAfterFirstUnlock
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3520,6 +3627,7 @@ public final class Security {
     /**
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly();
@@ -3527,6 +3635,7 @@ public final class Security {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessibleWhenUnlockedThisDeviceOnly();
@@ -3534,6 +3643,7 @@ public final class Security {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly();
@@ -3544,6 +3654,7 @@ public final class Security {
      * Deprecated-Message: Use an accessibility level that provides some user protection, such as
      * kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -3589,6 +3700,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolFTP();
@@ -3596,6 +3708,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolFTPAccount();
@@ -3603,6 +3716,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolHTTP();
@@ -3610,6 +3724,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolIRC();
@@ -3617,6 +3732,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolNNTP();
@@ -3624,6 +3740,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolPOP3();
@@ -3631,6 +3748,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolSMTP();
@@ -3638,6 +3756,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolSOCKS();
@@ -3645,6 +3764,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolIMAP();
@@ -3652,6 +3772,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolLDAP();
@@ -3659,6 +3780,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolAppleTalk();
@@ -3666,6 +3788,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolAFP();
@@ -3673,6 +3796,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolTelnet();
@@ -3680,6 +3804,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolSSH();
@@ -3687,6 +3812,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolFTPS();
@@ -3694,6 +3820,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolHTTPS();
@@ -3701,6 +3828,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolHTTPProxy();
@@ -3708,6 +3836,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolHTTPSProxy();
@@ -3715,6 +3844,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolFTPProxy();
@@ -3722,6 +3852,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolSMB();
@@ -3729,6 +3860,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolRTSP();
@@ -3736,6 +3868,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolRTSPProxy();
@@ -3743,6 +3876,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolDAAP();
@@ -3750,6 +3884,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolEPPC();
@@ -3757,6 +3892,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolIPP();
@@ -3764,6 +3900,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolNNTPS();
@@ -3771,6 +3908,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolLDAPS();
@@ -3778,6 +3916,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolTelnetS();
@@ -3785,6 +3924,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolIMAPS();
@@ -3792,6 +3932,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolIRCS();
@@ -3799,6 +3940,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrProtocolPOP3S();
@@ -3820,6 +3962,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeNTLM();
@@ -3827,6 +3970,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeMSN();
@@ -3834,6 +3978,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeDPA();
@@ -3841,6 +3986,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeRPA();
@@ -3848,6 +3994,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeHTTPBasic();
@@ -3855,6 +4002,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeHTTPDigest();
@@ -3862,6 +4010,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeHTMLForm();
@@ -3869,6 +4018,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAuthenticationTypeDefault();
@@ -3885,6 +4035,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyClassPublic();
@@ -3892,6 +4043,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyClassPrivate();
@@ -3899,6 +4051,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyClassSymmetric();
@@ -3923,6 +4076,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyTypeRSA();
@@ -3930,6 +4084,7 @@ public final class Security {
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyTypeEC();
@@ -3937,6 +4092,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrKeyTypeECSECPrimeRandom();
@@ -3944,6 +4100,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrSynchronizableAny();
@@ -4015,6 +4172,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchPolicy();
@@ -4022,6 +4180,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchItemList();
@@ -4029,6 +4188,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchSearchList();
@@ -4036,6 +4196,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchIssuers();
@@ -4043,6 +4204,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchEmailAddressIfPresent();
@@ -4050,6 +4212,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchSubjectContains();
@@ -4057,6 +4220,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchCaseInsensitive();
@@ -4064,6 +4228,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchTrustedOnly();
@@ -4071,6 +4236,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchValidOnDate();
@@ -4078,6 +4244,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchLimit();
@@ -4085,6 +4252,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchLimitOne();
@@ -4092,6 +4260,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecMatchLimitAll();
@@ -4125,6 +4294,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecReturnData();
@@ -4132,6 +4302,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecReturnAttributes();
@@ -4139,6 +4310,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecReturnRef();
@@ -4146,6 +4318,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecReturnPersistentRef();
@@ -4170,6 +4343,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecValueData();
@@ -4177,6 +4351,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecValueRef();
@@ -4184,6 +4359,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecValuePersistentRef();
@@ -4232,6 +4408,7 @@ public final class Security {
      * Deprecated-Since: 12.0
      * Deprecated-Message: Not implemented on this platform
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4242,6 +4419,7 @@ public final class Security {
      * Deprecated-Since: 14.0
      * Deprecated-Message: Use kSecUseAuthenticationContext and set LAContext.localizedReason property
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4252,6 +4430,7 @@ public final class Security {
      * Deprecated-Since: 9.0
      * Deprecated-Message: Use kSecUseAuthenticationUI instead.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4260,6 +4439,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecUseAuthenticationUI();
@@ -4267,6 +4447,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecUseAuthenticationContext();
@@ -4292,6 +4473,7 @@ public final class Security {
      * Deprecated-Message: Instead of kSecUseAuthenticationUI, use kSecUseAuthenticationContext and set
      * LAContext.interactionNotAllowed property
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4303,6 +4485,7 @@ public final class Security {
      * Deprecated-Message: Instead of kSecUseAuthenticationUI, use kSecUseAuthenticationContext and set
      * LAContext.interactionNotAllowed property
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -4311,6 +4494,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecUseAuthenticationUISkip();
@@ -4331,6 +4515,7 @@ public final class Security {
      * 
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrTokenIDSecureEnclave();
@@ -4347,6 +4532,7 @@ public final class Security {
      * 
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrAccessGroupToken();
@@ -4365,6 +4551,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPrivateKeyAttrs();
@@ -4372,6 +4559,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPublicKeyAttrs();
@@ -4379,6 +4567,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureRaw();
@@ -4386,6 +4575,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15Raw();
@@ -4393,6 +4583,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA1();
@@ -4400,6 +4591,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA224();
@@ -4407,6 +4599,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA256();
@@ -4414,6 +4607,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA384();
@@ -4421,6 +4615,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPKCS1v15SHA512();
@@ -4428,6 +4623,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA1();
@@ -4435,6 +4631,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA224();
@@ -4442,6 +4639,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA256();
@@ -4449,6 +4647,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA384();
@@ -4456,6 +4655,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePKCS1v15SHA512();
@@ -4463,6 +4663,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureRFC4754();
@@ -4470,6 +4671,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962();
@@ -4477,6 +4679,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA1();
@@ -4484,6 +4687,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA224();
@@ -4491,6 +4695,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA256();
@@ -4498,6 +4703,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA384();
@@ -4505,6 +4711,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureDigestX962SHA512();
@@ -4512,6 +4719,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA1();
@@ -4519,6 +4727,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA224();
@@ -4526,6 +4735,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA256();
@@ -4533,6 +4743,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA384();
@@ -4540,6 +4751,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDSASignatureMessageX962SHA512();
@@ -4547,6 +4759,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionRaw();
@@ -4554,6 +4767,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionPKCS1();
@@ -4561,6 +4775,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA1();
@@ -4568,6 +4783,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA224();
@@ -4575,6 +4791,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA256();
@@ -4582,6 +4799,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA384();
@@ -4589,6 +4807,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA512();
@@ -4596,6 +4815,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA1AESGCM();
@@ -4603,6 +4823,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA224AESGCM();
@@ -4610,6 +4831,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA256AESGCM();
@@ -4617,6 +4839,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA384AESGCM();
@@ -4624,6 +4847,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSAEncryptionOAEPSHA512AESGCM();
@@ -4631,6 +4855,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA1AESGCM();
@@ -4638,6 +4863,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA224AESGCM();
@@ -4645,6 +4871,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA256AESGCM();
@@ -4652,6 +4879,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA384AESGCM();
@@ -4659,6 +4887,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardX963SHA512AESGCM();
@@ -4666,6 +4895,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA1AESGCM();
@@ -4673,6 +4903,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA224AESGCM();
@@ -4680,6 +4911,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA256AESGCM();
@@ -4687,6 +4919,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA384AESGCM();
@@ -4694,6 +4927,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorX963SHA512AESGCM();
@@ -4701,6 +4935,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandard();
@@ -4708,6 +4943,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA1();
@@ -4715,6 +4951,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA224();
@@ -4722,6 +4959,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA256();
@@ -4729,6 +4967,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA384();
@@ -4736,6 +4975,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeStandardX963SHA512();
@@ -4743,6 +4983,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactor();
@@ -4750,6 +4991,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA1();
@@ -4757,6 +4999,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA224();
@@ -4764,6 +5007,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA256();
@@ -4771,6 +5015,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA384();
@@ -4778,6 +5023,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECDHKeyExchangeCofactorX963SHA512();
@@ -4785,6 +5031,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyKeyExchangeParameterRequestedSize();
@@ -4792,6 +5039,7 @@ public final class Security {
     /**
      * API-Since: 10.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyKeyExchangeParameterSharedInfo();
@@ -4818,6 +5066,7 @@ public final class Security {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleX509Basic();
@@ -4825,6 +5074,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleSSL();
@@ -4832,6 +5082,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleSMIME();
@@ -4839,6 +5090,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleEAP();
@@ -4846,6 +5098,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleIPsec();
@@ -4853,6 +5106,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleCodeSigning();
@@ -4860,6 +5114,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyMacAppStoreReceipt();
@@ -4867,6 +5122,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleIDValidation();
@@ -4874,6 +5130,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleTimeStamping();
@@ -4881,6 +5138,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyAppleRevocation();
@@ -4888,6 +5146,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyApplePassbookSigning();
@@ -4895,6 +5154,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyApplePayIssuerEncryption();
@@ -4934,6 +5194,7 @@ public final class Security {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyOid();
@@ -4941,6 +5202,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyName();
@@ -4948,6 +5210,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyClient();
@@ -4955,6 +5218,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyRevocationFlags();
@@ -4962,6 +5226,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPolicyTeamIdentifier();
@@ -4972,6 +5237,7 @@ public final class Security {
      * 
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native SecRandomRef kSecRandomDefault();
@@ -4987,6 +5253,7 @@ public final class Security {
      * 
      * API-Since: 8.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecSharedPassword();
@@ -5004,6 +5271,7 @@ public final class Security {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPropertyTypeTitle();
@@ -5011,6 +5279,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecPropertyTypeError();
@@ -5065,6 +5334,7 @@ public final class Security {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustEvaluationDate();
@@ -5072,6 +5342,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustExtendedValidation();
@@ -5079,6 +5350,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustOrganizationName();
@@ -5086,6 +5358,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustResultValue();
@@ -5093,6 +5366,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustRevocationChecked();
@@ -5100,6 +5374,7 @@ public final class Security {
     /**
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustRevocationValidUntilDate();
@@ -5107,6 +5382,7 @@ public final class Security {
     /**
      * API-Since: 9.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecTrustCertificateTransparency();
@@ -5115,6 +5391,7 @@ public final class Security {
      * API-Since: 10.0
      * Deprecated-Since: 11.0
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5127,6 +5404,7 @@ public final class Security {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5139,6 +5417,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5151,6 +5430,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5163,6 +5443,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5175,6 +5456,7 @@ public final class Security {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5187,6 +5469,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5199,6 +5482,7 @@ public final class Security {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5211,6 +5495,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5223,6 +5508,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5235,6 +5521,7 @@ public final class Security {
      * Deprecated-Since: 13.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5247,6 +5534,7 @@ public final class Security {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5259,6 +5547,7 @@ public final class Security {
      * Deprecated-Since: 11.0
      * Deprecated-Message: No longer supported. Use Network.framework.
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -5268,35 +5557,35 @@ public final class Security {
     @Generated
     public interface Block_SecAddSharedWebCredential {
         @Generated
-        void call_SecAddSharedWebCredential(CFErrorRef arg0);
+        void call_SecAddSharedWebCredential(@Nullable CFErrorRef arg0);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_SecRequestSharedWebCredential {
         @Generated
-        void call_SecRequestSharedWebCredential(CFArrayRef arg0, CFErrorRef arg1);
+        void call_SecRequestSharedWebCredential(@Nullable CFArrayRef arg0, @Nullable CFErrorRef arg1);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_SecTrustEvaluateAsync {
         @Generated
-        void call_SecTrustEvaluateAsync(SecTrustRef trustRef, int trustResult);
+        void call_SecTrustEvaluateAsync(@NotNull SecTrustRef trustRef, int trustResult);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_SSLSetIOFuncs_1 {
         @Generated
-        int call_SSLSetIOFuncs_1(ConstVoidPtr arg0, VoidPtr arg1, NUIntPtr arg2);
+        int call_SSLSetIOFuncs_1(@NotNull ConstVoidPtr arg0, @NotNull VoidPtr arg1, @NotNull NUIntPtr arg2);
     }
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Function_SSLSetIOFuncs_2 {
         @Generated
-        int call_SSLSetIOFuncs_2(ConstVoidPtr arg0, ConstVoidPtr arg1, NUIntPtr arg2);
+        int call_SSLSetIOFuncs_2(@NotNull ConstVoidPtr arg0, @NotNull ConstVoidPtr arg1, @NotNull NUIntPtr arg2);
     }
 
     /**
@@ -5319,7 +5608,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecCertificateCopyCommonName(SecCertificateRef certificate, Ptr<CFStringRef> commonName);
+    public static native int SecCertificateCopyCommonName(@NotNull SecCertificateRef certificate,
+            @NotNull Ptr<CFStringRef> commonName);
 
     /**
      * [@function] SecCertificateCopyEmailAddresses
@@ -5336,8 +5626,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecCertificateCopyEmailAddresses(SecCertificateRef certificate,
-            Ptr<CFArrayRef> emailAddresses);
+    public static native int SecCertificateCopyEmailAddresses(@NotNull SecCertificateRef certificate,
+            @NotNull Ptr<CFArrayRef> emailAddresses);
 
     /**
      * [@function] SecCertificateCopyNormalizedIssuerSequence
@@ -5352,9 +5642,10 @@ public final class Security {
      * 
      * @param certificate The certificate from which to get values
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecCertificateCopyNormalizedIssuerSequence(SecCertificateRef certificate);
+    public static native CFDataRef SecCertificateCopyNormalizedIssuerSequence(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SecCertificateCopyNormalizedSubjectSequence
@@ -5369,9 +5660,10 @@ public final class Security {
      * 
      * @param certificate The certificate from which to get values
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecCertificateCopyNormalizedSubjectSequence(SecCertificateRef certificate);
+    public static native CFDataRef SecCertificateCopyNormalizedSubjectSequence(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SecCertificateCopyPublicKey
@@ -5387,10 +5679,11 @@ public final class Security {
      * @return A reference to the public key for the specified certificate. Your code must release this reference by
      *         calling the CFRelease function.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native SecKeyRef SecCertificateCopyPublicKey(SecCertificateRef certificate);
+    public static native SecKeyRef SecCertificateCopyPublicKey(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SecCertificateCopySerialNumberData
@@ -5406,10 +5699,11 @@ public final class Security {
      * @param error       An optional pointer to a CFErrorRef which will be set on return from the function if an error
      *                    occurred. If not NULL, the caller is responsible for releasing the CFErrorRef.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFDataRef SecCertificateCopySerialNumberData(SecCertificateRef certificate,
-            Ptr<CFErrorRef> error);
+    public static native CFDataRef SecCertificateCopySerialNumberData(@NotNull SecCertificateRef certificate,
+            @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecCertificateCopySerialNumber
@@ -5425,10 +5719,11 @@ public final class Security {
      * 
      * @param certificate The certificate from which to get values.
      */
+    @Nullable
     @Deprecated
     @Generated
     @CFunction
-    public static native CFDataRef SecCertificateCopySerialNumber(SecCertificateRef certificate);
+    public static native CFDataRef SecCertificateCopySerialNumber(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SSLSetSessionTicketsEnabled
@@ -5447,7 +5742,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetSessionTicketsEnabled(SSLContextRef context, byte enabled);
+    public static native int SSLSetSessionTicketsEnabled(@NotNull SSLContextRef context, byte enabled);
 
     /**
      * [@function] SSLSetALPNProtocols
@@ -5472,7 +5767,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetALPNProtocols(SSLContextRef context, CFArrayRef protocols);
+    public static native int SSLSetALPNProtocols(@NotNull SSLContextRef context, @NotNull CFArrayRef protocols);
 
     /**
      * [@function] SSLCopyALPNProtocols
@@ -5501,7 +5796,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLCopyALPNProtocols(SSLContextRef context, Ptr<CFArrayRef> protocols);
+    public static native int SSLCopyALPNProtocols(@NotNull SSLContextRef context, @NotNull Ptr<CFArrayRef> protocols);
 
     /**
      * [@function] SSLSetOCSPResponse
@@ -5522,7 +5817,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetOCSPResponse(SSLContextRef context, CFDataRef response);
+    public static native int SSLSetOCSPResponse(@NotNull SSLContextRef context, @NotNull CFDataRef response);
 
     /**
      * [@function] SSLSetError
@@ -5543,11 +5838,12 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int SSLSetError(SSLContextRef context, int status);
+    public static native int SSLSetError(@NotNull SSLContextRef context, int status);
 
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrIsSensitive();
@@ -5555,6 +5851,7 @@ public final class Security {
     /**
      * API-Since: 2.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrIsExtractable();
@@ -5562,6 +5859,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrPersistantReference();
@@ -5569,6 +5867,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecAttrPersistentReference();
@@ -5576,6 +5875,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPSSSHA1();
@@ -5583,6 +5883,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPSSSHA224();
@@ -5590,6 +5891,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPSSSHA256();
@@ -5597,6 +5899,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPSSSHA384();
@@ -5604,6 +5907,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureDigestPSSSHA512();
@@ -5611,6 +5915,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePSSSHA1();
@@ -5618,6 +5923,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePSSSHA224();
@@ -5625,6 +5931,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePSSSHA256();
@@ -5632,6 +5939,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePSSSHA384();
@@ -5639,6 +5947,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmRSASignatureMessagePSSSHA512();
@@ -5646,6 +5955,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA224AESGCM();
@@ -5653,6 +5963,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA256AESGCM();
@@ -5660,6 +5971,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA384AESGCM();
@@ -5667,6 +5979,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionStandardVariableIVX963SHA512AESGCM();
@@ -5674,6 +5987,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorVariableIVX963SHA224AESGCM();
@@ -5681,6 +5995,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorVariableIVX963SHA256AESGCM();
@@ -5688,6 +6003,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorVariableIVX963SHA384AESGCM();
@@ -5695,6 +6011,7 @@ public final class Security {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecKeyAlgorithmECIESEncryptionCofactorVariableIVX963SHA512AESGCM();
@@ -5711,9 +6028,10 @@ public final class Security {
      * 
      *         API-Since: 11.3
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFStringRef SecCopyErrorMessageString(int status, VoidPtr reserved);
+    public static native CFStringRef SecCopyErrorMessageString(int status, @Nullable VoidPtr reserved);
 
     /**
      * [@function] SecCertificateCopyKey
@@ -5729,9 +6047,10 @@ public final class Security {
      *         calling the CFRelease function. If the public key has an encoding issue or uses an unsupported algorithm,
      *         the returned reference will be null.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecKeyRef SecCertificateCopyKey(SecCertificateRef certificate);
+    public static native SecKeyRef SecCertificateCopyKey(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] SecTrustEvaluateWithError
@@ -5761,7 +6080,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean SecTrustEvaluateWithError(SecTrustRef trust, Ptr<CFErrorRef> error);
+    public static native boolean SecTrustEvaluateWithError(@NotNull SecTrustRef trust, @Nullable Ptr<CFErrorRef> error);
 
     /**
      * [@function] SecTrustEvaluateAsyncWithError
@@ -5791,14 +6110,15 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustEvaluateAsyncWithError(SecTrustRef trust, NSObject queue,
-            @ObjCBlock(name = "call_SecTrustEvaluateAsyncWithError") Block_SecTrustEvaluateAsyncWithError result);
+    public static native int SecTrustEvaluateAsyncWithError(@NotNull SecTrustRef trust, @NotNull NSObject queue,
+            @NotNull @ObjCBlock(name = "call_SecTrustEvaluateAsyncWithError") Block_SecTrustEvaluateAsyncWithError result);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_SecTrustEvaluateAsyncWithError {
         @Generated
-        void call_SecTrustEvaluateAsyncWithError(SecTrustRef trustRef, boolean result, CFErrorRef error);
+        void call_SecTrustEvaluateAsyncWithError(@NotNull SecTrustRef trustRef, boolean result,
+                @Nullable CFErrorRef error);
     }
 
     /**
@@ -5818,7 +6138,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native int SecTrustSetSignedCertificateTimestamps(SecTrustRef trust, CFArrayRef sctArray);
+    public static native int SecTrustSetSignedCertificateTimestamps(@NotNull SecTrustRef trust,
+            @Nullable CFArrayRef sctArray);
 
     /**
      * [@function] sec_trust_create
@@ -5832,9 +6153,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_trust_create(SecTrustRef trust);
+    public static native NSObject sec_trust_create(@NotNull SecTrustRef trust);
 
     /**
      * [@function] sec_trust_copy_ref
@@ -5848,9 +6170,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native SecTrustRef sec_trust_copy_ref(NSObject trust);
+    public static native SecTrustRef sec_trust_copy_ref(@NotNull NSObject trust);
 
     /**
      * [@function] sec_identity_create
@@ -5864,9 +6187,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_identity_create(SecIdentityRef identity);
+    public static native NSObject sec_identity_create(@NotNull SecIdentityRef identity);
 
     /**
      * [@function] sec_identity_create_with_certificates
@@ -5884,10 +6208,11 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_identity_create_with_certificates(SecIdentityRef identity,
-            CFArrayRef certificates);
+    public static native NSObject sec_identity_create_with_certificates(@NotNull SecIdentityRef identity,
+            @NotNull CFArrayRef certificates);
 
     /**
      * [@function] sec_identity_access_certificates
@@ -5906,14 +6231,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_identity_access_certificates(NSObject identity,
-            @ObjCBlock(name = "call_sec_identity_access_certificates") Block_sec_identity_access_certificates handler);
+    public static native boolean sec_identity_access_certificates(@NotNull NSObject identity,
+            @NotNull @ObjCBlock(name = "call_sec_identity_access_certificates") Block_sec_identity_access_certificates handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_identity_access_certificates {
         @Generated
-        void call_sec_identity_access_certificates(NSObject arg0);
+        void call_sec_identity_access_certificates(@NotNull NSObject arg0);
     }
 
     /**
@@ -5928,9 +6253,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecIdentityRef sec_identity_copy_ref(NSObject identity);
+    public static native SecIdentityRef sec_identity_copy_ref(@NotNull NSObject identity);
 
     /**
      * [@function] sec_identity_copy_certificates_ref
@@ -5944,9 +6270,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef sec_identity_copy_certificates_ref(NSObject identity);
+    public static native CFArrayRef sec_identity_copy_certificates_ref(@NotNull NSObject identity);
 
     /**
      * [@function] sec_certificate_create
@@ -5960,9 +6287,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_certificate_create(SecCertificateRef certificate);
+    public static native NSObject sec_certificate_create(@NotNull SecCertificateRef certificate);
 
     /**
      * [@function] sec_certificate_copy_ref
@@ -5976,9 +6304,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @NotNull
     @Generated
     @CFunction
-    public static native SecCertificateRef sec_certificate_copy_ref(NSObject certificate);
+    public static native SecCertificateRef sec_certificate_copy_ref(@NotNull NSObject certificate);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_protocol
@@ -5992,10 +6321,11 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String sec_protocol_metadata_get_negotiated_protocol(NSObject metadata);
+    public static native String sec_protocol_metadata_get_negotiated_protocol(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_copy_peer_public_key
@@ -6009,9 +6339,10 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_protocol_metadata_copy_peer_public_key(NSObject metadata);
+    public static native NSObject sec_protocol_metadata_copy_peer_public_key(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_tls_protocol_version
@@ -6027,7 +6358,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native short sec_protocol_metadata_get_negotiated_tls_protocol_version(NSObject metadata);
+    public static native short sec_protocol_metadata_get_negotiated_tls_protocol_version(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_protocol_version
@@ -6045,7 +6376,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native int sec_protocol_metadata_get_negotiated_protocol_version(NSObject metadata);
+    public static native int sec_protocol_metadata_get_negotiated_protocol_version(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_tls_ciphersuite
@@ -6061,7 +6392,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native short sec_protocol_metadata_get_negotiated_tls_ciphersuite(NSObject metadata);
+    public static native short sec_protocol_metadata_get_negotiated_tls_ciphersuite(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_negotiated_ciphersuite
@@ -6079,7 +6410,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native char sec_protocol_metadata_get_negotiated_ciphersuite(NSObject metadata);
+    public static native char sec_protocol_metadata_get_negotiated_ciphersuite(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_get_early_data_accepted
@@ -6095,7 +6426,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_get_early_data_accepted(NSObject metadata);
+    public static native boolean sec_protocol_metadata_get_early_data_accepted(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_access_peer_certificate_chain
@@ -6114,14 +6445,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_peer_certificate_chain(NSObject metadata,
-            @ObjCBlock(name = "call_sec_protocol_metadata_access_peer_certificate_chain") Block_sec_protocol_metadata_access_peer_certificate_chain handler);
+    public static native boolean sec_protocol_metadata_access_peer_certificate_chain(@NotNull NSObject metadata,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_peer_certificate_chain") Block_sec_protocol_metadata_access_peer_certificate_chain handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_peer_certificate_chain {
         @Generated
-        void call_sec_protocol_metadata_access_peer_certificate_chain(NSObject arg0);
+        void call_sec_protocol_metadata_access_peer_certificate_chain(@NotNull NSObject arg0);
     }
 
     /**
@@ -6141,14 +6472,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_ocsp_response(NSObject metadata,
-            @ObjCBlock(name = "call_sec_protocol_metadata_access_ocsp_response") Block_sec_protocol_metadata_access_ocsp_response handler);
+    public static native boolean sec_protocol_metadata_access_ocsp_response(@NotNull NSObject metadata,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_ocsp_response") Block_sec_protocol_metadata_access_ocsp_response handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_ocsp_response {
         @Generated
-        void call_sec_protocol_metadata_access_ocsp_response(NSObject arg0);
+        void call_sec_protocol_metadata_access_ocsp_response(@NotNull NSObject arg0);
     }
 
     /**
@@ -6169,8 +6500,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_supported_signature_algorithms(NSObject metadata,
-            @ObjCBlock(name = "call_sec_protocol_metadata_access_supported_signature_algorithms") Block_sec_protocol_metadata_access_supported_signature_algorithms handler);
+    public static native boolean sec_protocol_metadata_access_supported_signature_algorithms(@NotNull NSObject metadata,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_supported_signature_algorithms") Block_sec_protocol_metadata_access_supported_signature_algorithms handler);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -6196,14 +6527,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_distinguished_names(NSObject metadata,
-            @ObjCBlock(name = "call_sec_protocol_metadata_access_distinguished_names") Block_sec_protocol_metadata_access_distinguished_names handler);
+    public static native boolean sec_protocol_metadata_access_distinguished_names(@NotNull NSObject metadata,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_distinguished_names") Block_sec_protocol_metadata_access_distinguished_names handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_distinguished_names {
         @Generated
-        void call_sec_protocol_metadata_access_distinguished_names(NSObject arg0);
+        void call_sec_protocol_metadata_access_distinguished_names(@NotNull NSObject arg0);
     }
 
     /**
@@ -6224,14 +6555,14 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_access_pre_shared_keys(NSObject metadata,
-            @ObjCBlock(name = "call_sec_protocol_metadata_access_pre_shared_keys") Block_sec_protocol_metadata_access_pre_shared_keys handler);
+    public static native boolean sec_protocol_metadata_access_pre_shared_keys(@NotNull NSObject metadata,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_metadata_access_pre_shared_keys") Block_sec_protocol_metadata_access_pre_shared_keys handler);
 
     @Runtime(CRuntime.class)
     @Generated
     public interface Block_sec_protocol_metadata_access_pre_shared_keys {
         @Generated
-        void call_sec_protocol_metadata_access_pre_shared_keys(NSObject arg0, NSObject arg1);
+        void call_sec_protocol_metadata_access_pre_shared_keys(@NotNull NSObject arg0, @NotNull NSObject arg1);
     }
 
     /**
@@ -6249,10 +6580,11 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
     @UncertainReturn("Options: java.string, c.const-byte-ptr Fallback: java.string")
-    public static native String sec_protocol_metadata_get_server_name(NSObject metadata);
+    public static native String sec_protocol_metadata_get_server_name(@NotNull NSObject metadata);
 
     /**
      * [@function] sec_protocol_metadata_peers_are_equal
@@ -6272,7 +6604,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_peers_are_equal(NSObject metadataA, NSObject metadataB);
+    public static native boolean sec_protocol_metadata_peers_are_equal(@NotNull NSObject metadataA,
+            @NotNull NSObject metadataB);
 
     /**
      * [@function] sec_protocol_metadata_challenge_parameters_are_equal
@@ -6295,8 +6628,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_metadata_challenge_parameters_are_equal(NSObject metadataA,
-            NSObject metadataB);
+    public static native boolean sec_protocol_metadata_challenge_parameters_are_equal(@NotNull NSObject metadataA,
+            @NotNull NSObject metadataB);
 
     /**
      * [@function] sec_protocol_metadata_create_secret
@@ -6319,10 +6652,11 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_protocol_metadata_create_secret(NSObject metadata, @NUInt long label_len,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+    public static native NSObject sec_protocol_metadata_create_secret(@NotNull NSObject metadata, @NUInt long label_len,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             @NUInt long exporter_length);
 
     /**
@@ -6352,13 +6686,14 @@ public final class Security {
      * 
      *         API-Since: 12.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native NSObject sec_protocol_metadata_create_secret_with_context(NSObject metadata,
+    public static native NSObject sec_protocol_metadata_create_secret_with_context(@NotNull NSObject metadata,
             @NUInt long label_len,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String label,
             @NUInt long context_len,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String context,
             @NUInt long exporter_length);
 
     /**
@@ -6378,7 +6713,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native boolean sec_protocol_options_are_equal(NSObject optionsA, NSObject optionsB);
+    public static native boolean sec_protocol_options_are_equal(@NotNull NSObject optionsA, @NotNull NSObject optionsB);
 
     /**
      * [@function] sec_protocol_options_set_local_identity
@@ -6395,7 +6730,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_local_identity(NSObject options, NSObject identity);
+    public static native void sec_protocol_options_set_local_identity(@NotNull NSObject options,
+            @NotNull NSObject identity);
 
     /**
      * [@function] sec_protocol_options_append_tls_ciphersuite
@@ -6412,7 +6748,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_append_tls_ciphersuite(NSObject options, short ciphersuite);
+    public static native void sec_protocol_options_append_tls_ciphersuite(@NotNull NSObject options, short ciphersuite);
 
     /**
      * [@function] sec_protocol_options_add_tls_ciphersuite
@@ -6432,7 +6768,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_tls_ciphersuite(NSObject options, char ciphersuite);
+    public static native void sec_protocol_options_add_tls_ciphersuite(@NotNull NSObject options, char ciphersuite);
 
     /**
      * [@function] sec_protocol_options_append_tls_ciphersuite_group
@@ -6449,7 +6785,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_append_tls_ciphersuite_group(NSObject options, short group);
+    public static native void sec_protocol_options_append_tls_ciphersuite_group(@NotNull NSObject options, short group);
 
     /**
      * [@function] sec_protocol_options_add_tls_ciphersuite_group
@@ -6469,7 +6805,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_tls_ciphersuite_group(NSObject options, int group);
+    public static native void sec_protocol_options_add_tls_ciphersuite_group(@NotNull NSObject options, int group);
 
     /**
      * [@function] sec_protocol_options_set_tls_min_version
@@ -6488,7 +6824,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_min_version(NSObject options, int version);
+    public static native void sec_protocol_options_set_tls_min_version(@NotNull NSObject options, int version);
 
     /**
      * [@function] sec_protocol_options_set_min_tls_protocol_version
@@ -6505,7 +6841,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_min_tls_protocol_version(NSObject options, short version);
+    public static native void sec_protocol_options_set_min_tls_protocol_version(@NotNull NSObject options,
+            short version);
 
     /**
      * [@function] sec_protocol_options_get_default_min_tls_protocol_version
@@ -6550,7 +6887,7 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_max_version(NSObject options, int version);
+    public static native void sec_protocol_options_set_tls_max_version(@NotNull NSObject options, int version);
 
     /**
      * [@function] sec_protocol_options_set_max_tls_protocol_version
@@ -6567,7 +6904,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_max_tls_protocol_version(NSObject options, short version);
+    public static native void sec_protocol_options_set_max_tls_protocol_version(@NotNull NSObject options,
+            short version);
 
     /**
      * [@function] sec_protocol_options_get_default_max_tls_protocol_version
@@ -6610,8 +6948,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_tls_application_protocol(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_protocol);
+    public static native void sec_protocol_options_add_tls_application_protocol(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String application_protocol);
 
     /**
      * [@function] sec_protocol_options_set_tls_server_name
@@ -6629,8 +6967,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_server_name(NSObject options,
-            @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String server_name);
+    public static native void sec_protocol_options_set_tls_server_name(@NotNull NSObject options,
+            @NotNull @UncertainArgument("Options: java.string, c.const-byte-ptr Fallback: java.string") String server_name);
 
     /**
      * [@function] sec_protocol_options_set_tls_diffie_hellman_parameters
@@ -6650,7 +6988,8 @@ public final class Security {
     @Deprecated
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_diffie_hellman_parameters(NSObject options, NSObject params);
+    public static native void sec_protocol_options_set_tls_diffie_hellman_parameters(@NotNull NSObject options,
+            @NotNull NSObject params);
 
     /**
      * [@function] sec_protocol_options_add_pre_shared_key
@@ -6670,8 +7009,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_add_pre_shared_key(NSObject options, NSObject psk,
-            NSObject psk_identity);
+    public static native void sec_protocol_options_add_pre_shared_key(@NotNull NSObject options, @NotNull NSObject psk,
+            @NotNull NSObject psk_identity);
 
     /**
      * [@function] sec_protocol_options_set_tls_pre_shared_key_identity_hint
@@ -6689,8 +7028,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_pre_shared_key_identity_hint(NSObject options,
-            NSObject psk_identity_hint);
+    public static native void sec_protocol_options_set_tls_pre_shared_key_identity_hint(@NotNull NSObject options,
+            @NotNull NSObject psk_identity_hint);
 
     /**
      * [@function] sec_protocol_options_set_tls_tickets_enabled
@@ -6707,7 +7046,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_tickets_enabled(NSObject options, boolean tickets_enabled);
+    public static native void sec_protocol_options_set_tls_tickets_enabled(@NotNull NSObject options,
+            boolean tickets_enabled);
 
     /**
      * [@function] sec_protocol_options_set_tls_is_fallback_attempt
@@ -6730,7 +7070,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_is_fallback_attempt(NSObject options,
+    public static native void sec_protocol_options_set_tls_is_fallback_attempt(@NotNull NSObject options,
             boolean is_fallback_attempt);
 
     /**
@@ -6748,7 +7088,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_resumption_enabled(NSObject options,
+    public static native void sec_protocol_options_set_tls_resumption_enabled(@NotNull NSObject options,
             boolean resumption_enabled);
 
     /**
@@ -6766,7 +7106,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_false_start_enabled(NSObject options,
+    public static native void sec_protocol_options_set_tls_false_start_enabled(@NotNull NSObject options,
             boolean false_start_enabled);
 
     /**
@@ -6784,7 +7124,8 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_ocsp_enabled(NSObject options, boolean ocsp_enabled);
+    public static native void sec_protocol_options_set_tls_ocsp_enabled(@NotNull NSObject options,
+            boolean ocsp_enabled);
 
     /**
      * [@function] sec_protocol_options_set_tls_sct_enabled
@@ -6801,7 +7142,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_sct_enabled(NSObject options, boolean sct_enabled);
+    public static native void sec_protocol_options_set_tls_sct_enabled(@NotNull NSObject options, boolean sct_enabled);
 
     /**
      * [@function] sec_protocol_options_set_tls_renegotiation_enabled
@@ -6818,7 +7159,7 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_tls_renegotiation_enabled(NSObject options,
+    public static native void sec_protocol_options_set_tls_renegotiation_enabled(@NotNull NSObject options,
             boolean renegotiation_enabled);
 
     /**
@@ -6836,12 +7177,13 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_peer_authentication_required(NSObject options,
+    public static native void sec_protocol_options_set_peer_authentication_required(@NotNull NSObject options,
             boolean peer_authentication_required);
 
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native CFStringRef kSecUseDataProtectionKeychain();
@@ -6864,9 +7206,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_pre_shared_key_selection_block(NSObject options,
-            @ObjCBlock(name = "call_sec_protocol_options_set_pre_shared_key_selection_block") Block_sec_protocol_options_set_pre_shared_key_selection_block psk_selection_block,
-            NSObject psk_selection_queue);
+    public static native void sec_protocol_options_set_pre_shared_key_selection_block(@NotNull NSObject options,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_pre_shared_key_selection_block") Block_sec_protocol_options_set_pre_shared_key_selection_block psk_selection_block,
+            @NotNull NSObject psk_selection_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -6875,12 +7217,13 @@ public final class Security {
         @Generated
         public interface Block_Block_sec_protocol_options_set_pre_shared_key_selection_block {
             @Generated
-            void call_Block_sec_protocol_options_set_pre_shared_key_selection_block(NSObject psk_identity);
+            void call_Block_sec_protocol_options_set_pre_shared_key_selection_block(@Nullable NSObject psk_identity);
         }
 
         @Generated
-        void call_sec_protocol_options_set_pre_shared_key_selection_block(NSObject metadata, NSObject psk_identity_hint,
-                @ObjCBlock(name = "call_Block_sec_protocol_options_set_pre_shared_key_selection_block") Block_Block_sec_protocol_options_set_pre_shared_key_selection_block complete);
+        void call_sec_protocol_options_set_pre_shared_key_selection_block(@NotNull NSObject metadata,
+                @Nullable NSObject psk_identity_hint,
+                @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_pre_shared_key_selection_block") Block_Block_sec_protocol_options_set_pre_shared_key_selection_block complete);
     }
 
     /**
@@ -6901,9 +7244,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_key_update_block(NSObject options,
-            @ObjCBlock(name = "call_sec_protocol_options_set_key_update_block") Block_sec_protocol_options_set_key_update_block key_update_block,
-            NSObject key_update_queue);
+    public static native void sec_protocol_options_set_key_update_block(@NotNull NSObject options,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_key_update_block") Block_sec_protocol_options_set_key_update_block key_update_block,
+            @NotNull NSObject key_update_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -6916,8 +7259,8 @@ public final class Security {
         }
 
         @Generated
-        void call_sec_protocol_options_set_key_update_block(NSObject metadata,
-                @ObjCBlock(name = "call_Block_sec_protocol_options_set_key_update_block") Block_Block_sec_protocol_options_set_key_update_block complete);
+        void call_sec_protocol_options_set_key_update_block(@NotNull NSObject metadata,
+                @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_key_update_block") Block_Block_sec_protocol_options_set_key_update_block complete);
     }
 
     /**
@@ -6938,9 +7281,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_challenge_block(NSObject options,
-            @ObjCBlock(name = "call_sec_protocol_options_set_challenge_block") Block_sec_protocol_options_set_challenge_block challenge_block,
-            NSObject challenge_queue);
+    public static native void sec_protocol_options_set_challenge_block(@NotNull NSObject options,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_challenge_block") Block_sec_protocol_options_set_challenge_block challenge_block,
+            @NotNull NSObject challenge_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -6949,12 +7292,12 @@ public final class Security {
         @Generated
         public interface Block_Block_sec_protocol_options_set_challenge_block {
             @Generated
-            void call_Block_sec_protocol_options_set_challenge_block(NSObject identity);
+            void call_Block_sec_protocol_options_set_challenge_block(@Nullable NSObject identity);
         }
 
         @Generated
-        void call_sec_protocol_options_set_challenge_block(NSObject metadata,
-                @ObjCBlock(name = "call_Block_sec_protocol_options_set_challenge_block") Block_Block_sec_protocol_options_set_challenge_block complete);
+        void call_sec_protocol_options_set_challenge_block(@NotNull NSObject metadata,
+                @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_challenge_block") Block_Block_sec_protocol_options_set_challenge_block complete);
     }
 
     /**
@@ -6975,9 +7318,9 @@ public final class Security {
      */
     @Generated
     @CFunction
-    public static native void sec_protocol_options_set_verify_block(NSObject options,
-            @ObjCBlock(name = "call_sec_protocol_options_set_verify_block") Block_sec_protocol_options_set_verify_block verify_block,
-            NSObject verify_block_queue);
+    public static native void sec_protocol_options_set_verify_block(@NotNull NSObject options,
+            @NotNull @ObjCBlock(name = "call_sec_protocol_options_set_verify_block") Block_sec_protocol_options_set_verify_block verify_block,
+            @NotNull NSObject verify_block_queue);
 
     @Runtime(CRuntime.class)
     @Generated
@@ -6990,8 +7333,8 @@ public final class Security {
         }
 
         @Generated
-        void call_sec_protocol_options_set_verify_block(NSObject metadata, NSObject trust_ref,
-                @ObjCBlock(name = "call_Block_sec_protocol_options_set_verify_block") Block_Block_sec_protocol_options_set_verify_block complete);
+        void call_sec_protocol_options_set_verify_block(@NotNull NSObject metadata, @NotNull NSObject trust_ref,
+                @NotNull @ObjCBlock(name = "call_Block_sec_protocol_options_set_verify_block") Block_Block_sec_protocol_options_set_verify_block complete);
     }
 
     /**
@@ -7010,9 +7353,10 @@ public final class Security {
      *         supported). The caller is responsible for calling CFRelease on the
      *         returned key when it is no longer needed.
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native SecKeyRef SecTrustCopyKey(SecTrustRef trust);
+    public static native SecKeyRef SecTrustCopyKey(@NotNull SecTrustRef trust);
 
     /**
      * [@function] SecTrustCopyCertificateChain
@@ -7024,9 +7368,10 @@ public final class Security {
      * 
      *         API-Since: 15.0
      */
+    @Nullable
     @Generated
     @CFunction
-    public static native CFArrayRef SecTrustCopyCertificateChain(SecTrustRef trust);
+    public static native CFArrayRef SecTrustCopyCertificateChain(@NotNull SecTrustRef trust);
 
     @Generated public static final double SECURITY_TYPE_UNIFICATION = 1.0;
 }

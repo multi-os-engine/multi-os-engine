@@ -24,6 +24,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CIPDF417CodeDescriptor
@@ -66,22 +68,25 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -113,7 +118,7 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     @Generated
     @Selector("descriptorWithPayload:isCompact:rowCount:columnCount:")
     public static native CIPDF417CodeDescriptor descriptorWithPayloadIsCompactRowCountColumnCount(
-            NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
+            @NotNull NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
 
     /**
      * [@property] errorCorrectedPayload
@@ -129,6 +134,7 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
      * 16-bit value in the range of 0...928. The sequence is to be interpreted as described in the PDF417 bar code
      * symbology specification -- ISO/IEC 15438:2006(E).
      */
+    @NotNull
     @Generated
     @Selector("errorCorrectedPayload")
     public native NSData errorCorrectedPayload();
@@ -144,15 +150,15 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
 
     @Generated
     @Selector("initWithCoder:")
-    public native CIPDF417CodeDescriptor initWithCoder(NSCoder coder);
+    public native CIPDF417CodeDescriptor initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a descriptor that can be used as input to CIBarcodeGenerator
      */
     @Generated
     @Selector("initWithPayload:isCompact:rowCount:columnCount:")
-    public native CIPDF417CodeDescriptor initWithPayloadIsCompactRowCountColumnCount(NSData errorCorrectedPayload,
-            boolean isCompact, @NInt long rowCount, @NInt long columnCount);
+    public native CIPDF417CodeDescriptor initWithPayloadIsCompactRowCountColumnCount(
+            @NotNull NSData errorCorrectedPayload, boolean isCompact, @NInt long rowCount, @NInt long columnCount);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -182,9 +188,10 @@ public class CIPDF417CodeDescriptor extends CIBarcodeDescriptor {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

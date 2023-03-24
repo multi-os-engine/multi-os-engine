@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetReaderTrackOutput
@@ -136,27 +138,30 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      */
     @Generated
     @Selector("assetReaderTrackOutputWithTrack:outputSettings:")
-    public static native AVAssetReaderTrackOutput assetReaderTrackOutputWithTrackOutputSettings(AVAssetTrack track,
-            NSDictionary<String, ?> outputSettings);
+    public static native AVAssetReaderTrackOutput assetReaderTrackOutputWithTrackOutputSettings(
+            @NotNull AVAssetTrack track, @Nullable NSDictionary<String, ?> outputSettings);
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -191,9 +196,10 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -239,6 +245,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * 
      * API-Since: 7.0
      */
+    @NotNull
     @Generated
     @Selector("audioTimePitchAlgorithm")
     public native String audioTimePitchAlgorithm();
@@ -310,8 +317,8 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      */
     @Generated
     @Selector("initWithTrack:outputSettings:")
-    public native AVAssetReaderTrackOutput initWithTrackOutputSettings(AVAssetTrack track,
-            NSDictionary<String, ?> outputSettings);
+    public native AVAssetReaderTrackOutput initWithTrackOutputSettings(@NotNull AVAssetTrack track,
+            @Nullable NSDictionary<String, ?> outputSettings);
 
     /**
      * [@property] outputSettings
@@ -322,6 +329,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * AVAudioSettings.h for audio tracks or AVVideoSettings.h for video tracks. A value of nil indicates that the
      * receiver will vend samples in their original format as stored in the target track.
      */
+    @Nullable
     @Generated
     @Selector("outputSettings")
     public native NSDictionary<String, ?> outputSettings();
@@ -346,7 +354,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      */
     @Generated
     @Selector("setAudioTimePitchAlgorithm:")
-    public native void setAudioTimePitchAlgorithm(String value);
+    public native void setAudioTimePitchAlgorithm(@NotNull String value);
 
     /**
      * [@property] track
@@ -355,6 +363,7 @@ public class AVAssetReaderTrackOutput extends AVAssetReaderOutput {
      * 
      * The value of this property is an AVAssetTrack owned by the target AVAssetReader's asset.
      */
+    @NotNull
     @Generated
     @Selector("track")
     public native AVAssetTrack track();

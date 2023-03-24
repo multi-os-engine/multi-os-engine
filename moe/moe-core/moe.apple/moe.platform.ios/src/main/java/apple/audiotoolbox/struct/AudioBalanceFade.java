@@ -23,6 +23,7 @@ import org.moe.natj.c.ann.StructureField;
 import org.moe.natj.general.NatJ;
 import org.moe.natj.general.Pointer;
 import org.moe.natj.general.ann.Generated;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Structure()
@@ -45,7 +46,7 @@ public final class AudioBalanceFade extends StructObject {
 
     @Generated
     public AudioBalanceFade(float mLeftRightBalance, float mBackFrontFade, int mType,
-            AudioChannelLayout mChannelLayout) {
+            @NotNull AudioChannelLayout mChannelLayout) {
         super(AudioBalanceFade.class);
         setMLeftRightBalance(mLeftRightBalance);
         setMBackFrontFade(mBackFrontFade);
@@ -95,11 +96,12 @@ public final class AudioBalanceFade extends StructObject {
     @StructureField(order = 2, isGetter = false)
     public native void setMType(int value);
 
+    @NotNull
     @Generated
     @StructureField(order = 3, isGetter = true)
     public native AudioChannelLayout mChannelLayout();
 
     @Generated
     @StructureField(order = 3, isGetter = false)
-    public native void setMChannelLayout(AudioChannelLayout value);
+    public native void setMChannelLayout(@NotNull AudioChannelLayout value);
 }

@@ -31,6 +31,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWHighlightCenter
@@ -73,22 +75,25 @@ public class SWHighlightCenter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -102,12 +107,13 @@ public class SWHighlightCenter extends NSObject {
      */
     @Generated
     @Selector("clearNoticesForHighlight:")
-    public native void clearNoticesForHighlight(SWCollaborationHighlight highlight);
+    public native void clearNoticesForHighlight(@NotNull SWCollaborationHighlight highlight);
 
+    @Nullable
     @Generated
     @Selector("collaborationHighlightForIdentifier:error:")
-    public native SWCollaborationHighlight collaborationHighlightForIdentifierError(String collaborationIdentifier,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native SWCollaborationHighlight collaborationHighlightForIdentifierError(
+            @NotNull String collaborationIdentifier, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("debugDescription")
@@ -116,6 +122,7 @@ public class SWHighlightCenter extends NSObject {
     /**
      * The highlight center's delegate
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -136,15 +143,15 @@ public class SWHighlightCenter extends NSObject {
      */
     @Generated
     @Selector("getCollaborationHighlightForURL:completionHandler:")
-    public native void getCollaborationHighlightForURLCompletionHandler(NSURL URL,
-            @ObjCBlock(name = "call_getCollaborationHighlightForURLCompletionHandler") Block_getCollaborationHighlightForURLCompletionHandler completionHandler);
+    public native void getCollaborationHighlightForURLCompletionHandler(@NotNull NSURL URL,
+            @NotNull @ObjCBlock(name = "call_getCollaborationHighlightForURLCompletionHandler") Block_getCollaborationHighlightForURLCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getCollaborationHighlightForURLCompletionHandler {
         @Generated
-        void call_getCollaborationHighlightForURLCompletionHandler(SWCollaborationHighlight highlight,
-                NSError fetchError);
+        void call_getCollaborationHighlightForURLCompletionHandler(@Nullable SWCollaborationHighlight highlight,
+                @Nullable NSError fetchError);
     }
 
     /**
@@ -156,14 +163,14 @@ public class SWHighlightCenter extends NSObject {
      */
     @Generated
     @Selector("getHighlightForURL:completionHandler:")
-    public native void getHighlightForURLCompletionHandler(NSURL URL,
-            @ObjCBlock(name = "call_getHighlightForURLCompletionHandler") Block_getHighlightForURLCompletionHandler completionHandler);
+    public native void getHighlightForURLCompletionHandler(@NotNull NSURL URL,
+            @NotNull @ObjCBlock(name = "call_getHighlightForURLCompletionHandler") Block_getHighlightForURLCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getHighlightForURLCompletionHandler {
         @Generated
-        void call_getHighlightForURLCompletionHandler(SWHighlight highlight, NSError fetchError);
+        void call_getHighlightForURLCompletionHandler(@Nullable SWHighlight highlight, @Nullable NSError fetchError);
     }
 
     /**
@@ -179,15 +186,15 @@ public class SWHighlightCenter extends NSObject {
     @Generated
     @Selector("getSignedIdentityProofForCollaborationHighlight:usingData:completionHandler:")
     public native void getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler(
-            SWCollaborationHighlight collaborationHighlight, NSData data,
-            @ObjCBlock(name = "call_getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler") Block_getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler completionHandler);
+            @NotNull SWCollaborationHighlight collaborationHighlight, @NotNull NSData data,
+            @NotNull @ObjCBlock(name = "call_getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler") Block_getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler {
         @Generated
         void call_getSignedIdentityProofForCollaborationHighlightUsingDataCompletionHandler(
-                SWSignedPersonIdentityProof arg0, NSError arg1);
+                @Nullable SWSignedPersonIdentityProof arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -200,10 +207,12 @@ public class SWHighlightCenter extends NSObject {
      * 
      * Use this string as the title for a collection of shared highlight links displayed to the user.
      */
+    @NotNull
     @Generated
     @Selector("highlightCollectionTitle")
     public static native String highlightCollectionTitle();
 
+    @NotNull
     @Generated
     @Selector("highlights")
     public native NSArray<? extends SWHighlight> highlights();
@@ -239,9 +248,10 @@ public class SWHighlightCenter extends NSObject {
     @Selector("isSystemCollaborationSupportAvailable")
     public static native boolean isSystemCollaborationSupportAvailable();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -257,7 +267,7 @@ public class SWHighlightCenter extends NSObject {
      */
     @Generated
     @Selector("postNoticeForHighlightEvent:")
-    public native void postNoticeForHighlightEvent(@Mapped(ObjCObjectMapper.class) SWHighlightEvent event);
+    public native void postNoticeForHighlightEvent(@NotNull @Mapped(ObjCObjectMapper.class) SWHighlightEvent event);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -272,13 +282,13 @@ public class SWHighlightCenter extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) SWHighlightCenterDelegate value);
+    public native void setDelegate_unsafe(@Nullable @Mapped(ObjCObjectMapper.class) SWHighlightCenterDelegate value);
 
     /**
      * The highlight center's delegate
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) SWHighlightCenterDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) SWHighlightCenterDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);

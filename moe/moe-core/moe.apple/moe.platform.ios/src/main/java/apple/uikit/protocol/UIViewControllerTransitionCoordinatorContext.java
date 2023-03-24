@@ -28,6 +28,8 @@ import org.moe.natj.objc.ObjCRuntime;
 import org.moe.natj.objc.ann.ObjCProtocolName;
 import org.moe.natj.objc.ann.Selector;
 import apple.corefoundation.struct.CGAffineTransform;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("UIKit")
@@ -47,6 +49,7 @@ public interface UIViewControllerTransitionCoordinatorContext {
     /**
      * The view in which the animated transition is taking place.
      */
+    @NotNull
     @Generated
     @Selector("containerView")
     UIView containerView();
@@ -136,9 +139,10 @@ public interface UIViewControllerTransitionCoordinatorContext {
      * UITransitionContextToViewControllerKey
      * UITransitionContextFromViewControllerKey
      */
+    @Nullable
     @Generated
     @Selector("viewControllerForKey:")
-    UIViewController viewControllerForKey(String key);
+    UIViewController viewControllerForKey(@NotNull String key);
 
     /**
      * Currently only two keys are defined by the system:
@@ -147,7 +151,8 @@ public interface UIViewControllerTransitionCoordinatorContext {
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("viewForKey:")
-    UIView viewForKey(String key);
+    UIView viewForKey(@NotNull String key);
 }

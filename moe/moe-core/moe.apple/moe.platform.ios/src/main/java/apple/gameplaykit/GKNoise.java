@@ -40,6 +40,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * GKNoise is the object used to manipulate and combine noise in continuous 3D space. It takes a GKNoiseSource as input.
@@ -80,22 +82,25 @@ public class GKNoise extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -130,9 +135,10 @@ public class GKNoise extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,8 +156,8 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("noiseWithComponentNoises:selectionNoise:")
-    public static native GKNoise noiseWithComponentNoisesSelectionNoise(NSArray<? extends GKNoise> noises,
-            GKNoise selectionNoise);
+    public static native GKNoise noiseWithComponentNoisesSelectionNoise(@NotNull NSArray<? extends GKNoise> noises,
+            @NotNull GKNoise selectionNoise);
 
     /**
      * Initializes a composite noise from one or more component noises. Useful for combining and layering noises
@@ -173,8 +179,9 @@ public class GKNoise extends NSObject {
     @Generated
     @Selector("noiseWithComponentNoises:selectionNoise:componentBoundaries:boundaryBlendDistances:")
     public static native GKNoise noiseWithComponentNoisesSelectionNoiseComponentBoundariesBoundaryBlendDistances(
-            NSArray<? extends GKNoise> noises, GKNoise selectionNoise, NSArray<? extends NSNumber> componentBoundaries,
-            NSArray<? extends NSNumber> blendDistances);
+            @NotNull NSArray<? extends GKNoise> noises, @NotNull GKNoise selectionNoise,
+            @NotNull NSArray<? extends NSNumber> componentBoundaries,
+            @NotNull NSArray<? extends NSNumber> blendDistances);
 
     /**
      * Initializes a noise with the specified noise source.
@@ -183,7 +190,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("noiseWithNoiseSource:")
-    public static native GKNoise noiseWithNoiseSource(GKNoiseSource noiseSource);
+    public static native GKNoise noiseWithNoiseSource(@NotNull GKNoiseSource noiseSource);
 
     /**
      * Initializes a noise with the specified noise source and parameters.
@@ -193,8 +200,8 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("noiseWithNoiseSource:gradientColors:")
-    public static native GKNoise noiseWithNoiseSourceGradientColors(GKNoiseSource noiseSource,
-            NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors);
+    public static native GKNoise noiseWithNoiseSourceGradientColors(@NotNull GKNoiseSource noiseSource,
+            @NotNull NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -224,7 +231,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("addWithNoise:")
-    public native void addWithNoise(GKNoise noise);
+    public native void addWithNoise(@NotNull GKNoise noise);
 
     /**
      * Takes the absoltue value of all noise positions.
@@ -263,13 +270,14 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("displaceXWithNoise:yWithNoise:zWithNoise:")
-    public native void displaceXWithNoiseYWithNoiseZWithNoise(GKNoise xDisplacementNoise, GKNoise yDisplacementNoise,
-            GKNoise zDisplacementNoise);
+    public native void displaceXWithNoiseYWithNoiseZWithNoise(@NotNull GKNoise xDisplacementNoise,
+            @NotNull GKNoise yDisplacementNoise, @NotNull GKNoise zDisplacementNoise);
 
     /**
      * Color gradient of this noise, represented as 'value : color' pairs. Utilized when this noise is rendered to a
      * texture.
      */
+    @NotNull
     @Generated
     @Selector("gradientColors")
     public native NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors();
@@ -288,7 +296,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("initWithNoiseSource:")
-    public native GKNoise initWithNoiseSource(GKNoiseSource noiseSource);
+    public native GKNoise initWithNoiseSource(@NotNull GKNoiseSource noiseSource);
 
     /**
      * Initializes a noise with the specified noise source and parameters.
@@ -298,8 +306,8 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("initWithNoiseSource:gradientColors:")
-    public native GKNoise initWithNoiseSourceGradientColors(GKNoiseSource noiseSource,
-            NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors);
+    public native GKNoise initWithNoiseSourceGradientColors(@NotNull GKNoiseSource noiseSource,
+            @NotNull NSDictionary<? extends NSNumber, ? extends UIColor> gradientColors);
 
     /**
      * Inverts all noise values, from positive to negative and vice versa.
@@ -316,7 +324,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("maximumWithNoise:")
-    public native void maximumWithNoise(GKNoise noise);
+    public native void maximumWithNoise(@NotNull GKNoise noise);
 
     /**
      * Takes the minimum value between this noise and the specified noise at each position.
@@ -326,7 +334,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("minimumWithNoise:")
-    public native void minimumWithNoise(GKNoise noise);
+    public native void minimumWithNoise(@NotNull GKNoise noise);
 
     /**
      * Multiplies all noise values by the noise values at the same position in specified noise.
@@ -335,7 +343,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("multiplyWithNoise:")
-    public native void multiplyWithNoise(GKNoise noise);
+    public native void multiplyWithNoise(@NotNull GKNoise noise);
 
     /**
      * Raises all noise values to the specified power.
@@ -353,7 +361,7 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("raiseToPowerWithNoise:")
-    public native void raiseToPowerWithNoise(GKNoise noise);
+    public native void raiseToPowerWithNoise(@NotNull GKNoise noise);
 
     /**
      * Remaps all noise values to a smooth curve that passes through the specified control points.
@@ -364,7 +372,7 @@ public class GKNoise extends NSObject {
     @Generated
     @Selector("remapValuesToCurveWithControlPoints:")
     public native void remapValuesToCurveWithControlPoints(
-            NSDictionary<? extends NSNumber, ? extends NSNumber> controlPoints);
+            @NotNull NSDictionary<? extends NSNumber, ? extends NSNumber> controlPoints);
 
     /**
      * Remaps all noise values to one or more terraces with peaks. Useful for creating valleys and trenches.
@@ -374,8 +382,8 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("remapValuesToTerracesWithPeaks:terracesInverted:")
-    public native void remapValuesToTerracesWithPeaksTerracesInverted(NSArray<? extends NSNumber> peakInputValues,
-            boolean inverted);
+    public native void remapValuesToTerracesWithPeaksTerracesInverted(
+            @NotNull NSArray<? extends NSNumber> peakInputValues, boolean inverted);
 
     /**
      * Color gradient of this noise, represented as 'value : color' pairs. Utilized when this noise is rendered to a
@@ -383,5 +391,5 @@ public class GKNoise extends NSObject {
      */
     @Generated
     @Selector("setGradientColors:")
-    public native void setGradientColors(NSDictionary<? extends NSNumber, ? extends UIColor> value);
+    public native void setGradientColors(@NotNull NSDictionary<? extends NSNumber, ? extends UIColor> value);
 }

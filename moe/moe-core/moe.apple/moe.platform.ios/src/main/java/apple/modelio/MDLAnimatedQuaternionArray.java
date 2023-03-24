@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.0
@@ -56,22 +58,25 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,22 +97,23 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Generated
     @Selector("getDoubleQuaternionArray:maxCount:")
     @NUInt
-    public native long getDoubleQuaternionArrayMaxCount(VoidPtr valuesArray, @NUInt long maxCount);
+    public native long getDoubleQuaternionArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
     @Generated
     @Selector("getDoubleQuaternionArray:maxCount:atTime:")
     @NUInt
-    public native long getDoubleQuaternionArrayMaxCountAtTime(VoidPtr array, @NUInt long maxCount, double time);
+    public native long getDoubleQuaternionArrayMaxCountAtTime(@NotNull VoidPtr array, @NUInt long maxCount,
+            double time);
 
     @Generated
     @Selector("getFloatQuaternionArray:maxCount:")
     @NUInt
-    public native long getFloatQuaternionArrayMaxCount(VoidPtr valuesArray, @NUInt long maxCount);
+    public native long getFloatQuaternionArrayMaxCount(@NotNull VoidPtr valuesArray, @NUInt long maxCount);
 
     @Generated
     @Selector("getFloatQuaternionArray:maxCount:atTime:")
     @NUInt
-    public native long getFloatQuaternionArrayMaxCountAtTime(VoidPtr array, @NUInt long maxCount, double time);
+    public native long getFloatQuaternionArrayMaxCountAtTime(@NotNull VoidPtr array, @NUInt long maxCount, double time);
 
     @Generated
     @Selector("hash")
@@ -139,9 +145,10 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,13 +157,13 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
 
     @Generated
     @Selector("resetWithDoubleQuaternionArray:count:atTimes:count:")
-    public native void resetWithDoubleQuaternionArrayCountAtTimesCount(VoidPtr valuesArray, @NUInt long valuesCount,
-            ConstDoublePtr timesArray, @NUInt long timesCount);
+    public native void resetWithDoubleQuaternionArrayCountAtTimesCount(@NotNull VoidPtr valuesArray,
+            @NUInt long valuesCount, @NotNull ConstDoublePtr timesArray, @NUInt long timesCount);
 
     @Generated
     @Selector("resetWithFloatQuaternionArray:count:atTimes:count:")
-    public native void resetWithFloatQuaternionArrayCountAtTimesCount(VoidPtr valuesArray, @NUInt long valuesCount,
-            ConstDoublePtr timesArray, @NUInt long timesCount);
+    public native void resetWithFloatQuaternionArrayCountAtTimesCount(@NotNull VoidPtr valuesArray,
+            @NUInt long valuesCount, @NotNull ConstDoublePtr timesArray, @NUInt long timesCount);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -168,11 +175,11 @@ public class MDLAnimatedQuaternionArray extends MDLAnimatedValue {
 
     @Generated
     @Selector("setDoubleQuaternionArray:count:atTime:")
-    public native void setDoubleQuaternionArrayCountAtTime(VoidPtr array, @NUInt long count, double time);
+    public native void setDoubleQuaternionArrayCountAtTime(@NotNull VoidPtr array, @NUInt long count, double time);
 
     @Generated
     @Selector("setFloatQuaternionArray:count:atTime:")
-    public native void setFloatQuaternionArrayCountAtTime(VoidPtr array, @NUInt long count, double time);
+    public native void setFloatQuaternionArrayCountAtTime(@NotNull VoidPtr array, @NUInt long count, double time);
 
     @Generated
     @Selector("setVersion:")

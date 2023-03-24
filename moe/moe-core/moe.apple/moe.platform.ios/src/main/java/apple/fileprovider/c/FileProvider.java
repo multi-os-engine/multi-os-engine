@@ -9,6 +9,7 @@ import org.moe.natj.general.ann.Library;
 import org.moe.natj.general.ann.MappedReturn;
 import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.objc.map.ObjCStringMapper;
+import org.jetbrains.annotations.NotNull;
 
 @Generated
 @Library("FileProvider")
@@ -28,6 +29,7 @@ public final class FileProvider {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -62,6 +64,7 @@ public final class FileProvider {
      * 
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -80,6 +83,7 @@ public final class FileProvider {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSData NSFileProviderInitialPageSortedByDate();
@@ -87,6 +91,7 @@ public final class FileProvider {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     public static native NSData NSFileProviderInitialPageSortedByName();
@@ -94,6 +99,7 @@ public final class FileProvider {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -104,6 +110,7 @@ public final class FileProvider {
      * Deprecated-Since: 13.0
      * Deprecated-Message: NSFileProviderErrorItemKey
      */
+    @NotNull
     @Deprecated
     @Generated
     @CVariable()
@@ -113,6 +120,7 @@ public final class FileProvider {
     /**
      * API-Since: 11.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -121,6 +129,7 @@ public final class FileProvider {
     /**
      * API-Since: 13.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -136,6 +145,7 @@ public final class FileProvider {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -153,6 +163,7 @@ public final class FileProvider {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -169,6 +180,7 @@ public final class FileProvider {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)
@@ -185,6 +197,7 @@ public final class FileProvider {
      * 
      * API-Since: 16.0
      */
+    @NotNull
     @Generated
     @CVariable()
     @MappedReturn(ObjCStringMapper.class)

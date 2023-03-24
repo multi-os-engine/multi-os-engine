@@ -41,6 +41,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * CMStepCounter
@@ -95,22 +97,25 @@ public class CMStepCounter extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -155,9 +160,10 @@ public class CMStepCounter extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -199,8 +205,9 @@ public class CMStepCounter extends NSObject {
      */
     @Generated
     @Selector("queryStepCountStartingFrom:to:toQueue:withHandler:")
-    public native void queryStepCountStartingFromToToQueueWithHandler(NSDate start, NSDate end, NSOperationQueue queue,
-            @ObjCBlock(name = "call_queryStepCountStartingFromToToQueueWithHandler") Block_queryStepCountStartingFromToToQueueWithHandler handler);
+    public native void queryStepCountStartingFromToToQueueWithHandler(@NotNull NSDate start, @NotNull NSDate end,
+            @NotNull NSOperationQueue queue,
+            @NotNull @ObjCBlock(name = "call_queryStepCountStartingFromToToQueueWithHandler") Block_queryStepCountStartingFromToToQueueWithHandler handler);
 
     /**
      * startStepCountingUpdatesToQueue:withHandler
@@ -215,8 +222,9 @@ public class CMStepCounter extends NSObject {
      */
     @Generated
     @Selector("startStepCountingUpdatesToQueue:updateOn:withHandler:")
-    public native void startStepCountingUpdatesToQueueUpdateOnWithHandler(NSOperationQueue queue, @NInt long stepCounts,
-            @ObjCBlock(name = "call_startStepCountingUpdatesToQueueUpdateOnWithHandler") Block_startStepCountingUpdatesToQueueUpdateOnWithHandler handler);
+    public native void startStepCountingUpdatesToQueueUpdateOnWithHandler(@NotNull NSOperationQueue queue,
+            @NInt long stepCounts,
+            @NotNull @ObjCBlock(name = "call_startStepCountingUpdatesToQueueUpdateOnWithHandler") Block_startStepCountingUpdatesToQueueUpdateOnWithHandler handler);
 
     /**
      * stopStepCountingUpdates
@@ -234,14 +242,14 @@ public class CMStepCounter extends NSObject {
     @Generated
     public interface Block_queryStepCountStartingFromToToQueueWithHandler {
         @Generated
-        void call_queryStepCountStartingFromToToQueueWithHandler(@NInt long numberOfSteps, NSError error);
+        void call_queryStepCountStartingFromToToQueueWithHandler(@NInt long numberOfSteps, @Nullable NSError error);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_startStepCountingUpdatesToQueueUpdateOnWithHandler {
         @Generated
-        void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long numberOfSteps, NSDate timestamp,
-                NSError error);
+        void call_startStepCountingUpdatesToQueueUpdateOnWithHandler(@NInt long numberOfSteps,
+                @NotNull NSDate timestamp, @Nullable NSError error);
     }
 }

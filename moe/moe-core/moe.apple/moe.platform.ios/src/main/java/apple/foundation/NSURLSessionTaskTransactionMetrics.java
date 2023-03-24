@@ -34,6 +34,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class defines the performance metrics collected for a request/response transaction during the task execution.
@@ -70,22 +72,25 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -120,9 +125,10 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 10.0
@@ -160,6 +166,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * connectEndDate is the time immediately after the user agent finished establishing the connection to the server,
      * including completion of security-related and other handshakes.
      */
+    @Nullable
     @Generated
     @Selector("connectEndDate")
     public native NSDate connectEndDate();
@@ -170,6 +177,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * For example, this would correspond to the time immediately before the user agent started trying to establish the
      * TCP connection.
      */
+    @Nullable
     @Generated
     @Selector("connectStartDate")
     public native NSDate connectStartDate();
@@ -177,6 +185,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * domainLookupEndDate returns the time after the name lookup was completed.
      */
+    @Nullable
     @Generated
     @Selector("domainLookupEndDate")
     public native NSDate domainLookupEndDate();
@@ -185,6 +194,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * domainLookupStartDate returns the time immediately before the user agent started the name lookup for the
      * resource.
      */
+    @Nullable
     @Generated
     @Selector("domainLookupStartDate")
     public native NSDate domainLookupStartDate();
@@ -203,6 +213,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * secureConnectionStartDate
      * secureConnectionEndDate
      */
+    @Nullable
     @Generated
     @Selector("fetchStartDate")
     public native NSDate fetchStartDate();
@@ -244,6 +255,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * If HTTP/1.1 were used to the proxy, and the tunneled connection was HTTP/2, then h2 would be returned.
      * If HTTP/1.1 were used to the proxy, and there were no tunnel, then http/1.1 would be returned.
      */
+    @Nullable
     @Generated
     @Selector("networkProtocolName")
     public native String networkProtocolName();
@@ -251,6 +263,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * Represents the transaction request.
      */
+    @NotNull
     @Generated
     @Selector("request")
     public native NSURLRequest request();
@@ -262,6 +275,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * For example, this would correspond to the time immediately after the user agent finished sending the last byte of
      * the request.
      */
+    @Nullable
     @Generated
     @Selector("requestEndDate")
     public native NSDate requestEndDate();
@@ -272,6 +286,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * For example, this would correspond to the time immediately before the user agent sent an HTTP GET request.
      */
+    @Nullable
     @Generated
     @Selector("requestStartDate")
     public native NSDate requestStartDate();
@@ -287,6 +302,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * Represents the transaction response. Can be nil if error occurred and no response was generated.
      */
+    @Nullable
     @Generated
     @Selector("response")
     public native NSURLResponse response();
@@ -294,6 +310,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
     /**
      * responseEndDate is the time immediately after the user agent received the last byte of the resource.
      */
+    @Nullable
     @Generated
     @Selector("responseEndDate")
     public native NSDate responseEndDate();
@@ -305,6 +322,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * For example, this would correspond to the time immediately after the user agent received the first byte of an
      * HTTP response.
      */
+    @Nullable
     @Generated
     @Selector("responseStartDate")
     public native NSDate responseStartDate();
@@ -315,6 +333,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * If an encrypted connection was not used, this attribute is set to nil.
      */
+    @Nullable
     @Generated
     @Selector("secureConnectionEndDate")
     public native NSDate secureConnectionEndDate();
@@ -327,6 +346,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * If an encrypted connection was not used, this attribute is set to nil.
      */
+    @Nullable
     @Generated
     @Selector("secureConnectionStartDate")
     public native NSDate secureConnectionStartDate();
@@ -432,6 +452,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("localAddress")
     public native String localAddress();
@@ -445,6 +466,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("localPort")
     public native NSNumber localPort();
@@ -459,6 +481,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("negotiatedTLSCipherSuite")
     public native NSNumber negotiatedTLSCipherSuite();
@@ -473,6 +496,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("negotiatedTLSProtocolVersion")
     public native NSNumber negotiatedTLSProtocolVersion();
@@ -486,6 +510,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("remoteAddress")
     public native String remoteAddress();
@@ -499,6 +524,7 @@ public class NSURLSessionTaskTransactionMetrics extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("remotePort")
     public native NSNumber remotePort();

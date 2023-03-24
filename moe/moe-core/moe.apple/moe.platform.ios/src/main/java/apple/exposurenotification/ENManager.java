@@ -25,6 +25,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * ===========================================================================================================================
@@ -58,13 +60,13 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("activateWithCompletionHandler:")
     public native void activateWithCompletionHandler(
-            @ObjCBlock(name = "call_activateWithCompletionHandler") Block_activateWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_activateWithCompletionHandler") Block_activateWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_activateWithCompletionHandler {
         @Generated
-        void call_activateWithCompletionHandler(NSError arg0);
+        void call_activateWithCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -74,6 +76,7 @@ public class ENManager extends NSObject {
      * 
      * API-Since: 12.5
      */
+    @Nullable
     @Generated
     @Selector("activityHandler")
     @ObjCBlock(name = "call_activityHandler_ret")
@@ -107,22 +110,25 @@ public class ENManager extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -142,16 +148,19 @@ public class ENManager extends NSObject {
      * 
      * API-Since: 12.5
      */
+    @NotNull
     @Generated
     @Selector("detectExposuresWithConfiguration:completionHandler:")
-    public native NSProgress detectExposuresWithConfigurationCompletionHandler(ENExposureConfiguration configuration,
-            @ObjCBlock(name = "call_detectExposuresWithConfigurationCompletionHandler") Block_detectExposuresWithConfigurationCompletionHandler completionHandler);
+    public native NSProgress detectExposuresWithConfigurationCompletionHandler(
+            @NotNull ENExposureConfiguration configuration,
+            @NotNull @ObjCBlock(name = "call_detectExposuresWithConfigurationCompletionHandler") Block_detectExposuresWithConfigurationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_detectExposuresWithConfigurationCompletionHandler {
         @Generated
-        void call_detectExposuresWithConfigurationCompletionHandler(ENExposureDetectionSummary arg0, NSError arg1);
+        void call_detectExposuresWithConfigurationCompletionHandler(@Nullable ENExposureDetectionSummary arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -159,18 +168,19 @@ public class ENManager extends NSObject {
      * files containing diagnosis keys the app has downloaded. The diagnosis key files must be signed appropriately.
      * When the app's ENAPIVersion is 2 or higher, keys already known to the system are included in the analysis.
      */
+    @NotNull
     @Generated
     @Selector("detectExposuresWithConfiguration:diagnosisKeyURLs:completionHandler:")
     public native NSProgress detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler(
-            ENExposureConfiguration configuration, NSArray<? extends NSURL> diagnosisKeyURLs,
-            @ObjCBlock(name = "call_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler") Block_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler completionHandler);
+            @NotNull ENExposureConfiguration configuration, @NotNull NSArray<? extends NSURL> diagnosisKeyURLs,
+            @NotNull @ObjCBlock(name = "call_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler") Block_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler {
         @Generated
-        void call_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler(ENExposureDetectionSummary arg0,
-                NSError arg1);
+        void call_detectExposuresWithConfigurationDiagnosisKeyURLsCompletionHandler(
+                @Nullable ENExposureDetectionSummary arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -178,6 +188,7 @@ public class ENManager extends NSObject {
      * 
      * API-Since: 14.4
      */
+    @Nullable
     @Generated
     @Selector("diagnosisKeysAvailableHandler")
     @ObjCBlock(name = "call_diagnosisKeysAvailableHandler_ret")
@@ -187,9 +198,10 @@ public class ENManager extends NSObject {
     @Generated
     public interface Block_diagnosisKeysAvailableHandler_ret {
         @Generated
-        void call_diagnosisKeysAvailableHandler_ret(NSArray<? extends ENTemporaryExposureKey> arg0);
+        void call_diagnosisKeysAvailableHandler_ret(@NotNull NSArray<? extends ENTemporaryExposureKey> arg0);
     }
 
+    @NotNull
     @Generated
     @Selector("dispatchQueue")
     public native NSObject dispatchQueue();
@@ -219,13 +231,14 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("getDiagnosisKeysWithCompletionHandler:")
     public native void getDiagnosisKeysWithCompletionHandler(
-            @ObjCBlock(name = "call_getDiagnosisKeysWithCompletionHandler") Block_getDiagnosisKeysWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getDiagnosisKeysWithCompletionHandler") Block_getDiagnosisKeysWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_getDiagnosisKeysWithCompletionHandler(NSArray<? extends ENTemporaryExposureKey> arg0, NSError arg1);
+        void call_getDiagnosisKeysWithCompletionHandler(@Nullable NSArray<? extends ENTemporaryExposureKey> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -237,19 +250,20 @@ public class ENManager extends NSObject {
      * Deprecated-Since: 13.6
      * Deprecated-Message: Use getExposureWindowsFromSummary, if needed.
      */
+    @NotNull
     @Deprecated
     @Generated
     @Selector("getExposureInfoFromSummary:userExplanation:completionHandler:")
     public native NSProgress getExposureInfoFromSummaryUserExplanationCompletionHandler(
-            ENExposureDetectionSummary summary, String userExplanation,
-            @ObjCBlock(name = "call_getExposureInfoFromSummaryUserExplanationCompletionHandler") Block_getExposureInfoFromSummaryUserExplanationCompletionHandler completionHandler);
+            @NotNull ENExposureDetectionSummary summary, @NotNull String userExplanation,
+            @NotNull @ObjCBlock(name = "call_getExposureInfoFromSummaryUserExplanationCompletionHandler") Block_getExposureInfoFromSummaryUserExplanationCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getExposureInfoFromSummaryUserExplanationCompletionHandler {
         @Generated
-        void call_getExposureInfoFromSummaryUserExplanationCompletionHandler(NSArray<? extends ENExposureInfo> arg0,
-                NSError arg1);
+        void call_getExposureInfoFromSummaryUserExplanationCompletionHandler(
+                @Nullable NSArray<? extends ENExposureInfo> arg0, @Nullable NSError arg1);
     }
 
     /**
@@ -257,17 +271,18 @@ public class ENManager extends NSObject {
      * 
      * API-Since: 12.5
      */
+    @NotNull
     @Generated
     @Selector("getExposureWindowsFromSummary:completionHandler:")
-    public native NSProgress getExposureWindowsFromSummaryCompletionHandler(ENExposureDetectionSummary summary,
-            @ObjCBlock(name = "call_getExposureWindowsFromSummaryCompletionHandler") Block_getExposureWindowsFromSummaryCompletionHandler completionHandler);
+    public native NSProgress getExposureWindowsFromSummaryCompletionHandler(@NotNull ENExposureDetectionSummary summary,
+            @NotNull @ObjCBlock(name = "call_getExposureWindowsFromSummaryCompletionHandler") Block_getExposureWindowsFromSummaryCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getExposureWindowsFromSummaryCompletionHandler {
         @Generated
-        void call_getExposureWindowsFromSummaryCompletionHandler(NSArray<? extends ENExposureWindow> arg0,
-                NSError arg1);
+        void call_getExposureWindowsFromSummaryCompletionHandler(@Nullable NSArray<? extends ENExposureWindow> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -280,14 +295,14 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("getTestDiagnosisKeysWithCompletionHandler:")
     public native void getTestDiagnosisKeysWithCompletionHandler(
-            @ObjCBlock(name = "call_getTestDiagnosisKeysWithCompletionHandler") Block_getTestDiagnosisKeysWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getTestDiagnosisKeysWithCompletionHandler") Block_getTestDiagnosisKeysWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getTestDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_getTestDiagnosisKeysWithCompletionHandler(NSArray<? extends ENTemporaryExposureKey> arg0,
-                NSError arg1);
+        void call_getTestDiagnosisKeysWithCompletionHandler(@Nullable NSArray<? extends ENTemporaryExposureKey> arg0,
+                @Nullable NSError arg1);
     }
 
     /**
@@ -298,13 +313,13 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("getUserTraveledWithCompletionHandler:")
     public native void getUserTraveledWithCompletionHandler(
-            @ObjCBlock(name = "call_getUserTraveledWithCompletionHandler") Block_getUserTraveledWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_getUserTraveledWithCompletionHandler") Block_getUserTraveledWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_getUserTraveledWithCompletionHandler {
         @Generated
-        void call_getUserTraveledWithCompletionHandler(boolean arg0, NSError arg1);
+        void call_getUserTraveledWithCompletionHandler(boolean arg0, @Nullable NSError arg1);
     }
 
     @Generated
@@ -342,6 +357,7 @@ public class ENManager extends NSObject {
      * Invoked exactly once when invalidation completes. This property is cleared before it's invoked to break retain
      * cycles.
      */
+    @Nullable
     @Generated
     @Selector("invalidationHandler")
     @ObjCBlock(name = "call_invalidationHandler_ret")
@@ -358,9 +374,10 @@ public class ENManager extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -378,13 +395,13 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("preAuthorizeDiagnosisKeysWithCompletionHandler:")
     public native void preAuthorizeDiagnosisKeysWithCompletionHandler(
-            @ObjCBlock(name = "call_preAuthorizeDiagnosisKeysWithCompletionHandler") Block_preAuthorizeDiagnosisKeysWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_preAuthorizeDiagnosisKeysWithCompletionHandler") Block_preAuthorizeDiagnosisKeysWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_preAuthorizeDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_preAuthorizeDiagnosisKeysWithCompletionHandler(NSError arg0);
+        void call_preAuthorizeDiagnosisKeysWithCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -397,13 +414,13 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("requestPreAuthorizedDiagnosisKeysWithCompletionHandler:")
     public native void requestPreAuthorizedDiagnosisKeysWithCompletionHandler(
-            @ObjCBlock(name = "call_requestPreAuthorizedDiagnosisKeysWithCompletionHandler") Block_requestPreAuthorizedDiagnosisKeysWithCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestPreAuthorizedDiagnosisKeysWithCompletionHandler") Block_requestPreAuthorizedDiagnosisKeysWithCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestPreAuthorizedDiagnosisKeysWithCompletionHandler {
         @Generated
-        void call_requestPreAuthorizedDiagnosisKeysWithCompletionHandler(NSError arg0);
+        void call_requestPreAuthorizedDiagnosisKeysWithCompletionHandler(@Nullable NSError arg0);
     }
 
     @Generated
@@ -423,7 +440,8 @@ public class ENManager extends NSObject {
      */
     @Generated
     @Selector("setActivityHandler:")
-    public native void setActivityHandler(@ObjCBlock(name = "call_setActivityHandler") Block_setActivityHandler value);
+    public native void setActivityHandler(
+            @Nullable @ObjCBlock(name = "call_setActivityHandler") Block_setActivityHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
@@ -440,18 +458,18 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("setDiagnosisKeysAvailableHandler:")
     public native void setDiagnosisKeysAvailableHandler(
-            @ObjCBlock(name = "call_setDiagnosisKeysAvailableHandler") Block_setDiagnosisKeysAvailableHandler value);
+            @Nullable @ObjCBlock(name = "call_setDiagnosisKeysAvailableHandler") Block_setDiagnosisKeysAvailableHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setDiagnosisKeysAvailableHandler {
         @Generated
-        void call_setDiagnosisKeysAvailableHandler(NSArray<? extends ENTemporaryExposureKey> arg0);
+        void call_setDiagnosisKeysAvailableHandler(@NotNull NSArray<? extends ENTemporaryExposureKey> arg0);
     }
 
     @Generated
     @Selector("setDispatchQueue:")
-    public native void setDispatchQueue(NSObject value);
+    public native void setDispatchQueue(@NotNull NSObject value);
 
     /**
      * Enables or disables Exposure Notification.
@@ -462,13 +480,13 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("setExposureNotificationEnabled:completionHandler:")
     public native void setExposureNotificationEnabledCompletionHandler(boolean enabled,
-            @ObjCBlock(name = "call_setExposureNotificationEnabledCompletionHandler") Block_setExposureNotificationEnabledCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_setExposureNotificationEnabledCompletionHandler") Block_setExposureNotificationEnabledCompletionHandler completionHandler);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setExposureNotificationEnabledCompletionHandler {
         @Generated
-        void call_setExposureNotificationEnabledCompletionHandler(NSError arg0);
+        void call_setExposureNotificationEnabledCompletionHandler(@Nullable NSError arg0);
     }
 
     /**
@@ -478,7 +496,7 @@ public class ENManager extends NSObject {
     @Generated
     @Selector("setInvalidationHandler:")
     public native void setInvalidationHandler(
-            @ObjCBlock(name = "call_setInvalidationHandler") Block_setInvalidationHandler value);
+            @Nullable @ObjCBlock(name = "call_setInvalidationHandler") Block_setInvalidationHandler value);
 
     @Runtime(ObjCRuntime.class)
     @Generated

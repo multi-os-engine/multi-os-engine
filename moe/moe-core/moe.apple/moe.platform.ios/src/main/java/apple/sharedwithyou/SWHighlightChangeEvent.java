@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * SWHighlightChangeEvent
@@ -64,17 +66,18 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The type of change event for the highlight.
@@ -84,19 +87,22 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
     @NInt
     public native long changeEventTrigger();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -108,13 +114,14 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
     @NUInt
     public static native long hash_static();
 
+    @NotNull
     @Generated
     @Selector("highlightURL")
     public native NSURL highlightURL();
@@ -125,7 +132,7 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
 
     @Generated
     @Selector("initWithCoder:")
-    public native SWHighlightChangeEvent initWithCoder(NSCoder coder);
+    public native SWHighlightChangeEvent initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Initializes a highlight change event object to represent changes to a highlight.
@@ -135,7 +142,7 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
      */
     @Generated
     @Selector("initWithHighlight:trigger:")
-    public native SWHighlightChangeEvent initWithHighlightTrigger(SWHighlight highlight, @NInt long trigger);
+    public native SWHighlightChangeEvent initWithHighlightTrigger(@NotNull SWHighlight highlight, @NInt long trigger);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -154,9 +161,10 @@ public class SWHighlightChangeEvent extends NSObject implements SWHighlightEvent
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned

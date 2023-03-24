@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 12.0
@@ -60,22 +62,25 @@ public class CPInterfaceController extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -87,6 +92,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * The delegate for this interface controller.
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -135,9 +141,10 @@ public class CPInterfaceController extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -177,7 +184,7 @@ public class CPInterfaceController extends NSObject {
     @Deprecated
     @Generated
     @Selector("popToTemplate:animated:")
-    public native void popToTemplateAnimated(CPTemplate targetTemplate, boolean animated);
+    public native void popToTemplateAnimated(@NotNull CPTemplate targetTemplate, boolean animated);
 
     /**
      * Set the preferred interface style to UIUserInterfaceStyleDark for all templates. Set this value to YES prior to
@@ -202,7 +209,7 @@ public class CPInterfaceController extends NSObject {
     @Deprecated
     @Generated
     @Selector("presentTemplate:animated:")
-    public native void presentTemplateAnimated(CPTemplate templateToPresent, boolean animated);
+    public native void presentTemplateAnimated(@NotNull CPTemplate templateToPresent, boolean animated);
 
     /**
      * The current modally-presented template.
@@ -210,6 +217,7 @@ public class CPInterfaceController extends NSObject {
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current presented
      * template.
      */
+    @Nullable
     @Generated
     @Selector("presentedTemplate")
     public native CPTemplate presentedTemplate();
@@ -223,7 +231,7 @@ public class CPInterfaceController extends NSObject {
     @Deprecated
     @Generated
     @Selector("pushTemplate:animated:")
-    public native void pushTemplateAnimated(CPTemplate templateToPush, boolean animated);
+    public native void pushTemplateAnimated(@NotNull CPTemplate templateToPush, boolean animated);
 
     @Generated
     @Selector("resolveClassMethod:")
@@ -236,6 +244,7 @@ public class CPInterfaceController extends NSObject {
     /**
      * Returns the root template.
      */
+    @NotNull
     @Generated
     @Selector("rootTemplate")
     public native CPTemplate rootTemplate();
@@ -245,13 +254,14 @@ public class CPInterfaceController extends NSObject {
      */
     @Generated
     @Selector("setDelegate:")
-    public native void setDelegate_unsafe(@Mapped(ObjCObjectMapper.class) CPInterfaceControllerDelegate value);
+    public native void setDelegate_unsafe(
+            @Nullable @Mapped(ObjCObjectMapper.class) CPInterfaceControllerDelegate value);
 
     /**
      * The delegate for this interface controller.
      */
     @Generated
-    public void setDelegate(@Mapped(ObjCObjectMapper.class) CPInterfaceControllerDelegate value) {
+    public void setDelegate(@Nullable @Mapped(ObjCObjectMapper.class) CPInterfaceControllerDelegate value) {
         Object __old = delegate();
         if (value != null) {
             org.moe.natj.objc.ObjCRuntime.associateObjCObject(this, value);
@@ -286,7 +296,7 @@ public class CPInterfaceController extends NSObject {
     @Deprecated
     @Generated
     @Selector("setRootTemplate:animated:")
-    public native void setRootTemplateAnimated(CPTemplate rootTemplate, boolean animated);
+    public native void setRootTemplateAnimated(@NotNull CPTemplate rootTemplate, boolean animated);
 
     @Generated
     @Selector("setVersion:")
@@ -302,6 +312,7 @@ public class CPInterfaceController extends NSObject {
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current stack of
      * templates.
      */
+    @NotNull
     @Generated
     @Selector("templates")
     public native NSArray<? extends CPTemplate> templates();
@@ -311,6 +322,7 @@ public class CPInterfaceController extends NSObject {
      * 
      * [@warning] Reading this property may synchronously perform an IPC call to retrieve the current top-most template.
      */
+    @Nullable
     @Generated
     @Selector("topTemplate")
     public native CPTemplate topTemplate();
@@ -330,6 +342,7 @@ public class CPInterfaceController extends NSObject {
      * 
      * API-Since: 14.0
      */
+    @NotNull
     @Generated
     @Selector("carTraitCollection")
     public native UITraitCollection carTraitCollection();
@@ -349,13 +362,13 @@ public class CPInterfaceController extends NSObject {
     @Generated
     @Selector("dismissTemplateAnimated:completion:")
     public native void dismissTemplateAnimatedCompletion(boolean animated,
-            @ObjCBlock(name = "call_dismissTemplateAnimatedCompletion") Block_dismissTemplateAnimatedCompletion completion);
+            @Nullable @ObjCBlock(name = "call_dismissTemplateAnimatedCompletion") Block_dismissTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_dismissTemplateAnimatedCompletion {
         @Generated
-        void call_dismissTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_dismissTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -368,13 +381,13 @@ public class CPInterfaceController extends NSObject {
     @Generated
     @Selector("popTemplateAnimated:completion:")
     public native void popTemplateAnimatedCompletion(boolean animated,
-            @ObjCBlock(name = "call_popTemplateAnimatedCompletion") Block_popTemplateAnimatedCompletion completion);
+            @Nullable @ObjCBlock(name = "call_popTemplateAnimatedCompletion") Block_popTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_popTemplateAnimatedCompletion {
         @Generated
-        void call_popTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_popTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -387,13 +400,13 @@ public class CPInterfaceController extends NSObject {
     @Generated
     @Selector("popToRootTemplateAnimated:completion:")
     public native void popToRootTemplateAnimatedCompletion(boolean animated,
-            @ObjCBlock(name = "call_popToRootTemplateAnimatedCompletion") Block_popToRootTemplateAnimatedCompletion completion);
+            @Nullable @ObjCBlock(name = "call_popToRootTemplateAnimatedCompletion") Block_popToRootTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_popToRootTemplateAnimatedCompletion {
         @Generated
-        void call_popToRootTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_popToRootTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -409,14 +422,14 @@ public class CPInterfaceController extends NSObject {
      */
     @Generated
     @Selector("popToTemplate:animated:completion:")
-    public native void popToTemplateAnimatedCompletion(CPTemplate targetTemplate, boolean animated,
-            @ObjCBlock(name = "call_popToTemplateAnimatedCompletion") Block_popToTemplateAnimatedCompletion completion);
+    public native void popToTemplateAnimatedCompletion(@NotNull CPTemplate targetTemplate, boolean animated,
+            @Nullable @ObjCBlock(name = "call_popToTemplateAnimatedCompletion") Block_popToTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_popToTemplateAnimatedCompletion {
         @Generated
-        void call_popToTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_popToTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -436,14 +449,14 @@ public class CPInterfaceController extends NSObject {
      */
     @Generated
     @Selector("presentTemplate:animated:completion:")
-    public native void presentTemplateAnimatedCompletion(CPTemplate templateToPresent, boolean animated,
-            @ObjCBlock(name = "call_presentTemplateAnimatedCompletion") Block_presentTemplateAnimatedCompletion completion);
+    public native void presentTemplateAnimatedCompletion(@NotNull CPTemplate templateToPresent, boolean animated,
+            @Nullable @ObjCBlock(name = "call_presentTemplateAnimatedCompletion") Block_presentTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_presentTemplateAnimatedCompletion {
         @Generated
-        void call_presentTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_presentTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -461,14 +474,14 @@ public class CPInterfaceController extends NSObject {
      */
     @Generated
     @Selector("pushTemplate:animated:completion:")
-    public native void pushTemplateAnimatedCompletion(CPTemplate templateToPush, boolean animated,
-            @ObjCBlock(name = "call_pushTemplateAnimatedCompletion") Block_pushTemplateAnimatedCompletion completion);
+    public native void pushTemplateAnimatedCompletion(@NotNull CPTemplate templateToPush, boolean animated,
+            @Nullable @ObjCBlock(name = "call_pushTemplateAnimatedCompletion") Block_pushTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_pushTemplateAnimatedCompletion {
         @Generated
-        void call_pushTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_pushTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 
     /**
@@ -489,13 +502,13 @@ public class CPInterfaceController extends NSObject {
      */
     @Generated
     @Selector("setRootTemplate:animated:completion:")
-    public native void setRootTemplateAnimatedCompletion(CPTemplate rootTemplate, boolean animated,
-            @ObjCBlock(name = "call_setRootTemplateAnimatedCompletion") Block_setRootTemplateAnimatedCompletion completion);
+    public native void setRootTemplateAnimatedCompletion(@NotNull CPTemplate rootTemplate, boolean animated,
+            @Nullable @ObjCBlock(name = "call_setRootTemplateAnimatedCompletion") Block_setRootTemplateAnimatedCompletion completion);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_setRootTemplateAnimatedCompletion {
         @Generated
-        void call_setRootTemplateAnimatedCompletion(boolean success, NSError error);
+        void call_setRootTemplateAnimatedCompletion(boolean success, @Nullable NSError error);
     }
 }

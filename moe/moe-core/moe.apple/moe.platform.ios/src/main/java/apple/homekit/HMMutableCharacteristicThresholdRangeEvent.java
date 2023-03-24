@@ -21,6 +21,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * This class represents an event when a characteristic's value falls within the specified
@@ -58,29 +60,33 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
     /**
      * The characteristic associated with the event.
      */
+    @NotNull
     @Generated
     @Selector("characteristic")
     public native HMCharacteristic characteristic();
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -105,7 +111,7 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
     @Generated
     @Selector("initWithCharacteristic:thresholdRange:")
     public native HMMutableCharacteristicThresholdRangeEvent initWithCharacteristicThresholdRange(
-            HMCharacteristic characteristic, HMNumberRange thresholdRange);
+            @NotNull HMCharacteristic characteristic, @NotNull HMNumberRange thresholdRange);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -126,11 +132,12 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
 
     @Generated
     @Selector("isSupportedForHome:")
-    public static native boolean isSupportedForHome(HMHome home);
+    public static native boolean isSupportedForHome(@NotNull HMHome home);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -150,14 +157,14 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
      */
     @Generated
     @Selector("setCharacteristic:")
-    public native void setCharacteristic(HMCharacteristic value);
+    public native void setCharacteristic(@NotNull HMCharacteristic value);
 
     /**
      * The range of the characteristic value that triggers the event.
      */
     @Generated
     @Selector("setThresholdRange:")
-    public native void setThresholdRange(HMNumberRange value);
+    public native void setThresholdRange(@NotNull HMNumberRange value);
 
     @Generated
     @Selector("setVersion:")
@@ -170,6 +177,7 @@ public class HMMutableCharacteristicThresholdRangeEvent extends HMCharacteristic
     /**
      * The range of the characteristic value that triggers the event.
      */
+    @NotNull
     @Generated
     @Selector("thresholdRange")
     public native HMNumberRange thresholdRange();

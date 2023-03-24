@@ -26,6 +26,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 13.0
@@ -60,11 +62,12 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * A color to use for the bar background. This color is composited over backgroundEffects.
      */
+    @Nullable
     @Generated
     @Selector("backgroundColor")
     public native UIColor backgroundColor();
@@ -73,6 +76,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's
      * background.
      */
+    @Nullable
     @Generated
     @Selector("backgroundEffect")
     public native UIBlurEffect backgroundEffect();
@@ -81,6 +85,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the
      * backgroundImageContentMode.
      */
+    @Nullable
     @Generated
     @Selector("backgroundImage")
     public native UIImage backgroundImage();
@@ -96,18 +101,21 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -133,16 +141,18 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     @Selector("configureWithTransparentBackground")
     public native void configureWithTransparentBackground();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copy")
     public native UIBarAppearance copy();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     @Generated
     @Selector("debugDescription")
@@ -154,7 +164,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("hash")
@@ -184,11 +194,11 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("initWithBarAppearance:")
-    public native UIBarAppearance initWithBarAppearance(UIBarAppearance barAppearance);
+    public native UIBarAppearance initWithBarAppearance(@NotNull UIBarAppearance barAppearance);
 
     @Generated
     @Selector("initWithCoder:")
-    public native UIBarAppearance initWithCoder(NSCoder coder);
+    public native UIBarAppearance initWithCoder(@NotNull NSCoder coder);
 
     /**
      * Constructs a new bar appearance, targeting the passed-in idiom as a hint. Not all platforms support all available
@@ -215,9 +225,10 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -237,7 +248,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("setBackgroundColor:")
-    public native void setBackgroundColor(UIColor value);
+    public native void setBackgroundColor(@Nullable UIColor value);
 
     /**
      * A specific blur effect to use for the bar background. This effect is composited first when constructing the bar's
@@ -245,7 +256,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("setBackgroundEffect:")
-    public native void setBackgroundEffect(UIBlurEffect value);
+    public native void setBackgroundEffect(@Nullable UIBlurEffect value);
 
     /**
      * An image to use for the bar background. This image is composited over the backgroundColor, and resized per the
@@ -253,7 +264,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("setBackgroundImage:")
-    public native void setBackgroundImage(UIImage value);
+    public native void setBackgroundImage(@Nullable UIImage value);
 
     /**
      * The content mode to use when rendering the backgroundImage. Defaults to UIViewContentModeScaleToFill.
@@ -272,14 +283,14 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      */
     @Generated
     @Selector("setShadowColor:")
-    public native void setShadowColor(UIColor value);
+    public native void setShadowColor(@Nullable UIColor value);
 
     /**
      * Use an image for the shadow. See shadowColor for how they interact.
      */
     @Generated
     @Selector("setShadowImage:")
-    public native void setShadowImage(UIImage value);
+    public native void setShadowImage(@Nullable UIImage value);
 
     @Generated
     @Selector("setVersion:")
@@ -292,6 +303,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
      * shadowColor will also result in no shadow. If the shadowImage is not a template image, then it will be rendered
      * regardless of the value of shadowColor.
      */
+    @Nullable
     @Generated
     @Selector("shadowColor")
     public native UIColor shadowColor();
@@ -299,6 +311,7 @@ public class UIBarAppearance extends NSObject implements NSCopying, NSSecureCodi
     /**
      * Use an image for the shadow. See shadowColor for how they interact.
      */
+    @Nullable
     @Generated
     @Selector("shadowImage")
     public native UIImage shadowImage();

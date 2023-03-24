@@ -29,6 +29,7 @@ import org.moe.natj.general.ann.Runtime;
 import org.moe.natj.general.ann.UncertainArgument;
 import org.moe.natj.general.ptr.BytePtr;
 import org.moe.natj.general.ptr.VoidPtr;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Structure()
@@ -162,6 +163,7 @@ public final class FILE extends StructObject {
     @StructureField(order = 7, isGetter = false)
     public native void set_cookie(VoidPtr value);
 
+    @Nullable
     @Generated
     @StructureField(order = 8, isGetter = true)
     @FunctionPtr(name = "call__close")
@@ -169,8 +171,9 @@ public final class FILE extends StructObject {
 
     @Generated
     @StructureField(order = 8, isGetter = false)
-    public native void set_close(@FunctionPtr(name = "call__close") Function__close value);
+    public native void set_close(@Nullable @FunctionPtr(name = "call__close") Function__close value);
 
+    @Nullable
     @Generated
     @StructureField(order = 9, isGetter = true)
     @FunctionPtr(name = "call__read")
@@ -178,8 +181,9 @@ public final class FILE extends StructObject {
 
     @Generated
     @StructureField(order = 9, isGetter = false)
-    public native void set_read(@FunctionPtr(name = "call__read") Function__read value);
+    public native void set_read(@Nullable @FunctionPtr(name = "call__read") Function__read value);
 
+    @Nullable
     @Generated
     @StructureField(order = 10, isGetter = true)
     @FunctionPtr(name = "call__seek")
@@ -187,8 +191,9 @@ public final class FILE extends StructObject {
 
     @Generated
     @StructureField(order = 10, isGetter = false)
-    public native void set_seek(@FunctionPtr(name = "call__seek") Function__seek value);
+    public native void set_seek(@Nullable @FunctionPtr(name = "call__seek") Function__seek value);
 
+    @Nullable
     @Generated
     @StructureField(order = 11, isGetter = true)
     @FunctionPtr(name = "call__write")
@@ -196,7 +201,7 @@ public final class FILE extends StructObject {
 
     @Generated
     @StructureField(order = 11, isGetter = false)
-    public native void set_write(@FunctionPtr(name = "call__write") Function__write value);
+    public native void set_write(@Nullable @FunctionPtr(name = "call__write") Function__write value);
 
     /**
      * ungetc buffer

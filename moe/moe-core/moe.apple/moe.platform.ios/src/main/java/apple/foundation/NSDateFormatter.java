@@ -38,6 +38,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 @Generated
 @Library("Foundation")
@@ -69,22 +71,25 @@ public class NSDateFormatter extends NSFormatter {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -92,9 +97,11 @@ public class NSDateFormatter extends NSFormatter {
     /**
      * API-Since: 4.0
      */
+    @Nullable
     @Generated
     @Selector("dateFormatFromTemplate:options:locale:")
-    public static native String dateFormatFromTemplateOptionsLocale(String tmplate, @NUInt long opts, NSLocale locale);
+    public static native String dateFormatFromTemplateOptionsLocale(@NotNull String tmplate, @NUInt long opts,
+            @Nullable NSLocale locale);
 
     @Generated
     @Selector("debugDescription")
@@ -134,16 +141,18 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     /**
      * API-Since: 4.0
      */
+    @NotNull
     @Generated
     @Selector("localizedStringFromDate:dateStyle:timeStyle:")
-    public static native String localizedStringFromDateDateStyleTimeStyle(NSDate date, @NUInt long dstyle,
+    public static native String localizedStringFromDateDateStyleTimeStyle(@NotNull NSDate date, @NUInt long dstyle,
             @NUInt long tstyle);
 
     @Generated
@@ -195,15 +204,17 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("dateFormat")
     public native String dateFormat();
 
+    @Nullable
     @Generated
     @Selector("dateFromString:")
-    public native NSDate dateFromString(String string);
+    public native NSDate dateFromString(@NotNull String string);
 
     @Generated
     @Selector("dateStyle")
     @NUInt
     public native long dateStyle();
 
+    @Nullable
     @Generated
     @Selector("defaultDate")
     public native NSDate defaultDate();
@@ -243,12 +254,14 @@ public class NSDateFormatter extends NSFormatter {
      */
     @Generated
     @Selector("getObjectValue:forString:range:error:")
-    public native boolean getObjectValueForStringRangeError(@ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj,
-            String string, NSRange rangep, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean getObjectValueForStringRangeError(
+            @Nullable @ReferenceInfo(type = ObjCObject.class) Ptr<ObjCObject> obj, @NotNull String string,
+            @Nullable NSRange rangep, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * API-Since: 2.0
      */
+    @Nullable
     @Generated
     @Selector("gregorianStartDate")
     public native NSDate gregorianStartDate();
@@ -259,7 +272,7 @@ public class NSDateFormatter extends NSFormatter {
 
     @Generated
     @Selector("initWithCoder:")
-    public native NSDateFormatter initWithCoder(NSCoder coder);
+    public native NSDateFormatter initWithCoder(@NotNull NSCoder coder);
 
     @Generated
     @Selector("isLenient")
@@ -309,7 +322,7 @@ public class NSDateFormatter extends NSFormatter {
 
     @Generated
     @Selector("setDefaultDate:")
-    public native void setDefaultDate(NSDate value);
+    public native void setDefaultDate(@Nullable NSDate value);
 
     /**
      * API-Since: 4.0
@@ -344,7 +357,7 @@ public class NSDateFormatter extends NSFormatter {
      */
     @Generated
     @Selector("setGregorianStartDate:")
-    public native void setGregorianStartDate(NSDate value);
+    public native void setGregorianStartDate(@Nullable NSDate value);
 
     @Generated
     @Selector("setLocale:")
@@ -366,7 +379,7 @@ public class NSDateFormatter extends NSFormatter {
      */
     @Generated
     @Selector("setLocalizedDateFormatFromTemplate:")
-    public native void setLocalizedDateFormatFromTemplate(String dateFormatTemplate);
+    public native void setLocalizedDateFormatFromTemplate(@NotNull String dateFormatTemplate);
 
     /**
      * API-Since: 2.0
@@ -457,7 +470,7 @@ public class NSDateFormatter extends NSFormatter {
 
     @Generated
     @Selector("setTwoDigitStartDate:")
-    public native void setTwoDigitStartDate(NSDate value);
+    public native void setTwoDigitStartDate(@Nullable NSDate value);
 
     /**
      * API-Since: 2.0
@@ -552,9 +565,10 @@ public class NSDateFormatter extends NSFormatter {
      * Even though NSDateFormatter responds to the usual NSFormatter methods,
      * here are some convenience methods which are a little more obvious.
      */
+    @NotNull
     @Generated
     @Selector("stringFromDate:")
-    public native String stringFromDate(NSDate date);
+    public native String stringFromDate(@NotNull NSDate date);
 
     @Generated
     @Selector("timeStyle")
@@ -565,6 +579,7 @@ public class NSDateFormatter extends NSFormatter {
     @Selector("timeZone")
     public native NSTimeZone timeZone();
 
+    @Nullable
     @Generated
     @Selector("twoDigitStartDate")
     public native NSDate twoDigitStartDate();

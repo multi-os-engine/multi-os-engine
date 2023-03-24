@@ -24,6 +24,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 16.0
@@ -58,22 +60,25 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -85,6 +90,7 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
     /**
      * The object that acts as the delegate of the calendar view selection
      */
+    @Nullable
     @Generated
     @Selector("delegate")
     @MappedReturn(ObjCObjectMapper.class)
@@ -109,7 +115,7 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
     @Generated
     @Selector("initWithDelegate:")
     public native UICalendarSelectionMultiDate initWithDelegate(
-            @Mapped(ObjCObjectMapper.class) UICalendarSelectionMultiDateDelegate delegate);
+            @Nullable @Mapped(ObjCObjectMapper.class) UICalendarSelectionMultiDateDelegate delegate);
 
     @Generated
     @Selector("instanceMethodForSelector:")
@@ -128,9 +134,10 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -148,6 +155,7 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
     /**
      * The currently selected dates in the Calendar view.
      */
+    @NotNull
     @Generated
     @Selector("selectedDates")
     public native NSArray<? extends NSDateComponents> selectedDates();
@@ -157,14 +165,15 @@ public class UICalendarSelectionMultiDate extends UICalendarSelection {
      */
     @Generated
     @Selector("setSelectedDates:")
-    public native void setSelectedDates(NSArray<? extends NSDateComponents> value);
+    public native void setSelectedDates(@NotNull NSArray<? extends NSDateComponents> value);
 
     /**
      * Sets the dates to display in the calendar, with an option to animate the setting.
      */
     @Generated
     @Selector("setSelectedDates:animated:")
-    public native void setSelectedDatesAnimated(NSArray<? extends NSDateComponents> selectedDates, boolean animated);
+    public native void setSelectedDatesAnimated(@NotNull NSArray<? extends NSDateComponents> selectedDates,
+            boolean animated);
 
     @Generated
     @Selector("setVersion:")

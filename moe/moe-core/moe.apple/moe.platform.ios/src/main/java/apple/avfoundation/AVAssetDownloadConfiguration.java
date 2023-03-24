@@ -22,6 +22,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * AVAssetDownloadConfiguration
@@ -76,13 +78,14 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * NSData representing artwork data for this asset. Optional. May be displayed, for example, by the usage pane of
      * the Settings app. Must work with +[UIImage imageWithData:].
      */
+    @Nullable
     @Generated
     @Selector("artworkData")
     public native NSData artworkData();
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     /**
      * [@property] auxiliaryContentConfigurations
@@ -93,24 +96,28 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * content configurations can be augmented with additional content configurations or removed entirely if no
      * auxiliary content is desired.
      */
+    @NotNull
     @Generated
     @Selector("auxiliaryContentConfigurations")
     public native NSArray<? extends AVAssetDownloadContentConfiguration> auxiliaryContentConfigurations();
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -138,8 +145,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      */
     @Generated
     @Selector("downloadConfigurationWithAsset:title:")
-    public static native AVAssetDownloadConfiguration downloadConfigurationWithAssetTitle(AVURLAsset asset,
-            String title);
+    public static native AVAssetDownloadConfiguration downloadConfigurationWithAssetTitle(@NotNull AVURLAsset asset,
+            @NotNull String title);
 
     @Generated
     @Selector("hash")
@@ -167,9 +174,10 @@ public class AVAssetDownloadConfiguration extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -195,6 +203,7 @@ public class AVAssetDownloadConfiguration extends NSObject {
      * 
      * The primary content for the download.
      */
+    @NotNull
     @Generated
     @Selector("primaryContentConfiguration")
     public native AVAssetDownloadContentConfiguration primaryContentConfiguration();
@@ -215,7 +224,7 @@ public class AVAssetDownloadConfiguration extends NSObject {
      */
     @Generated
     @Selector("setArtworkData:")
-    public native void setArtworkData(NSData value);
+    public native void setArtworkData(@Nullable NSData value);
 
     /**
      * [@property] auxiliaryContentConfigurations
@@ -228,7 +237,8 @@ public class AVAssetDownloadConfiguration extends NSObject {
      */
     @Generated
     @Selector("setAuxiliaryContentConfigurations:")
-    public native void setAuxiliaryContentConfigurations(NSArray<? extends AVAssetDownloadContentConfiguration> value);
+    public native void setAuxiliaryContentConfigurations(
+            @NotNull NSArray<? extends AVAssetDownloadContentConfiguration> value);
 
     /**
      * [@property] optimizesAuxiliaryContentConfigurations

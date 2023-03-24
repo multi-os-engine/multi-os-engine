@@ -43,6 +43,8 @@ import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.ProtocolClassMethod;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * [@interface] NEVPNProtocol
@@ -86,22 +88,25 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -136,9 +141,10 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -170,11 +176,12 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
     @NInt
     public static native long version_static();
 
+    @NotNull
     @Generated
     @Owned
     @Selector("copyWithZone:")
     @MappedReturn(ObjCObjectMapper.class)
-    public native Object copyWithZone(VoidPtr zone);
+    public native Object copyWithZone(@Nullable VoidPtr zone);
 
     /**
      * [@property] disconnectOnSleep
@@ -189,7 +196,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("encodeWithCoder:")
-    public native void encodeWithCoder(NSCoder coder);
+    public native void encodeWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] identityData
@@ -198,6 +205,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("identityData")
     public native NSData identityData();
@@ -209,6 +217,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("identityDataPassword")
     public native String identityDataPassword();
@@ -221,6 +230,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("identityReference")
     public native NSData identityReference();
@@ -231,7 +241,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
 
     @Generated
     @Selector("initWithCoder:")
-    public native NEVPNProtocol initWithCoder(NSCoder coder);
+    public native NEVPNProtocol initWithCoder(@NotNull NSCoder coder);
 
     /**
      * [@property] passwordReference
@@ -241,6 +251,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("passwordReference")
     public native NSData passwordReference();
@@ -252,6 +263,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 9.0
      */
+    @Nullable
     @Generated
     @Selector("proxySettings")
     public native NEProxySettings proxySettings();
@@ -263,6 +275,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("serverAddress")
     public native String serverAddress();
@@ -287,7 +300,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setIdentityData:")
-    public native void setIdentityData(NSData value);
+    public native void setIdentityData(@Nullable NSData value);
 
     /**
      * [@property] identityDataPassword
@@ -298,7 +311,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setIdentityDataPassword:")
-    public native void setIdentityDataPassword(String value);
+    public native void setIdentityDataPassword(@Nullable String value);
 
     /**
      * [@property] identityReference
@@ -310,7 +323,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setIdentityReference:")
-    public native void setIdentityReference(NSData value);
+    public native void setIdentityReference(@Nullable NSData value);
 
     /**
      * [@property] passwordReference
@@ -322,7 +335,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setPasswordReference:")
-    public native void setPasswordReference(NSData value);
+    public native void setPasswordReference(@Nullable NSData value);
 
     /**
      * [@property] proxySettings
@@ -333,7 +346,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setProxySettings:")
-    public native void setProxySettings(NEProxySettings value);
+    public native void setProxySettings(@Nullable NEProxySettings value);
 
     /**
      * [@property] serverAddress
@@ -344,7 +357,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setServerAddress:")
-    public native void setServerAddress(String value);
+    public native void setServerAddress(@Nullable String value);
 
     /**
      * [@property] username
@@ -355,7 +368,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      */
     @Generated
     @Selector("setUsername:")
-    public native void setUsername(String value);
+    public native void setUsername(@Nullable String value);
 
     @Generated
     @ProtocolClassMethod("supportsSecureCoding")
@@ -370,6 +383,7 @@ public class NEVPNProtocol extends NSObject implements NSCopying, NSSecureCoding
      * 
      * API-Since: 8.0
      */
+    @Nullable
     @Generated
     @Selector("username")
     public native String username();

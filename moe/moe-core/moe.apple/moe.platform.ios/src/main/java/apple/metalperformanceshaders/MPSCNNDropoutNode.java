@@ -23,6 +23,8 @@ import org.moe.natj.objc.SEL;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * API-Since: 11.3
@@ -57,22 +59,25 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -96,15 +101,16 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("initWithSource:")
-    public native MPSCNNDropoutNode initWithSource(MPSNNImageNode source);
+    public native MPSCNNDropoutNode initWithSource(@NotNull MPSNNImageNode source);
 
     @Generated
     @Selector("initWithSource:keepProbability:")
-    public native MPSCNNDropoutNode initWithSourceKeepProbability(MPSNNImageNode source, float keepProbability);
+    public native MPSCNNDropoutNode initWithSourceKeepProbability(@NotNull MPSNNImageNode source,
+            float keepProbability);
 
     @Generated
     @Selector("initWithSource:keepProbability:seed:maskStrideInPixels:")
-    public native MPSCNNDropoutNode initWithSourceKeepProbabilitySeedMaskStrideInPixels(MPSNNImageNode source,
+    public native MPSCNNDropoutNode initWithSourceKeepProbabilitySeedMaskStrideInPixels(@NotNull MPSNNImageNode source,
             float keepProbability, @NUInt long seed, @ByValue MTLSize maskStrideInPixels);
 
     @Generated
@@ -128,9 +134,10 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
     @Selector("keepProbability")
     public native float keepProbability();
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Selector("maskStrideInPixels")
@@ -144,16 +151,18 @@ public class MPSCNNDropoutNode extends MPSNNFilterNode {
 
     @Generated
     @Selector("nodeWithSource:")
-    public static native MPSCNNDropoutNode nodeWithSource(MPSNNImageNode source);
+    public static native MPSCNNDropoutNode nodeWithSource(@NotNull MPSNNImageNode source);
 
     @Generated
     @Selector("nodeWithSource:keepProbability:")
-    public static native MPSCNNDropoutNode nodeWithSourceKeepProbability(MPSNNImageNode source, float keepProbability);
+    public static native MPSCNNDropoutNode nodeWithSourceKeepProbability(@NotNull MPSNNImageNode source,
+            float keepProbability);
 
     @Generated
     @Selector("nodeWithSource:keepProbability:seed:maskStrideInPixels:")
-    public static native MPSCNNDropoutNode nodeWithSourceKeepProbabilitySeedMaskStrideInPixels(MPSNNImageNode source,
-            float keepProbability, @NUInt long seed, @ByValue MTLSize maskStrideInPixels);
+    public static native MPSCNNDropoutNode nodeWithSourceKeepProbabilitySeedMaskStrideInPixels(
+            @NotNull MPSNNImageNode source, float keepProbability, @NUInt long seed,
+            @ByValue MTLSize maskStrideInPixels);
 
     @Generated
     @Selector("resolveClassMethod:")

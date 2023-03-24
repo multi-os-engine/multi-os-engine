@@ -45,6 +45,8 @@ import org.moe.natj.objc.ann.ObjCBlock;
 import org.moe.natj.objc.ann.ObjCClassBinding;
 import org.moe.natj.objc.ann.Selector;
 import org.moe.natj.objc.map.ObjCObjectMapper;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Provides methods to fetch and save contacts.
@@ -106,22 +108,25 @@ public class CNContactStore extends NSObject {
 
     @Generated
     @Selector("automaticallyNotifiesObserversForKey:")
-    public static native boolean automaticallyNotifiesObserversForKey(String key);
+    public static native boolean automaticallyNotifiesObserversForKey(@NotNull String key);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:")
-    public static native void cancelPreviousPerformRequestsWithTarget(@Mapped(ObjCObjectMapper.class) Object aTarget);
+    public static native void cancelPreviousPerformRequestsWithTarget(
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget);
 
     @Generated
     @Selector("cancelPreviousPerformRequestsWithTarget:selector:object:")
     public static native void cancelPreviousPerformRequestsWithTargetSelectorObject(
-            @Mapped(ObjCObjectMapper.class) Object aTarget, SEL aSelector,
-            @Mapped(ObjCObjectMapper.class) Object anArgument);
+            @NotNull @Mapped(ObjCObjectMapper.class) Object aTarget, @NotNull SEL aSelector,
+            @Nullable @Mapped(ObjCObjectMapper.class) Object anArgument);
 
+    @NotNull
     @Generated
     @Selector("classFallbacksForKeyedArchiver")
     public static native NSArray<String> classFallbacksForKeyedArchiver();
 
+    @NotNull
     @Generated
     @Selector("classForKeyedUnarchiver")
     public static native Class classForKeyedUnarchiver();
@@ -156,9 +161,10 @@ public class CNContactStore extends NSObject {
     @Selector("isSubclassOfClass:")
     public static native boolean isSubclassOfClass(Class aClass);
 
+    @NotNull
     @Generated
     @Selector("keyPathsForValuesAffectingValueForKey:")
-    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(String key);
+    public static native NSSet<String> keyPathsForValuesAffectingValueForKey(@NotNull String key);
 
     @Generated
     @Owned
@@ -196,10 +202,11 @@ public class CNContactStore extends NSObject {
      * @return An array of CNContainer objects matching the predicate. If no matches are found, an empty array is
      *         returned. If an error occurs, nil is returned.
      */
+    @Nullable
     @Generated
     @Selector("containersMatchingPredicate:error:")
-    public native NSArray<? extends CNContainer> containersMatchingPredicateError(NSPredicate predicate,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<? extends CNContainer> containersMatchingPredicateError(@Nullable NSPredicate predicate,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * The identifier of the default container.
@@ -209,6 +216,7 @@ public class CNContactStore extends NSObject {
      * @return The identifier of the default container. If the caller lacks Contacts authorization or an error occurs,
      *         nil is returned.
      */
+    @Nullable
     @Generated
     @Selector("defaultContainerIdentifier")
     public native String defaultContainerIdentifier();
@@ -226,9 +234,9 @@ public class CNContactStore extends NSObject {
      */
     @Generated
     @Selector("enumerateContactsWithFetchRequest:error:usingBlock:")
-    public native boolean enumerateContactsWithFetchRequestErrorUsingBlock(CNContactFetchRequest fetchRequest,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
-            @ObjCBlock(name = "call_enumerateContactsWithFetchRequestErrorUsingBlock") Block_enumerateContactsWithFetchRequestErrorUsingBlock block);
+    public native boolean enumerateContactsWithFetchRequestErrorUsingBlock(@NotNull CNContactFetchRequest fetchRequest,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error,
+            @NotNull @ObjCBlock(name = "call_enumerateContactsWithFetchRequestErrorUsingBlock") Block_enumerateContactsWithFetchRequestErrorUsingBlock block);
 
     /**
      * Executes a save request.
@@ -243,8 +251,8 @@ public class CNContactStore extends NSObject {
      */
     @Generated
     @Selector("executeSaveRequest:error:")
-    public native boolean executeSaveRequestError(CNSaveRequest saveRequest,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native boolean executeSaveRequestError(@NotNull CNSaveRequest saveRequest,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Fetch all groups matching a given predicate.
@@ -256,10 +264,11 @@ public class CNContactStore extends NSObject {
      * @return An array of CNGroup objects matching the predicate. If no matches are found, an empty array is returned.
      *         If an error occurs, nil is returned.
      */
+    @Nullable
     @Generated
     @Selector("groupsMatchingPredicate:error:")
-    public native NSArray<? extends CNGroup> groupsMatchingPredicateError(NSPredicate predicate,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<? extends CNGroup> groupsMatchingPredicateError(@Nullable NSPredicate predicate,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Generated
     @Selector("init")
@@ -285,7 +294,7 @@ public class CNContactStore extends NSObject {
     @Generated
     @Selector("requestAccessForEntityType:completionHandler:")
     public native void requestAccessForEntityTypeCompletionHandler(@NInt long entityType,
-            @ObjCBlock(name = "call_requestAccessForEntityTypeCompletionHandler") Block_requestAccessForEntityTypeCompletionHandler completionHandler);
+            @NotNull @ObjCBlock(name = "call_requestAccessForEntityTypeCompletionHandler") Block_requestAccessForEntityTypeCompletionHandler completionHandler);
 
     /**
      * Fetch a unified contact with a given identifier.
@@ -300,10 +309,11 @@ public class CNContactStore extends NSObject {
      * @return The unified contact matching or linked to the identifier. If no contact with the given identifier is
      *         found, nil is returned and error is set to CNErrorCodeRecordDoesNotExist.
      */
+    @Nullable
     @Generated
     @Selector("unifiedContactWithIdentifier:keysToFetch:error:")
-    public native CNContact unifiedContactWithIdentifierKeysToFetchError(String identifier, NSArray<?> keys,
-            @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native CNContact unifiedContactWithIdentifierKeysToFetchError(@NotNull String identifier,
+            @NotNull NSArray<?> keys, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Fetch all unified contacts matching a given predicate.
@@ -320,23 +330,25 @@ public class CNContactStore extends NSObject {
      * @return An array of CNContact objects matching the predicate. If no matches are found, an empty array is
      *         returned. If an error occurs, nil is returned.
      */
+    @Nullable
     @Generated
     @Selector("unifiedContactsMatchingPredicate:keysToFetch:error:")
-    public native NSArray<? extends CNContact> unifiedContactsMatchingPredicateKeysToFetchError(NSPredicate predicate,
-            NSArray<?> keys, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+    public native NSArray<? extends CNContact> unifiedContactsMatchingPredicateKeysToFetchError(
+            @NotNull NSPredicate predicate, @NotNull NSArray<?> keys,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_enumerateContactsWithFetchRequestErrorUsingBlock {
         @Generated
-        void call_enumerateContactsWithFetchRequestErrorUsingBlock(CNContact contact, BoolPtr stop);
+        void call_enumerateContactsWithFetchRequestErrorUsingBlock(@NotNull CNContact contact, @NotNull BoolPtr stop);
     }
 
     @Runtime(ObjCRuntime.class)
     @Generated
     public interface Block_requestAccessForEntityTypeCompletionHandler {
         @Generated
-        void call_requestAccessForEntityTypeCompletionHandler(boolean granted, NSError error);
+        void call_requestAccessForEntityTypeCompletionHandler(boolean granted, @Nullable NSError error);
     }
 
     /**
@@ -347,6 +359,7 @@ public class CNContactStore extends NSObject {
      * 
      * API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("currentHistoryToken")
     public native NSData currentHistoryToken();
@@ -369,10 +382,12 @@ public class CNContactStore extends NSObject {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("enumeratorForChangeHistoryFetchRequest:error:")
     public native CNFetchResult<NSEnumerator<CNChangeHistoryEvent>> enumeratorForChangeHistoryFetchRequestError(
-            CNChangeHistoryFetchRequest request, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull CNChangeHistoryFetchRequest request,
+            @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 
     /**
      * Enumerate a contact fetch request.
@@ -392,8 +407,9 @@ public class CNContactStore extends NSObject {
      * 
      *         API-Since: 13.0
      */
+    @Nullable
     @Generated
     @Selector("enumeratorForContactFetchRequest:error:")
     public native CNFetchResult<NSEnumerator<CNContact>> enumeratorForContactFetchRequestError(
-            CNContactFetchRequest request, @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
+            @NotNull CNContactFetchRequest request, @Nullable @ReferenceInfo(type = NSError.class) Ptr<NSError> error);
 }
