@@ -105,6 +105,14 @@ public class NatJ {
             new HashSet<Class<? extends NativeRuntime>>();
 
     /**
+     * If a framework isn't available, this map defines fallback frameworks. NonExistentFramework -> FallbackFramework.
+     * Chained fallbacks are not possible, like FA -> FB and FB -> FC.
+     */
+    private final static Map<String, String> frameworkFallbackMap = new HashMap<String, String>() {{
+        put("AVFAudio", "AVFoundation");
+    }};
+
+    /**
      * A placeholder runtime instance, used for registering a runtime as invalid;.
      */
     private static NativeRuntime invalidRuntime = new NativeRuntime(null, null, null) {
@@ -259,9 +267,7 @@ public class NatJ {
             }
 
             Library lann = type.getAnnotation(Library.class);
-            if (lann != null) {
-                lookUpLibrary(lann.value(), true);
-            }
+            lookUpLibrary(lann, true);
 
             NativeRuntime runtime = getRuntime(type, true);
             if (runtime != null) runtime.doRegistration(type);
@@ -425,6 +431,27 @@ public class NatJ {
         return darwinSystemFrameworkRootDir;
     }
 
+    protected static String lookUpLibrary(Library lann, boolean load) {
+        if (lann != null) {
+            try {
+                return lookUpLibrary(lann.value(), load);
+            } catch (RuntimeException e) {
+                /*
+                 * If a framework got renamed, we add fallback code to support older iOS versions.
+                 *  E.g. AVFAudio falls back to AVFoundation
+                 * */
+                String fallback = frameworkFallbackMap.get(lann.value());
+                if (fallback != null) {
+                    return lookUpLibrary(fallback, load);
+                } else {
+                    throw e;
+                }
+            }
+        }
+
+        return null;
+    }
+
     /**
      * Looks up a library by its name in the file system.
      *
@@ -437,7 +464,7 @@ public class NatJ {
      *     library
      * @return The resolved path of the library
      */
-    protected static String lookUpLibrary(String name, boolean load) {
+    private static String lookUpLibrary(String name, boolean load) {
 
         synchronized (resolvedLibraries) {
             {

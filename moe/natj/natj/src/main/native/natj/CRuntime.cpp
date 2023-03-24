@@ -882,14 +882,12 @@ void processStructureFunctions(JNIEnv* env, jclass type) {
 #endif
 
   // Load library if possible
-  jobject libAnn =
-      env->CallObjectMethod(type, gGetAnnotationMethod, gLibraryClass);
-  if (!env->IsSameObject(libAnn, NULL)) {
-    jobject libName = env->CallObjectMethod(libAnn, gGetLibraryMethod);
-    env->DeleteLocalRef(libAnn);
+  {
+    jobject libAnn =
+        env->CallObjectMethod(type, gGetAnnotationMethod, gLibraryClass);
     jstring libPath = (jstring)env->CallStaticObjectMethod(
-        gNatJClass, gLookUpLibraryStaticMethod, libName, false);
-    env->DeleteLocalRef(libName);
+        gNatJClass, gLookUpLibraryStaticMethod, libAnn, false);
+    env->DeleteLocalRef(libAnn);
     if (env->IsSameObject(libPath, NULL)) {
       libHandle = thisHandle;
     } else {
@@ -903,8 +901,6 @@ void processStructureFunctions(JNIEnv* env, jclass type) {
       env->ReleaseStringUTFChars(libPath, libCPath);
       env->DeleteLocalRef(libPath);
     }
-  } else {
-    libHandle = thisHandle;
   }
 
   // Get class methods elements
