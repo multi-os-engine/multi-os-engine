@@ -57,11 +57,11 @@ moe {
 
 dependencies {
     // Compile with 'jar' files in the project's 'lib' directory
-    compile fileTree(dir: 'lib', include: '*.jar')
+    implementation fileTree(dir: 'lib', include: '*.jar')
 //<<---REGION:USE_KOTLIN_PLUGIN
 
     // Add Kotlin dependency
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 //>>---REGION:USE_KOTLIN_PLUGIN
 }
 //<<---REGION:USE_KOTLIN_PLUGIN
