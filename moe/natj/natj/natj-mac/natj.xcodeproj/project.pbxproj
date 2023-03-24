@@ -199,7 +199,6 @@
 		8B8F88881CFDE74B009D0B34 /* UnmanagedNativeBlockManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B8F88861CFDE74B009D0B34 /* UnmanagedNativeBlockManager.m */; };
 		8BAB27641CF481720076626D /* MappingClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BAB27621CF481720076626D /* MappingClass.h */; };
 		8BAB27651CF481720076626D /* MappingClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BAB27631CF481720076626D /* MappingClass.m */; };
-		F080297C2832D22400C214C3 /* StructCallback.c in Sources */ = {isa = PBXBuildFile; fileRef = F080297B2832D22400C214C3 /* StructCallback.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -430,7 +429,6 @@
 		8B8F88861CFDE74B009D0B34 /* UnmanagedNativeBlockManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnmanagedNativeBlockManager.m; path = "../natj-objctests/src/test/native/UnmanagedNativeBlockManager.m"; sourceTree = "<group>"; };
 		8BAB27621CF481720076626D /* MappingClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MappingClass.h; path = "../natj-objctests/src/test/native/MappingClass.h"; sourceTree = "<group>"; };
 		8BAB27631CF481720076626D /* MappingClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MappingClass.m; path = "../natj-objctests/src/test/native/MappingClass.m"; sourceTree = "<group>"; };
-		F080297B2832D22400C214C3 /* StructCallback.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = StructCallback.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,7 +507,6 @@
 		1E0345841B5E83D500DB0D19 /* TestClasses */ = {
 			isa = PBXGroup;
 			children = (
-				F080297E2832D8AC00C214C3 /* StructCallbackTest */,
 				012998F81C6CA5150096164A /* c */,
 				011D19D71C1F19EF00392E9A /* wildcard */,
 				1EBC0E881B5E883300E77B56 /* AllocDeallocTest */,
@@ -920,14 +917,6 @@
 			name = TestClassesObjC;
 			sourceTree = "<group>";
 		};
-		F080297E2832D8AC00C214C3 /* StructCallbackTest */ = {
-			isa = PBXGroup;
-			children = (
-				F080297B2832D22400C214C3 /* StructCallback.c */,
-			);
-			path = StructCallbackTest;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1210,7 +1199,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F080297C2832D22400C214C3 /* StructCallback.c in Sources */,
 				011D19E11C1F1AD800392E9A /* A.m in Sources */,
 				012998F71C6CA50B0096164A /* ptr.c in Sources */,
 				011D19E01C1F1ABF00392E9A /* B.m in Sources */,

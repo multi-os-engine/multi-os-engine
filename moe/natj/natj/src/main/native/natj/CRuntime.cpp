@@ -430,8 +430,8 @@ jlong JNICALL Java_org_moe_natj_c_CRuntime_allocNativeCallback(JNIEnv* env,
   info->callback = getJNICallFunction(env, returnCType, isStatic);
 
   // Generate ffi types for the parameters
-  jobjectArray parameterAnns = (jobjectArray)env->CallStaticObjectMethod(
-     gNatJClass, gGetParameterAnnotationsInheritedStaticMethod, method);
+  jobjectArray parameterAnns = (jobjectArray)env->CallObjectMethod(
+      method, gGetParameterAnnotationsMethod);
   jobjectArray parameterTypes =
       (jobjectArray)env->CallObjectMethod(method, gGetParameterTypesMethod);
   jsize nativeParameterCount = env->GetArrayLength(parameterTypes);
